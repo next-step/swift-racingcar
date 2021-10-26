@@ -10,6 +10,7 @@
 		C7E1263027239F7E0000DB8B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
 		E2D09D8F27282B7700A846D8 /* RacingCarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D09D8E27282B7700A846D8 /* RacingCarTests.swift */; };
 		E2D09D9327282B8E00A846D8 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
+		E2D09D9527283A4C00A846D8 /* SetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D09D9427283A4C00A846D8 /* SetTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,6 +30,7 @@
 		C7E1262F27239F7E0000DB8B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		E2D09D8C27282B7700A846D8 /* RacingCarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RacingCarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2D09D8E27282B7700A846D8 /* RacingCarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingCarTests.swift; sourceTree = "<group>"; };
+		E2D09D9427283A4C00A846D8 /* SetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				E2D09D8E27282B7700A846D8 /* RacingCarTests.swift */,
+				E2D09D9427283A4C00A846D8 /* SetTests.swift */,
 			);
 			path = RacingCarTests;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2D09D9327282B8E00A846D8 /* main.swift in Sources */,
+				E2D09D9527283A4C00A846D8 /* SetTests.swift in Sources */,
 				E2D09D8F27282B7700A846D8 /* RacingCarTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
