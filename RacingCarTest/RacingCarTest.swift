@@ -18,4 +18,18 @@ class RacingCarTest: XCTestCase {
         
     }
 
+    func test_string_split() {
+        let dummyString1 = "1,2"
+        let dummyString2 = "1"
+        
+        let dummyString1Array = dummyString1.split(separator: ",")
+        let dummyString2Array = dummyString2.split(separator: ",")
+        
+        guard dummyString1Array.count < 2,
+              dummyString2Array.count < 1 else { return }
+        
+        XCTAssertEqual(dummyString1Array[0], "1")
+        XCTAssertEqual(dummyString1Array[1], "2")
+        XCTAssertEqual(dummyString2Array[0], "1")
+    }
 }
