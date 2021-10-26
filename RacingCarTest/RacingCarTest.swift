@@ -32,4 +32,13 @@ class RacingCarTest: XCTestCase {
         XCTAssertEqual(dummyString1Array[1], "2")
         XCTAssertEqual(dummyString2Array[0], "1")
     }
+    
+    func test_string_replacingOccurrences() {
+        var dummyString = "(1,2)"
+        
+        dummyString = dummyString.replacingOccurrences(of: "(", with: "")
+        dummyString = dummyString.replacingOccurrences(of: ")", with: "")
+        
+        XCTAssertEqual(dummyString, "1,2")
+    }
 }
