@@ -1,5 +1,5 @@
 //
-//  RacingCarTest.swift
+//  SplitStringTest.swift
 //  RacingCarTest
 //
 //  Created by Felix.mr on 2021/10/26.
@@ -7,8 +7,8 @@
 
 import XCTest
 
-class RacingCarTest: XCTestCase {
-
+class SplitStringTest: XCTestCase {
+    
     func test_split_stringWithComma() {
         let sut1 = "1,2"
         let sut2 = "1"
@@ -17,13 +17,27 @@ class RacingCarTest: XCTestCase {
         XCTAssertEqual(["1"], sut2.splitedWithComma())
     }
     
-    func test_split_stringWithComma_ignoreㅖarentheses() {
+    func test_split_stringWithComma_ignoreParentheses() {
         let sut = "(1,2)"
+        
+        let sut1 = sut.replacingMultipleOccurrences(of: ["(", ")"], with: "")
+        
+        XCTAssertEqual(["1", "2"], sut1.splitedWithComma())
     }
 }
 
 // Helper
 extension String {
+    
+    func replacingMultipleOccurrences(of targets: [String], with: String) -> String {
+        return self.map {
+            if targets.contains(String($0)) {
+                return ""
+            }
+            
+            return String($0)
+        }.joined()
+    }
     
     func splitedWithComma() -> [String] {
         return self.split(separator: ",").map { String($0) }
