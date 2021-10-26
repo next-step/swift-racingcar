@@ -9,9 +9,14 @@ import XCTest
 @testable import RacingCar
 
 class RacingCarTest: XCTestCase {
+    private var numbers: Set<Int> = []
 
     override func setUpWithError() throws {
-        
+        numbers.removeAll()
+        numbers.insert(1)
+        numbers.insert(1)
+        numbers.insert(2)
+        numbers.insert(3)
     }
 
     override func tearDownWithError() throws {
@@ -40,5 +45,9 @@ class RacingCarTest: XCTestCase {
         dummyString = dummyString.replacingOccurrences(of: ")", with: "")
         
         XCTAssertEqual(dummyString, "1,2")
+    }
+    
+    func test_set_count() {
+        XCTAssertEqual(self.numbers.count, 3)
     }
 }
