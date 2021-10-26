@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		C7E1263027239F7E0000DB8B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
+		E02696A22728613800AA278B /* RacingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02696A12728613800AA278B /* RacingTest.swift */; };
+		E02696A62728616400AA278B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
+		E02696A82728619800AA278B /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02696A72728619800AA278B /* Calculator.swift */; };
+		E02696A92728619800AA278B /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02696A72728619800AA278B /* Calculator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,10 +29,20 @@
 /* Begin PBXFileReference section */
 		C7E1262C27239F7E0000DB8B /* RacingCar */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RacingCar; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E1262F27239F7E0000DB8B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		E026969F2728613800AA278B /* RacingTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RacingTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E02696A12728613800AA278B /* RacingTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingTest.swift; sourceTree = "<group>"; };
+		E02696A72728619800AA278B /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		C7E1262927239F7E0000DB8B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E026969C2728613800AA278B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -42,6 +56,7 @@
 			isa = PBXGroup;
 			children = (
 				C7E1262E27239F7E0000DB8B /* RacingCar */,
+				E02696A02728613800AA278B /* RacingTest */,
 				C7E1262D27239F7E0000DB8B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				C7E1262C27239F7E0000DB8B /* RacingCar */,
+				E026969F2728613800AA278B /* RacingTest.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -58,8 +74,17 @@
 			isa = PBXGroup;
 			children = (
 				C7E1262F27239F7E0000DB8B /* main.swift */,
+				E02696A72728619800AA278B /* Calculator.swift */,
 			);
 			path = RacingCar;
+			sourceTree = "<group>";
+		};
+		E02696A02728613800AA278B /* RacingTest */ = {
+			isa = PBXGroup;
+			children = (
+				E02696A12728613800AA278B /* RacingTest.swift */,
+			);
+			path = RacingTest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -82,6 +107,23 @@
 			productReference = C7E1262C27239F7E0000DB8B /* RacingCar */;
 			productType = "com.apple.product-type.tool";
 		};
+		E026969E2728613800AA278B /* RacingTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E02696A52728613800AA278B /* Build configuration list for PBXNativeTarget "RacingTest" */;
+			buildPhases = (
+				E026969B2728613800AA278B /* Sources */,
+				E026969C2728613800AA278B /* Frameworks */,
+				E026969D2728613800AA278B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RacingTest;
+			productName = RacingTest;
+			productReference = E026969F2728613800AA278B /* RacingTest.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -89,11 +131,14 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1300;
+				LastSwiftUpdateCheck = 1310;
 				LastUpgradeCheck = 1300;
 				TargetAttributes = {
 					C7E1262B27239F7E0000DB8B = {
 						CreatedOnToolsVersion = 13.0;
+					};
+					E026969E2728613800AA278B = {
+						CreatedOnToolsVersion = 13.1;
 					};
 				};
 			};
@@ -111,9 +156,20 @@
 			projectRoot = "";
 			targets = (
 				C7E1262B27239F7E0000DB8B /* RacingCar */,
+				E026969E2728613800AA278B /* RacingTest */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E026969D2728613800AA278B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C7E1262827239F7E0000DB8B /* Sources */ = {
@@ -121,6 +177,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7E1263027239F7E0000DB8B /* main.swift in Sources */,
+				E02696A82728619800AA278B /* Calculator.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E026969B2728613800AA278B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E02696A62728616400AA278B /* main.swift in Sources */,
+				E02696A22728613800AA278B /* RacingTest.swift in Sources */,
+				E02696A92728619800AA278B /* Calculator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,6 +198,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = (
+					arm64,
+					x86_64,
+				);
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -181,7 +252,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -192,6 +263,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = (
+					arm64,
+					x86_64,
+				);
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -236,6 +311,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -260,6 +336,48 @@
 			};
 			name = Release;
 		};
+		E02696A32728613800AA278B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.yagom.RacingTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		E02696A42728613800AA278B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.yagom.RacingTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -277,6 +395,15 @@
 			buildConfigurations = (
 				C7E1263427239F7E0000DB8B /* Debug */,
 				C7E1263527239F7E0000DB8B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E02696A52728613800AA278B /* Build configuration list for PBXNativeTarget "RacingTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E02696A32728613800AA278B /* Debug */,
+				E02696A42728613800AA278B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
