@@ -31,3 +31,23 @@ class RacingCarTest: XCTestCase {
     }
 
 }
+
+class SetTests: XCTestCase {
+    private var numbers: Set<Int> = []
+    
+    override func setUpWithError() throws {
+        numbers.removeAll()
+        numbers.insert(1)
+        numbers.insert(1)
+        numbers.insert(2)
+        numbers.insert(3)
+    }
+    
+    // Test Case 구현
+    func test_count_프로퍼티를_활용한_갯수_확인() {
+        let input = numbers.count
+        let expected = 3
+        
+        XCTAssertEqual(input, expected)
+    }
+}
