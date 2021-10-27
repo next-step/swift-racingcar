@@ -17,4 +17,8 @@ struct Calculator {
     func multiply(_ lhs: Int, _ rhs: Int) -> Int {
         return lhs * rhs
     }
+    
+    func devide(_ lhs: Int, _ rhs: Int) -> Int {
+        return lhs / rhs
+    }
 }
