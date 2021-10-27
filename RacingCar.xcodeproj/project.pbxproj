@@ -7,13 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+<<<<<<< HEAD
 		3C223ACB272AE7FF00302055 /* StringCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C223ACA272AE7FF00302055 /* StringCalculator.swift */; };
+=======
+>>>>>>> a0df081 (Revert "Revert "Implementation of the test teaser program"")
 		3CB537FE27298164005C33AE /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB537FD27298164005C33AE /* Calculator.swift */; };
 		3CB53806272981B0005C33AE /* RacingCarTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB53805272981B0005C33AE /* RacingCarTest.swift */; };
 		3CB5380A272981EB005C33AE /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
 		3CB5380B272981EE005C33AE /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB537FD27298164005C33AE /* Calculator.swift */; };
+<<<<<<< HEAD
 		3CC11E26272EBD640039FABA /* StringCalcuratorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC11E25272EBD640039FABA /* StringCalcuratorTest.swift */; };
 		3CC11E28272EBDD00039FABA /* StringCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C223ACA272AE7FF00302055 /* StringCalculator.swift */; };
+=======
+>>>>>>> a0df081 (Revert "Revert "Implementation of the test teaser program"")
 		C7E1263027239F7E0000DB8B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -30,16 +36,29 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+<<<<<<< HEAD
 		3C223ACA272AE7FF00302055 /* StringCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringCalculator.swift; sourceTree = "<group>"; };
 		3CB537FD27298164005C33AE /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		3CB53803272981B0005C33AE /* RacingCarTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RacingCarTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CB53805272981B0005C33AE /* RacingCarTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingCarTest.swift; sourceTree = "<group>"; };
 		3CC11E25272EBD640039FABA /* StringCalcuratorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringCalcuratorTest.swift; sourceTree = "<group>"; };
+=======
+		3CB537FD27298164005C33AE /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
+		3CB53803272981B0005C33AE /* RacingCarTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RacingCarTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3CB53805272981B0005C33AE /* RacingCarTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingCarTest.swift; sourceTree = "<group>"; };
+>>>>>>> a0df081 (Revert "Revert "Implementation of the test teaser program"")
 		C7E1262C27239F7E0000DB8B /* RacingCar */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RacingCar; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E1262F27239F7E0000DB8B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		3CB53800272981B0005C33AE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C7E1262927239F7E0000DB8B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -54,7 +73,10 @@
 			isa = PBXGroup;
 			children = (
 				3CB53805272981B0005C33AE /* RacingCarTest.swift */,
+<<<<<<< HEAD
 				3CC11E25272EBD640039FABA /* StringCalcuratorTest.swift */,
+=======
+>>>>>>> a0df081 (Revert "Revert "Implementation of the test teaser program"")
 			);
 			path = RacingCarTest;
 			sourceTree = "<group>";
@@ -63,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				C7E1262E27239F7E0000DB8B /* RacingCar */,
+				3CB53804272981B0005C33AE /* RacingCarTest */,
 				C7E1262D27239F7E0000DB8B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -71,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				C7E1262C27239F7E0000DB8B /* RacingCar */,
+				3CB53803272981B0005C33AE /* RacingCarTest.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -80,7 +104,10 @@
 			children = (
 				C7E1262F27239F7E0000DB8B /* main.swift */,
 				3CB537FD27298164005C33AE /* Calculator.swift */,
+<<<<<<< HEAD
 				3C223ACA272AE7FF00302055 /* StringCalculator.swift */,
+=======
+>>>>>>> a0df081 (Revert "Revert "Implementation of the test teaser program"")
 			);
 			path = RacingCar;
 			sourceTree = "<group>";
@@ -88,6 +115,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		3CB53802272981B0005C33AE /* RacingCarTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3CB53807272981B0005C33AE /* Build configuration list for PBXNativeTarget "RacingCarTest" */;
+			buildPhases = (
+				3CB537FF272981B0005C33AE /* Sources */,
+				3CB53800272981B0005C33AE /* Frameworks */,
+				3CB53801272981B0005C33AE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RacingCarTest;
+			productName = RacingCarTest;
+			productReference = 3CB53803272981B0005C33AE /* RacingCarTest.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		C7E1262B27239F7E0000DB8B /* RacingCar */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C7E1263327239F7E0000DB8B /* Build configuration list for PBXNativeTarget "RacingCar" */;
@@ -112,9 +156,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1300;
+				LastSwiftUpdateCheck = 1310;
 				LastUpgradeCheck = 1300;
 				TargetAttributes = {
+					3CB53802272981B0005C33AE = {
+						CreatedOnToolsVersion = 13.1;
+					};
 					C7E1262B27239F7E0000DB8B = {
 						CreatedOnToolsVersion = 13.0;
 					};
@@ -134,19 +181,35 @@
 			projectRoot = "";
 			targets = (
 				C7E1262B27239F7E0000DB8B /* RacingCar */,
+				3CB53802272981B0005C33AE /* RacingCarTest */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3CB53801272981B0005C33AE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3CB537FF272981B0005C33AE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< HEAD
 				3CC11E26272EBD640039FABA /* StringCalcuratorTest.swift in Sources */,
 				3CB5380A272981EB005C33AE /* main.swift in Sources */,
 				3CB53806272981B0005C33AE /* RacingCarTest.swift in Sources */,
 				3CC11E28272EBDD00039FABA /* StringCalculator.swift in Sources */,
+=======
+				3CB5380A272981EB005C33AE /* main.swift in Sources */,
+				3CB53806272981B0005C33AE /* RacingCarTest.swift in Sources */,
+>>>>>>> a0df081 (Revert "Revert "Implementation of the test teaser program"")
 				3CB5380B272981EE005C33AE /* Calculator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -157,12 +220,57 @@
 			files = (
 				3C223ACB272AE7FF00302055 /* StringCalculator.swift in Sources */,
 				C7E1263027239F7E0000DB8B /* main.swift in Sources */,
+				3CB537FE27298164005C33AE /* Calculator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		3CB53808272981B0005C33AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3A3ZRRH4GJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Test.RacingCarTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		3CB53809272981B0005C33AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3A3ZRRH4GJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Test.RacingCarTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		C7E1263127239F7E0000DB8B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -299,6 +407,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3CB53807272981B0005C33AE /* Build configuration list for PBXNativeTarget "RacingCarTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3CB53808272981B0005C33AE /* Debug */,
+				3CB53809272981B0005C33AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		C7E1262727239F7E0000DB8B /* Build configuration list for PBXProject "RacingCar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
