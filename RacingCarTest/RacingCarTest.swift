@@ -36,4 +36,21 @@ class RacingCarTest: XCTestCase {
         
         XCTAssertFalse(calculator.multiply(firstNumber, secondNumber) == 13)
     }
+    
+    func test_devide_isSuccess() {
+        let calculator: Calculator = Calculator()
+        let firstNumber: Int = 4
+        let secondNumber: Int = 2
+        
+        XCTAssertTrue(calculator.devide(firstNumber, secondNumber) == 2)
+    }
+    
+    func test_devide_isFailure() {
+        let calculator: Calculator = Calculator()
+        let firstNumber: Int = 3
+        let secondNumber: Int = 4
+        
+        
+        XCTAssertFalse(calculator.devide(firstNumber, secondNumber) == 2)
+    }
 }
