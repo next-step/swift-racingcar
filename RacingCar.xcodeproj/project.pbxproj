@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		516F5645272834FC0016F13A /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
-		516F5646272835450016F13A /* SetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516F5635272820180016F13A /* SetTests.swift */; };
-		516F5647272835450016F13A /* SplitStringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516F563027281D3F0016F13A /* SplitStringTests.swift */; };
+		516F5646272835450016F13A /* SetTestt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516F5635272820180016F13A /* SetTestt.swift */; };
+		516F5647272835450016F13A /* SplitStringTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516F563027281D3F0016F13A /* SplitStringTest.swift */; };
+		51AFDE6F272AC8B600A6E3DF /* CalculatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AFDE6E272AC8B600A6E3DF /* CalculatorTest.swift */; };
 		C7E1263027239F7E0000DB8B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -26,9 +27,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		516F563027281D3F0016F13A /* SplitStringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitStringTests.swift; sourceTree = "<group>"; };
-		516F5635272820180016F13A /* SetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTests.swift; sourceTree = "<group>"; };
+		516F563027281D3F0016F13A /* SplitStringTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitStringTest.swift; sourceTree = "<group>"; };
+		516F5635272820180016F13A /* SetTestt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTestt.swift; sourceTree = "<group>"; };
 		516F563E272834DA0016F13A /* RacingCarTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RacingCarTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		51AFDE6E272AC8B600A6E3DF /* CalculatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorTest.swift; sourceTree = "<group>"; };
 		C7E1262C27239F7E0000DB8B /* RacingCar */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RacingCar; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E1262F27239F7E0000DB8B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -54,8 +56,9 @@
 		516F563F272834DA0016F13A /* RacingCarTest */ = {
 			isa = PBXGroup;
 			children = (
-				516F563027281D3F0016F13A /* SplitStringTests.swift */,
-				516F5635272820180016F13A /* SetTests.swift */,
+				516F563027281D3F0016F13A /* SplitStringTest.swift */,
+				516F5635272820180016F13A /* SetTestt.swift */,
+				51AFDE6E272AC8B600A6E3DF /* CalculatorTest.swift */,
 			);
 			path = RacingCarTest;
 			sourceTree = "<group>";
@@ -176,8 +179,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				516F5645272834FC0016F13A /* main.swift in Sources */,
-				516F5646272835450016F13A /* SetTests.swift in Sources */,
-				516F5647272835450016F13A /* SplitStringTests.swift in Sources */,
+				51AFDE6F272AC8B600A6E3DF /* CalculatorTest.swift in Sources */,
+				516F5646272835450016F13A /* SetTestt.swift in Sources */,
+				516F5647272835450016F13A /* SplitStringTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
