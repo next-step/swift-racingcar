@@ -14,6 +14,10 @@
  예를 들어 2 + 3 * 4 / 2와 같은 문자열을 입력할 경우 2 + 3 * 4 / 2 실행 결과인 10을 출력해야 합니다.
  */
 
-final class StringCalcurator {
+protocol StringCalcuratorProtocol {
+    func calcurate(_ string: String?) throws
+}
+
+final class StringCalcurator: StringCalcuratorProtocol {
   
 }
