@@ -7,31 +7,31 @@
 
 import XCTest
 
-class SplitStringTests: XCTestCase {
+class SplitStringTest: XCTestCase {
 	func testSplitStringCase1() {
 		let results = "1,2".split(separator: ",")
-		let expect: [String.SubSequence] = ["1", "2"]
+		let expects: [String.SubSequence] = ["1", "2"]
 		
-		XCTAssertEqual(results, expect)
-		XCTAssert(results == expect)
+		XCTAssertEqual(results, expects)
+		XCTAssert(results == expects)
 		XCTAssert(results.contains("1"))
 	}
 	
 	func testSplitStringCase2() {
 		let results = "1".split(separator: ",")
-		let expect: [String.SubSequence] = ["1"]
+		let expects: [String.SubSequence] = ["1"]
 		
-		XCTAssertEqual(results, expect)
+		XCTAssertEqual(results, expects)
 		XCTAssert(results.count == 1)
 	}
 	
 	func testRemoveParentheses() {
 		let given = "(1,2)"
-		let result = given
+		let results = given
 			.replacingOccurrences(of: "(", with: "")
 			.replacingOccurrences(of: ")", with: "")
-		let expect = "1,2"
+		let expects = "1,2"
 		
-		XCTAssertEqual(result, expect)
+		XCTAssertEqual(results, expects)
 	}
 }

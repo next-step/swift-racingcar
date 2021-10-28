@@ -7,7 +7,7 @@
 
 import XCTest
 
-class SetTests: XCTestCase {
+class SetTest: XCTestCase {
 	private var numbers: Set<Int> = []
 	
 	override func setUpWithError() throws {
