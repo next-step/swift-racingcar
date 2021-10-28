@@ -21,3 +21,22 @@ protocol StringCalcuratorProtocol {
 final class StringCalcurator: StringCalcuratorProtocol {
   
 }
+
+// MARK: - Private Function
+extension StringCalcurator {
+    private func add(_ lhs: Int, _ rhs: Int) -> Int {
+        return lhs + rhs
+    }
+    
+    private func substract(_ lhs: Int, _ rhs: Int) -> Int {
+        return lhs - rhs
+    }
+    
+    private func multiply(_ lhs: Int, _ rhs: Int) -> Int {
+        return lhs * rhs
+    }
+    
+    private func devide(_ lhs: Int, _ rhs: Int) -> Int {
+        return lhs / rhs
+    }
+}
