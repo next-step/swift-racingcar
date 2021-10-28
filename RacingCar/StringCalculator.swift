@@ -19,7 +19,21 @@ protocol StringCalcuratorProtocol {
 }
 
 final class StringCalcurator: StringCalcuratorProtocol {
-  
+    private enum InputError: Error {
+        case `nil`
+        case empty
+    }
+    
+    func calcurate(_ string: String?) throws {
+        guard let string = string else { throw InputError.nil }
+        guard string.isEmpty else { throw InputError.empty }
+        let numbers = string
+            .components(separatedBy: " ")
+            .compactMap { $0 as? Int }
+        let operators = string
+            .components(separatedBy: " ")
+            .filter { $0 == "+" || $0 == "-" || $0 == "*" || $0 == "/" }
+    }
 }
 
 // MARK: - Private Function
