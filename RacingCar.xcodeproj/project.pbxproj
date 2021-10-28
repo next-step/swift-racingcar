@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		86F235FB27282AF7003E0F89 /* SplitStringTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F235FA27282AF7003E0F89 /* SplitStringTest.swift */; };
+		86F235FB27282AF7003E0F89 /* SplitStringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F235FA27282AF7003E0F89 /* SplitStringTests.swift */; };
 		86F23600272837E4003E0F89 /* SetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F235FF272837E4003E0F89 /* SetTests.swift */; };
 		C7E1263027239F7E0000DB8B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
 /* End PBXBuildFile section */
@@ -26,7 +26,7 @@
 
 /* Begin PBXFileReference section */
 		86F235F827282AF7003E0F89 /* RacingCarTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RacingCarTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		86F235FA27282AF7003E0F89 /* SplitStringTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitStringTest.swift; sourceTree = "<group>"; };
+		86F235FA27282AF7003E0F89 /* SplitStringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitStringTests.swift; sourceTree = "<group>"; };
 		86F235FF272837E4003E0F89 /* SetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTests.swift; sourceTree = "<group>"; };
 		C7E1262C27239F7E0000DB8B /* RacingCar */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RacingCar; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E1262F27239F7E0000DB8B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -53,7 +53,7 @@
 		86F235F927282AF7003E0F89 /* RacingCarTest */ = {
 			isa = PBXGroup;
 			children = (
-				86F235FA27282AF7003E0F89 /* SplitStringTest.swift */,
+				86F235FA27282AF7003E0F89 /* SplitStringTests.swift */,
 				86F235FF272837E4003E0F89 /* SetTests.swift */,
 			);
 			path = RacingCarTest;
@@ -175,7 +175,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				86F23600272837E4003E0F89 /* SetTests.swift in Sources */,
-				86F235FB27282AF7003E0F89 /* SplitStringTest.swift in Sources */,
+				86F235FB27282AF7003E0F89 /* SplitStringTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

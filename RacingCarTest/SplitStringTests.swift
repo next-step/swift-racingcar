@@ -1,5 +1,5 @@
 //
-//  SplitStringTest.swift
+//  SplitStringTests.swift
 //  RacingCarTest
 //
 //  Created by Felix.mr on 2021/10/26.
@@ -7,7 +7,7 @@
 
 import XCTest
 
-class SplitStringTest: XCTestCase {
+class SplitStringTests: XCTestCase {
     
     func test_split_stringWithComma() {
         let sut1 = "1,2"
