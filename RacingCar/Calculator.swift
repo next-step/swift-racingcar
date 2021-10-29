@@ -9,6 +9,10 @@ import Foundation
 
 struct Calculator {
     
+    func input() {
+        let inputs = readLine()?.components(separatedBy: " ")
+    }
+    
     func add(_ lhs: Int, _ rhs: Int) -> Int {
         return lhs + rhs
     }
