@@ -10,6 +10,7 @@ protocol Calculable {
 	func add(_ lhs: Int, _ rhs: Int) -> Int
 	func subtract(_ lhs: Int, _ rhs: Int) -> Int
 	func multiply(_ lhs: Int, _ rhs: Int) -> Int
+	func divide(_ lhs: Int, _ rhs: Int) -> Int
 }
 
 struct Calculator: Calculable {
@@ -23,5 +24,9 @@ struct Calculator: Calculable {
 	
 	func multiply(_ lhs: Int, _ rhs: Int) -> Int {
 		return lhs * rhs
+	}
+	
+	func divide(_ lhs: Int, _ rhs: Int) -> Int {
+		return lhs / rhs
 	}
 }
