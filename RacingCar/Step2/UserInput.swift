@@ -9,15 +9,15 @@ import Foundation
 
 struct UserInput {
     
-    func inputExpression() -> String {
+    func inputExpression() -> [String] {
         
         let input = readLine()
         
-        // TODO: 에러처리
+        // TODO: 예외처리
         guard let input = input else {
-            return ""
+            return [""]
         }
         
-        return input
+        return input.components(separatedBy: " ")
     }
 }
