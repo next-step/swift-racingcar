@@ -12,6 +12,8 @@
 		A11FBA49272837C900A24A9D /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
 		A11FBA4B2728385400A24A9D /* StringTypeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11FBA4A2728385400A24A9D /* StringTypeTest.swift */; };
 		A11FBA4D2728399000A24A9D /* StringType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11FBA4C2728399000A24A9D /* StringType.swift */; };
+		A165635A272D195A00803E42 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1656359272D195A00803E42 /* Calculator.swift */; };
+		A165635B272D1C9B00803E42 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1656359272D195A00803E42 /* Calculator.swift */; };
 		C7E1263027239F7E0000DB8B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +34,7 @@
 		A11FBA42272837C200A24A9D /* RacingCarTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RacingCarTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A11FBA4A2728385400A24A9D /* StringTypeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTypeTest.swift; sourceTree = "<group>"; };
 		A11FBA4C2728399000A24A9D /* StringType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringType.swift; sourceTree = "<group>"; };
+		A1656359272D195A00803E42 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		C7E1262C27239F7E0000DB8B /* RacingCar */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RacingCar; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E1262F27239F7E0000DB8B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -86,6 +89,7 @@
 			children = (
 				C7E1262F27239F7E0000DB8B /* main.swift */,
 				A11FBA4C2728399000A24A9D /* StringType.swift */,
+				A1656359272D195A00803E42 /* Calculator.swift */,
 			);
 			path = RacingCar;
 			sourceTree = "<group>";
@@ -182,6 +186,7 @@
 				A1147F9A27283A9B0068CCC9 /* StringType.swift in Sources */,
 				A11FBA49272837C900A24A9D /* main.swift in Sources */,
 				A1147F9E27283FCD0068CCC9 /* SetCollectionTest.swift in Sources */,
+				A165635B272D1C9B00803E42 /* Calculator.swift in Sources */,
 				A11FBA4B2728385400A24A9D /* StringTypeTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -192,6 +197,7 @@
 			files = (
 				A11FBA4D2728399000A24A9D /* StringType.swift in Sources */,
 				C7E1263027239F7E0000DB8B /* main.swift in Sources */,
+				A165635A272D195A00803E42 /* Calculator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
