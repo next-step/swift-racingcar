@@ -8,12 +8,13 @@
 import XCTest
 
 class CalculatorTest: XCTestCase {
-	let mockCalculator: Calculable = Calculator()
+	let calculator: Calculable = Calculator()
 	
-	func test_shouldGetTheCorretResultWhenAddingTwoNumbers() throws {
-		let addedResult = mockCalculator.add(3, 5)
-		let result = 8
-		XCTAssertEqual(addedNumber, result)
+	func test_shouldGetTheCorretResultWhenAddingTwoNumbers() {
+		XCTAssertEqual(calculator.add(3, 5), 8)
+		XCTAssertEqual(calculator.add(13, 6), 19)
+		XCTAssertEqual(calculator.add(220, 31), 251)
+		XCTAssertEqual(calculator.add(514, 510), 1024)
 	}
 }
 
