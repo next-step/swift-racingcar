@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		C7E1263027239F7E0000DB8B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
+		E005544C272D606D00EA062F /* Step2_StringOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E005544B272D606D00EA062F /* Step2_StringOperation.swift */; };
+		E005544D272D606D00EA062F /* Step2_StringOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E005544B272D606D00EA062F /* Step2_StringOperation.swift */; };
+		E005544F272D607200EA062F /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E005544E272D607200EA062F /* StringExtension.swift */; };
+		E0055450272D607200EA062F /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E005544E272D607200EA062F /* StringExtension.swift */; };
+		E0055453272D607A00EA062F /* StringCalculatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0055451272D607A00EA062F /* StringCalculatorTest.swift */; };
 		E02696A22728613800AA278B /* RacingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02696A12728613800AA278B /* RacingTest.swift */; };
 		E02696A62728616400AA278B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
 		E02696A82728619800AA278B /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02696A72728619800AA278B /* Calculator.swift */; };
@@ -29,6 +34,9 @@
 /* Begin PBXFileReference section */
 		C7E1262C27239F7E0000DB8B /* RacingCar */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RacingCar; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E1262F27239F7E0000DB8B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		E005544B272D606D00EA062F /* Step2_StringOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Step2_StringOperation.swift; sourceTree = "<group>"; };
+		E005544E272D607200EA062F /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		E0055451272D607A00EA062F /* StringCalculatorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringCalculatorTest.swift; sourceTree = "<group>"; };
 		E026969F2728613800AA278B /* RacingTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RacingTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E02696A12728613800AA278B /* RacingTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingTest.swift; sourceTree = "<group>"; };
 		E02696A72728619800AA278B /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
@@ -75,6 +83,8 @@
 			children = (
 				C7E1262F27239F7E0000DB8B /* main.swift */,
 				E02696A72728619800AA278B /* Calculator.swift */,
+				E005544B272D606D00EA062F /* Step2_StringOperation.swift */,
+				E005544E272D607200EA062F /* StringExtension.swift */,
 			);
 			path = RacingCar;
 			sourceTree = "<group>";
@@ -83,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				E02696A12728613800AA278B /* RacingTest.swift */,
+				E0055451272D607A00EA062F /* StringCalculatorTest.swift */,
 			);
 			path = RacingTest;
 			sourceTree = "<group>";
@@ -132,7 +143,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1310;
-				LastUpgradeCheck = 1300;
+				LastUpgradeCheck = 1310;
 				TargetAttributes = {
 					C7E1262B27239F7E0000DB8B = {
 						CreatedOnToolsVersion = 13.0;
@@ -176,6 +187,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E005544F272D607200EA062F /* StringExtension.swift in Sources */,
+				E005544C272D606D00EA062F /* Step2_StringOperation.swift in Sources */,
 				C7E1263027239F7E0000DB8B /* main.swift in Sources */,
 				E02696A82728619800AA278B /* Calculator.swift in Sources */,
 			);
@@ -185,9 +198,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0055453272D607A00EA062F /* StringCalculatorTest.swift in Sources */,
 				E02696A62728616400AA278B /* main.swift in Sources */,
 				E02696A22728613800AA278B /* RacingTest.swift in Sources */,
+				E0055450272D607200EA062F /* StringExtension.swift in Sources */,
 				E02696A92728619800AA278B /* Calculator.swift in Sources */,
+				E005544D272D606D00EA062F /* Step2_StringOperation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,10 +214,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = (
-					arm64,
-					x86_64,
-				);
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -252,7 +264,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -263,10 +275,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = (
-					arm64,
-					x86_64,
-				);
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -321,6 +329,7 @@
 		C7E1263427239F7E0000DB8B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -330,6 +339,7 @@
 		C7E1263527239F7E0000DB8B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
