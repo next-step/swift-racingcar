@@ -31,3 +31,22 @@ extension ArithmeticOperationProtocol {
         return lhs * rhs
     }
 }
+
+enum Operation: String, CaseIterable {
+    case add = "+"
+    case substract = "-"
+    case divide = "/"
+    case multiply = "*"
+    
+    static func factory(stringValue: String) -> Operation? {
+        let operations = Operation.allCases.filter { $0.rawValue == stringValue }
+        
+        guard operations.count > 0,
+              let operation = operations.first
+        else {
+            return nil
+        }
+        
+        return operation
+    }
+}
