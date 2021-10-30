@@ -6,3 +6,12 @@
 
 import Foundation
 
+protocol Calculable {
+	func add(_ lhs: Int, _ rhs: Int) -> Int
+}
+
+struct Calculator: Calculable {
+	func add(_ lhs: Int, _ rhs: Int) -> Int {
+		return lhs + rhs
+	}
+}
