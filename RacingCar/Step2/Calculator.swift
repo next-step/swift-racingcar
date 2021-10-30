@@ -7,16 +7,7 @@
 
 import Foundation
 
-protocol Calculation {
-    func add(_ lhs: Int, _ rhs: Int) -> Int
-    func subtract(_ lhs: Int, _ rhs: Int) -> Int
-    func multiply(_ lhs: Int, _ rhs: Int) -> Int
-    func divide(_ lhs: Int, _ rhs: Int) -> Int
-    func stringCalculate(_ expression: [String]) -> Int
-    func calculate(_ lhs: Int, _ operatorType: String, _ rhs: Int) -> Int
-}
-
-struct Calculator: Calculation {
+struct Calculator {
     func add(_ lhs: Int, _ rhs: Int) -> Int {
         return lhs + rhs
     }
@@ -34,6 +25,8 @@ struct Calculator: Calculation {
     }
     
     func stringCalculate(_ expression: [String]) -> Int {
+        
+        
         return -1
     }
     
@@ -53,4 +46,18 @@ struct Calculator: Calculation {
         // TODO: 예외처리
         return -1
     }
+}
+
+extension String {
+    
+    func convertStringToNumber(_ expressionString: String) -> Int {
+        
+        guard let expressionString = Int(expressionString) else {
+            // TODO: 예외처리
+            return -1
+        }
+        
+        return expressionString
+    }
+    
 }
