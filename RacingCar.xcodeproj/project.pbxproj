@@ -16,6 +16,7 @@
 		A165635B272D1C9B00803E42 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1656359272D195A00803E42 /* Calculator.swift */; };
 		A1A9B412272D749A00C28E1A /* UserInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A9B411272D749A00C28E1A /* UserInput.swift */; };
 		A1A9B414272D7CEB00C28E1A /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A9B413272D7CEB00C28E1A /* Operator.swift */; };
+		A1A9B416272D933700C28E1A /* CalculatorError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A9B415272D933700C28E1A /* CalculatorError.swift */; };
 		C7E1263027239F7E0000DB8B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		A1656359272D195A00803E42 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		A1A9B411272D749A00C28E1A /* UserInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInput.swift; sourceTree = "<group>"; };
 		A1A9B413272D7CEB00C28E1A /* Operator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operator.swift; sourceTree = "<group>"; };
+		A1A9B415272D933700C28E1A /* CalculatorError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorError.swift; sourceTree = "<group>"; };
 		C7E1262C27239F7E0000DB8B /* RacingCar */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RacingCar; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E1262F27239F7E0000DB8B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,6 +94,7 @@
 				A1656359272D195A00803E42 /* Calculator.swift */,
 				A1A9B411272D749A00C28E1A /* UserInput.swift */,
 				A1A9B413272D7CEB00C28E1A /* Operator.swift */,
+				A1A9B415272D933700C28E1A /* CalculatorError.swift */,
 			);
 			path = Step2;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 			files = (
 				A11FBA4D2728399000A24A9D /* StringType.swift in Sources */,
 				A1A9B412272D749A00C28E1A /* UserInput.swift in Sources */,
+				A1A9B416272D933700C28E1A /* CalculatorError.swift in Sources */,
 				A1A9B414272D7CEB00C28E1A /* Operator.swift in Sources */,
 				C7E1263027239F7E0000DB8B /* main.swift in Sources */,
 				A165635A272D195A00803E42 /* Calculator.swift in Sources */,

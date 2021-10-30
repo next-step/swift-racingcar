@@ -21,6 +21,11 @@ struct Calculator {
     }
     
     func divide(_ lhs: Int, _ rhs: Int) -> Int {
+        
+        guard lhs > 0 && rhs > 0 else {
+            fatalError(CalculatorError.valueIsZero.message())
+        }
+        
         return lhs / rhs
     }
     
@@ -48,16 +53,13 @@ struct Calculator {
         case Operator.divide.rawValue:
             return divide(lhs, rhs)
         default:
-            // TODO: 예외처리
-            return -1
+            fatalError(CalculatorError.valueIsNotOperator.message())
         }
     }
     
     func convertStringToNumber(_ expressionString: String) -> Int {
-        
         guard let expressionString = Int(expressionString) else {
-            // TODO: 예외처리
-            return -1
+            fatalError(CalculatorError.valueIsNil.message())
         }
         
         return expressionString
