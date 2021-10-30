@@ -118,6 +118,13 @@ class CalculatorTest: XCTestCase {
 		XCTAssertEqual(calculator.multiply(220, 31), 6820)
 		XCTAssertEqual(calculator.multiply(514, 510), 262140)
 	}
+	
+	func test_shouldGetTheCorretResultWhenDividingTwoNumbers() {
+		XCTAssertEqual(calculator.divide(3, 5), 0)
+		XCTAssertEqual(calculator.divide(13, 6), 2)
+		XCTAssertEqual(calculator.divide(220, 20), 11)
+		XCTAssertEqual(calculator.divide(514, 3), 171)
+	}
 }
 
 
