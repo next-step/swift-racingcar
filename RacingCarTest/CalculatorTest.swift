@@ -111,6 +111,13 @@ class CalculatorTest: XCTestCase {
 		XCTAssertEqual(calculator.subtract(220, 31), 189)
 		XCTAssertEqual(calculator.subtract(510, 514), -4)
 	}
+	
+	func test_shouldGetTheCorretResultWhenMultiplyingTwoNumbers() {
+		XCTAssertEqual(calculator.multiply(3, 5), 15)
+		XCTAssertEqual(calculator.multiply(13, 6), 78)
+		XCTAssertEqual(calculator.multiply(220, 31), 6820)
+		XCTAssertEqual(calculator.multiply(514, 510), 262140)
+	}
 }
 
 
