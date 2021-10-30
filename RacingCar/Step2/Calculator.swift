@@ -25,9 +25,16 @@ struct Calculator {
     }
     
     func stringCalculate(_ expression: [String]) -> Int {
+        var accumulate = convertStringToNumber(expression[0])
         
+        for i in stride(from: 1, to: expression.count, by: 2) {
+            let operatorType = expression[i]
+            let to = convertStringToNumber(expression[i + 1])
+            
+            accumulate = calculate(accumulate, operatorType, to)
+        }
         
-        return -1
+        return accumulate
     }
     
     func calculate(_ lhs: Int, _ operatorType: String, _ rhs: Int) -> Int {
@@ -41,14 +48,10 @@ struct Calculator {
         case Operator.divide.rawValue:
             return divide(lhs, rhs)
         default:
-            break
+            // TODO: 예외처리
+            return -1
         }
-        // TODO: 예외처리
-        return -1
     }
-}
-
-extension String {
     
     func convertStringToNumber(_ expressionString: String) -> Int {
         
@@ -59,5 +62,5 @@ extension String {
         
         return expressionString
     }
-    
 }
+
