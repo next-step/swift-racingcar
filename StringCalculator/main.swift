@@ -57,7 +57,7 @@ protocol CalculatorProtocol {
 }
 
 extension CalculatorProtocol where Self: ArithmeticOperationProtocol {
-    func calculate(input: String) -> Int? {
+    func calculate(with string: String) -> Int? {
         let components = input.components(separatedBy: " ")
         let numbers = components.compactMap { Int($0) }
         let operators = components.filter { Int($0) == nil }

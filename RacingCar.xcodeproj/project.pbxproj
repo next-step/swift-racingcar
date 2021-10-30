@@ -15,6 +15,7 @@
 		C1B1EB952728522E00447AC1 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
 		C1B48FE3272CE5E3001AAEC3 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11830A6272CE5AE001A57EA /* main.swift */; };
 		C1B48FE4272CE5E4001AAEC3 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11830A6272CE5AE001A57EA /* main.swift */; };
+		C1B48FE6272D5AC4001AAEC3 /* StubCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B48FE5272D5AC4001AAEC3 /* StubCalculator.swift */; };
 		C7E1263027239F7E0000DB8B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +58,7 @@
 		C1745833272BE2D90010C5D0 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		C1B1EB8E272851DA00447AC1 /* RacingCarTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RacingCarTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1B1EB90272851DA00447AC1 /* RacingCarTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingCarTest.swift; sourceTree = "<group>"; };
+		C1B48FE5272D5AC4001AAEC3 /* StubCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubCalculator.swift; sourceTree = "<group>"; };
 		C7E1262C27239F7E0000DB8B /* RacingCar */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RacingCar; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E1262F27239F7E0000DB8B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -112,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				C1745828272BE1460010C5D0 /* StringCalculatorTest.swift */,
+				C1B48FE5272D5AC4001AAEC3 /* StubCalculator.swift */,
 			);
 			path = StringCalculatorTest;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 				C1745838272BE3600010C5D0 /* main.swift in Sources */,
 				C1745829272BE1460010C5D0 /* StringCalculatorTest.swift in Sources */,
 				C1B48FE3272CE5E3001AAEC3 /* main.swift in Sources */,
+				C1B48FE6272D5AC4001AAEC3 /* StubCalculator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
