@@ -75,4 +75,12 @@ extension StringCalculatorTest {
         
         XCTAssertEqual(0, calculator.calculate(1, 1, operation: .substract))
     }
+    
+    func test_calculate_with_operation_enum_divide() {
+        calculator.register(Int.self, name: "calculate", provider: {
+            return 1 / 1
+        })
+        
+        XCTAssertEqual(1, calculator.calculate(1, 1, operation: .divide))
+    }
 }
