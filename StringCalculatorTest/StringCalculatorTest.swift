@@ -94,7 +94,8 @@ extension StringCalculatorTest {
     
     func test_calculate_with_string_ignore_opration_priority() {
         calculator.register(Int?.self, name: "calculateWithString", provider: {
-            var resultValue = 1 + 1
+            var resultValue = 1
+            resultValue += 1
             resultValue *= 5
             resultValue -= 2
             resultValue /= 2
