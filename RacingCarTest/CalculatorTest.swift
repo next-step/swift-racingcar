@@ -148,6 +148,15 @@ class CalculatorTest: XCTestCase {
 		XCTAssertThrowsError(try calculator.calculate("1 + 1 +"))
 	}
 	
+	func test_shouldThrowAnErrorWhenAnInvalidArithmeticOperatorIsIncluded() throws {
+		XCTAssertThrowsError(try calculator.calculate("1 // 5"))
+		XCTAssertThrowsError(try calculator.calculate("3 ++ 10"))
+		XCTAssertThrowsError(try calculator.calculate("1 ! 1"))
+		XCTAssertThrowsError(try calculator.calculate("1 @ 3"))
+		XCTAssertThrowsError(try calculator.calculate("1 + 2 $ 1 "))
+		XCTAssertThrowsError(try calculator.calculate("1 ^ 1 & 3"))
+	}
+	
 	func test_shouldGetTheResultValueWhenAnExpressionOfTypeStringIsGiven() throws {
 		let given = "2 + 3 * 4 / 2"
 		let result = try calculator.calculate(given)
