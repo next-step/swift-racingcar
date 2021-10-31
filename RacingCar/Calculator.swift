@@ -41,7 +41,7 @@ struct Calculator: Calculable {
 		return stride(from: 1, to: expressions.count, by: 2)
 	}
 	
-	private func findOperator(in expressions: String) -> ArithmeticOpearator {
-		ArithmeticOpearator(rawValue: expressions) ?? .none
+	private func findOperator(in expression: String) -> ArithmeticOpearator {
+		ArithmeticOpearator(rawValue: expression) ?? .none
 	}
 }
