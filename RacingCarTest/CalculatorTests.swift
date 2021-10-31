@@ -9,7 +9,7 @@ import XCTest
 
 class CalculatorTests: XCTestCase {
     
-    var calculator: Calculatable!
+    var calculator: Calculator!
     
     override func setUp() {
         super.setUp()
@@ -56,19 +56,8 @@ class CalculatorTests: XCTestCase {
     }
 }
 
-protocol Calculatable {
-    associatedtype Operandable
-    associatedtype Operatable
-    
-    func calculate(left: Operandable, right: Operandable, operator: Operatable) -> Int
-}
-
-class Calculator: Calculatable {
-    
-    typealias Operandable = Int
-    typealias Operatable = Operator
-    
-    enum Operator {
+class Calculator {
+    enum `Operator` {
         
         case add
         case subtract
