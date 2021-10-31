@@ -6,16 +6,12 @@
 
 import Foundation
 
-print("계산할 문자열을 입력해주세요. ex) 2 + 3 * 4 / 2")
+func start() {
+    let input = UserInput().inputExpression()
 
-let input = UserInput().inputExpression()
-
-guard let input = input else {
-    fatalError(CalculatorError.valueIsNil.message())
+    print(Calculator().stringCalculate(input))
 }
 
-guard !input.isEmpty else {
-    fatalError(CalculatorError.valueIsEmpty.message())
-}
+start()
 
-print(Calculator().stringCalculate(input))
+

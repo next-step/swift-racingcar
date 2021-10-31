@@ -9,10 +9,26 @@ import Foundation
 
 struct UserInput {
     
-    func inputExpression() -> [String]? {
+    func inputExpression() -> [String] {
         
-        let input = readLine()
+        print("계산할 문자열을 입력해주세요. ex) 2 + 3 * 4 / 2")
         
-        return input?.components(separatedBy: " ")
+        let input = readLine()?.components(separatedBy: " ")
+        
+        guard let input = input else {
+            fatalError(CalculatorError.valueIsNil.message())
+        }
+
+        guard !input.isEmpty else {
+            fatalError(CalculatorError.valueIsEmpty.message())
+        }
+
+        guard !input.contains("") else {
+            fatalError(CalculatorError.valueHasWhiteSpace.message())
+        }
+        
+        print(input)
+        
+        return input
     }
 }
