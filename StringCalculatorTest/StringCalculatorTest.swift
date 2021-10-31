@@ -55,3 +55,16 @@ extension StringCalculatorTest {
         XCTAssertEqual(10, calculator.multiply(2, 5))
     }
 }
+
+
+// MARK: - String 값 분해 및 계산 테스트
+
+extension StringCalculatorTest {
+    func test_calculate_with_operation_enum_add() {
+        calculator.register(Int.self, name: "calculate", provider: {
+            return 1 + 1
+        })
+        
+        XCTAssertEqual(2, calculator.calculate(1, 1, operation: .add))
+    }
+}
