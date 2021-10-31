@@ -27,8 +27,12 @@ protocol StringCalcuratorProtocol {
 
 final class StringCalcurator: StringCalcuratorProtocol {
     private enum InputError: Error {
+final class StringCalcurator: StringCalcuratorProtocol, ArithmeticProtocol {
+    enum InputError: Error {
         case `nil`
         case empty
+        case noNumbers
+        case noOperators
     }
     
     func calcurate(_ string: String?) throws {
