@@ -91,4 +91,16 @@ extension StringCalculatorTest {
         
         XCTAssertEqual(1, calculator.calculate(1, 1, operation: .multiply))
     }
+    
+    func test_calculate_with_string_ignore_opration_priority() {
+        calculator.register(Int?.self, name: "calculateWithString", provider: {
+            var resultValue = 1 + 1
+            resultValue *= 5
+            resultValue -= 2
+            resultValue /= 2
+            return resultValue
+        })
+        
+        XCTAssertEqual(4, calculator.calculate(with: "1 + 1 * 5 - 2 / 2"))
+    }
 }
