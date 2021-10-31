@@ -32,19 +32,24 @@ extension ArithmeticOperationProtocol {
     }
 }
 
+enum CalculationError: Error {
+    case inputNilOrEmpty
+    case notArithmeticOperation
+}
+
 enum Operation: String, CaseIterable {
     case add = "+"
     case substract = "-"
     case divide = "/"
     case multiply = "*"
     
-    static func factory(stringValue: String) -> Operation? {
+    static func factory(stringValue: String) throws -> Operation {
         let operations = Operation.allCases.filter { $0.rawValue == stringValue }
         
         guard operations.count > 0,
               let operation = operations.first
         else {
-            return nil
+            throw CalculationError.notArithmeticOperation
         }
         
         return operation
@@ -52,12 +57,18 @@ enum Operation: String, CaseIterable {
 }
 
 protocol CalculatorProtocol {
-    func calculate(with string: String) -> Int?
+    func calculate(with string: String?) throws -> Int
     func calculate(_ lhs: Int, _ rhs: Int, operation: Operation) -> Int
 }
 
 extension CalculatorProtocol where Self: ArithmeticOperationProtocol {
-    func calculate(with string: String) -> Int? {
+    func calculate(with string: String?) throws -> Int {
+        guard let string = string,
+              !string.filter({ !$0.isNewline && !$0.isWhitespace }).isEmpty
+        else {
+            throw CalculationError.inputNilOrEmpty
+        }
+        
         let components = string.components(separatedBy: " ")
         let numbers = components.compactMap { Int($0) }
         let operators = components.filter { Int($0) == nil }
@@ -65,9 +76,7 @@ extension CalculatorProtocol where Self: ArithmeticOperationProtocol {
         var lhs: Int = numbers[0]
         
         for index in 1..<numbers.count {
-            guard let operation = Operation.factory(stringValue: operators[index-1]) else {
-                return nil
-            }
+            let operation = try Operation.factory(stringValue: operators[index-1])
             lhs = calculate(lhs, numbers[index], operation: operation)
         }
         
