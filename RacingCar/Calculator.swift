@@ -15,7 +15,7 @@ struct Calculator: Calculable {
 	// MARK: - Calculate
 	func calculate(_ input: String?) throws -> Int {
 		guard let expressions = input?.components(separatedBy: " "),
-					expressions.count > 0
+					expressions.isNotEmpty()
 		else {
 			throw ValueError.empty
 		}
