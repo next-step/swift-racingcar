@@ -7,15 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C11830A7272CE5AE001A57EA /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11830A6272CE5AE001A57EA /* main.swift */; };
+		C11830A7272CE5AE001A57EA /* Injectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11830A6272CE5AE001A57EA /* Injectable.swift */; };
 		C1745829272BE1460010C5D0 /* StringCalculatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1745828272BE1460010C5D0 /* StringCalculatorTest.swift */; };
 		C1745834272BE2D90010C5D0 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1745833272BE2D90010C5D0 /* main.swift */; };
 		C1745838272BE3600010C5D0 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1745833272BE2D90010C5D0 /* main.swift */; };
 		C1B1EB91272851DA00447AC1 /* RacingCarTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B1EB90272851DA00447AC1 /* RacingCarTest.swift */; };
 		C1B1EB952728522E00447AC1 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
-		C1B48FE3272CE5E3001AAEC3 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11830A6272CE5AE001A57EA /* main.swift */; };
-		C1B48FE4272CE5E4001AAEC3 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11830A6272CE5AE001A57EA /* main.swift */; };
+		C1B48FE3272CE5E3001AAEC3 /* Injectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11830A6272CE5AE001A57EA /* Injectable.swift */; };
+		C1B48FE4272CE5E4001AAEC3 /* Injectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11830A6272CE5AE001A57EA /* Injectable.swift */; };
 		C1B48FE6272D5AC4001AAEC3 /* StubCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B48FE5272D5AC4001AAEC3 /* StubCalculator.swift */; };
+		C1DDE5C5272E509B009B8175 /* StringCalculatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1745828272BE1460010C5D0 /* StringCalculatorTest.swift */; };
 		C7E1263027239F7E0000DB8B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,7 +52,7 @@
 
 /* Begin PBXFileReference section */
 		C11830A4272CE5AE001A57EA /* TestHelper */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TestHelper; sourceTree = BUILT_PRODUCTS_DIR; };
-		C11830A6272CE5AE001A57EA /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		C11830A6272CE5AE001A57EA /* Injectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injectable.swift; sourceTree = "<group>"; };
 		C1745826272BE1460010C5D0 /* StringCalculatorTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StringCalculatorTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1745828272BE1460010C5D0 /* StringCalculatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringCalculatorTest.swift; sourceTree = "<group>"; };
 		C1745831272BE2D90010C5D0 /* StringCalculator */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = StringCalculator; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,7 +106,7 @@
 		C11830A5272CE5AE001A57EA /* TestHelper */ = {
 			isa = PBXGroup;
 			children = (
-				C11830A6272CE5AE001A57EA /* main.swift */,
+				C11830A6272CE5AE001A57EA /* Injectable.swift */,
 			);
 			path = TestHelper;
 			sourceTree = "<group>";
@@ -326,7 +327,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C11830A7272CE5AE001A57EA /* main.swift in Sources */,
+				C1DDE5C5272E509B009B8175 /* StringCalculatorTest.swift in Sources */,
+				C11830A7272CE5AE001A57EA /* Injectable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,7 +338,7 @@
 			files = (
 				C1745838272BE3600010C5D0 /* main.swift in Sources */,
 				C1745829272BE1460010C5D0 /* StringCalculatorTest.swift in Sources */,
-				C1B48FE3272CE5E3001AAEC3 /* main.swift in Sources */,
+				C1B48FE3272CE5E3001AAEC3 /* Injectable.swift in Sources */,
 				C1B48FE6272D5AC4001AAEC3 /* StubCalculator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -355,7 +357,7 @@
 			files = (
 				C1B1EB952728522E00447AC1 /* main.swift in Sources */,
 				C1B1EB91272851DA00447AC1 /* RacingCarTest.swift in Sources */,
-				C1B48FE4272CE5E4001AAEC3 /* main.swift in Sources */,
+				C1B48FE4272CE5E4001AAEC3 /* Injectable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

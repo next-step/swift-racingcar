@@ -52,13 +52,13 @@ enum Operation: String, CaseIterable {
 }
 
 protocol CalculatorProtocol {
-    func calculate(input: String) -> Int?
+    func calculate(with string: String) -> Int?
     func calculate(_ lhs: Int, _ rhs: Int, operation: Operation) -> Int
 }
 
 extension CalculatorProtocol where Self: ArithmeticOperationProtocol {
     func calculate(with string: String) -> Int? {
-        let components = input.components(separatedBy: " ")
+        let components = string.components(separatedBy: " ")
         let numbers = components.compactMap { Int($0) }
         let operators = components.filter { Int($0) == nil }
         

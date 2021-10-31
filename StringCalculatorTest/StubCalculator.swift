@@ -6,10 +6,11 @@
 //
 
 import Foundation
+import TestHelper
 
 class StubCalculator: StubContainer ,ArithmeticOperationProtocol, CalculatorProtocol {
     func calculate(with string: String) -> Int? {
-        return self.resolve(Int?.self, name: "calculateWith")
+        return self.resolve(Int?.self, name: "calculateWith") ?? 0
     }
     
     func calculate(_ lhs: Int, _ rhs: Int, operation: Operation) -> Int {
