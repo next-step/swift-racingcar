@@ -26,5 +26,13 @@ class StringCalculatorTest: XCTestCase {
         
         XCTAssertEqual(8, calculator.add(3, 5))
     }
+    
+    func test_substract() {
+        calculator.register(Int.self, name: "substract", provider: {
+            return 3-5
+        })
+        
+        XCTAssertEqual(-2, calculator.substract(3, -5))
+    }
 }
 
