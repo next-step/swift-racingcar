@@ -51,7 +51,7 @@ class CalculatorTest: XCTestCase {
 		XCTAssertThrowsError(try calculator.calculate(""))
 	}
 	
-	func test_shouldThrowAnErrorWhenTheInputIsNilOrEmpty2() throws {
+	func test_shouldThrowAnErrorWhenInputIsInvalid() throws {
 		XCTAssertThrowsError(try calculator.calculate("+"))
 		XCTAssertThrowsError(try calculator.calculate("+ +"))
 		XCTAssertThrowsError(try calculator.calculate("+ 1"))
