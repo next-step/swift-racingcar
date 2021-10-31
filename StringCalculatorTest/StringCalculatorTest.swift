@@ -93,7 +93,7 @@ extension StringCalculatorTest {
     }
     
     func test_calculate_with_string_ignore_opration_priority() {
-        calculator.register(Int?.self, name: "calculateWithString", provider: {
+        calculator.registerThrows(Int.self, name: "calculateWithString", provider: {
             var resultValue = 1
             resultValue += 1
             resultValue *= 5
@@ -102,6 +102,69 @@ extension StringCalculatorTest {
             return resultValue
         })
         
-        XCTAssertEqual(4, calculator.calculate(with: "1 + 1 * 5 - 2 / 2"))
+        XCTAssertEqual(4, try? calculator.calculate(with: "1 + 1 * 5 - 2 / 2"))
+    }
+}
+
+// MARK: - 계산기 예외상황 테스트
+
+extension StringCalculatorTest {
+    func test_calculate_with_string_when_blank() {
+        let inputString: String? = "    "
+        
+        calculator.registerThrows(Int.self, name: "calculateWithString", provider: {
+            guard let inputString = inputString,
+                  !inputString.filter({ !$0.isNewline && !$0.isWhitespace }).isEmpty
+            else {
+                throw CalculationError.inputNilOrEmpty
+            }
+            return 0
+        })
+        
+        do {
+            _ = try calculator.calculate(with: inputString)
+        } catch {
+            let calculationError = error as? CalculationError
+            XCTAssertEqual(CalculationError.inputNilOrEmpty, calculationError)
+        }
+    }
+    
+    func test_calculate_with_string_when_nil() {
+        let inputString: String? = nil
+        
+        calculator.registerThrows(Int.self, name: "calculateWithString", provider: {
+            guard let _ = inputString else {
+                throw CalculationError.inputNilOrEmpty
+            }
+            return 0
+        })
+        
+        do {
+            _ = try calculator.calculate(with: inputString)
+        } catch {
+            let calculationError = error as? CalculationError
+            XCTAssertEqual(CalculationError.inputNilOrEmpty, calculationError)
+        }
+    }
+    
+    func test_calculate_with_string_not_arithmetic_operation() {
+        let inputString = "+-/*%#@!$#%#$@"
+        
+        calculator.registerThrows(Int?.self, name: "calculateWithString", provider: {
+            let components = inputString.map { String($0) }
+            
+            for component in components {
+                let _ = try Operation.factory(stringValue: component)
+            }
+            
+            return 0
+        })
+        
+        do {
+            _ = try calculator.calculate(with: inputString)
+        } catch {
+            let calculationError = error as? CalculationError
+            XCTAssertEqual(CalculationError.notArithmeticOperation, calculationError)
+        }
     }
 }
