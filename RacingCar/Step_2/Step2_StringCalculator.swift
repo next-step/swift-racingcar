@@ -18,14 +18,14 @@ struct StringCalculator {
     
     func startStringCalculate() -> Int {
         if validationChecker.isAbleToCalculate() {
-            return calculateString(userInput: userInput)
+            return calculateString()
         }
         fatalError(CalculatorError.error.description)
     }
 }
 
 extension StringCalculator {
-    func calculateString(userInput data: String) -> Int {
+    func calculateString() -> Int {
         let splitString = userInput.split(separator: " ").map { "\($0)" }
         var result: Int?
         var operatorType: OperatorType?
@@ -51,30 +51,14 @@ extension StringCalculator {
         switch operatorType {
         case .add:
             return lhs + rhs
-        case .minus:
+        case .subtract:
             return lhs - rhs
         case .divide:
             return lhs / rhs
-        case .multiple:
+        case .multiply:
             return lhs * rhs
         case .none:
             fatalError(CalculatorError.emptyOperator.description)
         }
-    }
-
-    func add(_ lhs: Int, _ rhs: Int) -> Int {
-        return lhs + rhs
-    }
-
-    func minus(_ lhs: Int, _ rhs: Int) -> Int {
-        return lhs - rhs
-    }
-
-    func multiple(_ lhs: Int, _ rhs: Int) -> Int {
-        return lhs * rhs
-    }
-
-    func divide(_ lhs: Int, _ rhs: Int) -> Int {
-        return lhs / rhs
     }
 }

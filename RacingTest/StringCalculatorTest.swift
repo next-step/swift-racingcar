@@ -10,43 +10,43 @@ import XCTest
 
 class StringCalculatorTest: XCTestCase {
     
+    func test_add_input() {
+        let calculator = StringCalculator(userInput: "1 + 5")
+        XCTAssertEqual(calculator.startStringCalculate(), 6)
+    }
     
-//    let stringCalculator = StringCalculator(userInput: "1 + 2 + 4")
-//    
-//    func test_isHasOperator() {
-//        
-//        XCTAssertEqual(stringCalculator.isHasValidationOperator(data: ["1", "3", "4", "5"]), false)
-//        XCTAssertEqual(stringCalculator.isHasValidationOperator(data: ["1", "+", "4"]), true)
-//        XCTAssertEqual(stringCalculator.isHasValidationOperator(data: ["1", "5", "2", "1"]), false)
-//    }
-//    
-//    func test_isDataIntAbleString() {
-//        XCTAssertEqual(stringCalculator.isHasIntAbleString(data: ["1", "3", "4", "5"]), true)
-//        XCTAssertEqual(stringCalculator.isHasIntAbleString(data: ["1", "a", "4"]), true)
-//        XCTAssertEqual(stringCalculator.isHasIntAbleString(data: ["1", "5", "2", "1"]), true)
-//    }
-//    
-//    func test_add() {
-//        XCTAssertEqual(stringCalculator.add(9, 10), 19)
-//        XCTAssertEqual(stringCalculator.add(9, 7), 16)
-//        XCTAssertEqual(stringCalculator.add(5, 50), 55)
-//    }
-//    
-//    func test_minus() {
-//        XCTAssertEqual(stringCalculator.minus(100, 10), 90)
-//        XCTAssertEqual(stringCalculator.minus(50, 10), 40)
-//        XCTAssertEqual(stringCalculator.minus(5, 10), -5)
-//    }
-//    
-//    func test_multiple() {
-//        XCTAssertEqual(stringCalculator.multiple(9, 10), 90)
-//        XCTAssertEqual(stringCalculator.multiple(9, 7), 63)
-//        XCTAssertEqual(stringCalculator.multiple(5, 50), 250)
-//    }
-//    
-//    func test_divide() {
-//        XCTAssertEqual(stringCalculator.divide(10, 10), 1)
-//        XCTAssertEqual(stringCalculator.divide(10, 2), 5)
-//        XCTAssertEqual(stringCalculator.divide(5, 5), 1)
-//    }
+    func test_subtract_input() {
+        let calculator = StringCalculator(userInput: "5 - 1")
+        XCTAssertEqual(calculator.startStringCalculate(), 4)
+    }
+    
+    func test_multiply_input() {
+        let calculator = StringCalculator(userInput: "1 * 5")
+        XCTAssertEqual(calculator.startStringCalculate(), 5)
+    }
+    
+    func test_divide_input() {
+        let calculator = StringCalculator(userInput: "5 / 5")
+        XCTAssertEqual(calculator.startStringCalculate(), 1)
+    }
+    
+    func test_two_operator() {
+        let calculator = StringCalculator(userInput: "5 / 5 * 10")
+        XCTAssertEqual(calculator.startStringCalculate(), 10)
+    }
+    
+    func test_two_operator_2() {
+        let calculator = StringCalculator(userInput: "5 * 5 + 10")
+        XCTAssertEqual(calculator.startStringCalculate(), 35)
+    }
+    
+    func test_two_operator_3() {
+        let calculator = StringCalculator(userInput: "5 + 5 - 10")
+        XCTAssertEqual(calculator.startStringCalculate(), 0)
+    }
+    
+    func test_two_operator_4() {
+        let calculator = StringCalculator(userInput: "5 / 5 + 1")
+        XCTAssertEqual(calculator.startStringCalculate(), 2)
+    }
 }

@@ -46,7 +46,7 @@ extension StringCalculatorVaildationChecker {
         let isOperator = self.operatorbleData
             .map { OperatorType(rawValue: $0) ?? .none }
             .filter {
-            if $0 == .add || $0 == .minus || $0 == .multiple || $0 == .divide {
+            if $0 == .add || $0 == .subtract || $0 == .multiply || $0 == .divide {
                 return true
             }
             return false
@@ -58,7 +58,7 @@ extension StringCalculatorVaildationChecker {
         let isHasIntAbleString = self.intAbleData
             .map { OperatorType(rawValue: $0) ?? .none }
             .filter {
-            if $0 == .add || $0 == .minus || $0 == .multiple || $0 == .divide {
+            if $0 == .add || $0 == .subtract || $0 == .multiply || $0 == .divide {
                 return false
             }
             return true

@@ -9,8 +9,8 @@ import Foundation
 
 enum OperatorType: String {
     case add = "+"
-    case minus = "-"
-    case multiple = "*"
+    case subtract = "-"
+    case multiply = "*"
     case divide = "/"
     case none
 }
