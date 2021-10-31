@@ -7,10 +7,6 @@
 import Foundation
 
 protocol Calculable {
-	func add(_ lhs: Int, _ rhs: Int) -> Int
-	func subtract(_ lhs: Int, _ rhs: Int) -> Int
-	func multiply(_ lhs: Int, _ rhs: Int) -> Int
-	func divide(_ lhs: Int, _ rhs: Int) -> Int
 	func calculate(_ input: String?) throws -> Int
 }
 
@@ -21,22 +17,7 @@ enum CalculatorError: Error {
 }
 
 struct Calculator: Calculable {
-	func add(_ lhs: Int, _ rhs: Int) -> Int {
-		return lhs + rhs
-	}
-	
-	func subtract(_ lhs: Int, _ rhs: Int) -> Int {
-		return lhs - rhs
-	}
-	
-	func multiply(_ lhs: Int, _ rhs: Int) -> Int {
-		return lhs * rhs
-	}
-	
-	func divide(_ lhs: Int, _ rhs: Int) -> Int {
-		return lhs / rhs
-	}
-	
+	// MARK: - Calculate
 	func calculate(_ input: String?) throws -> Int {
 		guard let expressions = input?.components(separatedBy: " "),
 					expressions.count > 0
@@ -56,6 +37,25 @@ struct Calculator: Calculable {
 		return result
 	}
 	
+	
+	// MARK: - Arithmetic Operation
+	private func add(_ lhs: Int, _ rhs: Int) -> Int {
+		return lhs + rhs
+	}
+	
+	private func subtract(_ lhs: Int, _ rhs: Int) -> Int {
+		return lhs - rhs
+	}
+	
+	private func multiply(_ lhs: Int, _ rhs: Int) -> Int {
+		return lhs * rhs
+	}
+	
+	private func divide(_ lhs: Int, _ rhs: Int) -> Int {
+		return lhs / rhs
+	}
+	
+	// MARK: - Others
 	private func isOperator(_ arithmeticOpearator: String) -> Bool {
 		switch(arithmeticOpearator) {
 		case "+", "-", "*", "/":
