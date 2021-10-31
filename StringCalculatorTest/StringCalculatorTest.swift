@@ -18,10 +18,14 @@ class StringCalculatorTest: XCTestCase {
     override func tearDownWithError() throws {
         calculator = nil
     }
-    
+}
+
+// MARK: - 사칙연산 테스트
+
+extension StringCalculatorTest {
     func test_add() {
         calculator.register(Int.self, name: "add", provider: {
-            return 3+5
+            return 3 + 5
         })
         
         XCTAssertEqual(8, calculator.add(3, 5))
@@ -29,7 +33,7 @@ class StringCalculatorTest: XCTestCase {
     
     func test_substract() {
         calculator.register(Int.self, name: "substract", provider: {
-            return 3-5
+            return 3 - 5
         })
         
         XCTAssertEqual(-2, calculator.substract(3, -5))
@@ -37,7 +41,7 @@ class StringCalculatorTest: XCTestCase {
     
     func test_divide() {
         calculator.register(Int.self, name: "divide", provider: {
-            return 6/3
+            return 6 / 3
         })
         
         XCTAssertEqual(2, calculator.divide(6, 3))
@@ -45,10 +49,9 @@ class StringCalculatorTest: XCTestCase {
     
     func test_multiply() {
         calculator.register(Int.self, name: "multiply", provider: {
-            return 2*5
+            return 2 * 5
         })
         
         XCTAssertEqual(10, calculator.multiply(2, 5))
     }
 }
-
