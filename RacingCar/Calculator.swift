@@ -20,15 +20,7 @@ struct Calculator: Calculable {
 			throw ValueError.empty
 		}
 		
-		var result = try expressions.first.toInt()
-		for i in stride(from: 1, to: expressions.count, by: 2) {
-			guard expressions.count > i + 1 else { throw ValueError.invalid }
-			
-			let operand = try expressions[i + 1].toInt()
-			result = try calculate(with: expressions[i])(result, operand)
-		}
-		
-		return result
+		return try calculate(by: expressions)
 	}
 	
 	// MARK: - Arithmetic Operation
@@ -49,16 +41,24 @@ struct Calculator: Calculable {
 	}
 	
 	// MARK: - Others
-	private func isOperator(_ arithmeticOpearator: String) -> Bool {
-		switch(arithmeticOpearator) {
-		case "+", "-", "*", "/":
-			return true
-		default:
-			return false
+	private func calculate(by expressions: [String]) throws -> Int {
+		var result = try expressions.first.toInt()
+		for i in findOperatorRange(in: expressions) {
+			guard expressions.count > i + 1 else { throw ValueError.invalid }
+			
+			let operand = try expressions[i + 1].toInt()
+			let arithmeticOperator = try find(opearator: expressions[i])
+			result = arithmeticOperator(result, operand)
 		}
+		
+		return result
 	}
 	
-	private func calculate(with arithmeticOpearator: String) throws -> (Int, Int) -> Int {
+	private func findOperatorRange(in expressions: [String]) -> StrideTo<Int> {
+		return stride(from: 1, to: expressions.count, by: 2)
+	}
+	
+	private func find(opearator arithmeticOpearator: String) throws -> (Int, Int) -> Int {
 		switch(arithmeticOpearator) {
 		case "+":
 			return add
