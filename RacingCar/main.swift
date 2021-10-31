@@ -46,14 +46,38 @@ struct Calculator: Calculable {
 		
 		var result = try expressions.first.toInt()
 		for i in stride(from: 1, to: expressions.count, by: 2) {
-			guard expressions[i] == "+" else { throw CalculatorError.invalidOperator }
+			guard isOperator(expressions[i]) else { throw CalculatorError.invalidOperator }
 			guard expressions.count > i + 1 else { throw CalculatorError.invalidOperand }
 			
 			let operand = try expressions[i + 1].toInt()
-			result = add(result, operand)
+			result = try calculate(with: expressions[i])(result, operand)
 		}
 		
 		return result
+	}
+	
+	private func isOperator(_ arithmeticOpearator: String) -> Bool {
+		switch(arithmeticOpearator) {
+		case "+", "-", "*", "/":
+			return true
+		default:
+			return false
+		}
+	}
+	
+	private func calculate(with arithmeticOpearator: String) throws -> (Int, Int) -> Int {
+		switch(arithmeticOpearator) {
+		case "+":
+			return add
+		case "-":
+			return subtract
+		case "*":
+			return multiply
+		case "/":
+			return divide
+		default:
+			throw CalculatorError.invalidOperator
+		}
 	}
 }
 
