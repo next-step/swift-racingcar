@@ -25,8 +25,6 @@ protocol StringCalcuratorProtocol {
     func calcurate(_ string: String?) throws -> Int
 }
 
-final class StringCalcurator: StringCalcuratorProtocol {
-    private enum InputError: Error {
 final class StringCalcurator: StringCalcuratorProtocol, ArithmeticProtocol {
     enum InputError: Error {
         case `nil`
@@ -90,19 +88,19 @@ final class StringCalcurator: StringCalcuratorProtocol, ArithmeticProtocol {
 
 // MARK: - Private Function
 extension StringCalcurator {
-    private func add(_ lhs: Int, _ rhs: Int) -> Int {
+    func add(_ lhs: Int, _ rhs: Int) -> Int {
         return lhs + rhs
     }
     
-    private func substract(_ lhs: Int, _ rhs: Int) -> Int {
+    func substract(_ lhs: Int, _ rhs: Int) -> Int {
         return lhs - rhs
     }
     
-    private func multiply(_ lhs: Int, _ rhs: Int) -> Int {
+    func multiply(_ lhs: Int, _ rhs: Int) -> Int {
         return lhs * rhs
     }
     
-    private func devide(_ lhs: Int, _ rhs: Int) -> Int {
+    func devide(_ lhs: Int, _ rhs: Int) -> Int {
         return lhs / rhs
     }
 }
