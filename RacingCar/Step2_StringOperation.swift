@@ -43,13 +43,13 @@ struct StringCalculator {
     }
 
     func isHasValidationOperator(data: [String]) -> Bool {
-        let operators = data.enumerated().filter { index, data in
+        let operatorbleDatas = data.enumerated().filter { index, data in
             if index % 2 == 1 {
                 return true
             }
             return false
         }
-        let isHasOperator = operators
+        let isOperator = operatorbleDatas
                             .map { "\($0.element)" }
                             .map { OperatorType(rawValue: $0) ?? .none }
                             .filter {
@@ -59,7 +59,7 @@ struct StringCalculator {
                                 return false
                             }
         
-        return operators.count == isHasOperator.count ? true : false
+        return operatorbleDatas.count == isOperator.count ? true : false
     }
 
     func isHasIntAbleString(data: [String]) -> Bool {
