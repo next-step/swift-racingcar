@@ -34,5 +34,13 @@ class StringCalculatorTest: XCTestCase {
         
         XCTAssertEqual(-2, calculator.substract(3, -5))
     }
+    
+    func test_divide() {
+        calculator.register(Int.self, name: "divide", provider: {
+            return 6/3
+        })
+        
+        XCTAssertEqual(2, calculator.divide(6, 3))
+    }
 }
 
