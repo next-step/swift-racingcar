@@ -67,4 +67,12 @@ extension StringCalculatorTest {
         
         XCTAssertEqual(2, calculator.calculate(1, 1, operation: .add))
     }
+    
+    func test_calculate_with_operation_enum_substract() {
+        calculator.register(Int.self, name: "calculate", provider: {
+            return 1 - 1
+        })
+        
+        XCTAssertEqual(0, calculator.calculate(1, 1, operation: .substract))
+    }
 }
