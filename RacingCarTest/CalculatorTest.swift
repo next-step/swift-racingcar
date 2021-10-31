@@ -47,26 +47,54 @@ class CalculatorTest: XCTestCase {
 	}
 	
 	func test_shouldThrowAnErrorWhenTheInputIsNilOrEmpty() throws {
-		XCTAssertThrowsError(try calculator.calculate(nil))
-		XCTAssertThrowsError(try calculator.calculate(""))
+		XCTAssertThrowsError(try calculator.calculate(nil)) { error in
+			XCTAssertEqual(error as! ValueError, ValueError.empty)
+		}
+		XCTAssertThrowsError(try calculator.calculate("")) { error in
+			XCTAssertEqual(error as! ValueError, ValueError.empty)
+		}
 	}
 	
 	func test_shouldThrowAnErrorWhenInputIsInvalid() throws {
-		XCTAssertThrowsError(try calculator.calculate("+"))
-		XCTAssertThrowsError(try calculator.calculate("+ +"))
-		XCTAssertThrowsError(try calculator.calculate("+ 1"))
-		XCTAssertThrowsError(try calculator.calculate("+ 1 +  + 1"))
-		XCTAssertThrowsError(try calculator.calculate("1 + 1 + 1 1"))
-		XCTAssertThrowsError(try calculator.calculate("1 + 1 +"))
+		XCTAssertThrowsError(try calculator.calculate("+")) { error in
+			XCTAssertEqual(error as! ValueError, ValueError.invalid)
+		}
+		XCTAssertThrowsError(try calculator.calculate("+ +")) { error in
+			XCTAssertEqual(error as! ValueError, ValueError.invalid)
+		}
+		XCTAssertThrowsError(try calculator.calculate("+ 1")) { error in
+			XCTAssertEqual(error as! ValueError, ValueError.invalid)
+		}
+		XCTAssertThrowsError(try calculator.calculate("+ 1 +  + 1")) { error in
+			XCTAssertEqual(error as! ValueError, ValueError.invalid)
+		}
+		XCTAssertThrowsError(try calculator.calculate("1 + 1 + 1 1")) { error in
+			XCTAssertEqual(error as! ValueError, ValueError.invalid)
+		}
+		XCTAssertThrowsError(try calculator.calculate("1 + 1 +")) { error in
+			XCTAssertEqual(error as! ValueError, ValueError.invalid)
+		}
 	}
 	
 	func test_shouldThrowAnErrorWhenAnInvalidArithmeticOperatorIsIncluded() throws {
-		XCTAssertThrowsError(try calculator.calculate("1 // 5"))
-		XCTAssertThrowsError(try calculator.calculate("3 ++ 10"))
-		XCTAssertThrowsError(try calculator.calculate("1 ! 1"))
-		XCTAssertThrowsError(try calculator.calculate("1 @ 3"))
-		XCTAssertThrowsError(try calculator.calculate("1 + 2 $ 1 "))
-		XCTAssertThrowsError(try calculator.calculate("1 ^ 1 & 3"))
+		XCTAssertThrowsError(try calculator.calculate("1 // 5")) { error in
+			XCTAssertEqual(error as! ValueError, ValueError.invalidOperator)
+		}
+		XCTAssertThrowsError(try calculator.calculate("3 ++ 10")) { error in
+			XCTAssertEqual(error as! ValueError, ValueError.invalidOperator)
+		}
+		XCTAssertThrowsError(try calculator.calculate("1 ! 1")) { error in
+			XCTAssertEqual(error as! ValueError, ValueError.invalidOperator)
+		}
+		XCTAssertThrowsError(try calculator.calculate("1 @ 3")) { error in
+			XCTAssertEqual(error as! ValueError, ValueError.invalidOperator)
+		}
+		XCTAssertThrowsError(try calculator.calculate("1 + 2 $ 1 ")) { error in
+			XCTAssertEqual(error as! ValueError, ValueError.invalidOperator)
+		}
+		XCTAssertThrowsError(try calculator.calculate("1 ^ 1 & 3")) { error in
+			XCTAssertEqual(error as! ValueError, ValueError.invalidOperator)
+		}
 	}
 	
 	func test_shouldGetTheResultValueWhenAnExpressionOfTypeStringIsGiven() throws {
