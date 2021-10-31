@@ -27,7 +27,7 @@ extension StringCalculatorVaildationChecker {
                 return true
             }
             return false
-        }.map { "\($0)" }
+        }.map { "\($0.element)" }
         return operatorbleData
     }
 
@@ -38,7 +38,7 @@ extension StringCalculatorVaildationChecker {
                 return true
             }
             return false
-        }.map { "\($0)" }
+        }.map { "\($0.element)" }
         return intAbleStrings
     }
     

@@ -17,7 +17,6 @@
 		E0055459272EA69200EA062F /* Step2_OperatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0055458272EA69200EA062F /* Step2_OperatorType.swift */; };
 		E005545F272EAA9500EA062F /* StringValidationCheckerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E005545E272EAA9500EA062F /* StringValidationCheckerProtocol.swift */; };
 		E02696A22728613800AA278B /* RacingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02696A12728613800AA278B /* RacingTest.swift */; };
-		E02696A62728616400AA278B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
 		E02696A82728619800AA278B /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02696A72728619800AA278B /* Calculator.swift */; };
 		E02696A92728619800AA278B /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02696A72728619800AA278B /* Calculator.swift */; };
 /* End PBXBuildFile section */
@@ -222,7 +221,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0055453272D607A00EA062F /* StringCalculatorTest.swift in Sources */,
-				E02696A62728616400AA278B /* main.swift in Sources */,
 				E02696A22728613800AA278B /* RacingTest.swift in Sources */,
 				E0055450272D607200EA062F /* StringExtension.swift in Sources */,
 				E02696A92728619800AA278B /* Calculator.swift in Sources */,
