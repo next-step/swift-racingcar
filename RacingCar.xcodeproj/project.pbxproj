@@ -8,11 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		C7E1263027239F7E0000DB8B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
-		E005544C272D606D00EA062F /* Step2_StringOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E005544B272D606D00EA062F /* Step2_StringOperation.swift */; };
-		E005544D272D606D00EA062F /* Step2_StringOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E005544B272D606D00EA062F /* Step2_StringOperation.swift */; };
+		E005544C272D606D00EA062F /* Step2_StringCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E005544B272D606D00EA062F /* Step2_StringCalculator.swift */; };
 		E005544F272D607200EA062F /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E005544E272D607200EA062F /* StringExtension.swift */; };
 		E0055450272D607200EA062F /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E005544E272D607200EA062F /* StringExtension.swift */; };
 		E0055453272D607A00EA062F /* StringCalculatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0055451272D607A00EA062F /* StringCalculatorTest.swift */; };
+		E0055455272EA55400EA062F /* Step2_StringValidationChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0055454272EA55400EA062F /* Step2_StringValidationChecker.swift */; };
+		E0055457272EA65900EA062F /* Step2_calculatorError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0055456272EA65900EA062F /* Step2_calculatorError.swift */; };
+		E0055459272EA69200EA062F /* Step2_OperatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0055458272EA69200EA062F /* Step2_OperatorType.swift */; };
+		E005545F272EAA9500EA062F /* StringValidationCheckerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E005545E272EAA9500EA062F /* StringValidationCheckerProtocol.swift */; };
 		E02696A22728613800AA278B /* RacingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02696A12728613800AA278B /* RacingTest.swift */; };
 		E02696A62728616400AA278B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
 		E02696A82728619800AA278B /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02696A72728619800AA278B /* Calculator.swift */; };
@@ -34,9 +37,13 @@
 /* Begin PBXFileReference section */
 		C7E1262C27239F7E0000DB8B /* RacingCar */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RacingCar; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E1262F27239F7E0000DB8B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		E005544B272D606D00EA062F /* Step2_StringOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Step2_StringOperation.swift; sourceTree = "<group>"; };
+		E005544B272D606D00EA062F /* Step2_StringCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Step2_StringCalculator.swift; sourceTree = "<group>"; };
 		E005544E272D607200EA062F /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		E0055451272D607A00EA062F /* StringCalculatorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringCalculatorTest.swift; sourceTree = "<group>"; };
+		E0055454272EA55400EA062F /* Step2_StringValidationChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step2_StringValidationChecker.swift; sourceTree = "<group>"; };
+		E0055456272EA65900EA062F /* Step2_calculatorError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step2_calculatorError.swift; sourceTree = "<group>"; };
+		E0055458272EA69200EA062F /* Step2_OperatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step2_OperatorType.swift; sourceTree = "<group>"; };
+		E005545E272EAA9500EA062F /* StringValidationCheckerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringValidationCheckerProtocol.swift; sourceTree = "<group>"; };
 		E026969F2728613800AA278B /* RacingTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RacingTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E02696A12728613800AA278B /* RacingTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingTest.swift; sourceTree = "<group>"; };
 		E02696A72728619800AA278B /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
@@ -82,11 +89,23 @@
 			isa = PBXGroup;
 			children = (
 				C7E1262F27239F7E0000DB8B /* main.swift */,
+				E005545D272EAA8400EA062F /* Step_2 */,
 				E02696A72728619800AA278B /* Calculator.swift */,
-				E005544B272D606D00EA062F /* Step2_StringOperation.swift */,
 				E005544E272D607200EA062F /* StringExtension.swift */,
 			);
 			path = RacingCar;
+			sourceTree = "<group>";
+		};
+		E005545D272EAA8400EA062F /* Step_2 */ = {
+			isa = PBXGroup;
+			children = (
+				E005545E272EAA9500EA062F /* StringValidationCheckerProtocol.swift */,
+				E005544B272D606D00EA062F /* Step2_StringCalculator.swift */,
+				E0055454272EA55400EA062F /* Step2_StringValidationChecker.swift */,
+				E0055456272EA65900EA062F /* Step2_calculatorError.swift */,
+				E0055458272EA69200EA062F /* Step2_OperatorType.swift */,
+			);
+			path = Step_2;
 			sourceTree = "<group>";
 		};
 		E02696A02728613800AA278B /* RacingTest */ = {
@@ -188,7 +207,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E005544F272D607200EA062F /* StringExtension.swift in Sources */,
-				E005544C272D606D00EA062F /* Step2_StringOperation.swift in Sources */,
+				E005545F272EAA9500EA062F /* StringValidationCheckerProtocol.swift in Sources */,
+				E0055457272EA65900EA062F /* Step2_calculatorError.swift in Sources */,
+				E0055459272EA69200EA062F /* Step2_OperatorType.swift in Sources */,
+				E0055455272EA55400EA062F /* Step2_StringValidationChecker.swift in Sources */,
+				E005544C272D606D00EA062F /* Step2_StringCalculator.swift in Sources */,
 				C7E1263027239F7E0000DB8B /* main.swift in Sources */,
 				E02696A82728619800AA278B /* Calculator.swift in Sources */,
 			);
@@ -203,7 +226,6 @@
 				E02696A22728613800AA278B /* RacingTest.swift in Sources */,
 				E0055450272D607200EA062F /* StringExtension.swift in Sources */,
 				E02696A92728619800AA278B /* Calculator.swift in Sources */,
-				E005544D272D606D00EA062F /* Step2_StringOperation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

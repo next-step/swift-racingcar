@@ -11,4 +11,4 @@ let userInput = readLine()
 guard let userInput = userInput else { fatalError(CalculatorError.inputNil.description) }
 guard userInput.isNotEmpty() else { fatalError(CalculatorError.emptyString.description) }
 
-print(StringCalculator().startStringCalculate(data: userInput))
+print(StringCalculator(userInput: userInput).startStringCalculate)
