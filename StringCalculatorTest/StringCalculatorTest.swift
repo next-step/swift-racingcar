@@ -42,5 +42,13 @@ class StringCalculatorTest: XCTestCase {
         
         XCTAssertEqual(2, calculator.divide(6, 3))
     }
+    
+    func test_multiply() {
+        calculator.register(Int.self, name: "multiply", provider: {
+            return 2*5
+        })
+        
+        XCTAssertEqual(10, calculator.multiply(2, 5))
+    }
 }
 
