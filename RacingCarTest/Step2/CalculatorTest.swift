@@ -38,5 +38,18 @@ class CalculatorTest: XCTestCase {
         
         XCTAssertEqual(result, expect)
     }
-
+    
+    func test_사칙연산_기호가_아닌경우() throws {
+        let result = calculator.calculate(2, "#", 3)
+        let expect = CalculatorError.valueIsNotOperator.rawValue
+        
+        XCTAssert(expect == -4)
+    }
+    
+    func test_사칙연산을_모두_포함하는_기능() throws {
+        let result = calculator.stringCalculate(["2","+","3","*","4","/","2"])
+        let expect = 10
+        
+        XCTAssertEqual(result, expect)
+    }
 }
