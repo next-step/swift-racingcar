@@ -22,7 +22,7 @@ protocol ArithmeticProtocol {
 }
 
 protocol StringCalcuratorProtocol {
-    func calcurate(_ string: String?) throws
+    func calcurate(_ string: String?) throws -> Int
 }
 
 final class StringCalcurator: StringCalcuratorProtocol {
@@ -35,15 +35,56 @@ final class StringCalcurator: StringCalcuratorProtocol, ArithmeticProtocol {
         case noOperators
     }
     
-    func calcurate(_ string: String?) throws {
+    private enum ArithmeticOperations: String, CaseIterable {
+        case add = "+"
+        case substract = "-"
+        case mutiply = "X"
+        case devide = "/"
+        
+        static func factory(_ string: String) -> ArithmeticOperations? {
+            let arithmeticOperation  = ArithmeticOperations
+                .allCases
+                .filter { $0.rawValue == string }
+                .first
+            return arithmeticOperation
+        }
+    }
+    
+    func calcurate(_ string: String?) throws -> Int {
         guard let string = string else { throw InputError.nil }
-        guard string.isEmpty else { throw InputError.empty }
-        let numbers = string
-            .components(separatedBy: " ")
-            .compactMap { $0 as? Int }
+        guard !string.isEmpty else { throw InputError.empty }
+        
+        var numbers = string
+            .split(separator: " ")
+            .compactMap { Int($0) }
+        
+        guard !numbers.isEmpty else { throw InputError.noNumbers }
+        
         let operators = string
-            .components(separatedBy: " ")
-            .filter { $0 == "+" || $0 == "-" || $0 == "*" || $0 == "/" }
+            .split(separator: " ")
+            .filter { $0 == "+"
+                || $0 == "-"
+                || $0 == "X"
+                || $0 == "/" }
+            .map { String($0) }
+            .map { ArithmeticOperations.factory($0) }
+        
+        guard !operators.isEmpty else { throw InputError.noOperators }
+        
+        var result = numbers.removeFirst()
+        
+        try? operators
+            .forEach {
+                switch $0 {
+                case .add: result = add(result, numbers.removeFirst())
+                case .substract: result = substract(result, numbers.removeFirst())
+                case .mutiply: result = multiply(result, numbers.removeFirst())
+                case .devide: result = devide(result, numbers.removeFirst())
+                case .none: throw InputError.noOperators
+                }
+            }
+        
+        return result
     }
 }
 
