@@ -147,6 +147,14 @@ class CalculatorTest: XCTestCase {
 		XCTAssertThrowsError(try calculator.calculate("1 + 1 + 1 1"))
 		XCTAssertThrowsError(try calculator.calculate("1 + 1 +"))
 	}
+	
+	func test_shouldGetTheResultValueWhenAnExpressionOfTypeStringIsGiven() throws {
+		let given = "2 + 3 * 4 / 2"
+		let result = try calculator.calculate(given)
+		let expect = 10
+		
+		XCTAssertEqual(result, expect)
+	}
 }
 
 
