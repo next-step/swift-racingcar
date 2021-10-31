@@ -36,41 +36,49 @@ enum OperatorType: String {
 struct StringCalculator {
     func startStringCalculate(data: String) -> Int {
         let splitString = data.split(separator: " ").map { "\($0)" }
-        if isHasValidationOperator(data: splitString) && isHasIntAbleString(data: splitString) {
+        let operatorbleData = filterOperatorbleData(data: splitString)
+        let intAbleData = filterIntAbleString(data: splitString)
+        if isHasValidationOperator(data: operatorbleData) && isHasIntAbleString(data: intAbleData) {
             return calculateString(data: splitString)
         }
         fatalError(CalculatorError.error.description)
     }
-
-    func isHasValidationOperator(data: [String]) -> Bool {
-        let operatorbleDatas = data.enumerated().filter { index, data in
+    
+    func filterOperatorbleData(data: [String]) -> [String] {
+        let operatorbleData = data.enumerated().filter { index, data in
             if index % 2 == 1 {
                 return true
             }
             return false
-        }
-        let isOperator = operatorbleDatas
-                            .map { "\($0.element)" }
-                            .map { OperatorType(rawValue: $0) ?? .none }
-                            .filter {
-                                if $0 == .add || $0 == .minus || $0 == .multiple || $0 == .divide {
-                                    return true
-                                }
-                                return false
-                            }
-        
-        return operatorbleDatas.count == isOperator.count ? true : false
+        }.map { "\($0)" }
+        return operatorbleData
     }
 
-    func isHasIntAbleString(data: [String]) -> Bool {
-        let intStrings = data.enumerated().filter { index, data in
-            if index % 2 == 0 {
+    func isHasValidationOperator(data: [String]) -> Bool {
+        let isOperator = data
+            .map { OperatorType(rawValue: $0) ?? .none }
+            .filter {
+            if $0 == .add || $0 == .minus || $0 == .multiple || $0 == .divide {
                 return true
             }
             return false
         }
-        let isHasIntAbleString = intStrings
-            .map { "\($0.element)" }
+
+        return data.count == isOperator.count ? true : false
+    }
+    
+    func filterIntAbleString(data: [String]) -> [String] {
+        let intAbleStrings = data.enumerated().filter { index, data in
+            if index % 2 == 0 {
+                return true
+            }
+            return false
+        }.map { "\($0)" }
+        return intAbleStrings
+    }
+
+    func isHasIntAbleString(data: [String]) -> Bool {
+        let isHasIntAbleString = data
             .map { OperatorType(rawValue: $0) ?? .none }
             .filter {
                 if $0 == .add || $0 == .minus || $0 == .multiple || $0 == .divide {
@@ -78,7 +86,7 @@ struct StringCalculator {
                 }
                 return true
             }
-        return intStrings.count == isHasIntAbleString.count ? true : false
+        return data.count == isHasIntAbleString.count ? true : false
     }
 
     func calculateString(data: [String]) -> Int {
