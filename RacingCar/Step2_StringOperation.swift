@@ -35,8 +35,7 @@ enum OperatorType: String {
 
 struct StringCalculator {
     func startStringCalculate(data: String) -> Int  {
-        let splitString = data.split(separator: " ")
-                              .map { "\($0.trimmingCharacters(in: .whitespaces))" }
+        let splitString = data.split(separator: " ").map { "\($0)" }
         if isHasValidationOperator(data: splitString) && isHasIntAbleString(data: splitString) {
             return calculateString(data: splitString)
         }
