@@ -14,6 +14,13 @@
  예를 들어 2 + 3 * 4 / 2와 같은 문자열을 입력할 경우 2 + 3 * 4 / 2 실행 결과인 10을 출력해야 합니다.
  */
 
+protocol ArithmeticProtocol {
+    func add(_ lhs: Int, _ rhs: Int) -> Int
+    func substract(_ lhs: Int, _ rhs: Int) -> Int
+    func multiply(_ lhs: Int, _ rhs: Int) -> Int
+    func devide(_ lhs: Int, _ rhs: Int) -> Int
+}
+
 protocol StringCalcuratorProtocol {
     func calcurate(_ string: String?) throws
 }
