@@ -16,6 +16,12 @@
 		E0055457272EA65900EA062F /* Step2_calculatorError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0055456272EA65900EA062F /* Step2_calculatorError.swift */; };
 		E0055459272EA69200EA062F /* Step2_OperatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0055458272EA69200EA062F /* Step2_OperatorType.swift */; };
 		E005545F272EAA9500EA062F /* StringValidationCheckerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E005545E272EAA9500EA062F /* StringValidationCheckerProtocol.swift */; };
+		E0055461272EB06800EA062F /* StringValidationCheckerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0055460272EB06800EA062F /* StringValidationCheckerTest.swift */; };
+		E0055462272EB1A900EA062F /* StringValidationCheckerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E005545E272EAA9500EA062F /* StringValidationCheckerProtocol.swift */; };
+		E0055463272EB1AB00EA062F /* Step2_StringCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E005544B272D606D00EA062F /* Step2_StringCalculator.swift */; };
+		E0055464272EB1AE00EA062F /* Step2_StringValidationChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0055454272EA55400EA062F /* Step2_StringValidationChecker.swift */; };
+		E0055465272EB1B000EA062F /* Step2_calculatorError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0055456272EA65900EA062F /* Step2_calculatorError.swift */; };
+		E0055466272EB1B300EA062F /* Step2_OperatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0055458272EA69200EA062F /* Step2_OperatorType.swift */; };
 		E02696A22728613800AA278B /* RacingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02696A12728613800AA278B /* RacingTest.swift */; };
 		E02696A82728619800AA278B /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02696A72728619800AA278B /* Calculator.swift */; };
 		E02696A92728619800AA278B /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02696A72728619800AA278B /* Calculator.swift */; };
@@ -43,6 +49,7 @@
 		E0055456272EA65900EA062F /* Step2_calculatorError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step2_calculatorError.swift; sourceTree = "<group>"; };
 		E0055458272EA69200EA062F /* Step2_OperatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step2_OperatorType.swift; sourceTree = "<group>"; };
 		E005545E272EAA9500EA062F /* StringValidationCheckerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringValidationCheckerProtocol.swift; sourceTree = "<group>"; };
+		E0055460272EB06800EA062F /* StringValidationCheckerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringValidationCheckerTest.swift; sourceTree = "<group>"; };
 		E026969F2728613800AA278B /* RacingTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RacingTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E02696A12728613800AA278B /* RacingTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingTest.swift; sourceTree = "<group>"; };
 		E02696A72728619800AA278B /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
@@ -112,6 +119,7 @@
 			children = (
 				E02696A12728613800AA278B /* RacingTest.swift */,
 				E0055451272D607A00EA062F /* StringCalculatorTest.swift */,
+				E0055460272EB06800EA062F /* StringValidationCheckerTest.swift */,
 			);
 			path = RacingTest;
 			sourceTree = "<group>";
@@ -221,9 +229,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0055453272D607A00EA062F /* StringCalculatorTest.swift in Sources */,
+				E0055462272EB1A900EA062F /* StringValidationCheckerProtocol.swift in Sources */,
+				E0055464272EB1AE00EA062F /* Step2_StringValidationChecker.swift in Sources */,
 				E02696A22728613800AA278B /* RacingTest.swift in Sources */,
+				E0055461272EB06800EA062F /* StringValidationCheckerTest.swift in Sources */,
 				E0055450272D607200EA062F /* StringExtension.swift in Sources */,
 				E02696A92728619800AA278B /* Calculator.swift in Sources */,
+				E0055465272EB1B000EA062F /* Step2_calculatorError.swift in Sources */,
+				E0055466272EB1B300EA062F /* Step2_OperatorType.swift in Sources */,
+				E0055463272EB1AB00EA062F /* Step2_StringCalculator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

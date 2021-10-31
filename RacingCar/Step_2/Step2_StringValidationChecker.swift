@@ -15,7 +15,7 @@ struct StringCalculatorVaildationChecker: StringValidationChecker {
     }
 
     func isAbleToCalculate() -> Bool {
-        return isHasValidationOperator(data: operatorbleData) && isHasIntAbleString(data: intAbleData)
+        return isHasValidationOperator() && isHasIntAbleString()
     }
 }
 
@@ -42,8 +42,8 @@ extension StringCalculatorVaildationChecker {
         return intAbleStrings
     }
     
-    func isHasValidationOperator(data: [String]) -> Bool {
-        let isOperator = data
+    func isHasValidationOperator() -> Bool {
+        let isOperator = self.operatorbleData
             .map { OperatorType(rawValue: $0) ?? .none }
             .filter {
             if $0 == .add || $0 == .minus || $0 == .multiple || $0 == .divide {
@@ -51,11 +51,11 @@ extension StringCalculatorVaildationChecker {
             }
             return false
         }
-        return data.count == isOperator.count ? true : false
+        return self.operatorbleData.count == isOperator.count ? true : false
     }
 
-    func isHasIntAbleString(data: [String]) -> Bool {
-        let isHasIntAbleString = data
+    func isHasIntAbleString() -> Bool {
+        let isHasIntAbleString = self.intAbleData
             .map { OperatorType(rawValue: $0) ?? .none }
             .filter {
             if $0 == .add || $0 == .minus || $0 == .multiple || $0 == .divide {
@@ -63,6 +63,6 @@ extension StringCalculatorVaildationChecker {
             }
             return true
         }
-        return data.count == isHasIntAbleString.count ? true : false
+        return self.intAbleData.count == isHasIntAbleString.count ? true : false
     }
 }
