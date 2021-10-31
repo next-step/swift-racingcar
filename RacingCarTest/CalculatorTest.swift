@@ -133,6 +133,20 @@ class CalculatorTest: XCTestCase {
 		
 		XCTAssertEqual(expect, result)
 	}
+	
+	func test_shouldThrowAnErrorWhenTheInputIsNilOrEmpty() throws {
+		XCTAssertThrowsError(try calculator.calculate(nil))
+		XCTAssertThrowsError(try calculator.calculate(""))
+	}
+	
+	func test_shouldThrowAnErrorWhenTheInputIsNilOrEmpty2() throws {
+		XCTAssertThrowsError(try calculator.calculate("+"))
+		XCTAssertThrowsError(try calculator.calculate("+ +"))
+		XCTAssertThrowsError(try calculator.calculate("+ 1"))
+		XCTAssertThrowsError(try calculator.calculate("+ 1 +  + 1"))
+		XCTAssertThrowsError(try calculator.calculate("1 + 1 + 1 1"))
+		XCTAssertThrowsError(try calculator.calculate("1 + 1 +"))
+	}
 }
 
 
