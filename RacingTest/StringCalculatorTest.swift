@@ -23,25 +23,25 @@ class StringCalculatorTest: XCTestCase {
         XCTAssertEqual(cal.isHasIntAbleString(data: ["1", "5", "2", "1"]), true)
     }
     
-    func test_Add() {
+    func test_add() {
         XCTAssertEqual(cal.add(9, 10), 19)
         XCTAssertEqual(cal.add(9, 7), 16)
         XCTAssertEqual(cal.add(5, 50), 55)
     }
     
-    func test_Minus() {
+    func test_minus() {
         XCTAssertEqual(cal.minus(100, 10), 90)
         XCTAssertEqual(cal.minus(50, 10), 40)
         XCTAssertEqual(cal.minus(5, 10), -5)
     }
     
-    func test_Multiple() {
+    func test_multiple() {
         XCTAssertEqual(cal.multiple(9, 10), 90)
         XCTAssertEqual(cal.multiple(9, 7), 63)
         XCTAssertEqual(cal.multiple(5, 50), 250)
     }
     
-    func test_Divide() {
+    func test_divide() {
         XCTAssertEqual(cal.divide(10, 10), 1)
         XCTAssertEqual(cal.divide(10, 2), 5)
         XCTAssertEqual(cal.divide(5, 5), 1)
