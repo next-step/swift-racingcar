@@ -126,9 +126,9 @@ class CalculatorTest: XCTestCase {
 		XCTAssertEqual(calculator.divide(514, 3), 171)
 	}
 	
-	func test_shouldGetTheResultValueWhenDoingAdditionOnAnExpressionOfTypeString() {
+	func test_shouldGetTheResultValueWhenDoingAdditionOnAnExpressionOfTypeString() throws {
 		let given = "1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10"
-		let result = calculator.calculate(given)
+		let result = try calculator.calculate(given)
 		let expect = 55
 		
 		XCTAssertEqual(expect, result)
