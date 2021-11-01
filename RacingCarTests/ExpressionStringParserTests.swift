@@ -20,6 +20,11 @@ class ExpressionStringParserTests: XCTestCase {
     func test_init() {
         XCTAssertNoThrow(try ExpressionStringParser(expressionString: "1 + 2 - 3"))
     }
+    
+    func test_parse() {
+        let parser = try? ExpressionStringParser(expressionString: "1 + 2 - 3")
+        XCTAssertEqual(parser?.parse(separatedBy: " "), ["1", "+", "2", "-", "3"])
+    }
 }
 
 extension ExpressionStringParserTests {
