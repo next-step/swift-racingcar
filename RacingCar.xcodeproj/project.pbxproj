@@ -12,6 +12,8 @@
 		E26B5BE7272E541100F3DAC9 /* ExpressionUnitCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26B5BE5272E541100F3DAC9 /* ExpressionUnitCalculator.swift */; };
 		E26B5BE9272E900300F3DAC9 /* ExpressionStringParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26B5BE8272E900300F3DAC9 /* ExpressionStringParser.swift */; };
 		E26B5BEA272E900300F3DAC9 /* ExpressionStringParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26B5BE8272E900300F3DAC9 /* ExpressionStringParser.swift */; };
+		E26B5BEC272E901900F3DAC9 /* ExpressionCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26B5BEB272E901900F3DAC9 /* ExpressionCalculator.swift */; };
+		E26B5BED272E901900F3DAC9 /* ExpressionCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26B5BEB272E901900F3DAC9 /* ExpressionCalculator.swift */; };
 		E26B5BEF272E906B00F3DAC9 /* ExpressionInputError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26B5BEE272E906B00F3DAC9 /* ExpressionInputError.swift */; };
 		E26B5BF0272E906B00F3DAC9 /* ExpressionInputError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26B5BEE272E906B00F3DAC9 /* ExpressionInputError.swift */; };
 		E2D09D8F27282B7700A846D8 /* RacingCarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D09D8E27282B7700A846D8 /* RacingCarTests.swift */; };
@@ -36,6 +38,7 @@
 		C7E1262F27239F7E0000DB8B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		E26B5BE5272E541100F3DAC9 /* ExpressionUnitCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpressionUnitCalculator.swift; sourceTree = "<group>"; };
 		E26B5BE8272E900300F3DAC9 /* ExpressionStringParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpressionStringParser.swift; sourceTree = "<group>"; };
+		E26B5BEB272E901900F3DAC9 /* ExpressionCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpressionCalculator.swift; sourceTree = "<group>"; };
 		E26B5BEE272E906B00F3DAC9 /* ExpressionInputError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpressionInputError.swift; sourceTree = "<group>"; };
 		E2D09D8C27282B7700A846D8 /* RacingCarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RacingCarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2D09D8E27282B7700A846D8 /* RacingCarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingCarTests.swift; sourceTree = "<group>"; };
@@ -91,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				E26B5BE8272E900300F3DAC9 /* ExpressionStringParser.swift */,
+				E26B5BEB272E901900F3DAC9 /* ExpressionCalculator.swift */,
 				E26B5BE5272E541100F3DAC9 /* ExpressionUnitCalculator.swift */,
 				E26B5BEE272E906B00F3DAC9 /* ExpressionInputError.swift */,
 			);
@@ -199,6 +203,7 @@
 				E26B5BE9272E900300F3DAC9 /* ExpressionStringParser.swift in Sources */,
 				E26B5BE6272E541100F3DAC9 /* ExpressionUnitCalculator.swift in Sources */,
 				E26B5BEF272E906B00F3DAC9 /* ExpressionInputError.swift in Sources */,
+				E26B5BEC272E901900F3DAC9 /* ExpressionCalculator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,6 +217,7 @@
 				E26B5BEA272E900300F3DAC9 /* ExpressionStringParser.swift in Sources */,
 				E2D09D8F27282B7700A846D8 /* RacingCarTests.swift in Sources */,
 				E26B5BF0272E906B00F3DAC9 /* ExpressionInputError.swift in Sources */,
+				E26B5BED272E901900F3DAC9 /* ExpressionCalculator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
