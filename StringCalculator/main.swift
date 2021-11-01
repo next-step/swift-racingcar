@@ -37,23 +37,11 @@ enum CalculationError: Error {
     case notArithmeticOperation
 }
 
-enum Operation: String, CaseIterable {
+enum Operation: String {
     case add = "+"
     case substract = "-"
     case divide = "/"
     case multiply = "*"
-    
-    static func factory(stringValue: String) throws -> Operation {
-        let operations = Operation.allCases.filter { $0.rawValue == stringValue }
-        
-        guard operations.count > 0,
-              let operation = operations.first
-        else {
-            throw CalculationError.notArithmeticOperation
-        }
-        
-        return operation
-    }
 }
 
 protocol CalculatorProtocol {
@@ -76,7 +64,9 @@ extension CalculatorProtocol where Self: ArithmeticOperationProtocol {
         var lhs: Int = numbers[0]
         
         for index in 1..<numbers.count {
-            let operation = try Operation.factory(stringValue: operators[index-1])
+            guard let operation = Operation(rawValue: operators[index-1]) else {
+                throw CalculationError.notArithmeticOperation
+            }
             lhs = calculate(lhs, numbers[index], operation: operation)
         }
         

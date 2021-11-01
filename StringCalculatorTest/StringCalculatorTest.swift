@@ -154,7 +154,9 @@ extension StringCalculatorTest {
             let components = inputString.map { String($0) }
             
             for component in components {
-                let _ = try Operation.factory(stringValue: component)
+                guard let _ = Operation(rawValue: component) else {
+                    throw CalculationError.notArithmeticOperation
+                }
             }
             
             return 0
