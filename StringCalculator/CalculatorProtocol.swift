@@ -9,7 +9,6 @@ import Foundation
 
 protocol CalculatorProtocol {
     func calculate(with string: String?) throws -> Int
-    func calculate(_ lhs: Int, _ rhs: Int, operation: Operation) -> Int
 }
 
 extension CalculatorProtocol where Self: ArithmeticOperationProtocol {
@@ -36,7 +35,7 @@ extension CalculatorProtocol where Self: ArithmeticOperationProtocol {
         return lhs
     }
     
-    func calculate(_ lhs: Int, _ rhs: Int, operation: Operation) -> Int {
+    private func calculate(_ lhs: Int, _ rhs: Int, operation: Operation) -> Int {
         switch operation {
         case .add:
             return add(lhs, rhs)
