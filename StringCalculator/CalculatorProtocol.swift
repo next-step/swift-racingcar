@@ -20,9 +20,9 @@ extension CalculatorProtocol where Self: ArithmeticOperationProtocol {
             throw CalculationError.inputNilOrEmpty
         }
         
-        let components = string.components(separatedBy: " ")
-        let numbers = components.compactMap { Int($0) }
-        let operators = components.filter { Int($0) == nil }
+        let mathematicalExpression = string.components(separatedBy: " ")
+        let numbers = mathematicalExpression.compactMap { Int($0) }
+        let operators = mathematicalExpression.filter { Int($0) == nil }
         
         var lhs: Int = numbers[0]
         
