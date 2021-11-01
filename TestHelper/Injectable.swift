@@ -12,11 +12,14 @@ protocol Injectable {
     func registerThrows<Object>(_ type: Object.Type, name: String, provider: @escaping () throws -> Object)
     func resolve<Object>(_ type: Object.Type, name: String) -> Object?
     func resolveThrows<Object>(_ type: Object.Type, name: String) throws -> Object?
+    func called(name: String, verify: @escaping (Any) -> Void)
+    func verify(name: String, arg: Any?)
 }
 
 class StubContainer: Injectable {
     private var container = [String: () -> Any?]()
     private var throwsContainer = [String: () throws -> Any?]()
+    private var verifyContainer = [String: (Any?) -> Void]()
     
     func register<Object>(_ type: Object.Type, name: String, provider: @escaping () -> Object) {
         container[name] = provider
@@ -39,5 +42,14 @@ class StubContainer: Injectable {
         
         let object = try provider()
         return object as? Object
+    }
+    
+    func called(name: String, verify: @escaping (Any) -> Void) {
+        verifyContainer[name] = verify
+    }
+    
+    func verify(name: String, arg: Any?) {
+        let verify = verifyContainer[name]
+        verify?(arg)
     }
 }
