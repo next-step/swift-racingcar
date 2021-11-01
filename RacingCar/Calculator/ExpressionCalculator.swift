@@ -34,7 +34,9 @@ struct ExpressionCalculator {
     private var childExpressionCalculator: Self {
         get throws {
             let expressionUnitCount = 3
-            let expressionUnit = try ExpressionUnitCalculator(expression.prefix(expressionUnitCount))
+            let expressionUnit = try ExpressionUnitCalculator(
+                Array(expression.prefix(expressionUnitCount))
+            )
             let calculatedValue = String(expressionUnit.calculate())
             let childExpression = [calculatedValue] + Array(expression.dropFirst(expressionUnitCount))
             

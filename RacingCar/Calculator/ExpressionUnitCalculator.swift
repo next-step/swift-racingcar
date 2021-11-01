@@ -43,10 +43,6 @@ struct ExpressionUnitCalculator {
 }
 
 extension ExpressionUnitCalculator {
-    init(_ expressionUnit: ArraySlice<String>) throws {
-        try self.init(Array(expressionUnit))
-    }
-    
     init(_ expressionUnit: [String]) throws {
         guard
             expressionUnit.count == 3,
