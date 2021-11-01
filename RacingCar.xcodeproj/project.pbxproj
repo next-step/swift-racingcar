@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		C7E1263027239F7E0000DB8B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
+		E26B5BE9272E900300F3DAC9 /* ExpressionStringParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26B5BE8272E900300F3DAC9 /* ExpressionStringParser.swift */; };
+		E26B5BEA272E900300F3DAC9 /* ExpressionStringParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26B5BE8272E900300F3DAC9 /* ExpressionStringParser.swift */; };
 		E26B5BEF272E906B00F3DAC9 /* ExpressionInputError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26B5BEE272E906B00F3DAC9 /* ExpressionInputError.swift */; };
 		E26B5BF0272E906B00F3DAC9 /* ExpressionInputError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26B5BEE272E906B00F3DAC9 /* ExpressionInputError.swift */; };
 		E2D09D8F27282B7700A846D8 /* RacingCarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D09D8E27282B7700A846D8 /* RacingCarTests.swift */; };
@@ -30,6 +32,7 @@
 /* Begin PBXFileReference section */
 		C7E1262C27239F7E0000DB8B /* RacingCar */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RacingCar; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E1262F27239F7E0000DB8B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		E26B5BE8272E900300F3DAC9 /* ExpressionStringParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpressionStringParser.swift; sourceTree = "<group>"; };
 		E26B5BEE272E906B00F3DAC9 /* ExpressionInputError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpressionInputError.swift; sourceTree = "<group>"; };
 		E2D09D8C27282B7700A846D8 /* RacingCarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RacingCarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2D09D8E27282B7700A846D8 /* RacingCarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingCarTests.swift; sourceTree = "<group>"; };
@@ -84,6 +87,7 @@
 		E26B5BF1272E908900F3DAC9 /* Calculator */ = {
 			isa = PBXGroup;
 			children = (
+				E26B5BE8272E900300F3DAC9 /* ExpressionStringParser.swift */,
 				E26B5BEE272E906B00F3DAC9 /* ExpressionInputError.swift */,
 			);
 			path = Calculator;
@@ -188,6 +192,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7E1263027239F7E0000DB8B /* main.swift in Sources */,
+				E26B5BE9272E900300F3DAC9 /* ExpressionStringParser.swift in Sources */,
 				E26B5BEF272E906B00F3DAC9 /* ExpressionInputError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -198,6 +203,7 @@
 			files = (
 				E2D09D9327282B8E00A846D8 /* main.swift in Sources */,
 				E2D09D9527283A4C00A846D8 /* SetTests.swift in Sources */,
+				E26B5BEA272E900300F3DAC9 /* ExpressionStringParser.swift in Sources */,
 				E2D09D8F27282B7700A846D8 /* RacingCarTests.swift in Sources */,
 				E26B5BF0272E906B00F3DAC9 /* ExpressionInputError.swift in Sources */,
 			);
