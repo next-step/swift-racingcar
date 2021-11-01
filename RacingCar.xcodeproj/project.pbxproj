@@ -11,6 +11,7 @@
 		86F23600272837E4003E0F89 /* SetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F235FF272837E4003E0F89 /* SetTests.swift */; };
 		86F23604272ACCA0003E0F89 /* CalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F23603272ACCA0003E0F89 /* CalculatorTests.swift */; };
 		86F23607272E7FED003E0F89 /* ExpressionParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F23606272E7FED003E0F89 /* ExpressionParserTests.swift */; };
+		86F23609272E8BFA003E0F89 /* ExpressionCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F23608272E8BFA003E0F89 /* ExpressionCalculatorTests.swift */; };
 		C7E1263027239F7E0000DB8B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +33,7 @@
 		86F235FF272837E4003E0F89 /* SetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTests.swift; sourceTree = "<group>"; };
 		86F23603272ACCA0003E0F89 /* CalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorTests.swift; sourceTree = "<group>"; };
 		86F23606272E7FED003E0F89 /* ExpressionParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpressionParserTests.swift; sourceTree = "<group>"; };
+		86F23608272E8BFA003E0F89 /* ExpressionCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpressionCalculatorTests.swift; sourceTree = "<group>"; };
 		C7E1262C27239F7E0000DB8B /* RacingCar */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RacingCar; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E1262F27239F7E0000DB8B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -61,6 +63,7 @@
 				86F235FF272837E4003E0F89 /* SetTests.swift */,
 				86F23603272ACCA0003E0F89 /* CalculatorTests.swift */,
 				86F23606272E7FED003E0F89 /* ExpressionParserTests.swift */,
+				86F23608272E8BFA003E0F89 /* ExpressionCalculatorTests.swift */,
 			);
 			path = RacingCarTest;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				86F23604272ACCA0003E0F89 /* CalculatorTests.swift in Sources */,
+				86F23609272E8BFA003E0F89 /* ExpressionCalculatorTests.swift in Sources */,
 				86F23600272837E4003E0F89 /* SetTests.swift in Sources */,
 				86F23607272E7FED003E0F89 /* ExpressionParserTests.swift in Sources */,
 				86F235FB27282AF7003E0F89 /* SplitStringTests.swift in Sources */,
