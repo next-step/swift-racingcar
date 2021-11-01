@@ -18,22 +18,19 @@ enum CalculatorError: Error {
 
 struct Calculator {
     
-    var inputs: [String]?
-    
     var result: Int?
     var opCode: String?
     
     /// 동작
-    mutating func input() throws -> Int {
-        print("> ", terminator: "")
-        inputs = readLine()?.components(separatedBy: " ")
-        return try drive()
+    mutating func input(str: String) throws -> Int {
+        let inputs = str.components(separatedBy: " ")
+        return try drive(inputs: inputs)
     }
     
-    private mutating func drive() throws -> Int {
-        guard var inputs = inputs else { throw CalculatorError.noInput }
+    private mutating func drive(inputs: [String]) throws -> Int {
         guard inputs.count > 2 else { throw CalculatorError.inputIsNotValid }
         
+        var inputs = inputs
         result = parseNumber(input: inputs.removeFirst())
         opCode = parseOpcode(input: inputs.removeFirst())
         
