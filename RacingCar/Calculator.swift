@@ -13,15 +13,15 @@ enum CalculatorError: Error {
     case notOperator   // 연산자가 없다
     case numberNotExist
     case operatorNotExist
+    case inputIsNotValid
 }
 
 struct Calculator {
     
     var inputs: [String]?
     
+    var result: Int?
     var opCode: String?
-    var previous: Int?
-    var result: Int = 0
     
     /// 동작
     mutating func input() throws -> Int {
@@ -31,44 +31,44 @@ struct Calculator {
     }
     
     private mutating func drive() throws -> Int {
-        guard let inputs = inputs else { throw CalculatorError.noInput }
+        guard var inputs = inputs else { throw CalculatorError.noInput }
+        guard inputs.count > 2 else { throw CalculatorError.inputIsNotValid }
+        
+        result = parseNumber(input: inputs.removeFirst())
+        opCode = parseOpcode(input: inputs.removeFirst())
         
         for input in inputs {
-            try parseInput(input: input)
+            try processInput(input: input)
         }
-        return result
+        return result ?? 0
     }
     
-    private mutating func parseInput(input: String) throws {
-        if let number = Int(input) {
-            if previous == nil {
-                previous = number
-            }
-            guard let previous = previous else { throw CalculatorError.numberNotExist }
+    private mutating func processInput(input: String) throws {
+        // 숫자이면
+        if let number = parseNumber(input: input) {
+            guard let previous = result else { throw CalculatorError.numberNotExist }
             guard let opCode = opCode else { throw CalculatorError.operatorNotExist }
-            
-            self.previous = try calc(previous: previous, opCode: opCode, number: number)
+                
+            self.result = try calc(previous: previous, opCode: opCode, number: number)
             self.opCode = nil
-            
-        } else {
-            // 숫자가 아니면
-            opCode = try parseOpcode(input: input)
         }
+        
+        // 숫자가 아니면
+        opCode = parseOpcode(input: input)
     }
     
-    private func parseNumber(input: String) throws -> Int {
-        guard let number = Int(input) else { throw CalculatorError.notNumber }
-        return number
+    private mutating func parseNumber(input: String) -> Int? {
+        return Int(input)
     }
     
-    private func parseOpcode(input: String) throws -> String {
+    private func parseOpcode(input: String) -> String? {
         if ["+", "-", "*", "/"].contains(input) {
             return input
         }
-        throw CalculatorError.notOperator
+        return nil
     }
     
-    private mutating func calc(previous: Int, opCode: String, number: Int) throws -> Int {
+    private mutating func calc(previous: Int, opCode: String, number: Int) throws -> Int? {
         switch opCode {
         case "+": result = add(previous, number)
         case "-": result = substract(previous, number)
