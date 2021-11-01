@@ -10,7 +10,9 @@ import Foundation
 enum CalculatorError: Error {
     case noInput
     case notNumber  // 숫자가 없다
-    case notOoperator   // 연산자가 없다
+    case notOperator   // 연산자가 없다
+    case numberNotExist
+    case operatorNotExist
 }
 
 struct Calculator {
@@ -37,22 +39,25 @@ struct Calculator {
                 if previous == nil {
                     previous = number
                 } else {
-                    guard let previous = previous else { throw CalculatorError.notNumber }
-                    guard let opCode = opCode else { throw CalculatorError.notOoperator }
+                    guard let previous = previous else { throw CalculatorError.numberNotExist }
+                    guard let opCode = opCode else { throw CalculatorError.operatorNotExist }
                     
                     self.previous = try calc(previous: previous, opCode: opCode, number: number)
                     self.opCode = nil
                 }
             } else {
                 // 숫자가 아니면
-                if ["+", "-", "*", "/"].contains(input) {
-                    opCode = input
-                } else {
-                    throw CalculatorError.notOoperator
-                }
+                opCode = try parseOpcode(input: input)
             }
         }
         return result
+    }
+    
+    private func parseOpcode(input: String) throws -> String {
+        if ["+", "-", "*", "/"].contains(input) {
+            return input
+        }
+        throw CalculatorError.notOperator
     }
     
     private mutating func calc(previous: Int, opCode: String, number: Int) throws -> Int {
@@ -61,7 +66,7 @@ struct Calculator {
         case "-": result = substract(previous, number)
         case "*": result = multiply(previous, number)
         case "/": result = divide(previous, number)
-        default: throw CalculatorError.notOoperator
+        default: throw CalculatorError.notOperator
         }
         return result
     }
