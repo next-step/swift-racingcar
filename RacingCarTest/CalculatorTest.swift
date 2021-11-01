@@ -23,4 +23,13 @@ class CalculatorTest: XCTestCase {
         XCTAssertThrowsError(try cal.input(str: input))
     }
     
+    func test_사칙연산() throws {
+        let cal = Calculator()
+        
+        XCTAssertEqual(cal.add(1, 2), 3)
+        XCTAssertEqual(cal.substract(5, 3), 2)
+        XCTAssertEqual(cal.multiply(2, 5), 10)
+        XCTAssertEqual(try cal.divide(10, 5), 2)
+        XCTAssertThrowsError(try cal.divide(1, 0))
+    }
 }

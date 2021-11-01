@@ -14,6 +14,7 @@ enum CalculatorError: Error {
     case numberNotExist
     case operatorNotExist
     case inputIsNotValid
+    case divideByZero
 }
 
 struct Calculator {
@@ -70,7 +71,7 @@ struct Calculator {
         case "+": result = add(previous, number)
         case "-": result = substract(previous, number)
         case "*": result = multiply(previous, number)
-        case "/": result = divide(previous, number)
+        case "/": result = try divide(previous, number)
         default: throw CalculatorError.notOperator
         }
         return result
@@ -82,14 +83,17 @@ struct Calculator {
     }
     
     func substract(_ lhs: Int, _ rhs: Int) -> Int {
-        return lhs + rhs
+        return lhs - rhs
     }
     
     func multiply(_ lhs: Int, _ rhs: Int) -> Int {
         return lhs * rhs
     }
     
-    func divide(_ lhs: Int, _ rhs: Int) -> Int {
+    func divide(_ lhs: Int, _ rhs: Int) throws -> Int {
+        if rhs == 0 {
+            throw CalculatorError.divideByZero
+        }
         return lhs / rhs
     }
     
