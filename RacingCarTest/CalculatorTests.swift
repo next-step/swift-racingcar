@@ -57,12 +57,23 @@ class CalculatorTests: XCTestCase {
 }
 
 class Calculator {
+    
     enum `Operator` {
         
         case add
         case subtract
         case divide
         case multiply
+    }
+    
+    func `operator`(_ operatorString: String) throws -> Operator? {
+        switch operatorString {
+        case "+": return .add
+        case "-": return .subtract
+        case "/": return .divide
+        case "*": return .multiply
+        default: return nil
+        }
     }
     
     func calculate(left: Int, right: Int, operator: Operator) -> Int {
