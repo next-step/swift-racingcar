@@ -12,23 +12,30 @@ struct UserInput {
     func inputExpression() throws -> [String] {
         
         print("계산할 문자열을 입력해주세요. ex) 2 + 3 * 4 / 2")
-        
-        let input = readLine()?.components(separatedBy: " ")
-        
-        guard let input = input else {
+                
+        guard let input = readLine() else {
             throw CalculatorError.valueIsNil
         }
+        
+        try inputValidCheck(input)
+        
+        return inputComponents(input)
+    }
+    
+    func inputValidCheck(_ input: String) throws {
 
         guard !input.isEmpty else {
             throw CalculatorError.valueIsEmpty
         }
 
-        guard !input.contains("") else {
+        guard input.first != " ",
+              input.last != " "
+        else {
             throw CalculatorError.valueHasWhiteSpace
         }
-        
-        print(input)
-        
-        return input
+    }
+    
+    func inputComponents(_ input: String) -> [String] {
+        return input.components(separatedBy: " ")
     }
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum CalculatorError: Error {
+enum CalculatorError: Error {
     case valueIsNil
     case valueIsEmpty
     case valueHasWhiteSpace
