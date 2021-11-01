@@ -7,13 +7,13 @@
 
 import Foundation
 
-public enum CalculatorError: Int, Error {
-    case valueIsNil = -1
-    case valueIsEmpty = -2
-    case valueHasWhiteSpace = -3
-    case valueIsNotOperator = -4
-    case valueIsBelowZero = -5
-    case valueUnableConvetStringToInt = -6
+public enum CalculatorError: Error {
+    case valueIsNil
+    case valueIsEmpty
+    case valueHasWhiteSpace
+    case valueIsNotOperator
+    case valueIsBelowZero
+    case valueUnableConvetStringToInt
 }
 
 extension CalculatorError {

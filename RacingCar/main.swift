@@ -6,12 +6,17 @@
 
 import Foundation
 
-func start() {
-    let input = UserInput().inputExpression()
+func start() throws {
+    let input = try UserInput().inputExpression()
 
-    print(Calculator().stringCalculate(input))
+    print(try Calculator().stringCalculate(input))
 }
 
-start()
+do {
+    try start()
+} catch {
+    print(error)
+}
+
 
 

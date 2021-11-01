@@ -20,29 +20,29 @@ struct Calculator {
         return lhs * rhs
     }
     
-    func divide(_ lhs: Int, _ rhs: Int) -> Int {
+    func divide(_ lhs: Int, _ rhs: Int) throws -> Int {
         
         guard lhs > 0 && rhs > 0 else {
-            return CalculatorError.valueIsBelowZero.rawValue
+            throw CalculatorError.valueIsBelowZero
         }
         
         return lhs / rhs
     }
     
-    func stringCalculate(_ expression: [String]) -> Int {
-        var accumulate = convertStringToNumber(expression[0])
+    func stringCalculate(_ expression: [String]) throws -> Int {
+        var accumulate = try convertStringToNumber(expression[0])
         
         for i in stride(from: 1, to: expression.count, by: 2) {
             let operatorType = expression[i]
-            let to = convertStringToNumber(expression[i + 1])
+            let to = try convertStringToNumber(expression[i + 1])
             
-            accumulate = calculate(accumulate, operatorType, to)
+            accumulate = try calculate(accumulate, operatorType, to)
         }
         
         return accumulate
     }
     
-    func calculate(_ lhs: Int, _ operatorType: String, _ rhs: Int) -> Int {
+    func calculate(_ lhs: Int, _ operatorType: String, _ rhs: Int) throws -> Int {
         switch operatorType {
         case Operator.add.rawValue:
             return add(lhs, rhs)
@@ -51,15 +51,15 @@ struct Calculator {
         case Operator.multiply.rawValue:
             return multiply(lhs, rhs)
         case Operator.divide.rawValue:
-            return divide(lhs, rhs)
+            return try divide(lhs, rhs)
         default:
-            return CalculatorError.valueIsNotOperator.rawValue
+            throw CalculatorError.valueIsNotOperator
         }
     }
     
-    func convertStringToNumber(_ expressionString: String) -> Int {
+    func convertStringToNumber(_ expressionString: String) throws -> Int {
         guard let expressionString = Int(expressionString) else {
-            return CalculatorError.valueUnableConvetStringToInt.rawValue
+            throw CalculatorError.valueUnableConvetStringToInt
         }
         
         return expressionString
