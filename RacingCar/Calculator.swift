@@ -7,6 +7,12 @@
 
 import Foundation
 
+enum CalculatorError: Error {
+    case noInput
+    case notNumber  // 숫자가 없다
+    case notOoperator   // 연산자가 없다
+}
+
 struct Calculator {
     
     var inputs: [String]?
@@ -16,13 +22,13 @@ struct Calculator {
     var result: Int = 0
     
     /// Helper
-    mutating func input() {
+    mutating func input() throws {
         inputs = readLine()?.components(separatedBy: " ")
-        drive()
+        try drive()
     }
     
-    private mutating func drive() {
-        guard let inputs = inputs else { return }
+    private mutating func drive() throws {
+        guard let inputs = inputs else { throw CalculatorError.noInput }
         
         for input in inputs {
             if let number = Int(input) {
@@ -30,8 +36,8 @@ struct Calculator {
                 if previous == nil {
                     previous = number
                 } else {
-                    guard let previous = previous else { return }
-                    guard let opCode = opCode else { return }
+                    guard let previous = previous else { throw CalculatorError.notNumber }
+                    guard let opCode = opCode else { throw CalculatorError.notOoperator }
                     
                     switch opCode {
                     case "+": result = add(previous, number)
@@ -39,7 +45,7 @@ struct Calculator {
                     case "*": result = multiply(previous, number)
                     case "/": result = divide(previous, number)
                     default:
-                        return
+                        throw CalculatorError.notOoperator
                     }
                     self.previous = result
                     self.opCode = nil
@@ -49,7 +55,7 @@ struct Calculator {
                 if ["+", "-", "*", "/"].contains(input) {
                     opCode = input
                 } else {
-                    return
+                    throw CalculatorError.notOoperator
                 }
             }
         }
