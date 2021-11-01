@@ -23,7 +23,7 @@ struct Calculator {
     var previous: Int?
     var result: Int = 0
     
-    /// Helper
+    /// 동작
     mutating func input() throws -> Int {
         print("> ", terminator: "")
         inputs = readLine()?.components(separatedBy: " ")
@@ -34,23 +34,31 @@ struct Calculator {
         guard let inputs = inputs else { throw CalculatorError.noInput }
         
         for input in inputs {
-            if let number = Int(input) {
-                // 숫자이면
-                if previous == nil {
-                    previous = number
-                } else {
-                    guard let previous = previous else { throw CalculatorError.numberNotExist }
-                    guard let opCode = opCode else { throw CalculatorError.operatorNotExist }
-                    
-                    self.previous = try calc(previous: previous, opCode: opCode, number: number)
-                    self.opCode = nil
-                }
-            } else {
-                // 숫자가 아니면
-                opCode = try parseOpcode(input: input)
-            }
+            try parseInput(input: input)
         }
         return result
+    }
+    
+    private mutating func parseInput(input: String) throws {
+        if let number = Int(input) {
+            if previous == nil {
+                previous = number
+            }
+            guard let previous = previous else { throw CalculatorError.numberNotExist }
+            guard let opCode = opCode else { throw CalculatorError.operatorNotExist }
+            
+            self.previous = try calc(previous: previous, opCode: opCode, number: number)
+            self.opCode = nil
+            
+        } else {
+            // 숫자가 아니면
+            opCode = try parseOpcode(input: input)
+        }
+    }
+    
+    private func parseNumber(input: String) throws -> Int {
+        guard let number = Int(input) else { throw CalculatorError.notNumber }
+        return number
     }
     
     private func parseOpcode(input: String) throws -> String {
@@ -71,7 +79,7 @@ struct Calculator {
         return result
     }
     
-    /// Function
+    /// 기능
     func add(_ lhs: Int, _ rhs: Int) -> Int {
         return lhs + rhs
     }
