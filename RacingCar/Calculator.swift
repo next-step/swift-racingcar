@@ -40,15 +40,7 @@ struct Calculator {
                     guard let previous = previous else { throw CalculatorError.notNumber }
                     guard let opCode = opCode else { throw CalculatorError.notOoperator }
                     
-                    switch opCode {
-                    case "+": result = add(previous, number)
-                    case "-": result = substract(previous, number)
-                    case "*": result = multiply(previous, number)
-                    case "/": result = divide(previous, number)
-                    default:
-                        throw CalculatorError.notOoperator
-                    }
-                    self.previous = result
+                    self.previous = try calc(previous: previous, opCode: opCode, number: number)
                     self.opCode = nil
                 }
             } else {
@@ -59,6 +51,17 @@ struct Calculator {
                     throw CalculatorError.notOoperator
                 }
             }
+        }
+        return result
+    }
+    
+    private mutating func calc(previous: Int, opCode: String, number: Int) throws -> Int {
+        switch opCode {
+        case "+": result = add(previous, number)
+        case "-": result = substract(previous, number)
+        case "*": result = multiply(previous, number)
+        case "/": result = divide(previous, number)
+        default: throw CalculatorError.notOoperator
         }
         return result
     }
