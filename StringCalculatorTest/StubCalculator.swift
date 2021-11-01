@@ -10,11 +10,8 @@ import TestHelper
 
 class StubCalculator: StubContainer ,ArithmeticOperationProtocol, CalculatorProtocol {
     func calculate(with string: String) throws -> Int {
+        self.verify(name: "calculateWithOperation", arg: string)
         return try self.resolveThrows(Int.self, name: "calculateWithString") ?? 0
-    }
-    
-    func calculate(_ lhs: Int, _ rhs: Int, operation: Operation) -> Int {
-        return self.resolve(Int.self, name: "calculate") ?? 0
     }
     
     func add(_ lhs: Int, _ rhs: Int) -> Int {
