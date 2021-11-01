@@ -29,12 +29,12 @@ struct Calculator {
         return lhs / rhs
     }
     
-    func stringCalculate(_ expression: [String]) throws -> Int {
+    func output(_ expression: [String]) throws -> Int {
         var accumulate = try convertStringToNumber(expression[0])
         
-        for i in stride(from: 1, to: expression.count, by: 2) {
-            let operatorType = expression[i]
-            let to = try convertStringToNumber(expression[i + 1])
+        for expressionIndex in stride(from: 1, to: expression.count, by: 2) {
+            let operatorType = expression[expressionIndex]
+            let to = try convertStringToNumber(expression[expressionIndex + 1])
             
             accumulate = try calculate(accumulate, operatorType, to)
         }

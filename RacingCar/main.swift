@@ -9,7 +9,7 @@ import Foundation
 func start() throws {
     let input = try UserInput().inputExpression()
 
-    print(try Calculator().stringCalculate(input))
+    print(try Calculator().output(input))
 }
 
 do {
