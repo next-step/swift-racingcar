@@ -6,3 +6,5 @@
 
 import Foundation
 
+var c = Calculator()
+c.input()
