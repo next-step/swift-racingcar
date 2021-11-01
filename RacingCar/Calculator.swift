@@ -22,12 +22,13 @@ struct Calculator {
     var result: Int = 0
     
     /// Helper
-    mutating func input() throws {
+    mutating func input() throws -> Int {
+        print("> ", terminator: "")
         inputs = readLine()?.components(separatedBy: " ")
-        try drive()
+        return try drive()
     }
     
-    private mutating func drive() throws {
+    private mutating func drive() throws -> Int {
         guard let inputs = inputs else { throw CalculatorError.noInput }
         
         for input in inputs {
@@ -59,7 +60,7 @@ struct Calculator {
                 }
             }
         }
-        print(result)
+        return result
     }
     
     /// Function

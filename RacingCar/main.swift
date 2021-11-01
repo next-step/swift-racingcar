@@ -7,4 +7,9 @@
 import Foundation
 
 var c = Calculator()
-c.input()
+do {
+    let res = try c.input()
+    print(res)
+} catch {
+    print(error)
+}
