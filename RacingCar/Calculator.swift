@@ -23,7 +23,7 @@ struct Calculator {
     
     /// 동작
     mutating func input(str: String) throws -> Int {
-        let inputs = str.components(separatedBy: " ")
+        let inputs = str.trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: " ")
         return try drive(inputs: inputs)
     }
     

@@ -16,4 +16,11 @@ class CalculatorTest: XCTestCase {
         
         XCTAssertEqual(result, 10)
     }
+    
+    func testInvalidInput() throws {
+        var cal = Calculator()
+        let input = "1 + "
+        XCTAssertThrowsError(try cal.input(str: input))
+    }
+    
 }
