@@ -60,36 +60,27 @@ extension StringCalculatorTest {
 // MARK: - String 값 분해 및 계산 테스트
 
 extension StringCalculatorTest {
-    func test_calculate_with_operation_enum_add() {
-        calculator.register(Int.self, name: "calculate", provider: {
-            return 1 + 1
+    func test_call_private_calculate_function_with_operation() {
+        let expect = expectation(description: "String 값에서 사칙연산 기호로 Operation Enum 생성 후, private calculate function 호출")
+        expect.expectedFulfillmentCount = 4
+        let inputString = "1 + 2 - 3 / 4 * 5"
+        
+        calculator.called(name: "calculateWithOperation", verify: { string in
+            guard let string = string as? String else { return }
+            let mathematicalExpression = string.components(separatedBy: " ")
+            let operators = mathematicalExpression.filter { Int($0) == nil }
+            
+            for index in 0..<operators.count {
+                guard let _ = Operation(rawValue: operators[index]) else {
+                    return
+                }
+                
+                expect.fulfill()
+            }
         })
         
-        XCTAssertEqual(2, calculator.calculate(1, 1, operation: .add))
-    }
-    
-    func test_calculate_with_operation_enum_substract() {
-        calculator.register(Int.self, name: "calculate", provider: {
-            return 1 - 1
-        })
-        
-        XCTAssertEqual(0, calculator.calculate(1, 1, operation: .substract))
-    }
-    
-    func test_calculate_with_operation_enum_divide() {
-        calculator.register(Int.self, name: "calculate", provider: {
-            return 1 / 1
-        })
-        
-        XCTAssertEqual(1, calculator.calculate(1, 1, operation: .divide))
-    }
-    
-    func test_calculate_with_operation_enum_multiply() {
-        calculator.register(Int.self, name: "calculate", provider: {
-            return 1 * 1
-        })
-        
-        XCTAssertEqual(1, calculator.calculate(1, 1, operation: .multiply))
+        let _ = try? calculator.calculate(with: inputString)
+        wait(for: [expect], timeout: 0.1)
     }
     
     func test_calculate_with_string_ignore_opration_priority() {
