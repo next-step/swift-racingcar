@@ -11,14 +11,17 @@
 		C1745829272BE1460010C5D0 /* StringCalculatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1745828272BE1460010C5D0 /* StringCalculatorTest.swift */; };
 		C1745834272BE2D90010C5D0 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1745833272BE2D90010C5D0 /* main.swift */; };
 		C1745838272BE3600010C5D0 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1745833272BE2D90010C5D0 /* main.swift */; };
+		C19AE5D32730173A0058E636 /* ArithmeticOperationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DE5D73273014DC007396B0 /* ArithmeticOperationProtocol.swift */; };
+		C19AE5D42730173D0058E636 /* CalculatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DE5D75273014F1007396B0 /* CalculatorProtocol.swift */; };
+		C19AE5D5273017400058E636 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DE5D772730155C007396B0 /* String+Extension.swift */; };
+		C19AE5D62730194A0058E636 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
 		C1B1EB91272851DA00447AC1 /* RacingCarTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B1EB90272851DA00447AC1 /* RacingCarTest.swift */; };
-		C1B1EB952728522E00447AC1 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
 		C1B48FE3272CE5E3001AAEC3 /* Injectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11830A6272CE5AE001A57EA /* Injectable.swift */; };
 		C1B48FE4272CE5E4001AAEC3 /* Injectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11830A6272CE5AE001A57EA /* Injectable.swift */; };
 		C1B48FE6272D5AC4001AAEC3 /* StubCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B48FE5272D5AC4001AAEC3 /* StubCalculator.swift */; };
-		C1DDE5C5272E509B009B8175 /* StringCalculatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1745828272BE1460010C5D0 /* StringCalculatorTest.swift */; };
 		C1DE5D74273014DC007396B0 /* ArithmeticOperationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DE5D73273014DC007396B0 /* ArithmeticOperationProtocol.swift */; };
 		C1DE5D76273014F1007396B0 /* CalculatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DE5D75273014F1007396B0 /* CalculatorProtocol.swift */; };
+		C1DE5D782730155C007396B0 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DE5D772730155C007396B0 /* String+Extension.swift */; };
 		C7E1263027239F7E0000DB8B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +67,7 @@
 		C1B48FE5272D5AC4001AAEC3 /* StubCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubCalculator.swift; sourceTree = "<group>"; };
 		C1DE5D73273014DC007396B0 /* ArithmeticOperationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArithmeticOperationProtocol.swift; sourceTree = "<group>"; };
 		C1DE5D75273014F1007396B0 /* CalculatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorProtocol.swift; sourceTree = "<group>"; };
+		C1DE5D772730155C007396B0 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		C7E1262C27239F7E0000DB8B /* RacingCar */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RacingCar; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E1262F27239F7E0000DB8B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -130,6 +134,7 @@
 				C1745833272BE2D90010C5D0 /* main.swift */,
 				C1DE5D73273014DC007396B0 /* ArithmeticOperationProtocol.swift */,
 				C1DE5D75273014F1007396B0 /* CalculatorProtocol.swift */,
+				C1DE5D772730155C007396B0 /* String+Extension.swift */,
 			);
 			path = StringCalculator;
 			sourceTree = "<group>";
@@ -333,7 +338,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1DDE5C5272E509B009B8175 /* StringCalculatorTest.swift in Sources */,
 				C11830A7272CE5AE001A57EA /* Injectable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -343,9 +347,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1745838272BE3600010C5D0 /* main.swift in Sources */,
+				C19AE5D5273017400058E636 /* String+Extension.swift in Sources */,
 				C1745829272BE1460010C5D0 /* StringCalculatorTest.swift in Sources */,
 				C1B48FE3272CE5E3001AAEC3 /* Injectable.swift in Sources */,
+				C19AE5D42730173D0058E636 /* CalculatorProtocol.swift in Sources */,
 				C1B48FE6272D5AC4001AAEC3 /* StubCalculator.swift in Sources */,
+				C19AE5D32730173A0058E636 /* ArithmeticOperationProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,6 +360,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1DE5D782730155C007396B0 /* String+Extension.swift in Sources */,
 				C1DE5D76273014F1007396B0 /* CalculatorProtocol.swift in Sources */,
 				C1745834272BE2D90010C5D0 /* main.swift in Sources */,
 				C1DE5D74273014DC007396B0 /* ArithmeticOperationProtocol.swift in Sources */,
@@ -363,9 +371,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1B1EB952728522E00447AC1 /* main.swift in Sources */,
 				C1B1EB91272851DA00447AC1 /* RacingCarTest.swift in Sources */,
 				C1B48FE4272CE5E4001AAEC3 /* Injectable.swift in Sources */,
+				C19AE5D62730194A0058E636 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -602,6 +610,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

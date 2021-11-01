@@ -15,7 +15,7 @@ protocol CalculatorProtocol {
 extension CalculatorProtocol where Self: ArithmeticOperationProtocol {
     func calculate(with string: String?) throws -> Int {
         guard let string = string,
-              !string.filter({ !$0.isNewline && !$0.isWhitespace }).isEmpty
+              string.isNotEmpty
         else {
             throw CalculationError.inputNilOrEmpty
         }
