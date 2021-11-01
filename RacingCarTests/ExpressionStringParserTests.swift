@@ -9,7 +9,7 @@ import XCTest
 import RacingCar
 
 class ExpressionStringParserTests: XCTestCase {
-    func test_ExpressionStringParser_init_throwing_error() {
+    func test_init_throwing_error() {
         let emptyInputs = [nil, ""]
         
         emptyInputs.forEach {
@@ -17,7 +17,7 @@ class ExpressionStringParserTests: XCTestCase {
         }
     }
     
-    func test_ExpressionStringParser_init() {
+    func test_init() {
         XCTAssertNoThrow(try ExpressionStringParser(expressionString: "1 + 2 - 3"))
     }
 }
