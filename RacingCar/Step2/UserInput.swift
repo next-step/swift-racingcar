@@ -9,6 +9,8 @@ import Foundation
 
 struct UserInput {
     
+    let minimumInputCount: Int = 3
+    
     func inputExpression() throws -> [String] {
         
         print("계산할 문자열을 입력해주세요. ex) 2 + 3 * 4 / 2")
@@ -32,6 +34,10 @@ struct UserInput {
               input.last != " "
         else {
             throw CalculatorError.valueHasWhiteSpace
+        }
+        
+        guard input.count > minimumInputCount else {
+            throw CalculatorError.valueIsBelowMinimumCount
         }
     }
     

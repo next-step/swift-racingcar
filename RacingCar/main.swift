@@ -28,6 +28,8 @@ do {
         print("\(CalculatorError.valueIsBelowZero.message()) 다시 입력해주세요.")
     case CalculatorError.valueUnableConvetStringToInt:
         print("\(CalculatorError.valueUnableConvetStringToInt.message()) 다시 입력해주세요.")
+    case CalculatorError.valueIsBelowMinimumCount:
+        print("\(CalculatorError.valueIsBelowMinimumCount.message()) 다시 입력해주세요.")
     default:
         print("다시 입력해주세요.")
     }
