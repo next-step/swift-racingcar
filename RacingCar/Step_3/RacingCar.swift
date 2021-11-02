@@ -21,3 +21,8 @@ enum Question: String {
     case firstQuestion = "자동차 대수는 몇 대인가요?"
     case secondQuestion = "시도할 횟수는 몇 회인가요?"
 }
+
+enum RacingCarError: String, Error {
+    case firstInputError
+    case secondInputError
+}

@@ -19,3 +19,9 @@ struct RacingCarPrinter {
         return ""
     }
 }
+
+extension RacingCarPrinter {
+    func userInputValidationChecker() -> Bool {
+        
+    }
+}

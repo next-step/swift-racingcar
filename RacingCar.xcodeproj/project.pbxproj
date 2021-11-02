@@ -28,6 +28,7 @@
 		E0938D05273167A8005A7F07 /* RacingCarPrinter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0938D04273167A8005A7F07 /* RacingCarPrinter.swift */; };
 		E0938D07273167F8005A7F07 /* RacingCarMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0938D06273167F8005A7F07 /* RacingCarMaker.swift */; };
 		E0938D0927316C06005A7F07 /* RacingCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0938D0827316C06005A7F07 /* RacingCar.swift */; };
+		E0938D0C27317448005A7F07 /* RacingCarValidationCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0938D0B27317448005A7F07 /* RacingCarValidationCheck.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -59,6 +60,7 @@
 		E0938D04273167A8005A7F07 /* RacingCarPrinter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingCarPrinter.swift; sourceTree = "<group>"; };
 		E0938D06273167F8005A7F07 /* RacingCarMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingCarMaker.swift; sourceTree = "<group>"; };
 		E0938D0827316C06005A7F07 /* RacingCar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingCar.swift; sourceTree = "<group>"; };
+		E0938D0B27317448005A7F07 /* RacingCarValidationCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingCarValidationCheck.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 				E0938D04273167A8005A7F07 /* RacingCarPrinter.swift */,
 				E0938D06273167F8005A7F07 /* RacingCarMaker.swift */,
 				E0938D0827316C06005A7F07 /* RacingCar.swift */,
+				E0938D0B27317448005A7F07 /* RacingCarValidationCheck.swift */,
 			);
 			path = Step_3;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 				E005544F272D607200EA062F /* StringExtension.swift in Sources */,
 				E005545F272EAA9500EA062F /* StringValidationCheckerProtocol.swift in Sources */,
 				E0055457272EA65900EA062F /* Step2_calculatorError.swift in Sources */,
+				E0938D0C27317448005A7F07 /* RacingCarValidationCheck.swift in Sources */,
 				E0938D0927316C06005A7F07 /* RacingCar.swift in Sources */,
 				E0055459272EA69200EA062F /* Step2_OperatorType.swift in Sources */,
 				E0938D07273167F8005A7F07 /* RacingCarMaker.swift in Sources */,

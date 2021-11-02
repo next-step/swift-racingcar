@@ -17,13 +17,9 @@ let userInput = readLine()
 
 //MARK: -- Step3
 print(Question.firstQuestion.rawValue,terminator:" ")
-if let racingCarCount = readLine(),
-   let firstInputNumber = Int(racingCarCount) {
-    
-    print(Question.secondQuestion.rawValue,terminator:" ")
-    if let attemptCount = readLine(),
-       let secondInputNumber = Int(attemptCount) {
-        
+if let firstInputNumber = readLine() {
+    print(Question.secondQuestion.rawValue, terminator: " ")
+    if let secondInputNumber = readLine() {
         let userInput = RacingCar(carCount: firstInputNumber,
                                   roundCount: secondInputNumber)
         let printer = RacingCarPrinter(racingCar: userInput)
