@@ -8,5 +8,9 @@
 import Foundation
 
 struct RacingCarPrinter {
+    let userInput: String
     
+    init(readLine: String) {
+        self.userInput = readLine
+    }
 }
