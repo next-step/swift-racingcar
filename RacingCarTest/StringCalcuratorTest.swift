@@ -69,6 +69,17 @@ class StringCalcuratorTest: XCTestCase {
         }
     }
     
+    func test_inputError_Spacing() {
+        let stringArithmeticOperation: String? = " "
+        let result = StringCalcurator.InputError.noNumbers
+        
+        do {
+            let _ = try stringCalurator.calcurate(stringArithmeticOperation)
+        } catch {
+            XCTAssertEqual(error as? StringCalcurator.InputError, result)
+        }
+    }
+    
     func test_inputError_noNumbers() {
         let stringArithmeticOperation: String? = "안녕"
         let result = StringCalcurator.InputError.noNumbers
