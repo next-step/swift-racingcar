@@ -16,7 +16,7 @@ protocol StringCalcuratorProtocol {
     func calcurate(_ string: String?) throws -> Int
 }
 
-final class StringCalcurator: StringCalcuratorProtocol, ArithmeticProtocol {
+final class StringCalcurator: StringCalcuratorProtocol {
     enum InputError: Error {
         case `nil`
         case empty
@@ -79,7 +79,7 @@ final class StringCalcurator: StringCalcuratorProtocol, ArithmeticProtocol {
     }
 }
 
-extension StringCalcurator {
+extension StringCalcurator: ArithmeticProtocol {
     func add(_ lhs: Int, _ rhs: Int) -> Int {
         return lhs + rhs
     }
