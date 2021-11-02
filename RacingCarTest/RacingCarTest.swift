@@ -18,4 +18,21 @@ class RacingCarTest: XCTestCase {
         
         XCTAssertEqual(racingCar.cars?.count, inputValue)
     }
+    
+    /// 전진하는 조건에 따라 자동차가 움직였는지 테스트
+    func test_car_is_not_move() throws {
+        var car = Car()
+        let rollNotCarMoved = 3
+        car.move(judge: rollNotCarMoved)
+        
+        XCTAssertFalse(car.distance > 0)
+    }
+    
+    func test_car_is_move() throws {
+        var car = Car()
+        let rollCarMove = 4
+        car.move(judge: rollCarMove)
+        
+        XCTAssertTrue(car.distance > 0)
+    }
 }

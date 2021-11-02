@@ -8,3 +8,4 @@ import Foundation
 
 var car = RacingCar()
 car.inputView()
+car.startRace()
