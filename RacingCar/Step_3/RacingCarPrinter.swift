@@ -8,9 +8,14 @@
 import Foundation
 
 struct RacingCarPrinter {
-    let userInput: String
+    let racingCar: RacingCar
     
-    init(readLine: String) {
-        self.userInput = readLine
+    init(racingCar: RacingCar) {
+        self.racingCar = racingCar
+    }
+    
+    func printRacingResult() -> String {
+//        self.racingCar
+        return ""
     }
 }

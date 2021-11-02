@@ -19,10 +19,15 @@ let userInput = readLine()
 print(Question.firstQuestion.rawValue,terminator:" ")
 if let racingCarCount = readLine(),
    let firstInputNumber = Int(racingCarCount) {
+    
     print(Question.secondQuestion.rawValue,terminator:" ")
     if let attemptCount = readLine(),
        let secondInputNumber = Int(attemptCount) {
         
+        let userInput = RacingCar(carCount: firstInputNumber,
+                                  roundCount: secondInputNumber)
+        let printer = RacingCarPrinter(racingCar: userInput)
+        print(printer.printRacingResult())
     }
 }
 
