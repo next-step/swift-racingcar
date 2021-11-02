@@ -26,11 +26,12 @@ struct Calculator: Calculable {
 	// MARK: - Private
 	private func calculate(by expressions: [String]) throws -> Int {
 		var result = try expressions.first.toInt()
-		for i in findOperatorRange(in: expressions) {
-			guard expressions.count > i + 1 else { throw ValueError.invalid }
+		for operatorIndex in findOperatorRange(in: expressions) {
+			let RHSOperandIndex = operatorIndex + 1
+			guard expressions.count > RHSOperandIndex else { throw ValueError.invalid }
 			
-			let operand = try expressions[i + 1].toInt()
-			let arithmeticOperator = findOperator(in: expressions[i])
+			let operand = try expressions[RHSOperandIndex].toInt()
+			let arithmeticOperator = findOperator(in: expressions[operatorIndex])
 			result = try arithmeticOperator.operate(result, operand)
 		}
 		
