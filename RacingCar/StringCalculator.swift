@@ -12,11 +12,11 @@ protocol ArithmeticProtocol {
     func devide(_ lhs: Int, _ rhs: Int) -> Int
 }
 
-protocol StringCalcuratorProtocol {
-    func calcurate(_ string: String?) throws -> Int
+protocol StringCalculatorProtocol {
+    func calculate(_ string: String?) throws -> Int
 }
 
-final class StringCalcurator: StringCalcuratorProtocol {
+final class StringCalculator: StringCalculatorProtocol {
     enum InputError: Error {
         case `nil`
         case empty
@@ -39,7 +39,7 @@ final class StringCalcurator: StringCalcuratorProtocol {
         }
     }
     
-    func calcurate(_ string: String?) throws -> Int {
+    func calculate(_ string: String?) throws -> Int {
         guard let string = string else { throw InputError.nil }
         guard !string.isEmpty else { throw InputError.empty }
         
@@ -79,7 +79,7 @@ final class StringCalcurator: StringCalcuratorProtocol {
     }
 }
 
-extension StringCalcurator: ArithmeticProtocol {
+extension StringCalculator: ArithmeticProtocol {
     func add(_ lhs: Int, _ rhs: Int) -> Int {
         return lhs + rhs
     }
