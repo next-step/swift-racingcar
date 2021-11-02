@@ -64,12 +64,13 @@ final class StringCalcurator: StringCalcuratorProtocol, ArithmeticProtocol {
         var result = numbers.removeFirst()
         
         try? operators
+            .enumerated()
             .forEach {
-                switch $0 {
-                case .add: result = add(result, numbers.removeFirst())
-                case .substract: result = substract(result, numbers.removeFirst())
-                case .mutiply: result = multiply(result, numbers.removeFirst())
-                case .devide: result = devide(result, numbers.removeFirst())
+                switch $0.element {
+                case .add: result = add(result, numbers[$0.offset])
+                case .substract: result = substract(result, numbers[$0.offset])
+                case .mutiply: result = multiply(result, numbers[$0.offset])
+                case .devide: result = devide(result, numbers[$0.offset])
                 case .none: throw InputError.noOperators
                 }
             }
