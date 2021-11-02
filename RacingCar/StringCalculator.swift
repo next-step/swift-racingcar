@@ -43,14 +43,15 @@ final class StringCalcurator: StringCalcuratorProtocol, ArithmeticProtocol {
         guard let string = string else { throw InputError.nil }
         guard !string.isEmpty else { throw InputError.empty }
         
-        var numbers = string
+        let organizedArray = string
             .split(separator: " ")
+        
+        var numbers = organizedArray
             .compactMap { Int($0) }
         
         guard !numbers.isEmpty else { throw InputError.noNumbers }
         
-        let operators = string
-            .split(separator: " ")
+        let operators = organizedArray
             .filter { $0 == "+"
                 || $0 == "-"
                 || $0 == "X"
@@ -77,7 +78,6 @@ final class StringCalcurator: StringCalcuratorProtocol, ArithmeticProtocol {
     }
 }
 
-// MARK: - Private Function
 extension StringCalcurator {
     func add(_ lhs: Int, _ rhs: Int) -> Int {
         return lhs + rhs
