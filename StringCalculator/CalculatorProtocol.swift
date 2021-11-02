@@ -13,21 +13,23 @@ protocol CalculatorProtocol {
 
 extension CalculatorProtocol where Self: ArithmeticOperationProtocol {
     func calculate(with string: String?) throws -> Int {
-        try stringValidation(string)
+        let string = try stringValidation(string)
         
-        let mathematicalExpression = (string ?? "").components(separatedBy: " ")
+        let mathematicalExpression = string.components(separatedBy: " ")
         let numbers = mathematicalExpression.compactMap { Int($0) }
         let operators = mathematicalExpression.filter { Int($0) == nil }
         
         return try initOperationAndCalculate(numbers: numbers, operators: operators)
     }
     
-    private func stringValidation(_ string: String?) throws {
+    private func stringValidation(_ string: String?) throws -> String {
         guard let string = string,
-              string.isNotEmpty
+              string.isNotEmptyAndWhiteSpace
         else {
             throw CalculationError.inputNilOrEmpty
         }
+        
+        return string
     }
     
     private func initOperationAndCalculate(numbers: [Int], operators: [String]) throws -> Int {

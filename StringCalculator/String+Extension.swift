@@ -8,7 +8,7 @@
 import Foundation
 
 extension String {
-    var isNotEmpty: Bool {
-        return !self.filter({ !$0.isNewline && !$0.isWhitespace }).isEmpty
+    var isNotEmptyAndWhiteSpace: Bool {
+        return !self.filter({ !$0.isWhitespace }).isEmpty
     }
 }
