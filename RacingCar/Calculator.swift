@@ -27,8 +27,8 @@ struct Calculator: Calculable {
 	private func calculate(by expressions: [String]) throws -> Int {
 		var result = try expressions.first.toInt()
 		for operatorIndex in findOperatorRange(in: expressions) {
-			let RHSOperand = try findRHSOperand(by: operatorIndex, in: expressions)
-			let operands = (lhs: result, rhs: RHSOperand)
+			let operandRHS = try findOperandRHS(by: operatorIndex, in: expressions)
+			let operands = (lhs: result, rhs: operandRHS)
 			let arithmeticOperator = findOperator(in: expressions[operatorIndex])
 			
 			result = try arithmeticOperator.operate(operands.lhs, operands.rhs)
@@ -37,14 +37,14 @@ struct Calculator: Calculable {
 		return result
 	}
 	
-	private func findRHSOperand(by operatorIndex: Int, in expressions: [String]) throws -> Int {
-		let RHSOperandIndex = operatorIndex + 1
-		guard expressions.count > RHSOperandIndex,
-					let RHSOperand = try? expressions[RHSOperandIndex].toInt()
+	private func findOperandRHS(by operatorIndex: Int, in expressions: [String]) throws -> Int {
+		let operandRHSIndex = operatorIndex + 1
+		guard expressions.count > operandRHSIndex,
+					let operandRHS = try? expressions[operandRHSIndex].toInt()
 		else {
 			throw ValueError.invalid
 		}
-		return RHSOperand
+		return operandRHS
 	}
 	
 	private func findOperatorRange(in expressions: [String]) -> StrideTo<Int> {
