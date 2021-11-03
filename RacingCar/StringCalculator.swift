@@ -24,19 +24,11 @@ final class StringCalculator: StringCalculatorProtocol {
         case noOperators
     }
     
-    private enum ArithmeticOperations: String, CaseIterable {
+    private enum ArithmeticOperations: String {
         case add = "+"
         case substract = "-"
         case mutiply = "X"
         case devide = "/"
-        
-        static func factory(_ string: String) -> ArithmeticOperations? {
-            let arithmeticOperation  = ArithmeticOperations
-                .allCases
-                .filter { $0.rawValue == string }
-                .first
-            return arithmeticOperation
-        }
     }
     
     func calculate(_ string: String?) throws -> Int {
@@ -57,7 +49,7 @@ final class StringCalculator: StringCalculatorProtocol {
                 || $0 == "X"
                 || $0 == "/" }
             .map { String($0) }
-            .map { ArithmeticOperations.factory($0) }
+            .map { ArithmeticOperations.init(rawValue: $0 ) }
         
         guard !operators.isEmpty else { throw InputError.noOperators }
         
