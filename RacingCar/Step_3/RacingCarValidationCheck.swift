@@ -18,8 +18,11 @@ struct RacingCarValidationCheck {
     
     var isIntableString: Bool {
         if firstInput.toInt() == nil {
-            fatalError()
+            fatalError(RacingCarError.firstInputError.rawValue)
         }
-        return false
+        if secondInput.toInt() == nil {
+            fatalError(RacingCarError.secondInputError.rawValue)
+        }
+        return true
     }
 }

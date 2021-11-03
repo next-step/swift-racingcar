@@ -17,15 +17,15 @@ let userInput = readLine()
 
 //MARK: -- Step3
 print(Question.firstQuestion.rawValue,terminator:" ")
-if let firstInputNumber = readLine() {
-    print(Question.secondQuestion.rawValue, terminator: " ")
-    if let secondInputNumber = readLine() {
-        let userInput = RacingCar(carCount: firstInputNumber,
-                                  roundCount: secondInputNumber)
-        let printer = RacingCarPrinter(racingCar: userInput)
-        print(printer.printRacingResult())
-    }
+guard let firstInput = readLine() else { fatalError(RacingCarError.firstInputError.rawValue) }
+
+print(Question.secondQuestion.rawValue, terminator: " ")
+guard let secondInput = readLine() else { fatalError(RacingCarError.firstInputError.rawValue) }
+
+let checker = RacingCarValidationCheck(firstInput, secondInput)
+if checker.isIntableString {
+    let racing = RacingInput(carCount: firstInput,
+                        roundCount: secondInput)
+    let game = RacingGame(racing: racing)
+    game.startRacing()
 }
-
-
-

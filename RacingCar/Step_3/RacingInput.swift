@@ -7,13 +7,13 @@
 
 import Foundation
 
-struct RacingCar {
+struct RacingInput {
     let playingCarCount: Int
     let roundCount: Int
     
-    init(carCount: Int, roundCount: Int) {
-        self.playingCarCount = carCount
-        self.roundCount = roundCount
+    init(carCount: String, roundCount: String) {
+        self.playingCarCount = Int(carCount)!
+        self.roundCount = Int(roundCount)!
     }
 }
 
