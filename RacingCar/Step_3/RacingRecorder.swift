@@ -10,6 +10,7 @@ import Foundation
 class RacingRecorder {
     var racingFinish: (() -> ())?
     private var racingCount: Int
+    private var preRacingResult = [String]()
     
     private var roundResult: String = "실행 결과\n" {
         didSet {
@@ -24,8 +25,21 @@ class RacingRecorder {
         self.racingCount = roundCount
     }
     
-    func appendResult(record: String) {
-        self.roundResult += "\(record)\n"
+    func appendResult(record: [String]) {
+        if preRacingResult.isEmpty {
+            preRacingResult = record
+            self.roundResult += record.reduce("") {
+                return $0 + "\($1)\n"
+            }
+            return
+        }
+        let zipArray = zip(preRacingResult,record)
+        let newRecord = zipArray.map { $0.0 + $0.1 }
+        let roundResult = newRecord.reduce("", {
+            return $0 + "\($1)\n"
+        })
+        self.roundResult += "\(roundResult)\n"
+        preRacingResult = newRecord
     }
     
     func racingResult() -> String {

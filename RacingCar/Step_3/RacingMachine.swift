@@ -8,7 +8,7 @@
 import Foundation
 
 class RacingMachine {
-    var oneRoundEnded: ((String) -> ())?
+    var oneRoundEnded: (([String]) -> ())?
     
     func isOverThree(number: Int) -> String {
         return number > 3 ? "-" : ""
@@ -16,11 +16,11 @@ class RacingMachine {
     
     func startRacing(racing: RacingInput) {
         for _ in 0...racing.roundCount - 1 {
-            let roundRecord: String = Array(0...racing.playingCarCount - 1)
+            let roundRecord: [String] = Array(0...racing.playingCarCount - 1)
                 .map { String($0) }
-                .reduce("") { partialResult, _ in
+                .reduce([]) { partialResult, _ in
                 let randomNumber = (0...9).randomElement()!
-                return partialResult + "\(isOverThree(number: randomNumber))\n"
+                return partialResult + [isOverThree(number: randomNumber)]
             }
             self.oneRoundEnded?(roundRecord)
         }
