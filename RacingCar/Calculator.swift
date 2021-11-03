@@ -8,32 +8,30 @@
 import Foundation
 
 enum CalculatorError: Error {
-    case noInput
-    case notNumber  // 숫자가 없다
-    case notOperator   // 연산자가 없다
-    case numberNotExist
-    case operatorNotExist
-    case inputIsNotValid
-    case divideByZero
+    case notOperator        // 입력값에 연산자가 없음
+    case numberNotExist     // 먼저 입력된 숫자가 존재하지 않음
+    case operatorNotExist   // 현재 저장된 연산자가 존재하지 않음
+    case inputIsNotValid    // 입력값이 올바르지 않음
+    case divideByZero       // 0으로 나눌 수 없음
 }
 
 struct Calculator {
     
     var result: Int?
-    var opCode: String?
+    var operatorCode: String?
     
     /// 동작
     mutating func input(str: String) throws -> Int {
         let inputs = str.trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: " ")
-        return try drive(inputs: inputs)
+        return try calculate(inputs: inputs)
     }
     
-    private mutating func drive(inputs: [String]) throws -> Int {
-        guard inputs.count > 2 else { throw CalculatorError.inputIsNotValid }
+    private mutating func calculate(inputs: [String]) throws -> Int {
+        guard inputs.count >= 3 else { throw CalculatorError.inputIsNotValid }
         
         var inputs = inputs
         result = parseNumber(input: inputs.removeFirst())
-        opCode = parseOpcode(input: inputs.removeFirst())
+        operatorCode = parseOpcode(input: inputs.removeFirst())
         
         for input in inputs {
             try processInput(input: input)
@@ -45,14 +43,14 @@ struct Calculator {
         // 숫자이면
         if let number = parseNumber(input: input) {
             guard let previous = result else { throw CalculatorError.numberNotExist }
-            guard let opCode = opCode else { throw CalculatorError.operatorNotExist }
+            guard let opCode = operatorCode else { throw CalculatorError.operatorNotExist }
                 
             self.result = try calc(previous: previous, opCode: opCode, number: number)
-            self.opCode = nil
+            self.operatorCode = nil
         }
         
         // 숫자가 아니면
-        opCode = parseOpcode(input: input)
+        operatorCode = parseOpcode(input: input)
     }
     
     private mutating func parseNumber(input: String) -> Int? {
