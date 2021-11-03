@@ -29,7 +29,7 @@ struct Calculator: Calculable {
 		for operatorIndex in findOperatorRange(in: expressions) {
 			let operandRHS = try findOperandRHS(by: operatorIndex, in: expressions)
 			let operands = (lhs: result, rhs: operandRHS)
-			let arithmeticOperator = findOperator(in: expressions[operatorIndex])
+			let arithmeticOperator = try findOperator(in: expressions[operatorIndex])
 			
 			result = try arithmeticOperator.operate(operands.lhs, operands.rhs)
 		}
@@ -51,7 +51,10 @@ struct Calculator: Calculable {
 		return stride(from: 1, to: expressions.count, by: 2)
 	}
 	
-	private func findOperator(in expression: String) -> ArithmeticOpearator {
-		ArithmeticOpearator(rawValue: expression) ?? .none
+	private func findOperator(in expression: String) throws -> ArithmeticOpearator {
+		guard let arithmeticOperator = OpeatorSymbol(rawValue: expression)?.makeOperator() else {
+			throw ValueError.invalidOperator
+		}
+		return arithmeticOperator
 	}
 }
