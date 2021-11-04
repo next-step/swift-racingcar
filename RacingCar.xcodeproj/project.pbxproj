@@ -113,6 +113,13 @@
 			path = Step2;
 			sourceTree = "<group>";
 		};
+		A1AF036C2733FE48000741D3 /* Step3 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Step3;
+			sourceTree = "<group>";
+		};
 		C7E1262327239F7E0000DB8B = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +141,7 @@
 		C7E1262E27239F7E0000DB8B /* RacingCar */ = {
 			isa = PBXGroup;
 			children = (
+				A1AF036C2733FE48000741D3 /* Step3 */,
 				A1A9B40C272D725D00C28E1A /* Step2 */,
 				A1A9B40A272D723B00C28E1A /* Step1 */,
 				C7E1262F27239F7E0000DB8B /* main.swift */,
