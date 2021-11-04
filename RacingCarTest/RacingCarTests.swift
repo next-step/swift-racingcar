@@ -8,7 +8,7 @@
 import XCTest
 
 class RacingCarTests: XCTestCase {
-	func test_shouldMoveForwardWhenNumberisGraterThan4() {
+	func test_shouldMoveForwardWhenNumberIsGraterThan4() {
 		let racingCar = RacingCar()
 		racingCar.move(at: 5)
 		XCTAssertEqual(racingCar.position, 1)
@@ -17,6 +17,15 @@ class RacingCarTests: XCTestCase {
 	func test_shoulStopWhenNumberIsLessThan4() {
 		let racingCar = RacingCar()
 		racingCar.move(at: 3)
+		XCTAssertEqual(racingCar.position, 0)
+	}
+	
+	func test_shouldStopWhenNumberIsOutOfRange0Through9() {
+		let racingCar = RacingCar()
+		racingCar.move(at: 10)
+		XCTAssertEqual(racingCar.position, 0)
+		
+		racingCar.move(at: -9)
 		XCTAssertEqual(racingCar.position, 0)
 	}
 	
