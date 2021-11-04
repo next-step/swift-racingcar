@@ -13,4 +13,10 @@ class RacingCarTests: XCTestCase {
 		racingCar.move(at: 5)
 		XCTAssertEqual(racingCar.position, 1)
 	}
+	
+	func test_shoulStopWhenNumberIsLessThan4() {
+		let racingCar = RacingCar()
+		racingCar.move(at: 3)
+		XCTAssertEqual(racingCar.position, 0)
+	}	
 }
