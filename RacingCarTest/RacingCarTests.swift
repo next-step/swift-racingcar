@@ -33,4 +33,14 @@ class RacingCarTests: XCTestCase {
 		let racing = Racing(numberOfCar: 3)
 		XCTAssertEqual(racing.cars.count, 3)
 	}
+	
+	func test_shouldBe1ThePositionOfCarsWhenTheRandomNumberIs4() {
+		let randomNumber: RandomNumber = StubRandomNumber(range: 4...4)
+		let racing = Racing(numberOfCar: 3, randomNumber: randomNumber)
+		racing.raceStart()
+		
+		XCTAssertEqual(racing.cars[0].position, 1)
+		XCTAssertEqual(racing.cars[1].position, 1)
+		XCTAssertEqual(racing.cars[2].position, 1)
+	}
 }
