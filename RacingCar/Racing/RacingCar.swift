@@ -7,15 +7,11 @@
 
 import Foundation
 
-enum RangeOption {
-	static let movementRange: ClosedRange = 4...9
-}
-
 class RacingCar {
 	private(set) var position: Int = 0
 	
 	func move(at score: Int) {
-		if RangeOption.movementRange.contains(score) {
+		if RacingOption.movementRange.contains(score) {
 			position += 1
 		}
 	}
