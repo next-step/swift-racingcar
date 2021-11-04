@@ -23,6 +23,9 @@
 		51AED11327341E7E0063C19E /* Racing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AED111273416790063C19E /* Racing.swift */; };
 		51AED11527342D7A0063C19E /* RacingOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AED11427342D7A0063C19E /* RacingOption.swift */; };
 		51AED11627342DA20063C19E /* RacingOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AED11427342D7A0063C19E /* RacingOption.swift */; };
+		51AED118273430260063C19E /* RandomNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AED117273430260063C19E /* RandomNumber.swift */; };
+		51AED11B2734312A0063C19E /* StubRandom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AED11A2734312A0063C19E /* StubRandom.swift */; };
+		51AED11C2734313F0063C19E /* RandomNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AED117273430260063C19E /* RandomNumber.swift */; };
 		51AFDE6F272AC8B600A6E3DF /* CalculatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AFDE6E272AC8B600A6E3DF /* CalculatorTest.swift */; };
 		51D23A05272EF177006EAEFD /* ArithmeticOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D23A04272EF177006EAEFD /* ArithmeticOperator.swift */; };
 		51D23A06272EF185006EAEFD /* ArithmeticOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D23A04272EF177006EAEFD /* ArithmeticOperator.swift */; };
@@ -54,6 +57,8 @@
 		51AB4978272ED9C700409648 /* ValueError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueError.swift; sourceTree = "<group>"; };
 		51AED111273416790063C19E /* Racing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Racing.swift; sourceTree = "<group>"; };
 		51AED11427342D7A0063C19E /* RacingOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingOption.swift; sourceTree = "<group>"; };
+		51AED117273430260063C19E /* RandomNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNumber.swift; sourceTree = "<group>"; };
+		51AED11A2734312A0063C19E /* StubRandom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubRandom.swift; sourceTree = "<group>"; };
 		51AFDE6E272AC8B600A6E3DF /* CalculatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorTest.swift; sourceTree = "<group>"; };
 		51D23A04272EF177006EAEFD /* ArithmeticOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArithmeticOperator.swift; sourceTree = "<group>"; };
 		51D23A07272EF7CF006EAEFD /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
@@ -82,6 +87,7 @@
 		516F563F272834DA0016F13A /* RacingCarTest */ = {
 			isa = PBXGroup;
 			children = (
+				51AED1192734311F0063C19E /* Stub */,
 				516F563027281D3F0016F13A /* SplitStringTest.swift */,
 				516F5635272820180016F13A /* SetTest.swift */,
 				51AFDE6E272AC8B600A6E3DF /* CalculatorTest.swift */,
@@ -106,6 +112,7 @@
 				51AED111273416790063C19E /* Racing.swift */,
 				51A5FBED2732D62E003C3EFD /* RacingCar.swift */,
 				51AED11427342D7A0063C19E /* RacingOption.swift */,
+				51AED117273430260063C19E /* RandomNumber.swift */,
 			);
 			path = Racing;
 			sourceTree = "<group>";
@@ -117,6 +124,14 @@
 				51D23A07272EF7CF006EAEFD /* Array+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		51AED1192734311F0063C19E /* Stub */ = {
+			isa = PBXGroup;
+			children = (
+				51AED11A2734312A0063C19E /* StubRandom.swift */,
+			);
+			path = Stub;
 			sourceTree = "<group>";
 		};
 		C7E1262327239F7E0000DB8B = {
@@ -239,6 +254,8 @@
 			files = (
 				516F5645272834FC0016F13A /* main.swift in Sources */,
 				51D23A06272EF185006EAEFD /* ArithmeticOperator.swift in Sources */,
+				51AED11C2734313F0063C19E /* RandomNumber.swift in Sources */,
+				51AED11B2734312A0063C19E /* StubRandom.swift in Sources */,
 				51AB497B272EDAA700409648 /* String+Extension.swift in Sources */,
 				51AED11327341E7E0063C19E /* Racing.swift in Sources */,
 				51D23A09272EF8BC006EAEFD /* Array+Extension.swift in Sources */,
@@ -264,6 +281,7 @@
 				51D23A08272EF7CF006EAEFD /* Array+Extension.swift in Sources */,
 				51AB4972272ED7C900409648 /* Calculator.swift in Sources */,
 				51D23A05272EF177006EAEFD /* ArithmeticOperator.swift in Sources */,
+				51AED118273430260063C19E /* RandomNumber.swift in Sources */,
 				51A5FBEE2732D62E003C3EFD /* RacingCar.swift in Sources */,
 				51AED11527342D7A0063C19E /* RacingOption.swift in Sources */,
 			);

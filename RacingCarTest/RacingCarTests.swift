@@ -8,6 +8,8 @@
 import XCTest
 
 class RacingCarTests: XCTestCase {
+	let random: Random = StubRandom(number: 4)
+	
 	func test_shouldMoveForwardWhenNumberIsGraterThan4() {
 		let racingCar = RacingCar()
 		racingCar.move(at: 5)
@@ -30,13 +32,12 @@ class RacingCarTests: XCTestCase {
 	}
 	
 	func test_shouldTheCountIs3WhenTheInputIs3() {
-		let racing = Racing(numberOfCar: 3)
+		let racing = Racing(numberOfCar: 3, random: random)
 		XCTAssertEqual(racing.cars.count, 3)
 	}
 	
 	func test_shouldBe1ThePositionOfCarsWhenTheRandomNumberIs4() {
-		let randomNumber: RandomNumber = StubRandomNumber(range: 4...4)
-		let racing = Racing(numberOfCar: 3, randomNumber: randomNumber)
+		let racing = Racing(numberOfCar: 3, random: random)
 		racing.raceStart()
 		
 		XCTAssertEqual(racing.cars[0].position, 1)

@@ -8,10 +8,18 @@
 import Foundation
 
 class Racing {
-	var cars: [RacingCar] = []
+	private(set) var cars: [RacingCar] = []
+	private let random: Random
 	
-	init(numberOfCar number: Int) {
+	init(numberOfCar number: Int, random: Random) {
+		self.random = random
 		makeRacingCars(number)
+	}
+	
+	func raceStart() {
+		cars.forEach {
+			$0.move(at: random.rand())
+		}
 	}
 	
 	private func makeRacingCars(_ number: Int) {
