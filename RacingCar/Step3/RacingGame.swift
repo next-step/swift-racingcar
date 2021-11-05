@@ -13,3 +13,45 @@ enum GameOption {
     static let randomNumberRange: ClosedRange = 0...9
     static let moveDistance: String = "-"
 }
+
+struct RacingGame: Error {
+    enum RacingGameError {
+        case notExistCar
+    }
+    
+    private var randomNumber: Int {
+        Int.random(in: GameOption.randomNumberRange)
+    }
+            
+    func createCars() {
+        guard let numberOfCars = try? InputView().inputNumberOfCars() else {
+            return
+        }
+        
+        startValidCheck(numberOfCars: numberOfCars)
+    }
+    
+    private func start(cars: [Car]) {
+        guard let numberOfAttempts = try? InputView().inputNumberOfAttempts() else {
+            return
+        }
+        
+        ResultView().printResultTitle()
+        for _ in 0 ..< numberOfAttempts {
+            for carIndex in 0 ..< cars.count {
+                cars[carIndex].move(amount: randomNumber)
+                ResultView().printResult(result: cars[carIndex].position)
+            }
+            print("")
+        }
+    }
+    
+    private func startValidCheck(numberOfCars: Int) {
+        do {
+            self.start(cars: try CarsFactory().getCars(numberOfCars: numberOfCars))
+        } catch {
+            print(RacingGameError.notExistCar)
+            print(error)
+        }
+    }
+}
