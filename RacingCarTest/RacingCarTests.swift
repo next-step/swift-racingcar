@@ -66,4 +66,11 @@ class RacingCarTests: XCTestCase {
 		XCTAssertEqual(racing.cars[1].position, 5)
 		XCTAssertEqual(racing.cars[2].position, 5)
 	}
+	
+	func test_shouldReturn2HyphenWhenTheNumberOfAttemptsIs2AndRandomNumberIs4() {
+		let resultView: Outputable = StubResultView()
+		XCTAssertEqual( resultView.broadcast(position: 2), "--")
+		XCTAssertEqual( resultView.broadcast(position: 1), "-")
+		XCTAssertEqual( resultView.broadcast(position: 0), "")
+	}
 }
