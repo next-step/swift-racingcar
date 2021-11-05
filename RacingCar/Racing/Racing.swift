@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Racing {
+final class Racing {
 	// MARK: - Properties
 	private let random: Random
 	private let resultView: Outputable

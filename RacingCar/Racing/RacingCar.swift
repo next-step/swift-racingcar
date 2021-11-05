@@ -7,7 +7,7 @@
 
 import Foundation
 
-class RacingCar {
+final class RacingCar {
 	private(set) var position: Int = 0
 	
 	func move(at score: Int) {
