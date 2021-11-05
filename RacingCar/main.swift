@@ -5,4 +5,4 @@
 // 
 
 
-
+RacingGame().createCars()
