@@ -10,16 +10,23 @@ import Foundation
 class Racing {
 	private(set) var cars: [RacingCar] = []
 	private let random: Random
+	private let totalTrack: Int
+	private var track: Int = 1
 	
-	init(numberOfCar number: Int, random: Random) {
+	init(numberOfCars number: Int, numberOfAttempts: Int, random: Random) {
 		self.random = random
+		self.totalTrack = numberOfAttempts
 		makeRacingCars(number)
 	}
 	
 	func raceStart() {
-		cars.forEach {
-			$0.move(at: random.rand())
-		}
+		repeat {
+			cars.forEach {
+				$0.move(at: random.rand())
+			}
+			track += 1
+		} while (track <= totalTrack)
+		track = 1
 	}
 	
 	private func makeRacingCars(_ number: Int) {

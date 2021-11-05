@@ -32,12 +32,12 @@ class RacingCarTests: XCTestCase {
 	}
 	
 	func test_shouldTheCountIs3WhenTheInputIs3() {
-		let racing = Racing(numberOfCar: 3, random: random)
+		let racing = Racing(numberOfCars: 3, numberOfAttempts: 1, random: random)
 		XCTAssertEqual(racing.cars.count, 3)
 	}
 	
 	func test_shouldBe1ThePositionOfCarsWhenTheRandomNumberIs4() {
-		let racing = Racing(numberOfCar: 3, random: random)
+		let racing = Racing(numberOfCars: 3, numberOfAttempts: 1, random: random)
 		racing.raceStart()
 		
 		XCTAssertEqual(racing.cars[0].position, 1)
