@@ -23,7 +23,7 @@ class RacingCarTest: XCTestCase {
         let expect = expectation(description: "자동차의 연료가 4이상 9 이하일 경우 앞으로 전진한다.")
         guard let carFuel: Int = (4...9).randomElement() else { return }
         
-        viewModel.called(name: "isForward", verify: { isForward in
+        viewModel.called(name: "isForward", verify: { _ in
             if (4...9).contains(carFuel) {
                 expect.fulfill()
             }

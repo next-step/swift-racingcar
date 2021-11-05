@@ -9,5 +9,7 @@ import Foundation
 import TestHelper
 
 class StubRacingCarViewModel: StubContainer {
-    
+    func startRacing() {
+        self.verify(name: "isForward", arg: true)
+    }
 }
