@@ -20,6 +20,7 @@ struct InputView: Inputable {
 		if let numberOfCars = readNumberOfCars(),
 			 let numberOfAttempts = readNumberOfAttempts() {
 			completion(numberOfCars, numberOfAttempts)
+			return
 		}
 		throw InputError.invalid(message: "올바른 숫자를 입력해주세요.")
 	}
