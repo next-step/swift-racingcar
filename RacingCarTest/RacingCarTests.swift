@@ -32,12 +32,14 @@ class RacingCarTests: XCTestCase {
 	}
 	
 	func test_shouldTheCountIs3WhenTheInputIs3() {
-		let racing = Racing(numberOfCars: 3, numberOfAttempts: 1, random: random)
+		let inputView: Inputable = StubInputView(numberOfCars: 3, numberOfAttempts: 1)
+		let racing = Racing(inputView: inputView, random: random)
 		XCTAssertEqual(racing.cars.count, 3)
 	}
 	
 	func test_shouldBe1ThePositionOfCarsWhenTheRandomNumberIs4() {
-		let racing = Racing(numberOfCars: 3, numberOfAttempts: 1, random: random)
+		let inputView: Inputable = StubInputView(numberOfCars: 3, numberOfAttempts: 1)
+		let racing = Racing(inputView: inputView, random: random)
 		racing.raceStart()
 		
 		XCTAssertEqual(racing.cars[0].position, 1)
@@ -46,7 +48,8 @@ class RacingCarTests: XCTestCase {
 	}
 	
 	func test_shouldBe4ThePositionOfCarsWhenTheNumberOfAttemptsIs4AndRandomNumberIs4() {
-		let racing = Racing(numberOfCars: 3, numberOfAttempts: 4, random: random)
+		let inputView: Inputable = StubInputView(numberOfCars: 3, numberOfAttempts: 4)
+		let racing = Racing(inputView: inputView, random: random)
 		racing.raceStart()
 		
 		XCTAssertEqual(racing.cars[0].position, 4)
@@ -55,7 +58,7 @@ class RacingCarTests: XCTestCase {
 	}
 	
 	func test_shouldBeEqualTheNumberOfCarsAndInputNumber() {
-		let inputView: InputView = StubInputView(numberOfCars: 3, numberOfAttempts: 5)
+		let inputView: Inputable = StubInputView(numberOfCars: 3, numberOfAttempts: 5)
 		let racing = Racing(inputView: inputView, random: random)
 		racing.raceStart()
 		

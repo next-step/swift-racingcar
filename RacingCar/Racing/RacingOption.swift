@@ -11,4 +11,6 @@ import Foundation
 enum RacingOption {
 	static let randomNumberRange: ClosedRange = 0...9
 	static let movementRange: ClosedRange = 4...9
+	static let startingTrack: Int = 1
+	static let defaultTotalTrack: Int = 0
 }

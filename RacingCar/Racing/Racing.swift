@@ -10,29 +10,49 @@ import Foundation
 class Racing {
 	private(set) var cars: [RacingCar] = []
 	private let random: Random
-	private let totalTrack: Int
-	private var track: Int = 1
+	private var totalTrack: Int = RacingOption.defaultTotalTrack
+	private var track: Int = RacingOption.startingTrack
 	
-	init(numberOfCars number: Int, numberOfAttempts: Int, random: Random) {
+	init(inputView: Inputable, random: Random) {
 		self.random = random
-		self.totalTrack = numberOfAttempts
-		makeRacingCars(number)
+		do {
+			try inputView.read { numberOfCars, numberOfAttempts in
+				self.totalTrack = numberOfAttempts
+				self.makeRacingCars(numberOfCars)
+			}
+		} catch (let error) {
+			printMessage(for: error)
+		}
 	}
 	
 	func raceStart() {
-		repeat {
+		while (track <= totalTrack) {
 			cars.forEach {
 				$0.move(at: random.rand())
 			}
 			track += 1
-		} while (track <= totalTrack)
-		track = 1
+		}
+		
+		raceEnd()
+	}
+	
+	private func raceEnd() {
+		totalTrack = RacingOption.defaultTotalTrack
+		track = RacingOption.startingTrack
 	}
 	
 	private func makeRacingCars(_ number: Int) {
 		for _ in 0 ..< number {
 			let car = RacingCar()
 			cars.append(car)
+		}
+	}
+	
+	private func printMessage(for error: Error) {
+		guard let inputError = error as? InputError else { return }
+		switch inputError {
+		case .invalid(let message):
+			print(message)
 		}
 	}
 }
