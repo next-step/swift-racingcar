@@ -33,4 +33,19 @@ class RacingCarTest: XCTestCase {
         
         self.wait(for: [expect], timeout: 0.1)
     }
+    
+    func test_racing_car_stop() {
+        let expect = expectation(description: "자동차의 연료가 4이이하일 경우 앞으로 멈춘다.")
+        guard let carFuel: Int = (0...3).randomElement() else { return }
+        
+        viewModel.called(name: "isForward", verify: { _ in
+            if !(4...9).contains(carFuel) {
+                expect.fulfill()
+            }
+        })
+        
+        viewModel.startRacing()
+        
+        self.wait(for: [expect], timeout: 0.1)
+    }
 }
