@@ -24,6 +24,7 @@
 		A1AF036F27340499000741D3 /* RacingGameTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AF036E27340499000741D3 /* RacingGameTest.swift */; };
 		A1AF03712734089D000741D3 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AF03702734089D000741D3 /* InputView.swift */; };
 		A1AF037327340B3B000741D3 /* StartCalculate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AF037227340B3B000741D3 /* StartCalculate.swift */; };
+		A1AF0379273427FD000741D3 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AF0378273427FD000741D3 /* Car.swift */; };
 		C7E1263027239F7E0000DB8B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,7 @@
 		A1AF036E27340499000741D3 /* RacingGameTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingGameTest.swift; sourceTree = "<group>"; };
 		A1AF03702734089D000741D3 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
 		A1AF037227340B3B000741D3 /* StartCalculate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartCalculate.swift; sourceTree = "<group>"; };
+		A1AF0378273427FD000741D3 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		C7E1262C27239F7E0000DB8B /* RacingCar */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RacingCar; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E1262F27239F7E0000DB8B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -125,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				A1AF03702734089D000741D3 /* InputView.swift */,
+				A1AF0378273427FD000741D3 /* Car.swift */,
 			);
 			path = Step3;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A11FBA4D2728399000A24A9D /* StringType.swift in Sources */,
+				A1AF0379273427FD000741D3 /* Car.swift in Sources */,
 				A1AF03712734089D000741D3 /* InputView.swift in Sources */,
 				A1A9B412272D749A00C28E1A /* UserInput.swift in Sources */,
 				A1AF037327340B3B000741D3 /* StartCalculate.swift in Sources */,
