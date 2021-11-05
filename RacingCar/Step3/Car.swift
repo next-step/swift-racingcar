@@ -7,19 +7,26 @@
 
 import Foundation
 
-enum GameOption {
-    static let defaultPosition: Int = 0
-    static let movementRange: ClosedRange = 4...9
-    static let randomNumberRange: ClosedRange = 0...9
-}
-
-struct Car {
-    private(set) var position: Int
+final class Car {
+    private(set) var position: String
     
-    mutating func move(amount: Int) {
-        let movingDistance: Int = amount
-        if GameOption.movementRange.contains(movingDistance) {
-            position += movingDistance
+    init(position: String = GameOption.defaultPosition) {
+        self.position = position
+    }
+    
+    func move(amount: Int) {
+        guard canMove(amount: amount) else {
+            return
         }
+        
+        position += GameOption.moveDistance
+    }
+    
+    private func canMove(amount: Int) -> Bool {
+        guard amount >= GameOption.minimumMovementDistance else {
+            return false
+        }
+        
+        return true
     }
 }
