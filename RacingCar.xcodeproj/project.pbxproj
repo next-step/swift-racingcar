@@ -11,6 +11,7 @@
 		C1745829272BE1460010C5D0 /* StringCalculatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1745828272BE1460010C5D0 /* StringCalculatorTest.swift */; };
 		C1745834272BE2D90010C5D0 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1745833272BE2D90010C5D0 /* main.swift */; };
 		C1745838272BE3600010C5D0 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1745833272BE2D90010C5D0 /* main.swift */; };
+		C191466F2735745F0033BC16 /* StubRacingCarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C191466E2735745F0033BC16 /* StubRacingCarViewModel.swift */; };
 		C19AE5D32730173A0058E636 /* ArithmeticOperationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DE5D73273014DC007396B0 /* ArithmeticOperationProtocol.swift */; };
 		C19AE5D42730173D0058E636 /* CalculatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DE5D75273014F1007396B0 /* CalculatorProtocol.swift */; };
 		C19AE5D5273017400058E636 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DE5D772730155C007396B0 /* String+Extension.swift */; };
@@ -62,6 +63,7 @@
 		C1745828272BE1460010C5D0 /* StringCalculatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringCalculatorTest.swift; sourceTree = "<group>"; };
 		C1745831272BE2D90010C5D0 /* StringCalculator */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = StringCalculator; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1745833272BE2D90010C5D0 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		C191466E2735745F0033BC16 /* StubRacingCarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubRacingCarViewModel.swift; sourceTree = "<group>"; };
 		C1B1EB8E272851DA00447AC1 /* RacingCarTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RacingCarTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1B1EB90272851DA00447AC1 /* RacingCarTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingCarTest.swift; sourceTree = "<group>"; };
 		C1B48FE5272D5AC4001AAEC3 /* StubCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubCalculator.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				C1B1EB90272851DA00447AC1 /* RacingCarTest.swift */,
+				C191466E2735745F0033BC16 /* StubRacingCarViewModel.swift */,
 			);
 			path = RacingCarTest;
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 				C1B1EB91272851DA00447AC1 /* RacingCarTest.swift in Sources */,
 				C1B48FE4272CE5E4001AAEC3 /* Injectable.swift in Sources */,
 				C19AE5D62730194A0058E636 /* main.swift in Sources */,
+				C191466F2735745F0033BC16 /* StubRacingCarViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
