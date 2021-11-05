@@ -9,45 +9,12 @@ import XCTest
 @testable import RacingCar
 
 class RacingCarTest: XCTestCase {
-    private var numbers: Set<Int> = []
 
     override func setUpWithError() throws {
-        numbers.removeAll()
-        numbers.insert(1)
-        numbers.insert(1)
-        numbers.insert(2)
-        numbers.insert(3)
+        
     }
 
     override func tearDownWithError() throws {
         
-    }
-
-    func test_string_split() {
-        let dummyString1 = "1,2"
-        let dummyString2 = "1"
-        
-        let dummyString1Array = dummyString1.split(separator: ",")
-        let dummyString2Array = dummyString2.split(separator: ",")
-        
-        guard dummyString1Array.count < 2,
-              dummyString2Array.count < 1 else { return }
-        
-        XCTAssertEqual(dummyString1Array[0], "1")
-        XCTAssertEqual(dummyString1Array[1], "2")
-        XCTAssertEqual(dummyString2Array[0], "1")
-    }
-    
-    func test_string_replacingOccurrences() {
-        var dummyString = "(1,2)"
-        
-        dummyString = dummyString.replacingOccurrences(of: "(", with: "")
-        dummyString = dummyString.replacingOccurrences(of: ")", with: "")
-        
-        XCTAssertEqual(dummyString, "1,2")
-    }
-    
-    func test_set_count() {
-        XCTAssertEqual(self.numbers.count, 3)
     }
 }
