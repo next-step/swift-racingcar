@@ -27,9 +27,7 @@ class ExpressionStringParserTests: XCTestCase {
     }
 }
 
-extension ExpressionStringParserTests {
-    
-    // TODO: 어떻게 nil, emptyString을 합쳐야 할지 모르겠어요
+extension ExpressionStringParserTests {    
     func initWithEmptyInputError(expressionString: String?) {
         XCTAssertThrowsError(
             try ExpressionStringParser(expressionString: expressionString),
