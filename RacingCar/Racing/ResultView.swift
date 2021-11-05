@@ -8,7 +8,10 @@
 import Foundation
 
 protocol Outputable {
-	func broadcast(position: Int) -> String
+	func startedBroadcasting()
+	func broadcast(asPosition position: Int) -> String
+	func broadcast(asError error: InputError)
+	func broadcastThatCarsHasPassedTrack()
 }
 
 extension Outputable {
@@ -22,10 +25,25 @@ extension Outputable {
 }
 
 struct ResultView: Outputable {
-	func broadcast(position: Int) -> String {
+	func startedBroadcasting() {
+		print("\n실행 결과")
+	}
+	
+	func broadcast(asPosition position: Int) -> String {
 		let displayingSymbolText = changePositionToSymbolText(position: position)
 		printResultPosition(as: displayingSymbolText)
 		return displayingSymbolText
+	}
+	
+	func broadcastThatCarsHasPassedTrack() {
+		print("")
+	}
+	
+	func broadcast(asError inputError: InputError) {
+		switch inputError {
+		case .invalid(let message):
+			print(message)
+		}
 	}
 	
 	private func printResultPosition(as symbolText: String) {

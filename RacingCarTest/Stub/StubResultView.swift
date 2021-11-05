@@ -8,7 +8,16 @@
 import Foundation
 
 struct StubResultView: Outputable {
-	func broadcast(position: Int) -> String {
+	func broadcast(asPosition position: Int) -> String {
 		changePositionToSymbolText(position: position)
+	}
+	
+	func startedBroadcasting() {
+	}
+	
+	func broadcastThatCarsHasPassedTrack() {
+	}
+	
+	func broadcast(asError inputError: InputError) {
 	}
 }

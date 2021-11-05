@@ -15,6 +15,7 @@ class Racing {
 	private var totalTrack: Int = RacingOption.defaultTotalTrack
 	private var track: Int = RacingOption.startingTrack
 	
+	// MARK: - Initialize
 	init(inputView: Inputable, resultView: Outputable, random: Random) {
 		self.random = random
 		self.resultView = resultView
@@ -28,15 +29,36 @@ class Racing {
 		}
 	}
 	
+	// MARK: - Public
 	func raceStart() {
+		startBroadcasting()
+		racing()
+		raceEnd()
+	}
+	
+	// MARK: - Private
+	private func printMessage(for error: Error) {
+		guard let inputError = error as? InputError else { return }
+		resultView.broadcast(asError: inputError)
+	}
+	
+	private func startBroadcasting() {
+		resultView.startedBroadcasting()
+	}
+	
+	private func racing() {
 		while (track <= totalTrack) {
 			cars.forEach {
 				$0.move(at: random.rand())
+				_ = resultView.broadcast(asPosition: $0.position)
 			}
-			track += 1
+			passTrack()
 		}
-		
-		raceEnd()
+	}
+	
+	private func passTrack() {
+		track += 1
+		resultView.broadcastThatCarsHasPassedTrack()
 	}
 	
 	private func raceEnd() {
@@ -48,14 +70,6 @@ class Racing {
 		for _ in 0 ..< number {
 			let car = RacingCar()
 			cars.append(car)
-		}
-	}
-	
-	private func printMessage(for error: Error) {
-		guard let inputError = error as? InputError else { return }
-		switch inputError {
-		case .invalid(let message):
-			print(message)
 		}
 	}
 }
