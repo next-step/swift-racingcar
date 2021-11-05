@@ -14,6 +14,7 @@
 		A11FBA4D2728399000A24A9D /* StringType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11FBA4C2728399000A24A9D /* StringType.swift */; };
 		A165635A272D195A00803E42 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1656359272D195A00803E42 /* Calculator.swift */; };
 		A165635B272D1C9B00803E42 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1656359272D195A00803E42 /* Calculator.swift */; };
+		A18126262735747000FF371D /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18126252735747000FF371D /* ResultView.swift */; };
 		A1A9B412272D749A00C28E1A /* UserInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A9B411272D749A00C28E1A /* UserInput.swift */; };
 		A1A9B414272D7CEB00C28E1A /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A9B413272D7CEB00C28E1A /* Operator.swift */; };
 		A1A9B416272D933700C28E1A /* CalculatorError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A9B415272D933700C28E1A /* CalculatorError.swift */; };
@@ -46,6 +47,7 @@
 		A11FBA4A2728385400A24A9D /* StringTypeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTypeTest.swift; sourceTree = "<group>"; };
 		A11FBA4C2728399000A24A9D /* StringType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringType.swift; sourceTree = "<group>"; };
 		A1656359272D195A00803E42 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
+		A18126252735747000FF371D /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		A1A9B411272D749A00C28E1A /* UserInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInput.swift; sourceTree = "<group>"; };
 		A1A9B413272D7CEB00C28E1A /* Operator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operator.swift; sourceTree = "<group>"; };
 		A1A9B415272D933700C28E1A /* CalculatorError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorError.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 			children = (
 				A1AF03702734089D000741D3 /* InputView.swift */,
 				A1AF0378273427FD000741D3 /* Car.swift */,
+				A18126252735747000FF371D /* ResultView.swift */,
 			);
 			path = Step3;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				A1AF037327340B3B000741D3 /* StartCalculate.swift in Sources */,
 				A1A9B416272D933700C28E1A /* CalculatorError.swift in Sources */,
 				A1A9B414272D7CEB00C28E1A /* Operator.swift in Sources */,
+				A18126262735747000FF371D /* ResultView.swift in Sources */,
 				C7E1263027239F7E0000DB8B /* main.swift in Sources */,
 				A165635A272D195A00803E42 /* Calculator.swift in Sources */,
 			);
