@@ -53,4 +53,14 @@ class RacingCarTests: XCTestCase {
 		XCTAssertEqual(racing.cars[1].position, 4)
 		XCTAssertEqual(racing.cars[2].position, 4)
 	}
+	
+	func test_shouldBeEqualTheNumberOfCarsAndInputNumber() {
+		let inputView: InputView = StubInputView(numberOfCars: 3, numberOfAttempts: 5)
+		let racing = Racing(inputView: inputView, random: random)
+		racing.raceStart()
+		
+		XCTAssertEqual(racing.cars[0].position, 5)
+		XCTAssertEqual(racing.cars[1].position, 5)
+		XCTAssertEqual(racing.cars[2].position, 5)
+	}
 }
