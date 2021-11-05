@@ -18,7 +18,11 @@ class RacingCarTest: XCTestCase {
     override func tearDownWithError() throws {
         viewModel = nil
     }
-    
+}
+
+// MARK: - 자동차의 동작 테스트
+
+extension RacingCarTest {
     func test_racing_car_forward() {
         let expect = expectation(description: "자동차의 연료가 4이상 9 이하일 경우 앞으로 전진한다.")
         guard let carFuel: Int = (4...9).randomElement() else { return }
