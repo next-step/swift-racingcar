@@ -8,13 +8,16 @@
 import Foundation
 
 class Racing {
-	private(set) var cars: [RacingCar] = []
+	// MARK: - Properties
 	private let random: Random
+	private let resultView: Outputable
+	private(set) var cars: [RacingCar] = []
 	private var totalTrack: Int = RacingOption.defaultTotalTrack
 	private var track: Int = RacingOption.startingTrack
 	
-	init(inputView: Inputable, random: Random) {
+	init(inputView: Inputable, resultView: Outputable, random: Random) {
 		self.random = random
+		self.resultView = resultView
 		do {
 			try inputView.read { numberOfCars, numberOfAttempts in
 				self.totalTrack = numberOfAttempts

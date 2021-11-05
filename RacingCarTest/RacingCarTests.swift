@@ -9,6 +9,7 @@ import XCTest
 
 class RacingCarTests: XCTestCase {
 	let random: Random = StubRandom(number: 4)
+	let resultView: Outputable = StubResultView()
 	
 	func test_shouldMoveForwardWhenNumberIsGraterThan4() {
 		let racingCar = RacingCar()
@@ -33,13 +34,13 @@ class RacingCarTests: XCTestCase {
 	
 	func test_shouldTheCountIs3WhenTheInputIs3() {
 		let inputView: Inputable = StubInputView(numberOfCars: 3, numberOfAttempts: 1)
-		let racing = Racing(inputView: inputView, random: random)
+		let racing = Racing(inputView: inputView, resultView: resultView, random: random)
 		XCTAssertEqual(racing.cars.count, 3)
 	}
 	
 	func test_shouldBe1ThePositionOfCarsWhenTheRandomNumberIs4() {
 		let inputView: Inputable = StubInputView(numberOfCars: 3, numberOfAttempts: 1)
-		let racing = Racing(inputView: inputView, random: random)
+		let racing = Racing(inputView: inputView, resultView: resultView, random: random)
 		racing.raceStart()
 		
 		XCTAssertEqual(racing.cars[0].position, 1)
@@ -49,7 +50,7 @@ class RacingCarTests: XCTestCase {
 	
 	func test_shouldBe4ThePositionOfCarsWhenTheNumberOfAttemptsIs4AndRandomNumberIs4() {
 		let inputView: Inputable = StubInputView(numberOfCars: 3, numberOfAttempts: 4)
-		let racing = Racing(inputView: inputView, random: random)
+		let racing = Racing(inputView: inputView, resultView: resultView, random: random)
 		racing.raceStart()
 		
 		XCTAssertEqual(racing.cars[0].position, 4)
@@ -59,7 +60,7 @@ class RacingCarTests: XCTestCase {
 	
 	func test_shouldBeEqualTheNumberOfCarsAndInputNumber() {
 		let inputView: Inputable = StubInputView(numberOfCars: 3, numberOfAttempts: 5)
-		let racing = Racing(inputView: inputView, random: random)
+		let racing = Racing(inputView: inputView, resultView: resultView, random: random)
 		racing.raceStart()
 		
 		XCTAssertEqual(racing.cars[0].position, 5)
@@ -68,9 +69,8 @@ class RacingCarTests: XCTestCase {
 	}
 	
 	func test_shouldReturnTheSameNumberOfHyphenAsPositionWhenResultViewBroadcastsPosition() {
-		let resultView: Outputable = StubResultView()
-		XCTAssertEqual( resultView.broadcast(position: 2), "--")
-		XCTAssertEqual( resultView.broadcast(position: 1), "-")
-		XCTAssertEqual( resultView.broadcast(position: 0), "")
+		XCTAssertEqual( resultView.broadcast(asPosition: 2), "--")
+		XCTAssertEqual( resultView.broadcast(asPosition: 1), "-")
+		XCTAssertEqual( resultView.broadcast(asPosition: 0), "")
 	}
 }
