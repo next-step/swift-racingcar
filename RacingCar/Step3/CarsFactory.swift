@@ -12,7 +12,7 @@ final class CarsFactory {
         case notExistCar
     }
     
-    func getCars(numberOfCars: Int) throws -> [Car] {
+    func makeCars(numberOfCars: Int) throws -> [Car] {
         var cars: [Car] = []
         
         guard carValidCheck(numberOfCars: numberOfCars) else {

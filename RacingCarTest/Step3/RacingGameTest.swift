@@ -9,14 +9,14 @@ import XCTest
 
 class RacingGameTest: XCTestCase {
     func test_입력값만큼_자동차를_생성한다() throws {
-        let result = try CarsFactory().getCars(numberOfCars: 3).count
+        let result = try CarsFactory().makeCars(numberOfCars: 3).count
         let expected = 3
         
         XCTAssertEqual(expected, result)
     }
     
     func test_입력값이_음수일경우_자동차를_생산하지않는다() {
-        XCTAssertThrowsError(try CarsFactory().getCars(numberOfCars: -1)) { error in
+        XCTAssertThrowsError(try CarsFactory().makeCars(numberOfCars: -1)) { error in
             XCTAssertEqual(error as! CarsFactory.CarsFactoryError, CarsFactory.CarsFactoryError.notExistCar)
         }
     }

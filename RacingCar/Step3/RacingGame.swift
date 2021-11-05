@@ -48,7 +48,7 @@ struct RacingGame: Error {
     
     private func startValidCheck(numberOfCars: Int) {
         do {
-            self.start(cars: try CarsFactory().getCars(numberOfCars: numberOfCars))
+            self.start(cars: try CarsFactory().makeCars(numberOfCars: numberOfCars))
         } catch {
             print(RacingGameError.notExistCar)
             print(error)
