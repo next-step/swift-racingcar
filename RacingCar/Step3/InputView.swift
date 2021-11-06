@@ -9,10 +9,10 @@ import Foundation
 
 struct InputView {
     private enum InputError: Error {
-        case inputIsNil
-        case inputIsEmpty
-        case inputMustConvertToInt
-        case inputMustPositiveNumber
+        case valueIsNil
+        case valueIsEmpty
+        case valueMustConvertToInt
+        case valueMustPositiveNumber
     }
     
     private let numberOfCars = "자동차 대수는 몇 대인가요?"
@@ -22,52 +22,52 @@ struct InputView {
         print(numberOfCars, terminator: " ")
         
         guard let input = readLine() else {
-            throw InputError.inputIsNil
+            throw InputError.valueIsNil
         }
                 
-        try inputValidCheck(input: input)
+        try checkValidInputValue(input: input)
         
-        return try inputConvertToInt(input: input)
+        return try convertInputValueToInt(input: input)
     }
     
     func inputNumberOfAttempts() throws -> Int {
         print(numberOfAttempts, terminator: " ")
         
         guard let input = readLine() else {
-            throw InputError.inputIsNil
+            throw InputError.valueIsNil
         }
                 
-        try inputValidCheck(input: input)
+        try checkValidInputValue(input: input)
         
-        return try inputConvertToInt(input: input)
+        return try convertInputValueToInt(input: input)
     }
     
-    private func inputValidCheck(input: String) throws {
+    private func checkValidInputValue(input: String) throws {
         do {
             guard !input.isEmpty else {
-                throw InputError.inputIsEmpty
+                throw InputError.valueIsEmpty
             }
             
             guard Int(input) != nil else {
-                throw InputError.inputMustConvertToInt
+                throw InputError.valueMustConvertToInt
             }
             
             guard Int(input) ?? -1 > 0 else {
-                throw InputError.inputMustPositiveNumber
+                throw InputError.valueMustPositiveNumber
             }
             
-        } catch InputError.inputIsEmpty {
-            print(InputError.inputIsEmpty)
-        } catch InputError.inputMustConvertToInt {
-            print(InputError.inputMustConvertToInt)
-        } catch InputError.inputMustPositiveNumber {
-            print(InputError.inputMustPositiveNumber)
+        } catch InputError.valueIsEmpty {
+            print(InputError.valueIsEmpty)
+        } catch InputError.valueMustConvertToInt {
+            print(InputError.valueMustConvertToInt)
+        } catch InputError.valueMustPositiveNumber {
+            print(InputError.valueMustPositiveNumber)
         }
     }
     
-    private func inputConvertToInt(input: String) throws -> Int {
+    private func convertInputValueToInt(input: String) throws -> Int {
         guard let intNumber = Int(input) else {
-            throw InputError.inputMustConvertToInt
+            throw InputError.valueMustConvertToInt
         }
         
         return intNumber

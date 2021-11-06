@@ -15,7 +15,7 @@ final class CarsFactory {
     func makeCars(numberOfCars: Int) throws -> [Car] {
         var cars: [Car] = []
         
-        guard carValidCheck(numberOfCars: numberOfCars) else {
+        guard checkValidCarState(numberOfCars: numberOfCars) else {
             throw CarsFactoryError.notExistCar
         }
         
@@ -26,7 +26,7 @@ final class CarsFactory {
         return cars
     }
     
-    private func carValidCheck(numberOfCars: Int) -> Bool {
+    private func checkValidCarState(numberOfCars: Int) -> Bool {
         guard numberOfCars > 0 else {
             return false
         }

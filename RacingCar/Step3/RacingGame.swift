@@ -23,7 +23,7 @@ struct RacingGame {
         Int.random(in: GameOption.randomNumberRange)
     }
             
-    func createCars() {
+    func startRacingGame() {
         guard let numberOfCars = try? InputView().inputNumberOfCars() else {
             return
         }
@@ -31,7 +31,7 @@ struct RacingGame {
         startValidCheck(numberOfCars: numberOfCars)
     }
     
-    private func start(cars: [Car]) {
+    private func beginToMoveCar(cars: [Car]) {
         guard let numberOfAttempts = try? InputView().inputNumberOfAttempts() else {
             return
         }
@@ -48,10 +48,9 @@ struct RacingGame {
     
     private func startValidCheck(numberOfCars: Int) {
         do {
-            self.start(cars: try CarsFactory().makeCars(numberOfCars: numberOfCars))
+            self.beginToMoveCar(cars: try CarsFactory().makeCars(numberOfCars: numberOfCars))
         } catch {
             print(RacingGameError.notExistCar)
-            print(error)
         }
     }
 }
