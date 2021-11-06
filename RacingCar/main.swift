@@ -4,5 +4,9 @@
 //  Copyright © yagom. All rights reserved.
 // 
 
+do {
+    try RacingGame().startRacingGame()
+} catch {
+    print(error)
+}
 
-RacingGame().startRacingGame()
