@@ -38,11 +38,15 @@ struct RacingGame {
         
         ResultView().printResultTitle()
         for _ in 0 ..< numberOfAttempts {
-            for carIndex in 0 ..< cars.count {
-                cars[carIndex].move(amount: randomNumber)
-                ResultView().printResult(result: cars[carIndex].position)
-            }
+            attemptToMoveCar(cars: cars)
             print("")
+        }
+    }
+    
+    private func attemptToMoveCar(cars: [Car]) {
+        for carIndex in 0 ..< cars.count {
+            cars[carIndex].move(amount: randomNumber)
+            ResultView().printResult(result: cars[carIndex].position)
         }
     }
 }
