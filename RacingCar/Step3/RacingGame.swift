@@ -14,8 +14,8 @@ enum GameOption {
     static let moveDistance: String = "-"
 }
 
-struct RacingGame: Error {
-    enum RacingGameError {
+struct RacingGame {
+    enum RacingGameError: Error {
         case notExistCar
     }
     
