@@ -41,8 +41,8 @@ struct ResultView: Outputable {
 	
 	func broadcast(asError inputError: InputError) {
 		switch inputError {
-		case .invalid(let message):
-			print(message)
+		case .invalid:
+			print("올바른 숫자를 입력해주세요.")
 		}
 	}
 	

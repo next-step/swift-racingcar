@@ -32,14 +32,18 @@ class RacingCarTests: XCTestCase {
 		XCTAssertEqual(racingCar.position, 0)
 	}
 	
-	func test_shouldTheCountIs3WhenTheInputIs3() {
-		let inputView: Inputable = StubInputView(numberOfCars: 3, numberOfAttempts: 1)
+	func test_shouldTheCountIs3WhenTheInputIs3() throws {
+		let inputCar = try InputCar(input: "3", range: RacingOption.inputCarRange)
+		let inputAttempt = try InputAttempt(input: "1", range: RacingOption.inputAttemptRange)
+		let inputView: Inputable = StubInputView(numberOfCars: inputCar, numberOfAttempts: inputAttempt)
 		let racing = Racing(inputView: inputView, resultView: resultView, random: random)
 		XCTAssertEqual(racing.cars.count, 3)
 	}
 	
-	func test_shouldBe1ThePositionOfCarsWhenTheRandomNumberIs4() {
-		let inputView: Inputable = StubInputView(numberOfCars: 3, numberOfAttempts: 1)
+	func test_shouldBe1ThePositionOfCarsWhenTheRandomNumberIs4() throws {
+		let inputCar = try InputCar(input: "3", range: RacingOption.inputCarRange)
+		let inputAttempt = try InputAttempt(input: "1", range: RacingOption.inputAttemptRange)
+		let inputView: Inputable = StubInputView(numberOfCars: inputCar, numberOfAttempts: inputAttempt)
 		let racing = Racing(inputView: inputView, resultView: resultView, random: random)
 		racing.raceStart()
 		
@@ -48,8 +52,10 @@ class RacingCarTests: XCTestCase {
 		XCTAssertEqual(racing.cars[2].position, 1)
 	}
 	
-	func test_shouldBe4ThePositionOfCarsWhenTheNumberOfAttemptsIs4AndRandomNumberIs4() {
-		let inputView: Inputable = StubInputView(numberOfCars: 3, numberOfAttempts: 4)
+	func test_shouldBe4ThePositionOfCarsWhenTheNumberOfAttemptsIs4AndRandomNumberIs4() throws {
+		let inputCar = try InputCar(input: "3", range: RacingOption.inputCarRange)
+		let inputAttempt = try InputAttempt(input: "4", range: RacingOption.inputAttemptRange)
+		let inputView: Inputable = StubInputView(numberOfCars: inputCar, numberOfAttempts: inputAttempt)
 		let racing = Racing(inputView: inputView, resultView: resultView, random: random)
 		racing.raceStart()
 		
@@ -58,8 +64,10 @@ class RacingCarTests: XCTestCase {
 		XCTAssertEqual(racing.cars[2].position, 4)
 	}
 	
-	func test_shouldBeEqualTheNumberOfCarsAndInputNumber() {
-		let inputView: Inputable = StubInputView(numberOfCars: 3, numberOfAttempts: 5)
+	func test_shouldBeEqualTheNumberOfCarsAndInputNumber() throws {
+		let inputCar = try InputCar(input: "3", range: RacingOption.inputCarRange)
+		let inputAttempt = try InputAttempt(input: "5", range: RacingOption.inputAttemptRange)
+		let inputView: Inputable = StubInputView(numberOfCars: inputCar, numberOfAttempts: inputAttempt)
 		let racing = Racing(inputView: inputView, resultView: resultView, random: random)
 		racing.raceStart()
 		
@@ -74,22 +82,21 @@ class RacingCarTests: XCTestCase {
 		XCTAssertEqual( resultView.broadcast(asPosition: 0), "")
 	}
 	
-	// TODO: - Input validation 테스트 추가
-	func test_shouldThrowInvalidErrorWhenInputIsOutOfRange() {
-		XCTAssertThrowsError(StubInputView(numberOfCars: -1, numberOfAttempts: 5)) { error in
-			XCTAssertEqual(error as InputError, InputError.invalid)
+	func test_shouldThrowInvalidErrorWhenInputIsOutOfRange() throws {
+		XCTAssertThrowsError(try InputCar(input: "-1", range: RacingOption.inputCarRange)) { error in
+			XCTAssertEqual(error as! InputError, InputError.invalid)
 		}
 		
-		XCTAssertThrowsError(StubInputView(numberOfCars: 11, numberOfAttempts: 5)) { error in
-			XCTAssertEqual(error as InputError, InputError.invalid)
+		XCTAssertThrowsError(try InputCar(input: "11", range: RacingOption.inputCarRange)) { error in
+			XCTAssertEqual(error as! InputError, InputError.invalid)
 		}
 		
-		XCTAssertThrowsError(StubInputView(numberOfCars: 1, numberOfAttempts: -1)) { error in
-			XCTAssertEqual(error as InputError, InputError.invalid)
+		XCTAssertThrowsError(try InputAttempt(input: "-11", range: RacingOption.inputAttemptRange)) { error in
+			XCTAssertEqual(error as! InputError, InputError.invalid)
 		}
 		
-		XCTAssertThrowsError(StubInputView(numberOfCars: 1, numberOfAttempts: 21)) { error in
-			XCTAssertEqual(error as InputError, InputError.invalid)
+		XCTAssertThrowsError(try InputAttempt(input: "21", range: RacingOption.inputAttemptRange)) { error in
+			XCTAssertEqual(error as! InputError, InputError.invalid)
 		}
 	}
 }

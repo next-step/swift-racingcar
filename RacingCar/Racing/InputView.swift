@@ -8,38 +8,66 @@
 import Foundation
 
 protocol Inputable {
-	func read(completion: (Int, Int) -> Void) throws
+	func read(completion: (CarInputable, AttemptInputable) -> Void) throws
 }
 
 enum InputError: Error {
-	case invalid(message: String)
+	case invalid
+}
+
+protocol CarInputable {
+	var numberOfCars: Int { get }
+	init(input: String?, range: ClosedRange<Int>) throws
+}
+
+struct InputCar: CarInputable {
+	let numberOfCars: Int
+	
+	init(input: String?, range: ClosedRange<Int>) throws {
+		if let cars: String = input,
+			 let numberOfCars = Int(cars),
+			 range.contains(numberOfCars) {
+			self.numberOfCars = numberOfCars
+			return
+		}
+		throw InputError.invalid
+	}
+}
+
+protocol AttemptInputable {
+	var numberOfAttempts: Int { get }
+	init(input: String?, range: ClosedRange<Int>) throws
+}
+
+struct InputAttempt: AttemptInputable {
+	let numberOfAttempts: Int
+	
+	init(input: String?, range: ClosedRange<Int>) throws {
+		if let trying: String = input,
+			 let numberOfAttempts = Int(trying),
+			 range.contains(numberOfAttempts) {
+			self.numberOfAttempts = numberOfAttempts
+			return
+		}
+		throw InputError.invalid
+	}
 }
 
 struct InputView: Inputable {
-	func read(completion: (Int, Int) -> Void) throws {
-		if let numberOfCars = readNumberOfCars(),
-			 let numberOfAttempts = readNumberOfAttempts() {
-			completion(numberOfCars, numberOfAttempts)
-			return
-		}
-		throw InputError.invalid(message: "올바른 숫자를 입력해주세요.")
+	func read(completion: (CarInputable, AttemptInputable) -> Void) throws {
+		let inputCar = try readNumberOfCars()
+		let inputAttempt = try readNumberOfAttempts()
+		
+		completion(inputCar, inputAttempt)
 	}
 	
-	func readNumberOfCars() -> Int? {
+	private func readNumberOfCars() throws -> InputCar {
 		print("자동차 대수는 몇 대인가요?", terminator: " ")
-		if let cars: String = readLine(),
-			 let numberOfCars = Int(cars) {
-			return numberOfCars
-		}
-		return nil
+		return try InputCar(input: readLine(), range: RacingOption.inputCarRange)
 	}
 	
-	func readNumberOfAttempts() -> Int? {
+	private func readNumberOfAttempts() throws -> InputAttempt {
 		print("시도할 횟수는 몇 회인가요?", terminator: " ")
-		if let trying: String = readLine(),
-			 let numberOfAttempts = Int(trying) {
-			return numberOfAttempts
-		}
-		return nil
+		return try InputAttempt(input: readLine(), range: RacingOption.inputAttemptRange)
 	}
 }

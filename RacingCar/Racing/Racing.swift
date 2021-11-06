@@ -20,9 +20,9 @@ final class Racing {
 		self.random = random
 		self.resultView = resultView
 		do {
-			try inputView.read { numberOfCars, numberOfAttempts in
-				self.totalTrack = numberOfAttempts
-				self.makeRacingCars(numberOfCars)
+			try inputView.read { inputCar, inputAttempt in
+				self.totalTrack = inputAttempt.numberOfAttempts
+				self.makeRacingCars(inputCar.numberOfCars)
 			}
 		} catch (let error) {
 			printMessage(for: error)

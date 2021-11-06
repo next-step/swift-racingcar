@@ -8,10 +8,10 @@
 import Foundation
 
 struct StubInputView: Inputable {
-	let numberOfCars: Int
-	let numberOfAttempts: Int
+	let numberOfCars: CarInputable
+	let numberOfAttempts: AttemptInputable
 	
-	func read(completion: (Int, Int) -> Void) throws {
+	func read(completion: (CarInputable, AttemptInputable) -> Void) throws {
 		completion(numberOfCars, numberOfAttempts)
 	}
 }
