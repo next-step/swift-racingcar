@@ -33,7 +33,7 @@ extension RacingCarTest {
             }
         })
         
-        viewModel.startRacing()
+        viewModel.startRacing(carCount: 1, repeatCount: 1)
         
         self.wait(for: [expect], timeout: 0.1)
     }
@@ -48,7 +48,7 @@ extension RacingCarTest {
             }
         })
         
-        viewModel.startRacing()
+        viewModel.startRacing(carCount: 1, repeatCount: 1)
         
         self.wait(for: [expect], timeout: 0.1)
     }
