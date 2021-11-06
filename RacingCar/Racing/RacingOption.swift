@@ -15,5 +15,6 @@ enum RacingOption {
 	static let inputAttemptRange: ClosedRange = 1...20
 	static let startingTrack: Int = 1
 	static let defaultTotalTrack: Int = 0
+	static let defaultRacingCarposition: Int = 0
 	static let outputSymbol: String = "-"
 }

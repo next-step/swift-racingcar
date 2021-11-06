@@ -8,7 +8,7 @@
 import Foundation
 
 final class RacingCar {
-	private(set) var position: Int = 0
+	private(set) var position: Int = RacingOption.defaultRacingCarposition
 	
 	func move(at score: Int) {
 		if RacingOption.movementRange.contains(score) {
