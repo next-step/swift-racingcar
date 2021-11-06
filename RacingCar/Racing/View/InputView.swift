@@ -15,44 +15,6 @@ enum InputError: Error {
 	case invalid
 }
 
-protocol CarInputable {
-	var numberOfCars: Int { get }
-	init(input: String?, range: ClosedRange<Int>) throws
-}
-
-struct InputCar: CarInputable {
-	let numberOfCars: Int
-	
-	init(input: String?, range: ClosedRange<Int>) throws {
-		if let cars: String = input,
-			 let numberOfCars = Int(cars),
-			 range.contains(numberOfCars) {
-			self.numberOfCars = numberOfCars
-			return
-		}
-		throw InputError.invalid
-	}
-}
-
-protocol AttemptInputable {
-	var numberOfAttempts: Int { get }
-	init(input: String?, range: ClosedRange<Int>) throws
-}
-
-struct InputAttempt: AttemptInputable {
-	let numberOfAttempts: Int
-	
-	init(input: String?, range: ClosedRange<Int>) throws {
-		if let trying: String = input,
-			 let numberOfAttempts = Int(trying),
-			 range.contains(numberOfAttempts) {
-			self.numberOfAttempts = numberOfAttempts
-			return
-		}
-		throw InputError.invalid
-	}
-}
-
 struct InputView: Inputable {
 	func read(completion: (CarInputable, AttemptInputable) -> Void) throws {
 		let inputCar = try readNumberOfCars()
