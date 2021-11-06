@@ -50,7 +50,7 @@ final class Racing {
 		while (track <= totalTrack) {
 			cars.forEach {
 				$0.move(at: random.rand())
-				_ = resultView.broadcast(asPosition: $0.position)
+				_ = resultView.broadcast(asPosition: $0.position.currentPosition)
 			}
 			passTrack()
 		}

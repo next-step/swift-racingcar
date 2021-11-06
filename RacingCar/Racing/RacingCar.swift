@@ -7,12 +7,26 @@
 
 import Foundation
 
+struct Position {
+	private(set) var currentPosition: Int
+	private let range: ClosedRange<Int>
+	
+	init(position: Int, range: ClosedRange<Int>) {
+		self.currentPosition = position
+		self.range = range
+	}
+	
+	mutating func increase(at position: Int) {
+		if RacingOption.movementRange.contains(position) {
+			self.currentPosition += 1
+		}
+	}
+}
+
 final class RacingCar {
-	private(set) var position: Int = RacingOption.defaultRacingCarposition
+	private(set) var position: Position = Position(position: RacingOption.defaultRacingCarposition, range: RacingOption.movementRange)
 	
 	func move(at score: Int) {
-		if RacingOption.movementRange.contains(score) {
-			position += 1
-		}
+		position.increase(at: score)
 	}
 }

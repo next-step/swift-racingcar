@@ -10,26 +10,27 @@ import XCTest
 class RacingCarTests: XCTestCase {
 	let random: Random = StubRandom(number: 4)
 	let resultView: Outputable = StubResultView()
+	let position: Position = Position(position: RacingOption.defaultRacingCarposition, range: RacingOption.movementRange)
 	
 	func test_shouldMoveForwardWhenNumberIsGraterThan4() {
 		let racingCar = RacingCar()
 		racingCar.move(at: 5)
-		XCTAssertEqual(racingCar.position, 1)
+		XCTAssertEqual(racingCar.position.currentPosition, 1)
 	}
 	
 	func test_shoulStopWhenNumberIsLessThan4() {
 		let racingCar = RacingCar()
 		racingCar.move(at: 3)
-		XCTAssertEqual(racingCar.position, 0)
+		XCTAssertEqual(racingCar.position.currentPosition, 0)
 	}
 	
 	func test_shouldStopWhenNumberIsOutOfRange0Through9() {
 		let racingCar = RacingCar()
 		racingCar.move(at: 10)
-		XCTAssertEqual(racingCar.position, 0)
+		XCTAssertEqual(racingCar.position.currentPosition, 0)
 		
 		racingCar.move(at: -9)
-		XCTAssertEqual(racingCar.position, 0)
+		XCTAssertEqual(racingCar.position.currentPosition, 0)
 	}
 	
 	func test_shouldTheCountIs3WhenTheInputIs3() throws {
@@ -47,9 +48,9 @@ class RacingCarTests: XCTestCase {
 		let racing = Racing(inputView: inputView, resultView: resultView, random: random)
 		racing.raceStart()
 		
-		XCTAssertEqual(racing.cars[0].position, 1)
-		XCTAssertEqual(racing.cars[1].position, 1)
-		XCTAssertEqual(racing.cars[2].position, 1)
+		XCTAssertEqual(racing.cars[0].position.currentPosition, 1)
+		XCTAssertEqual(racing.cars[1].position.currentPosition, 1)
+		XCTAssertEqual(racing.cars[2].position.currentPosition, 1)
 	}
 	
 	func test_shouldBe4ThePositionOfCarsWhenTheNumberOfAttemptsIs4AndRandomNumberIs4() throws {
@@ -59,9 +60,9 @@ class RacingCarTests: XCTestCase {
 		let racing = Racing(inputView: inputView, resultView: resultView, random: random)
 		racing.raceStart()
 		
-		XCTAssertEqual(racing.cars[0].position, 4)
-		XCTAssertEqual(racing.cars[1].position, 4)
-		XCTAssertEqual(racing.cars[2].position, 4)
+		XCTAssertEqual(racing.cars[0].position.currentPosition, 4)
+		XCTAssertEqual(racing.cars[1].position.currentPosition, 4)
+		XCTAssertEqual(racing.cars[2].position.currentPosition, 4)
 	}
 	
 	func test_shouldBeEqualTheNumberOfCarsAndInputNumber() throws {
@@ -71,9 +72,9 @@ class RacingCarTests: XCTestCase {
 		let racing = Racing(inputView: inputView, resultView: resultView, random: random)
 		racing.raceStart()
 		
-		XCTAssertEqual(racing.cars[0].position, 5)
-		XCTAssertEqual(racing.cars[1].position, 5)
-		XCTAssertEqual(racing.cars[2].position, 5)
+		XCTAssertEqual(racing.cars[0].position.currentPosition, 5)
+		XCTAssertEqual(racing.cars[1].position.currentPosition, 5)
+		XCTAssertEqual(racing.cars[2].position.currentPosition, 5)
 	}
 	
 	func test_shouldReturnTheSameNumberOfHyphenAsPositionWhenResultViewBroadcastsPosition() {
