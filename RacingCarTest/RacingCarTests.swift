@@ -73,4 +73,23 @@ class RacingCarTests: XCTestCase {
 		XCTAssertEqual( resultView.broadcast(asPosition: 1), "-")
 		XCTAssertEqual( resultView.broadcast(asPosition: 0), "")
 	}
+	
+	// TODO: - Input validation 테스트 추가
+	func test_shouldThrowInvalidErrorWhenInputIsOutOfRange() {
+		XCTAssertThrowsError(StubInputView(numberOfCars: -1, numberOfAttempts: 5)) { error in
+			XCTAssertEqual(error as InputError, InputError.invalid)
+		}
+		
+		XCTAssertThrowsError(StubInputView(numberOfCars: 11, numberOfAttempts: 5)) { error in
+			XCTAssertEqual(error as InputError, InputError.invalid)
+		}
+		
+		XCTAssertThrowsError(StubInputView(numberOfCars: 1, numberOfAttempts: -1)) { error in
+			XCTAssertEqual(error as InputError, InputError.invalid)
+		}
+		
+		XCTAssertThrowsError(StubInputView(numberOfCars: 1, numberOfAttempts: 21)) { error in
+			XCTAssertEqual(error as InputError, InputError.invalid)
+		}
+	}
 }
