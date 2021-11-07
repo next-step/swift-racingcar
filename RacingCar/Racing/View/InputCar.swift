@@ -16,12 +16,11 @@ struct InputCar: CarInputable {
 	let numberOfCars: Int
 	
 	init(input: String?, range: ClosedRange<Int>) throws {
-		if let cars: String = input,
-			 let numberOfCars = Int(cars),
-			 range.contains(numberOfCars) {
-			self.numberOfCars = numberOfCars
-			return
-		}
-		throw InputError.invalid
+		guard let cars: String = input,
+					let numberOfCars = Int(cars),
+					range.contains(numberOfCars)
+		else { throw InputError.invalid }
+		
+		self.numberOfCars = numberOfCars
 	}
 }

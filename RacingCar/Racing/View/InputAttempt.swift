@@ -16,12 +16,11 @@ struct InputAttempt: AttemptInputable {
 	let numberOfAttempts: Int
 	
 	init(input: String?, range: ClosedRange<Int>) throws {
-		if let trying: String = input,
-			 let numberOfAttempts = Int(trying),
-			 range.contains(numberOfAttempts) {
-			self.numberOfAttempts = numberOfAttempts
-			return
-		}
-		throw InputError.invalid
+		guard let trying: String = input,
+					let numberOfAttempts = Int(trying),
+					range.contains(numberOfAttempts)
+		else { throw InputError.invalid }
+		
+		self.numberOfAttempts = numberOfAttempts
 	}
 }
