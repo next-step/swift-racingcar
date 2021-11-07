@@ -14,7 +14,7 @@
 		C191466F2735745F0033BC16 /* StubRacingCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C191466E2735745F0033BC16 /* StubRacingCar.swift */; };
 		C191467127380FEC0033BC16 /* RacingGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C191467027380FEC0033BC16 /* RacingGameViewModel.swift */; };
 		C19146722738100E0033BC16 /* RacingGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C191467027380FEC0033BC16 /* RacingGameViewModel.swift */; };
-		C1914674273814290033BC16 /* RacingCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1914673273814290033BC16 /* RacingCarViewController.swift */; };
+		C1914674273814290033BC16 /* RacingGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1914673273814290033BC16 /* RacingGameViewController.swift */; };
 		C19AE5D32730173A0058E636 /* ArithmeticOperationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DE5D73273014DC007396B0 /* ArithmeticOperationProtocol.swift */; };
 		C19AE5D42730173D0058E636 /* CalculatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DE5D75273014F1007396B0 /* CalculatorProtocol.swift */; };
 		C19AE5D5273017400058E636 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DE5D772730155C007396B0 /* String+Extension.swift */; };
@@ -68,7 +68,7 @@
 		C1745833272BE2D90010C5D0 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		C191466E2735745F0033BC16 /* StubRacingCar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubRacingCar.swift; sourceTree = "<group>"; };
 		C191467027380FEC0033BC16 /* RacingGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingGameViewModel.swift; sourceTree = "<group>"; };
-		C1914673273814290033BC16 /* RacingCarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingCarViewController.swift; sourceTree = "<group>"; };
+		C1914673273814290033BC16 /* RacingGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingGameViewController.swift; sourceTree = "<group>"; };
 		C1B1EB8E272851DA00447AC1 /* RacingCarTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RacingCarTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1B1EB90272851DA00447AC1 /* RacingCarTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingCarTest.swift; sourceTree = "<group>"; };
 		C1B48FE5272D5AC4001AAEC3 /* StubCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubCalculator.swift; sourceTree = "<group>"; };
@@ -184,7 +184,7 @@
 			children = (
 				C7E1262F27239F7E0000DB8B /* main.swift */,
 				C191467027380FEC0033BC16 /* RacingGameViewModel.swift */,
-				C1914673273814290033BC16 /* RacingCarViewController.swift */,
+				C1914673273814290033BC16 /* RacingGameViewController.swift */,
 			);
 			path = RacingCar;
 			sourceTree = "<group>";
@@ -393,7 +393,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1914674273814290033BC16 /* RacingCarViewController.swift in Sources */,
+				C1914674273814290033BC16 /* RacingGameViewController.swift in Sources */,
 				C191467127380FEC0033BC16 /* RacingGameViewModel.swift in Sources */,
 				C7E1263027239F7E0000DB8B /* main.swift in Sources */,
 			);
