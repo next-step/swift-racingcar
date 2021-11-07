@@ -12,6 +12,10 @@ class RacingCarTests: XCTestCase {
 	let resultView: Outputable = StubResultView()
 	let position: Position = Position(position: RacingOption.defaultRacingCarposition, range: RacingOption.movementRange)
 	
+	override func tearDownWithError() throws {
+		clearVerificationVariables()
+	}
+	
 	func test_shouldMoveForwardWhenNumberIsGraterThanOrEqualTo4() {
 		let racingCar = RacingCar()
 		racingCar.move(at: 5)
@@ -34,18 +38,12 @@ class RacingCarTests: XCTestCase {
 	}
 	
 	func test_shouldTheCountIs3WhenTheInputIs3() throws {
-		let inputCar = try InputCar(input: "3", range: RacingOption.inputCarRange)
-		let inputAttempt = try InputAttempt(input: "1", range: RacingOption.inputAttemptRange)
-		let inputView: Inputable = StubInputView(numberOfCars: inputCar, numberOfAttempts: inputAttempt)
-		let racing = Racing(inputView: inputView, resultView: resultView, random: random)
+		let racing = makeRacing(inputCar: "3", inputAttempt: "1")
 		XCTAssertEqual(racing.cars.count, 3)
 	}
 	
 	func test_shouldBe1ThePositionOfCarsWhenTheRandomNumberIs4() throws {
-		let inputCar = try InputCar(input: "3", range: RacingOption.inputCarRange)
-		let inputAttempt = try InputAttempt(input: "1", range: RacingOption.inputAttemptRange)
-		let inputView: Inputable = StubInputView(numberOfCars: inputCar, numberOfAttempts: inputAttempt)
-		let racing = Racing(inputView: inputView, resultView: resultView, random: random)
+		let racing = makeRacing(inputCar: "3", inputAttempt: "1")
 		racing.raceStart()
 		
 		XCTAssertEqual(racing.cars[0].position.currentPosition, 1)
@@ -54,10 +52,7 @@ class RacingCarTests: XCTestCase {
 	}
 	
 	func test_shouldBe4ThePositionOfCarsWhenTheNumberOfAttemptsIs4AndRandomNumberIs4() throws {
-		let inputCar = try InputCar(input: "3", range: RacingOption.inputCarRange)
-		let inputAttempt = try InputAttempt(input: "4", range: RacingOption.inputAttemptRange)
-		let inputView: Inputable = StubInputView(numberOfCars: inputCar, numberOfAttempts: inputAttempt)
-		let racing = Racing(inputView: inputView, resultView: resultView, random: random)
+		let racing = makeRacing(inputCar: "3", inputAttempt: "4")
 		racing.raceStart()
 		
 		XCTAssertEqual(racing.cars[0].position.currentPosition, 4)
@@ -66,10 +61,7 @@ class RacingCarTests: XCTestCase {
 	}
 	
 	func test_shouldBeEqualTheNumberOfCarsAndInputNumber() throws {
-		let inputCar = try InputCar(input: "3", range: RacingOption.inputCarRange)
-		let inputAttempt = try InputAttempt(input: "5", range: RacingOption.inputAttemptRange)
-		let inputView: Inputable = StubInputView(numberOfCars: inputCar, numberOfAttempts: inputAttempt)
-		let racing = Racing(inputView: inputView, resultView: resultView, random: random)
+		let racing = makeRacing(inputCar: "3", inputAttempt: "5")
 		racing.raceStart()
 		
 		XCTAssertEqual(racing.cars[0].position.currentPosition, 5)
@@ -100,4 +92,35 @@ class RacingCarTests: XCTestCase {
 			XCTAssertEqual(error as! InputError, InputError.invalid)
 		}
 	}
+	
+	func test_shouldThrowInvalidErrorWhenInputIsOutOfRangeInRacing() throws {
+		verifyOccuredInputError(inputCar: "-1")
+		verifyOccuredInputError(inputCar: "11")
+		verifyOccuredInputError(inputCar: "-11")
+		verifyOccuredInputError(inputCar: "21")
+	}
+	
+	private func makeRacing(inputCar: String, inputAttempt: String = "5") -> Racing {
+		let inputView: Inputable = StubInputView(inputCar: inputCar, inputAttempt: inputAttempt)
+		let racing = Racing(inputView: inputView, resultView: resultView, random: random)
+		return racing
+	}
+	
+	private func verifyOccuredInputError(inputCar: String) {
+		makeRacing(inputCar: inputCar).raceStart()
+		XCTAssertEqual((resultView as? StubResultView)?.occcurredError, InputError.invalid)
+		clearVerificationVariables()
+	}
+	
+	private func clearVerificationVariables() {
+		(resultView as? StubResultView)?.occcurredError = nil
+	}
 }
+/*
+ let inputView: Inputable = InputView()
+ let resultView: Outputable = ResultView()
+ let random: Random = RandomNumber(range: RacingOption.randomNumberRange)
+ let racing = Racing(inputView: inputView, resultView: resultView, random: random)
+ racing.raceStart()
+
+ */
