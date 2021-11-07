@@ -12,7 +12,7 @@ class RacingCarTests: XCTestCase {
 	let resultView: Outputable = StubResultView()
 	let position: Position = Position(position: RacingOption.defaultRacingCarposition, range: RacingOption.movementRange)
 	
-	func test_shouldMoveForwardWhenNumberIsGraterThan4() {
+	func test_shouldMoveForwardWhenNumberIsGraterThanOrEqualTo4() {
 		let racingCar = RacingCar()
 		racingCar.move(at: 5)
 		XCTAssertEqual(racingCar.position.currentPosition, 1)
