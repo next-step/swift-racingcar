@@ -66,13 +66,18 @@ class Calculator {
         case multiply
     }
     
+    enum CalculatorError: Error {
+        
+        case invalidOperator
+    }
+    
     func `operator`(_ operatorString: String) throws -> Operator? {
         switch operatorString {
         case "+": return .add
         case "-": return .subtract
         case "/": return .divide
         case "*": return .multiply
-        default: return nil
+        default: throw CalculatorError.invalidOperator
         }
     }
     
