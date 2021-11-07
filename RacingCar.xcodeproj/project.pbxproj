@@ -14,6 +14,14 @@
 		A11FBA4D2728399000A24A9D /* StringType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11FBA4C2728399000A24A9D /* StringType.swift */; };
 		A165635A272D195A00803E42 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1656359272D195A00803E42 /* Calculator.swift */; };
 		A165635B272D1C9B00803E42 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1656359272D195A00803E42 /* Calculator.swift */; };
+		A18126262735747000FF371D /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18126252735747000FF371D /* ResultView.swift */; };
+		A1812628273574A300FF371D /* RacingGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1812627273574A300FF371D /* RacingGame.swift */; };
+		A181262A273574E100FF371D /* CarsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1812629273574E100FF371D /* CarsFactory.swift */; };
+		A181262B2735751D00FF371D /* RacingGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1812627273574A300FF371D /* RacingGame.swift */; };
+		A181262C2735751F00FF371D /* CarsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1812629273574E100FF371D /* CarsFactory.swift */; };
+		A181262D2735752200FF371D /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18126252735747000FF371D /* ResultView.swift */; };
+		A181262E2735752500FF371D /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AF03702734089D000741D3 /* InputView.swift */; };
+		A181262F2735752700FF371D /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AF0378273427FD000741D3 /* Car.swift */; };
 		A1A9B412272D749A00C28E1A /* UserInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A9B411272D749A00C28E1A /* UserInput.swift */; };
 		A1A9B414272D7CEB00C28E1A /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A9B413272D7CEB00C28E1A /* Operator.swift */; };
 		A1A9B416272D933700C28E1A /* CalculatorError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A9B415272D933700C28E1A /* CalculatorError.swift */; };
@@ -21,6 +29,10 @@
 		A1A9B41D272DAE2C00C28E1A /* CalculatorError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A9B415272D933700C28E1A /* CalculatorError.swift */; };
 		A1A9B41E272DAE2E00C28E1A /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A9B413272D7CEB00C28E1A /* Operator.swift */; };
 		A1A9B41F272DAE3400C28E1A /* UserInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A9B411272D749A00C28E1A /* UserInput.swift */; };
+		A1AF036F27340499000741D3 /* RacingGameTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AF036E27340499000741D3 /* RacingGameTest.swift */; };
+		A1AF03712734089D000741D3 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AF03702734089D000741D3 /* InputView.swift */; };
+		A1AF037327340B3B000741D3 /* StartCalculate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AF037227340B3B000741D3 /* StartCalculate.swift */; };
+		A1AF0379273427FD000741D3 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AF0378273427FD000741D3 /* Car.swift */; };
 		C7E1263027239F7E0000DB8B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -42,10 +54,17 @@
 		A11FBA4A2728385400A24A9D /* StringTypeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTypeTest.swift; sourceTree = "<group>"; };
 		A11FBA4C2728399000A24A9D /* StringType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringType.swift; sourceTree = "<group>"; };
 		A1656359272D195A00803E42 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
+		A18126252735747000FF371D /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+		A1812627273574A300FF371D /* RacingGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingGame.swift; sourceTree = "<group>"; };
+		A1812629273574E100FF371D /* CarsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsFactory.swift; sourceTree = "<group>"; };
 		A1A9B411272D749A00C28E1A /* UserInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInput.swift; sourceTree = "<group>"; };
 		A1A9B413272D7CEB00C28E1A /* Operator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operator.swift; sourceTree = "<group>"; };
 		A1A9B415272D933700C28E1A /* CalculatorError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorError.swift; sourceTree = "<group>"; };
 		A1A9B41B272DAE2900C28E1A /* CalculatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorTest.swift; sourceTree = "<group>"; };
+		A1AF036E27340499000741D3 /* RacingGameTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingGameTest.swift; sourceTree = "<group>"; };
+		A1AF03702734089D000741D3 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		A1AF037227340B3B000741D3 /* StartCalculate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartCalculate.swift; sourceTree = "<group>"; };
+		A1AF0378273427FD000741D3 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		C7E1262C27239F7E0000DB8B /* RacingCar */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RacingCar; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E1262F27239F7E0000DB8B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -71,6 +90,7 @@
 		A11FBA43272837C300A24A9D /* RacingCarTest */ = {
 			isa = PBXGroup;
 			children = (
+				A1AF036D27340461000741D3 /* Step3 */,
 				A1A9B41A272DAE1900C28E1A /* Step2 */,
 				A1A9B40B272D724B00C28E1A /* Step1 */,
 			);
@@ -101,6 +121,7 @@
 				A1A9B411272D749A00C28E1A /* UserInput.swift */,
 				A1A9B413272D7CEB00C28E1A /* Operator.swift */,
 				A1A9B415272D933700C28E1A /* CalculatorError.swift */,
+				A1AF037227340B3B000741D3 /* StartCalculate.swift */,
 			);
 			path = Step2;
 			sourceTree = "<group>";
@@ -111,6 +132,26 @@
 				A1A9B41B272DAE2900C28E1A /* CalculatorTest.swift */,
 			);
 			path = Step2;
+			sourceTree = "<group>";
+		};
+		A1AF036C2733FE48000741D3 /* Step3 */ = {
+			isa = PBXGroup;
+			children = (
+				A1AF03702734089D000741D3 /* InputView.swift */,
+				A18126252735747000FF371D /* ResultView.swift */,
+				A1812627273574A300FF371D /* RacingGame.swift */,
+				A1812629273574E100FF371D /* CarsFactory.swift */,
+				A1AF0378273427FD000741D3 /* Car.swift */,
+			);
+			path = Step3;
+			sourceTree = "<group>";
+		};
+		A1AF036D27340461000741D3 /* Step3 */ = {
+			isa = PBXGroup;
+			children = (
+				A1AF036E27340499000741D3 /* RacingGameTest.swift */,
+			);
+			path = Step3;
 			sourceTree = "<group>";
 		};
 		C7E1262327239F7E0000DB8B = {
@@ -134,6 +175,7 @@
 		C7E1262E27239F7E0000DB8B /* RacingCar */ = {
 			isa = PBXGroup;
 			children = (
+				A1AF036C2733FE48000741D3 /* Step3 */,
 				A1A9B40C272D725D00C28E1A /* Step2 */,
 				A1A9B40A272D723B00C28E1A /* Step1 */,
 				C7E1262F27239F7E0000DB8B /* main.swift */,
@@ -231,12 +273,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1147F9A27283A9B0068CCC9 /* StringType.swift in Sources */,
+				A181262E2735752500FF371D /* InputView.swift in Sources */,
+				A181262F2735752700FF371D /* Car.swift in Sources */,
 				A1A9B41C272DAE2900C28E1A /* CalculatorTest.swift in Sources */,
 				A11FBA49272837C900A24A9D /* main.swift in Sources */,
 				A1147F9E27283FCD0068CCC9 /* SetCollectionTest.swift in Sources */,
 				A165635B272D1C9B00803E42 /* Calculator.swift in Sources */,
+				A181262B2735751D00FF371D /* RacingGame.swift in Sources */,
+				A1AF036F27340499000741D3 /* RacingGameTest.swift in Sources */,
+				A181262D2735752200FF371D /* ResultView.swift in Sources */,
 				A1A9B41E272DAE2E00C28E1A /* Operator.swift in Sources */,
 				A11FBA4B2728385400A24A9D /* StringTypeTest.swift in Sources */,
+				A181262C2735751F00FF371D /* CarsFactory.swift in Sources */,
 				A1A9B41F272DAE3400C28E1A /* UserInput.swift in Sources */,
 				A1A9B41D272DAE2C00C28E1A /* CalculatorError.swift in Sources */,
 			);
@@ -247,9 +295,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				A11FBA4D2728399000A24A9D /* StringType.swift in Sources */,
+				A1AF0379273427FD000741D3 /* Car.swift in Sources */,
+				A1AF03712734089D000741D3 /* InputView.swift in Sources */,
 				A1A9B412272D749A00C28E1A /* UserInput.swift in Sources */,
+				A1AF037327340B3B000741D3 /* StartCalculate.swift in Sources */,
+				A1812628273574A300FF371D /* RacingGame.swift in Sources */,
 				A1A9B416272D933700C28E1A /* CalculatorError.swift in Sources */,
 				A1A9B414272D7CEB00C28E1A /* Operator.swift in Sources */,
+				A18126262735747000FF371D /* ResultView.swift in Sources */,
+				A181262A273574E100FF371D /* CarsFactory.swift in Sources */,
 				C7E1263027239F7E0000DB8B /* main.swift in Sources */,
 				A165635A272D195A00803E42 /* Calculator.swift in Sources */,
 			);
