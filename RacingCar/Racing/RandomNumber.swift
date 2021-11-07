@@ -14,7 +14,7 @@ protocol Random {
 struct RandomNumber: Random {
 	private let randomRange: ClosedRange<Int>
 	func rand() -> Int {
-		Int.random(in: RacingOption.randomNumberRange)
+		Int.random(in: randomRange)
 	}
 	
 	init (range: ClosedRange<Int>) {

@@ -34,7 +34,6 @@
 		51AED11527342D7A0063C19E /* RacingOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AED11427342D7A0063C19E /* RacingOption.swift */; };
 		51AED11627342DA20063C19E /* RacingOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AED11427342D7A0063C19E /* RacingOption.swift */; };
 		51AED118273430260063C19E /* RandomNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AED117273430260063C19E /* RandomNumber.swift */; };
-		51AED11B2734312A0063C19E /* StubRandom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AED11A2734312A0063C19E /* StubRandom.swift */; };
 		51AED11C2734313F0063C19E /* RandomNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AED117273430260063C19E /* RandomNumber.swift */; };
 		51AFDE6F272AC8B600A6E3DF /* CalculatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AFDE6E272AC8B600A6E3DF /* CalculatorTest.swift */; };
 		51D23A05272EF177006EAEFD /* ArithmeticOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D23A04272EF177006EAEFD /* ArithmeticOperator.swift */; };
@@ -74,7 +73,6 @@
 		51AED111273416790063C19E /* Racing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Racing.swift; sourceTree = "<group>"; };
 		51AED11427342D7A0063C19E /* RacingOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingOption.swift; sourceTree = "<group>"; };
 		51AED117273430260063C19E /* RandomNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNumber.swift; sourceTree = "<group>"; };
-		51AED11A2734312A0063C19E /* StubRandom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubRandom.swift; sourceTree = "<group>"; };
 		51AFDE6E272AC8B600A6E3DF /* CalculatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorTest.swift; sourceTree = "<group>"; };
 		51D23A04272EF177006EAEFD /* ArithmeticOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArithmeticOperator.swift; sourceTree = "<group>"; };
 		51D23A07272EF7CF006EAEFD /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
@@ -157,7 +155,6 @@
 		51AED1192734311F0063C19E /* Stub */ = {
 			isa = PBXGroup;
 			children = (
-				51AED11A2734312A0063C19E /* StubRandom.swift */,
 				51A7C1C627355E6900C44630 /* StubInputView.swift */,
 				51A7C1CB273583B300C44630 /* StubResultView.swift */,
 			);
@@ -287,7 +284,6 @@
 				51AED11C2734313F0063C19E /* RandomNumber.swift in Sources */,
 				51A7C1CD273583CB00C44630 /* ResultView.swift in Sources */,
 				51A7C1CC273583B300C44630 /* StubResultView.swift in Sources */,
-				51AED11B2734312A0063C19E /* StubRandom.swift in Sources */,
 				51AB497B272EDAA700409648 /* String+Extension.swift in Sources */,
 				51AED11327341E7E0063C19E /* Racing.swift in Sources */,
 				517A0CB527367EDD0055018B /* InputAttempt.swift in Sources */,

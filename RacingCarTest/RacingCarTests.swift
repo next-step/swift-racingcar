@@ -8,7 +8,7 @@
 import XCTest
 
 class RacingCarTests: XCTestCase {
-	let random: Random = StubRandom(number: 4)
+	let random: Random = RandomNumber(range: 4...4)
 	let resultView: Outputable = StubResultView()
 	let position: Position = Position(position: RacingOption.defaultRacingCarposition, range: RacingOption.movementRange)
 	
