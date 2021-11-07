@@ -8,7 +8,6 @@
 import XCTest
 
 class RacingCarTests: XCTestCase {
-	let random: Random = RandomNumber(range: 4...4)
 	let resultView: Outputable = StubResultView()
 	let position: Position = Position(position: RacingOption.defaultRacingCarposition, range: RacingOption.movementRange)
 	
@@ -101,8 +100,9 @@ class RacingCarTests: XCTestCase {
 	}
 	
 	private func makeRacing(inputCar: String, inputAttempt: String = "5") -> Racing {
+		let randomNumber: Random = RandomNumber(range: 4...4)
 		let inputView: Inputable = StubInputView(inputCar: inputCar, inputAttempt: inputAttempt)
-		let racing = Racing(inputView: inputView, resultView: resultView, random: random)
+		let racing = Racing(inputView: inputView, resultView: resultView, random: randomNumber)
 		return racing
 	}
 	
