@@ -37,3 +37,46 @@ class RacingCarOutputView {
         print()
     }
 }
+
+class RacingGameViewController {
+    private var inputView = RacingCarInputView()
+    private var outputView = RacingCarOutputView()
+    
+    private var viewModel: RacingGameViewModel?
+    private var storedSet = Set<AnyCancellable>()
+    
+    func load() {
+        guard let carCount = inputView.inputCarCount(),
+              let tryCount = inputView.inputTryCount()
+        else {
+            return
+        }
+        
+        viewModel = RacingGameViewModel(cars: setCarsForRacing(count: carCount))
+        guard let viewModel = viewModel else { return }
+        
+        bind(viewModel)
+        
+        print("\n실행결과")
+        for index in 0..<tryCount {
+            print("===== racing \(index+1) =====")
+            viewModel.startRacing(carCount: carCount)
+        }
+    }
+    
+    private func setCarsForRacing(count: Int) -> [RacingCarProtocol] {
+        var cars = [RacingCar]()
+        
+        for _ in 0..<count {
+            cars.append(RacingCar())
+        }
+        
+        return cars
+    }
+    
+    private func bind(_ viewModel: RacingGameViewModel) {
+        viewModel.carPositionPublisher
+            .sink(receiveValue: outputView.outputPrint(carPositions:))
+            .store(in: &storedSet)
+    }
+}

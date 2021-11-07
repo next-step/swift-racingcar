@@ -6,3 +6,6 @@
 
 import Foundation
 
+let viewControlller = RacingGameViewController()
+
+viewControlller.load()
