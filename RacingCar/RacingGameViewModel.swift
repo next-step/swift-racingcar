@@ -9,6 +9,7 @@ import Foundation
 import Combine
 
 protocol RacingGameInputProtocol {
+    var cars: [RacingCarProtocol] { get }
     func startRacing(carCount: Int)
 }
 
@@ -18,8 +19,6 @@ protocol RacingGameOutputProtocol {
 
 extension RacingGameInputProtocol where Self: RacingGameOutputProtocol {
     func startRacing(carCount: Int) {
-        let cars = self.setCarsForRacing(count: carCount)
-        
         cars.forEach({ car in
             tryForward(car: car, fuel: (0...9).randomElement() ?? 0)
         })
@@ -30,20 +29,21 @@ extension RacingGameInputProtocol where Self: RacingGameOutputProtocol {
     private func tryForward(car: RacingCarProtocol, fuel: Int) {
         car.tryForward(fuel)
     }
-    
-    private func setCarsForRacing(count: Int) -> [RacingCarProtocol] {
-        return Array.init(repeating: RacingCar(), count: count)
-    }
 }
 
 class RacingGameViewModel: RacingGameInputProtocol, RacingGameOutputProtocol {
     var carPositionSubject = PassthroughSubject<[Int], Never>()
+    var cars: [RacingCarProtocol]
     var carPositionPublisher: AnyPublisher<[String], Never> {
         return carPositionSubject
             .map({ carPositions in
                 carPositions.map({ String.init(repeating: "_", count: $0) })
             })
             .eraseToAnyPublisher()
+    }
+    
+    init(cars: [RacingCarProtocol]) {
+        self.cars = cars
     }
 }
 
