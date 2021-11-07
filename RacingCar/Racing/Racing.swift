@@ -9,7 +9,7 @@ import Foundation
 
 final class Racing {
 	// MARK: - Properties
-	private let random: Random
+	private let randomNumber: Random
 	private let resultView: Outputable
 	private(set) var cars: [RacingCar] = []
 	private var totalTrack: Int = RacingOption.defaultTotalTrack
@@ -17,7 +17,7 @@ final class Racing {
 	
 	// MARK: - Initialize
 	init(inputView: Inputable, resultView: Outputable, random: Random) {
-		self.random = random
+		self.randomNumber = random
 		self.resultView = resultView
 		do {
 			try inputView.read { inputCar, inputAttempt in
@@ -49,7 +49,7 @@ final class Racing {
 	private func racing() {
 		while (track <= totalTrack) {
 			cars.forEach { car in
-				car.move(at: random.rand())
+				car.move(at: randomNumber.rand())
 				_ = resultView.broadcast(asPosition: car.position.currentPosition)
 			}
 			passTrack()
