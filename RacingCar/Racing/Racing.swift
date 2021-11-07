@@ -48,9 +48,9 @@ final class Racing {
 	
 	private func racing() {
 		while (track <= totalTrack) {
-			cars.forEach {
-				$0.move(at: random.rand())
-				_ = resultView.broadcast(asPosition: $0.position.currentPosition)
+			cars.forEach { car in
+				car.move(at: random.rand())
+				_ = resultView.broadcast(asPosition: car.position.currentPosition)
 			}
 			passTrack()
 		}
