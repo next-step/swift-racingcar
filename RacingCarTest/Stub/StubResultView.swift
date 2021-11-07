@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct StubResultView: Outputable {
+final class StubResultView: Outputable {
+	var occcurredError: InputError? = nil
 	func broadcast(asPosition position: Int) -> String {
 		changePositionToSymbolText(position: position)
 	}
@@ -19,5 +20,6 @@ struct StubResultView: Outputable {
 	}
 	
 	func broadcast(asError inputError: InputError) {
+		self.occcurredError = inputError
 	}
 }

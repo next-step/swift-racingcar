@@ -38,8 +38,9 @@ final class Racing {
 	
 	// MARK: - Private
 	private func printMessage(for error: Error) {
-		guard let inputError = error as? InputError else { return }
-		resultView.broadcast(asError: inputError)
+		if let inputError = error as? InputError {
+			resultView.broadcast(asError: inputError)
+		}
 	}
 	
 	private func startBroadcasting() {

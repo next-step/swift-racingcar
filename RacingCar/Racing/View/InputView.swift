@@ -9,6 +9,17 @@ import Foundation
 
 protocol Inputable {
 	func read(completion: (CarInputable, AttemptInputable) -> Void) throws
+	func readNumberOfCars() throws -> InputCar
+	func readNumberOfAttempts() throws -> InputAttempt
+}
+
+extension Inputable {
+	func read(completion: (CarInputable, AttemptInputable) -> Void) throws {
+		let inputCar = try readNumberOfCars()
+		let inputAttempt = try readNumberOfAttempts()
+		
+		completion(inputCar, inputAttempt)
+	}
 }
 
 enum InputError: Error {
@@ -16,19 +27,12 @@ enum InputError: Error {
 }
 
 struct InputView: Inputable {
-	func read(completion: (CarInputable, AttemptInputable) -> Void) throws {
-		let inputCar = try readNumberOfCars()
-		let inputAttempt = try readNumberOfAttempts()
-		
-		completion(inputCar, inputAttempt)
-	}
-	
-	private func readNumberOfCars() throws -> InputCar {
+	func readNumberOfCars() throws -> InputCar {
 		print("자동차 대수는 몇 대인가요?", terminator: " ")
 		return try InputCar(input: readLine(), range: RacingOption.inputCarRange)
 	}
 	
-	private func readNumberOfAttempts() throws -> InputAttempt {
+	func readNumberOfAttempts() throws -> InputAttempt {
 		print("시도할 횟수는 몇 회인가요?", terminator: " ")
 		return try InputAttempt(input: readLine(), range: RacingOption.inputAttemptRange)
 	}
