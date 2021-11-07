@@ -9,15 +9,15 @@ import Foundation
 
 struct Position {
 	private(set) var currentPosition: Int
-	private let range: ClosedRange<Int>
+	private let movementRange: ClosedRange<Int>
 	
 	init(position: Int, range: ClosedRange<Int>) {
 		self.currentPosition = position
-		self.range = range
+		self.movementRange = range
 	}
 	
 	mutating func increase(at position: Int) {
-		if RacingOption.movementRange.contains(position) {
+		if movementRange.contains(position) {
 			self.currentPosition += 1
 		}
 	}
