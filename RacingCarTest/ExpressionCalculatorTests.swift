@@ -120,7 +120,7 @@ private extension ExpressionCalculator {
             throw ExpressionError.invalidOperand
         }
         
-        guard let `operator` = try? calculator.operator(subExpression.removeLast()) else {
+        guard let `operator` = try? calculator.makeOperator(from: subExpression.removeLast()) else {
             throw ExpressionError.invalidOperator
         }
         

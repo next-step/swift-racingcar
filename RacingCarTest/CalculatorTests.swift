@@ -71,7 +71,7 @@ class Calculator {
         case invalidOperator
     }
     
-    func `operator`(_ operatorString: String) throws -> Operator? {
+    func makeOperator(from operatorString: String) throws -> Operator? {
         switch operatorString {
         case "+": return .add
         case "-": return .subtract
