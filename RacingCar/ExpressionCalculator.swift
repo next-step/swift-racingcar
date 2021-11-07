@@ -40,15 +40,12 @@ private extension ExpressionCalculator {
     }
     
     func calculateRecursively(expression: [String]) throws -> Int {
-        guard !expression.isEmpty else { throw ExpressionError.invalidExpression }
-        guard expression.count > 1 else {
-            
-            if let lastExpression = expression.first,
-               let lastValue = Int(lastExpression) {
-                return lastValue
-            }
-            
-            throw ExpressionError.invalidOperand
+        guard isValid(expression: expression)
+        else { throw ExpressionError.invalidExpression }
+        
+        guard !hasLastValue(expression: expression)
+        else {
+            return try calculatedLastValue(from: expression)
         }
         
         var subExpression = expression
@@ -66,5 +63,22 @@ private extension ExpressionCalculator {
         }
         
         return calculator.calculate(left: left, right: right, operator: `operator`)
+    }
+    
+    func isValid(expression: [String]) -> Bool {
+        return !expression.isEmpty
+    }
+    
+    func hasLastValue(expression: [String]) -> Bool {
+        return expression.count == 1
+    }
+    
+    func calculatedLastValue(from expression: [String]) throws -> Int {
+        if let lastExpression = expression.first,
+           let lastValue = Int(lastExpression) {
+            return lastValue
+        }
+        
+        throw ExpressionError.invalidOperand
     }
 }
