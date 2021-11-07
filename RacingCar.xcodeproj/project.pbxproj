@@ -15,6 +15,7 @@
 		C191467127380FEC0033BC16 /* RacingGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C191467027380FEC0033BC16 /* RacingGameViewModel.swift */; };
 		C19146722738100E0033BC16 /* RacingGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C191467027380FEC0033BC16 /* RacingGameViewModel.swift */; };
 		C1914674273814290033BC16 /* RacingGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1914673273814290033BC16 /* RacingGameViewController.swift */; };
+		C1914675273821830033BC16 /* RacingGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1914673273814290033BC16 /* RacingGameViewController.swift */; };
 		C19AE5D32730173A0058E636 /* ArithmeticOperationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DE5D73273014DC007396B0 /* ArithmeticOperationProtocol.swift */; };
 		C19AE5D42730173D0058E636 /* CalculatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DE5D75273014F1007396B0 /* CalculatorProtocol.swift */; };
 		C19AE5D5273017400058E636 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DE5D772730155C007396B0 /* String+Extension.swift */; };
@@ -383,6 +384,7 @@
 			files = (
 				C1B1EB91272851DA00447AC1 /* RacingCarTest.swift in Sources */,
 				C19146722738100E0033BC16 /* RacingGameViewModel.swift in Sources */,
+				C1914675273821830033BC16 /* RacingGameViewController.swift in Sources */,
 				C1B48FE4272CE5E4001AAEC3 /* Injectable.swift in Sources */,
 				C19AE5D62730194A0058E636 /* main.swift in Sources */,
 				C191466F2735745F0033BC16 /* StubRacingCar.swift in Sources */,

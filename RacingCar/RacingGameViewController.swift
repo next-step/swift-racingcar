@@ -6,20 +6,21 @@
 //
 
 import Foundation
+import Combine
 
 class RacingCarInputView {
-    func inputCarCount() -> Int {
+    func inputCarCount() -> Int? {
         print("자동차 대수는 몇 대인가요? ", separator: "")
-        guard let carCount = Int(readLine()) else {
+        guard let carCount = Int(readLine() ?? "") else {
             return nil
         }
         
         return carCount
     }
     
-    func inputTryCount() -> Int {
+    func inputTryCount() -> Int? {
         print("시도할 횟수는 몇 회인가요? ", separator: "")
-        guard let tryCount = Int(readLine()) else {
+        guard let tryCount = Int(readLine() ?? "") else {
             return nil
         }
         
@@ -30,7 +31,7 @@ class RacingCarInputView {
 class RacingCarOutputView {
     func outputPrint(carPositions: [String]) {
         carPositions.forEach({ carPosition in
-            print(carPositions)
+            print(carPosition)
         })
         
         print()
