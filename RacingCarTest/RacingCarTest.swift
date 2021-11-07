@@ -9,14 +9,14 @@ import XCTest
 @testable import RacingCar
 
 class RacingCarTest: XCTestCase {
-    var viewModel: StubRacingCarViewModel!
+    var dummyRacingCar: StubRacingCar!
 
     override func setUpWithError() throws {
-        viewModel = StubRacingCarViewModel()
+        dummyRacingCar = StubRacingCar()
     }
 
     override func tearDownWithError() throws {
-        viewModel = nil
+        dummyRacingCar = nil
     }
 }
 
@@ -25,30 +25,34 @@ class RacingCarTest: XCTestCase {
 extension RacingCarTest {
     func test_racing_car_forward() {
         let expect = expectation(description: "자동차의 연료가 4이상 9 이하일 경우 앞으로 전진한다.")
-        guard let carFuel: Int = (4...9).randomElement() else { return }
+        let range = (4...9)
         
-        viewModel.called(name: "isForward", verify: { _ in
-            if (4...9).contains(carFuel) {
+        dummyRacingCar.called(name: "tryForward", verify: { fuel in
+            guard let fuel = fuel as? Int else { return }
+            if fuel >= 4,
+               fuel <= 9
+            {
                 expect.fulfill()
             }
         })
         
-        viewModel.startRacing(carCount: 1, repeatCount: 1)
+        dummyRacingCar.tryForward(range.randomElement() ?? 0)
         
         self.wait(for: [expect], timeout: 0.1)
     }
     
     func test_racing_car_stop() {
         let expect = expectation(description: "자동차의 연료가 4이이하일 경우 앞으로 멈춘다.")
-        guard let carFuel: Int = (0...3).randomElement() else { return }
+        let range = (0...3)
         
-        viewModel.called(name: "isForward", verify: { _ in
-            if !(4...9).contains(carFuel) {
+        dummyRacingCar.called(name: "tryForward", verify: { fuel in
+            guard let fuel = fuel as? Int else { return }
+            if fuel < 4 {
                 expect.fulfill()
             }
         })
         
-        viewModel.startRacing(carCount: 1, repeatCount: 1)
+        dummyRacingCar.tryForward(range.randomElement() ?? 0)
         
         self.wait(for: [expect], timeout: 0.1)
     }

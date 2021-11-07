@@ -7,28 +7,16 @@
 
 import Foundation
 import TestHelper
-import Combine
 
-class StubRacingCarViewModel: StubContainer {
-    private var carPositionSubject = PassthroughSubject<[Int], Never>()
+class StubRacingCar: StubContainer {
+    var position: Int = 0
+    private var forwardCondition: ClosedRange<Int>
     
-    func startRacing(carCount: Int, repeatCount: Int) {
-        let cars = self.resolve([Car].self, name: "setCarsForRacing")
-        
-        cars.forEach({ car in
-            if isForward(car: car, fuel: (0...9).randomElement() ?? 0) {
-                forward(car: car)
-            }
-        })
-        
-        carPositionSubject.send(cars.map({ $0.position }))
+    init(forwardCondition: ClosedRange<Int> = (4...9)) {
+        self.forwardCondition = forwardCondition
     }
     
-    private func isForward(car: Car, fuel: Int) -> Bool {
-        return car.isForward(fuel)
-    }
-    
-    private func forward(car: Car) {
-        car.forward()
+    func tryForward(_ fuel: Int) {
+        self.verify(name: "tryForward", arg: fuel)
     }
 }
