@@ -76,43 +76,57 @@ class RacingCarTests: XCTestCase {
 	
 	func test_shouldThrowInvalidErrorWhenInputCarIsNilOrEmpty() throws {
 		XCTAssertThrowsError(try InputCar(input: "", range: RacingOption.carNameRange)) { error in
-			XCTAssertEqual(error as! InputError, InputError.invalid)
+			XCTAssertEqual(error as! InputError, InputError.invalidName)
 		}
 		
 		XCTAssertThrowsError(try InputCar(input: nil, range: RacingOption.carNameRange)) { error in
-			XCTAssertEqual(error as! InputError, InputError.invalid)
+			XCTAssertEqual(error as! InputError, InputError.invalidName)
 		}
 	}
 	
 	func test_shouldThrowInvalidErrorWhenInputAttemptInputIsOutOfRange() throws {
 		XCTAssertThrowsError(try InputAttempt(input: "-11", range: RacingOption.inputAttemptRange)) { error in
-			XCTAssertEqual(error as! InputError, InputError.invalid)
+			XCTAssertEqual(error as! InputError, InputError.invalidNumber)
 		}
 		
 		XCTAssertThrowsError(try InputAttempt(input: "21", range: RacingOption.inputAttemptRange)) { error in
-			XCTAssertEqual(error as! InputError, InputError.invalid)
+			XCTAssertEqual(error as! InputError, InputError.invalidNumber)
 		}
 	}
 	
-	func test_shouldThrowOutOfMaxLengthErrorWhenInputCarIsOutOfRange() throws {
+	func test_shouldThrowOutOfMaxLengthErrorWhenLengthOfInputCarNameIsOutOfRange() throws {
 		XCTAssertThrowsError(try InputCar(input: "-11-1-1-1aa", range: RacingOption.carNameRange)) { error in
-			XCTAssertEqual(error as! InputError, InputError.outOfMaxLength)
+			XCTAssertEqual(error as! InputError, InputError.outOfMaxLengthName)
 		}
 		
 		XCTAssertThrowsError(try InputCar(input: "212121", range: RacingOption.carNameRange)) { error in
-			XCTAssertEqual(error as! InputError, InputError.outOfMaxLength)
+			XCTAssertEqual(error as! InputError, InputError.outOfMaxLengthName)
 		}
 	}
 	
-	
 	func test_shouldThrowInvalidErrorWhenInputIsNilOrEmptyInRacing() throws {
-		verifyOccuredInputError(inputCar: "", expectError: InputError.invalid)
-		verifyOccuredInputError(inputCar: nil, expectError: InputError.invalid)
+		verifyOccuredInputError(inputCar: "", expectError: InputError.invalidName)
+		verifyOccuredInputError(inputCar: nil, expectError: InputError.invalidName)
 	}
 	
-	func test_shouldThrowOutOfMaxLengthErrorWhenInputIsOutOfRangeInRacing() throws {
-		verifyOccuredInputError(inputCar: "-11-1-1-1aa", expectError: InputError.outOfMaxLength)
-		verifyOccuredInputError(inputCar: "212121", expectError: InputError.outOfMaxLength)
+	func test_shouldThrowOutOfMaxLengthErrorWhenLengthOfInputCarNameIsOutOfRangeInRacing() throws {
+		verifyOccuredInputError(inputCar: "-11-1-1-1aa", expectError: InputError.outOfMaxLengthName)
+		verifyOccuredInputError(inputCar: "212121", expectError: InputError.outOfMaxLengthName)
+	}
+	
+	func test_shouldThrowExceededInputableNamesErrorWhenInputCarIsOutOfRange() throws {
+		XCTAssertThrowsError(try InputCar(input: "1,2,3,4,5,6,7,8,9,10,11", range: RacingOption.carNameRange)) { error in
+			XCTAssertEqual(error as! InputError, InputError.exceededInputableNames)
+		}
+		
+		XCTAssertThrowsError(try InputCar(input: "abcde,fghij,klmno,pqrst,uvwxy,z,1,2,3,4,5,6,7,8,9,10", range: RacingOption.carNameRange)) { error in
+			XCTAssertEqual(error as! InputError, InputError.exceededInputableNames)
+		}
+	}
+	
+	func test_shouldThrowExceededInputableNamesErrorWhenInputIsOutOfRangeInRacing() throws {
+		verifyOccuredInputError(inputCar: "1,2,3,4,5,6,7,8,9,10,11", expectError: InputError.exceededInputableNames)
+		verifyOccuredInputError(inputCar: "abcde,fghij,klmno,pqrst,uvwxy,z,1,2,3,4,5,6,7,8,9,10", expectError: InputError.exceededInputableNames)
 	}
 	
 	func test_shouldGet3CarsWhenInput3Names() {

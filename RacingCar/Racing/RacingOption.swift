@@ -12,6 +12,7 @@ enum RacingOption {
 	static let randomNumberRange: ClosedRange = 0...9
 	static let movementRange: ClosedRange = 4...9
 	static let carNameRange: ClosedRange = 1...5
+	static let inputCarRange: ClosedRange = 1...10
 	static let inputAttemptRange: ClosedRange = 1...20
 	static let startingTrack: Int = 1
 	static let defaultTotalTrack: Int = 0
