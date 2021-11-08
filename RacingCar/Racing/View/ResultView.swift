@@ -9,7 +9,7 @@ import Foundation
 
 protocol Outputable {
 	func startedBroadcasting()
-	func broadcast(asPosition position: Int) -> String
+	func broadcast(position: Int, of name: String) -> String
 	func broadcast(asError error: InputError)
 	func broadcastThatCarsHasPassedTrack()
 }
@@ -29,9 +29,9 @@ struct ResultView: Outputable {
 		print("\n실행 결과")
 	}
 	
-	func broadcast(asPosition position: Int) -> String {
+	func broadcast(position: Int, of name: String) -> String {
 		let displayingSymbolText = changePositionToSymbolText(position: position)
-		printResultPosition(as: displayingSymbolText)
+		printResultPosition(of: name, asSymbol: displayingSymbolText)
 		return displayingSymbolText
 	}
 	
@@ -48,7 +48,7 @@ struct ResultView: Outputable {
 		}
 	}
 	
-	private func printResultPosition(as symbolText: String) {
-		print(symbolText)
+	private func printResultPosition(of name: String, asSymbol symbols: String) {
+		print("\(name) : \(symbols)")
 	}
 }

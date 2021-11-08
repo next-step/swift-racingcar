@@ -59,7 +59,7 @@ final class Racing {
 		while (track <= totalTrack) {
 			cars.forEach { car in
 				car.move(at: randomNumber.rand())
-				_ = resultView.broadcast(asPosition: car.position.currentPosition)
+				_ = resultView.broadcast(position: car.position.currentPosition, of: car.name)
 			}
 			passTrack()
 		}
