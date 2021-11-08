@@ -8,16 +8,16 @@
 import Foundation
 
 struct StubInputView: Inputable {
-	let numberOfCars: String
-	let numberOfAttempts: String
+	let carNames: String?
+	let numberOfAttempts: String?
 	
-	init(inputCar: String, inputAttempt: String) {
-		self.numberOfCars = inputCar
+	init(inputCarNames: String?, inputAttempt: String?) {
+		self.carNames = inputCarNames
 		self.numberOfAttempts = inputAttempt
 	}
 	
 	func readNumberOfCars() throws -> InputCar {	
-		return try InputCar(input: numberOfCars, range: RacingOption.inputCarRange)
+		return try InputCar(input: carNames, range: RacingOption.carNameRange)
 	}
 	
 	func readNumberOfAttempts() throws -> InputAttempt {
