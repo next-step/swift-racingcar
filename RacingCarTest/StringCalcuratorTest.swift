@@ -12,7 +12,15 @@ class StringCalcuratorTest: XCTestCase {
     var stringCalculator: StringCalculatorProtocol!
     
     override func setUpWithError() throws {
-        stringCalculator = StringCalculator()
+        let addCalculator: CalculatorProtocol = AddCalculator()
+        let substractCalculator: CalculatorProtocol = SubstractCalculator()
+        let multiplyCalculator: CalculatorProtocol = MultiplyCalculator()
+        let devideCalculator: CalculatorProtocol = DevideCalculator()
+        
+        stringCalculator = StringCalculator(addCalculator: addCalculator,
+                                            substractCalculator: substractCalculator,
+                                            multiplyCalculator: multiplyCalculator,
+                                            devideCalculator: devideCalculator)
     }
     
     override func tearDownWithError() throws {

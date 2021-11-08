@@ -5,15 +5,36 @@
 //  Created by 김효성 on 2021/10/28.
 //
 
-protocol ArithmeticProtocol {
-    func add(_ lhs: Int, _ rhs: Int) -> Int
-    func substract(_ lhs: Int, _ rhs: Int) -> Int
-    func multiply(_ lhs: Int, _ rhs: Int) -> Int
-    func devide(_ lhs: Int, _ rhs: Int) -> Int
-}
-
 protocol StringCalculatorProtocol {
     func calculate(_ string: String?) throws -> Int
+}
+
+protocol CalculatorProtocol {
+    func calculate(_ lhs: Int, _ rhs: Int) -> Int
+}
+
+struct AddCalculator: CalculatorProtocol {
+    func calculate(_ lhs: Int, _ rhs: Int) -> Int {
+        return lhs + rhs
+    }
+}
+
+struct SubstractCalculator: CalculatorProtocol {
+    func calculate(_ lhs: Int, _ rhs: Int) -> Int {
+        return lhs - rhs
+    }
+}
+
+struct MultiplyCalculator: CalculatorProtocol {
+    func calculate(_ lhs: Int, _ rhs: Int) -> Int {
+        return lhs * rhs
+    }
+}
+
+struct DevideCalculator: CalculatorProtocol {
+    func calculate(_ lhs: Int, _ rhs: Int) -> Int {
+        return lhs / rhs
+    }
 }
 
 final class StringCalculator: StringCalculatorProtocol {
@@ -23,12 +44,27 @@ final class StringCalculator: StringCalculatorProtocol {
         case noNumbers
         case noOperators
     }
-    
+
     private enum ArithmeticOperations: String {
         case add = "+"
         case substract = "-"
         case mutiply = "X"
         case devide = "/"
+    }
+    
+    let addCalculator: CalculatorProtocol
+    let substractCalculator: CalculatorProtocol
+    let multiplyCalculator: CalculatorProtocol
+    let devideCalculator: CalculatorProtocol
+    
+    init(addCalculator: CalculatorProtocol,
+         substractCalculator: CalculatorProtocol,
+         multiplyCalculator: CalculatorProtocol,
+         devideCalculator: CalculatorProtocol) {
+        self.addCalculator = addCalculator
+        self.substractCalculator = substractCalculator
+        self.multiplyCalculator = multiplyCalculator
+        self.devideCalculator = devideCalculator
     }
     
     func calculate(_ string: String?) throws -> Int {
@@ -59,32 +95,14 @@ final class StringCalculator: StringCalculatorProtocol {
             .enumerated()
             .forEach {
                 switch $0.element {
-                case .add: result = add(result, numbers[$0.offset])
-                case .substract: result = substract(result, numbers[$0.offset])
-                case .mutiply: result = multiply(result, numbers[$0.offset])
-                case .devide: result = devide(result, numbers[$0.offset])
+                case .add: result = addCalculator.calculate(result, numbers[$0.offset])
+                case .substract: result = substractCalculator.calculate(result, numbers[$0.offset])
+                case .mutiply: result = multiplyCalculator.calculate(result, numbers[$0.offset])
+                case .devide: result = devideCalculator.calculate(result, numbers[$0.offset])
                 case .none: throw InputError.noOperators
                 }
             }
         
         return result
-    }
-}
-
-extension StringCalculator: ArithmeticProtocol {
-    func add(_ lhs: Int, _ rhs: Int) -> Int {
-        return lhs + rhs
-    }
-    
-    func substract(_ lhs: Int, _ rhs: Int) -> Int {
-        return lhs - rhs
-    }
-    
-    func multiply(_ lhs: Int, _ rhs: Int) -> Int {
-        return lhs * rhs
-    }
-    
-    func devide(_ lhs: Int, _ rhs: Int) -> Int {
-        return lhs / rhs
     }
 }
