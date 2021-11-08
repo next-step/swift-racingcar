@@ -69,9 +69,9 @@ class RacingCarTests: XCTestCase {
 	}
 	
 	func test_shouldReturnTheSameNumberOfHyphenAsPositionWhenResultViewBroadcastsPosition() {
-		XCTAssertEqual( resultView.broadcast(asPosition: 2), "--")
-		XCTAssertEqual( resultView.broadcast(asPosition: 1), "-")
-		XCTAssertEqual( resultView.broadcast(asPosition: 0), "")
+		XCTAssertEqual( resultView.broadcast(position: 2, of: ""), "--")
+		XCTAssertEqual( resultView.broadcast(position: 1, of: ""), "-")
+		XCTAssertEqual( resultView.broadcast(position: 0, of: ""), "")
 	}
 	
 	func test_shouldThrowInvalidErrorWhenInputCarIsNilOrEmpty() throws {
