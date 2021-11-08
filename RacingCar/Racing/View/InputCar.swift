@@ -16,15 +16,19 @@ struct InputCar: CarInputable {
 	let carNames: [String]
 	
 	init(input: String?, range: ClosedRange<Int>) throws {
-		guard let carNames = input.convertToCarNames() else { throw InputError.invalid }
+		guard let validInput = input,
+					!validInput.isEmpty
+		else { throw InputError.invalid }
+		
+		let carNames = validInput.convertToCarNames()
 		try carNames.isValid(range: range)
 		self.carNames = carNames
 	}
 }
 
-fileprivate extension Optional where Wrapped == String {
-	func convertToCarNames() -> [String]? {
-		self?.components(separatedBy: ",")
+fileprivate extension String {
+	func convertToCarNames() -> [String] {
+		self.components(separatedBy: ",")
 	}
 }
 
