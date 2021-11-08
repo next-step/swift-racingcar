@@ -72,3 +72,11 @@ struct RacingCarGame {
     }
 }
 
+struct InputView {
+    private(set) var input: String
+    
+    mutating func readInput() {
+        input = readLine() ?? ""
+    }
+}
+
