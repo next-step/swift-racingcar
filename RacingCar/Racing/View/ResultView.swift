@@ -12,6 +12,7 @@ protocol Outputable {
 	func broadcast(position: Int, of name: String) -> String
 	func broadcast(asError error: InputError)
 	func broadcastThatCarsHasPassedTrack()
+	func broadcastToAward(for winners: [String])
 }
 
 extension Outputable {
@@ -46,6 +47,11 @@ struct ResultView: Outputable {
 		case .outOfMaxLength:
 			print("자동차 이름은 5자를 초과할 수 없습니다.")
 		}
+	}
+	
+	func broadcastToAward(for winners: [String]) {
+		let namesOfWinners = winners.joined(separator: ", ")
+		print("\(namesOfWinners)가 최종 우승했습니다.")
 	}
 	
 	private func printResultPosition(of name: String, asSymbol symbols: String) {
