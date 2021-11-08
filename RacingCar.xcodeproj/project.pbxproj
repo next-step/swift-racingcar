@@ -34,6 +34,11 @@
 		E0A6BCC927329E8300CCB91F /* RacingRecorderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A6BCC827329E8300CCB91F /* RacingRecorderTest.swift */; };
 		E0A6BCCB27329E9000CCB91F /* RacingMachineTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A6BCCA27329E9000CCB91F /* RacingMachineTest.swift */; };
 		E0A6BCCD27329EA200CCB91F /* RacingValidationCheckTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A6BCCC27329EA200CCB91F /* RacingValidationCheckTest.swift */; };
+		E0A6BCCE2732A1E300CCB91F /* RacingGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0938D06273167F8005A7F07 /* RacingGame.swift */; };
+		E0A6BCCF2732A1E700CCB91F /* RacingRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0938D04273167A8005A7F07 /* RacingRecorder.swift */; };
+		E0A6BCD02732A1EA00CCB91F /* RacingMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0938D0D273179A5005A7F07 /* RacingMachine.swift */; };
+		E0A6BCD12732A1EC00CCB91F /* RacingInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0938D0827316C06005A7F07 /* RacingInput.swift */; };
+		E0A6BCD22732A1EF00CCB91F /* RacingCarValidationCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0938D0B27317448005A7F07 /* RacingCarValidationCheck.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -276,19 +281,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0A6BCCE2732A1E300CCB91F /* RacingGame.swift in Sources */,
 				E0055453272D607A00EA062F /* StringCalculatorTest.swift in Sources */,
 				E0055462272EB1A900EA062F /* StringValidationCheckerProtocol.swift in Sources */,
 				E0055464272EB1AE00EA062F /* Step2_StringValidationChecker.swift in Sources */,
+				E0A6BCD12732A1EC00CCB91F /* RacingInput.swift in Sources */,
+				E0A6BCD02732A1EA00CCB91F /* RacingMachine.swift in Sources */,
 				E02696A22728613800AA278B /* RacingTest.swift in Sources */,
 				E0A6BCCB27329E9000CCB91F /* RacingMachineTest.swift in Sources */,
 				E0055461272EB06800EA062F /* StringValidationCheckerTest.swift in Sources */,
 				E0055450272D607200EA062F /* StringExtension.swift in Sources */,
 				E02696A92728619800AA278B /* Calculator.swift in Sources */,
+				E0A6BCCF2732A1E700CCB91F /* RacingRecorder.swift in Sources */,
 				E0055465272EB1B000EA062F /* Step2_calculatorError.swift in Sources */,
 				E0A6BCCD27329EA200CCB91F /* RacingValidationCheckTest.swift in Sources */,
 				E0055466272EB1B300EA062F /* Step2_OperatorType.swift in Sources */,
 				E0A6BCC927329E8300CCB91F /* RacingRecorderTest.swift in Sources */,
 				E0055463272EB1AB00EA062F /* Step2_StringCalculator.swift in Sources */,
+				E0A6BCD22732A1EF00CCB91F /* RacingCarValidationCheck.swift in Sources */,
 				E0A6BCC727329E6E00CCB91F /* RacingGameTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -428,6 +438,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
+				ENABLE_TESTABILITY = YES;
 				EXCLUDED_ARCHS = "";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";

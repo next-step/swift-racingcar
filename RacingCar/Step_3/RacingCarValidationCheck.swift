@@ -8,20 +8,20 @@
 import Foundation
 
 struct RacingCarValidationCheck {
-    let firstInput: String
-    let secondInput: String
+    let roundInput: String
+    let carCountInput: String
     
-    init(_ first: String,_ second: String) {
-        self.firstInput = first
-        self.secondInput = second
+    init(_ roundInput: String,_ carCountInput: String) {
+        self.roundInput = roundInput
+        self.carCountInput = carCountInput
     }
     
-    var isIntableString: Bool {
-        if firstInput.toInt() == nil {
-            fatalError(RacingCarError.firstInputError.rawValue)
+    var isIntAbleString: Bool {
+        if roundInput.toInt() == nil {
+            fatalError(RacingCarError.playcarInputError.rawValue)
         }
-        if secondInput.toInt() == nil {
-            fatalError(RacingCarError.secondInputError.rawValue)
+        if carCountInput.toInt() == nil {
+            fatalError(RacingCarError.roundCountInputError.rawValue)
         }
         return true
     }

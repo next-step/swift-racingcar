@@ -7,22 +7,42 @@
 
 import Foundation
 
-class RacingMachine {
-    var oneRoundEnded: (([String]) -> ())?
+struct RacingMachine {
+    private let racinginput: RacingInput
+    private let roundRecorder: RacingRecorder
     
-    func isOverThree(number: Int) -> String {
-        return number > 3 ? "-" : ""
+    init(racingInput: RacingInput) {
+        self.racinginput = racingInput
+        self.roundRecorder = RacingRecorder(roundCount: racingInput.roundCount.toInt()!)
     }
     
     func startRacing(racing: RacingInput) {
-        for _ in 0...racing.roundCount - 1 {
-            let roundRecord: [String] = Array(0...racing.playingCarCount - 1)
+        if isValidInput(userInput: racingInput) == false {
+            fatalError(RacingCarError.cannotConvertToInt.rawValue)
+        }
+        let roundCount = Int(racing.roundCount)!
+        let carCount = Int(racing.playingCarCount)!
+        for _ in 0...roundCount - 1 {
+            let roundRecord: [String] = Array(0...carCount - 1)
                 .map { String($0) }
                 .reduce([]) { partialResult, _ in
-                let randomNumber = (0...9).randomElement()!
-                return partialResult + [isOverThree(number: randomNumber)]
+                return partialResult + [isOverThree(number: getRandomNumber())]
             }
-            self.oneRoundEnded?(roundRecord)
+            roundRecorder.appendResult(record: roundRecord)
         }
+    }
+    
+    func getRandomNumber() -> Int {
+        return (0...9).randomElement()!
+    }
+    
+    func isValidInput(userInput: RacingInput) -> Bool {
+        let racingValidationCheck = RacingCarValidationCheck(userInput.playingCarCount,
+                                                             userInput.roundCount)
+        return racingValidationCheck.isIntAbleString
+    }
+    
+    func isOverThree(number: Int) -> String {
+        return number > 3 ? "-" : ""
     }
 }

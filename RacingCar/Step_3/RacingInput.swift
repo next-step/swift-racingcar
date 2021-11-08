@@ -8,12 +8,12 @@
 import Foundation
 
 struct RacingInput {
-    let playingCarCount: Int
-    let roundCount: Int
+    let playingCarCount: String
+    let roundCount: String
     
     init(carCount: String, roundCount: String) {
-        self.playingCarCount = Int(carCount)!
-        self.roundCount = Int(roundCount)!
+        self.playingCarCount = carCount
+        self.roundCount = roundCount
     }
 }
 
@@ -23,6 +23,7 @@ enum Question: String {
 }
 
 enum RacingCarError: String, Error {
-    case firstInputError
-    case secondInputError
+    case playcarInputError
+    case roundCountInputError
+    case cannotConvertToInt
 }
