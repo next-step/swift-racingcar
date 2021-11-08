@@ -7,28 +7,31 @@
 import Foundation
 
 struct RacingCarGameController {
-    private let carCountQuestionLabel = LabelView(title: "자동차 대수는 몇 대인가요?", terminator: " ")
-    private let tryCountQuestionLabel = LabelView(title: "시도할 횟수는 몇 회인가요?", terminator: " ")
     private let newLineLabel = LabelView(title: " ")
-    private let resultLabel = LabelView(title: "실행 결과")
-
-    private var carCountInput = InputView()
-    private var tryCountInput = InputView()
     
     mutating func run() {
-        carCountQuestionLabel.printTitle()
-        carCountInput.readInput()
-        
-        tryCountQuestionLabel.printTitle()
-        tryCountInput.readInput()
-        
-        guard let carCount = Int(carCountInput.input),
-              let tryCount = Int(tryCountInput.input),
+        guard let carCount = printQuestionAndGetCount(question: "자동차 대수는 몇 대인가요?"),
+              let tryCount = printQuestionAndGetCount(question: "시도할 횟수는 몇 회인가요?"),
               tryCount > 0
         else { return }
         
         newLineLabel.printTitle()
         
+        printRacingCarGameResuts(withCarCount: carCount, tryCount: tryCount)
+    }
+    
+    func printQuestionAndGetCount(question: String) -> Int? {
+        let questionLabel = LabelView(title: question, terminator: " ")
+        questionLabel.printTitle()
+        
+        var countInput = InputView()
+        countInput.readInput()
+        
+        return Int(countInput.input)
+    }
+    
+    func printRacingCarGameResuts(withCarCount carCount: Int, tryCount: Int) {
+        let resultLabel = LabelView(title: "실행 결과")
         resultLabel.printTitle()
         
         var racingCarGame = makeRacingCarGame(withRacingCarCount: carCount)
