@@ -16,10 +16,8 @@ struct InputCar: CarInputable {
 	let carNames: [String]
 	
 	init(input: String?, range: ClosedRange<Int>) throws {
-		guard let carNames = input.convertToCarNames(),
-					try carNames.isValid()
-		else { throw InputError.invalid }
-		
+		guard let carNames = input.convertToCarNames() else { throw InputError.invalid }
+		try carNames.isValid(range: range)
 		self.carNames = carNames
 	}
 }
@@ -31,14 +29,15 @@ fileprivate extension Optional where Wrapped == String {
 }
 
 fileprivate extension Array where Element == String {
-	func isValid() throws -> Bool {
+	func isValid(range: ClosedRange<Int>) throws {
 		try self.forEach { carName in
-			if isValid(carName: carName) { throw InputError.outOfMaxLength }
+			try isValid(carName: carName, in: range)
 		}
-		return true
 	}
 	
-	private func isValid(carName: String) -> Bool {
-		RacingOption.carNameRange.contains(carName.count)
+	private func isValid(carName: String, in range: ClosedRange<Int>) throws {
+		if !range.contains(carName.count) {
+			throw InputError.outOfMaxLength
+		}
 	}
 }
