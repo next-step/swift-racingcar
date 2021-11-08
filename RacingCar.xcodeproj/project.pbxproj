@@ -24,6 +24,7 @@
 		E2B9E0732739395B0089907E /* RacingCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B9E06F273905BA0089907E /* RacingCar.swift */; };
 		E2B9E075273945F80089907E /* PositionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B9E074273945F80089907E /* PositionTests.swift */; };
 		E2B9E077273946240089907E /* MoveCheckerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B9E076273946240089907E /* MoveCheckerTests.swift */; };
+		E2B9E079273946B30089907E /* RacingCarMoverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B9E078273946B30089907E /* RacingCarMoverTests.swift */; };
 		E2D09D8F27282B7700A846D8 /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D09D8E27282B7700A846D8 /* StringTests.swift */; };
 		E2D09D9327282B8E00A846D8 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
 		E2D09D9527283A4C00A846D8 /* SetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D09D9427283A4C00A846D8 /* SetTests.swift */; };
@@ -55,6 +56,7 @@
 		E2B9E0712739391D0089907E /* RacingCarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingCarTests.swift; sourceTree = "<group>"; };
 		E2B9E074273945F80089907E /* PositionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionTests.swift; sourceTree = "<group>"; };
 		E2B9E076273946240089907E /* MoveCheckerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveCheckerTests.swift; sourceTree = "<group>"; };
+		E2B9E078273946B30089907E /* RacingCarMoverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingCarMoverTests.swift; sourceTree = "<group>"; };
 		E2D09D8C27282B7700A846D8 /* RacingCarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RacingCarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2D09D8E27282B7700A846D8 /* StringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTests.swift; sourceTree = "<group>"; };
 		E2D09D9427283A4C00A846D8 /* SetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTests.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				E2B9E0712739391D0089907E /* RacingCarTests.swift */,
 				E2B9E074273945F80089907E /* PositionTests.swift */,
 				E2B9E076273946240089907E /* MoveCheckerTests.swift */,
+				E2B9E078273946B30089907E /* RacingCarMoverTests.swift */,
 			);
 			path = RacingCarTests;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 				E288CC7E27301087005DDEF8 /* ExpressionUnitCalculatorTests.swift in Sources */,
 				E288CC8027301B7E005DDEF8 /* ExpressionCalculatorTests.swift in Sources */,
 				E2B9E077273946240089907E /* MoveCheckerTests.swift in Sources */,
+				E2B9E079273946B30089907E /* RacingCarMoverTests.swift in Sources */,
 				E2D09D9327282B8E00A846D8 /* main.swift in Sources */,
 				E2B9E0722739391D0089907E /* RacingCarTests.swift in Sources */,
 				E2B9E0732739395B0089907E /* RacingCar.swift in Sources */,
