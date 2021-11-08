@@ -68,6 +68,20 @@ final class StringCalculator: StringCalculatorProtocol {
     }
     
     func calculate(_ string: String?) throws -> Int {
+        do {
+            let prepare = try prepare(string)
+            let numbers = prepare.0
+            let operators = prepare.1
+            
+            return operate(numbers: numbers, operators: operators)
+        } catch {
+            throw error
+        }
+    }
+}
+
+extension StringCalculator {
+    private func prepare(_ string: String?) throws -> ([Int], [ArithmeticOperations]) {
         guard let string = string else { throw InputError.nil }
         guard !string.isEmpty else { throw InputError.empty }
         
@@ -79,25 +93,9 @@ final class StringCalculator: StringCalculatorProtocol {
         let operators = filterOprators(organizedArray)
         guard !operators.isEmpty else { throw InputError.noOperators }
         
-        var result = numbers.first ?? 0
-        
-        operators
-            .enumerated()
-            .forEach {
-                let offset = $0.offset + 1
-                switch $0.element {
-                case .add: result = addCalculator.calculate(result, numbers[offset])
-                case .substract: result = substractCalculator.calculate(result, numbers[offset])
-                case .mutiply: result = multiplyCalculator.calculate(result, numbers[offset])
-                case .devide: result = devideCalculator.calculate(result, numbers[offset])
-                }
-            }
-        
-        return result
+        return (numbers, operators)
     }
-}
-
-extension StringCalculator {
+    
     private func removeSpace(_ string: String) -> [String] {
         return string
             .split(separator: " ")
@@ -118,5 +116,23 @@ extension StringCalculator {
                 || $0 == "/" }
             .map { String($0) }
             .compactMap { ArithmeticOperations.init(rawValue: $0 ) }
+    }
+    
+    private func operate(numbers: [Int], operators: [ArithmeticOperations]) -> Int {
+        var result = numbers.first ?? 0
+        
+        operators
+            .enumerated()
+            .forEach {
+                let offset = $0.offset + 1
+                switch $0.element {
+                case .add: result = addCalculator.calculate(result, numbers[offset])
+                case .substract: result = substractCalculator.calculate(result, numbers[offset])
+                case .mutiply: result = multiplyCalculator.calculate(result, numbers[offset])
+                case .devide: result = devideCalculator.calculate(result, numbers[offset])
+                }
+            }
+        
+        return result
     }
 }
