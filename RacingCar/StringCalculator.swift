@@ -73,22 +73,23 @@ final class StringCalculator: StringCalculatorProtocol {
         
         let organizedArray = removeSpace(string)
         
-        var numbers = filterNumbers(organizedArray)
+        let numbers = filterNumbers(organizedArray)
         guard !numbers.isEmpty else { throw InputError.noNumbers }
         
         let operators = filterOprators(organizedArray)
         guard !operators.isEmpty else { throw InputError.noOperators }
         
-        var result = numbers.removeFirst()
+        var result = numbers.first ?? 0
         
         operators
             .enumerated()
             .forEach {
+                let offset = $0.offset + 1
                 switch $0.element {
-                case .add: result = addCalculator.calculate(result, numbers[$0.offset])
-                case .substract: result = substractCalculator.calculate(result, numbers[$0.offset])
-                case .mutiply: result = multiplyCalculator.calculate(result, numbers[$0.offset])
-                case .devide: result = devideCalculator.calculate(result, numbers[$0.offset])
+                case .add: result = addCalculator.calculate(result, numbers[offset])
+                case .substract: result = substractCalculator.calculate(result, numbers[offset])
+                case .mutiply: result = multiplyCalculator.calculate(result, numbers[offset])
+                case .devide: result = devideCalculator.calculate(result, numbers[offset])
                 }
             }
         
