@@ -17,7 +17,7 @@ struct StubInputView: Inputable {
 	}
 	
 	func readNumberOfCars() throws -> InputCar {	
-		return try InputCar(input: carNames, range: RacingOption.carNameRange)
+		return try InputCar(input: carNames, nameLengthRange: RacingOption.carNameRange, inputableRange: RacingOption.inputCarRange)
 	}
 	
 	func readNumberOfAttempts() throws -> InputAttempt {

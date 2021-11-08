@@ -75,11 +75,11 @@ class RacingCarTests: XCTestCase {
 	}
 	
 	func test_shouldThrowInvalidErrorWhenInputCarIsNilOrEmpty() throws {
-		XCTAssertThrowsError(try InputCar(input: "", range: RacingOption.carNameRange)) { error in
+		XCTAssertThrowsError(try InputCar(input: "", nameLengthRange: RacingOption.carNameRange, inputableRange: RacingOption.inputCarRange)) { error in
 			XCTAssertEqual(error as! InputError, InputError.invalidName)
 		}
 		
-		XCTAssertThrowsError(try InputCar(input: nil, range: RacingOption.carNameRange)) { error in
+		XCTAssertThrowsError(try InputCar(input: nil, nameLengthRange: RacingOption.carNameRange, inputableRange: RacingOption.inputCarRange)) { error in
 			XCTAssertEqual(error as! InputError, InputError.invalidName)
 		}
 	}
@@ -95,11 +95,11 @@ class RacingCarTests: XCTestCase {
 	}
 	
 	func test_shouldThrowOutOfMaxLengthErrorWhenLengthOfInputCarNameIsOutOfRange() throws {
-		XCTAssertThrowsError(try InputCar(input: "-11-1-1-1aa", range: RacingOption.carNameRange)) { error in
+		XCTAssertThrowsError(try InputCar(input: "-11-1-1-1aa", nameLengthRange: RacingOption.carNameRange, inputableRange: RacingOption.inputCarRange)) { error in
 			XCTAssertEqual(error as! InputError, InputError.outOfMaxLengthName)
 		}
 		
-		XCTAssertThrowsError(try InputCar(input: "212121", range: RacingOption.carNameRange)) { error in
+		XCTAssertThrowsError(try InputCar(input: "212121", nameLengthRange: RacingOption.carNameRange, inputableRange: RacingOption.inputCarRange)) { error in
 			XCTAssertEqual(error as! InputError, InputError.outOfMaxLengthName)
 		}
 	}
@@ -115,11 +115,11 @@ class RacingCarTests: XCTestCase {
 	}
 	
 	func test_shouldThrowExceededInputableNamesErrorWhenInputCarIsOutOfRange() throws {
-		XCTAssertThrowsError(try InputCar(input: "1,2,3,4,5,6,7,8,9,10,11", range: RacingOption.carNameRange)) { error in
+		XCTAssertThrowsError(try InputCar(input: "1,2,3,4,5,6,7,8,9,10,11", nameLengthRange: RacingOption.carNameRange, inputableRange: RacingOption.inputCarRange)) { error in
 			XCTAssertEqual(error as! InputError, InputError.exceededInputableNames)
 		}
 		
-		XCTAssertThrowsError(try InputCar(input: "abcde,fghij,klmno,pqrst,uvwxy,z,1,2,3,4,5,6,7,8,9,10", range: RacingOption.carNameRange)) { error in
+		XCTAssertThrowsError(try InputCar(input: "abcde,fghij,klmno,pqrst,uvwxy,z,1,2,3,4,5,6,7,8,9,10", nameLengthRange: RacingOption.carNameRange, inputableRange: RacingOption.inputCarRange)) { error in
 			XCTAssertEqual(error as! InputError, InputError.exceededInputableNames)
 		}
 	}
