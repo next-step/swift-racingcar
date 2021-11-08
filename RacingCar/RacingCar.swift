@@ -24,3 +24,10 @@ struct Position: Equatable {
     }
 }
 
+struct MoveChecker {
+    let movableRange: Range<Int>
+    
+    func isMovable(_ value: Int) -> Bool {
+        return movableRange.contains(value)
+    }
+}
