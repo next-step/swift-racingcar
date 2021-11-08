@@ -118,6 +118,7 @@ class RacingCarTests: XCTestCase {
 	func test_shouldGet3CarsWhenInput3Names() {
 		let racing = makeRacing(inputCarNames: "yagom,cozy,jinie", inputAttempt: "5")
 		XCTAssertEqual(racing.cars.count, 3)
+		XCTAssertEqual(racing.cars.map { $0.name }, ["yagom", "cozy", "jinie"])
 	}
 	
 	private func makeRacing(inputCarNames: String?, inputAttempt: String? = "5") -> Racing {
