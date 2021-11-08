@@ -36,6 +36,14 @@ final class Racing {
 		raceEnd()
 	}
 	
+	func awardToWinners() -> [String] {
+		cars.filter {
+			$0.position.currentPosition == findMaxPosition()
+		}.map {
+			$0.name
+		}
+	}
+	
 	// MARK: - Private
 	private func printMessage(for error: Error) {
 		if let inputError = error as? InputError {
@@ -65,6 +73,14 @@ final class Racing {
 	private func raceEnd() {
 		totalTrack = RacingOption.defaultTotalTrack
 		track = RacingOption.startingTrack
+	}
+	
+	private func findMaxPosition() -> Int? {
+		cars.max {
+			$0.position > $1.position
+		}.map {
+			$0.position.currentPosition
+		}
 	}
 	
 	private func makeRacingCars(_ inputCar: CarInputable) {

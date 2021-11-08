@@ -7,7 +7,11 @@
 
 import Foundation
 
-struct Position {
+struct Position: Comparable {
+	static func < (lhs: Position, rhs: Position) -> Bool {
+		lhs.currentPosition < rhs.currentPosition
+	}
+	
 	private(set) var currentPosition: Int
 	private let movementRange: ClosedRange<Int>
 	
