@@ -9,19 +9,19 @@ import Foundation
 
 protocol CarInputable {
 	var carNames: [String] { get }
-	init(input: String?, range: ClosedRange<Int>) throws
+	init(input: String?, nameLengthRange: ClosedRange<Int>, inputableRange: ClosedRange<Int>) throws
 }
 
 struct InputCar: CarInputable {
 	let carNames: [String]
 	
-	init(input: String?, range: ClosedRange<Int>) throws {
+	init(input: String?, nameLengthRange: ClosedRange<Int>, inputableRange: ClosedRange<Int>) throws {
 		guard let validInput = input,
 					!validInput.isEmpty
-		else { throw InputError.invalid }
+		else { throw InputError.invalidName }
 		
 		let carNames = validInput.convertToCarNames()
-		try carNames.isValid(range: range)
+		try carNames.isValid(nameLengthRange: nameLengthRange, inputableRange: inputableRange)
 		self.carNames = carNames
 	}
 }
@@ -33,15 +33,17 @@ fileprivate extension String {
 }
 
 fileprivate extension Array where Element == String {
-	func isValid(range: ClosedRange<Int>) throws {
+	func isValid(nameLengthRange: ClosedRange<Int>, inputableRange: ClosedRange<Int>) throws {
+		guard inputableRange.contains(self.count) else {
+			throw InputError.exceededInputableNames
+		}
+		
 		try self.forEach { carName in
-			try isValid(carName: carName, in: range)
+			try isValid(carName: carName, in: nameLengthRange)
 		}
 	}
 	
 	private func isValid(carName: String, in range: ClosedRange<Int>) throws {
-		if !range.contains(carName.count) {
-			throw InputError.outOfMaxLength
-		}
+		if !range.contains(carName.count) { throw InputError.outOfMaxLengthName }
 	}
 }
