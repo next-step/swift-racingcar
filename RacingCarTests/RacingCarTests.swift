@@ -25,4 +25,16 @@ class RacingCarTests: XCTestCase {
         
         XCTAssertEqual(position, Position(position: distance, distanceUnit: distance))
     }
+    
+    func test_MoveChecker_isMovable_true() {
+        let moveChecker = MoveChecker(movableRange: Range<Int>(4...9))
+        
+        XCTAssertTrue(moveChecker.isMovable(4))
+    }
+    
+    func test_MoveChecker_isMovable_false() {
+        let moveChecker = MoveChecker(movableRange: Range<Int>(4...9))
+        
+        XCTAssertFalse(moveChecker.isMovable(0))
+    }
 }
