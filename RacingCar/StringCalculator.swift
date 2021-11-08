@@ -44,7 +44,7 @@ final class StringCalculator: StringCalculatorProtocol {
         case noNumbers
         case noOperators
     }
-
+    
     private enum ArithmeticOperations: String {
         case add = "+"
         case substract = "-"
@@ -71,27 +71,17 @@ final class StringCalculator: StringCalculatorProtocol {
         guard let string = string else { throw InputError.nil }
         guard !string.isEmpty else { throw InputError.empty }
         
-        let organizedArray = string
-            .split(separator: " ")
+        let organizedArray = removeSpace(string)
         
-        var numbers = organizedArray
-            .compactMap { Int($0) }
-        
+        var numbers = filterNumbers(organizedArray)
         guard !numbers.isEmpty else { throw InputError.noNumbers }
         
-        let operators = organizedArray
-            .filter { $0 == "+"
-                || $0 == "-"
-                || $0 == "X"
-                || $0 == "/" }
-            .map { String($0) }
-            .map { ArithmeticOperations.init(rawValue: $0 ) }
-        
+        let operators = filterOprators(organizedArray)
         guard !operators.isEmpty else { throw InputError.noOperators }
         
         var result = numbers.removeFirst()
         
-        try? operators
+        operators
             .enumerated()
             .forEach {
                 switch $0.element {
@@ -99,10 +89,33 @@ final class StringCalculator: StringCalculatorProtocol {
                 case .substract: result = substractCalculator.calculate(result, numbers[$0.offset])
                 case .mutiply: result = multiplyCalculator.calculate(result, numbers[$0.offset])
                 case .devide: result = devideCalculator.calculate(result, numbers[$0.offset])
-                case .none: throw InputError.noOperators
                 }
             }
         
         return result
+    }
+}
+
+extension StringCalculator {
+    private func removeSpace(_ string: String) -> [String] {
+        return string
+            .split(separator: " ")
+            .map { String($0) }
+    }
+    
+    private func filterNumbers(_ strings: [String]) -> [Int] {
+        return strings
+            .compactMap { Int($0) }
+        
+    }
+    
+    private func filterOprators(_ strings: [String]) -> [ArithmeticOperations] {
+        return strings
+            .filter { $0 == "+"
+                || $0 == "-"
+                || $0 == "X"
+                || $0 == "/" }
+            .map { String($0) }
+            .compactMap { ArithmeticOperations.init(rawValue: $0 ) }
     }
 }
