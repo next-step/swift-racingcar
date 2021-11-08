@@ -81,7 +81,7 @@ final class Racing {
 	
 	private func findMaxPosition() -> Int? {
 		cars.max {
-			$0.position > $1.position
+			$0.position < $1.position
 		}.map {
 			$0.position.currentPosition
 		}
