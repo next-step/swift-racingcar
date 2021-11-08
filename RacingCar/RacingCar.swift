@@ -80,3 +80,12 @@ struct InputView {
     }
 }
 
+struct LabelView {
+    let title: String
+    
+    func printTitle(terminator: String) {
+        print(title, terminator: terminator)
+    }
+}
+
+
