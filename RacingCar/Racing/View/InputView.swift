@@ -24,6 +24,7 @@ extension Inputable {
 
 enum InputError: Error {
 	case invalid
+	case outOfMaxLength
 }
 
 struct InputView: Inputable {
