@@ -23,14 +23,14 @@ class RacingCarMoverTests: XCTestCase {
     }
 
     func test_RacingCarMover_move() {
-        racingCarMover.moveIfPossible(with: 4)
+        racingCarMover.tryMoving(with: 4)
         position.move()
         
         XCTAssertEqual(racingCarMover.racingCarPosition, position)
     }
     
     func test_RacingCarMover_not_move() {
-        racingCarMover.moveIfPossible(with: 1)
+        racingCarMover.tryMoving(with: 1)
         
         XCTAssertEqual(racingCarMover.racingCarPosition, position)
     }

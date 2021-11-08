@@ -45,7 +45,7 @@ struct RacingCarMover {
         racingCar.position
     }
     
-    mutating func moveIfPossible(with number: Int) {
+    mutating func tryMoving(with number: Int) {
         if moveChecker.isMovable(number) {
             racingCar.move()
         }
