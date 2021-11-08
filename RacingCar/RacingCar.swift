@@ -73,7 +73,7 @@ struct RacingCarGame {
 }
 
 struct InputView {
-    private(set) var input: String
+    private(set) var input: String = ""
     
     mutating func readInput() {
         input = readLine() ?? ""
@@ -82,8 +82,14 @@ struct InputView {
 
 struct LabelView {
     let title: String
+    let terminator: String
     
-    func printTitle(terminator: String) {
+    init(title: String, terminator: String = "\n") {
+        self.title = title
+        self.terminator = terminator
+    }
+    
+    func printTitle() {
         print(title, terminator: terminator)
     }
 }
