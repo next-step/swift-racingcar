@@ -7,33 +7,49 @@
 
 import Foundation
 
+struct InputView {
+    
+    static func getCarCount() -> Int {
+        print("자동차 대수는 몇 대인가요? ", terminator: "")
+        guard let input = readLine(), let carCount = Int(input) else {
+            print("입력값이 숫자가 아닙니다.")
+            return -1
+        }
+        return carCount
+    }
+    
+    static func getTryCount() -> Int {
+        print("시도할 횟수는 몇 회인가요? ", terminator: "")
+        guard let input = readLine(), let count = Int(input) else {
+            print("입력값이 숫자가 아닙니다.")
+            return -1
+        }
+        return count
+    }
+}
+
+struct ResultView {
+    static func showResult(cars: [Car]) {
+        for i in 0..<cars.count {
+            cars[i].printDistance()
+        }
+        print()
+    }
+}
+
 struct RacingCar {
         
     var cars: [Car] = []
     var tryCount: Int = 0
     
     /// UI
-    mutating func inputView() {
-        print("자동차 대수는 몇 대인가요? ", terminator: "")
-        guard let input = readLine(), let carCount = Int(input) else {
-            print("입력값이 숫자가 아닙니다.")
-            return
-        }
-        genereteCar(input: carCount)
-        
-        print("시도할 횟수는 몇 회인가요? ", terminator: "")
-        guard let input = readLine(), let count = Int(input) else {
-            print("입력값이 숫자가 아닙니다.")
-            return
-        }
-        tryCount = count
+    mutating func prepareRace() {
+        genereteCar(input: InputView.getCarCount())
+        tryCount = InputView.getTryCount()
     }
     
-    func resultView() {
-        for i in 0..<cars.count {
-            cars[i].printDistance()
-        }
-        print()
+    func showResult() {
+        ResultView.showResult(cars: cars)
     }
     
     /// Helper
@@ -46,7 +62,7 @@ struct RacingCar {
         print("실행결과")
         for _ in 0..<tryCount {
             driveCars()
-            resultView()
+            showResult()
         }
     }
     

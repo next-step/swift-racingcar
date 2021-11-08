@@ -7,5 +7,5 @@
 import Foundation
 
 var car = RacingCar()
-car.inputView()
+car.prepareRace()
 car.startRace()
