@@ -43,6 +43,8 @@ struct ResultView: Outputable {
 		switch inputError {
 		case .invalid:
 			print("올바른 숫자를 입력해주세요.")
+		case .outOfMaxLength:
+			print("자동차 이름은 5자를 초과할 수 없습니다.")
 		}
 	}
 	
