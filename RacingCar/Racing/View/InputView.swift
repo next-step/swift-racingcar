@@ -28,12 +28,12 @@ enum InputError: Error {
 
 struct InputView: Inputable {
 	func readNumberOfCars() throws -> InputCar {
-		print("자동차 대수는 몇 대인가요?", terminator: " ")
+		print("경주할 자동차 이름을 입력하세요(이름은 쉼표(,)를 기준으로 구분).")
 		return try InputCar(input: readLine(), range: RacingOption.inputCarRange)
 	}
 	
 	func readNumberOfAttempts() throws -> InputAttempt {
-		print("시도할 횟수는 몇 회인가요?", terminator: " ")
+		print("시도할 횟수는 몇 회인가요?")
 		return try InputAttempt(input: readLine(), range: RacingOption.inputAttemptRange)
 	}
 }
