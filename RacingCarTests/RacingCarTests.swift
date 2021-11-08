@@ -20,18 +20,6 @@ class RacingCarTests: XCTestCase {
     }
     
     
-    func test_MoveChecker_isMovable_true() {
-        let moveChecker = MoveChecker(movableRange: Range<Int>(4...9))
-        
-        XCTAssertTrue(moveChecker.isMovable(4))
-    }
-    
-    func test_MoveChecker_isMovable_false() {
-        let moveChecker = MoveChecker(movableRange: Range<Int>(4...9))
-        
-        XCTAssertFalse(moveChecker.isMovable(0))
-    }
-    
     func test_RacingCarMover_move() {
         var position = Position(position: 0, distanceUnit: 1)
         let racingCar = RacingCar(position: position)
