@@ -22,7 +22,7 @@ final class Racing {
 		do {
 			try inputView.read { inputCar, inputAttempt in
 				self.totalTrack = inputAttempt.numberOfAttempts
-				self.makeRacingCars(inputCar.numberOfCars)
+				self.makeRacingCars(inputCar)
 			}
 		} catch (let error) {
 			printMessage(for: error)
@@ -67,9 +67,9 @@ final class Racing {
 		track = RacingOption.startingTrack
 	}
 	
-	private func makeRacingCars(_ number: Int) {
-		for _ in 0 ..< number {
-			let car = RacingCar()
+	private func makeRacingCars(_ inputCar: CarInputable) {
+		inputCar.carNames.forEach { carName in
+			let car = RacingCar(name: carName)
 			cars.append(car)
 		}
 	}
