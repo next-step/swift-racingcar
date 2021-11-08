@@ -124,7 +124,7 @@ class RacingCarTests: XCTestCase {
 	func test_shouldGetNamesOfWinnersWhenRaceIsOver() {
 		let racing = makeRacing(inputCarNames: "yagom,cozy,jinie", inputAttempt: "5")
 		racing.raceStart()
-		XCTAssertEqual(racing.awardToWinners(), ["yagom", "cozy", "jinie"])
+		XCTAssertEqual(racing.namesOfWinners, ["yagom", "cozy", "jinie"])
 	}
 	
 	private func makeRacing(inputCarNames: String?, inputAttempt: String? = "5") -> Racing {

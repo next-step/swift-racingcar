@@ -12,6 +12,7 @@ final class Racing {
 	private let randomNumber: Random
 	private let resultView: Outputable
 	private(set) var cars: [RacingCar] = []
+	private(set) var namesOfWinners: [String] = []
 	private var totalTrack: Int = RacingOption.defaultTotalTrack
 	private var track: Int = RacingOption.startingTrack
 	
@@ -34,14 +35,7 @@ final class Racing {
 		startBroadcasting()
 		racing()
 		raceEnd()
-	}
-	
-	func awardToWinners() -> [String] {
-		cars.filter {
-			$0.position.currentPosition == findMaxPosition()
-		}.map {
-			$0.name
-		}
+		awardToWinners()
 	}
 	
 	// MARK: - Private
@@ -73,6 +67,16 @@ final class Racing {
 	private func raceEnd() {
 		totalTrack = RacingOption.defaultTotalTrack
 		track = RacingOption.startingTrack
+	}
+	
+	private func awardToWinners() {
+		self.namesOfWinners = cars.filter {
+			$0.position.currentPosition == findMaxPosition()
+		}.map {
+			$0.name
+		}
+		
+		resultView.broadcastToAward(for: self.namesOfWinners)
 	}
 	
 	private func findMaxPosition() -> Int? {
