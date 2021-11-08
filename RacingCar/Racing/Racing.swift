@@ -32,6 +32,7 @@ final class Racing {
 	
 	// MARK: - Public
 	func raceStart() {
+		guard ready() else { return }
 		startBroadcasting()
 		racing()
 		raceEnd()
@@ -43,6 +44,10 @@ final class Racing {
 		if let inputError = error as? InputError {
 			resultView.broadcast(asError: inputError)
 		}
+	}
+	
+	private func ready() -> Bool {
+		cars.count > 0
 	}
 	
 	private func startBroadcasting() {
