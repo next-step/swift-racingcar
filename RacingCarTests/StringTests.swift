@@ -1,5 +1,5 @@
 //
-//  RacingCarTests.swift
+//  StringTests.swift
 //  RacingCarTests
 //
 //  Created by itzel.du on 2021/10/26.
@@ -7,7 +7,7 @@
 
 import XCTest
 
-class RacingCarTests: XCTestCase {
+class StringTests: XCTestCase {
     
     func test_split_stringByComma_whenThereIsComma() throws {
         let numbersString = "1,2"
