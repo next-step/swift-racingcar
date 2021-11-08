@@ -121,6 +121,12 @@ class RacingCarTests: XCTestCase {
 		XCTAssertEqual(racing.cars.map { $0.name }, ["yagom", "cozy", "jinie"])
 	}
 	
+	func test_shouldGetNamesOfWinnersWhenRaceIsOver() {
+		let racing = makeRacing(inputCarNames: "yagom,cozy,jinie", inputAttempt: "5")
+		racing.raceStart()
+		XCTAssertEqual(racing.winners, ["yagom", "cozy", "jinie"])
+	}
+	
 	private func makeRacing(inputCarNames: String?, inputAttempt: String? = "5") -> Racing {
 		let randomNumber: Random = RandomNumber(range: 4...4)
 		let inputView: Inputable = StubInputView(inputCarNames: inputCarNames, inputAttempt: inputAttempt)
