@@ -8,19 +8,37 @@
 import Foundation
 
 protocol CarInputable {
-	var numberOfCars: Int { get }
+	var carNames: [String] { get }
 	init(input: String?, range: ClosedRange<Int>) throws
 }
 
 struct InputCar: CarInputable {
-	let numberOfCars: Int
+	let carNames: [String]
 	
 	init(input: String?, range: ClosedRange<Int>) throws {
-		guard let cars: String = input,
-					let numberOfCars = Int(cars),
-					range.contains(numberOfCars)
+		guard let carNames = input.convertToCarNames(),
+					try carNames.isValid()
 		else { throw InputError.invalid }
 		
-		self.numberOfCars = numberOfCars
+		self.carNames = carNames
+	}
+}
+
+fileprivate extension Optional where Wrapped == String {
+	func convertToCarNames() -> [String]? {
+		self?.components(separatedBy: ",")
+	}
+}
+
+fileprivate extension Array where Element == String {
+	func isValid() throws -> Bool {
+		try self.forEach { carName in
+			if isValid(carName: carName) { throw InputError.outOfMaxLength }
+		}
+		return true
+	}
+	
+	private func isValid(carName: String) -> Bool {
+		RacingOption.carNameRange.contains(carName.count)
 	}
 }
