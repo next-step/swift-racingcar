@@ -104,66 +104,6 @@ class CalculatorTest: XCTestCase {
 		
 		XCTAssertEqual(result, expect)
 	}
-	
-	func test_shouldGetTheCorretResultWhenSubtractingTwoNumbers() {
-		XCTAssertEqual(calculator.subtract(5, 3), 2)
-		XCTAssertEqual(calculator.subtract(6, 13), -7)
-		XCTAssertEqual(calculator.subtract(220, 31), 189)
-		XCTAssertEqual(calculator.subtract(510, 514), -4)
-	}
-	
-	func test_shouldGetTheCorretResultWhenMultiplyingTwoNumbers() {
-		XCTAssertEqual(calculator.multiply(3, 5), 15)
-		XCTAssertEqual(calculator.multiply(13, 6), 78)
-		XCTAssertEqual(calculator.multiply(220, 31), 6820)
-		XCTAssertEqual(calculator.multiply(514, 510), 262140)
-	}
-	
-	func test_shouldGetTheCorretResultWhenDividingTwoNumbers() {
-		XCTAssertEqual(calculator.divide(3, 5), 0)
-		XCTAssertEqual(calculator.divide(13, 6), 2)
-		XCTAssertEqual(calculator.divide(220, 20), 11)
-		XCTAssertEqual(calculator.divide(514, 3), 171)
-	}
-	
-	func test_shouldGetTheResultValueWhenDoingAdditionOnAnExpressionOfTypeString() throws {
-		let given = "1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10"
-		let result = try calculator.calculate(given)
-		let expect = 55
-		
-		XCTAssertEqual(expect, result)
-	}
-	
-	func test_shouldThrowAnErrorWhenTheInputIsNilOrEmpty() throws {
-		XCTAssertThrowsError(try calculator.calculate(nil))
-		XCTAssertThrowsError(try calculator.calculate(""))
-	}
-	
-	func test_shouldThrowAnErrorWhenInputIsInvalid() throws {
-		XCTAssertThrowsError(try calculator.calculate("+"))
-		XCTAssertThrowsError(try calculator.calculate("+ +"))
-		XCTAssertThrowsError(try calculator.calculate("+ 1"))
-		XCTAssertThrowsError(try calculator.calculate("+ 1 +  + 1"))
-		XCTAssertThrowsError(try calculator.calculate("1 + 1 + 1 1"))
-		XCTAssertThrowsError(try calculator.calculate("1 + 1 +"))
-	}
-	
-	func test_shouldThrowAnErrorWhenAnInvalidArithmeticOperatorIsIncluded() throws {
-		XCTAssertThrowsError(try calculator.calculate("1 // 5"))
-		XCTAssertThrowsError(try calculator.calculate("3 ++ 10"))
-		XCTAssertThrowsError(try calculator.calculate("1 ! 1"))
-		XCTAssertThrowsError(try calculator.calculate("1 @ 3"))
-		XCTAssertThrowsError(try calculator.calculate("1 + 2 $ 1 "))
-		XCTAssertThrowsError(try calculator.calculate("1 ^ 1 & 3"))
-	}
-	
-	func test_shouldGetTheResultValueWhenAnExpressionOfTypeStringIsGiven() throws {
-		let given = "2 + 3 * 4 / 2"
-		let result = try calculator.calculate(given)
-		let expect = 10
-		
-		XCTAssertEqual(result, expect)
-	}
 }
 
 
