@@ -8,7 +8,8 @@
 import XCTest
 
 class RacingCarTests: XCTestCase {
-    func test_moveRacingCar() {
+    
+    func test_move() {
         var position = Position(position: 0, distanceUnit: 3)
         var racingCar = RacingCar(position: position)
         
@@ -18,13 +19,6 @@ class RacingCarTests: XCTestCase {
         XCTAssertEqual(racingCar.position, position)
     }
     
-    func test_movePosition() {
-        let distance = 3
-        var position = Position(position: 0, distanceUnit: distance)
-        position.move()
-        
-        XCTAssertEqual(position, Position(position: distance, distanceUnit: distance))
-    }
     
     func test_MoveChecker_isMovable_true() {
         let moveChecker = MoveChecker(movableRange: Range<Int>(4...9))
