@@ -27,6 +27,7 @@ enum InputError: Error {
 	case invalidName
 	case outOfMaxLengthName
 	case exceededInputableNames
+	case duplicatedName
 }
 
 struct InputView: Inputable {

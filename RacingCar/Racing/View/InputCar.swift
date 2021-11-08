@@ -34,13 +34,20 @@ fileprivate extension String {
 
 fileprivate extension Array where Element == String {
 	func isValid(nameLengthRange: ClosedRange<Int>, inputableRange: ClosedRange<Int>) throws {
-		guard inputableRange.contains(self.count) else {
-			throw InputError.exceededInputableNames
-		}
+		guard isNotExceededInputableNamesError(range: inputableRange) else { throw InputError.exceededInputableNames }
+		guard isNotDuplicatedNameError() else { throw InputError.duplicatedName }
 		
 		try self.forEach { carName in
 			try isValid(carName: carName, in: nameLengthRange)
 		}
+	}
+	
+	private func isNotExceededInputableNamesError(range: ClosedRange<Int>) -> Bool {
+		range.contains(self.count)
+	}
+	
+	private func isNotDuplicatedNameError() -> Bool {
+		self.count == Set(self).count
 	}
 	
 	private func isValid(carName: String, in range: ClosedRange<Int>) throws {

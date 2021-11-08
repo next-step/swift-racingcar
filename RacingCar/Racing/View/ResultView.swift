@@ -50,6 +50,8 @@ struct ResultView: Outputable {
 			print("자동차 이름은 5자를 초과할 수 없습니다.")
 		case .exceededInputableNames:
 			print("입력 가능한 이름을 초과하였습니다.")
+		case .duplicatedName:
+			print("중복된 이름은 사용하실 수 없습니다.")
 		}
 	}
 	
