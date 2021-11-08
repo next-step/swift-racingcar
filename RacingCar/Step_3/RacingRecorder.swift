@@ -8,9 +8,8 @@
 import Foundation
 
 class RacingRecorder {
-    private var roundCount: Int
-    private var preRacingResult = [String]()
-    
+    var preRacingResult = [String]()
+    var roundCount: Int
     var roundResult: String = "실행 결과\n" {
         didSet {
             if roundCount == 1 {
@@ -29,6 +28,7 @@ class RacingRecorder {
             self.roundResult += record.reduce("") {
                 return $0 + "\($1)\n"
             }
+            roundCount -= 1
             return
         }
         let zipArray = zip(preRacingResult,record)

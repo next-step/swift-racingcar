@@ -17,7 +17,7 @@ struct RacingMachine {
     }
     
     func startRacing(racing: RacingInput) {
-        if isValidInput(userInput: racingInput) == false {
+        if isValidInput(userInput: racing) == false {
             fatalError(RacingCarError.cannotConvertToInt.rawValue)
         }
         let roundCount = Int(racing.roundCount)!
@@ -39,7 +39,7 @@ struct RacingMachine {
     func isValidInput(userInput: RacingInput) -> Bool {
         let racingValidationCheck = RacingCarValidationCheck(userInput.playingCarCount,
                                                              userInput.roundCount)
-        return racingValidationCheck.isIntAbleString
+        return racingValidationCheck.isIntAblestring()
     }
     
     func isOverThree(number: Int) -> String {

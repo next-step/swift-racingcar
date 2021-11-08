@@ -16,12 +16,14 @@ struct RacingCarValidationCheck {
         self.carCountInput = carCountInput
     }
     
-    var isIntAbleString: Bool {
+    func isIntAblestring() -> Bool {
         if roundInput.toInt() == nil {
-            fatalError(RacingCarError.playcarInputError.rawValue)
+            print(RacingCarError.playcarInputError.rawValue)
+            return false
         }
         if carCountInput.toInt() == nil {
-            fatalError(RacingCarError.roundCountInputError.rawValue)
+            print(RacingCarError.roundCountInputError.rawValue)
+            return false
         }
         return true
     }
