@@ -131,17 +131,17 @@ class RacingCarTests: XCTestCase {
 	
 	func test_shouldThrowDuplicatedNameErrorWhenThereAreDuplicateNamesInTheInput() throws {
 		XCTAssertThrowsError(try InputCar(input: "1,1,3,4,5,6,7,8,9,10", nameLengthRange: RacingOption.carNameRange, inputableRange: RacingOption.inputCarRange)) { error in
-			XCTAssertEqual(error as! InputError, InputError.exceededInputableNames)
+			XCTAssertEqual(error as! InputError, InputError.duplicatedName)
 		}
 		
 		XCTAssertThrowsError(try InputCar(input: "abcde,fghi,z,x,c,abcde,y", nameLengthRange: RacingOption.carNameRange, inputableRange: RacingOption.inputCarRange)) { error in
-			XCTAssertEqual(error as! InputError, InputError.exceededInputableNames)
+			XCTAssertEqual(error as! InputError, InputError.duplicatedName)
 		}
 	}
 	
 	func test_shouldThrowDuplicatedNamesErrorWhenThereAreDuplicateNamesInTheInput() throws {
-		verifyOccuredInputError(inputCar: "1,1,3,4,5,6,7,8,9,10", expectError: InputError.exceededInputableNames)
-		verifyOccuredInputError(inputCar: "abcde,fghi,z,x,c,abcde,y", expectError: InputError.exceededInputableNames)
+		verifyOccuredInputError(inputCar: "1,1,3,4,5,6,7,8,9,10", expectError: InputError.duplicatedName)
+		verifyOccuredInputError(inputCar: "abcde,fghi,z,x,c,abcde,y", expectError: InputError.duplicatedName)
 	}
 	
 	func test_shouldGet3CarsWhenInput3Names() {
