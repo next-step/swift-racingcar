@@ -42,10 +42,12 @@ struct ResultView: Outputable {
 	
 	func broadcast(asError inputError: InputError) {
 		switch inputError {
-		case .invalid:
+		case .invalidNumber:
 			print("올바른 숫자를 입력해주세요.")
-		case .outOfMaxLength:
+		case .invalidName:
 			print("자동차 이름은 5자를 초과할 수 없습니다.")
+		case .outOfMaxLengthName:
+			print("입력 가능한 이름을 초과하였습니다.")
 		}
 	}
 	
