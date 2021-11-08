@@ -99,6 +99,11 @@ class RacingCarTests: XCTestCase {
 		verifyOccuredInputError(inputCar: "21")
 	}
 	
+	func test_shouldGet3CarsWhenInput3Names() {
+		let racing = makeRacing(inputCarNames: "yagom,cozy,jinie", inputAttempt: "5")
+		XCTAssertEqual(racing.cars.count, 3)
+	}
+	
 	private func makeRacing(inputCar: String, inputAttempt: String = "5") -> Racing {
 		let randomNumber: Random = RandomNumber(range: 4...4)
 		let inputView: Inputable = StubInputView(inputCar: inputCar, inputAttempt: inputAttempt)
