@@ -31,5 +31,23 @@ struct MoveChecker {
         return movableRange.contains(number)
     }
 }
+
+struct RacingCarMover {
+    private let moveChecker: MoveChecker
+    private var racingCar: RacingCar
+    
+    init(racingCar: RacingCar, moveChecker: MoveChecker) {
+        self.racingCar = racingCar
+        self.moveChecker = moveChecker
+    }
+    
+    var racingCarPosition: Position {
+        racingCar.position
+    }
+    
+    mutating func moveIfPossible(with number: Int) {
+        if moveChecker.isMovable(number) {
+            racingCar.move()
+        }
     }
 }
