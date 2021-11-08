@@ -16,19 +16,19 @@ class RacingCarTests: XCTestCase {
 	}
 	
 	func test_shouldMoveForwardWhenNumberIsGraterThanOrEqualTo4() {
-		let racingCar = RacingCar()
+		let racingCar = RacingCar(name: "yagom")
 		racingCar.move(at: 5)
 		XCTAssertEqual(racingCar.position.currentPosition, 1)
 	}
 	
 	func test_shoulStopWhenNumberIsLessThan4() {
-		let racingCar = RacingCar()
+		let racingCar = RacingCar(name: "yagom")
 		racingCar.move(at: 3)
 		XCTAssertEqual(racingCar.position.currentPosition, 0)
 	}
 	
 	func test_shouldStopWhenNumberIsOutOfRange0Through9() {
-		let racingCar = RacingCar()
+		let racingCar = RacingCar(name: "yagom")
 		racingCar.move(at: 10)
 		XCTAssertEqual(racingCar.position.currentPosition, 0)
 		
@@ -37,12 +37,12 @@ class RacingCarTests: XCTestCase {
 	}
 	
 	func test_shouldTheCountIs3WhenTheInputIs3() throws {
-		let racing = makeRacing(inputCar: "3", inputAttempt: "1")
+		let racing = makeRacing(inputCarNames: "yagom,cozy,jinie", inputAttempt: "1")
 		XCTAssertEqual(racing.cars.count, 3)
 	}
 	
 	func test_shouldBe1ThePositionOfCarsWhenTheRandomNumberIs4() throws {
-		let racing = makeRacing(inputCar: "3", inputAttempt: "1")
+		let racing = makeRacing(inputCarNames: "yagom,cozy,jinie", inputAttempt: "1")
 		racing.raceStart()
 		
 		XCTAssertEqual(racing.cars[0].position.currentPosition, 1)
@@ -51,7 +51,7 @@ class RacingCarTests: XCTestCase {
 	}
 	
 	func test_shouldBe4ThePositionOfCarsWhenTheNumberOfAttemptsIs4AndRandomNumberIs4() throws {
-		let racing = makeRacing(inputCar: "3", inputAttempt: "4")
+		let racing = makeRacing(inputCarNames: "yagom,cozy,jinie", inputAttempt: "4")
 		racing.raceStart()
 		
 		XCTAssertEqual(racing.cars[0].position.currentPosition, 4)
@@ -60,7 +60,7 @@ class RacingCarTests: XCTestCase {
 	}
 	
 	func test_shouldBeEqualTheNumberOfCarsAndInputNumber() throws {
-		let racing = makeRacing(inputCar: "3", inputAttempt: "5")
+		let racing = makeRacing(inputCarNames: "yagom,cozy,jinie", inputAttempt: "5")
 		racing.raceStart()
 		
 		XCTAssertEqual(racing.cars[0].position.currentPosition, 5)
@@ -74,15 +74,17 @@ class RacingCarTests: XCTestCase {
 		XCTAssertEqual( resultView.broadcast(asPosition: 0), "")
 	}
 	
-	func test_shouldThrowInvalidErrorWhenInputIsOutOfRange() throws {
-		XCTAssertThrowsError(try InputCar(input: "-1", range: RacingOption.inputCarRange)) { error in
+	func test_shouldThrowInvalidErrorWhenInputCarIsNilOrEmpty() throws {
+		XCTAssertThrowsError(try InputCar(input: "", range: RacingOption.carNameRange)) { error in
 			XCTAssertEqual(error as! InputError, InputError.invalid)
 		}
 		
-		XCTAssertThrowsError(try InputCar(input: "11", range: RacingOption.inputCarRange)) { error in
+		XCTAssertThrowsError(try InputCar(input: nil, range: RacingOption.carNameRange)) { error in
 			XCTAssertEqual(error as! InputError, InputError.invalid)
 		}
-		
+	}
+	
+	func test_shouldThrowInvalidErrorWhenInputAttemptInputIsOutOfRange() throws {
 		XCTAssertThrowsError(try InputAttempt(input: "-11", range: RacingOption.inputAttemptRange)) { error in
 			XCTAssertEqual(error as! InputError, InputError.invalid)
 		}
@@ -92,11 +94,25 @@ class RacingCarTests: XCTestCase {
 		}
 	}
 	
-	func test_shouldThrowInvalidErrorWhenInputIsOutOfRangeInRacing() throws {
-		verifyOccuredInputError(inputCar: "-1")
-		verifyOccuredInputError(inputCar: "11")
-		verifyOccuredInputError(inputCar: "-11")
-		verifyOccuredInputError(inputCar: "21")
+	func test_shouldThrowOutOfMaxLengthErrorWhenInputCarIsOutOfRange() throws {
+		XCTAssertThrowsError(try InputCar(input: "-11-1-1-1aa", range: RacingOption.carNameRange)) { error in
+			XCTAssertEqual(error as! InputError, InputError.outOfMaxLength)
+		}
+		
+		XCTAssertThrowsError(try InputCar(input: "212121", range: RacingOption.carNameRange)) { error in
+			XCTAssertEqual(error as! InputError, InputError.outOfMaxLength)
+		}
+	}
+	
+	
+	func test_shouldThrowInvalidErrorWhenInputIsNilOrEmptyInRacing() throws {
+		verifyOccuredInputError(inputCar: "", expectError: InputError.invalid)
+		verifyOccuredInputError(inputCar: nil, expectError: InputError.invalid)
+	}
+	
+	func test_shouldThrowOutOfMaxLengthErrorWhenInputIsOutOfRangeInRacing() throws {
+		verifyOccuredInputError(inputCar: "-11-1-1-1aa", expectError: InputError.outOfMaxLength)
+		verifyOccuredInputError(inputCar: "212121", expectError: InputError.outOfMaxLength)
 	}
 	
 	func test_shouldGet3CarsWhenInput3Names() {
@@ -104,16 +120,16 @@ class RacingCarTests: XCTestCase {
 		XCTAssertEqual(racing.cars.count, 3)
 	}
 	
-	private func makeRacing(inputCar: String, inputAttempt: String = "5") -> Racing {
+	private func makeRacing(inputCarNames: String?, inputAttempt: String? = "5") -> Racing {
 		let randomNumber: Random = RandomNumber(range: 4...4)
-		let inputView: Inputable = StubInputView(inputCar: inputCar, inputAttempt: inputAttempt)
+		let inputView: Inputable = StubInputView(inputCarNames: inputCarNames, inputAttempt: inputAttempt)
 		let racing = Racing(inputView: inputView, resultView: resultView, random: randomNumber)
 		return racing
 	}
 	
-	private func verifyOccuredInputError(inputCar: String) {
-		makeRacing(inputCar: inputCar).raceStart()
-		XCTAssertEqual((resultView as? StubResultView)?.occcurredError, InputError.invalid)
+	private func verifyOccuredInputError(inputCar: String?, expectError: InputError) {
+		makeRacing(inputCarNames: inputCar).raceStart()
+		XCTAssertEqual((resultView as? StubResultView)?.occcurredError, expectError)
 		clearVerificationVariables()
 	}
 	
