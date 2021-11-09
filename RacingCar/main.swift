@@ -39,7 +39,7 @@ struct RacingCarGameController {
         (0..<tryCount).forEach { index in
             racingCarGame?.tryMovingRacingCarsWithRandomNumbers()
             racingCarGame?.racingCarPositions.forEach { position in
-                printPosition(with: position.position)
+                printPosition(with: position)
             }
             
             if index < tryCount {
@@ -64,13 +64,20 @@ struct RacingCarGameController {
         return racingCarGame
     }
     
-    func printPosition(with position: Int) {
-        let title = position > 0 ? (0..<position).map { _ in "-" }.reduce("") { $0 + $1 } : "."
-        let positionLabel = LabelView(title: title)
+    func printPosition(with position: Position) {
+        let positionLabel = LabelView(title: convertPositionToPrintFormat(with: position))
         positionLabel.printTitle()
     }
+    
+    func convertPositionToPrintFormat(with position: Position) -> String {
+        let positionRawValue = position.position
+        if positionRawValue <= 0 {
+            return "."
+        }
+        
+        return (0..<positionRawValue).map { _ in "-" }.reduce("") { $0 + $1 }
+    }
 }
-
 
 var controller = RacingCarGameController()
 controller.run()
