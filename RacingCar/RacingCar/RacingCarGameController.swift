@@ -20,7 +20,9 @@ struct RacingCarGameController {
         
         printRacingCarGameResults(withCarCount: carCount, tryCount: tryCount)
     }
-    
+}
+ 
+private extension RacingCarGameController {
     func printQuestionAndGetCount(question: String) -> Int? {
         let questionLabel = LabelView(title: question, terminator: " ")
         questionLabel.printTitle()
