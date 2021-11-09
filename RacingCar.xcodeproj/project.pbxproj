@@ -115,8 +115,6 @@
 			children = (
 				51A7C1C927357A9600C44630 /* ResultView.swift */,
 				51A7C1C427355D4700C44630 /* InputView.swift */,
-				517A0CB127367ED40055018B /* InputCar.swift */,
-				517A0CB327367EDB0055018B /* InputAttempt.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -135,6 +133,8 @@
 			isa = PBXGroup;
 			children = (
 				517A0CB027367EB80055018B /* View */,
+				517A0CB127367ED40055018B /* InputCar.swift */,
+				517A0CB327367EDB0055018B /* InputAttempt.swift */,
 				51AED117273430260063C19E /* RandomNumber.swift */,
 				51AED11427342D7A0063C19E /* RacingOption.swift */,
 				51AED111273416790063C19E /* Racing.swift */,
