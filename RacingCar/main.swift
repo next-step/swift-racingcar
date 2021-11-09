@@ -17,7 +17,7 @@ struct RacingCarGameController {
         
         newLineLabel.printTitle()
         
-        printRacingCarGameResuts(withCarCount: carCount, tryCount: tryCount)
+        printRacingCarGameResults(withCarCount: carCount, tryCount: tryCount)
     }
     
     func printQuestionAndGetCount(question: String) -> Int? {
@@ -30,7 +30,7 @@ struct RacingCarGameController {
         return Int(countInput.input)
     }
     
-    func printRacingCarGameResuts(withCarCount carCount: Int, tryCount: Int) {
+    func printRacingCarGameResults(withCarCount carCount: Int, tryCount: Int) {
         let resultLabel = LabelView(title: "실행 결과")
         resultLabel.printTitle()
         
