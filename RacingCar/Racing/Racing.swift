@@ -79,10 +79,10 @@ final class Racing {
 	}
 	
 	private func awardToWinners() {
-		self.namesOfWinners = cars.filter {
-			$0.position.currentPosition == findMaxPosition()
-		}.map {
-			$0.name
+		self.namesOfWinners = cars.filter { car in
+			car.position.currentPosition == findMaxPosition()
+		}.map { car in
+			car.name
 		}
 		
 		resultView.broadcastToAward(for: self.namesOfWinners)
@@ -91,8 +91,8 @@ final class Racing {
 	private func findMaxPosition() -> Int? {
 		cars.max {
 			$0.position < $1.position
-		}.map {
-			$0.position.currentPosition
+		}.map { car in
+			car.position.currentPosition
 		}
 	}
 	
