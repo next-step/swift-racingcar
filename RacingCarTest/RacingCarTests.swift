@@ -165,11 +165,11 @@ class RacingCarTests: XCTestCase {
 	
 	private func verifyOccuredInputError(inputCar: String?, expectError: InputError) {
 		makeRacing(inputCarNames: inputCar).raceStart()
-		XCTAssertEqual((resultView as? StubResultView)?.occcurredError, expectError)
+		XCTAssertEqual((resultView as? StubResultView)?.occurredError, expectError)
 		clearVerificationVariables()
 	}
 	
 	private func clearVerificationVariables() {
-		(resultView as? StubResultView)?.occcurredError = nil
+		(resultView as? StubResultView)?.occurredError = nil
 	}
 }

@@ -8,13 +8,13 @@
 import Foundation
 
 final class StubResultView: Outputable {
-	var occcurredError: InputError? = nil
+	var occurredError: InputError? = nil
 	func broadcast(position: Int, of name: String) -> String {
 		changePositionToSymbolText(position: position)
 	}
 	
 	func broadcast(asError inputError: InputError) {
-		self.occcurredError = inputError
+		self.occurredError = inputError
 	}
 	
 	func startedBroadcasting() {
