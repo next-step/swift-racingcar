@@ -20,8 +20,8 @@
 		E288CC7E27301087005DDEF8 /* ExpressionUnitCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E288CC7D27301087005DDEF8 /* ExpressionUnitCalculatorTests.swift */; };
 		E288CC8027301B7E005DDEF8 /* ExpressionCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E288CC7F27301B7E005DDEF8 /* ExpressionCalculatorTests.swift */; };
 		E2B5B57A273AC7A300226684 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B5B579273AC7A300226684 /* Position.swift */; };
-		E2B5B57C273AC7B800226684 /* RacingCarMover.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B5B57B273AC7B800226684 /* RacingCarMover.swift */; };
-		E2B5B57D273AC7BB00226684 /* RacingCarMover.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B5B57B273AC7B800226684 /* RacingCarMover.swift */; };
+		E2B5B57C273AC7B800226684 /* RacingCarDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B5B57B273AC7B800226684 /* RacingCarDriver.swift */; };
+		E2B5B57D273AC7BB00226684 /* RacingCarDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B5B57B273AC7B800226684 /* RacingCarDriver.swift */; };
 		E2B5B57E273AC7BD00226684 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B5B579273AC7A300226684 /* Position.swift */; };
 		E2B5B580273AC7DA00226684 /* MoveChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B5B57F273AC7DA00226684 /* MoveChecker.swift */; };
 		E2B5B582273AC7EF00226684 /* RacingCarGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B5B581273AC7EF00226684 /* RacingCarGame.swift */; };
@@ -66,7 +66,7 @@
 		E288CC7D27301087005DDEF8 /* ExpressionUnitCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpressionUnitCalculatorTests.swift; sourceTree = "<group>"; };
 		E288CC7F27301B7E005DDEF8 /* ExpressionCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpressionCalculatorTests.swift; sourceTree = "<group>"; };
 		E2B5B579273AC7A300226684 /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
-		E2B5B57B273AC7B800226684 /* RacingCarMover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingCarMover.swift; sourceTree = "<group>"; };
+		E2B5B57B273AC7B800226684 /* RacingCarDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingCarDriver.swift; sourceTree = "<group>"; };
 		E2B5B57F273AC7DA00226684 /* MoveChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveChecker.swift; sourceTree = "<group>"; };
 		E2B5B581273AC7EF00226684 /* RacingCarGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingCarGame.swift; sourceTree = "<group>"; };
 		E2B5B585273AC80A00226684 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
@@ -146,7 +146,7 @@
 				E2B9E06F273905BA0089907E /* RacingCar.swift */,
 				E2B5B579273AC7A300226684 /* Position.swift */,
 				E2B5B57F273AC7DA00226684 /* MoveChecker.swift */,
-				E2B5B57B273AC7B800226684 /* RacingCarMover.swift */,
+				E2B5B57B273AC7B800226684 /* RacingCarDriver.swift */,
 				E2B5B581273AC7EF00226684 /* RacingCarGame.swift */,
 				E2B5B58B273AC83700226684 /* RacingCarGameController.swift */,
 			);
@@ -269,7 +269,7 @@
 			files = (
 				E2B5B57A273AC7A300226684 /* Position.swift in Sources */,
 				C7E1263027239F7E0000DB8B /* main.swift in Sources */,
-				E2B5B57C273AC7B800226684 /* RacingCarMover.swift in Sources */,
+				E2B5B57C273AC7B800226684 /* RacingCarDriver.swift in Sources */,
 				E2B5B580273AC7DA00226684 /* MoveChecker.swift in Sources */,
 				E2B5B582273AC7EF00226684 /* RacingCarGame.swift in Sources */,
 				E2B5B589273AC81800226684 /* LabelView.swift in Sources */,
@@ -289,7 +289,7 @@
 			files = (
 				E288CC7E27301087005DDEF8 /* ExpressionUnitCalculatorTests.swift in Sources */,
 				E288CC8027301B7E005DDEF8 /* ExpressionCalculatorTests.swift in Sources */,
-				E2B5B57D273AC7BB00226684 /* RacingCarMover.swift in Sources */,
+				E2B5B57D273AC7BB00226684 /* RacingCarDriver.swift in Sources */,
 				E2B9E077273946240089907E /* MoveCheckerTests.swift in Sources */,
 				E2B5B58D273AC83700226684 /* RacingCarGameController.swift in Sources */,
 				E2B5B583273AC7EF00226684 /* RacingCarGame.swift in Sources */,

@@ -54,14 +54,14 @@ private extension RacingCarGameController {
     func makeRacingCarGame(withRacingCarCount count: Int) -> RacingCarGame? {
         guard count > 0 else { return nil }
         
-        let racingCarMover = RacingCarMover(
+        let racingCarMover = RacingCarDriver(
             racingCar: RacingCar(position: Position(position: 0, distanceUnit: 1)),
             moveChecker: MoveChecker(movableRange: Range<Int>(4...9))
         )
         
         let racingCarGame = RacingCarGame(
             randomRange: Range<Int>(0...9),
-            racingCarMovers: (0..<count).map { _ in racingCarMover }
+            racingCarDrivers: (0..<count).map { _ in racingCarMover }
         )
         
         return racingCarGame

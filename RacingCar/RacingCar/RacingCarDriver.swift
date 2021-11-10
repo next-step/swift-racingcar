@@ -1,5 +1,5 @@
 //
-//  RacingCarMover.swift
+//  RacingCarDriver.swift
 //  RacingCar
 //
 //  Created by itzel.du on 2021/11/10.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct RacingCarMover {
+struct RacingCarDriver {
     private let moveChecker: MoveChecker
     private var racingCar: RacingCar
     

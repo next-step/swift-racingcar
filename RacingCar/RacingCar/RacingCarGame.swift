@@ -9,20 +9,20 @@ import Foundation
 
 struct RacingCarGame {
     let randomRange: Range<Int>
-    private var racingCarMovers: [RacingCarMover]
+    private var racingCarDrivers: [RacingCarDriver]
     
-    init(randomRange: Range<Int>, racingCarMovers: [RacingCarMover]) {
+    init(randomRange: Range<Int>, racingCarDrivers: [RacingCarDriver]) {
         self.randomRange = randomRange
-        self.racingCarMovers = racingCarMovers
+        self.racingCarDrivers = racingCarDrivers
     }
     
     var racingCarPositions: [Position] {
-        racingCarMovers.map { $0.racingCarPosition }
+        racingCarDrivers.map { $0.racingCarPosition }
     }
     
     mutating func tryMovingRacingCarsWithRandomNumbers() {
-        racingCarMovers.indices.forEach {
-            racingCarMovers[$0].tryMoving(with: Int.random(in: randomRange))
+        racingCarDrivers.indices.forEach {
+            racingCarDrivers[$0].tryMoving(with: Int.random(in: randomRange))
         }
     }
 }
