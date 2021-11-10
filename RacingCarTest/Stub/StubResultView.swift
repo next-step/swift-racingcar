@@ -8,9 +8,13 @@
 import Foundation
 
 final class StubResultView: Outputable {
-	var occcurredError: InputError? = nil
-	func broadcast(asPosition position: Int) -> String {
+	var occurredError: InputError? = nil
+	func broadcast(position: Int, of name: String) -> String {
 		changePositionToSymbolText(position: position)
+	}
+	
+	func broadcast(asError inputError: InputError) {
+		self.occurredError = inputError
 	}
 	
 	func startedBroadcasting() {
@@ -19,7 +23,6 @@ final class StubResultView: Outputable {
 	func broadcastThatCarsHasPassedTrack() {
 	}
 	
-	func broadcast(asError inputError: InputError) {
-		self.occcurredError = inputError
+	func broadcastToAward(for winners: [String]) {
 	}
 }

@@ -19,7 +19,7 @@ struct InputAttempt: AttemptInputable {
 		guard let trying: String = input,
 					let numberOfAttempts = Int(trying),
 					range.contains(numberOfAttempts)
-		else { throw InputError.invalid }
+		else { throw InputError.invalidNumber }
 		
 		self.numberOfAttempts = numberOfAttempts
 	}

@@ -9,9 +9,10 @@ import Foundation
 
 protocol Outputable {
 	func startedBroadcasting()
-	func broadcast(asPosition position: Int) -> String
+	func broadcast(position: Int, of name: String) -> String
 	func broadcast(asError error: InputError)
 	func broadcastThatCarsHasPassedTrack()
+	func broadcastToAward(for winners: [String])
 }
 
 extension Outputable {
@@ -29,9 +30,9 @@ struct ResultView: Outputable {
 		print("\n실행 결과")
 	}
 	
-	func broadcast(asPosition position: Int) -> String {
+	func broadcast(position: Int, of name: String) -> String {
 		let displayingSymbolText = changePositionToSymbolText(position: position)
-		printResultPosition(as: displayingSymbolText)
+		printResultPosition(of: name, asSymbol: displayingSymbolText)
 		return displayingSymbolText
 	}
 	
@@ -41,12 +42,25 @@ struct ResultView: Outputable {
 	
 	func broadcast(asError inputError: InputError) {
 		switch inputError {
-		case .invalid:
+		case .invalidNumber:
 			print("올바른 숫자를 입력해주세요.")
+		case .invalidName:
+			print("올바른 자동차 이름을 입력해주세요.")
+		case .outOfMaxLengthName:
+			print("자동차 이름은 5자를 초과할 수 없습니다.")
+		case .exceededInputableNames:
+			print("입력 가능한 이름을 초과하였습니다.")
+		case .duplicatedName:
+			print("중복된 이름은 사용하실 수 없습니다.")
 		}
 	}
 	
-	private func printResultPosition(as symbolText: String) {
-		print(symbolText)
+	func broadcastToAward(for winners: [String]) {
+		let namesOfWinners = winners.joined(separator: ", ")
+		print("\(namesOfWinners)가 최종 우승했습니다.")
+	}
+	
+	private func printResultPosition(of name: String, asSymbol symbols: String) {
+		print("\(name) : \(symbols)")
 	}
 }

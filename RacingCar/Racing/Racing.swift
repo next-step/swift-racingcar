@@ -12,6 +12,7 @@ final class Racing {
 	private let randomNumber: Random
 	private let resultView: Outputable
 	private(set) var cars: [RacingCar] = []
+	private(set) var namesOfWinners: [String] = []
 	private var totalTrack: Int = RacingOption.defaultTotalTrack
 	private var track: Int = RacingOption.startingTrack
 	
@@ -22,7 +23,7 @@ final class Racing {
 		do {
 			try inputView.read { inputCar, inputAttempt in
 				self.totalTrack = inputAttempt.numberOfAttempts
-				self.makeRacingCars(inputCar.numberOfCars)
+				self.makeRacingCars(inputCar)
 			}
 		} catch (let error) {
 			printMessage(for: error)
@@ -31,9 +32,11 @@ final class Racing {
 	
 	// MARK: - Public
 	func raceStart() {
+		guard isReady() else { return }
 		startBroadcasting()
 		racing()
 		raceEnd()
+		awardToWinners()
 	}
 	
 	// MARK: - Private
@@ -43,17 +46,25 @@ final class Racing {
 		}
 	}
 	
+	private func isReady() -> Bool {
+		cars.count > 0
+	}
+	
 	private func startBroadcasting() {
 		resultView.startedBroadcasting()
 	}
 	
 	private func racing() {
 		while (track <= totalTrack) {
-			cars.forEach { car in
-				car.move(at: randomNumber.rand())
-				_ = resultView.broadcast(asPosition: car.position.currentPosition)
-			}
+			moveCarsOnTrack()
 			passTrack()
+		}
+	}
+	
+	private func moveCarsOnTrack() {
+		cars.forEach { car in
+			car.move(at: randomNumber.rand())
+			_ = resultView.broadcast(position: car.position.currentPosition, of: car.name)
 		}
 	}
 	
@@ -67,9 +78,27 @@ final class Racing {
 		track = RacingOption.startingTrack
 	}
 	
-	private func makeRacingCars(_ number: Int) {
-		for _ in 0 ..< number {
-			let car = RacingCar()
+	private func awardToWinners() {
+		self.namesOfWinners = cars.filter { car in
+			car.position.currentPosition == findMaxPosition()
+		}.map { car in
+			car.name
+		}
+		
+		resultView.broadcastToAward(for: self.namesOfWinners)
+	}
+	
+	private func findMaxPosition() -> Int? {
+		cars.max {
+			$0.position < $1.position
+		}.map { car in
+			car.position.currentPosition
+		}
+	}
+	
+	private func makeRacingCars(_ inputCar: CarInputable) {
+		inputCar.carNames.forEach { carName in
+			let car = RacingCar(name: carName)
 			cars.append(car)
 		}
 	}
