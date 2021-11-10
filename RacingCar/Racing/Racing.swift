@@ -32,7 +32,7 @@ final class Racing {
 	
 	// MARK: - Public
 	func raceStart() {
-		guard ready() else { return }
+		guard isReady() else { return }
 		startBroadcasting()
 		racing()
 		raceEnd()
@@ -46,7 +46,7 @@ final class Racing {
 		}
 	}
 	
-	private func ready() -> Bool {
+	private func isReady() -> Bool {
 		cars.count > 0
 	}
 	
