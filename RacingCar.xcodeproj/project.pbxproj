@@ -16,6 +16,7 @@
 		C19146722738100E0033BC16 /* RacingGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C191467027380FEC0033BC16 /* RacingGameViewModel.swift */; };
 		C1914674273814290033BC16 /* RacingGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1914673273814290033BC16 /* RacingGameViewController.swift */; };
 		C1914675273821830033BC16 /* RacingGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1914673273814290033BC16 /* RacingGameViewController.swift */; };
+		C1914678273D5FA30033BC16 /* RacingGameViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1914676273D5FA30033BC16 /* RacingGameViewModelTest.swift */; };
 		C19AE5D32730173A0058E636 /* ArithmeticOperationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DE5D73273014DC007396B0 /* ArithmeticOperationProtocol.swift */; };
 		C19AE5D42730173D0058E636 /* CalculatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DE5D75273014F1007396B0 /* CalculatorProtocol.swift */; };
 		C19AE5D5273017400058E636 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DE5D772730155C007396B0 /* String+Extension.swift */; };
@@ -70,6 +71,7 @@
 		C191466E2735745F0033BC16 /* StubRacingCar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubRacingCar.swift; sourceTree = "<group>"; };
 		C191467027380FEC0033BC16 /* RacingGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingGameViewModel.swift; sourceTree = "<group>"; };
 		C1914673273814290033BC16 /* RacingGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingGameViewController.swift; sourceTree = "<group>"; };
+		C1914676273D5FA30033BC16 /* RacingGameViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingGameViewModelTest.swift; sourceTree = "<group>"; };
 		C1B1EB8E272851DA00447AC1 /* RacingCarTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RacingCarTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1B1EB90272851DA00447AC1 /* RacingCarTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingCarTest.swift; sourceTree = "<group>"; };
 		C1B48FE5272D5AC4001AAEC3 /* StubCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubCalculator.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 			children = (
 				C1B1EB90272851DA00447AC1 /* RacingCarTest.swift */,
 				C191466E2735745F0033BC16 /* StubRacingCar.swift */,
+				C1914676273D5FA30033BC16 /* RacingGameViewModelTest.swift */,
 			);
 			path = RacingCarTest;
 			sourceTree = "<group>";
@@ -387,6 +390,7 @@
 				C1914675273821830033BC16 /* RacingGameViewController.swift in Sources */,
 				C1B48FE4272CE5E4001AAEC3 /* Injectable.swift in Sources */,
 				C19AE5D62730194A0058E636 /* main.swift in Sources */,
+				C1914678273D5FA30033BC16 /* RacingGameViewModelTest.swift in Sources */,
 				C191466F2735745F0033BC16 /* StubRacingCar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
