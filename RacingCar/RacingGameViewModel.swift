@@ -10,7 +10,7 @@ import Combine
 
 protocol RacingGameMaterialProtocol {
     var cars: [RacingCarProtocol] { get }
-    func startRacing(carCount: Int)
+    func startRacing()
 }
 
 protocol RacingGameOutputProtocol {
@@ -18,7 +18,7 @@ protocol RacingGameOutputProtocol {
 }
 
 extension RacingGameMaterialProtocol where Self: RacingGameOutputProtocol {
-    func startRacing(carCount: Int) {
+    func startRacing() {
         cars.forEach({ car in
             tryForward(car: car, fuel: (0...9).randomElement() ?? 0)
         })

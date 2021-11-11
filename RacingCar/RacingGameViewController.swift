@@ -60,7 +60,7 @@ class RacingGameViewController {
         print("\n실행결과")
         for index in 0..<tryCount {
             print("===== racing \(index+1) =====")
-            viewModel.startRacing(carCount: carCount)
+            viewModel.startRacing()
         }
     }
     
