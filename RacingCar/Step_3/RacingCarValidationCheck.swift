@@ -8,20 +8,18 @@
 import Foundation
 
 struct RacingCarValidationCheck {
-    let roundInput: String
-    let carCountInput: String
+    let racingInput: RacingInput
     
-    init(_ roundInput: String,_ carCountInput: String) {
-        self.roundInput = roundInput
-        self.carCountInput = carCountInput
+    init(racingInput: RacingInput) {
+        self.racingInput = racingInput
     }
     
     func isIntAblestring() -> Bool {
-        if roundInput.toInt() == nil {
+        if racingInput.roundCount.toInt() == nil {
             print(RacingCarError.playcarInputError.rawValue)
             return false
         }
-        if carCountInput.toInt() == nil {
+        if racingInput.roundCount.toInt() == nil {
             print(RacingCarError.roundCountInputError.rawValue)
             return false
         }

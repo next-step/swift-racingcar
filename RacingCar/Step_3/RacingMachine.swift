@@ -37,8 +37,7 @@ struct RacingMachine {
     }
     
     func isValidInput(userInput: RacingInput) -> Bool {
-        let racingValidationCheck = RacingCarValidationCheck(userInput.playingCarCount,
-                                                             userInput.roundCount)
+        let racingValidationCheck = RacingCarValidationCheck(racingInput: userInput)
         return racingValidationCheck.isIntAblestring()
     }
     
