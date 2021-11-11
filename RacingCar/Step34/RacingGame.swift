@@ -41,12 +41,32 @@ struct RacingGame {
             attemptToMoveCar(cars: cars)
             print("")
         }
+        
+        print(findMaxPosition(cars: cars))
     }
     
     private func attemptToMoveCar(cars: [Car]) {
-        for carIndex in 0 ..< cars.count {
-            cars[carIndex].move(amount: randomNumber)
-            ResultView().printResult(name: cars[carIndex].name, position: cars[carIndex].position)
+        cars.forEach { car in
+            car.move(amount: randomNumber)
+            ResultView().printResult(name: car.name, position: car.position)
         }
-    }    
+    }
+    
+    private func findMaxPosition(cars: [Car]) -> Int? {
+        cars.max { prev, next in
+            prev.position < next.position
+        }.map { car in
+            car.position.count
+        }
+    }
+    
+    private func findWinner(cars: [Car]) {
+        let winners = cars.filter { car in
+            car.position.count == findMaxPosition(cars: cars)
+        }.map { car in
+            car.name
+        }
+        
+        ResultView().printWinner(result: winners)
+    }
 }

@@ -19,7 +19,7 @@ struct ResultView {
         print("\(name) : \(position)")
     }
     
-    func printWinner(result: String) {
+    func printWinner(result: [String]) {
         
     }
 }
