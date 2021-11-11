@@ -20,14 +20,14 @@ protocol RacingGameOutputProtocol {
 extension RacingGameMaterialProtocol where Self: RacingGameOutputProtocol {
     func startRacing() {
         cars.forEach({ car in
-            tryForward(car: car, fuel: (0...9).randomElement() ?? 0)
+            attemptForward(car: car, fuel: (0...9).randomElement() ?? 0)
         })
         
         carPositionSubject.send(cars.map({ $0.position }))
     }
     
-    private func tryForward(car: RacingCarProtocol, fuel: Int) {
-        car.tryForward(fuel)
+    private func attemptForward(car: RacingCarProtocol, fuel: Int) {
+        car.attemptForward(fuel)
     }
 }
 
@@ -50,7 +50,7 @@ class RacingGameViewModel: RacingGameMaterialProtocol, RacingGameOutputProtocol 
 protocol RacingCarProtocol {
     var position: Int { get }
     var forwardCondition: ClosedRange<Int> { get }
-    func tryForward(_ fuel: Int)
+    func attemptForward(_ fuel: Int)
 }
 
 class RacingCar: RacingCarProtocol {
@@ -61,7 +61,7 @@ class RacingCar: RacingCarProtocol {
         self.forwardCondition = forwardCondition
     }
     
-    func tryForward(_ fuel: Int) {
+    func attemptForward(_ fuel: Int) {
         guard forwardCondition.contains(fuel) else { return }
         position += 1
     }

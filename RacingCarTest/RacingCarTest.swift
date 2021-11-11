@@ -27,7 +27,7 @@ extension RacingCarTest {
         let expect = expectation(description: "자동차의 연료가 4이상 9 이하일 경우 앞으로 전진한다.")
         let range = (4...9)
         
-        dummyRacingCar.called(name: "tryForward", verify: { fuel in
+        dummyRacingCar.called(name: "attemptForward", verify: { fuel in
             guard let fuel = fuel as? Int else { return }
             if fuel >= 4,
                fuel <= 9
@@ -36,7 +36,7 @@ extension RacingCarTest {
             }
         })
         
-        dummyRacingCar.tryForward(range.randomElement() ?? 0)
+        dummyRacingCar.attemptForward(range.randomElement() ?? 0)
         
         self.wait(for: [expect], timeout: 0.1)
     }
@@ -45,14 +45,14 @@ extension RacingCarTest {
         let expect = expectation(description: "자동차의 연료가 4이이하일 경우 앞으로 멈춘다.")
         let range = (0...3)
         
-        dummyRacingCar.called(name: "tryForward", verify: { fuel in
+        dummyRacingCar.called(name: "attemptForward", verify: { fuel in
             guard let fuel = fuel as? Int else { return }
             if fuel < 4 {
                 expect.fulfill()
             }
         })
         
-        dummyRacingCar.tryForward(range.randomElement() ?? 0)
+        dummyRacingCar.attemptForward(range.randomElement() ?? 0)
         
         self.wait(for: [expect], timeout: 0.1)
     }

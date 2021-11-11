@@ -16,7 +16,7 @@ class StubRacingCar: StubContainer, RacingCarProtocol {
         self.forwardCondition = forwardCondition
     }
     
-    func tryForward(_ fuel: Int) {
-        self.verify(name: "tryForward", arg: fuel)
+    func attemptForward(_ fuel: Int) {
+        self.verify(name: "attemptForward", arg: fuel)
     }
 }
