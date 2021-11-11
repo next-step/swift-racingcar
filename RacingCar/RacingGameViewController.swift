@@ -10,7 +10,7 @@ import Combine
 
 class RacingCarInputView {
     func inputCarCount() -> Int? {
-        print("자동차 대수는 몇 대인가요? ", separator: "")
+        print("자동차 대수는 몇 대인가요? ", terminator: "")
         guard let carCount = Int(readLine() ?? "") else {
             return nil
         }
@@ -19,7 +19,7 @@ class RacingCarInputView {
     }
     
     func inputTryCount() -> Int? {
-        print("시도할 횟수는 몇 회인가요? ", separator: "")
+        print("시도할 횟수는 몇 회인가요? ", terminator: "")
         guard let tryCount = Int(readLine() ?? "") else {
             return nil
         }
