@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-protocol RacingGameInputProtocol {
+protocol RacingGameMaterialProtocol {
     var cars: [RacingCarProtocol] { get }
     func startRacing(carCount: Int)
 }
@@ -17,7 +17,7 @@ protocol RacingGameOutputProtocol {
     var carPositionSubject: PassthroughSubject<[Int], Never> { get }
 }
 
-extension RacingGameInputProtocol where Self: RacingGameOutputProtocol {
+extension RacingGameMaterialProtocol where Self: RacingGameOutputProtocol {
     func startRacing(carCount: Int) {
         cars.forEach({ car in
             tryForward(car: car, fuel: (0...9).randomElement() ?? 0)
@@ -31,7 +31,7 @@ extension RacingGameInputProtocol where Self: RacingGameOutputProtocol {
     }
 }
 
-class RacingGameViewModel: RacingGameInputProtocol, RacingGameOutputProtocol {
+class RacingGameViewModel: RacingGameMaterialProtocol, RacingGameOutputProtocol {
     var carPositionSubject = PassthroughSubject<[Int], Never>()
     var cars: [RacingCarProtocol]
     var carPositionPublisher: AnyPublisher<[String], Never> {
