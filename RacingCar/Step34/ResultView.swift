@@ -19,7 +19,8 @@ struct ResultView {
         print("\(name) : \(position)")
     }
     
-    func printWinner(result: [String]) {
-        
+    func printWinner(winners: [String]) {
+        let nameOfWinners = winners.joined(separator: ",")
+        print("\(nameOfWinners)가 최종 우승했습니다.")
     }
 }
