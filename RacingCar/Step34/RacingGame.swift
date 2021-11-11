@@ -52,7 +52,7 @@ struct RacingGame {
         }
     }
     
-    private func findWinner(cars: [Car]) {
+    func findWinner(cars: [Car]) {
         let winners = cars.filter { car in
             car.position.count == findMaxPosition(cars: cars)
         }.map { car in
@@ -62,7 +62,7 @@ struct RacingGame {
         ResultView().printWinner(winners: winners)
     }
     
-    private func findMaxPosition(cars: [Car]) -> Int? {
+    func findMaxPosition(cars: [Car]) -> Int? {
         cars.max { prev, next in
             prev.position < next.position
         }.map { car in
