@@ -15,23 +15,21 @@ struct InputView {
         case valueMustPositiveNumber
     }
     
-    private let numberOfCars = "자동차 대수는 몇 대인가요?"
+    private let nameOfCars = "경주할 자동차 이름을 입력하세요(이름은 쉼표(,)를 기준으로 구분)."
     private let numberOfAttempts = "시도할 횟수는 몇 회인가요?"
     
-    func inputNumberOfCars() throws -> Int {
-        print(numberOfCars, terminator: " ")
+    func inputNameOfCars() throws -> [String] {
+        print(nameOfCars)
         
         guard let input = readLine() else {
             throw InputError.valueIsNil
         }
-                
-        try checkValidInputValue(input: input)
-        
-        return try convertInputValueToInt(input: input)
+                        
+        return splitInputValue(input: input)
     }
     
     func inputNumberOfAttempts() throws -> Int {
-        print(numberOfAttempts, terminator: " ")
+        print(numberOfAttempts)
         
         guard let input = readLine() else {
             throw InputError.valueIsNil
@@ -71,5 +69,9 @@ struct InputView {
         }
         
         return intNumber
+    }
+    
+    private func splitInputValue(input: String) -> [String] {
+        input.components(separatedBy: ",")
     }
 }
