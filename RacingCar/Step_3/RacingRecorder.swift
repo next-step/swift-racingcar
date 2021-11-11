@@ -12,6 +12,7 @@ class RacingRecorder {
     var roundCount: Int
     var roundResult: String = "실행 결과\n" {
         didSet {
+            self.roundCount -= 1
             if roundCount == 0 {
                 self.racingResult()
             }
@@ -25,20 +26,21 @@ class RacingRecorder {
     func appendResult(record: [String]) {
         if preRacingResult.isEmpty {
             preRacingResult = record
-            self.roundResult += record.reduce("") {
-                return $0 + "\($1)\n"
-            }
-            roundCount -= 1
+            let firstRecord = combineRecord(record: record)
+            self.roundResult += "\(firstRecord)\n"
             return
         }
         let zipArray = zip(preRacingResult,record)
         let newRecord = zipArray.map { $0.0 + $0.1 }
-        let roundResult = newRecord.reduce("", {
-            return $0 + "\($1)\n"
-        })
-        roundCount -= 1
-        self.roundResult += "\(roundResult)\n"
         preRacingResult = newRecord
+        let combineRecord = combineRecord(record: newRecord)
+        self.roundResult += "\(combineRecord)\n"
+    }
+    
+    func combineRecord(record: [String]) -> String {
+        return record.reduce("") {
+            return $0 + "\($1)\n"
+        }
     }
     
     @discardableResult

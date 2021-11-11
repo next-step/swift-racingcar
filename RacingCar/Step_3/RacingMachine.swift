@@ -8,32 +8,38 @@
 import Foundation
 
 struct RacingMachine {
-    private let racinginput: RacingInput
     private let roundRecorder: RacingRecorder
     
     init(racingInput: RacingInput) {
-        self.racinginput = racingInput
-        self.roundRecorder = RacingRecorder(roundCount: racingInput.roundCount.toInt()!)
+        self.roundRecorder = RacingRecorder(roundCount: racingInput.roundCount.toInt() ?? 0)
     }
     
     func startRacing(racing: RacingInput) {
         if isValidInput(userInput: racing) == false {
             fatalError(RacingCarError.cannotConvertToInt.rawValue)
         }
-        let roundCount = Int(racing.roundCount)!
-        let carCount = Int(racing.playingCarCount)!
-        for _ in 0...roundCount - 1 {
-            let roundRecord: [String] = Array(0...carCount - 1)
-                .map { String($0) }
-                .reduce([]) { partialResult, _ in
-                return partialResult + [isOverThree(number: getRandomNumber())]
-            }
+        guard let roundCount = Int(racing.roundCount) else {
+            fatalError(RacingCarError.cannotConvertToInt.rawValue)
+        }
+        guard let carCount = Int(racing.playingCarCount) else {
+            fatalError(RacingCarError.cannotConvertToInt.rawValue)
+        }
+        for _ in 1 ... roundCount {
+            let roundRecord = oneRoundRecord(carCount: carCount)
             roundRecorder.appendResult(record: roundRecord)
         }
     }
     
+    func oneRoundRecord(carCount: Int) -> [String] {
+        return Array(1 ... carCount)
+            .map { String($0) }
+            .reduce([]) { partialResult, _ in
+            return partialResult + [isCanMoveForword(number: getRandomNumber())]
+        }
+    }
+    
     func getRandomNumber() -> Int {
-        return (0...9).randomElement()!
+        return Int.random(in: 0...9)
     }
     
     func isValidInput(userInput: RacingInput) -> Bool {
@@ -41,7 +47,9 @@ struct RacingMachine {
         return racingValidationCheck.isIntAblestring()
     }
     
-    func isOverThree(number: Int) -> String {
-        return number > 3 ? "-" : ""
+    func isCanMoveForword(number: Int) -> String {
+        let moveForword = "-"
+        let dontMove = ""
+        return number > 3 ? moveForword : dontMove
     }
 }
