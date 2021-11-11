@@ -15,7 +15,11 @@ struct ResultView {
         print(resultTitle)
     }
     
-    func printResult(result: String) {
-        print(result)
+    func printResult(name: String, position: String) {
+        print("\(name) : \(position)")
+    }
+    
+    func printWinner(result: String) {
+        
     }
 }

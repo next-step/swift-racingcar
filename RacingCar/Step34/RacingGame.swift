@@ -46,7 +46,7 @@ struct RacingGame {
     private func attemptToMoveCar(cars: [Car]) {
         for carIndex in 0 ..< cars.count {
             cars[carIndex].move(amount: randomNumber)
-            ResultView().printResult(result: cars[carIndex].position)
+            ResultView().printResult(name: cars[carIndex].name, position: cars[carIndex].position)
         }
-    }
+    }    
 }
