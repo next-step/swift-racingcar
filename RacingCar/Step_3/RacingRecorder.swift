@@ -12,7 +12,7 @@ class RacingRecorder {
     var roundCount: Int
     var roundResult: String = "실행 결과\n" {
         didSet {
-            if roundCount == 1 {
+            if roundCount == 0 {
                 self.racingResult()
             }
         }
