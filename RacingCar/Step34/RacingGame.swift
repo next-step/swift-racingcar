@@ -23,13 +23,13 @@ struct RacingGame {
         Int.random(in: GameOption.randomNumberRange)
     }
             
-//    func startRacingGame() throws {
-//        guard let numberOfCars = try? InputView().inputNumberOfCars() else {
-//            return
-//        }
-//                
-//        self.beginToMoveCar(cars: try CarsFactory().makeCars(numberOfCars: numberOfCars))
-//    }
+    func startRacingGame() throws {
+        guard let nameOfCars = try? InputView().inputNameOfCars() else {
+            return
+        }
+                
+        self.beginToMoveCar(cars: try CarsFactory().makeCars(nameOfCars: nameOfCars, numberOfCars: nameOfCars.count))
+    }
     
     private func beginToMoveCar(cars: [Car]) {
         guard let numberOfAttempts = try? InputView().inputNumberOfAttempts() else {
