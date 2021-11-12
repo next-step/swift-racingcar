@@ -8,10 +8,10 @@
 import Foundation
 
 struct Position: Equatable {
-    private(set) var position: Int
+    private(set) var value: Int
     let distanceUnit: Int
     
     mutating func move() {
-        position += distanceUnit
+        value += distanceUnit
     }
 }

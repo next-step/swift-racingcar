@@ -55,7 +55,7 @@ private extension RacingCarGameController {
         guard count > 0 else { return nil }
         
         let racingCarMover = RacingCarDriver(
-            racingCar: RacingCar(position: Position(position: 0, distanceUnit: 1)),
+            racingCar: RacingCar(position: Position(value: 0, distanceUnit: 1)),
             moveChecker: MoveChecker(movableRange: (4...9))
         )
         
@@ -73,7 +73,7 @@ private extension RacingCarGameController {
     }
     
     func convertPositionToPrintFormat(with position: Position) -> String {
-        let positionRawValue = position.position
+        let positionRawValue = position.value
         if positionRawValue <= 0 {
             return "."
         }
