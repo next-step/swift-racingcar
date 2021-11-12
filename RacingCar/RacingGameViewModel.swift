@@ -10,14 +10,11 @@ import Combine
 
 protocol RacingGameMaterialProtocol {
     var cars: [RacingCarProtocol] { get }
+    var carPositionSubject: PassthroughSubject<[Int], Never> { get }
     func startRacing()
 }
 
-protocol RacingGameOutputProtocol {
-    var carPositionSubject: PassthroughSubject<[Int], Never> { get }
-}
-
-extension RacingGameMaterialProtocol where Self: RacingGameOutputProtocol {
+extension RacingGameMaterialProtocol {
     func startRacing() {
         cars.forEach({ car in
             attemptForward(car: car, fuel: (0...9).randomElement() ?? 0)
@@ -29,6 +26,10 @@ extension RacingGameMaterialProtocol where Self: RacingGameOutputProtocol {
     private func attemptForward(car: RacingCarProtocol, fuel: Int) {
         car.attemptForward(fuel)
     }
+}
+
+protocol RacingGameOutputProtocol {
+    var carPositionPublisher: AnyPublisher<[String], Never> { get }
 }
 
 class RacingGameViewModel: RacingGameMaterialProtocol, RacingGameOutputProtocol {
