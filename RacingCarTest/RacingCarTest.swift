@@ -9,45 +9,51 @@ import XCTest
 @testable import RacingCar
 
 class RacingCarTest: XCTestCase {
-    private var numbers: Set<Int> = []
+    var dummyRacingCar: StubRacingCar!
 
     override func setUpWithError() throws {
-        numbers.removeAll()
-        numbers.insert(1)
-        numbers.insert(1)
-        numbers.insert(2)
-        numbers.insert(3)
+        dummyRacingCar = StubRacingCar()
     }
 
     override func tearDownWithError() throws {
-        
+        dummyRacingCar = nil
     }
+}
 
-    func test_string_split() {
-        let dummyString1 = "1,2"
-        let dummyString2 = "1"
+// MARK: - 자동차의 동작 테스트
+
+extension RacingCarTest {
+    func test_racing_car_forward() {
+        let expect = expectation(description: "자동차의 연료가 4이상 9 이하일 경우 앞으로 전진한다.")
+        let range = (4...9)
         
-        let dummyString1Array = dummyString1.split(separator: ",")
-        let dummyString2Array = dummyString2.split(separator: ",")
+        dummyRacingCar.called(name: "attemptForward", verify: { fuel in
+            guard let fuel = fuel as? Int else { return }
+            if fuel >= 4,
+               fuel <= 9
+            {
+                expect.fulfill()
+            }
+        })
         
-        guard dummyString1Array.count < 2,
-              dummyString2Array.count < 1 else { return }
+        dummyRacingCar.attemptForward(range.randomElement() ?? 0)
         
-        XCTAssertEqual(dummyString1Array[0], "1")
-        XCTAssertEqual(dummyString1Array[1], "2")
-        XCTAssertEqual(dummyString2Array[0], "1")
+        self.wait(for: [expect], timeout: 0.1)
     }
     
-    func test_string_replacingOccurrences() {
-        var dummyString = "(1,2)"
+    func test_racing_car_stop() {
+        let expect = expectation(description: "자동차의 연료가 4이이하일 경우 앞으로 멈춘다.")
+        let range = (0...3)
         
-        dummyString = dummyString.replacingOccurrences(of: "(", with: "")
-        dummyString = dummyString.replacingOccurrences(of: ")", with: "")
+        dummyRacingCar.called(name: "attemptForward", verify: { fuel in
+            guard let fuel = fuel as? Int else { return }
+            if fuel < 4 {
+                expect.fulfill()
+            }
+        })
         
-        XCTAssertEqual(dummyString, "1,2")
-    }
-    
-    func test_set_count() {
-        XCTAssertEqual(self.numbers.count, 3)
+        dummyRacingCar.attemptForward(range.randomElement() ?? 0)
+        
+        self.wait(for: [expect], timeout: 0.1)
     }
 }
