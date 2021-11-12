@@ -44,6 +44,7 @@
 		E2E37656273E73F1003C960A /* MoveChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B5B57F273AC7DA00226684 /* MoveChecker.swift */; };
 		E2E37658273E74C2003C960A /* RandomNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E37657273E74C2003C960A /* RandomNumber.swift */; };
 		E2E37659273E74C2003C960A /* RandomNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E37657273E74C2003C960A /* RandomNumber.swift */; };
+		E2E3765E273E79D0003C960A /* RacingCarGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E3765D273E79D0003C960A /* RacingCarGameTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -84,6 +85,7 @@
 		E2D09D8E27282B7700A846D8 /* StringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTests.swift; sourceTree = "<group>"; };
 		E2D09D9427283A4C00A846D8 /* SetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTests.swift; sourceTree = "<group>"; };
 		E2E37657273E74C2003C960A /* RandomNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNumber.swift; sourceTree = "<group>"; };
+		E2E3765D273E79D0003C960A /* RacingCarGameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingCarGameTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +181,7 @@
 				E2B9E074273945F80089907E /* PositionTests.swift */,
 				E2B9E076273946240089907E /* MoveCheckerTests.swift */,
 				E2B9E078273946B30089907E /* RacingCarDriverTests.swift */,
+				E2E3765D273E79D0003C960A /* RacingCarGameTests.swift */,
 			);
 			path = RacingCarTests;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 			files = (
 				E288CC7E27301087005DDEF8 /* ExpressionUnitCalculatorTests.swift in Sources */,
 				E288CC8027301B7E005DDEF8 /* ExpressionCalculatorTests.swift in Sources */,
+				E2E3765E273E79D0003C960A /* RacingCarGameTests.swift in Sources */,
 				E2B5B57D273AC7BB00226684 /* RacingCarDriver.swift in Sources */,
 				E2B9E077273946240089907E /* MoveCheckerTests.swift in Sources */,
 				E2B5B58D273AC83700226684 /* RacingCarGameController.swift in Sources */,
