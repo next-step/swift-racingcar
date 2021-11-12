@@ -6,7 +6,6 @@
 //
 
 import XCTest
-import RacingCar
 
 class ExpressionUnitCalculatorTests: XCTestCase {
     func test_init_throwing_error() {

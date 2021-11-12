@@ -8,11 +8,11 @@
 import Foundation
 
 struct RacingCarGame {
-    let randomRange: Range<Int>
+    private let randomNumber: RandomNumber
     private var racingCarDrivers: [RacingCarDriver]
     
-    init(randomRange: Range<Int>, racingCarDrivers: [RacingCarDriver]) {
-        self.randomRange = randomRange
+    init(randomNumber: RandomNumber, racingCarDrivers: [RacingCarDriver]) {
+        self.randomNumber = randomNumber
         self.racingCarDrivers = racingCarDrivers
     }
     
@@ -22,7 +22,7 @@ struct RacingCarGame {
     
     mutating func tryMovingRacingCarsWithRandomNumbers() {
         racingCarDrivers.indices.forEach {
-            racingCarDrivers[$0].tryMoving(with: Int.random(in: randomRange))
+            racingCarDrivers[$0].tryMoving(with: randomNumber.value)
         }
     }
 }

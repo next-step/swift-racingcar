@@ -60,7 +60,7 @@ private extension RacingCarGameController {
         )
         
         let racingCarGame = RacingCarGame(
-            randomRange: Range<Int>(0...9),
+            randomNumber: RandomNumber(range: (0...9)),
             racingCarDrivers: (0..<count).map { _ in racingCarMover }
         )
         
