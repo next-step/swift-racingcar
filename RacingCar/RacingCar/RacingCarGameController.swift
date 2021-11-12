@@ -56,7 +56,7 @@ private extension RacingCarGameController {
         
         let racingCarMover = RacingCarDriver(
             racingCar: RacingCar(position: Position(position: 0, distanceUnit: 1)),
-            moveChecker: MoveChecker(movableRange: Range<Int>(4...9))
+            moveChecker: MoveChecker(movableRange: (4...9))
         )
         
         let racingCarGame = RacingCarGame(

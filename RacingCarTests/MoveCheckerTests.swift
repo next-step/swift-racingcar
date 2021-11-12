@@ -8,7 +8,7 @@
 import XCTest
 
 class MoveCheckerTests: XCTestCase {
-    let moveChecker = MoveChecker(movableRange: Range<Int>(4...9))
+    let moveChecker = MoveChecker(movableRange: (4...9))
     
     func test_isMovable_true() {
         XCTAssertTrue(moveChecker.isMovable(4))

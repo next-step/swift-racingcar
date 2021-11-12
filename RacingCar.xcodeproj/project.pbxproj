@@ -41,6 +41,7 @@
 		E2D09D8F27282B7700A846D8 /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D09D8E27282B7700A846D8 /* StringTests.swift */; };
 		E2D09D9327282B8E00A846D8 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
 		E2D09D9527283A4C00A846D8 /* SetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D09D9427283A4C00A846D8 /* SetTests.swift */; };
+		E2E37656273E73F1003C960A /* MoveChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B5B57F273AC7DA00226684 /* MoveChecker.swift */; };
 		E2E37658273E74C2003C960A /* RandomNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E37657273E74C2003C960A /* RandomNumber.swift */; };
 		E2E37659273E74C2003C960A /* RandomNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E37657273E74C2003C960A /* RandomNumber.swift */; };
 /* End PBXBuildFile section */
@@ -300,6 +301,7 @@
 				E2B5B583273AC7EF00226684 /* RacingCarGame.swift in Sources */,
 				E2B9E079273946B30089907E /* RacingCarMoverTests.swift in Sources */,
 				E2D09D9327282B8E00A846D8 /* main.swift in Sources */,
+				E2E37656273E73F1003C960A /* MoveChecker.swift in Sources */,
 				E2B9E0722739391D0089907E /* RacingCarTests.swift in Sources */,
 				E2B5B57E273AC7BD00226684 /* Position.swift in Sources */,
 				E2B5B58A273AC81800226684 /* LabelView.swift in Sources */,

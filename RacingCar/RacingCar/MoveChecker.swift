@@ -8,7 +8,7 @@
 import Foundation
 
 struct MoveChecker {
-    let movableRange: Range<Int>
+    let movableRange: ClosedRange<Int>
     
     func isMovable(_ number: Int) -> Bool {
         return movableRange.contains(number)

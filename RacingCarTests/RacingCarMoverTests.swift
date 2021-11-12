@@ -9,16 +9,16 @@ import XCTest
 
 class RacingCarMoverTests: XCTestCase {
     var position = Position(position: 0, distanceUnit: 1)
-    var racingCarMover = RacingCarMover(
+    var racingCarMover = RacingCarDriver(
         racingCar: RacingCar(position: Position(position: 0, distanceUnit: 1)),
-        moveChecker: MoveChecker(movableRange: Range<Int>(4...9))
+        moveChecker: MoveChecker(movableRange: (4...9))
     )
     
     override func tearDownWithError() throws {
         position = Position(position: 0, distanceUnit: 1)
-        racingCarMover = RacingCarMover(
+        racingCarMover = RacingCarDriver(
             racingCar: RacingCar(position: position),
-            moveChecker: MoveChecker(movableRange: Range<Int>(4...9))
+            moveChecker: MoveChecker(movableRange: (4...9))
         )
     }
 
