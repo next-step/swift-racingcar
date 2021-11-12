@@ -8,14 +8,14 @@
 import XCTest
 
 class RacingCarMoverTests: XCTestCase {
-    var position = Position(position: 0, distanceUnit: 1)
+    var position = Position(value: 0, distanceUnit: 1)
     var racingCarMover = RacingCarDriver(
-        racingCar: RacingCar(position: Position(position: 0, distanceUnit: 1)),
+        racingCar: RacingCar(position: Position(value: 0, distanceUnit: 1)),
         moveChecker: MoveChecker(movableRange: (4...9))
     )
     
     override func tearDownWithError() throws {
-        position = Position(position: 0, distanceUnit: 1)
+        position = Position(value: 0, distanceUnit: 1)
         racingCarMover = RacingCarDriver(
             racingCar: RacingCar(position: position),
             moveChecker: MoveChecker(movableRange: (4...9))

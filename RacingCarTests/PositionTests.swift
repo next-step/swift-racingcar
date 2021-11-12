@@ -11,10 +11,10 @@ class PositionTests: XCTestCase {
     
     func test_movePosition() {
         let distance = 3
-        var position = Position(position: 0, distanceUnit: distance)
+        var position = Position(value: 0, distanceUnit: distance)
         position.move()
         
-        XCTAssertEqual(position, Position(position: distance, distanceUnit: distance))
+        XCTAssertEqual(position, Position(value: distance, distanceUnit: distance))
     }
     
 }
