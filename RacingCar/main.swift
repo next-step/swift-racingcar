@@ -6,3 +6,5 @@
 
 import Foundation
 
+var controller = RacingCarGameController()
+controller.run()
