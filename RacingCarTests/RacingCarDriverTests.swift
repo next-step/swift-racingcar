@@ -1,5 +1,5 @@
 //
-//  RacingCarMoverTests.swift
+//  RacingCarDriverTests.swift
 //  RacingCarTests
 //
 //  Created by itzel.du on 2021/11/08.
@@ -7,32 +7,32 @@
 
 import XCTest
 
-class RacingCarMoverTests: XCTestCase {
+class RacingCarDriverTests: XCTestCase {
     var position = Position(value: 0, distanceUnit: 1)
-    var racingCarMover = RacingCarDriver(
+    var racingCarDriver = RacingCarDriver(
         racingCar: RacingCar(position: Position(value: 0, distanceUnit: 1)),
         moveChecker: MoveChecker(movableRange: (4...9))
     )
     
     override func tearDownWithError() throws {
         position = Position(value: 0, distanceUnit: 1)
-        racingCarMover = RacingCarDriver(
+        racingCarDriver = RacingCarDriver(
             racingCar: RacingCar(position: position),
             moveChecker: MoveChecker(movableRange: (4...9))
         )
     }
 
     func test_RacingCarMover_move() {
-        racingCarMover.tryMoving(with: 4)
+        racingCarDriver.tryMoving(with: 4)
         position.move()
         
-        XCTAssertEqual(racingCarMover.racingCarPosition, position)
+        XCTAssertEqual(racingCarDriver.racingCarPosition, position)
     }
     
     func test_RacingCarMover_not_move() {
-        racingCarMover.tryMoving(with: 1)
+        racingCarDriver.tryMoving(with: 1)
         
-        XCTAssertEqual(racingCarMover.racingCarPosition, position)
+        XCTAssertEqual(racingCarDriver.racingCarPosition, position)
     }
 
 }
