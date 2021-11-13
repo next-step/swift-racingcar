@@ -38,6 +38,11 @@ class RacingCarOutputView {
         
         print()
     }
+    
+    func winnersPrint(_ winners: [String]) {
+        let winnersString = winners.joined(separator: ",")
+        print(winnersString + "가 최종 우승했습니다.")
+    }
 }
 
 class RacingGameViewController {
@@ -56,7 +61,6 @@ class RacingGameViewController {
         
         viewModel = RacingGameViewModel(cars: racingCars)
         guard let viewModel = viewModel else { return }
-        
         bind(viewModel)
         
         print("\n실행결과")
@@ -64,6 +68,8 @@ class RacingGameViewController {
             print("===== racing \(index+1) =====")
             viewModel.startRacing()
         }
+        
+        outputView.winnersPrint(viewModel.winners)
     }
     
     private func bind(_ viewModel: RacingGameViewModel) {
