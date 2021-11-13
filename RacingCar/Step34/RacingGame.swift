@@ -44,7 +44,7 @@ struct RacingGame {
     private func attemptToMoveCar(cars: [Car]) {
         cars.forEach { car in
             car.move(amount: randomNumber)
-            ResultView().printResult(name: car.name, position: car.position)
+            printResult(car: car)
         }
     }
     
@@ -68,5 +68,9 @@ struct RacingGame {
     
     func printWinner(winners: [String]) {
         ResultView().printWinner(winners: winners)
+    }
+    
+    func printResult(car: Car) {
+        ResultView().printResult(name: car.name, position: car.position)
     }
 }
