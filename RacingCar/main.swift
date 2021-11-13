@@ -5,7 +5,8 @@
 // 
 
 do {
-    try RacingGame().startRacingGame()
+    let nameOfCars = try InputView().inputNameOfCars()
+    try RacingGame().startRacingGame(input: nameOfCars)
 } catch {
     print(error)
 }

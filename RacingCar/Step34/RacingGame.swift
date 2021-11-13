@@ -23,12 +23,8 @@ struct RacingGame {
         Int.random(in: GameOption.randomNumberRange)
     }
             
-    func startRacingGame() throws {
-        guard let nameOfCars = try? InputView().inputNameOfCars() else {
-            return
-        }
-                
-        self.beginToMoveCar(cars: try CarsFactory().makeCars(nameOfCars: nameOfCars, numberOfCars: nameOfCars.count))
+    func startRacingGame(input: [String]) throws {
+        self.beginToMoveCar(cars: try CarsFactory().makeCars(nameOfCars: input, numberOfCars: input.count))
     }
     
     private func beginToMoveCar(cars: [Car]) {
@@ -59,7 +55,7 @@ struct RacingGame {
             car.name
         }
         
-        ResultView().printWinner(winners: winners)
+        printWinner(winners: winners)
     }
     
     func findMaxPosition(cars: [Car]) -> Int? {
@@ -68,5 +64,9 @@ struct RacingGame {
         }.map { car in
             car.position.count
         }
+    }
+    
+    func printWinner(winners: [String]) {
+        ResultView().printWinner(winners: winners)
     }
 }
