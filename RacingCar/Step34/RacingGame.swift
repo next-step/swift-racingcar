@@ -28,9 +28,8 @@ struct RacingGame {
     }
     
     private func beginToMoveCar(cars: [Car], numberOfAttempts: Int) {
-        
-        
         ResultView().printResultTitle()
+        
         for _ in 0 ..< numberOfAttempts {
             attemptToMoveCar(cars: cars)
             print("")
@@ -46,7 +45,7 @@ struct RacingGame {
         }
     }
     
-    func findWinner(cars: [Car]) {
+    private func findWinner(cars: [Car]) {
         let winners = cars.filter { car in
             car.position.count == findMaxPosition(cars: cars)
         }.map { car in
@@ -64,11 +63,11 @@ struct RacingGame {
         }
     }
     
-    func printWinner(winners: [String]) {
+    private func printWinner(winners: [String]) {
         ResultView().printWinner(winners: winners)
     }
     
-    func printResult(car: Car) {
+    private func printResult(car: Car) {
         ResultView().printResult(name: car.name, position: car.position)
     }
 }
