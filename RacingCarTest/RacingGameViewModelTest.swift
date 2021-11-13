@@ -14,7 +14,7 @@ class RacingGameViewModelTest: XCTestCase {
     var storedSet: Set<AnyCancellable>!
 
     override func setUpWithError() throws {
-        let car = RacingCar()
+        let car = RacingCar(name: "bmw")
         viewModel = RacingGameViewModel(cars: [car])
         storedSet = Set<AnyCancellable>()
     }
@@ -30,10 +30,10 @@ extension RacingGameViewModelTest {
         let expect = expectation(description: "경기 후 차의 대수만큼 자동차의 위치를 String으로 표현")
         var carPositionsStringArray = [String]()
         let cars = [
-            RacingCar(),
-            RacingCar(),
-            RacingCar(),
-            RacingCar()
+            RacingCar(name: "bmw1.0"),
+            RacingCar(name: "bmw2.0"),
+            RacingCar(name: "bmw3.0"),
+            RacingCar(name: "bmw4.0")
         ]
         
         viewModel = RacingGameViewModel(cars: cars)

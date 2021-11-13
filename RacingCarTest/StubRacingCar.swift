@@ -10,9 +10,11 @@ import TestHelper
 
 class StubRacingCar: StubContainer, RacingCarProtocol {
     var position: Int = 0
+    var name: String
     var forwardCondition: ClosedRange<Int>
     
-    init(forwardCondition: ClosedRange<Int> = (4...9)) {
+    init(name: String, forwardCondition: ClosedRange<Int> = (4...9)) {
+        self.name = name
         self.forwardCondition = forwardCondition
     }
     
