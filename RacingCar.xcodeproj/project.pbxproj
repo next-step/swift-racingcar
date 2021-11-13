@@ -37,6 +37,9 @@
 		E0A6BCD02732A1EA00CCB91F /* RacingMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0938D0D273179A5005A7F07 /* RacingMachine.swift */; };
 		E0A6BCD12732A1EC00CCB91F /* RacingInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0938D0827316C06005A7F07 /* RacingInput.swift */; };
 		E0A6BCD22732A1EF00CCB91F /* RacingCarValidationCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0938D0B27317448005A7F07 /* RacingCarValidationCheck.swift */; };
+		E0B3B1DB273F61150064AD21 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B3B1DA273F61150064AD21 /* TextView.swift */; };
+		E0B3B1DD273F66E10064AD21 /* RacingGameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B3B1DC273F66E10064AD21 /* RacingGameController.swift */; };
+		E0B3B1DF273F6B430064AD21 /* RacingResultPrinter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B3B1DE273F6B430064AD21 /* RacingResultPrinter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -72,6 +75,9 @@
 		E0938D0D273179A5005A7F07 /* RacingMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingMachine.swift; sourceTree = "<group>"; };
 		E0A6BCC827329E8300CCB91F /* RacingRecorderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingRecorderTest.swift; sourceTree = "<group>"; };
 		E0A6BCCA27329E9000CCB91F /* RacingMachineTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingMachineTest.swift; sourceTree = "<group>"; };
+		E0B3B1DA273F61150064AD21 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
+		E0B3B1DC273F66E10064AD21 /* RacingGameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingGameController.swift; sourceTree = "<group>"; };
+		E0B3B1DE273F6B430064AD21 /* RacingResultPrinter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingResultPrinter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,8 +154,10 @@
 		E0938D03273166F1005A7F07 /* Step_3 */ = {
 			isa = PBXGroup;
 			children = (
+				E0B3B1D9273F60DB0064AD21 /* UI */,
 				E0938D06273167F8005A7F07 /* RacingGame.swift */,
 				E0938D04273167A8005A7F07 /* RacingRecorder.swift */,
+				E0B3B1DE273F6B430064AD21 /* RacingResultPrinter.swift */,
 				E0938D0D273179A5005A7F07 /* RacingMachine.swift */,
 				E0938D0827316C06005A7F07 /* RacingInput.swift */,
 				E0938D0B27317448005A7F07 /* RacingCarValidationCheck.swift */,
@@ -164,6 +172,15 @@
 				E0A6BCCA27329E9000CCB91F /* RacingMachineTest.swift */,
 			);
 			path = Step3;
+			sourceTree = "<group>";
+		};
+		E0B3B1D9273F60DB0064AD21 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				E0B3B1DA273F61150064AD21 /* TextView.swift */,
+				E0B3B1DC273F66E10064AD21 /* RacingGameController.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,12 +275,15 @@
 				E0938D05273167A8005A7F07 /* RacingRecorder.swift in Sources */,
 				E005544F272D607200EA062F /* StringExtension.swift in Sources */,
 				E005545F272EAA9500EA062F /* StringValidationCheckerProtocol.swift in Sources */,
+				E0B3B1DB273F61150064AD21 /* TextView.swift in Sources */,
 				E0055457272EA65900EA062F /* Step2_calculatorError.swift in Sources */,
 				E0938D0C27317448005A7F07 /* RacingCarValidationCheck.swift in Sources */,
 				E0938D0927316C06005A7F07 /* RacingInput.swift in Sources */,
 				E0055459272EA69200EA062F /* Step2_OperatorType.swift in Sources */,
 				E0938D07273167F8005A7F07 /* RacingGame.swift in Sources */,
 				E0938D0E273179A5005A7F07 /* RacingMachine.swift in Sources */,
+				E0B3B1DD273F66E10064AD21 /* RacingGameController.swift in Sources */,
+				E0B3B1DF273F6B430064AD21 /* RacingResultPrinter.swift in Sources */,
 				E0055455272EA55400EA062F /* Step2_StringValidationChecker.swift in Sources */,
 				E005544C272D606D00EA062F /* Step2_StringCalculator.swift in Sources */,
 				C7E1263027239F7E0000DB8B /* main.swift in Sources */,

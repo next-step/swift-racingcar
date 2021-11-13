@@ -25,15 +25,15 @@ class RacingMachineTest: XCTestCase {
     }
     
     func test_is_over_three() {
-        XCTAssertEqual(store.isOverThree(number: 0), "")
-        XCTAssertEqual(store.isOverThree(number: 1), "")
-        XCTAssertEqual(store.isOverThree(number: 2), "")
-        XCTAssertEqual(store.isOverThree(number: 3), "")
-        XCTAssertEqual(store.isOverThree(number: 4), "-")
-        XCTAssertEqual(store.isOverThree(number: 5), "-")
-        XCTAssertEqual(store.isOverThree(number: 6), "-")
-        XCTAssertEqual(store.isOverThree(number: 7), "-")
-        XCTAssertEqual(store.isOverThree(number: 8), "-")
-        XCTAssertEqual(store.isOverThree(number: 9), "-")
+        XCTAssertEqual(store.isCanMoveForword(number: 0), "")
+        XCTAssertEqual(store.isCanMoveForword(number: 1), "")
+        XCTAssertEqual(store.isCanMoveForword(number: 2), "")
+        XCTAssertEqual(store.isCanMoveForword(number: 3), "")
+        XCTAssertEqual(store.isCanMoveForword(number: 4), "-")
+        XCTAssertEqual(store.isCanMoveForword(number: 5), "-")
+        XCTAssertEqual(store.isCanMoveForword(number: 6), "-")
+        XCTAssertEqual(store.isCanMoveForword(number: 7), "-")
+        XCTAssertEqual(store.isCanMoveForword(number: 8), "-")
+        XCTAssertEqual(store.isCanMoveForword(number: 9), "-")
     }
 }
