@@ -9,8 +9,9 @@ import Foundation
 import Combine
 
 protocol RacingGameMaterialProtocol {
+    typealias CarInfo = (name: String, position: Int)
     var cars: [RacingCarProtocol] { get }
-    var carPositionSubject: PassthroughSubject<[Int], Never> { get }
+    var carInfoSubject: PassthroughSubject<[CarInfo], Never> { get }
     func startRacing()
 }
 
@@ -20,7 +21,7 @@ extension RacingGameMaterialProtocol {
             attemptForward(car: car, fuel: (0...9).randomElement() ?? 0)
         })
         
-        carPositionSubject.send(cars.map({ $0.position }))
+        carInfoSubject.send(cars.map({ ($0.name, $0.position) }))
     }
     
     private func attemptForward(car: RacingCarProtocol, fuel: Int) {
@@ -33,12 +34,14 @@ protocol RacingGameOutputProtocol {
 }
 
 class RacingGameViewModel: RacingGameMaterialProtocol, RacingGameOutputProtocol {
-    var carPositionSubject = PassthroughSubject<[Int], Never>()
+    var carInfoSubject = PassthroughSubject<[CarInfo], Never>()
     var cars: [RacingCarProtocol]
     var carPositionPublisher: AnyPublisher<[String], Never> {
-        return carPositionSubject
-            .map({ carPositions in
-                carPositions.map({ String.init(repeating: "_", count: $0) })
+        return carInfoSubject
+            .map({ carInfos in
+                carInfos.map({
+                    $0.name + " : " + String.init(repeating: "_", count: $0.position)
+                })
             })
             .eraseToAnyPublisher()
     }
