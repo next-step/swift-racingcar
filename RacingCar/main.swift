@@ -4,9 +4,11 @@
 //  Copyright © yagom. All rights reserved.
 // 
 
+let nameOfCars = try InputView().inputNameOfCars()
+let numberOfAttempts = try InputView().inputNumberOfAttempts()
+
 do {
-    let nameOfCars = try InputView().inputNameOfCars()
-    try RacingGame().startRacingGame(input: nameOfCars)
+    try RacingGame().startRacingGame(nameOfCars: nameOfCars, numberOfAttempts: numberOfAttempts)
 } catch {
     print(error)
 }

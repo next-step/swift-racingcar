@@ -9,6 +9,8 @@ import XCTest
 
 class RacingGameTest: XCTestCase {
     func test_입력값만큼_자동차를_생성한다() throws {
+        try RacingGame().startRacingGame(nameOfCars: ["Mino", "Test", "Test"], numberOfAttempts: 5)
+        
         let result = try CarsFactory().makeCars(nameOfCars: ["Mino", "Test", "Test"], numberOfCars: 3).count
         let expected = 3
         
@@ -16,6 +18,8 @@ class RacingGameTest: XCTestCase {
     }
     
     func test_입력한_이름이_정상적으로_부여된채로_생성한다() throws {
+        try RacingGame().startRacingGame(nameOfCars: ["Mino", "Test", "Test"], numberOfAttempts: 5)
+        
         let result = try CarsFactory().makeCars(nameOfCars: ["Mino", "Test", "Test"], numberOfCars: 3)
         let expected = ["Mino", "Test", "Test"]
         

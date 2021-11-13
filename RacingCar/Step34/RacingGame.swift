@@ -23,14 +23,12 @@ struct RacingGame {
         Int.random(in: GameOption.randomNumberRange)
     }
             
-    func startRacingGame(input: [String]) throws {
-        self.beginToMoveCar(cars: try CarsFactory().makeCars(nameOfCars: input, numberOfCars: input.count))
+    func startRacingGame(nameOfCars: [String], numberOfAttempts: Int) throws {
+        self.beginToMoveCar(cars: try CarsFactory().makeCars(nameOfCars: nameOfCars, numberOfCars: nameOfCars.count), numberOfAttempts: numberOfAttempts)
     }
     
-    private func beginToMoveCar(cars: [Car]) {
-        guard let numberOfAttempts = try? InputView().inputNumberOfAttempts() else {
-            return
-        }
+    private func beginToMoveCar(cars: [Car], numberOfAttempts: Int) {
+        
         
         ResultView().printResultTitle()
         for _ in 0 ..< numberOfAttempts {
