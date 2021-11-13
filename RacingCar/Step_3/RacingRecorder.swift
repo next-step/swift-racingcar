@@ -8,19 +8,16 @@
 import Foundation
 
 class RacingRecorder {
+    private var racingPrinter: RacingResultPrinter
     var preRacingResult = [String]()
-    var roundCount: Int
     var roundResult: String = "실행 결과\n" {
         didSet {
-            self.roundCount -= 1
-            if roundCount == 0 {
-                self.racingResult()
-            }
+            racingPrinter.printResult(result: roundResult)
         }
     }
     
     init(roundCount: Int) {
-        self.roundCount = roundCount
+        self.racingPrinter = RacingResultPrinter(roundCount: roundCount)
     }
     
     func appendResult(record: [String]) {
@@ -41,11 +38,5 @@ class RacingRecorder {
         return record.reduce("") {
             return $0 + "\($1)\n"
         }
-    }
-    
-    @discardableResult
-    func racingResult() -> String {
-        print(self.roundResult)
-        return self.roundResult
     }
 }

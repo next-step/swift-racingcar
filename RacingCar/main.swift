@@ -16,12 +16,3 @@ import Foundation
 //MARK: -- Step3
 let racingController = RacingGameController()
 racingController.initGame()
-//print(Question.firstQuestion.rawValue,terminator:" ")
-//guard let firstInput = readLine() else { fatalError(RacingCarError.playcarInputError.rawValue) }
-//
-//print(Question.secondQuestion.rawValue, terminator: " ")
-//guard let secondInput = readLine() else { fatalError(RacingCarError.playcarInputError.rawValue) }
-//
-//let racingInput = RacingInput(carCount: firstInput, roundCount: secondInput)
-//let racingGame = RacingGame(racing: racingInput)
-//racingGame.startRacing()
