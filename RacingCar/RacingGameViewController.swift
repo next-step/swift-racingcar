@@ -9,13 +9,15 @@ import Foundation
 import Combine
 
 class RacingCarInputView {
-    func inputCarCount() -> Int? {
-        print("자동차 대수는 몇 대인가요? ", terminator: "")
-        guard let carCount = Int(readLine() ?? "") else {
+    func inputCarNames() -> [RacingCarProtocol]? {
+        print("경주할 자동차 이름을 입력하세요(이름은 쉼표(,)를 기준으로 구분).", terminator: "")
+        guard let carNames = readLine()?.components(separatedBy: ",")
+        else {
             return nil
         }
         
-        return carCount
+        let racingCars = carNames.map({ RacingCar(name: $0) })
+        return racingCars
     }
     
     func inputTryCount() -> Int? {
@@ -46,13 +48,13 @@ class RacingGameViewController {
     private var storedSet = Set<AnyCancellable>()
     
     func load() {
-        guard let carCount = inputView.inputCarCount(),
+        guard let racingCars = inputView.inputCarNames(),
               let tryCount = inputView.inputTryCount()
         else {
             return
         }
         
-        viewModel = RacingGameViewModel(cars: setCarsForRacing(count: carCount))
+        viewModel = RacingGameViewModel(cars: racingCars)
         guard let viewModel = viewModel else { return }
         
         bind(viewModel)
@@ -62,16 +64,6 @@ class RacingGameViewController {
             print("===== racing \(index+1) =====")
             viewModel.startRacing()
         }
-    }
-    
-    private func setCarsForRacing(count: Int) -> [RacingCarProtocol] {
-        var cars = [RacingCar]()
-        
-        for _ in 0..<count {
-            cars.append(RacingCar())
-        }
-        
-        return cars
     }
     
     private func bind(_ viewModel: RacingGameViewModel) {

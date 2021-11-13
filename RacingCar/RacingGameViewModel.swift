@@ -50,15 +50,18 @@ class RacingGameViewModel: RacingGameMaterialProtocol, RacingGameOutputProtocol 
 
 protocol RacingCarProtocol {
     var position: Int { get }
+    var name: String { get }
     var forwardCondition: ClosedRange<Int> { get }
     func attemptForward(_ fuel: Int)
 }
 
 class RacingCar: RacingCarProtocol {
     var position: Int = 0
+    var name: String
     var forwardCondition: ClosedRange<Int>
     
-    init(forwardCondition: ClosedRange<Int> = (4...9)) {
+    init(name: String, forwardCondition: ClosedRange<Int> = (4...9)) {
+        self.name = name
         self.forwardCondition = forwardCondition
     }
     
