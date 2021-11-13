@@ -14,12 +14,6 @@ class RacingRecorderTest: XCTestCase {
     override func tearDownWithError() throws {
         self.store = nil
     }
-
-    func test_round_count() {
-        self.store = RacingRecorder(roundCount: 1)
-        store.appendResult(record: [])
-        XCTAssertEqual(store.roundCount, 0)
-    }
     
     func test_append_result() {
         self.store = RacingRecorder(roundCount: 2)

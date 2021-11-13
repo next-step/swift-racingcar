@@ -40,6 +40,7 @@
 		E0B3B1DB273F61150064AD21 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B3B1DA273F61150064AD21 /* TextView.swift */; };
 		E0B3B1DD273F66E10064AD21 /* RacingGameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B3B1DC273F66E10064AD21 /* RacingGameController.swift */; };
 		E0B3B1DF273F6B430064AD21 /* RacingResultPrinter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B3B1DE273F6B430064AD21 /* RacingResultPrinter.swift */; };
+		E0B3B1E0273F70C10064AD21 /* RacingResultPrinter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B3B1DE273F6B430064AD21 /* RacingResultPrinter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -312,6 +313,7 @@
 				E0A6BCC927329E8300CCB91F /* RacingRecorderTest.swift in Sources */,
 				E0055463272EB1AB00EA062F /* Step2_StringCalculator.swift in Sources */,
 				E0A6BCD22732A1EF00CCB91F /* RacingCarValidationCheck.swift in Sources */,
+				E0B3B1E0273F70C10064AD21 /* RacingResultPrinter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
