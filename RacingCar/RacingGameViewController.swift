@@ -10,7 +10,7 @@ import Combine
 
 class RacingCarInputView {
     func inputCarNames() -> [RacingCarProtocol]? {
-        print("경주할 자동차 이름을 입력하세요(이름은 쉼표(,)를 기준으로 구분).", terminator: "")
+        print("경주할 자동차 이름을 입력하세요(이름은 쉼표(,)를 기준으로 구분).")
         guard let carNames = readLine()?.components(separatedBy: ",")
         else {
             return nil
@@ -20,8 +20,8 @@ class RacingCarInputView {
         return racingCars
     }
     
-    func inputTryCount() -> Int? {
-        print("시도할 횟수는 몇 회인가요? ", terminator: "")
+    func inputAttemptCount() -> Int? {
+        print("시도할 횟수는 몇 회인가요? ")
         guard let tryCount = Int(readLine() ?? "") else {
             return nil
         }
@@ -54,27 +54,33 @@ class RacingGameViewController {
     
     func load() {
         guard let racingCars = inputView.inputCarNames(),
-              let tryCount = inputView.inputTryCount()
+              let attemptCount = inputView.inputAttemptCount()
         else {
             return
         }
         
-        viewModel = RacingGameViewModel(cars: racingCars)
+        bindViewModel(cars: racingCars)
+        printRacingResult(attemptCount: attemptCount)
+    }
+    
+    private func bindViewModel(cars: [RacingCarProtocol]) {
+        viewModel = RacingGameViewModel(cars: cars)
         guard let viewModel = viewModel else { return }
-        bind(viewModel)
+        
+        viewModel.carPositionPublisher
+            .sink(receiveValue: outputView.outputPrint(carPositions:))
+            .store(in: &storedSet)
+    }
+    
+    private func printRacingResult(attemptCount: Int) {
+        guard let viewModel = viewModel else { return }
         
         print("\n실행결과")
-        for index in 0..<tryCount {
+        for index in 0..<attemptCount {
             print("===== racing \(index+1) =====")
             viewModel.startRacing()
         }
         
         outputView.winnersPrint(viewModel.winners)
-    }
-    
-    private func bind(_ viewModel: RacingGameViewModel) {
-        viewModel.carPositionPublisher
-            .sink(receiveValue: outputView.outputPrint(carPositions:))
-            .store(in: &storedSet)
     }
 }
