@@ -31,6 +31,7 @@ extension RacingGameMaterialProtocol {
 
 protocol RacingGameOutputProtocol {
     var carPositionPublisher: AnyPublisher<[String], Never> { get }
+    var winners: [String] { get }
 }
 
 class RacingGameViewModel: RacingGameMaterialProtocol, RacingGameOutputProtocol {
@@ -44,6 +45,13 @@ class RacingGameViewModel: RacingGameMaterialProtocol, RacingGameOutputProtocol 
                 })
             })
             .eraseToAnyPublisher()
+    }
+    
+    var winners: [String] {
+        let cars = cars.sorted(by: { $0.position > $1.position })
+        let winnerPosition = cars[0].position
+        let winners = cars.filter { $0.position == winnerPosition }
+        return winners.map { $0.name }
     }
     
     init(cars: [RacingCarProtocol]) {
