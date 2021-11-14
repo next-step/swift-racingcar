@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		3C223ACB272AE7FF00302055 /* StringCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C223ACA272AE7FF00302055 /* StringCalculator.swift */; };
 		3CB537FE27298164005C33AE /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB537FD27298164005C33AE /* Calculator.swift */; };
-		3CB53806272981B0005C33AE /* RacingCarTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB53805272981B0005C33AE /* RacingCarTest.swift */; };
+		3CB53806272981B0005C33AE /* CalculatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB53805272981B0005C33AE /* CalculatorTest.swift */; };
 		3CB5380A272981EB005C33AE /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
 		3CB5380B272981EE005C33AE /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB537FD27298164005C33AE /* Calculator.swift */; };
 		3CC11E26272EBD640039FABA /* StringCalcuratorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC11E25272EBD640039FABA /* StringCalcuratorTest.swift */; };
@@ -34,7 +34,7 @@
 		3C223ACA272AE7FF00302055 /* StringCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringCalculator.swift; sourceTree = "<group>"; };
 		3CB537FD27298164005C33AE /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		3CB53803272981B0005C33AE /* RacingCarTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RacingCarTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3CB53805272981B0005C33AE /* RacingCarTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingCarTest.swift; sourceTree = "<group>"; };
+		3CB53805272981B0005C33AE /* CalculatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorTest.swift; sourceTree = "<group>"; };
 		3CC11E25272EBD640039FABA /* StringCalcuratorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringCalcuratorTest.swift; sourceTree = "<group>"; };
 		3CF1CBCC2741218D00BC514D /* RacingCar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingCar.swift; sourceTree = "<group>"; };
 		C7E1262C27239F7E0000DB8B /* RacingCar */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RacingCar; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,7 +62,7 @@
 		3CB53804272981B0005C33AE /* RacingCarTest */ = {
 			isa = PBXGroup;
 			children = (
-				3CB53805272981B0005C33AE /* RacingCarTest.swift */,
+				3CB53805272981B0005C33AE /* CalculatorTest.swift */,
 				3CC11E25272EBD640039FABA /* StringCalcuratorTest.swift */,
 			);
 			path = RacingCarTest;
@@ -196,10 +196,10 @@
 			files = (
 				3CC11E26272EBD640039FABA /* StringCalcuratorTest.swift in Sources */,
 				3CB5380A272981EB005C33AE /* main.swift in Sources */,
-				3CB53806272981B0005C33AE /* RacingCarTest.swift in Sources */,
+				3CB53806272981B0005C33AE /* CalculatorTest.swift in Sources */,
 				3CC11E28272EBDD00039FABA /* StringCalculator.swift in Sources */,
 				3CB5380A272981EB005C33AE /* main.swift in Sources */,
-				3CB53806272981B0005C33AE /* RacingCarTest.swift in Sources */,
+				3CB53806272981B0005C33AE /* CalculatorTest.swift in Sources */,
 				3CB5380B272981EE005C33AE /* Calculator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
