@@ -14,6 +14,7 @@
 		3CB5380B272981EE005C33AE /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB537FD27298164005C33AE /* Calculator.swift */; };
 		3CC11E26272EBD640039FABA /* StringCalcuratorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC11E25272EBD640039FABA /* StringCalcuratorTest.swift */; };
 		3CC11E28272EBDD00039FABA /* StringCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C223ACA272AE7FF00302055 /* StringCalculator.swift */; };
+		3CF1CBCD2741218D00BC514D /* RacingCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF1CBCC2741218D00BC514D /* RacingCar.swift */; };
 		C7E1263027239F7E0000DB8B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,9 +36,7 @@
 		3CB53803272981B0005C33AE /* RacingCarTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RacingCarTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CB53805272981B0005C33AE /* RacingCarTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingCarTest.swift; sourceTree = "<group>"; };
 		3CC11E25272EBD640039FABA /* StringCalcuratorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringCalcuratorTest.swift; sourceTree = "<group>"; };
-		3CB537FD27298164005C33AE /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
-		3CB53803272981B0005C33AE /* RacingCarTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RacingCarTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3CB53805272981B0005C33AE /* RacingCarTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingCarTest.swift; sourceTree = "<group>"; };
+		3CF1CBCC2741218D00BC514D /* RacingCar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingCar.swift; sourceTree = "<group>"; };
 		C7E1262C27239F7E0000DB8B /* RacingCar */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RacingCar; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E1262F27239F7E0000DB8B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -69,6 +68,14 @@
 			path = RacingCarTest;
 			sourceTree = "<group>";
 		};
+		3CC3E5AF273BAC2C0001532C /* Step3 */ = {
+			isa = PBXGroup;
+			children = (
+				3CF1CBCC2741218D00BC514D /* RacingCar.swift */,
+			);
+			path = Step3;
+			sourceTree = "<group>";
+		};
 		C7E1262327239F7E0000DB8B = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +97,7 @@
 		C7E1262E27239F7E0000DB8B /* RacingCar */ = {
 			isa = PBXGroup;
 			children = (
+				3CC3E5AF273BAC2C0001532C /* Step3 */,
 				C7E1262F27239F7E0000DB8B /* main.swift */,
 				3CB537FD27298164005C33AE /* Calculator.swift */,
 				3C223ACA272AE7FF00302055 /* StringCalculator.swift */,
@@ -200,6 +208,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CF1CBCD2741218D00BC514D /* RacingCar.swift in Sources */,
 				3C223ACB272AE7FF00302055 /* StringCalculator.swift in Sources */,
 				C7E1263027239F7E0000DB8B /* main.swift in Sources */,
 				3CB537FE27298164005C33AE /* Calculator.swift in Sources */,
