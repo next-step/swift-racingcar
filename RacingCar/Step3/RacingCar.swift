@@ -6,6 +6,16 @@
 //
 
 protocol RacingCarProtocol {
-    var index: Int { get }
-    func move()
+    var index: Int { get set }
+    mutating func move()
+}
+
+struct RacingCar: RacingCarProtocol {
+    var index: Int = 0
+}
+
+extension RacingCar {
+    mutating func move() {
+        index += 1
+    }
 }

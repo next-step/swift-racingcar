@@ -15,6 +15,8 @@
 		3CC11E26272EBD640039FABA /* StringCalcuratorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC11E25272EBD640039FABA /* StringCalcuratorTest.swift */; };
 		3CC11E28272EBDD00039FABA /* StringCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C223ACA272AE7FF00302055 /* StringCalculator.swift */; };
 		3CF1CBCD2741218D00BC514D /* RacingCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF1CBCC2741218D00BC514D /* RacingCar.swift */; };
+		511815322741D4280029CBBD /* RacingCarTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511815312741D4280029CBBD /* RacingCarTest.swift */; };
+		511815332741D5570029CBBD /* RacingCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF1CBCC2741218D00BC514D /* RacingCar.swift */; };
 		C7E1263027239F7E0000DB8B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +39,7 @@
 		3CB53805272981B0005C33AE /* CalculatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorTest.swift; sourceTree = "<group>"; };
 		3CC11E25272EBD640039FABA /* StringCalcuratorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringCalcuratorTest.swift; sourceTree = "<group>"; };
 		3CF1CBCC2741218D00BC514D /* RacingCar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingCar.swift; sourceTree = "<group>"; };
+		511815312741D4280029CBBD /* RacingCarTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingCarTest.swift; sourceTree = "<group>"; };
 		C7E1262C27239F7E0000DB8B /* RacingCar */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RacingCar; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E1262F27239F7E0000DB8B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -62,6 +65,7 @@
 		3CB53804272981B0005C33AE /* RacingCarTest */ = {
 			isa = PBXGroup;
 			children = (
+				511815302741D4180029CBBD /* Step3 */,
 				3CB53805272981B0005C33AE /* CalculatorTest.swift */,
 				3CC11E25272EBD640039FABA /* StringCalcuratorTest.swift */,
 			);
@@ -72,6 +76,14 @@
 			isa = PBXGroup;
 			children = (
 				3CF1CBCC2741218D00BC514D /* RacingCar.swift */,
+			);
+			path = Step3;
+			sourceTree = "<group>";
+		};
+		511815302741D4180029CBBD /* Step3 */ = {
+			isa = PBXGroup;
+			children = (
+				511815312741D4280029CBBD /* RacingCarTest.swift */,
 			);
 			path = Step3;
 			sourceTree = "<group>";
@@ -194,9 +206,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				511815322741D4280029CBBD /* RacingCarTest.swift in Sources */,
 				3CC11E26272EBD640039FABA /* StringCalcuratorTest.swift in Sources */,
 				3CB5380A272981EB005C33AE /* main.swift in Sources */,
 				3CB53806272981B0005C33AE /* CalculatorTest.swift in Sources */,
+				511815332741D5570029CBBD /* RacingCar.swift in Sources */,
 				3CC11E28272EBDD00039FABA /* StringCalculator.swift in Sources */,
 				3CB5380A272981EB005C33AE /* main.swift in Sources */,
 				3CB53806272981B0005C33AE /* CalculatorTest.swift in Sources */,
@@ -224,7 +238,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3A3ZRRH4GJ;
+				DEVELOPMENT_TEAM = J9BUFWVJN8;
 				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -246,7 +260,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3A3ZRRH4GJ;
+				DEVELOPMENT_TEAM = J9BUFWVJN8;
 				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -381,6 +395,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J9BUFWVJN8;
+				PRODUCT_BUNDLE_IDENTIFIER = com.effectiveSwfit.racingCar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -390,6 +406,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J9BUFWVJN8;
+				PRODUCT_BUNDLE_IDENTIFIER = com.effectiveSwfit.racingCar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
