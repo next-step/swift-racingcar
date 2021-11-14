@@ -12,15 +12,15 @@ final class CarsFactory {
         case notExistCar
     }
     
-    func makeCars(numberOfCars: Int) throws -> [Car] {
+    func makeCars(nameOfCars: [String], numberOfCars: Int) throws -> [Car] {
         var cars: [Car] = []
         
         guard checkValidCarState(numberOfCars: numberOfCars) else {
             throw CarsFactoryError.notExistCar
         }
         
-        for _ in 0 ..< numberOfCars {
-            cars.append(Car(position: GameOption.defaultPosition))
+        for carIndex in 0 ..< numberOfCars {
+            cars.append(Car(name: nameOfCars[carIndex], position: GameOption.defaultPosition))
         }
         
         return cars

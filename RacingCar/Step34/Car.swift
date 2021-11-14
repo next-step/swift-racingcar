@@ -8,9 +8,11 @@
 import Foundation
 
 final class Car {
+    private(set) var name: String
     private(set) var position: String
     
-    init(position: String = GameOption.defaultPosition) {
+    init(name: String, position: String = GameOption.defaultPosition) {
+        self.name = name
         self.position = position
     }
     
