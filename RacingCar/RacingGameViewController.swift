@@ -9,19 +9,25 @@ import Foundation
 import Combine
 
 class RacingCarInputView {
-    func inputCarCount() -> Int? {
-        print("자동차 대수는 몇 대인가요? ", terminator: "")
-        guard let carCount = Int(readLine() ?? "") else {
-            return nil
-        }
-        
-        return carCount
+    enum InputError: Error {
+        case invalidCarName
+        case invalidAttemptCount
     }
     
-    func inputTryCount() -> Int? {
-        print("시도할 횟수는 몇 회인가요? ", terminator: "")
+    func inputCarNames(separator: String) throws -> [String] {
+        print("경주할 자동차 이름을 입력하세요(이름은 쉼표(\(separator))를 기준으로 구분).")
+        guard let carNames = readLine()?.components(separatedBy: separator)
+        else {
+            throw InputError.invalidCarName
+        }
+        
+        return carNames
+    }
+    
+    func inputAttemptCount() throws -> Int {
+        print("시도할 횟수는 몇 회인가요? ")
         guard let tryCount = Int(readLine() ?? "") else {
-            return nil
+            throw InputError.invalidAttemptCount
         }
         
         return tryCount
@@ -36,6 +42,11 @@ class RacingCarOutputView {
         
         print()
     }
+    
+    func winnersPrint(_ winners: [String]) {
+        let winnersString = winners.joined(separator: ",")
+        print(winnersString + "가 최종 우승했습니다.")
+    }
 }
 
 class RacingGameViewController {
@@ -46,37 +57,42 @@ class RacingGameViewController {
     private var storedSet = Set<AnyCancellable>()
     
     func load() {
-        guard let carCount = inputView.inputCarCount(),
-              let tryCount = inputView.inputTryCount()
-        else {
-            return
+        do {
+            let carNames = try inputView.inputCarNames(separator: ",")
+            let attemptCount = try inputView.inputAttemptCount()
+            
+            let racingCars = factoryCars(with: carNames)
+            bindViewModel(cars: racingCars)
+            printRacingResult(attemptCount: attemptCount)
+        } catch {
+            print(error)
         }
-        
-        viewModel = RacingGameViewModel(cars: setCarsForRacing(count: carCount))
+    }
+    
+    private func bindViewModel(cars: [RacingCarProtocol]) {
+        viewModel = RacingGameViewModel(cars: cars)
         guard let viewModel = viewModel else { return }
         
-        bind(viewModel)
-        
-        print("\n실행결과")
-        for index in 0..<tryCount {
-            print("===== racing \(index+1) =====")
-            viewModel.startRacing()
-        }
-    }
-    
-    private func setCarsForRacing(count: Int) -> [RacingCarProtocol] {
-        var cars = [RacingCar]()
-        
-        for _ in 0..<count {
-            cars.append(RacingCar())
-        }
-        
-        return cars
-    }
-    
-    private func bind(_ viewModel: RacingGameViewModel) {
         viewModel.carPositionPublisher
             .sink(receiveValue: outputView.outputPrint(carPositions:))
             .store(in: &storedSet)
+    }
+    
+    private func printRacingResult(attemptCount: Int) {
+        guard let viewModel = viewModel else { return }
+        
+        print("\n실행결과")
+        for index in 0..<attemptCount {
+            print("===== racing \(index+1) =====")
+            viewModel.startRacing()
+        }
+        
+        outputView.winnersPrint(viewModel.winners)
+    }
+    
+    private func factoryCars(with names: [String]) -> [RacingCarProtocol] {
+        return names.map { name in
+            RacingCar(name: name)
+        }
     }
 }

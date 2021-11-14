@@ -9,8 +9,9 @@ import Foundation
 import Combine
 
 protocol RacingGameMaterialProtocol {
+    typealias CarInfo = (name: String, position: Int)
     var cars: [RacingCarProtocol] { get }
-    var carPositionSubject: PassthroughSubject<[Int], Never> { get }
+    var carInfoSubject: PassthroughSubject<[CarInfo], Never> { get }
     func startRacing()
 }
 
@@ -20,7 +21,7 @@ extension RacingGameMaterialProtocol {
             attemptForward(car: car, fuel: (0...9).randomElement() ?? 0)
         })
         
-        carPositionSubject.send(cars.map({ $0.position }))
+        carInfoSubject.send(cars.map({ ($0.name, $0.position) }))
     }
     
     private func attemptForward(car: RacingCarProtocol, fuel: Int) {
@@ -30,17 +31,27 @@ extension RacingGameMaterialProtocol {
 
 protocol RacingGameOutputProtocol {
     var carPositionPublisher: AnyPublisher<[String], Never> { get }
+    var winners: [String] { get }
 }
 
 class RacingGameViewModel: RacingGameMaterialProtocol, RacingGameOutputProtocol {
-    var carPositionSubject = PassthroughSubject<[Int], Never>()
+    var carInfoSubject = PassthroughSubject<[CarInfo], Never>()
     var cars: [RacingCarProtocol]
     var carPositionPublisher: AnyPublisher<[String], Never> {
-        return carPositionSubject
-            .map({ carPositions in
-                carPositions.map({ String.init(repeating: "_", count: $0) })
+        return carInfoSubject
+            .map({ carInfos in
+                carInfos.map({
+                    $0.name + " : " + String.init(repeating: "_", count: $0.position)
+                })
             })
             .eraseToAnyPublisher()
+    }
+    
+    var winners: [String] {
+        let cars = cars.sorted(by: { $0.position > $1.position })
+        let winnerPosition = cars[0].position
+        let winners = cars.filter { $0.position == winnerPosition }
+        return winners.map { $0.name }
     }
     
     init(cars: [RacingCarProtocol]) {
@@ -50,15 +61,18 @@ class RacingGameViewModel: RacingGameMaterialProtocol, RacingGameOutputProtocol 
 
 protocol RacingCarProtocol {
     var position: Int { get }
+    var name: String { get }
     var forwardCondition: ClosedRange<Int> { get }
     func attemptForward(_ fuel: Int)
 }
 
 class RacingCar: RacingCarProtocol {
     var position: Int = 0
+    var name: String
     var forwardCondition: ClosedRange<Int>
     
-    init(forwardCondition: ClosedRange<Int> = (4...9)) {
+    init(name: String, forwardCondition: ClosedRange<Int> = (4...9)) {
+        self.name = name
         self.forwardCondition = forwardCondition
     }
     

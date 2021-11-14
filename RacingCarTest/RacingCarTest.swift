@@ -12,7 +12,7 @@ class RacingCarTest: XCTestCase {
     var dummyRacingCar: StubRacingCar!
 
     override func setUpWithError() throws {
-        dummyRacingCar = StubRacingCar()
+        dummyRacingCar = StubRacingCar(name: "bmw")
     }
 
     override func tearDownWithError() throws {
