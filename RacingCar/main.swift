@@ -6,11 +6,13 @@
 
 import Foundation
 
-let userInput = readLine()
+//MARK: -- Step2
+//guard let userInput = userInput else { fatalError(CalculatorError.inputNil.description) }
+//guard userInput.isNotEmpty() else { fatalError(CalculatorError.emptyString.description) }
+//let calculator = StringCalculator(userInput: userInput)
+//let result = calculator.startStringCalculate()
+//print(result)
 
-guard let userInput = userInput else { fatalError(CalculatorError.inputNil.description) }
-guard userInput.isNotEmpty() else { fatalError(CalculatorError.emptyString.description) }
-
-let calculator = StringCalculator(userInput: userInput)
-let result = calculator.startStringCalculate()
-print(result)
+//MARK: -- Step3
+let racingController = RacingGameController()
+racingController.initGame()
