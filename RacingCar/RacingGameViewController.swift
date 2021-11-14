@@ -9,9 +9,9 @@ import Foundation
 import Combine
 
 class RacingCarInputView {
-    func inputCarNames() -> [RacingCarProtocol]? {
-        print("경주할 자동차 이름을 입력하세요(이름은 쉼표(,)를 기준으로 구분).")
-        guard let carNames = readLine()?.components(separatedBy: ",")
+    func inputCarNames(separator: String) -> [RacingCarProtocol]? {
+        print("경주할 자동차 이름을 입력하세요(이름은 쉼표(\(separator))를 기준으로 구분).")
+        guard let carNames = readLine()?.components(separatedBy: separator)
         else {
             return nil
         }
@@ -53,7 +53,7 @@ class RacingGameViewController {
     private var storedSet = Set<AnyCancellable>()
     
     func load() {
-        guard let racingCars = inputView.inputCarNames(),
+        guard let racingCars = inputView.inputCarNames(separator: ","),
               let attemptCount = inputView.inputAttemptCount()
         else {
             return
