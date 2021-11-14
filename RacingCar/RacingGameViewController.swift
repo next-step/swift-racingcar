@@ -9,21 +9,25 @@ import Foundation
 import Combine
 
 class RacingCarInputView {
-    func inputCarNames(separator: String) -> [RacingCarProtocol]? {
+    enum InputError: Error {
+        case invalidCarName
+        case invalidAttemptCount
+    }
+    
+    func inputCarNames(separator: String) throws -> [String] {
         print("경주할 자동차 이름을 입력하세요(이름은 쉼표(\(separator))를 기준으로 구분).")
         guard let carNames = readLine()?.components(separatedBy: separator)
         else {
-            return nil
+            throw InputError.invalidCarName
         }
         
-        let racingCars = carNames.map({ RacingCar(name: $0) })
-        return racingCars
+        return carNames
     }
     
-    func inputAttemptCount() -> Int? {
+    func inputAttemptCount() throws -> Int {
         print("시도할 횟수는 몇 회인가요? ")
         guard let tryCount = Int(readLine() ?? "") else {
-            return nil
+            throw InputError.invalidAttemptCount
         }
         
         return tryCount
@@ -53,14 +57,16 @@ class RacingGameViewController {
     private var storedSet = Set<AnyCancellable>()
     
     func load() {
-        guard let racingCars = inputView.inputCarNames(separator: ","),
-              let attemptCount = inputView.inputAttemptCount()
-        else {
-            return
+        do {
+            let carNames = try inputView.inputCarNames(separator: ",")
+            let attemptCount = try inputView.inputAttemptCount()
+            
+            let racingCars = factoryCars(with: carNames)
+            bindViewModel(cars: racingCars)
+            printRacingResult(attemptCount: attemptCount)
+        } catch {
+            print(error)
         }
-        
-        bindViewModel(cars: racingCars)
-        printRacingResult(attemptCount: attemptCount)
     }
     
     private func bindViewModel(cars: [RacingCarProtocol]) {
@@ -82,5 +88,11 @@ class RacingGameViewController {
         }
         
         outputView.winnersPrint(viewModel.winners)
+    }
+    
+    private func factoryCars(with names: [String]) -> [RacingCarProtocol] {
+        return names.map { name in
+            RacingCar(name: name)
+        }
     }
 }
