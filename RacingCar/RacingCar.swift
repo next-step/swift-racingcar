@@ -7,16 +7,6 @@
 
 import Foundation
 
-struct ResultView {
-    
-    static func showResult(cars: [Car]) {
-        for i in 0..<cars.count {
-            cars[i].printDistance()
-        }
-        print()
-    }
-}
-
 struct RacingCar {
         
     var cars: [Car] = []

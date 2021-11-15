@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6F4E60632742AA93005A03F0 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4E60622742AA93005A03F0 /* InputView.swift */; };
+		6F4E60652742AD80005A03F0 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4E60642742AD80005A03F0 /* ResultView.swift */; };
 		6FDADDE4272964600026E533 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
 		6FDADDF22731910D0026E533 /* RacingCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDADDF12731910D0026E533 /* RacingCar.swift */; };
 		6FDADDF427319A430026E533 /* RacingCarTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDADDDE272964470026E533 /* RacingCarTest.swift */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		6F4E60622742AA93005A03F0 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		6F4E60642742AD80005A03F0 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		6FDADDDC272964470026E533 /* RacingCarTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RacingCarTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FDADDDE272964470026E533 /* RacingCarTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingCarTest.swift; sourceTree = "<group>"; };
 		6FDADDE0272964470026E533 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				C7E1262F27239F7E0000DB8B /* main.swift */,
 				6FDADDE5272C26FE0026E533 /* Calculator.swift */,
 				6FDADDF12731910D0026E533 /* RacingCar.swift */,
+				6F4E60642742AD80005A03F0 /* ResultView.swift */,
 				6F4E60622742AA93005A03F0 /* InputView.swift */,
 			);
 			path = RacingCar;
@@ -196,6 +199,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6F4E60632742AA93005A03F0 /* InputView.swift in Sources */,
+				6F4E60652742AD80005A03F0 /* ResultView.swift in Sources */,
 				C7E1263027239F7E0000DB8B /* main.swift in Sources */,
 				6FDADDF22731910D0026E533 /* RacingCar.swift in Sources */,
 			);
