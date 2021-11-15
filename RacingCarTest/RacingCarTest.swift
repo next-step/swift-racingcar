@@ -16,7 +16,7 @@ class RacingCarTest: XCTestCase {
         let inputValue = 10
         racingCar.genereteCar(input: inputValue)
         
-        XCTAssertEqual(racingCar.cars?.count, inputValue)
+        XCTAssertEqual(racingCar.cars.count, inputValue)
     }
     
     /// 전진하는 조건에 따라 자동차가 움직였는지 테스트
