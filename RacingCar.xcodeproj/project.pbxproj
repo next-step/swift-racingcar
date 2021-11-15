@@ -20,6 +20,9 @@
 		511815352741D7570029CBBD /* Racer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511815342741D7570029CBBD /* Racer.swift */; };
 		511815362741D7570029CBBD /* Racer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511815342741D7570029CBBD /* Racer.swift */; };
 		511815382741DB8B0029CBBD /* RacerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511815372741DB8B0029CBBD /* RacerTest.swift */; };
+		5118153F2741E5050029CBBD /* Referee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5118153E2741E5050029CBBD /* Referee.swift */; };
+		511815402741E5050029CBBD /* Referee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5118153E2741E5050029CBBD /* Referee.swift */; };
+		511815422741E6E10029CBBD /* RefereeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511815412741E6E10029CBBD /* RefereeTest.swift */; };
 		C7E1263027239F7E0000DB8B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +48,8 @@
 		511815312741D4280029CBBD /* RacingCarTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingCarTest.swift; sourceTree = "<group>"; };
 		511815342741D7570029CBBD /* Racer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Racer.swift; sourceTree = "<group>"; };
 		511815372741DB8B0029CBBD /* RacerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacerTest.swift; sourceTree = "<group>"; };
+		5118153E2741E5050029CBBD /* Referee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Referee.swift; sourceTree = "<group>"; };
+		511815412741E6E10029CBBD /* RefereeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefereeTest.swift; sourceTree = "<group>"; };
 		C7E1262C27239F7E0000DB8B /* RacingCar */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RacingCar; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E1262F27239F7E0000DB8B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -82,6 +87,7 @@
 			children = (
 				3CF1CBCC2741218D00BC514D /* RacingCar.swift */,
 				511815342741D7570029CBBD /* Racer.swift */,
+				5118153E2741E5050029CBBD /* Referee.swift */,
 			);
 			path = Step3;
 			sourceTree = "<group>";
@@ -91,6 +97,7 @@
 			children = (
 				511815312741D4280029CBBD /* RacingCarTest.swift */,
 				511815372741DB8B0029CBBD /* RacerTest.swift */,
+				511815412741E6E10029CBBD /* RefereeTest.swift */,
 			);
 			path = Step3;
 			sourceTree = "<group>";
@@ -215,6 +222,7 @@
 			files = (
 				511815322741D4280029CBBD /* RacingCarTest.swift in Sources */,
 				511815362741D7570029CBBD /* Racer.swift in Sources */,
+				511815402741E5050029CBBD /* Referee.swift in Sources */,
 				3CC11E26272EBD640039FABA /* StringCalcuratorTest.swift in Sources */,
 				3CB5380A272981EB005C33AE /* main.swift in Sources */,
 				3CB53806272981B0005C33AE /* CalculatorTest.swift in Sources */,
@@ -223,6 +231,7 @@
 				3CB5380A272981EB005C33AE /* main.swift in Sources */,
 				3CB53806272981B0005C33AE /* CalculatorTest.swift in Sources */,
 				511815382741DB8B0029CBBD /* RacerTest.swift in Sources */,
+				511815422741E6E10029CBBD /* RefereeTest.swift in Sources */,
 				3CB5380B272981EE005C33AE /* Calculator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -233,6 +242,7 @@
 			files = (
 				3CF1CBCD2741218D00BC514D /* RacingCar.swift in Sources */,
 				511815352741D7570029CBBD /* Racer.swift in Sources */,
+				5118153F2741E5050029CBBD /* Referee.swift in Sources */,
 				3C223ACB272AE7FF00302055 /* StringCalculator.swift in Sources */,
 				C7E1263027239F7E0000DB8B /* main.swift in Sources */,
 				3CB537FE27298164005C33AE /* Calculator.swift in Sources */,
