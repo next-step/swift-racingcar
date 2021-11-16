@@ -49,4 +49,14 @@ class RacingTrackTest: XCTestCase {
             XCTAssertEqual(RacingTrack.SetupGameError.wrongNumberOfTrys, error as! RacingTrack.SetupGameError)
         }
     }
+    
+    func test_StartGame() {
+        let exceptation = XCTestExpectation(description: "SetupGame Exceptation")
+        try? racingTrack.setupGame { cars, trys in
+            racingTrack.startGame(cars: cars, trys: trys)
+            exceptation.fulfill()
+        }
+        
+        wait(for: [exceptation], timeout: 1.0)
+    }
 }

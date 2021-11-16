@@ -39,13 +39,16 @@ extension RacingTrack {
     func startGame(cars: [(RacerPtorocol, RacingCarProtocol)], trys: Int) {
         var cars = cars
         
+        print("실행 결과")
         for _ in 0..<trys {
             cars.enumerated().forEach {
                 var car = $0.element
                 let dice = car.0.throwDice()
                 if referee.judge(dice) { car.1.move() }
                 cars[$0.offset] = car
+                viewRaceStatus(car.1)
             }
+            print("")
         }
     }
 }
@@ -60,5 +63,10 @@ extension RacingTrack {
             cars.append((racer, racingCar))
         }
         return cars
+    }
+    
+    private func viewRaceStatus(_ car: RacingCarProtocol) {
+        let currentIndex: String = String(repeating: "🚗", count: car.index+1)
+        print(currentIndex)
     }
 }
