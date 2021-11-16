@@ -20,14 +20,9 @@ class RacerTest: XCTestCase {
     
     func test_ThrowDice() {
         var result: Int?
-        let exceptation = XCTestExpectation(description: "Dice Throw Exceptation")
         
-        racer.throwDice { value in
-            result = value
-            exceptation.fulfill()
-        }
+        result = racer.throwDice()
         
-        wait(for: [exceptation], timeout: 1.0)
         XCTAssertTrue((0...9).contains(result!))
     }
 }

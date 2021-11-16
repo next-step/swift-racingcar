@@ -6,11 +6,11 @@
 //
 
 protocol RacerPtorocol {
-    func throwDice(completionHandler: ((Int) -> Void))
+    func throwDice() -> Int
 }
 
 struct Racer: RacerPtorocol {
-    func throwDice(completionHandler: ((Int) -> Void)) {
-        completionHandler(Int.random(in: 0...9))
+    func throwDice() -> Int {
+        return Int.random(in: 0...9)
     }
 }

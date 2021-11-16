@@ -6,11 +6,11 @@
 //
 
 protocol RefereeProtocol {
-    func judge(_ value: Int, completionHandler: ((Bool) -> Void))
+    func judge(_ value: Int) -> Bool
 }
 
 struct Referee: RefereeProtocol {
-    func judge(_ value: Int, completionHandler: ((Bool) -> Void)) {
-        completionHandler((0...4).contains(value))
+    func judge(_ value: Int) -> Bool {
+        return (0...4).contains(value)
     }
 }

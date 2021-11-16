@@ -21,12 +21,8 @@ class RefereeTest: XCTestCase {
     func test_Judge_True() {
         let value = 3
         var result: Bool = false
-        let exceptation = XCTestExpectation(description: "Judge Exceptation")
         
-        refree.judge(value) { bool in
-            result = bool
-            exceptation.fulfill()
-        }
+        result = refree.judge(value)
         
         XCTAssertTrue(result)
     }
@@ -34,12 +30,8 @@ class RefereeTest: XCTestCase {
     func test_Judge_False() {
         let value = 5
         var result: Bool = false
-        let exceptation = XCTestExpectation(description: "Judge Exceptation")
         
-        refree.judge(value) { bool in
-            result = bool
-            exceptation.fulfill()
-        }
+        result = refree.judge(value)
         
         XCTAssertFalse(result)
     }

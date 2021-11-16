@@ -36,9 +36,7 @@ class RacingTrackTest: XCTestCase {
     
     func test_SetupGame_WrongNumberOfCars() {
         do {
-            try racingTrack.setupGame { cars, trys in
-         
-            }
+            try racingTrack.setupGame { cars, trys in }
         } catch {
             XCTAssertEqual(RacingTrack.SetupGameError.wrongNumberOfCars, error as! RacingTrack.SetupGameError)
         }
@@ -46,9 +44,7 @@ class RacingTrackTest: XCTestCase {
     
     func test_SetupGame_WrongNumberOfTrys() {
         do {
-            try racingTrack.setupGame { cars, trys in
-         
-            }
+            try racingTrack.setupGame { cars, trys in }
         } catch {
             XCTAssertEqual(RacingTrack.SetupGameError.wrongNumberOfTrys, error as! RacingTrack.SetupGameError)
         }

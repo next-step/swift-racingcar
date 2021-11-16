@@ -7,7 +7,7 @@
 
 protocol RacingTrackProtocol {
     func setupGame(completionHandler: (([(RacerPtorocol, RacingCarProtocol)], Int) -> Void)) throws
-    func startGame()
+    func startGame(cars: [(RacerPtorocol, RacingCarProtocol)], trys: Int)
 }
 
 struct RacingTrack: RacingTrackProtocol {
@@ -36,8 +36,17 @@ extension RacingTrack {
         completionHandler(racingCars, trys)
     }
     
-    func startGame() {
+    func startGame(cars: [(RacerPtorocol, RacingCarProtocol)], trys: Int) {
+        var cars = cars
         
+        for _ in 0..<trys {
+            cars.enumerated().forEach {
+                var car = $0.element
+                let dice = car.0.throwDice()
+                if referee.judge(dice) { car.1.move() }
+                cars[$0.offset] = car
+            }
+        }
     }
 }
 
