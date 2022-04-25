@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A5DFDBCB2816CD6400F5C849 /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DFDBCA2816CD6400F5C849 /* StringTests.swift */; };
+		A5DFDBD02816D48900F5C849 /* SetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DFDBCF2816D48900F5C849 /* SetTests.swift */; };
 		C7E1263027239F7E0000DB8B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +27,7 @@
 /* Begin PBXFileReference section */
 		A5DFDBC82816CD6400F5C849 /* LearningTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LearningTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5DFDBCA2816CD6400F5C849 /* StringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTests.swift; sourceTree = "<group>"; };
+		A5DFDBCF2816D48900F5C849 /* SetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTests.swift; sourceTree = "<group>"; };
 		C7E1262C27239F7E0000DB8B /* RacingCar */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RacingCar; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E1262F27239F7E0000DB8B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -52,6 +54,7 @@
 			isa = PBXGroup;
 			children = (
 				A5DFDBCA2816CD6400F5C849 /* StringTests.swift */,
+				A5DFDBCF2816D48900F5C849 /* SetTests.swift */,
 			);
 			path = LearningTest;
 			sourceTree = "<group>";
@@ -171,6 +174,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5DFDBD02816D48900F5C849 /* SetTests.swift in Sources */,
 				A5DFDBCB2816CD6400F5C849 /* StringTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
