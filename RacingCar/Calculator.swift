@@ -7,11 +7,15 @@
 
 import Foundation
 
-class Calculator {
+class Calculator: Calculable {
     private var number: Int
     
     init(number: Int = 0) {
         self.number = number
+    }
+    
+    func calculated() -> Int {
+        self.number
     }
     
     func add(left leftNumber: Int, right rightNumber: Int) {
