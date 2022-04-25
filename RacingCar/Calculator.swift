@@ -34,3 +34,17 @@ class Calculator: Calculable {
         self.number = leftNumber/rightNumber
     }
 }
+
+private extension Calculator {
+    func generateCalcOperator(stringOperator: String) -> CalcOperator {
+        if stringOperator == "+" { return .add }
+        if stringOperator == "-" { return .subtract }
+        if stringOperator == "*" { return .multiply }
+        if stringOperator == "/" { return .divide }
+        return .none
+    }
+    
+    func splitCalcExpression(_ expression: String) -> [String] {
+        expression.components(separatedBy: " ")
+    }
+}
