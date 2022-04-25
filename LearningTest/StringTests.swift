@@ -9,14 +9,12 @@ import XCTest
 
 class StringTests: XCTestCase {
     
-    
-
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        
     }
 
     func testSplitTwoWordsBySeperator() {
@@ -29,6 +27,15 @@ class StringTests: XCTestCase {
         let sut = "1,"
         let converted = sut.split(separator: ",")
         XCTAssertEqual(converted, ["1"])
+    }
+    
+    func testSplitTwoWordsBySeperatorWithParentheses() {
+        let sut = "(1,2)"
+        let converted = sut
+            .replacingOccurrences(of: "(", with: "")
+            .replacingOccurrences(of: ")", with: "")
+            .split(separator: ",")
+        XCTAssertEqual(converted, ["1", "2"])
     }
 
 }
