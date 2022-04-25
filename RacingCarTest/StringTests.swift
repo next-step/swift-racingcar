@@ -34,4 +34,19 @@ class StringTests: XCTestCase {
         let expectation: [String.SubSequence] = ["1"]
         XCTAssert(result == expectation)
     }
+
+    func test_relacingOccurences_whenRegexIsGiven_replaceWithDesiredString() throws {
+        // given
+        let input = "(1,2)"
+       
+        // when
+        let regex = "[\\(\\)]"
+        let replacement = ""
+        let result = input.replacingOccurrences(of: regex,
+                                                with: replacement,
+                                                options: .regularExpression)
+        // then
+        let expectation = "1,2"
+        XCTAssert(result == expectation)
+    }
 }
