@@ -1,13 +1,13 @@
 //
-//  RacingCarTest.swift
-//  RacingCarTest
+//  CollectionTest.swift
+//  CollectionTest
 //
 //  Created by 카카오VX on 2022/04/25.
 //
 
 import XCTest
 
-class RacingCarTest: XCTestCase {
+class CollectionTest: XCTestCase {
     private var numbers: Set<Int> = []
     
     override func setUpWithError() throws {
@@ -45,7 +45,7 @@ class RacingCarTest: XCTestCase {
     }
 }
 
-private extension RacingCarTest {
+private extension CollectionTest {
     func splitString(_ target: String) -> [String] {
         let stringWithBracketRemoved = target.replacingOccurrences(of: "()", with: "")
         return stringWithBracketRemoved.components(separatedBy: ",")
