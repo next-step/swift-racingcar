@@ -8,12 +8,22 @@
 import XCTest
 
 class RacingCarTest: XCTestCase {
+    private var numbers: Set<Int> = []
+    
     override func setUpWithError() throws {
-        
+        numbers.removeAll()
+        numbers.insert(1)
+        numbers.insert(1)
+        numbers.insert(2)
+        numbers.insert(3)
     }
 
     override func tearDownWithError() throws {
         
+    }
+    
+    func testCountSetNumbers() {
+        XCTAssertEqual(numbers.count, 3)
     }
 
     func testPerformanceExample() throws {
