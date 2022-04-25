@@ -26,10 +26,10 @@ class StringTests: XCTestCase {
     func testConvertOneWordWithSeperator() {
         let sut = "1,"
         let converted = sut.split(separator: ",")
-        XCTAssertEqual(converted, ["1"])
+        XCTAssert(converted == ["1"])
     }
     
-    func testSplitTwoWordsBySeperatorWithParentheses() {
+    func testSplitTwoWordsWithParenthesesBySeperator() {
         let sut = "(1,2)"
         let converted = sut
             .replacingOccurrences(of: "(", with: "")
