@@ -6,7 +6,9 @@
 //
 
 protocol Calculable {
+    func calculate(expression: String)
     func calculated() -> Int
+    func reset()
     func add(left leftNumber: Int, right rightNumber: Int)
     func subtract(left leftNumber: Int, right rightNumber: Int)
     func multiply(left leftNumber: Int, right rightNumber: Int)
