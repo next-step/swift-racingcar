@@ -10,6 +10,7 @@
 		AA114D17281849F500DD14D2 /* RacingCarTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA114D16281849F500DD14D2 /* RacingCarTest.swift */; };
 		AA114D1C28184A5700DD14D2 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
 		AA114D1E2818510200DD14D2 /* StringTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA114D1D2818510200DD14D2 /* StringTest.swift */; };
+		AA114D20281859E900DD14D2 /* SetTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA114D1F281859E900DD14D2 /* SetTest.swift */; };
 		C7E1263027239F7E0000DB8B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		AA114D14281849F500DD14D2 /* RacingCarTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RacingCarTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA114D16281849F500DD14D2 /* RacingCarTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingCarTest.swift; sourceTree = "<group>"; };
 		AA114D1D2818510200DD14D2 /* StringTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTest.swift; sourceTree = "<group>"; };
+		AA114D1F281859E900DD14D2 /* SetTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTest.swift; sourceTree = "<group>"; };
 		C7E1262C27239F7E0000DB8B /* RacingCar */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RacingCar; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E1262F27239F7E0000DB8B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -56,6 +58,7 @@
 			children = (
 				AA114D16281849F500DD14D2 /* RacingCarTest.swift */,
 				AA114D1D2818510200DD14D2 /* StringTest.swift */,
+				AA114D1F281859E900DD14D2 /* SetTest.swift */,
 			);
 			path = RacingCarTest;
 			sourceTree = "<group>";
@@ -175,6 +178,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA114D20281859E900DD14D2 /* SetTest.swift in Sources */,
 				AA114D1C28184A5700DD14D2 /* main.swift in Sources */,
 				AA114D17281849F500DD14D2 /* RacingCarTest.swift in Sources */,
 				AA114D1E2818510200DD14D2 /* StringTest.swift in Sources */,
