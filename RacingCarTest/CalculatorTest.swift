@@ -76,7 +76,8 @@ class CalculatorTest: XCTestCase {
     
     func testExecuteCalulator() {
         calculator.reset()
-        calculator.execute(expression: "2 + 3 * 4 / 2")
+        
+        XCTAssertNoThrow(try calculator.execute(expression: "2 + 3 * 4 / 2"))
         let calculated = calculator.calculated()
         
         XCTAssertEqual(calculated, 10)
@@ -88,5 +89,21 @@ class CalculatorTest: XCTestCase {
         
         XCTAssertEqual(splitedCalcExpression.count, 3)
         XCTAssertEqual(splitedCalcExpression.stack, ["2", "+", "3", "*", "4", "/", "2"])
+    }
+    
+    func testUnSupportedOperator() {
+        calculator.reset()
+        XCTAssertThrowsError(try calculator.isValideCalcOperator(input: "2 + 3 ^ 4 / 2"))
+    }
+    
+    func testSupportedOperator() {
+        calculator.reset()
+        XCTAssertNoThrow(try calculator.isValideCalcOperator(input: "2 + 3 * 4 / 2"))
+    }
+    
+    func testNoInput() {
+        calculator.reset()
+        XCTAssertThrowsError(try calculator.isValideInput(input: ""))
+        XCTAssertThrowsError(try calculator.isValideInput(input: " "))
     }
 }
