@@ -6,10 +6,12 @@
 //
 
 import XCTest
+
 /*
  MARK: Set Collection에 대한 학습 테스트
  - Set의 count 프로퍼티를 활용해 Set에 포함된 요소의 갯수를 확인하는 학습테스트를 구현합니다.
  */
+
 class SetTests: XCTestCase {
     
     private var numbers: Set<Int> = []
