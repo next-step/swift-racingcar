@@ -89,8 +89,4 @@ private extension Calculator {
         if stringOperator == "/" { return .divide }
         return .none
     }
-    
-    func splitCalcExpression(_ expression: String) -> [String] {
-        expression.components(separatedBy: " ")
-    }
 }
