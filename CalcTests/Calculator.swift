@@ -5,4 +5,20 @@
 //  Created by ycsong on 2022/04/26.
 //
 
-import Foundation
+struct Calculator {
+    func add(_ lhs: Int, _ rhs: Int) -> Int {
+        return lhs + rhs
+    }
+    
+    func subtract(_ lhs: Int, _ rhs: Int) -> Int {
+        return lhs - rhs
+    }
+    
+    func multiply(_ lhs: Int, _ rhs: Int) -> Int {
+        return lhs * rhs
+    }
+    
+    func divide(_ lhs: Int, _ rhs: Int) -> Int {
+        return lhs / rhs
+    }
+}
