@@ -87,7 +87,7 @@ extension CalcTests {
         }
     }
     
-    func getExpression(_ idx:Int, _ expArr: Array<String>) throws -> (operation: CalcOperation, rhs: Int) {
+    func getExpression(_ idx: Int, _ expArr: Array<String>) throws -> (operation: CalcOperation, rhs: Int) {
         if let operation = CalcOperation(rawValue: expArr[idx + 1]),
            let rhs = Int(expArr[idx + 2]) {
             return (operation, rhs)
