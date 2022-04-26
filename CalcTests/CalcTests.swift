@@ -27,8 +27,13 @@ class CalcTests: XCTestCase {
     }
     
     func testDivide() throws {
-        let result = calc.divide(10, 2)
+        let result = try calc.divide(10, 2)
         XCTAssertEqual(result, 5)
     }
-
+    
+    func testZeroDivide() throws {
+        let result = try calc.divide(10, 0)
+        XCTAssertEqual(result, 0)
+    }
+    
 }
