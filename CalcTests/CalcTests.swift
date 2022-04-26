@@ -87,19 +87,20 @@ extension CalcTests {
         }
     }
     
-    func calcResult(_ arr: Array<String>) throws -> Int {
-        if var result = Int(arr[0]) {
-            for i in stride(from: 0, to: arr.count - 2, by: 2) {
-                if let operation = CalcOperation(rawValue: arr[i + 1]),
-                   let rhs = Int(arr[i + 2]) {
-                    if isInvalidOperation(operation.rawValue) {
-                        throw CalcError.invalidOperation
-                    }
-                    
-                    result = try calculate(result, operation, rhs)
-                } else {
-                    throw CalcError.invalidExpression
-                }
+    func getExpression(_ idx:Int, _ expArr: Array<String>) throws -> (operation: CalcOperation, rhs: Int) {
+        if let operation = CalcOperation(rawValue: expArr[idx + 1]),
+           let rhs = Int(expArr[idx + 2]) {
+            return (operation, rhs)
+        } else {
+            throw CalcError.invalidExpression
+        }
+    }
+    
+    func calcResult(_ expArr: Array<String>) throws -> Int {
+        if var result = Int(expArr[0]) {
+            for i in stride(from: 0, to: expArr.count - 2, by: 2) {
+                let exp = try getExpression(i, expArr)
+                result = try calculate(result, exp.operation, exp.rhs)
             }
             return result
         } else {
