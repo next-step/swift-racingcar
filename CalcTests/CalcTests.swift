@@ -42,6 +42,11 @@ class CalcTests: XCTestCase {
         }
     }
     
+    func testCheckOperation() throws {
+        if isInvalidOperation("(") {
+            throw CalcError.invalidOperation
+        }
+    }
 }
 
 extension CalcTests {
@@ -50,5 +55,9 @@ extension CalcTests {
             return str.isEmpty
         }
         return true
+    }
+    
+    func isInvalidOperation(_ operation: String?) -> Bool {
+        return isEmpty(CalcOperation(rawValue: operation ?? "")?.rawValue)
     }
 }
