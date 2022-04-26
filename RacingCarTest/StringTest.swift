@@ -36,4 +36,18 @@ class StringTest: XCTestCase {
         // then
         XCTAssertEqual(result, ["1"], "separator가 포함되지 않은 문자열을 split으로 쪼갠 결과가 잘못됨")
     }
+    
+    func test_replace_split_whenContain제거되어야할문자와구분자_thenGetReplacedSeparatedArray() throws {
+        // given
+        let string = "(1,2)"
+        
+        // when
+        let result = string
+            .replacingOccurrences(of: "(", with: "")
+            .replacingOccurrences(of: ")", with: "")
+            .split(separator: ",")
+        
+        // then
+        XCTAssertEqual(result, ["1", "2"], "replacingOccurrences와 split을 진행한 결과가 잘못됨")
+    }
 }
