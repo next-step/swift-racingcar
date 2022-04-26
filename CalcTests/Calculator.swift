@@ -13,6 +13,7 @@ enum CalcOperation: String {
 }
 
 enum CalcError: Error {
+    case zeroOrNagativeDivide
     case nilOrEmpty
     case invalidOperation
     case invalidExpression
@@ -31,7 +32,10 @@ struct Calculator {
         return lhs * rhs
     }
     
-    func divide(_ lhs: Int, _ rhs: Int) -> Int {
+    func divide(_ lhs: Int, _ rhs: Int) throws -> Int {
+        if rhs < 1 {
+            throw CalcError.zeroOrNagativeDivide
+        }
         return lhs / rhs
     }
 }
