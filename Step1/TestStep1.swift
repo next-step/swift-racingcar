@@ -33,3 +33,23 @@ class TestStep1: XCTestCase {
     
     
 }
+
+
+class SetTests: XCTestCase {
+    private var numbers: Set<Int> = []
+    
+    override func setUpWithError() throws {
+        numbers.removeAll()
+        numbers.insert(1)
+        numbers.insert(1)
+        numbers.insert(2)
+        numbers.insert(3)
+    }
+    
+    // Test Case 구현
+    func test_set에_포함된_요소의_갯수_확인() {
+        XCTAssertTrue(numbers.count == 3)
+        XCTAssertEqual(numbers.count, 3)
+        XCTAssertGreaterThan(numbers.count, 2)
+    }
+}
