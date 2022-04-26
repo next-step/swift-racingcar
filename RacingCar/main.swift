@@ -6,3 +6,11 @@
 
 import Foundation
 
+
+
+print(StringCaculator().splitString(to: "(1,2)", separator: ","))
+
+
+
+
+   
