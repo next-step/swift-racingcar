@@ -56,18 +56,28 @@ class Calculator: Calculable {
     
     func add(left leftNumber: Int, right rightNumber: Int) {
         self.number = leftNumber+rightNumber
+        self.stack.insert(String(self.number), at: 0)
     }
     
     func subtract(left leftNumber: Int, right rightNumber: Int) {
         self.number = leftNumber-rightNumber
+        self.stack.insert(String(self.number), at: 0)
     }
     
     func multiply(left leftNumber: Int, right rightNumber: Int) {
         self.number = leftNumber*rightNumber
+        self.stack.insert(String(self.number), at: 0)
     }
     
     func divide(left leftNumber: Int, right rightNumber: Int) {
         self.number = leftNumber/rightNumber
+        self.stack.insert(String(self.number), at: 0)
+    }
+    
+    func splitCalcExpression(_ expression: String) -> (stack: [String], count: Int) {
+        let stack = expression.components(separatedBy: " ")
+        let operaatorCount = expression.components(separatedBy: " ").count/2
+        return (stack, operaatorCount)
     }
 }
 
