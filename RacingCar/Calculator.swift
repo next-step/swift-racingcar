@@ -11,9 +11,15 @@ class Calculator: Calculable {
     private var number: Int
     private var stack: [String]
     private var count: Int
+    private let characterSet = CharacterSet(charactersIn: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ~!@#$%^&()_-=")
     
     enum CalcOperator {
         case add, subtract, multiply, divide, none
+    }
+    
+    enum CalcError: Error {
+        case unSuppotedOperator
+        case noInput
     }
     
     init(number: Int = 0, stack: [String] = [], count: Int = 0) {
@@ -22,7 +28,12 @@ class Calculator: Calculable {
         self.count = count
     }
     
-    func execute(expression: String) {
+    func execute(expression: String) throws {
+        do {
+            try self.isValideCalcOperator(input: expression)
+            try self.isValideInput(input: expression)
+        }
+        
         let splitedCalcExpression = self.splitCalcExpression(expression)
         self.stack = splitedCalcExpression.stack
         self.count = splitedCalcExpression.count
@@ -78,6 +89,16 @@ class Calculator: Calculable {
         let stack = expression.components(separatedBy: " ")
         let operaatorCount = expression.components(separatedBy: " ").count/2
         return (stack, operaatorCount)
+    }
+    
+    func isValideCalcOperator(input stringOperators: String) throws {
+        if stringOperators.rangeOfCharacter(from: characterSet) != nil {
+            throw CalcError.unSuppotedOperator
+        }
+    }
+    
+    func isValideInput(input expression: String) throws {
+        if expression.isEmpty || expression == " " { throw CalcError.noInput }
     }
 }
 
