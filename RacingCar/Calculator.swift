@@ -22,13 +22,21 @@ class Calculator: Calculable {
         self.count = count
     }
     
-    func calculate(expression: String) {
-        self.stack = self.splitCalcExpression(expression)
+    func execute(expression: String) {
+        let splitedCalcExpression = self.splitCalcExpression(expression)
+        self.stack = splitedCalcExpression.stack
+        self.count = splitedCalcExpression.count
         
-        let leftNumber = Int(stack.removeFirst()) ?? 0
-        let `operator` = self.generateCalcOperator(stringOperator: stack.removeFirst())
-        let rightNumber = Int(stack.removeFirst()) ?? 0
-        
+        for _ in 0..<count {
+            let leftNumber = Int(stack.removeFirst()) ?? 0
+            let `operator` = self.generateCalcOperator(stringOperator: stack.removeFirst())
+            let rightNumber = Int(stack.removeFirst()) ?? 0
+            
+            self.calculate(left: leftNumber, right: rightNumber, operator: `operator`)
+        }
+    }
+    
+    func calculate(left leftNumber: Int, right rightNumber: Int, operator: CalcOperator) {
         switch `operator` {
         case .add: self.add(left: leftNumber, right: rightNumber)
         case .subtract: self.subtract(left: leftNumber, right: rightNumber)
