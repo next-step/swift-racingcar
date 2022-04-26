@@ -44,7 +44,7 @@ class CalculatorTest: XCTestCase {
     
     func testAddCalculate() {
         calculator.reset()
-        calculator.calculate(expression: "5 + 6")
+        calculator.calculate(left: 5, right: 6, operator: .add)
         let calculated = calculator.calculated()
         
         XCTAssertEqual(calculated, 11)
@@ -52,7 +52,7 @@ class CalculatorTest: XCTestCase {
     
     func testSubtractCalculate() {
         calculator.reset()
-        calculator.calculate(expression: "11 - 6")
+        calculator.calculate(left: 11, right: 6, operator: .subtract)
         let calculated = calculator.calculated()
         
         XCTAssertEqual(calculated, 5)
@@ -60,7 +60,7 @@ class CalculatorTest: XCTestCase {
     
     func testMultiplyCalculate() {
         calculator.reset()
-        calculator.calculate(expression: "5 * 6")
+        calculator.calculate(left: 5, right: 6, operator: .multiply)
         let calculated = calculator.calculated()
         
         XCTAssertEqual(calculated, 30)
@@ -68,9 +68,25 @@ class CalculatorTest: XCTestCase {
     
     func testDivideCalculate() {
         calculator.reset()
-        calculator.calculate(expression: "24 / 6")
+        calculator.calculate(left: 24, right: 6, operator: .divide)
         let calculated = calculator.calculated()
         
         XCTAssertEqual(calculated, 4)
+    }
+    
+    func testExecuteCalulator() {
+        calculator.reset()
+        calculator.execute(expression: "2 + 3 * 4 / 2")
+        let calculated = calculator.calculated()
+        
+        XCTAssertEqual(calculated, 10)
+    }
+    
+    func testSplitCalcExpression() {
+        calculator.reset()
+        let splitedCalcExpression = calculator.splitCalcExpression("2 + 3 * 4 / 2")
+        
+        XCTAssertEqual(splitedCalcExpression.count, 3)
+        XCTAssertEqual(splitedCalcExpression.stack, ["2", "+", "3", "*", "4", "/", "2"])
     }
 }
