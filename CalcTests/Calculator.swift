@@ -12,6 +12,12 @@ enum CalcOperation: String {
     case DIVIDED = "/"
 }
 
+enum CalcError: Error {
+    case nilOrEmpty
+    case invalidOperation
+    case invalidExpression
+}
+
 struct Calculator {
     func add(_ lhs: Int, _ rhs: Int) -> Int {
         return lhs + rhs
