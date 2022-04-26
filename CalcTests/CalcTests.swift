@@ -36,4 +36,19 @@ class CalcTests: XCTestCase {
         XCTAssertEqual(result, 0)
     }
     
+    func testCheckEmpty() throws {
+        if isEmpty("") {
+            throw CalcError.nilOrEmpty
+        }
+    }
+    
+}
+
+extension CalcTests {
+    func isEmpty(_ str: String?) -> Bool {
+        if let str = str {
+            return str.isEmpty
+        }
+        return true
+    }
 }
