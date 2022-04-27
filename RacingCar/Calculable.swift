@@ -7,7 +7,7 @@
 
 protocol Calculable {
     func execute(expression: String) throws
-    func calculate(left leftNumber: Int, right rightNumber: Int, operator: Calculator.CalcOperator)
+    func calculate(left leftNumber: Int, right rightNumber: Int, operator: Calculator.BasicOperator)
     func calculated() -> Int
     func reset()
     func add(left leftNumber: Int, right rightNumber: Int)

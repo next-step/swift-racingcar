@@ -47,7 +47,7 @@ class Calculator: Calculable {
         }
     }
     
-    func calculate(left leftNumber: Int, right rightNumber: Int, operator: CalcOperator) {
+    func calculate(left leftNumber: Int, right rightNumber: Int, operator: BasicOperator) {
         switch `operator` {
         case .add: self.add(left: leftNumber, right: rightNumber)
         case .subtract: self.subtract(left: leftNumber, right: rightNumber)
@@ -93,17 +93,17 @@ class Calculator: Calculable {
     
     func isValideCalcOperator(input stringOperators: String) throws {
         if stringOperators.rangeOfCharacter(from: characterSet) != nil {
-            throw CalcError.unSuppotedOperator
+            throw InputError.unSuppotedOperator
         }
     }
     
     func isValideInput(input expression: String) throws {
-        if expression.isEmpty || expression == " " { throw CalcError.noInput }
+        if expression.isEmpty || expression == " " { throw InputError.noInput }
     }
 }
 
 private extension Calculator {
-    func generateCalcOperator(stringOperator: String) -> CalcOperator {
+    func generateCalcOperator(stringOperator: String) -> BasicOperator {
         if stringOperator == "+" { return .add }
         if stringOperator == "-" { return .subtract }
         if stringOperator == "*" { return .multiply }
