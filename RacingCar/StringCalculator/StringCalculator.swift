@@ -14,26 +14,13 @@ struct StringCalculator {
     
     private let basicOperators: [String] = ["+", "-", "*", "/"]
     
-    mutating func runWithUserInput() throws -> Int {
-        clearData()
-        try split(mathExpression: input())
-        guard let result = operate() else {
-            throw StringCalculatorError.calculateError
-        }
-        return result
-    }
-    
-    mutating func runWithTest(expression: String?) throws -> Int {
+    mutating func run(with expression: String?) throws -> Int {
         clearData()
         try split(mathExpression: expression)
         guard let result = operate() else {
             throw StringCalculatorError.calculateError
         }
         return result
-    }
-    
-    func input() -> String? {
-        return readLine()
     }
     
     private mutating func clearData() {
@@ -59,20 +46,20 @@ struct StringCalculator {
     
     private func operate() -> Int? {
         var previous: Int?
-        var numberPointer: Int = 0, operatorPointer: Int = 0
-        while numberPointer != numbers.count {
+        var numberIndex: Int = 0, operatorIndex: Int = 0
+        while numberIndex != numbers.count {
             if let number = previous {
                 previous = calculate(number,
-                                     numbers[numberPointer],
-                                     operators[operatorPointer])
+                                     numbers[numberIndex],
+                                     operators[operatorIndex])
             } else {
-                previous = calculate(numbers[numberPointer],
-                                     numbers[numberPointer + 1],
-                                     operators[operatorPointer])
-                numberPointer += 1
+                previous = calculate(numbers[numberIndex],
+                                     numbers[numberIndex + 1],
+                                     operators[operatorIndex])
+                numberIndex += 1
             }
-            numberPointer += 1
-            operatorPointer += 1
+            numberIndex += 1
+            operatorIndex += 1
         }
         return previous
     }

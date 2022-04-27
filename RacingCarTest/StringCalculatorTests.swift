@@ -18,35 +18,35 @@ class StringCalculatorTests: XCTestCase {
     }
 
     func testAdd() throws {
-        let result = try calculator.runWithTest(expression: "1 + 2")
+        let result = try calculator.run(with: "1 + 2")
         XCTAssertEqual(result,
                        3,
                        StringCalculatorError.calculateError.localizedDescription)
     }
     
     func testSubstract() throws {
-        let result = try calculator.runWithTest(expression: "1 - 2")
+        let result = try calculator.run(with: "1 - 2")
         XCTAssertEqual(result,
                        -1,
                        StringCalculatorError.calculateError.localizedDescription)
     }
     
     func testMultiply() throws {
-        let result = try calculator.runWithTest(expression: "1 * 2")
+        let result = try calculator.run(with: "1 * 2")
         XCTAssertEqual(result,
                        2,
                        StringCalculatorError.calculateError.localizedDescription)
     }
     
     func testDivision() throws {
-        let result = try calculator.runWithTest(expression: "2 / 1")
+        let result = try calculator.run(with: "2 / 1")
         XCTAssertEqual(result,
                        2,
                        StringCalculatorError.calculateError.localizedDescription)
     }
     
     func testInputNil() throws {
-        XCTAssertThrowsError(try calculator.runWithTest(expression: nil),
+        XCTAssertThrowsError(try calculator.run(with: nil),
                              StringCalculatorError.passNil.localizedDescription) { error in
             guard let error = error as? StringCalculatorError else {
                 fatalError("StringCalculatorError가 아닙니다.")
@@ -56,7 +56,7 @@ class StringCalculatorTests: XCTestCase {
     }
     
     func testInputEmptyString() throws {
-        XCTAssertThrowsError(try calculator.runWithTest(expression: ""),
+        XCTAssertThrowsError(try calculator.run(with: ""),
                              StringCalculatorError.passEmpty.localizedDescription) { error in
             guard let error = error as? StringCalculatorError else {
                 fatalError("StringCalculatorError가 아닙니다.")
@@ -66,7 +66,7 @@ class StringCalculatorTests: XCTestCase {
     }
     
     func testInputInvalidOperator() throws {
-        XCTAssertThrowsError(try calculator.runWithTest(expression: "1 @ 2"),
+        XCTAssertThrowsError(try calculator.run(with: "1 @ 2"),
                              StringCalculatorError.invalidOperator.localizedDescription) { error in
             guard let error = error as? StringCalculatorError else {
                 fatalError("StringCalculatorError가 아닙니다.")
