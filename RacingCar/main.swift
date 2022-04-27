@@ -6,3 +6,6 @@
 
 import Foundation
 
+//MARK: - Calculator
+let calculator: Calculable = Calculator()
+try calculator.execute(expression: CalculatorInput.readExpression())
