@@ -8,6 +8,6 @@
 enum CalcOperation: String {
     case PLUS = "+"
     case MINUS = "-"
-    case MULTIPLIED = "*"
-    case DIVIDED = "/"
+    case MULTIPLY = "*"
+    case DIVIDE = "/"
 }
