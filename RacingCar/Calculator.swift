@@ -30,8 +30,8 @@ class Calculator: Calculable {
     
     func execute(expression: String) throws {
         do {
-            try self.isValideCalcOperator(input: expression)
-            try self.isValideInput(input: expression)
+            try self.isValidBasicOperator(input: expression)
+            try self.isValidInput(input: expression)
         }
         
         let splitedCalcExpression = self.splitCalcExpression(expression)
@@ -91,13 +91,13 @@ class Calculator: Calculable {
         return (stack, operaatorCount)
     }
     
-    func isValideCalcOperator(input stringOperators: String) throws {
+    func isValidBasicOperator(input stringOperators: String) throws {
         if stringOperators.rangeOfCharacter(from: characterSet) != nil {
             throw InputError.unSuppotedOperator
         }
     }
     
-    func isValideInput(input expression: String) throws {
+    func isValidInput(input expression: String) throws {
         if expression.isEmpty || expression == " " { throw InputError.noInput }
     }
 }
