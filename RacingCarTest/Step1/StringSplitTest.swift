@@ -17,4 +17,13 @@ class StringSplitTest: XCTestCase {
         XCTAssertEqual("1".split(separator: ","), ["1"])
         XCTAssert("1".split(separator: ",") == ["1"])
     }
+    
+    func testStringSplitRequirement2() {
+        XCTAssertEqual("(1,2)".replacingOccurrences(of: "(", with: "")
+            .replacingOccurrences(of: ")", with: "")
+            .split(separator: ","), ["1", "2"])
+        XCTAssert("(1,2)".replacingOccurrences(of: "(", with: "")
+            .replacingOccurrences(of: ")", with: "")
+            .split(separator: ",") == ["1", "2"])
+    }
 }
