@@ -38,7 +38,7 @@ class Calculator: Calculable {
         
         for _ in 0..<count {
             let leftOperand = Int(stack.removeFirst()) ?? 0
-            let `operator` = try self.generateCalcOperator(stringOperator: stack.removeFirst())
+            let `operator` = try self.generateBasicOperator(stringOperator: stack.removeFirst())
             let rightOperand = Int(stack.removeFirst()) ?? 0
             
             self.calculate(left: leftOperand, right: rightOperand, operator: `operator`)
@@ -95,7 +95,7 @@ class Calculator: Calculable {
 }
 
 private extension Calculator {
-    func generateCalcOperator(stringOperator: String) throws -> BasicOperator {
+    func generateBasicOperator(stringOperator: String) throws -> BasicOperator {
         if stringOperator == "+" { return .add }
         if stringOperator == "-" { return .subtract }
         if stringOperator == "*" { return .multiply }
