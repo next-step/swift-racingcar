@@ -39,20 +39,20 @@ class Calculator: Calculable {
         self.count = splitedCalcExpression.count
         
         for _ in 0..<count {
-            let leftNumber = Int(stack.removeFirst()) ?? 0
+            let leftOperand = Int(stack.removeFirst()) ?? 0
             let `operator` = self.generateCalcOperator(stringOperator: stack.removeFirst())
-            let rightNumber = Int(stack.removeFirst()) ?? 0
+            let rightOperand = Int(stack.removeFirst()) ?? 0
             
-            self.calculate(left: leftNumber, right: rightNumber, operator: `operator`)
+            self.calculate(left: leftOperand, right: rightOperand, operator: `operator`)
         }
     }
     
-    func calculate(left leftNumber: Int, right rightNumber: Int, operator: BasicOperator) {
+    func calculate(left leftOperand: Int, right rightOperand: Int, operator: BasicOperator) {
         switch `operator` {
-        case .add: self.add(left: leftNumber, right: rightNumber)
-        case .subtract: self.subtract(left: leftNumber, right: rightNumber)
-        case .multiply: self.multiply(left: leftNumber, right: rightNumber)
-        case .divide: self.divide(left: leftNumber, right: rightNumber)
+        case .add: self.add(left: leftOperand, right: rightOperand)
+        case .subtract: self.subtract(left: leftOperand, right: rightOperand)
+        case .multiply: self.multiply(left: leftOperand, right: rightOperand)
+        case .divide: self.divide(left: leftOperand, right: rightOperand)
         case .none: break
         }
     }
@@ -65,23 +65,23 @@ class Calculator: Calculable {
         self.number = 0
     }
     
-    func add(left leftNumber: Int, right rightNumber: Int) {
-        self.number = leftNumber+rightNumber
+    func add(left leftOperand: Int, right rightOperand: Int) {
+        self.number = leftOperand+rightOperand
         self.stack.insert(String(self.number), at: 0)
     }
     
-    func subtract(left leftNumber: Int, right rightNumber: Int) {
-        self.number = leftNumber-rightNumber
+    func subtract(left leftOperand: Int, right rightOperand: Int) {
+        self.number = leftOperand-rightOperand
         self.stack.insert(String(self.number), at: 0)
     }
     
-    func multiply(left leftNumber: Int, right rightNumber: Int) {
-        self.number = leftNumber*rightNumber
+    func multiply(left leftOperand: Int, right rightOperand: Int) {
+        self.number = leftOperand*rightOperand
         self.stack.insert(String(self.number), at: 0)
     }
     
-    func divide(left leftNumber: Int, right rightNumber: Int) {
-        self.number = leftNumber/rightNumber
+    func divide(left leftOperand: Int, right rightOperand: Int) {
+        self.number = leftOperand/rightOperand
         self.stack.insert(String(self.number), at: 0)
     }
     
