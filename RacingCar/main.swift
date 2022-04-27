@@ -6,3 +6,7 @@
 
 import Foundation
 
+let gameInfo = GameInfo(carNumber: InputView.readCarNumber(),
+                        matchNumber: InputView.readMatchNumber())
+
+RacingGame.play(gameInfo)
