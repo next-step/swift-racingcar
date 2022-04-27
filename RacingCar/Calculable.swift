@@ -15,6 +15,5 @@ protocol Calculable {
     func multiply(left leftNumber: Int, right rightNumber: Int)
     func divide(left leftNumber: Int, right rightNumber: Int)
     func splitCalcExpression(_ expression: String) -> (stack: [String], count: Int)
-    func isValidBasicOperator(input stringOperators: String) throws
     func isValidInput(input expression: String) throws
 }

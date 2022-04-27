@@ -11,7 +11,6 @@ class Calculator: Calculable {
     private var number: Int
     private var stack: [String]
     private var count: Int
-    private let characterSet = CharacterSet(charactersIn: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ~!@#$%^&()_-=")
     
     enum BasicOperator {
         case add, subtract, multiply, divide, none
@@ -30,7 +29,6 @@ class Calculator: Calculable {
     
     func execute(expression: String) throws {
         do {
-            try self.isValidBasicOperator(input: expression)
             try self.isValidInput(input: expression)
         }
         
@@ -40,7 +38,7 @@ class Calculator: Calculable {
         
         for _ in 0..<count {
             let leftOperand = Int(stack.removeFirst()) ?? 0
-            let `operator` = self.generateCalcOperator(stringOperator: stack.removeFirst())
+            let `operator` = try self.generateCalcOperator(stringOperator: stack.removeFirst())
             let rightOperand = Int(stack.removeFirst()) ?? 0
             
             self.calculate(left: leftOperand, right: rightOperand, operator: `operator`)
@@ -91,23 +89,18 @@ class Calculator: Calculable {
         return (stack, operaatorCount)
     }
     
-    func isValidBasicOperator(input stringOperators: String) throws {
-        if stringOperators.rangeOfCharacter(from: characterSet) != nil {
-            throw InputError.unSuppotedOperator
-        }
-    }
-    
     func isValidInput(input expression: String) throws {
         if expression.isEmpty || expression == " " { throw InputError.noInput }
     }
 }
 
 private extension Calculator {
-    func generateCalcOperator(stringOperator: String) -> BasicOperator {
+    func generateCalcOperator(stringOperator: String) throws -> BasicOperator {
         if stringOperator == "+" { return .add }
         if stringOperator == "-" { return .subtract }
         if stringOperator == "*" { return .multiply }
         if stringOperator == "/" { return .divide }
-        return .none
+        
+        throw InputError.unSuppotedOperator
     }
 }

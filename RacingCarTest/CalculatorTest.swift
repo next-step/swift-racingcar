@@ -93,12 +93,8 @@ class CalculatorTest: XCTestCase {
     
     func testUnSupportedOperator() {
         calculator.reset()
-        XCTAssertThrowsError(try calculator.isValidBasicOperator(input: "2 + 3 ^ 4 / 2"))
-    }
-    
-    func testSupportedOperator() {
-        calculator.reset()
-        XCTAssertNoThrow(try calculator.isValidBasicOperator(input: "2 + 3 * 4 / 2"))
+        
+        XCTAssertThrowsError(try calculator.execute(expression: "2 + 3 ^ 4 / 2"))
     }
     
     func testNoInput() {
