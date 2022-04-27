@@ -13,11 +13,11 @@ class Calculator: Calculable {
     private var count: Int
     private let characterSet = CharacterSet(charactersIn: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ~!@#$%^&()_-=")
     
-    enum CalcOperator {
+    enum BasicOperator {
         case add, subtract, multiply, divide, none
     }
     
-    enum CalcError: Error {
+    enum InputError: Error {
         case unSuppotedOperator
         case noInput
     }
