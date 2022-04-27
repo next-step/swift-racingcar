@@ -10,6 +10,7 @@
 		3B8A28882816C86600CF84C6 /* RacingCarTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8A28872816C86600CF84C6 /* RacingCarTest.swift */; };
 		3B8A288F2816C9CD00CF84C6 /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8A288E2816C9CD00CF84C6 /* StringTests.swift */; };
 		3B8A28932816DB0000CF84C6 /* SetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8A28922816DB0000CF84C6 /* SetTests.swift */; };
+		3B8A289F28198D8900CF84C6 /* StringConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8A289E28198D8900CF84C6 /* StringConverter.swift */; };
 		C7E1263027239F7E0000DB8B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +31,7 @@
 		3B8A28872816C86600CF84C6 /* RacingCarTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingCarTest.swift; sourceTree = "<group>"; };
 		3B8A288E2816C9CD00CF84C6 /* StringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTests.swift; sourceTree = "<group>"; };
 		3B8A28922816DB0000CF84C6 /* SetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTests.swift; sourceTree = "<group>"; };
+		3B8A289E28198D8900CF84C6 /* StringConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringConverter.swift; sourceTree = "<group>"; };
 		C7E1262C27239F7E0000DB8B /* RacingCar */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RacingCar; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E1262F27239F7E0000DB8B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -84,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				C7E1262F27239F7E0000DB8B /* main.swift */,
+				3B8A289E28198D8900CF84C6 /* StringConverter.swift */,
 			);
 			path = RacingCar;
 			sourceTree = "<group>";
@@ -188,6 +191,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7E1263027239F7E0000DB8B /* main.swift in Sources */,
+				3B8A289F28198D8900CF84C6 /* StringConverter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
