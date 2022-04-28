@@ -14,5 +14,10 @@ class RacingCarTests: XCTestCase {
         let randomNumber = Game.generateRandomNumer()
         XCTAssertTrue(randomNumber >= 0 && randomNumber <= 9)
     }
+        
+    func testCanGoFoward() throws {
+        let result = Game.canGoFoward(4)
+        XCTAssertTrue(result)
+    }
     
 }
