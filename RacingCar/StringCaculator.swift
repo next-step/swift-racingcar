@@ -10,7 +10,7 @@ import Foundation
 
 final class StringCaculator {
     
-    private enum StringCaculatorErrorType: Error {
+     enum StringCaculatorErrorType: Error {
         case inputEmptyError
         case divideByZero
         case notComputationOperator
@@ -54,8 +54,11 @@ final class StringCaculator {
     
     // 올바른 표현식인지 체크
     private func checkIncorrectExpression(input: String) throws {
-        guard let last = input.last  else { return }
-        if isOperand(input: String(last)) == false {
+        guard let first = input.first, let last = input.last  else { return }
+        
+        if isOperand(input: String(first)) == false ||
+            isOperand(input: String(last)) == false
+        {
             throw StringCaculatorErrorType.incorrectExpression
         }
     }
@@ -69,7 +72,7 @@ final class StringCaculator {
     
     // 공백문자제거
     private func removeSpaceCharacter(input: String) -> [String] {
-        return input.components(separatedBy: " ")
+        return input.components(separatedBy: " ").filter {$0 != ""}
     }
     
     // 들어온 문자를 연산자로 변환
