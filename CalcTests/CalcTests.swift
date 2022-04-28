@@ -76,13 +76,13 @@ extension CalcTests {
     
     func calculate(_ lhs: Int, _ operation: CalcOperation, _ rhs: Int) throws -> Int {
         switch operation {
-        case .PLUS:
+        case .plus:
             return calc.add(lhs, rhs)
-        case .MINUS:
+        case .minus:
             return calc.subtract(lhs, rhs)
-        case .MULTIPLY:
+        case .mutiply:
             return calc.multiply(lhs, rhs)
-        case .DIVIDE:
+        case .divide:
             return try calc.divide(lhs, rhs)
         }
     }
