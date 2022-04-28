@@ -6,7 +6,15 @@
 //
 
 class InputView {
-    static func input() throws -> Int {
+    static func inputValidTest(_ input: String?) throws -> Int {
+        if let input: String = input,
+            let inputNumber: Int = Int(input) {
+            return inputNumber
+        }
+        throw InputEror.invalidInput
+    }
+    
+    static func inputReadLine() throws -> Int {
         if let input: String = readLine(),
            let inputNumber: Int = Int(input) {
             return inputNumber
