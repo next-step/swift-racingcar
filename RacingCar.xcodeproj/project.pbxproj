@@ -12,6 +12,11 @@
 		43405AC82816E41D004EE1DE /* StringType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43405AC62816E41D004EE1DE /* StringType.swift */; };
 		43405ACA2816E441004EE1DE /* StringTypeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43405AC92816E441004EE1DE /* StringTypeTest.swift */; };
 		43405ACC2816E75E004EE1DE /* SetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43405ACB2816E75E004EE1DE /* SetTests.swift */; };
+		43EEBFFE2817CB3000384596 /* StringCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EEBFFD2817CB3000384596 /* StringCalculator.swift */; };
+		43EEBFFF2817CB3000384596 /* StringCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EEBFFD2817CB3000384596 /* StringCalculator.swift */; };
+		43EEC0022817D82600384596 /* StringCalculatorError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EEC0012817D82600384596 /* StringCalculatorError.swift */; };
+		43EEC0032817D82600384596 /* StringCalculatorError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EEC0012817D82600384596 /* StringCalculatorError.swift */; };
+		43EEC005281819C100384596 /* StringCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EEC004281819C100384596 /* StringCalculatorTests.swift */; };
 		C7E1263027239F7E0000DB8B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +37,9 @@
 		43405AC62816E41D004EE1DE /* StringType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringType.swift; sourceTree = "<group>"; };
 		43405AC92816E441004EE1DE /* StringTypeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTypeTest.swift; sourceTree = "<group>"; };
 		43405ACB2816E75E004EE1DE /* SetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTests.swift; sourceTree = "<group>"; };
+		43EEBFFD2817CB3000384596 /* StringCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringCalculator.swift; sourceTree = "<group>"; };
+		43EEC0012817D82600384596 /* StringCalculatorError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringCalculatorError.swift; sourceTree = "<group>"; };
+		43EEC004281819C100384596 /* StringCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringCalculatorTests.swift; sourceTree = "<group>"; };
 		C7E1262C27239F7E0000DB8B /* RacingCar */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RacingCar; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E1262F27239F7E0000DB8B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -59,8 +67,18 @@
 			children = (
 				43405AC92816E441004EE1DE /* StringTypeTest.swift */,
 				43405ACB2816E75E004EE1DE /* SetTests.swift */,
+				43EEC004281819C100384596 /* StringCalculatorTests.swift */,
 			);
 			path = RacingCarTest;
+			sourceTree = "<group>";
+		};
+		43EEC0002817D49100384596 /* StringCalculator */ = {
+			isa = PBXGroup;
+			children = (
+				43EEBFFD2817CB3000384596 /* StringCalculator.swift */,
+				43EEC0012817D82600384596 /* StringCalculatorError.swift */,
+			);
+			path = StringCalculator;
 			sourceTree = "<group>";
 		};
 		C7E1262327239F7E0000DB8B = {
@@ -84,6 +102,7 @@
 		C7E1262E27239F7E0000DB8B /* RacingCar */ = {
 			isa = PBXGroup;
 			children = (
+				43EEC0002817D49100384596 /* StringCalculator */,
 				C7E1262F27239F7E0000DB8B /* main.swift */,
 				43405AC62816E41D004EE1DE /* StringType.swift */,
 			);
@@ -135,7 +154,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1330;
-				LastUpgradeCheck = 1300;
+				LastUpgradeCheck = 1330;
 				TargetAttributes = {
 					43405ABD2816E2D3004EE1DE = {
 						CreatedOnToolsVersion = 13.3.1;
@@ -181,8 +200,11 @@
 			files = (
 				43405ACA2816E441004EE1DE /* StringTypeTest.swift in Sources */,
 				43405ACC2816E75E004EE1DE /* SetTests.swift in Sources */,
+				43EEC005281819C100384596 /* StringCalculatorTests.swift in Sources */,
 				43405AC82816E41D004EE1DE /* StringType.swift in Sources */,
+				43EEBFFF2817CB3000384596 /* StringCalculator.swift in Sources */,
 				43405AC52816E2F0004EE1DE /* main.swift in Sources */,
+				43EEC0032817D82600384596 /* StringCalculatorError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,6 +212,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43EEBFFE2817CB3000384596 /* StringCalculator.swift in Sources */,
+				43EEC0022817D82600384596 /* StringCalculatorError.swift in Sources */,
 				43405AC72816E41D004EE1DE /* StringType.swift in Sources */,
 				C7E1263027239F7E0000DB8B /* main.swift in Sources */,
 			);
@@ -348,6 +372,7 @@
 		C7E1263427239F7E0000DB8B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -357,6 +382,7 @@
 		C7E1263527239F7E0000DB8B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
