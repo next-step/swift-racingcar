@@ -15,3 +15,8 @@ let inputView = InputView()
 try inputView.input()
 
 print(inputView.getGameSetting())
+
+print("======")
+
+let racingGame = RacingGame(gameSetting: inputView.getGameSetting())
+racingGame.gameStart()

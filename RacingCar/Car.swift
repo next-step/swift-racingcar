@@ -10,10 +10,14 @@ import Foundation
 
 final class Car {
     
-    var movePoint: Int
+    var movePoint: Int = 0
     
     
-    init(movePoint: Int) {
-        self.movePoint = movePoint
+    init() {
+       
+    }
+    
+    func move() {
+        movePoint += 1
     }
 }

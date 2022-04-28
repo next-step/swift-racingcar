@@ -6,3 +6,19 @@
 //
 
 import Foundation
+
+
+final class ResultView {
+    
+    
+    
+    func showCarsDistance(cars: [Car]) {
+        cars.forEach{printUserDistanceFromStart(to:$0.movePoint)}
+    }
+    
+    func printUserDistanceFromStart(to distance: Int) {
+        print("\(String(repeating: "-", count: distance))")
+        
+
+    }
+}

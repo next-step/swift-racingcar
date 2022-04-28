@@ -13,23 +13,50 @@ final class RacingGame {
 
     let gameSetting: GameSetting
 
-    var gameUserArray: [Car] = []
+    var cars: [Car] = []
 
     //MARK: - INITIALIZE
     init(gameSetting: GameSetting) {
         self.gameSetting = gameSetting
     }
 
+    func setupCars(carCount: Int) {
+        self.cars = (0..<gameSetting.carCount).map{ _ in Car()}
+        
+    }
+    
+    func gameStart() {
+        setupCars(carCount: gameSetting.carCount)
+        loopStage()
+        
+    }
+  
+    func loopStage() {
+        
+        for _ in 0..<self.gameSetting.gameCount {
+            
+            race()
+            ResultView().showCarsDistance(cars: cars)
+            print("\n")
+        }
+    }
+    
     func race() {
-       
+        cars.filter{ _ in movePosition()}.forEach{$0.move()}
+    }
+    
+    func movePosition() -> Bool {
+        let conditionNumber = generateMoveConditionNumber()
+        return isMoveToNext(randomNumber: conditionNumber)
+    }
+    
+    func generateMoveConditionNumber() -> Int {
+        return Int.random(in: 0..<10)
     }
 
-    func moveToNext(randomNumber: Int) -> Int {
-        return randomNumber > 4 ? 1 : 0
+    func isMoveToNext(randomNumber: Int) -> Bool {
+        return randomNumber > 4
     }
 
-    func printUserDistanceFromStart(to distance: Int) {
-      print(Array.init(repeating: "-", count: distance).joined())
-
-    }
+  
 }
