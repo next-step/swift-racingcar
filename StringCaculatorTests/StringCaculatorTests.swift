@@ -148,23 +148,23 @@ class StringCaculatorTests: XCTestCase {
         }
     }
     
-    func test_emptyExpression_throw_inputEmptyError() {
+    func test_emptyExpression_throw_inputEmpty() {
         
         let expression = ""
 
         //when && then
-        let expectation = StringCaculator.StringCaculatorError.inputEmptyError
+        let expectation = StringCaculator.StringCaculatorError.inputEmpty
         XCTAssertThrowsError(try sut.caculate(expression: expression)) { error in
             XCTAssertEqual(error as? StringCaculator.StringCaculatorError, expectation)
         }
     }
     
-    func test_SpaceExpression_throw_inputEmptyError() {
+    func test_SpaceExpression_throw_inputEmpty() {
         
         let expression = " "
 
         //when && then
-        let expectation = StringCaculator.StringCaculatorError.inputEmptyError
+        let expectation = StringCaculator.StringCaculatorError.inputEmpty
         XCTAssertThrowsError(try sut.caculate(expression: expression)) { error in
             XCTAssertEqual(error as? StringCaculator.StringCaculatorError, expectation)
         }

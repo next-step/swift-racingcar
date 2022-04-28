@@ -11,7 +11,7 @@ import Foundation
 final class StringCaculator {
     
      enum StringCaculatorError: Error {
-        case inputEmptyError
+        case inputEmpty
         case divideByZero
         case notComputationOperator
         case notComputationOperand
@@ -50,7 +50,7 @@ final class StringCaculator {
    
     private func validateEmptyCheck(expression: [String])  throws -> [String] {
         guard !expression.isEmpty else {
-            throw StringCaculatorError.inputEmptyError
+            throw StringCaculatorError.inputEmpty
         }
         return expression
     }
