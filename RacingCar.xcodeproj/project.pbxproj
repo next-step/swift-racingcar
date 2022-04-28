@@ -21,7 +21,6 @@
 		CB25DB31281A5BA50088C633 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB25DB30281A5BA50088C633 /* Game.swift */; };
 		CB25DB33281A5E990088C633 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB25DB32281A5E990088C633 /* ResultView.swift */; };
 		CB25DB35281A5FE10088C633 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB25DB34281A5FE10088C633 /* Car.swift */; };
-		CB923E7C281A8E9A00B96671 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB25DB30281A5BA50088C633 /* Game.swift */; };
 		CB923E7D281A8E9F00B96671 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB25DB34281A5FE10088C633 /* Car.swift */; };
 		CB923E7E281A8EA400B96671 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB25DB32281A5E990088C633 /* ResultView.swift */; };
 		CBBB9FD32816994900DD6B02 /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBB9FD22816994900DD6B02 /* StringTests.swift */; };
@@ -135,9 +134,10 @@
 		C7E1262E27239F7E0000DB8B /* RacingCar */ = {
 			isa = PBXGroup;
 			children = (
+				CB923E81281AA0A100B96671 /* model */,
 				CB25DB1D281A4D750088C633 /* view */,
-				C7E1262F27239F7E0000DB8B /* main.swift */,
 				CB25DB30281A5BA50088C633 /* Game.swift */,
+				C7E1262F27239F7E0000DB8B /* main.swift */,
 			);
 			path = RacingCar;
 			sourceTree = "<group>";
@@ -145,10 +145,8 @@
 		CB25DB1D281A4D750088C633 /* view */ = {
 			isa = PBXGroup;
 			children = (
-				CB25DB1E281A4D820088C633 /* InputView.swift */,
-				CB25DB20281A4DE40088C633 /* InputError.swift */,
-				CB25DB32281A5E990088C633 /* ResultView.swift */,
-				CB25DB34281A5FE10088C633 /* Car.swift */,
+				CB923E7F281AA06400B96671 /* input */,
+				CB923E80281AA06E00B96671 /* result */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -159,6 +157,31 @@
 				CB25DB28281A50400088C633 /* RacingCarTests.swift */,
 			);
 			path = RacingCarTests;
+			sourceTree = "<group>";
+		};
+		CB923E7F281AA06400B96671 /* input */ = {
+			isa = PBXGroup;
+			children = (
+				CB25DB20281A4DE40088C633 /* InputError.swift */,
+				CB25DB1E281A4D820088C633 /* InputView.swift */,
+			);
+			path = input;
+			sourceTree = "<group>";
+		};
+		CB923E80281AA06E00B96671 /* result */ = {
+			isa = PBXGroup;
+			children = (
+				CB25DB32281A5E990088C633 /* ResultView.swift */,
+			);
+			path = result;
+			sourceTree = "<group>";
+		};
+		CB923E81281AA0A100B96671 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				CB25DB34281A5FE10088C633 /* Car.swift */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 		CBBB9FD12816994900DD6B02 /* RunningTests */ = {
@@ -344,7 +367,6 @@
 				CB25DB29281A50400088C633 /* RacingCarTests.swift in Sources */,
 				CB923E7D281A8E9F00B96671 /* Car.swift in Sources */,
 				CB25DB2E281A54410088C633 /* InputError.swift in Sources */,
-				CB923E7C281A8E9A00B96671 /* Game.swift in Sources */,
 				CB923E7E281A8EA400B96671 /* ResultView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
