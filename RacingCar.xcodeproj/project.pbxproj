@@ -73,6 +73,7 @@
 				43DC863E281938B800E625C6 /* RacingCarStep3Tests */,
 				43405AC92816E441004EE1DE /* StringTypeTest.swift */,
 				43405ACB2816E75E004EE1DE /* SetTests.swift */,
+				43EEC004281819C100384596 /* StringCalculatorTests.swift */,
 			);
 			path = RacingCarTest;
 			sourceTree = "<group>";
@@ -169,7 +170,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1330;
-				LastUpgradeCheck = 1300;
+				LastUpgradeCheck = 1330;
 				TargetAttributes = {
 					43405ABD2816E2D3004EE1DE = {
 						CreatedOnToolsVersion = 13.3.1;
@@ -229,6 +230,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43EEBFFE2817CB3000384596 /* StringCalculator.swift in Sources */,
+				43EEC0022817D82600384596 /* StringCalculatorError.swift in Sources */,
 				43405AC72816E41D004EE1DE /* StringType.swift in Sources */,
 				C7E1263027239F7E0000DB8B /* main.swift in Sources */,
 				43DC863C281938A000E625C6 /* Car.swift in Sources */,
@@ -390,6 +393,7 @@
 		C7E1263427239F7E0000DB8B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -399,6 +403,7 @@
 		C7E1263527239F7E0000DB8B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
