@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D04D996281A01A2005B85C4 /* CalculatorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D04D995281A01A2005B85C4 /* CalculatorInput.swift */; };
+		2D04D997281A024F005B85C4 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
+		2D04D998281A0255005B85C4 /* CalculatorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D04D995281A01A2005B85C4 /* CalculatorInput.swift */; };
 		2D04D99428196F6F005B85C4 /* RacingCarTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D04D99328196F6F005B85C4 /* RacingCarTest.swift */; };
 		2D1062BA28169791004BD50A /* CollectionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1062B928169791004BD50A /* CollectionTest.swift */; };
 		2D1062BF2816B3FF004BD50A /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1062BE2816B3FF004BD50A /* Calculator.swift */; };
@@ -45,6 +48,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2D04D995281A01A2005B85C4 /* CalculatorInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorInput.swift; sourceTree = "<group>"; };
 		2D04D99328196F6F005B85C4 /* RacingCarTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingCarTest.swift; sourceTree = "<group>"; };
 		2D1062B728169791004BD50A /* RacingCarTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RacingCarTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D1062B928169791004BD50A /* CollectionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionTest.swift; sourceTree = "<group>"; };
@@ -113,6 +117,7 @@
 			children = (
 				C7E1262F27239F7E0000DB8B /* main.swift */,
 				2D1062BE2816B3FF004BD50A /* Calculator.swift */,
+				2D04D995281A01A2005B85C4 /* CalculatorInput.swift */,
 				2D1062C22816C0DA004BD50A /* Calculable.swift */,
 				2D1062CC28183772004BD50A /* RacingGame.swift */,
 				2D1062CE28183848004BD50A /* GameInfo.swift */,
@@ -215,6 +220,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D1062C42816C25F004BD50A /* Calculable.swift in Sources */,
+				2D04D997281A024F005B85C4 /* main.swift in Sources */,
+				2D04D998281A0255005B85C4 /* CalculatorInput.swift in Sources */,
 				2D1062D82818ABD3004BD50A /* main.swift in Sources */,
 				2D1062DC2818ABDD004BD50A /* RacingInfo.swift in Sources */,
 				2D1062C52816C262004BD50A /* Calculator.swift in Sources */,
@@ -241,6 +248,7 @@
 				C7E1263027239F7E0000DB8B /* main.swift in Sources */,
 				2D1062CB281833B2004BD50A /* InputView.swift in Sources */,
 				2D1062C32816C0DA004BD50A /* Calculable.swift in Sources */,
+				2D04D996281A01A2005B85C4 /* CalculatorInput.swift in Sources */,
 				2D1062D72818AA21004BD50A /* ResultView.swift in Sources */,
 				2D1062BF2816B3FF004BD50A /* Calculator.swift in Sources */,
 				2D1062CF28183848004BD50A /* GameInfo.swift in Sources */,

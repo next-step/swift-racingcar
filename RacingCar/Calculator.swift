@@ -11,13 +11,12 @@ class Calculator: Calculable {
     private var number: Int
     private var stack: [String]
     private var count: Int
-    private let characterSet = CharacterSet(charactersIn: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ~!@#$%^&()_-=")
     
-    enum CalcOperator {
+    enum BasicOperator {
         case add, subtract, multiply, divide, none
     }
     
-    enum CalcError: Error {
+    enum InputError: Error {
         case unSuppotedOperator
         case noInput
     }
@@ -30,8 +29,7 @@ class Calculator: Calculable {
     
     func execute(expression: String) throws {
         do {
-            try self.isValideCalcOperator(input: expression)
-            try self.isValideInput(input: expression)
+            try self.isValidInput(input: expression)
         }
         
         let splitedCalcExpression = self.splitCalcExpression(expression)
@@ -39,20 +37,20 @@ class Calculator: Calculable {
         self.count = splitedCalcExpression.count
         
         for _ in 0..<count {
-            let leftNumber = Int(stack.removeFirst()) ?? 0
-            let `operator` = self.generateCalcOperator(stringOperator: stack.removeFirst())
-            let rightNumber = Int(stack.removeFirst()) ?? 0
+            let leftOperand = Int(stack.removeFirst()) ?? 0
+            let `operator` = try self.generateBasicOperator(stringOperator: stack.removeFirst())
+            let rightOperand = Int(stack.removeFirst()) ?? 0
             
-            self.calculate(left: leftNumber, right: rightNumber, operator: `operator`)
+            self.calculate(left: leftOperand, right: rightOperand, operator: `operator`)
         }
     }
     
-    func calculate(left leftNumber: Int, right rightNumber: Int, operator: CalcOperator) {
+    func calculate(left leftOperand: Int, right rightOperand: Int, operator: BasicOperator) {
         switch `operator` {
-        case .add: self.add(left: leftNumber, right: rightNumber)
-        case .subtract: self.subtract(left: leftNumber, right: rightNumber)
-        case .multiply: self.multiply(left: leftNumber, right: rightNumber)
-        case .divide: self.divide(left: leftNumber, right: rightNumber)
+        case .add: self.add(left: leftOperand, right: rightOperand)
+        case .subtract: self.subtract(left: leftOperand, right: rightOperand)
+        case .multiply: self.multiply(left: leftOperand, right: rightOperand)
+        case .divide: self.divide(left: leftOperand, right: rightOperand)
         case .none: break
         }
     }
@@ -65,23 +63,23 @@ class Calculator: Calculable {
         self.number = 0
     }
     
-    func add(left leftNumber: Int, right rightNumber: Int) {
-        self.number = leftNumber+rightNumber
+    func add(left leftOperand: Int, right rightOperand: Int) {
+        self.number = leftOperand+rightOperand
         self.stack.insert(String(self.number), at: 0)
     }
     
-    func subtract(left leftNumber: Int, right rightNumber: Int) {
-        self.number = leftNumber-rightNumber
+    func subtract(left leftOperand: Int, right rightOperand: Int) {
+        self.number = leftOperand-rightOperand
         self.stack.insert(String(self.number), at: 0)
     }
     
-    func multiply(left leftNumber: Int, right rightNumber: Int) {
-        self.number = leftNumber*rightNumber
+    func multiply(left leftOperand: Int, right rightOperand: Int) {
+        self.number = leftOperand*rightOperand
         self.stack.insert(String(self.number), at: 0)
     }
     
-    func divide(left leftNumber: Int, right rightNumber: Int) {
-        self.number = leftNumber/rightNumber
+    func divide(left leftOperand: Int, right rightOperand: Int) {
+        self.number = leftOperand/rightOperand
         self.stack.insert(String(self.number), at: 0)
     }
     
@@ -91,23 +89,18 @@ class Calculator: Calculable {
         return (stack, operaatorCount)
     }
     
-    func isValideCalcOperator(input stringOperators: String) throws {
-        if stringOperators.rangeOfCharacter(from: characterSet) != nil {
-            throw CalcError.unSuppotedOperator
-        }
-    }
-    
-    func isValideInput(input expression: String) throws {
-        if expression.isEmpty || expression == " " { throw CalcError.noInput }
+    func isValidInput(input expression: String) throws {
+        if expression.isEmpty || expression == " " { throw InputError.noInput }
     }
 }
 
 private extension Calculator {
-    func generateCalcOperator(stringOperator: String) -> CalcOperator {
+    func generateBasicOperator(stringOperator: String) throws -> BasicOperator {
         if stringOperator == "+" { return .add }
         if stringOperator == "-" { return .subtract }
         if stringOperator == "*" { return .multiply }
         if stringOperator == "/" { return .divide }
-        return .none
+        
+        throw InputError.unSuppotedOperator
     }
 }
