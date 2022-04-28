@@ -27,7 +27,7 @@ final class StringCaculator {
     
     func caculate(expression: String) throws -> Int {
         let removedSpaceExpression: [String] = removeSpaceCharacter(input: expression) // " "제거
-        var validationString = try validateEmptyCheckFor(expression: removedSpaceExpression) // nil값 체크
+        var validationString = try validateEmptyCheck(expression: removedSpaceExpression) // nil값 체크
         try checkIncorrectExpression(input: expression) // 올바른 표현식인지 체크
         
         //처음 값을 current에 저장
@@ -45,7 +45,7 @@ final class StringCaculator {
     }
     
     // 입력값 nil 체크
-    private func validateEmptyCheckFor(expression: [String])  throws -> [String] {
+    private func validateEmptyCheck(expression: [String])  throws -> [String] {
         guard !expression.isEmpty else {
             throw StringCaculatorError.inputEmptyError
         }
