@@ -80,9 +80,9 @@ extension CalcTests {
             return calc.add(lhs, rhs)
         case .MINUS:
             return calc.subtract(lhs, rhs)
-        case .MULTIPLIED:
+        case .MULTIPLY:
             return calc.multiply(lhs, rhs)
-        case .DIVIDED:
+        case .DIVIDE:
             return try calc.divide(lhs, rhs)
         }
     }
