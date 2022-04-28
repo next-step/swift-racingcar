@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C7E1263027239F7E0000DB8B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
-		F141D7A9281AF31000E69D41 /* Race.swift in Sources */ = {isa = PBXBuildFile; fileRef = F141D7A8281AF31000E69D41 /* Race.swift */; };
+		F141D7A9281AF31000E69D41 /* RacingGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F141D7A8281AF31000E69D41 /* RacingGame.swift */; };
 		F141D7AC281AF36500E69D41 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = F141D7AB281AF36500E69D41 /* Car.swift */; };
 		F141D7AF281AF42700E69D41 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F141D7AE281AF42700E69D41 /* InputView.swift */; };
 		F141D7B1281AF43300E69D41 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F141D7B0281AF43300E69D41 /* ResultView.swift */; };
@@ -34,7 +34,7 @@
 /* Begin PBXFileReference section */
 		C7E1262C27239F7E0000DB8B /* RacingCar */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RacingCar; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E1262F27239F7E0000DB8B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		F141D7A8281AF31000E69D41 /* Race.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Race.swift; sourceTree = "<group>"; };
+		F141D7A8281AF31000E69D41 /* RacingGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingGame.swift; sourceTree = "<group>"; };
 		F141D7AB281AF36500E69D41 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		F141D7AE281AF42700E69D41 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
 		F141D7B0281AF43300E69D41 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
@@ -122,7 +122,7 @@
 		F141D7B5281AF7CB00E69D41 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				F141D7A8281AF31000E69D41 /* Race.swift */,
+				F141D7A8281AF31000E69D41 /* RacingGame.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -226,7 +226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F14AA42D2816CCC8000CF268 /* StringCaculator.swift in Sources */,
-				F141D7A9281AF31000E69D41 /* Race.swift in Sources */,
+				F141D7A9281AF31000E69D41 /* RacingGame.swift in Sources */,
 				F141D7AF281AF42700E69D41 /* InputView.swift in Sources */,
 				F141D7AC281AF36500E69D41 /* Car.swift in Sources */,
 				F141D7B3281AF6D800E69D41 /* GameSetting.swift in Sources */,

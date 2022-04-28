@@ -12,11 +12,8 @@ final class Car {
     
     var movePoint: Int = 0
     
-    
-    init() {
-       
-    }
-    
+    init() {}
+
     func move() {
         movePoint += 1
     }

@@ -7,16 +7,8 @@
 import Foundation
 
 
+let inputView = RacingGameInputView()
+let resultView = RacingGameResultView()
 
-
-
-let inputView = InputView()
-
-try inputView.input()
-
-print(inputView.getGameSetting())
-
-print("======")
-
-let racingGame = RacingGame(gameSetting: inputView.getGameSetting())
-racingGame.gameStart()
+let racingGame = RacingGame(inputView: inputView, resultView: resultView)
+try racingGame.gameStart()

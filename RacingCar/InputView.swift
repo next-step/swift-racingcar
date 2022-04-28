@@ -7,13 +7,18 @@
 
 import Foundation
 
+protocol RacingGameInput {
+    func input() throws
+    func inputCarCount() throws
+    func inputGameCount() throws
+    func registerSetting() -> GameSetting
+}
 
-final class InputView {
+final class RacingGameInputView: RacingGameInput {
     
     enum InputError: Error {
         case incorrectFormat
     }
-    
     
     private var carCount: Int = 0
     private var gameCount: Int = 0
@@ -51,7 +56,7 @@ final class InputView {
         print("시도할 횟수는 몇 회인가요?")
     }
     
-    func getGameSetting() -> GameSetting {
+    func registerSetting() -> GameSetting {
         return GameSetting(gameCount: gameCount, carCount: carCount)
     }
     
