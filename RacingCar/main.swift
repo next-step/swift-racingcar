@@ -10,4 +10,8 @@ import Foundation
 
 
 
-   
+let inputView = InputView()
+
+try inputView.input()
+
+print(inputView.getGameSetting())
