@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3B8A28882816C86600CF84C6 /* RacingCarTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8A28872816C86600CF84C6 /* RacingCarTest.swift */; };
 		3B8A288F2816C9CD00CF84C6 /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8A288E2816C9CD00CF84C6 /* StringTests.swift */; };
 		3B8A28932816DB0000CF84C6 /* SetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8A28922816DB0000CF84C6 /* SetTests.swift */; };
 		3B8A28A128198DED00CF84C6 /* StringConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8A28A028198DED00CF84C6 /* StringConverterTests.swift */; };
@@ -35,7 +34,6 @@
 
 /* Begin PBXFileReference section */
 		3B8A28852816C86600CF84C6 /* RacingCarTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RacingCarTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3B8A28872816C86600CF84C6 /* RacingCarTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingCarTest.swift; sourceTree = "<group>"; };
 		3B8A288E2816C9CD00CF84C6 /* StringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTests.swift; sourceTree = "<group>"; };
 		3B8A28922816DB0000CF84C6 /* SetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTests.swift; sourceTree = "<group>"; };
 		3B8A289E28198D8900CF84C6 /* StringConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringConverter.swift; sourceTree = "<group>"; };
@@ -69,7 +67,6 @@
 		3B8A28862816C86600CF84C6 /* RacingCarTest */ = {
 			isa = PBXGroup;
 			children = (
-				3B8A28872816C86600CF84C6 /* RacingCarTest.swift */,
 				3B8A288E2816C9CD00CF84C6 /* StringTests.swift */,
 				3B8A28922816DB0000CF84C6 /* SetTests.swift */,
 				3B8A28A028198DED00CF84C6 /* StringConverterTests.swift */,
@@ -203,7 +200,6 @@
 				3B8A28AA28199AEA00CF84C6 /* StringCalculator.swift in Sources */,
 				3B8A28A128198DED00CF84C6 /* StringConverterTests.swift in Sources */,
 				3B8A28932816DB0000CF84C6 /* SetTests.swift in Sources */,
-				3B8A28882816C86600CF84C6 /* RacingCarTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
