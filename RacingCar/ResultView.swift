@@ -16,11 +16,11 @@ struct ResultView {
     private static func printMatch(_ printable: RacingResultPrintable) {
         for match in printable.result() {
             print()
-            printCar(match: match)
+            printCarMove(match: match)
         }
     }
     
-    private static func printCar(match: [Int]) {
+    private static func printCarMove(match: [Int]) {
         for move in match {
             print(self.convertNumberToLine(move: move), separator: "", terminator: "")
             print()
