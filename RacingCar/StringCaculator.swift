@@ -29,11 +29,9 @@ final class StringCaculator {
        
         var validationString = try validate(expression: expression)
         
-        //처음 값을 current에 저장
         var current: Int = 0
         current = try getOperand(operand: validationString.removeFirst())
         
-        // 순회하여 각 lhs(current) - operator - rhs 계산하여 current에 계속해서 저장
         while(!validationString.isEmpty) {
             let lhs: Int = current
             let `operator`: OperatorType = try getOperator(operator: validationString.removeFirst())
@@ -45,11 +43,11 @@ final class StringCaculator {
     
     private func validate(expression: String) throws -> [String] {
         let removedSpaceExpression: [String] = removeSpaceCharacter(input: expression)
-        var validationString = try validateEmptyCheck(expression: removedSpaceExpression)
+        let validationString = try validateEmptyCheck(expression: removedSpaceExpression)
         try checkIncorrectExpression(input: expression)
         return validationString
     }
-    // 입력값 nil 체크
+   
     private func validateEmptyCheck(expression: [String])  throws -> [String] {
         guard !expression.isEmpty else {
             throw StringCaculatorError.inputEmptyError
@@ -57,7 +55,7 @@ final class StringCaculator {
         return expression
     }
     
-    // 올바른 표현식인지 체크
+   
     private func checkIncorrectExpression(input: String) throws {
         guard let first = input.first, let last = input.last  else { return }
         
@@ -68,19 +66,19 @@ final class StringCaculator {
         }
     }
     
-    // 0으로 나누는 경우 체크
+
     private func checkDivideOperandZero(operand: Int) throws {
         if operand == 0 {
             throw StringCaculatorError.divideByZero
         }
     }
     
-    // 공백문자제거
+    
     private func removeSpaceCharacter(input: String) -> [String] {
         return input.components(separatedBy: " ").filter {$0 != ""}
     }
     
-    // 들어온 문자를 연산자로 변환
+    
     private func getOperator(operator: String) throws -> OperatorType {
         guard let `operator` = OperatorType(rawValue: `operator`)  else {
             throw StringCaculatorError.notComputationOperator
@@ -88,7 +86,7 @@ final class StringCaculator {
         return `operator`
     }
     
-    // 들어온 문자를 피연산자로 변환
+  
     private func getOperand(operand: String) throws -> Int {
         guard let operand = Int(operand)  else {
             throw StringCaculatorError.notComputationOperand
@@ -96,12 +94,11 @@ final class StringCaculator {
         return operand
     }
     
-    //들어온 문자가 피연산자로 변환가능 여부를 반환
     private func isOperand(input: String) -> Bool {
         return (Int(input) != nil)
     }
     
-    // 사친연산
+    
     private func caculate(lhs: Int, operator: OperatorType, rhs: Int) throws -> Int {
         switch `operator` {
         case .plus:
@@ -116,22 +113,21 @@ final class StringCaculator {
         }
     }
     
-    // 덧셈
     private func plus(lhs: Int, rhs: Int) -> Int {
         return lhs + rhs
     }
     
-    // 뺄셈
+    
     private func minus(lhs: Int, rhs: Int) -> Int {
         return lhs - rhs
     }
     
-    // 곱셈
+    
     private func multiply(lhs: Int, rhs: Int) -> Int {
         return lhs * rhs
     }
     
-    // 나눗셈
+   
     private  func divide(lhs: Int, rhs: Int) -> Int {
         return lhs / rhs
     }
