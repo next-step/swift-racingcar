@@ -60,10 +60,10 @@ class RacingCarGameTests: XCTestCase {
 
         // then
         let firstRace = sut.raceRecords[0]
-        let positionInFirstRace = try XCTUnwrap(firstRace.first)
+        let positionInFirstRace = try XCTUnwrap(firstRace.first).position
 
         let secondRace = sut.raceRecords[1]
-        let positionInSecondRace = try XCTUnwrap(secondRace.first)
+        let positionInSecondRace = try XCTUnwrap(secondRace.first).position
 
         XCTAssertEqual(positionInFirstRace + 1, positionInSecondRace)
     }

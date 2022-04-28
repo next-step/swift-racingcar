@@ -11,7 +11,7 @@ final class RacingCarGame {
     
     private let carCount: Int
     private let raceCount: Int
-    private(set) var raceRecords: [[Int]] = []
+    private(set) var raceRecords: [[Car]] = []
     private let randomDigitNumberMaker: RandomNumberMakable
     
     init(carCount: Int,
@@ -24,24 +24,31 @@ final class RacingCarGame {
     
     func start() {
         (1...raceCount).forEach { _ in
-            let lastRaceRecord = raceRecords.last ?? initialCarPositions()
-            let newRaceRecord = newCarPositions(from: lastRaceRecord)
+            let lastRaceRecord = raceRecords.last ?? initialRaceRecord()
+            let newRaceRecord = newRaceRecord(from: lastRaceRecord)
             raceRecords.append(newRaceRecord)
         }
     }
     
-    private func initialCarPositions() -> [Int] {
+    private func initialRaceRecord() -> [Car] {
         let startPosition: Int = 0
-        return Array(repeating: startPosition, count: carCount)
+        return Array(repeating: Car(position: startPosition),
+                     count: carCount)
     }
     
-    private func newCarPositions(from carPositions: [Int]) -> [Int] {
-        let carPositions: [Int] = carPositions.map { carPosition -> Int in
-            let randomNumber: Int = randomDigitNumberMaker.random()
-            let canGoForward: Bool = randomNumber >= 4
-            let carNewPosition: Int = canGoForward ? carPosition + 1 : carPosition
-            return carNewPosition
-        }
-        return carPositions
+    private func newRaceRecord(from cars: [Car]) -> [Car] {
+        let newRaceRecord: [Car] = cars
+            .map { car -> (Car, Bool) in
+                let randomNumber: Int = randomDigitNumberMaker.random()
+                let canGoForward: Bool = randomNumber >= 4
+                return (car, canGoForward)
+            }
+            .map { car, canGoForward -> Int in
+                let originalPosition = car.position
+                let newPosition = canGoForward ? originalPosition + 1 : originalPosition
+                return newPosition
+            }
+            .map(Car.init)
+        return newRaceRecord
     }
 }

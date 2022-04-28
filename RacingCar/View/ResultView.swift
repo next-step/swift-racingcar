@@ -9,9 +9,9 @@ import Foundation
 
 struct ResultView {
     
-    private let raceRecords: [[Int]]
+    private let raceRecords: [[Car]]
     
-    init(raceRecords: [[Int]]) {
+    init(raceRecords: [[Car]]) {
         self.raceRecords = raceRecords
     }
     
@@ -26,10 +26,10 @@ struct ResultView {
     private func drawResultTitle() {
         print("실행 결과")
     }
-
-    private func drawRaceRecord(of carPositions: [Int]) {
-        carPositions.forEach { carPosition in
-            let carPositionLine = String(repeating: "-", count: carPosition)
+    
+    private func drawRaceRecord(of cars: [Car]) {
+        cars.forEach { car in
+            let carPositionLine = String(repeating: "-", count: car.position)
             print(carPositionLine)
         }
     }
