@@ -17,7 +17,7 @@ class CalculatorTest: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func test_연산자가_모두_올바르고_숫자가_정수일때() {
+    func test_연산자와_숫자가_모두_올바를때() {
         var sut = Calculator(for: "1 + 2 - 3 * 4 / 5")
         sut.seperateByBlankCharacter()
         

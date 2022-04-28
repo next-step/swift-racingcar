@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Calculator {
+class Calculator: NSObject {
     let formula: String
     
     var numbers: [Int] = []
@@ -17,7 +17,7 @@ struct Calculator {
         self.formula = formula
     }
     
-    mutating func seperateByBlankCharacter() {
+    func seperateByBlankCharacter() {
         let seperatedFormula = self.formula.components(separatedBy: " ")
         
         let orderedNumbers = seperatedFormula
