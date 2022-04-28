@@ -19,3 +19,15 @@ struct RandomDigitNumberMaker: RandomNumberMakable {
         return Int.random(in: range)
     }
 }
+
+struct RandomDigitNumberMakerStub: RandomNumberMakable {
+    let desiredDigit: Int
+    
+    init(desiredDigit: Int) {
+        self.desiredDigit = desiredDigit
+    }
+    
+    func random() -> Int {
+        return desiredDigit
+    }
+}
