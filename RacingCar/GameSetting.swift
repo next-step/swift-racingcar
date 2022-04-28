@@ -9,7 +9,6 @@ import Foundation
 
 
 struct GameSetting {
-    
     let gameCount: Int
     let carCount: Int
 }

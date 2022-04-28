@@ -28,9 +28,8 @@ final class RacingGame {
         try inputView.input()
         self.gameSetting = inputView.registerSetting()
         setupCars(carCount: gameSetting.carCount)
-        resultView.printRacingResultPhrase()
         loopStage()
-        resultView.lineDivider()
+        
     }
     
    private func setupCars(carCount: Int) {
@@ -38,6 +37,7 @@ final class RacingGame {
     }
   
     private func loopStage() {
+        resultView.printRacingResultPhrase()
         (0..<self.gameSetting.gameCount).forEach { _ in
             race()
             resultView.showCarsDistance(cars: cars)
