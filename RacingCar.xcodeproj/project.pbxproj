@@ -21,6 +21,9 @@
 		CB25DB31281A5BA50088C633 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB25DB30281A5BA50088C633 /* Game.swift */; };
 		CB25DB33281A5E990088C633 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB25DB32281A5E990088C633 /* ResultView.swift */; };
 		CB25DB35281A5FE10088C633 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB25DB34281A5FE10088C633 /* Car.swift */; };
+		CB923E7C281A8E9A00B96671 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB25DB30281A5BA50088C633 /* Game.swift */; };
+		CB923E7D281A8E9F00B96671 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB25DB34281A5FE10088C633 /* Car.swift */; };
+		CB923E7E281A8EA400B96671 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB25DB32281A5E990088C633 /* ResultView.swift */; };
 		CBBB9FD32816994900DD6B02 /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBB9FD22816994900DD6B02 /* StringTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -339,7 +342,10 @@
 			files = (
 				CB25DB2F281A54430088C633 /* InputView.swift in Sources */,
 				CB25DB29281A50400088C633 /* RacingCarTests.swift in Sources */,
+				CB923E7D281A8E9F00B96671 /* Car.swift in Sources */,
 				CB25DB2E281A54410088C633 /* InputError.swift in Sources */,
+				CB923E7C281A8E9A00B96671 /* Game.swift in Sources */,
+				CB923E7E281A8EA400B96671 /* ResultView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
