@@ -10,6 +10,7 @@
 		2E4FF21828181D5000F23B57 /* RacingCarTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4FF21728181D5000F23B57 /* RacingCarTest.swift */; };
 		2E4FF22128181DD800F23B57 /* StringTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4FF21E28181DCC00F23B57 /* StringTest.swift */; };
 		2E4FF22328181F5500F23B57 /* SetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4FF22228181F5500F23B57 /* SetTests.swift */; };
+		2E6232F8281A1BB2000F5030 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6232F7281A1BB2000F5030 /* Operation.swift */; };
 		C7E1263027239F7E0000DB8B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +31,7 @@
 		2E4FF21728181D5000F23B57 /* RacingCarTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingCarTest.swift; sourceTree = "<group>"; };
 		2E4FF21E28181DCC00F23B57 /* StringTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTest.swift; sourceTree = "<group>"; };
 		2E4FF22228181F5500F23B57 /* SetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTests.swift; sourceTree = "<group>"; };
+		2E6232F7281A1BB2000F5030 /* Operation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
 		C7E1262C27239F7E0000DB8B /* RacingCar */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RacingCar; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E1262F27239F7E0000DB8B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -84,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				C7E1262F27239F7E0000DB8B /* main.swift */,
+				2E6232F7281A1BB2000F5030 /* Operation.swift */,
 			);
 			path = RacingCar;
 			sourceTree = "<group>";
@@ -188,6 +191,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7E1263027239F7E0000DB8B /* main.swift in Sources */,
+				2E6232F8281A1BB2000F5030 /* Operation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
