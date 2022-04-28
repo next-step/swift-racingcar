@@ -30,13 +30,13 @@ struct Racing {
         var updatedMatchInfo = matchInfo
         
         for car in 0..<carNumber {
-            updatedMatchInfo[car] += moveValue()
+            updatedMatchInfo[car] += forward()
         }
         
         return updatedMatchInfo
     }
     
-    private static func moveValue() -> Int {
+    private static func forward() -> Int {
         let moveValue = Int.random(in: 0...9)
         return (moveValue > 4) ? 1 : 0
     }
