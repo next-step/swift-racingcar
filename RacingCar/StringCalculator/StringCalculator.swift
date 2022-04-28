@@ -9,8 +9,8 @@ import Foundation
 
 struct StringCalculator {
     
-    private var numbers: [Int] = []
-    private var operators: [String] = []
+    private(set) var numbers: [Int] = []
+    private(set) var operators: [String] = []
     
     private let basicOperators: [String] = ["+", "-", "*", "/"]
     
@@ -28,7 +28,7 @@ struct StringCalculator {
         operators.removeAll()
     }
     
-    private mutating func split(mathExpression: String?) throws {
+    mutating func split(mathExpression: String?) throws {
         let expression = try checkNil(mathExpression)
         try checkEmpty(expression)
         try checkVaildExpression(expression)
@@ -64,7 +64,7 @@ struct StringCalculator {
         return previous
     }
     
-    private func calculate(_ lhs: Int, _ rhs: Int, _ operator: String) -> Int? {
+    func calculate(_ lhs: Int, _ rhs: Int, _ operator: String) -> Int? {
         switch `operator` {
         case "+":
             return add(lhs, rhs)
@@ -103,14 +103,14 @@ extension StringCalculator {
     
     private func checkNil(_ expression: String?) throws -> String {
         guard let expression = expression else {
-            throw StringCalculatorError.passNil
+            throw StringCalculatorError.isNil
         }
         return expression
     }
     
     private func checkEmpty(_ expression: String) throws {
         guard !expression.isEmpty else {
-            throw StringCalculatorError.passEmpty
+            throw StringCalculatorError.isEmpty
         }
     }
     

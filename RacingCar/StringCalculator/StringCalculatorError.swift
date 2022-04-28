@@ -8,17 +8,18 @@
 import Foundation
 
 enum StringCalculatorError: Error {
-    case passNil
-    case passEmpty
+    case isNil
+    case isEmpty
     case lastValueIsNotNumber
     case calculateError
     case invalidOperator
-    
-    var localizedDescription: String {
+}
+extension StringCalculatorError: LocalizedError {
+    var errorDescription: String? {
         switch self {
-        case .passNil:
+        case .isNil:
             return "입력값이 nil입니다."
-        case .passEmpty:
+        case .isEmpty:
             return "입력값이 비어있습니다."
         case .lastValueIsNotNumber:
             return "마지막 입력값이 숫자가 아닙니다."
