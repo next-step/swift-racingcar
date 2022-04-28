@@ -97,7 +97,7 @@ class StringCaculatorTests: XCTestCase {
         //when && then
         let expectation = StringCaculator.StringCaculatorErrorType.incorrectExpression
         XCTAssertThrowsError(try sut.caculate(expression: expression)) { error in
-            XCTAssertEqual(error as? StringCaculator.StringCaculatorErrorType, expectation)
+            XCTAssertEqual(error as? StringCaculator.StringCaculatorError, expectation)
         }
     }
     
@@ -109,7 +109,7 @@ class StringCaculatorTests: XCTestCase {
         //when
         let expectation = StringCaculator.StringCaculatorErrorType.incorrectExpression
         XCTAssertThrowsError(try sut.caculate(expression: expression)) { error in
-            XCTAssertEqual(error as? StringCaculator.StringCaculatorErrorType, expectation)
+            XCTAssertEqual(error as? StringCaculator.StringCaculatorError, expectation)
         }
     }
     
@@ -121,7 +121,7 @@ class StringCaculatorTests: XCTestCase {
         //when
         let expectation = StringCaculator.StringCaculatorErrorType.incorrectExpression
         XCTAssertThrowsError(try sut.caculate(expression: expression)) { error in
-            XCTAssertEqual(error as? StringCaculator.StringCaculatorErrorType, expectation)
+            XCTAssertEqual(error as? StringCaculator.StringCaculatorError, expectation)
         }
     }
     
@@ -133,7 +133,7 @@ class StringCaculatorTests: XCTestCase {
         //when
         let expectation = StringCaculator.StringCaculatorErrorType.incorrectExpression
         XCTAssertThrowsError(try sut.caculate(expression: expression)) { error in
-            XCTAssertEqual(error as? StringCaculator.StringCaculatorErrorType, expectation)
+            XCTAssertEqual(error as? StringCaculator.StringCaculatorError, expectation)
         }
     }
     
@@ -144,7 +144,7 @@ class StringCaculatorTests: XCTestCase {
         //when && then
         let expectation = StringCaculator.StringCaculatorErrorType.divideByZero
         XCTAssertThrowsError(try sut.caculate(expression: expression)) { error in
-            XCTAssertEqual(error as? StringCaculator.StringCaculatorErrorType, expectation)
+            XCTAssertEqual(error as? StringCaculator.StringCaculatorError, expectation)
         }
     }
     
@@ -155,7 +155,7 @@ class StringCaculatorTests: XCTestCase {
         //when && then
         let expectation = StringCaculator.StringCaculatorErrorType.inputEmptyError
         XCTAssertThrowsError(try sut.caculate(expression: expression)) { error in
-            XCTAssertEqual(error as? StringCaculator.StringCaculatorErrorType, expectation)
+            XCTAssertEqual(error as? StringCaculator.StringCaculatorError, expectation)
         }
     }
     
@@ -166,7 +166,7 @@ class StringCaculatorTests: XCTestCase {
         //when && then
         let expectation = StringCaculator.StringCaculatorErrorType.inputEmptyError
         XCTAssertThrowsError(try sut.caculate(expression: expression)) { error in
-            XCTAssertEqual(error as? StringCaculator.StringCaculatorErrorType, expectation)
+            XCTAssertEqual(error as? StringCaculator.StringCaculatorError, expectation)
         }
     }
     
@@ -176,7 +176,7 @@ class StringCaculatorTests: XCTestCase {
         //when && then
         let expectation = StringCaculator.StringCaculatorErrorType.incorrectExpression
         XCTAssertThrowsError(try sut.caculate(expression: expression)) { error in
-            XCTAssertEqual(error as? StringCaculator.StringCaculatorErrorType, expectation)
+            XCTAssertEqual(error as? StringCaculator.StringCaculatorError, expectation)
         }
     }
     
@@ -186,7 +186,7 @@ class StringCaculatorTests: XCTestCase {
         //when && then
         let expectation = StringCaculator.StringCaculatorErrorType.notComputationOperator
         XCTAssertThrowsError(try sut.caculate(expression: expression)) { error in
-            XCTAssertEqual(error as? StringCaculator.StringCaculatorErrorType, expectation)
+            XCTAssertEqual(error as? StringCaculator.StringCaculatorError, expectation)
         }
     }
     
@@ -196,7 +196,7 @@ class StringCaculatorTests: XCTestCase {
         //when && then
         let expectation = StringCaculator.StringCaculatorErrorType.incorrectExpression
         XCTAssertThrowsError(try sut.caculate(expression: expression)) { error in
-            XCTAssertEqual(error as? StringCaculator.StringCaculatorErrorType, expectation)
+            XCTAssertEqual(error as? StringCaculator.StringCaculatorError, expectation)
         }
     }
 }

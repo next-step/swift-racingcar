@@ -10,7 +10,7 @@ import Foundation
 
 final class StringCaculator {
     
-     enum StringCaculatorErrorType: Error {
+     enum StringCaculatorError: Error {
         case inputEmptyError
         case divideByZero
         case notComputationOperator
@@ -47,7 +47,7 @@ final class StringCaculator {
     // 입력값 nil 체크
     private func validateEmptyCheckFor(expression: [String])  throws -> [String] {
         guard !expression.isEmpty else {
-            throw StringCaculatorErrorType.inputEmptyError
+            throw StringCaculatorError.inputEmptyError
         }
         return expression
     }
@@ -59,14 +59,14 @@ final class StringCaculator {
         if isOperand(input: String(first)) == false ||
             isOperand(input: String(last)) == false
         {
-            throw StringCaculatorErrorType.incorrectExpression
+            throw StringCaculatorError.incorrectExpression
         }
     }
     
     // 0으로 나누는 경우 체크
     private func checkDivideOperandZero(operand: Int) throws {
         if operand == 0 {
-            throw StringCaculatorErrorType.divideByZero
+            throw StringCaculatorError.divideByZero
         }
     }
     
@@ -78,7 +78,7 @@ final class StringCaculator {
     // 들어온 문자를 연산자로 변환
     private func getOperator(operator: String) throws -> OperatorType {
         guard let `operator` = OperatorType(rawValue: `operator`)  else {
-            throw StringCaculatorErrorType.notComputationOperator
+            throw StringCaculatorError.notComputationOperator
         }
         return `operator`
     }
@@ -86,7 +86,7 @@ final class StringCaculator {
     // 들어온 문자를 피연산자로 변환
     private func getOperand(operand: String) throws -> Int {
         guard let operand = Int(operand)  else {
-            throw StringCaculatorErrorType.notComputationOperand
+            throw StringCaculatorError.notComputationOperand
         }
         return operand
     }
