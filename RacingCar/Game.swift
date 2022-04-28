@@ -15,29 +15,21 @@ class Game {
         self.cars = Array(repeating: Car(), count: cars)
         self.counts = counts
     }
-    
-    func run() {
-        print("\n실행 결과")
-        
-        for _ in 0..<counts {
-            runOneCycle(of: cars)
-        }
-    }
 }
 
 extension Game {
-    private func generateRandomNumer() -> Int {
+    static func generateRandomNumer() -> Int {
         return Int(arc4random_uniform(10))
     }
     
-    private func canGoFoward(_ n: Int) -> Bool {
+    static func canGoFoward(_ n: Int) -> Bool {
         return n >= 4
     }
     
     private func runOnce(_ car: Car) {
-        let randomNumber: Int = generateRandomNumer()
+        let randomNumber: Int = Game.generateRandomNumer()
         
-        if canGoFoward(randomNumber) {
+        if Game.canGoFoward(randomNumber) {
             car.foward()
         }
     }
@@ -48,5 +40,13 @@ extension Game {
             ResultView.printResult(car)
         }
         print("")
+    }
+    
+    func run() {
+        print("\n실행 결과")
+        
+        for _ in 0..<counts {
+            runOneCycle(of: cars)
+        }
     }
 }

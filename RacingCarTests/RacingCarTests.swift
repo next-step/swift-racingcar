@@ -10,4 +10,9 @@ import XCTest
 
 class RacingCarTests: XCTestCase {
     
+    func testIsValidRandomNumber() throws {
+        let randomNumber = Game.generateRandomNumer()
+        XCTAssertTrue(randomNumber >= 0 && randomNumber <= 9)
+    }
+    
 }
