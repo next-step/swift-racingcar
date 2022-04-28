@@ -145,8 +145,8 @@
 		CB25DB1D281A4D750088C633 /* view */ = {
 			isa = PBXGroup;
 			children = (
-				CB923E7F281AA06400B96671 /* input */,
-				CB923E80281AA06E00B96671 /* result */,
+				CB923E7F281AA06400B96671 /* inputViews */,
+				CB923E80281AA06E00B96671 /* resultViews */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -159,21 +159,21 @@
 			path = RacingCarTests;
 			sourceTree = "<group>";
 		};
-		CB923E7F281AA06400B96671 /* input */ = {
+		CB923E7F281AA06400B96671 /* inputViews */ = {
 			isa = PBXGroup;
 			children = (
 				CB25DB20281A4DE40088C633 /* InputError.swift */,
 				CB25DB1E281A4D820088C633 /* InputView.swift */,
 			);
-			path = input;
+			path = inputViews;
 			sourceTree = "<group>";
 		};
-		CB923E80281AA06E00B96671 /* result */ = {
+		CB923E80281AA06E00B96671 /* resultViews */ = {
 			isa = PBXGroup;
 			children = (
 				CB25DB32281A5E990088C633 /* ResultView.swift */,
 			);
-			path = result;
+			path = resultViews;
 			sourceTree = "<group>";
 		};
 		CB923E81281AA0A100B96671 /* model */ = {
