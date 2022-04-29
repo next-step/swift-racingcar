@@ -11,4 +11,12 @@ import Foundation
 struct GameSetting {
     let gameCount: Int
     let carCount: Int
+    let randomGenerator: RandomGettable
+    
+    init(gameCount: Int = 0, carCount: Int = 0, randomGenerator: RandomGettable) {
+        self.gameCount = gameCount
+        self.carCount = carCount
+        self.randomGenerator = randomGenerator
+    }
+
 }

@@ -16,12 +16,17 @@ protocol RacingGameInput {
 
 final class RacingGameInputView: RacingGameInput {
     
+    let randomGenerator: RandomGettable
+    private var carCount: Int = 0
+    private var gameCount: Int = 0
+    
     enum InputError: Error {
         case incorrectFormat
     }
     
-    private var carCount: Int = 0
-    private var gameCount: Int = 0
+    init(randoGenerator: RandomGettable) {
+        self.randomGenerator = randoGenerator
+    }
     
     func input() throws {
         try inputCarCount()
@@ -57,7 +62,7 @@ final class RacingGameInputView: RacingGameInput {
     }
     
     func registerSetting() -> GameSetting {
-        return GameSetting(gameCount: gameCount, carCount: carCount)
+        return GameSetting(gameCount: gameCount, carCount: carCount, randomGenerator: randomGenerator)
     }
     
 }
