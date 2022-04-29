@@ -9,6 +9,10 @@ import Foundation
 
 final class RacingCarGame {
     
+    private enum Constants {
+        static let minimumDigitToCarGoForward: Int = 4
+    }
+    
     let roundHistory = RoundHistory()
     private let initialRound: Round
     private let raceCount: Int
@@ -38,7 +42,7 @@ final class RacingCarGame {
             .cars
             .map { car -> (Car, Bool) in
                 let randomNumber: Int = randomDigitNumberMaker.random()
-                let canGoForward: Bool = randomNumber >= 4
+                let canGoForward: Bool = randomNumber >= Constants.minimumDigitToCarGoForward
                 return (car, canGoForward)
             }
             .map { car, canGoForward -> Int in
