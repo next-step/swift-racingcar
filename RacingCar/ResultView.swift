@@ -22,18 +22,8 @@ struct ResultView {
     
     private static func printCarMove(match: [Int]) {
         for move in match {
-            print(self.convertNumberToLine(move: move), separator: "", terminator: "")
+            print(RacingForwardLineMaker.convertNumberToLine(move: move), separator: "", terminator: "")
             print()
         }
-    }
-    
-    private static func convertNumberToLine(move: Int) -> String {
-        var line = ""
-        
-        for _ in 0..<move {
-            line += "-"
-        }
-        
-        return line
     }
 }
