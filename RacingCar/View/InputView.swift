@@ -9,13 +9,22 @@ import Foundation
 
 private struct UserAsker {
     
-    enum Question: String {
-        case carCount = "자동차 대수는 몇 대인가요?"
-        case raceCount = "시도할 횟수는 몇 회인가요?"
+    enum Question {
+        case carCount
+        case raceCount
+        
+        var userGuideDescription: String {
+            switch self {
+            case .carCount:
+                return "자동차 대수는 몇 대인가요?"
+            case .raceCount:
+                return "시도할 횟수는 몇 회인가요?"
+            }
+        }
     }
     
     func ask(for question: Question) {
-        print(question.rawValue)
+        print(question.userGuideDescription)
     }
 }
 
