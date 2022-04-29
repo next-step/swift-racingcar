@@ -27,7 +27,7 @@ final class RacingGameInputViewMock: RacingGameInput {
     
     func validation(count: String) throws -> Int {
         guard let count = Int(count) else { throw InputViewError.incorrectFormat }
-        guard count > 0  else { throw InputViewError.minusCount }
+        guard count > 0 else { throw InputViewError.minusCount }
         return count
     }
     

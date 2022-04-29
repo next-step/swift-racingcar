@@ -11,7 +11,6 @@ import Foundation
 protocol RandomGettable {
     func random() -> Int
     var randomRange: Range<Int> { get }
-  
 }
 
 final class RandomGenerator: RandomGettable {
@@ -20,14 +19,13 @@ final class RandomGenerator: RandomGettable {
     
     //MARK: - INITIALIZE
     init (range: Range<Int> = 0..<10) {
-        self.randomRange  = range
+        self.randomRange = range
     }
     
     //MARK: - METHOD
     func random() -> Int {
         return Int.random(in: randomRange)
     }
-    
 }
 
 
@@ -45,7 +43,6 @@ final class RacingGame {
     init(inputView: RacingGameInput, resultView: RacingGameResult) {
         self.inputView = inputView
         self.resultView = resultView
-       
     }
 
     //MARK: - METHOD
@@ -54,9 +51,7 @@ final class RacingGame {
         self.gameSetting = inputView.registerSetting()
     }
     func gameStart() {
-        
         setupCars(carCount: gameSetting.carCount)
-        
         loopStage()
     }
     
@@ -75,5 +70,4 @@ final class RacingGame {
     private func race() {
         cars.forEach{$0.move()}
     }
-  
 }

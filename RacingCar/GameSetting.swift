@@ -21,7 +21,6 @@ struct GameSetting: Equatable {
         self.randomGenerator = randomGenerator
     }
     
-    
     static func == (lhs: GameSetting, rhs: GameSetting) -> Bool {
         return lhs.gameCount == rhs.gameCount
                 && lhs.carCount == rhs.carCount
