@@ -27,4 +27,20 @@ struct Step2 {
         return lhs / rhs
     }
     
+    
+    
+    func inputCalculatorCharactor(_ lhs: Int,_ input: String,_ rhs: Int) -> Int {
+        switch input {
+        case "+":
+            return add(lhs, rhs)
+        case "-":
+            return substract(lhs, rhs)
+        case "*":
+            return multiply(lhs, rhs)
+        case "/":
+            return divide(lhs, rhs)
+        default:
+            return 0
+        }
+    }
 }

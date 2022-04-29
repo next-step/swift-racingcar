@@ -28,5 +28,12 @@ class TestStep2: XCTestCase {
         let step = Step2()
         XCTAssertEqual(step.multiply(2, 3), 6)
     }
+    
+    
+    func test_세개_인_풋_넣어서_연산하기() {
+        let step = Step2()
+        XCTAssertEqual(step.inputCalculatorCharactor(3, "*", 2), 6)
+    }
+    
 
 }
