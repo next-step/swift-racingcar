@@ -36,19 +36,10 @@ struct InputParser {
     
     static func parse(_ input: String?) throws -> ([Operation], [Int]){
         try checkValidity(of: input)
-        let input = input!.components(separatedBy: blankSpace)
+        let inputComponents = input!.components(separatedBy: blankSpace)
         
-        let operands = try extractOperands(inputComponents: input)
-        var operations = [Operation]()
-        
-        let operatorCandidates = stride(from: 1, to: input.count, by: 2)
-                                .map { input[$0]}
-    
-        
-        try operatorCandidates.forEach { candidate in
-            let operation = try parseToOperation(inputComponent: candidate)
-            operations.append(operation)
-        }
+        let operands = try extractOperands(inputComponents: inputComponents)
+        let operations = try extractOperation(inputComponents: inputComponents)
         
         return (operations, operands)
     }
@@ -86,6 +77,20 @@ struct InputParser {
         }
         
         return operand
+    }
+    
+    private static func extractOperation(inputComponents: [String]) throws -> [Operation] {
+        var operations = [Operation]()
+        
+        let operatorCandidates = stride(from: 1, to: inputComponents.count, by: 2)
+                                .map { inputComponents[$0]}
+
+        
+        try operatorCandidates.forEach { candidate in
+            let operation = try parseToOperation(inputComponent: candidate)
+            operations.append(operation)
+        }
+        return operations
     }
     
     private static func parseToOperation(inputComponent: String) throws -> Operation {
