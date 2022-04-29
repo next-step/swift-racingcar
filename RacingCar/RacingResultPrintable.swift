@@ -6,5 +6,6 @@
 //
 
 protocol RacingResultPrintable {
-    func result() -> [[Int]]
+    func racingInfo() -> [[AbleToRace]]
+    func winnerGroup() -> [AbleToRace]
 }
