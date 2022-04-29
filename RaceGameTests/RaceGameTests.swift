@@ -48,8 +48,8 @@ class RaceGameTests: XCTestCase {
         let resultView = RacingGameResultView()
         
         sut = RacingGame(inputView: inputView, resultView: resultView)
-        //when
         
+        //when
         try sut.gameReady()
         sut.gameStart()
         //then
@@ -58,12 +58,26 @@ class RaceGameTests: XCTestCase {
         }
     }
     
-    func test_moveAndPause_by_minimumCondition() {
+    func test_moveAndPause_by_minimumCondition_In_Range() {
         
         //given
-        let randomGenerator = RandomGenerator(range: 0..<5)
+        let randomGenerator = RandomGenerator(range: 5..<10)
         let car = Car(randomGenerator: randomGenerator)
+        car.minimumCondition = 3
+        //when
+        car.move()
         
+        //then
+        let expectation = 1
+        XCTAssertEqual(car.movePoint, expectation)
+    }
+    
+    func test_moveAndPause_by_minimumCondition_EscapingRange() {
+        
+        //given
+        let randomGenerator = RandomGenerator(range: 5..<10)
+        let car = Car(randomGenerator: randomGenerator)
+        car.minimumCondition = 100
         //when
         car.move()
         
