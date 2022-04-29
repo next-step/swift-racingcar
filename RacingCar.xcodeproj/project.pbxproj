@@ -39,7 +39,7 @@
 		DA01ED5A2817DBF900CE4379 /* Sample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sample.swift; sourceTree = "<group>"; };
 		DA01ED612817DC1400CE4379 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		DA01ED642817DEC100CE4379 /* Step1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step1.swift; sourceTree = "<group>"; };
-		DA01ED77281BBD3D00CE4379 /* Step2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step2.swift; sourceTree = "<group>"; };
+		DA01ED77281BBD3D00CE4379 /* Step2.swift */ = {isa = PBXFileReference; indentWidth = 3; lastKnownFileType = sourcecode.swift; path = Step2.swift; sourceTree = "<group>"; };
 		DA01ED7D281BBD5100CE4379 /* TestStep2.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestStep2.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA01ED7F281BBD5100CE4379 /* TestStep2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestStep2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */

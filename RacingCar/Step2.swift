@@ -9,6 +9,31 @@ import Foundation
 
 
 struct Step2 {
+   
+   private enum OperatorType: String ,CaseIterable {
+      case add = "+"
+      case subtract = "-"
+      case multiply = "*"
+      case divide = "/"
+   }
+   
+   private enum CalculatorError: LocalizedError {
+      case inputNill
+      case isEmpty
+      case invalidOperator
+      
+      var errorDescription: String? {
+         switch self {
+         case .inputNill:
+            return "입력 값이 nil"
+         case .isEmpty:
+            return "빈 공백 문자"
+         case .invalidOperator:
+            return "사칙 연산 기호 아님"
+         }
+      }
+   }
+   
     func add(_ lhs: Int, _ rhs: Int) -> Int {
         return lhs + rhs
     }
@@ -27,33 +52,38 @@ struct Step2 {
         return lhs / rhs
     }
     
-    
-    
-    func inputCalculatorCharactor(_ lhs: Int,_ input: String,_ rhs: Int) -> Int {
+    func inputCalculatorCharactor(_ lhs: Int,_ input: String,_ rhs: Int) -> Int? {
+
         switch input {
-        case "+":
+        case OperatorType.add.rawValue:
             return add(lhs, rhs)
-        case "-":
+        case OperatorType.subtract.rawValue:
             return substract(lhs, rhs)
-        case "*":
+        case OperatorType.multiply.rawValue:
             return multiply(lhs, rhs)
-        case "/":
+        case OperatorType.divide.rawValue:
             return divide(lhs, rhs)
         default:
-            return 0
+           return nil
         }
     }
+   
+    func splitString(_ input: String) throws -> [String] {
+      guard input.isEmpty else { throw CalculatorError.inputNill }
+      guard input == "" else { throw CalculatorError.isEmpty }
+      guard input.contains(OperatorType.allCases.description) else { throw CalculatorError.invalidOperator }
+      
+      return input.components(separatedBy: "")
+   }
     
-    func stringCalculator(_ input: String) -> Int {
-        var separatedStringArray: [String] = input.components(separatedBy: " ")
-        if separatedStringArray.count % 2 == 0 || separatedStringArray.isEmpty {
-            return 0
-        }
+    func stringCalculator(_ input: [String]) -> Int {
+        var input: [String] = input
+
         var result: Int = 0
-        for _ in 0..<separatedStringArray.count / 2 {
-            result = inputCalculatorCharactor(Int(separatedStringArray[0]) ?? 0, separatedStringArray[1], Int(separatedStringArray[2]) ?? 0)
-            separatedStringArray.removeSubrange(0...2)
-            separatedStringArray.insert(String(result), at: 0)
+        for _ in 0..<input.count / 2 {
+           result = inputCalculatorCharactor(Int(input[0]) ?? 0, input[1], Int(input[2]) ?? 0)!
+           input.removeSubrange(0...2)
+           input.insert(String(result), at: 0)
         }
         return result
     }
