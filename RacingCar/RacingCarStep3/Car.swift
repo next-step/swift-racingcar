@@ -10,7 +10,7 @@ import Foundation
 final class Car {
     
     // MARK: - Property
-    private var moveCount: Int = 0
+    private(set) var moveCount: Int = 0
     
     // MARK: - Method
     func generateRandomNumber() -> Int {
@@ -27,12 +27,5 @@ final class Car {
             return true
         }
         return false
-    }
-    
-    func printMove() {
-        for _ in 0 ..< moveCount {
-            print("-", terminator: "")
-        }
-        print("")
     }
 }

@@ -27,4 +27,8 @@ class RacingTests: XCTestCase {
         racing.inputTryCount(input: 3)
         XCTAssertNoThrow(try racing.runRacing { })
     }
+    
+    func test_레이싱_처음부터_잘_돌아가는지_테스트() throws {
+        XCTAssertNoThrow(try Racing().start())
+    }
 }
