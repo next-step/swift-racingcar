@@ -9,15 +9,6 @@ import XCTest
 @testable import RacingCar
 
 class InputParserTest: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
     func test_빈문자열을_파싱시도하면_inputIsEmpty에러가_발생한다() {
         // given
         let emptyString = ""
