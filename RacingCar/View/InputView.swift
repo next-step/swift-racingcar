@@ -7,15 +7,11 @@
 
 import Foundation
 
-protocol Guidable {
-    var userGuideDescription: String { get }
-}
-
 private enum Guide {
-    enum Error: Guidable {
+    enum Error: UserInformable {
         case notInt
         
-        var userGuideDescription: String {
+        var guideDescription: String {
             switch self {
             case .notInt:
                 return "숫자 형식이 아닙니다. 다시 앱을 시작 후, 숫자를 입력해주세요"
@@ -23,11 +19,11 @@ private enum Guide {
         }
     }
     
-    enum Question: Guidable {
+    enum Question: UserInformable {
         case carCount
         case raceCount
         
-        var userGuideDescription: String {
+        var guideDescription: String {
             switch self {
             case .carCount:
                 return "자동차 대수는 몇 대인가요?"
@@ -35,12 +31,6 @@ private enum Guide {
                 return "시도할 횟수는 몇 회인가요?"
             }
         }
-    }
-}
-
-private struct UserGuider {
-    func guide(for dimension: Guidable) {
-        print(dimension.userGuideDescription)
     }
 }
 

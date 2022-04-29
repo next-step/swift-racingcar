@@ -29,6 +29,7 @@
 		3B8A28D2281C62F000CF84C6 /* Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8A28CE281C5F0800CF84C6 /* Round.swift */; };
 		3B8A28D3281C62F700CF84C6 /* RoundHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8A28D0281C619800CF84C6 /* RoundHistory.swift */; };
 		3B8A28D5281C636900CF84C6 /* RecordHistoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8A28D4281C636900CF84C6 /* RecordHistoryTests.swift */; };
+		3B8A28DB281C6F6500CF84C6 /* UserGuider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8A28DA281C6F6500CF84C6 /* UserGuider.swift */; };
 		C7E1263027239F7E0000DB8B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +62,7 @@
 		3B8A28CE281C5F0800CF84C6 /* Round.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Round.swift; sourceTree = "<group>"; };
 		3B8A28D0281C619800CF84C6 /* RoundHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundHistory.swift; sourceTree = "<group>"; };
 		3B8A28D4281C636900CF84C6 /* RecordHistoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordHistoryTests.swift; sourceTree = "<group>"; };
+		3B8A28DA281C6F6500CF84C6 /* UserGuider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGuider.swift; sourceTree = "<group>"; };
 		C7E1262C27239F7E0000DB8B /* RacingCar */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RacingCar; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E1262F27239F7E0000DB8B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -99,6 +101,7 @@
 		3B8A28BF281AE05900CF84C6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3B8A28DA281C6F6500CF84C6 /* UserGuider.swift */,
 				3B8A28BD281AE04000CF84C6 /* InputView.swift */,
 				3B8A28C0281AE08F00CF84C6 /* ResultView.swift */,
 			);
@@ -258,6 +261,7 @@
 			files = (
 				3B8A28A72819927700CF84C6 /* StringCalculator.swift in Sources */,
 				3B8A28CF281C5F0800CF84C6 /* Round.swift in Sources */,
+				3B8A28DB281C6F6500CF84C6 /* UserGuider.swift in Sources */,
 				3B8A28BE281AE04000CF84C6 /* InputView.swift in Sources */,
 				3B8A28C4281AE90600CF84C6 /* Car.swift in Sources */,
 				3B8A28B4281AD96500CF84C6 /* RandomDigitNumberMaker.swift in Sources */,
