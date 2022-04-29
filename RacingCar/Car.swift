@@ -17,19 +17,10 @@ final class Car {
     }
 
     func move() {
-        let conditionNumber = generateMoveConditionNumber()
-        let movePoint = isMoveToNext(randomNumber: conditionNumber) ? 1 : 0
-        self.movePoint += movePoint
+        let conditionNumber = randomGenerator.random()
+        let movePoint = randomGenerator.isMoveToNext(randomNumber: conditionNumber)
+        self.movePoint += movePoint ? 1 : 0
     }
-    
-    private func generateMoveConditionNumber() -> Int {
-        return randomGenerator.generateMoveConditionNumber()
-    }
-
-    private func isMoveToNext(randomNumber: Int) -> Bool {
-        return randomNumber > 4
-    }
-
-  
-    
 }
+
+

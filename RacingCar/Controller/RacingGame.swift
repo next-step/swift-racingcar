@@ -9,17 +9,29 @@ import Foundation
 
 
 protocol RandomGettable {
-    func generateMoveConditionNumber() -> Int
+    func random() -> Int
     func isMoveToNext(randomNumber: Int) -> Bool
+    var randomRange: Range<Int> { get }
+    var minimumCondition: Int { get }
 }
 
 final class RandomGenerator: RandomGettable {
+    //MARK: - PROPERTIES
+    var randomRange: Range<Int>
+    var minimumCondition: Int
     
-    func generateMoveConditionNumber() -> Int {
-        return Int.random(in: 0..<10)
+    //MARK: - INITIALIZE
+    init (range: Range<Int> = 0..<10, minimuCondition: Int = 4) {
+        self.randomRange  = range
+        self.minimumCondition = minimuCondition
+    }
+    
+    //MARK: - METHOD
+    func random() -> Int {
+        return Int.random(in: randomRange)
     }
     func isMoveToNext(randomNumber: Int) -> Bool {
-        return randomNumber > 4
+        return randomNumber > minimumCondition
     }
 }
 
@@ -38,6 +50,7 @@ final class RacingGame {
     init(inputView: RacingGameInput, resultView: RacingGameResult) {
         self.inputView = inputView
         self.resultView = resultView
+       
     }
 
     //MARK: - METHOD
@@ -45,6 +58,7 @@ final class RacingGame {
         try inputView.input()
         self.gameSetting = inputView.registerSetting()
         setupCars(carCount: gameSetting.carCount)
+        
         loopStage()
     }
     

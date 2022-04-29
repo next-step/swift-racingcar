@@ -33,7 +33,7 @@ class RaceGameTests: XCTestCase {
         sut = RacingGame(inputView: inputView, resultView: resultView)
         //when
         for _ in 0..<50 {
-            let randomInteger = randomGenerator.generateMoveConditionNumber()
+            let randomInteger = randomGenerator.random()
             print("randomInteger: \(randomInteger)")
             //then
             let expectation = 0..<10
@@ -41,7 +41,7 @@ class RaceGameTests: XCTestCase {
         }
     }
     
-    func test_car_movePoint_lessthan_gameCount() throws {
+    func test_car_movePoint_lessThanOrEqual_gameCount() throws {
         //given
         let gameCount = 3
         let carCount = 3
@@ -56,7 +56,17 @@ class RaceGameTests: XCTestCase {
         
         //then
         sut.cars.forEach { car in
-            XCTAssertLessThan(car.movePoint, gameCount)
+            XCTAssertLessThanOrEqual(car.movePoint, gameCount)
         }
+    }
+    
+    func test_moveAndPause_by_minimumCondition() {
+        
+        let randomGenerator = RandomGenerator(range: 0..<5, minimuCondition: 5)
+        let car = Car(randomGenerator: randomGenerator)
+        car.move()
+    
+        XCTAssertEqual(car.movePoint, 0)
+        
     }
 }

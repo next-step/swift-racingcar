@@ -28,12 +28,12 @@ final class RacingGameInputViewMock: RacingGameInput {
     
     func inputCarCount() throws {
         printQuestionCarCount()
-        print("\(carCount)")
+        print("\(gameSetting.carCount)")
     }
     
     func inputGameCount() throws {
         printQuestionGameCount()
-        print("\(gameCount)")
+        print("\(gameSetting.gameCount)")
     }
     
     func printQuestionCarCount() {
