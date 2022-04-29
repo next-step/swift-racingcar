@@ -35,5 +35,10 @@ class TestStep2: XCTestCase {
         XCTAssertEqual(step.inputCalculatorCharactor(3, "*", 2), 6)
     }
     
+    func test_이_플러스_삼_곱하기_사_더하기_오_나누기_이() {
+        let step2 = Step2()
+        XCTAssertTrue(step2.stringCalculator("2 + 3 * 4 + 5 / 2") == 12)
+    }
+    
 
 }

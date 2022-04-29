@@ -43,4 +43,19 @@ struct Step2 {
             return 0
         }
     }
+    
+    func stringCalculator(_ input: String) -> Int {
+        var separatedStringArray: [String] = input.components(separatedBy: " ")
+        if separatedStringArray.count % 2 == 0 || separatedStringArray.isEmpty {
+            return 0
+        }
+        var result: Int = 0
+        for _ in 0..<separatedStringArray.count / 2 {
+            result = inputCalculatorCharactor(Int(separatedStringArray[0]) ?? 0, separatedStringArray[1], Int(separatedStringArray[2]) ?? 0)
+            separatedStringArray.removeSubrange(0...2)
+            separatedStringArray.insert(String(k), at: 0)
+        }
+        return result
+    }
+    
 }
