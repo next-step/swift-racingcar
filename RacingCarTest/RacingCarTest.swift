@@ -8,44 +8,67 @@
 import XCTest
 
 class RacingCarTest: XCTestCase {
-    func testRacingInfoResult() {
-        let racingInfo = RacingInfo(racing: [[1,1,0], [2,1,1], [3,2,1]])
-        let racingResult = racingInfo.result()
-        
-        XCTAssertEqual(racingResult, [[1,1,0], [2,1,1], [3,2,1]])
-    }
-    
-    func testGameInfo() {
-        let gameInfo = GameInfo(carNumber: 3, matchNumber: 4)
-        let carNumber = gameInfo.racingGameCarNumber()
-        let roundNumber = gameInfo.racingGameMatchNumber()
-        
-        XCTAssertEqual(carNumber, 3)
-        XCTAssertEqual(roundNumber, 4)
-    }
+    private let gameInfo = GameInfo(players: ["mansa", "kim"], round: 3)
+    private let forwarMaker = RacingForwardMaker()
+    private lazy var racing = Racing(gameInfo: gameInfo, forwardNumberMaker: forwarMaker)
     
     func testMakeRacingForwardLine() {
         let racingForwardLine = RacingForwardLineMaker.convertNumberToLine(move: 3)
-        
+
         XCTAssertEqual(racingForwardLine, "---")
     }
-    
+
     func testRacingRandomForward() {
         let randomNumber = RacingForwardRandomNumberMaker().forward()
         XCTAssertTrue(randomNumber >= 0 && randomNumber <= 1)
     }
-    
+
     func testRacingForward() {
         let forward = RacingForwardMaker().forward()
         XCTAssertTrue(forward == 1)
     }
+
+    func testRacingGameInfo() {
+        let gameInfo = GameInfo(players: ["mansa", "kim"], round: 3)
+
+        XCTAssertEqual(gameInfo.racingGamePlayers(), ["mansa", "kim"])
+        XCTAssertEqual(gameInfo.racingGameRound(), 3)
+    }
     
-    func testRacingPlay() {
-        let gameInfo = GameInfo(carNumber: 3, matchNumber: 4)
-        let forwardMaker = RacingForwardMaker()
-        let racing = Racing(gameInfo: gameInfo, forwardNumberMaker: forwardMaker)
-        let racingResult = racing.play()
+    func testRacingPlayer() {
+        var player = RacingPlayer(name: "mansa", moveCount: 0)
         
-        XCTAssertEqual(racingResult, [[1, 1, 1], [2, 2, 2], [3, 3, 3], [4, 4, 4]])
+        XCTAssertEqual(player.racerName(), "mansa")
+        XCTAssertEqual(player.moveCountByRacer(), 0)
+        
+        player.move(foward: 1)
+        
+        XCTAssertEqual(player.moveCountByRacer(), 1)
+    }
+    
+    func testRacing() {
+        let racing = Racing(gameInfo: gameInfo, forwardNumberMaker: forwarMaker)
+        
+        XCTAssertEqual(racing.play().first?[0].racerName(), "mansa")
+        XCTAssertEqual(racing.play().first?[1].racerName(), "kim")
+        XCTAssertEqual(racing.play().first?[0].moveCountByRacer(), 1)
+        XCTAssertEqual(racing.play().first?[1].moveCountByRacer(), 1)
+    }
+    
+    func testRacingWinnderGroup() {
+        let racingInfo = RacingInfo(racing: racing.play())
+        let winnderGroup = racingInfo.winnerGroup()
+        
+        XCTAssertEqual(winnderGroup.first?.racerName(), "mansa")
+        XCTAssertEqual(winnderGroup.last?.racerName(), "kim")
+    }
+    
+    func testRacingInfo() {
+        let racingInfo = RacingInfo(racing: racing.play()).racingInfo()
+        
+        XCTAssertEqual(racingInfo.first?[0].racerName(), "mansa")
+        XCTAssertEqual(racingInfo.first?[1].racerName(), "kim")
+        XCTAssertEqual(racingInfo.first?[0].moveCountByRacer(), 1)
+        XCTAssertEqual(racingInfo.first?[1].moveCountByRacer(), 1)
     }
 }
