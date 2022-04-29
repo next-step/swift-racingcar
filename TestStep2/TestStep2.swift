@@ -9,27 +9,24 @@ import XCTest
 
 class TestStep2: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func test_더하기() {
+        let step2 = Step2()
+        XCTAssertEqual(step2.add(2, 3), 5)
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    func test_뺴기() {
+        let step2 = Step2()
+        XCTAssertEqual(step2.substract(2, 3),-1)
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    
+    func test_나누셈() {
+        let step2 = Step2()
+        XCTAssertEqual(step2.divide(2, 2), 1)
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func test_곱하기() {
+        let step = Step2()
+        XCTAssertEqual(step.multiply(2, 3), 6)
     }
 
 }
