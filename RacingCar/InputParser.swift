@@ -55,7 +55,6 @@ struct InputParser {
             operations.append(operation)
         }
         
-        
         return (operations, operands)
     }
     
