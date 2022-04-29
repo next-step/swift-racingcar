@@ -8,70 +8,44 @@
 import XCTest
 
 class RacingCarTest: XCTestCase {
-    struct GameInfoMock: RacingPlayable  {
-        func racingGameCarNumber() -> Int {
-            3
-        }
+    func testRacingInfoResult() {
+        let racingInfo = RacingInfo(racing: [[1,1,0], [2,1,1], [3,2,1]])
+        let racingResult = racingInfo.result()
         
-        func racingGameMatchNumber() -> Int {
-            5
-        }
+        XCTAssertEqual(racingResult, [[1,1,0], [2,1,1], [3,2,1]])
     }
     
-    struct RacingMock {
-        static func play(gameInfo: RacingPlayable) -> [[Int]] {
-            var gameResult = [[Int]]()
-            var matchResult = [Int](repeating: 0, count: gameInfo.racingGameCarNumber())
-            
-            for _ in 0..<gameInfo.racingGameMatchNumber() {
-                for car in 0..<gameInfo.racingGameCarNumber() {
-                    matchResult[car] += 1
-                }
-                gameResult.append(matchResult)
-            }
-            
-            return gameResult
-        }
-    }
-    
-    struct ResultViewMock {
-        static func convertNumberToLine(move: Int) -> String {
-            var line = ""
-            
-            for _ in 0..<move {
-                line += "-"
-            }
-            
-            return line
-        }
-    }
-    
-    private let gameInfo = GameInfoMock()
-    
-    func testRacingGamePlay() {
-        let racing = RacingMock.play(gameInfo: gameInfo)
+    func testGameInfo() {
+        let gameInfo = GameInfo(carNumber: 3, matchNumber: 4)
+        let carNumber = gameInfo.racingGameCarNumber()
+        let roundNumber = gameInfo.racingGameMatchNumber()
         
-        XCTAssertEqual(racing, [[1, 1, 1], [2, 2, 2], [3, 3, 3], [4, 4, 4], [5, 5, 5]])
+        XCTAssertEqual(carNumber, 3)
+        XCTAssertEqual(roundNumber, 4)
     }
     
-    func testRacingMoveThreeTimesToLineString() {
-        let moveThreeTimes: Int = 3
-        let moveThreeTimesResult = ResultViewMock.convertNumberToLine(move: moveThreeTimes)
+    func testMakeRacingForwardLine() {
+        let racingForwardLine = RacingForwardLineMaker.convertNumberToLine(move: 3)
         
-        XCTAssertEqual(moveThreeTimesResult, "---")
+        XCTAssertEqual(racingForwardLine, "---")
     }
     
-    func testRacingMoveTwoTimesToLineString() {
-        let moveThreeTimes: Int = 2
-        let moveThreeTimesResult = ResultViewMock.convertNumberToLine(move: moveThreeTimes)
-        
-        XCTAssertEqual(moveThreeTimesResult, "--")
+    func testRacingRandomForward() {
+        let randomNumber = RacingForwardRandomNumberMaker().forward()
+        XCTAssertTrue(randomNumber >= 0 && randomNumber <= 1)
     }
     
-    func testRacingMoveOneTimesToLineString() {
-        let moveThreeTimes: Int = 1
-        let moveThreeTimesResult = ResultViewMock.convertNumberToLine(move: moveThreeTimes)
+    func testRacingForward() {
+        let forward = RacingForwardMaker().forward()
+        XCTAssertTrue(forward == 1)
+    }
+    
+    func testRacingPlay() {
+        let gameInfo = GameInfo(carNumber: 3, matchNumber: 4)
+        let forwardMaker = RacingForwardMaker()
+        let racing = Racing(gameInfo: gameInfo, forwardNumberMaker: forwardMaker)
+        let racingResult = racing.play()
         
-        XCTAssertEqual(moveThreeTimesResult, "-")
+        XCTAssertEqual(racingResult, [[1, 1, 1], [2, 2, 2], [3, 3, 3], [4, 4, 4]])
     }
 }
