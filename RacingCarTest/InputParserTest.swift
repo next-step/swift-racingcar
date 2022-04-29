@@ -60,11 +60,23 @@ class InputParserTest: XCTestCase {
         XCTAssert(operations?[0] is Plus)
         XCTAssert(operations?[1] is Division)
         XCTAssert(operations?[2] is Multiplication)
-        
+
         let operands = result?.1
         XCTAssert(operands?[0] == 4)
         XCTAssert(operands?[1] == 3)
         XCTAssert(operands?[2] == 2)
         XCTAssert(operands?[3] == 7)
+    }
+
+    func test_피연산자가_부족한_연산식을_입력하면_insufficient에러가_발생한다() {
+
+        // given
+        let insufficientExpression = "4 +"
+
+        // when
+        // then
+        XCTAssertThrowsError(try InputParser.parse(insufficientExpression)) { error in
+            XCTAssertEqual(error as? ParsingError, ParsingError.insufficient)
+        }
     }
 }

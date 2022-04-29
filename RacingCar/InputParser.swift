@@ -13,10 +13,10 @@ enum ParsingError: LocalizedError  {
     case inputIsNil
     case invalidOpreator
     case invalidOperand
+    case insufficient
     
     var errorDescription: String? {
         switch self {
-            
         case .inputIsEmpty:
             return "입력이 빈 문자열입니다."
         case .inputIsBlank:
@@ -27,6 +27,8 @@ enum ParsingError: LocalizedError  {
             return "연산자 위치에 잘못된 값이 위치합니다."
         case .invalidOperand:
             return "피연산자 위치에 잘못된 값이 위치합니다."
+        case .insufficient:
+            return "피연산자의 개수가 부족합니다."
         }
     }
 }
@@ -40,6 +42,10 @@ struct InputParser {
         
         let operands = try extractOperands(inputComponents: inputComponents)
         let operations = try extractOperation(inputComponents: inputComponents)
+        
+        if operations.count + 1 != operands.count {
+            throw ParsingError.insufficient
+        }
         
         return (operations, operands)
     }
