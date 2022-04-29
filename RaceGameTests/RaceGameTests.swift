@@ -10,12 +10,10 @@ import XCTest
 
 class RaceGameTests: XCTestCase {
 
-    
     var sut: RacingGame!
     
     override func setUpWithError() throws {
         try super.setUpWithError()
-      //  sut = RacingGame(inputView: RacingGameInputView(), resultView: RacingGameResultView())
     }
 
     override func tearDownWithError() throws {
@@ -29,7 +27,6 @@ class RaceGameTests: XCTestCase {
         let inputView = RacingGameInputView(randomGenerator: randomGenerator)
         let resultView = RacingGameResultView()
        
-        
         sut = RacingGame(inputView: inputView, resultView: resultView)
         //when
         for _ in 0..<50 {
@@ -120,10 +117,7 @@ class RaceGameTests: XCTestCase {
         let resulView = RacingGameResultView()
         sut = RacingGame(inputView: inputView, resultView: resulView)
 
-        //when
-     
-
-        //then
+        //when && then
         let expectation = RacingGameInputViewMock.InputViewError.minusCount
         XCTAssertThrowsError(try sut.inputView.validation(count: "-5")) { error in
             XCTAssertEqual(error as? RacingGameInputViewMock.InputViewError, expectation)
@@ -136,11 +130,8 @@ class RaceGameTests: XCTestCase {
         let inputView = RacingGameInputViewMock(gameSetting: gameSetting)
         let resulView = RacingGameResultView()
         sut = RacingGame(inputView: inputView, resultView: resulView)
-
-        //when
-        
-
-        //then
+    
+        //when &&then
         let expectation = RacingGameInputViewMock.InputViewError.incorrectFormat
         XCTAssertThrowsError(try sut.inputView.validation(count: "다섯")) { error in
             XCTAssertEqual(error as? RacingGameInputViewMock.InputViewError, expectation)
