@@ -53,7 +53,7 @@ struct Step2 {
         for _ in 0..<separatedStringArray.count / 2 {
             result = inputCalculatorCharactor(Int(separatedStringArray[0]) ?? 0, separatedStringArray[1], Int(separatedStringArray[2]) ?? 0)
             separatedStringArray.removeSubrange(0...2)
-            separatedStringArray.insert(String(k), at: 0)
+            separatedStringArray.insert(String(result), at: 0)
         }
         return result
     }
