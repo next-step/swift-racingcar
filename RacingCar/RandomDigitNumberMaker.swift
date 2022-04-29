@@ -21,7 +21,7 @@ struct RandomDigitNumberMaker: RandomNumberMakable {
 }
 
 struct RandomDigitNumberMakerStub: RandomNumberMakable {
-    let desiredDigit: Int
+    private let desiredDigit: Int
     
     init(desiredDigit: Int) {
         self.desiredDigit = desiredDigit
