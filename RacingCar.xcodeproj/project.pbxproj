@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B5CBF8F428193A8C0011C57C /* RacingCarTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CBF8F328193A8C0011C57C /* RacingCarTest.swift */; };
 		B5CBF8FA28193B190011C57C /* StringSplitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CBF8F928193B190011C57C /* StringSplitTest.swift */; };
 		B5CBF8FC28193C410011C57C /* SetTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CBF8FB28193C410011C57C /* SetTest.swift */; };
 		C7E1263027239F7E0000DB8B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
@@ -27,7 +26,6 @@
 
 /* Begin PBXFileReference section */
 		B5CBF8F128193A8C0011C57C /* RacingCarTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RacingCarTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B5CBF8F328193A8C0011C57C /* RacingCarTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingCarTest.swift; sourceTree = "<group>"; };
 		B5CBF8F928193B190011C57C /* StringSplitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringSplitTest.swift; sourceTree = "<group>"; };
 		B5CBF8FB28193C410011C57C /* SetTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTest.swift; sourceTree = "<group>"; };
 		C7E1262C27239F7E0000DB8B /* RacingCar */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RacingCar; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,7 +54,6 @@
 			isa = PBXGroup;
 			children = (
 				B5CBF8F828193B050011C57C /* Step1 */,
-				B5CBF8F328193A8C0011C57C /* RacingCarTest.swift */,
 			);
 			path = RacingCarTest;
 			sourceTree = "<group>";
@@ -186,7 +183,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5CBF8FC28193C410011C57C /* SetTest.swift in Sources */,
-				B5CBF8F428193A8C0011C57C /* RacingCarTest.swift in Sources */,
 				B5CBF8FA28193B190011C57C /* StringSplitTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
