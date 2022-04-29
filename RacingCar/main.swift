@@ -8,5 +8,5 @@ import Foundation
 
 let input = InputView.input()
 let (operations, operands) = try InputParser.parse(input)
-let result = try Calculator().calculate(operands: operands, operators: operations)
+let result = try Calculator().calculate(operators: operations, operands: operands)
 OutputView.show(output: result)

@@ -8,7 +8,7 @@
 import Foundation
 
 struct Calculator {
-    func calculate(operands: [Int], operators: [Operation]) throws -> Int {
+    func calculate(operators: [Operation], operands: [Int]) throws -> Int {
         var result = operands[0]
         
         for i in 0..<operators.count {

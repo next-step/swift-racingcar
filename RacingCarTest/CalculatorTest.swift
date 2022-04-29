@@ -20,7 +20,7 @@ class CalculatorTest: XCTestCase {
         // when
         var result: Int?
         do {
-            result = try calculator.calculate(operands: operands, operators: operations)
+            result = try calculator.calculate(operators: operations, operands: operands)
         } catch(let error) {
             XCTFail("연산 과정에서 에러가 발생했습니다. error: \(error.localizedDescription)")
         }
@@ -39,6 +39,6 @@ class CalculatorTest: XCTestCase {
         
         // when
         // then
-        XCTAssertThrowsError(try calculator.calculate(operands: operands, operators: operations))
+        XCTAssertThrowsError(try calculator.calculate(operators: operations, operands: operands))
     }
 }
