@@ -6,16 +6,16 @@
 
 import Foundation
 
-let (carCount, raceCount): (Int, Int) = try recieveUserInput()
-let roundHistory: RoundHistory = roundHistoryAfterPlayGame(carCount: carCount,
-                                                           raceCount: raceCount)
-showResult(using: roundHistory)
+let inputView: InputView = InputView()
 
-private func recieveUserInput() throws -> (carCount: Int, raceCout: Int) {
-    let inputView: InputView = InputView()
+do {
     let carCount: Int = try inputView.recieveCarCount()
     let raceCount: Int = try inputView.recieveRaceCount()
-    return (carCount, raceCount)
+    let roundHistory: RoundHistory = roundHistoryAfterPlayGame(carCount: carCount,
+                                                               raceCount: raceCount)
+    showResult(using: roundHistory)
+} catch {
+    inputView.guideNotIntInputError()
 }
 
 private func roundHistoryAfterPlayGame(carCount: Int, raceCount: Int) -> RoundHistory {

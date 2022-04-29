@@ -7,9 +7,23 @@
 
 import Foundation
 
-private struct UserAsker {
+protocol Guidable {
+    var userGuideDescription: String { get }
+}
+
+private enum Guide {
+    enum Error: Guidable {
+        case notInt
+        
+        var userGuideDescription: String {
+            switch self {
+            case .notInt:
+                return "숫자 형식이 아닙니다. 다시 앱을 시작 후, 숫자를 입력해주세요"
+            }
+        }
+    }
     
-    enum Question {
+    enum Question: Guidable {
         case carCount
         case raceCount
         
@@ -22,24 +36,30 @@ private struct UserAsker {
             }
         }
     }
-    
-    func ask(for question: Question) {
-        print(question.userGuideDescription)
+}
+
+private struct UserGuider {
+    func guide(for dimension: Guidable) {
+        print(dimension.userGuideDescription)
     }
 }
 
 struct InputView {
     
-    private let userAsker = UserAsker()
+    private let userGuider = UserGuider()
     private let stringConverter = StringConverter()
     
+    func guideNotIntInputError() {
+        userGuider.guide(for: Guide.Error.notInt)
+    }
+    
     func recieveCarCount() throws -> Int {
-        userAsker.ask(for: .carCount)
+        userGuider.guide(for: Guide.Question.carCount)
         return try stringConverter.convertToInt(from: readLine())
     }
     
     func recieveRaceCount() throws -> Int {
-        userAsker.ask(for: .raceCount)
+        userGuider.guide(for: Guide.Question.raceCount)
         return try stringConverter.convertToInt(from: readLine())
     }
 }
