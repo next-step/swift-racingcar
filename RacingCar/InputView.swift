@@ -8,10 +8,17 @@
 import Foundation
 
 struct InputView {
-    static func readCarNumber() -> Int {
-        print("자동차 대수는 몇 대인가요?")
-        let carNumber = readLine() ?? ""
-        return Int(carNumber) ?? 0
+    static func readPlayers() throws -> [String] {
+        print("경주할 자동차 이름을 입력하세요. (이름은 쉼표(,)를 기준으로 구분)")
+        let players = (readLine() ?? "").components(separatedBy: ",")
+        
+        for player in players {
+            if player.count > 5 {
+                throw InputError.outOfRange
+            }
+        }
+        
+        return players
     }
     
     static func readRound() -> Int {
