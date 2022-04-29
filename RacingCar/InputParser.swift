@@ -36,19 +36,14 @@ struct InputParser {
     
     static func parse(_ input: String?) throws -> ([Operation], [Int]){
         try checkValidity(of: input)
-        let input = input?.components(separatedBy: blankSpace)
-        let operandCandidates = stride(from: 0, to: input!.count, by: 2)
-                                .map { input![$0]}
-        let operatorCandidates = stride(from: 1, to: input!.count, by: 2)
-                                .map { input![$0]}
+        let input = input!.components(separatedBy: blankSpace)
         
-        var operands = [Int]()
+        let operands = try extractOperands(inputComponents: input)
         var operations = [Operation]()
         
-        try operandCandidates.forEach { candidate in
-            let operand = try parseToOperand(inputComponent: candidate)
-            operands.append(operand)
-        }
+        let operatorCandidates = stride(from: 1, to: input.count, by: 2)
+                                .map { input[$0]}
+    
         
         try operatorCandidates.forEach { candidate in
             let operation = try parseToOperation(inputComponent: candidate)
@@ -70,6 +65,19 @@ struct InputParser {
         if input == blankSpace {
             throw ParsingError.inputIsBlank
         }
+    }
+    
+    private static func extractOperands(inputComponents: [String]) throws -> [Int] {
+        let operandCandidates = stride(from: 0, to: inputComponents.count, by: 2)
+                                .map { inputComponents[$0]}
+        var operands = [Int]()
+        
+        try operandCandidates.forEach { candidate in
+            let operand = try parseToOperand(inputComponent: candidate)
+            operands.append(operand)
+        }
+        
+        return operands
     }
     
     private static func parseToOperand(inputComponent: String) throws -> Int {
