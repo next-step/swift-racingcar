@@ -15,24 +15,17 @@ final class Racing {
     
     // MARK: - Method
     func start() throws {
-        if let count = try? inputCount() {
+        if let count = try? Step3InputOutput.inputCarCount() {
             createCars(input: count)
         }
         
-        if let count = try? inputCount() {
+        if let count = try? Step3InputOutput.inputTryCount() {
             inputTryCount(input: count)
         }
         try racing()
     }
     
-    private func inputCount() throws -> Int {
-        guard let countString = readLine(),
-              let count = Int(countString) else { throw RacingCarStep3Error.inputError }
-        return count
-    }
-    
     func createCars(input: Int) {
-        print("자동차 대수는 몇대인가요?", terminator: "")
         var count = input
         while count != 0 {
             cars.append(Car())
@@ -41,14 +34,13 @@ final class Racing {
     }
     
     func inputTryCount(input: Int) {
-        print("시도할 횟수는 몇 회인가요?", terminator: "")
         let count = input
         tryCount = count
     }
     
     private func racing() throws {
         try runRacing {
-            printResult()
+            Step3InputOutput.printResult(cars)
         }
     }
     
@@ -60,12 +52,5 @@ final class Racing {
             tryCount -= 1
             completion()
         }
-    }
-    
-    private func printResult() {
-        cars.forEach { car in
-            car.printMove()
-        }
-        print("")
     }
 }
