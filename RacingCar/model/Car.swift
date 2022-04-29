@@ -10,7 +10,7 @@ class Car {
     
     init() { }
     
-    func foward() {
+    func moveFoward() {
         self.point += 1
     }
 }

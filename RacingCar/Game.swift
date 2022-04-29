@@ -22,7 +22,7 @@ extension Game {
         let randomNumber: Int = GameOption.generateRandomNumber()
         
         if GameOption.canGoFoward(randomNumber) {
-            car.foward()
+            car.moveFoward()
         }
     }
     
