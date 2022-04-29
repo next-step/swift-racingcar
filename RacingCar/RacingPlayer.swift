@@ -14,7 +14,7 @@ protocol AbleToRace {
 }
 
 struct RacingPlayer: Equatable, AbleToRace {
-    private var name: String
+    private let name: String
     private var moveCount: Int
     
     init(name: String, moveCount: Int = 0) {
