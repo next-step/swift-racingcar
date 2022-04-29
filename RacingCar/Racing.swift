@@ -7,7 +7,11 @@
 
 import Foundation
 
-struct Racing {
+protocol RacingProtocol {
+    func play() -> [[AbleToRace]]
+}
+
+struct Racing: RacingProtocol {
     private let forwardNumberMaker: RacingForwardNumberMakable
     private let gameInfo: RacingPlayable
     
