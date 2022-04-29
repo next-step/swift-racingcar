@@ -8,8 +8,8 @@
 import Foundation
 
 struct RacingGame {
-    static func play(_ gameInfo: RacingPlayable) {
-        let racing = Racing.play(gameInfo: gameInfo)
+    static func play(gameInfo: RacingPlayable, forwardNumberMakable: RacingForwardNumberMakable) {
+        let racing = Racing(gameInfo: gameInfo, forwardNumberMaker: forwardNumberMakable).play()
         let racingInfo = RacingInfo(racing: racing)
         ResultView.racingResult(printable: racingInfo)
     }

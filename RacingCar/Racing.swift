@@ -8,11 +8,15 @@
 import Foundation
 
 struct Racing {
-    static func play(gameInfo: RacingPlayable) -> [[Int]] {
-        return game(gameInfo: gameInfo)
+    private let forwardNumberMaker: RacingForwardNumberMakable
+    private let gameInfo: RacingPlayable
+    
+    init(gameInfo: RacingPlayable, forwardNumberMaker: RacingForwardNumberMakable) {
+        self.forwardNumberMaker = forwardNumberMaker
+        self.gameInfo = gameInfo
     }
     
-    private static func game(gameInfo: RacingPlayable) -> [[Int]] {
+    func play() -> [[Int]] {
         var gameResult = [[Int]]()
         var matchInfo = [Int](repeating: 0, count: gameInfo.racingGameCarNumber())
         
@@ -26,18 +30,13 @@ struct Racing {
         return gameResult
     }
     
-    private static func match(matchInfo: [Int], carNumber: Int) -> [Int] {
+    private func match(matchInfo: [Int], carNumber: Int) -> [Int] {
         var updatedMatchInfo = matchInfo
         
         for car in 0..<carNumber {
-            updatedMatchInfo[car] += forward()
+            updatedMatchInfo[car] += forwardNumberMaker.forward()
         }
         
         return updatedMatchInfo
-    }
-    
-    private static func forward() -> Int {
-        let moveValue = Int.random(in: 0...9)
-        return (moveValue >= 4) ? 1 : 0
     }
 }

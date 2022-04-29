@@ -8,5 +8,6 @@ import Foundation
 
 let gameInfo = GameInfo(carNumber: InputView.readCarNumber(),
                         matchNumber: InputView.readMatchNumber())
+let forwardNumberMaker = RacingForwardRandomNumberMaker()
 
-RacingGame.play(gameInfo)
+RacingGame.play(gameInfo: gameInfo, forwardNumberMakable: forwardNumberMaker)
