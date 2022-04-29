@@ -35,7 +35,7 @@ struct InputParser {
     static let blankSpace = " "
     
     static func parse(_ input: String?) throws -> ([Operation], [Int]){
-        try checkIsValid(input)
+        try checkValidity(of: input)
         let input = input?.components(separatedBy: blankSpace)
         let operandCandidates = stride(from: 0, to: input!.count, by: 2)
                                 .map { input![$0]}
@@ -58,7 +58,7 @@ struct InputParser {
         return (operations, operands)
     }
     
-    private static func checkIsValid(_ input: String?) throws {
+    private static func checkValidity(of input: String?) throws {
         guard let input = input  else {
             throw ParsingError.inputIsNil
         }
