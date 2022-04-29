@@ -8,21 +8,21 @@
 import Foundation
 
 protocol RacingPlayable {
-    func racingGameCarNumber() -> Int
+    func racingGamePlayers() -> [String]
     func racingGameRound() -> Int
 }
 
 struct GameInfo: RacingPlayable {
-    private let carNumber: Int
+    private let players: [String]
     private let round: Int
     
-    init(carNumber: Int, round: Int) {
-        self.carNumber = carNumber
+    init(players: [String], round: Int) {
+        self.players = players
         self.round = round
     }
     
-    func racingGameCarNumber() -> Int {
-        carNumber
+    func racingGamePlayers() -> [String] {
+        players
     }
     
     func racingGameRound() -> Int {
