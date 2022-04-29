@@ -20,7 +20,7 @@ class RaceGameTests: XCTestCase {
 
     override func tearDownWithError() throws {
         try super.tearDownWithError()
-        //sut = nil
+        sut = nil
     }
     
     func test_input_randomRange_0_between_9 () {
@@ -41,4 +41,22 @@ class RaceGameTests: XCTestCase {
         }
     }
     
+    func test_car_movePoint_lessthan_gameCount() throws {
+        //given
+        let gameCount = 3
+        let carCount = 3
+        let randomGenerator = RandomGenerator()
+        let gameSetting = GameSetting(gameCount: gameCount, carCount: carCount, randomGenerator: randomGenerator)
+        let inputView = RacingGameInputViewMock(gameSetting: gameSetting)
+        let resultView = RacingGameResultView()
+        
+        sut = RacingGame(inputView: inputView, resultView: resultView)
+        //when
+        try sut.gameStart()
+        
+        //then
+        sut.cars.forEach { car in
+            XCTAssertLessThan(car.movePoint, gameCount)
+        }
+    }
 }
