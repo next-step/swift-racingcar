@@ -13,8 +13,8 @@ protocol RacingPlayable {
 }
 
 struct GameInfo: RacingPlayable {
-    private var carNumber: Int
-    private var round: Int
+    private let carNumber: Int
+    private let round: Int
     
     init(carNumber: Int, round: Int) {
         self.carNumber = carNumber

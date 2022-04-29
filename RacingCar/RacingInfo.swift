@@ -8,7 +8,7 @@
 import Foundation
 
 struct RacingInfo: RacingResultPrintable {
-    private var racing: [[Int]]
+    private let racing: [[Int]]
     
     init(racing: [[Int]]) {
         self.racing = racing
