@@ -1,0 +1,62 @@
+//
+//  StringCalculator.swift
+//  RacingCar
+//
+//  Created by brian은석 on 2022/04/28.
+//
+
+import Foundation
+
+protocol Calculator { }
+
+extension Calculator {
+    fileprivate func add(lhs: Int, rhs: Int) -> Int {
+        return lhs + rhs
+    }
+    fileprivate func subtract(lhs: Int, rhs: Int) -> Int {
+        return lhs - rhs
+    }
+    fileprivate func multiply(lhs: Int, rhs: Int) -> Int {
+        return lhs * rhs
+    }
+    fileprivate func divide(lhs: Int, rhs: Int) -> Int {
+        return lhs / rhs
+    }
+}
+
+struct StringCalculator: Calculator {
+    private let inputChangeHelper = StringCalculatorInputChange()
+    
+    func caculate(input: String?) throws -> Int {
+        let changeArray = try inputChangeHelper.emptyRemover(input: input)
+        let _ = try inputChangeHelper.inputStringArrayCountIsOdd(input: changeArray)
+        var currentValue = 0
+        var operate: StringOperator? = nil
+        for (index,value) in changeArray.enumerated() {
+            if !index.isMultiple(of: 2) {
+                operate = try inputChangeHelper.verifyOperator(input: value)
+            } else {
+                let changeInt = try inputChangeHelper.stringNumberToInt(input: value)
+                if let myOperate = operate {
+                    switch myOperate {
+                    case .plus:
+                        currentValue = self.add(lhs: currentValue, rhs: changeInt)
+                    case .minus:
+                        currentValue = self.subtract(lhs: currentValue, rhs: changeInt)
+                    case .multiplication:
+                        currentValue = self.multiply(lhs: currentValue, rhs: changeInt)
+                    case .division:
+                        currentValue = self.divide(lhs: currentValue, rhs: changeInt)
+                    }
+                    operate = nil
+                }
+                if index == 0 {
+                    currentValue = changeInt
+                }
+            }
+        }
+        return currentValue
+    }
+    
+    
+}

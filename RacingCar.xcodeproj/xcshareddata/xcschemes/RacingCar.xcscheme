@@ -38,6 +38,16 @@
                ReferencedContainer = "container:RacingCar.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "1F8DCD1C281BF75100890A22"
+               BuildableName = "StringCalculatorTest.xctest"
+               BlueprintName = "StringCalculatorTest"
+               ReferencedContainer = "container:RacingCar.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
