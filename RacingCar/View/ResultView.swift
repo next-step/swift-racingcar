@@ -9,31 +9,32 @@ import Foundation
 
 struct ResultView {
     
-    private let raceRecords: [[Car]]
+    private let roundHistory: RoundHistory
     
-    init(raceRecords: [[Car]]) {
-        self.raceRecords = raceRecords
+    init(roundHistory: RoundHistory) {
+        self.roundHistory = roundHistory
     }
     
-    func drawFinalRaceRecords() {
+    func draw() {
         drawResultTitle()
-        raceRecords.forEach { raceRecord in
-            drawRaceRecord(of: raceRecord)
-            drawLineDivider()
-        }
+        roundHistory.rounds
+            .forEach { round in
+                drawRound(of: round)
+                drawLineDivider()
+            }
     }
     
     private func drawResultTitle() {
         print("실행 결과")
     }
     
-    private func drawRaceRecord(of cars: [Car]) {
-        cars.forEach { car in
+    private func drawRound(of round: Round) {
+        round.cars.forEach { car in
             let carPositionLine = String(repeating: "-", count: car.position)
             print(carPositionLine)
         }
     }
-
+    
     private func drawLineDivider() {
         print()
     }

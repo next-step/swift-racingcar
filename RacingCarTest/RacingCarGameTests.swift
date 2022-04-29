@@ -30,26 +30,26 @@ class RacingCarGameTests: XCTestCase {
         raceCount = nil
     }
     
-    func test_raceRecordCount_equalReceCount() throws {
+    func test_roundCount_equalReceCount() throws {
         // given
         
         // when
         sut.start()
         
         // then
-        let raceRecordCount = sut.raceRecords.count
-        XCTAssertEqual(raceRecordCount, raceCount)
+        let roundCount = sut.roundHistory.rounds.count
+        XCTAssertEqual(roundCount, raceCount)
     }
     
-    func test_carCountPerRace_equalCarCount() throws {
+    func test_carCountPerRound_equalCarCount() throws {
         // given
         
         // when
         sut.start()
         
         // then
-        let firstRecordCarCount = sut.raceRecords.first?.count
-        XCTAssertEqual(firstRecordCarCount, carCount)
+        let firstRoundCarCount = sut.roundHistory.rounds.first?.cars.count
+        XCTAssertEqual(firstRoundCarCount, carCount)
     }
     
     func test_carPosition_afterARace_forwardOneStep() throws {
@@ -59,12 +59,12 @@ class RacingCarGameTests: XCTestCase {
         sut.start()
 
         // then
-        let firstRace = sut.raceRecords[0]
-        let positionInFirstRace = try XCTUnwrap(firstRace.first).position
-
-        let secondRace = sut.raceRecords[1]
-        let positionInSecondRace = try XCTUnwrap(secondRace.first).position
-
-        XCTAssertEqual(positionInFirstRace + 1, positionInSecondRace)
+        let firstRound = sut.roundHistory.rounds[0]
+        let positionInFirstRound = try XCTUnwrap(firstRound.cars.first).position
+        
+        let secondRound = sut.roundHistory.rounds[1]
+        let positionInSecondRound = try XCTUnwrap(secondRound.cars.first).position
+        
+        XCTAssertEqual(positionInFirstRound + 1, positionInSecondRound)
     }
 }

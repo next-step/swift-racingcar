@@ -9,35 +9,33 @@ import Foundation
 
 final class RacingCarGame {
     
-    private let carCount: Int
+    let roundHistory: RoundHistory = RoundHistory()
+    private let initialRound: Round
     private let raceCount: Int
-    private(set) var raceRecords: [[Car]] = []
     private let randomDigitNumberMaker: RandomNumberMakable
     
     init(carCount: Int,
          raceCount: Int,
          randomDigitNumberMaker: RandomNumberMakable) {
-        self.carCount = carCount
+        let initialCars = Array(repeating: Car(position: 0),
+                                count: carCount)
+        self.initialRound = Round(cars: initialCars)
         self.raceCount = raceCount
         self.randomDigitNumberMaker = randomDigitNumberMaker
     }
     
+    
     func start() {
         (1...raceCount).forEach { _ in
-            let lastRaceRecord = raceRecords.last ?? initialRaceRecord()
-            let newRaceRecord = newRaceRecord(from: lastRaceRecord)
-            raceRecords.append(newRaceRecord)
+            let lastRound = roundHistory.rounds.last ?? initialRound
+            let newRound = newRound(from: lastRound)
+            roundHistory.append(newRound)
         }
     }
     
-    private func initialRaceRecord() -> [Car] {
-        let startPosition: Int = 0
-        return Array(repeating: Car(position: startPosition),
-                     count: carCount)
-    }
-    
-    private func newRaceRecord(from cars: [Car]) -> [Car] {
-        let newRaceRecord: [Car] = cars
+    private func newRound(from round: Round) -> Round {
+        let newRoundCars = round
+            .cars
             .map { car -> (Car, Bool) in
                 let randomNumber: Int = randomDigitNumberMaker.random()
                 let canGoForward: Bool = randomNumber >= 4
@@ -49,6 +47,7 @@ final class RacingCarGame {
                 return newPosition
             }
             .map(Car.init)
-        return newRaceRecord
+        let newRound = Round(cars: newRoundCars)
+        return newRound
     }
 }

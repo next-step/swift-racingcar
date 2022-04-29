@@ -7,8 +7,9 @@
 import Foundation
 
 let (carCount, raceCount): (Int, Int) = try recieveUserInput()
-let raceRecords: [[Car]] = getRacingCarRecords(carCount: carCount, raceCount: raceCount)
-showResult(with: raceRecords)
+let roundHistory: RoundHistory = roundHistoryAfterPlayGame(carCount: carCount,
+                                                           raceCount: raceCount)
+showResult(using: roundHistory)
 
 private func recieveUserInput() throws -> (carCount: Int, raceCout: Int) {
     let inputView: InputView = InputView()
@@ -17,17 +18,16 @@ private func recieveUserInput() throws -> (carCount: Int, raceCout: Int) {
     return (carCount, raceCount)
 }
 
-private func getRacingCarRecords(carCount: Int, raceCount: Int) -> [[Car]]{
+private func roundHistoryAfterPlayGame(carCount: Int, raceCount: Int) -> RoundHistory {
     let randomDigitNumberMaker: RandomDigitNumberMaker = RandomDigitNumberMaker()
     let racingCarGame: RacingCarGame = RacingCarGame(carCount: carCount,
                                                      raceCount: raceCount,
                                                      randomDigitNumberMaker: randomDigitNumberMaker)
     racingCarGame.start()
-    let raceRecords: [[Car]] = racingCarGame.raceRecords
-    return raceRecords
+    return racingCarGame.roundHistory
 }
 
-private func showResult(with raceRecords: [[Car]]) {
-    let resultView = ResultView(raceRecords: raceRecords)
-    resultView.drawFinalRaceRecords()
+private func showResult(using roundHistory: RoundHistory) {
+    let resultView = ResultView(roundHistory: roundHistory)
+    resultView.draw()
 }
