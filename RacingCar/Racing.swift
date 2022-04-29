@@ -20,7 +20,7 @@ struct Racing {
         var gameResult = [[Int]]()
         var matchInfo = [Int](repeating: 0, count: gameInfo.racingGameCarNumber())
         
-        for _ in 0..<gameInfo.racingGameMatchNumber() {
+        for _ in 0..<gameInfo.racingGameRound() {
             let match = match(matchInfo: matchInfo,
                               carNumber: gameInfo.racingGameCarNumber())
             matchInfo = match

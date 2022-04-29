@@ -9,23 +9,23 @@ import Foundation
 
 protocol RacingPlayable {
     func racingGameCarNumber() -> Int
-    func racingGameMatchNumber() -> Int
+    func racingGameRound() -> Int
 }
 
 struct GameInfo: RacingPlayable {
     private var carNumber: Int
-    private var matchNumber: Int
+    private var round: Int
     
-    init(carNumber: Int, matchNumber: Int) {
+    init(carNumber: Int, round: Int) {
         self.carNumber = carNumber
-        self.matchNumber = matchNumber
+        self.round = round
     }
     
     func racingGameCarNumber() -> Int {
         carNumber
     }
     
-    func racingGameMatchNumber() -> Int {
-        matchNumber
+    func racingGameRound() -> Int {
+        round
     }
 }

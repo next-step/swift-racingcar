@@ -7,7 +7,7 @@
 import Foundation
 
 let gameInfo = GameInfo(carNumber: InputView.readCarNumber(),
-                        matchNumber: InputView.readMatchNumber())
+                        round: InputView.readRound())
 let forwardNumberMaker = RacingForwardRandomNumberMaker()
 
 RacingGame.play(gameInfo: gameInfo, forwardNumberMakable: forwardNumberMaker)

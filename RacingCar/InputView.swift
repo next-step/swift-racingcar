@@ -14,7 +14,7 @@ struct InputView {
         return Int(carNumber) ?? 0
     }
     
-    static func readMatchNumber() -> Int {
+    static func readRound() -> Int {
         print("시도할 횟수는 몇 회인가요?")
         let matchNumber = readLine() ?? ""
         return Int(matchNumber) ?? 0
