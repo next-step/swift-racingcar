@@ -7,11 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2E3A4EC5281B5F5400CF7BB0 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6232F7281A1BB2000F5030 /* Operation.swift */; };
 		2E3A4EC7281B636300CF7BB0 /* OperationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3A4EC6281B636300CF7BB0 /* OperationTest.swift */; };
 		2E3A4EC9281B672D00CF7BB0 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3A4EC8281B672D00CF7BB0 /* InputView.swift */; };
+		2E3A4ED0281B783100CF7BB0 /* InputParserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3A4ECF281B783100CF7BB0 /* InputParserTest.swift */; };
+		2E3A4ED2281B786600CF7BB0 /* InputParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3A4ED1281B786600CF7BB0 /* InputParser.swift */; };
 		2E6232F8281A1BB2000F5030 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6232F7281A1BB2000F5030 /* Operation.swift */; };
 		2E8D45CF281AEA2100DD1214 /* RacingCarTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8D45CE281AEA2100DD1214 /* RacingCarTest.swift */; };
+		2EB21EF8281BEFC00074104D /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
+		2EB21EFE281C07880074104D /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6232F7281A1BB2000F5030 /* Operation.swift */; };
+		2EB21F01281C07970074104D /* InputParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3A4ED1281B786600CF7BB0 /* InputParser.swift */; };
 		C7E1263027239F7E0000DB8B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +34,8 @@
 /* Begin PBXFileReference section */
 		2E3A4EC6281B636300CF7BB0 /* OperationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationTest.swift; sourceTree = "<group>"; };
 		2E3A4EC8281B672D00CF7BB0 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		2E3A4ECF281B783100CF7BB0 /* InputParserTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputParserTest.swift; sourceTree = "<group>"; };
+		2E3A4ED1281B786600CF7BB0 /* InputParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputParser.swift; sourceTree = "<group>"; };
 		2E6232F7281A1BB2000F5030 /* Operation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
 		2E8D45C7281AEA0500DD1214 /* RacingCarTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RacingCarTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E8D45CE281AEA2100DD1214 /* RacingCarTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RacingCarTest.swift; sourceTree = "<group>"; };
@@ -58,6 +64,7 @@
 		2E8D45C8281AEA0500DD1214 /* RacingCarTest */ = {
 			isa = PBXGroup;
 			children = (
+				2E3A4ECF281B783100CF7BB0 /* InputParserTest.swift */,
 				2E3A4EC6281B636300CF7BB0 /* OperationTest.swift */,
 				2E8D45CE281AEA2100DD1214 /* RacingCarTest.swift */,
 			);
@@ -88,6 +95,7 @@
 				C7E1262F27239F7E0000DB8B /* main.swift */,
 				2E6232F7281A1BB2000F5030 /* Operation.swift */,
 				2E3A4EC8281B672D00CF7BB0 /* InputView.swift */,
+				2E3A4ED1281B786600CF7BB0 /* InputParser.swift */,
 			);
 			path = RacingCar;
 			sourceTree = "<group>";
@@ -181,9 +189,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E3A4EC5281B5F5400CF7BB0 /* Operation.swift in Sources */,
+				2EB21EF8281BEFC00074104D /* main.swift in Sources */,
+				2E3A4ED0281B783100CF7BB0 /* InputParserTest.swift in Sources */,
 				2E8D45CF281AEA2100DD1214 /* RacingCarTest.swift in Sources */,
 				2E3A4EC7281B636300CF7BB0 /* OperationTest.swift in Sources */,
+				2EB21EFE281C07880074104D /* Operation.swift in Sources */,
+				2EB21F01281C07970074104D /* InputParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,6 +203,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E3A4EC9281B672D00CF7BB0 /* InputView.swift in Sources */,
+				2E3A4ED2281B786600CF7BB0 /* InputParser.swift in Sources */,
 				C7E1263027239F7E0000DB8B /* main.swift in Sources */,
 				2E6232F8281A1BB2000F5030 /* Operation.swift in Sources */,
 			);
@@ -206,7 +218,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = G49TCMH6D2;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "arm64 arm64-apple-macos";
+				"EXCLUDED_ARCHS[sdk=*]" = x86_64;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0;
@@ -223,7 +235,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = G49TCMH6D2;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "arm64 arm64-apple-macos";
+				"EXCLUDED_ARCHS[sdk=*]" = x86_64;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0;
@@ -242,6 +254,7 @@
 					"$(ARCHS_STANDARD)",
 					"x86_64-apple-ios-simulator",
 				);
+				BUNDLE_LOADER = "";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -275,6 +288,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				EXCLUDED_ARCHS = x86_64;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -290,7 +304,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = NO;
@@ -309,6 +323,7 @@
 					"$(ARCHS_STANDARD)",
 					"x86_64-apple-ios-simulator",
 				);
+				BUNDLE_LOADER = "";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -343,6 +358,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				EXCLUDED_ARCHS = x86_64;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -352,7 +368,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = NO;
