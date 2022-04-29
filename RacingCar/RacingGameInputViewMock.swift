@@ -9,16 +9,26 @@ import Foundation
 
 
 final class RacingGameInputViewMock: RacingGameInput {
+    
+    
     let gameSetting: GameSetting
     private var carCount: Int = 0
     private var gameCount: Int = 0
-    
-    enum InputError: Error {
+
+    enum InputViewError: Error {
         case incorrectFormat
+        case minusCount
+        case input
     }
     
     init(gameSetting: GameSetting) {
         self.gameSetting = gameSetting
+    }
+    
+    func validation(count: String) throws -> Int {
+        guard let count = Int(count) else { throw InputViewError.incorrectFormat }
+        guard count > 0  else { throw InputViewError.minusCount }
+        return count
     }
     
     func input() throws {
@@ -28,7 +38,6 @@ final class RacingGameInputViewMock: RacingGameInput {
     
     func inputCarCount() throws {
         printQuestionCarCount()
-        print("\(gameSetting.carCount)")
     }
     
     func inputGameCount() throws {

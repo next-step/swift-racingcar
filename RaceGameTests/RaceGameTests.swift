@@ -26,7 +26,7 @@ class RaceGameTests: XCTestCase {
     func test_input_randomRange_0_between_9 () {
         //given
         let randomGenerator = RandomGenerator()
-        let inputView = RacingGameInputView(randoGenerator: randomGenerator)
+        let inputView = RacingGameInputView(randomGenerator: randomGenerator)
         let resultView = RacingGameResultView()
        
         
@@ -52,8 +52,9 @@ class RaceGameTests: XCTestCase {
         
         sut = RacingGame(inputView: inputView, resultView: resultView)
         //when
-        try sut.gameStart()
         
+        try sut.gameReady()
+        sut.gameStart()
         //then
         sut.cars.forEach { car in
             XCTAssertLessThanOrEqual(car.movePoint, gameCount)
@@ -62,11 +63,87 @@ class RaceGameTests: XCTestCase {
     
     func test_moveAndPause_by_minimumCondition() {
         
-        let randomGenerator = RandomGenerator(range: 0..<5, minimuCondition: 5)
+        //given
+        let randomGenerator = RandomGenerator(range: 0..<5)
         let car = Car(randomGenerator: randomGenerator)
-        car.move()
-    
-        XCTAssertEqual(car.movePoint, 0)
         
+        //when
+        car.move()
+        
+        //then
+        let expectation = 0
+        XCTAssertEqual(car.movePoint, expectation)
+    }
+    
+    func test_inputView_correct_setting_gameSetting() throws {
+        //given
+        let randomGenerator = RandomGenerator(range: 0..<10)
+        let gameCount = 5
+        let carCount = 3
+        let gameSetting = GameSetting(gameCount: gameCount, carCount: carCount, randomGenerator: randomGenerator)
+
+
+        let inputView = RacingGameInputViewMock(gameSetting: gameSetting)
+        let resulView = RacingGameResultView()
+        sut = RacingGame(inputView: inputView, resultView: resulView)
+
+        //when
+        try sut.gameReady()
+        sut.gameStart()
+
+        //then
+        let result = sut.gameSetting
+        XCTAssertEqual(result, gameSetting)
+    }
+    
+    func test_inputView_correct_registerSetting_value() throws {
+        //given
+        let randomGenerator = RandomGenerator(range: 0..<10)
+    
+        let inputView = RacingGameInputView(randomGenerator: randomGenerator)
+        let resulView = RacingGameResultView()
+        sut = RacingGame(inputView: inputView, resultView: resulView)
+
+        //when
+        try sut.gameReady()
+        
+        //then
+        let result = sut.gameSetting
+        let expectation = inputView.registerSetting()
+        XCTAssertEqual(result, expectation)
+    }
+    
+    func test_inputView_validation_minus_value() throws {
+        let randomGenerator = RandomGenerator(range: 0..<10)
+        let gameSetting = GameSetting(gameCount: 5, carCount: 2, randomGenerator: randomGenerator)
+        let inputView = RacingGameInputViewMock(gameSetting: gameSetting)
+        let resulView = RacingGameResultView()
+        sut = RacingGame(inputView: inputView, resultView: resulView)
+
+        //when
+     
+
+        //then
+        let expectation = RacingGameInputViewMock.InputViewError.minusCount
+        XCTAssertThrowsError(try sut.inputView.validation(count: "-5")) { error in
+            XCTAssertEqual(error as? RacingGameInputViewMock.InputViewError, expectation)
+        }
+    }
+    
+    func test_inputView_validation_incorrectFormmat_value() throws {
+        let randomGenerator = RandomGenerator(range: 0..<10)
+        let gameSetting = GameSetting(gameCount: 5, carCount: 2, randomGenerator: randomGenerator)
+        let inputView = RacingGameInputViewMock(gameSetting: gameSetting)
+        let resulView = RacingGameResultView()
+        sut = RacingGame(inputView: inputView, resultView: resulView)
+
+        //when
+        
+
+        //then
+        let expectation = RacingGameInputViewMock.InputViewError.incorrectFormat
+        XCTAssertThrowsError(try sut.inputView.validation(count: "다섯")) { error in
+            XCTAssertEqual(error as? RacingGameInputViewMock.InputViewError, expectation)
+        }
     }
 }

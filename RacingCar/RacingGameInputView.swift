@@ -12,6 +12,7 @@ protocol RacingGameInput {
     func inputCarCount() throws
     func inputGameCount() throws
     func registerSetting() -> GameSetting
+    func validation(count: String) throws -> Int 
 }
 
 final class RacingGameInputView: RacingGameInput {
@@ -20,37 +21,39 @@ final class RacingGameInputView: RacingGameInput {
     private var carCount: Int = 0
     private var gameCount: Int = 0
     
-    enum InputError: Error {
+    enum InputViewError: Error {
         case incorrectFormat
+        case minusCount
+        case input
     }
     
-    init(randoGenerator: RandomGettable) {
-        self.randomGenerator = randoGenerator
+    init(randomGenerator: RandomGettable) {
+        self.randomGenerator = randomGenerator
     }
     
     func input() throws {
+        printQuestionCarCount()
         try inputCarCount()
+        printQuestionGameCount()
         try inputGameCount()
     }
     
     func inputCarCount() throws {
-        printQuestionCarCount()
-        if let input: String = readLine(), let carCount = Int(input)
-            {
-            self.carCount = carCount
-        } else {
-           throw InputError.incorrectFormat
-        }
+        guard let input: String = readLine() else { throw InputViewError.input}
+        let validatedGameCount = try validation(count: input)
+        self.carCount = validatedGameCount
     }
     
     func inputGameCount() throws {
-        printQuestionGameCount()
-        if let input: String = readLine(),let gameCount = Int(input)
-            {
-            self.gameCount = gameCount
-        } else {
-            throw InputError.incorrectFormat
-        }
+        guard let input: String = readLine() else { throw InputViewError.input}
+        let validatedGameCount = try validation(count: input)
+        self.gameCount = validatedGameCount
+    }
+    
+    func validation(count: String) throws -> Int {
+        guard let count = Int(count) else { throw InputViewError.incorrectFormat }
+        guard count > 0  else { throw InputViewError.minusCount }
+        return count
     }
     
     func printQuestionCarCount() {
