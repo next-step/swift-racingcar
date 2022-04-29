@@ -8,7 +8,9 @@
 import Foundation
 
 
-struct GameSetting {
+struct GameSetting: Equatable {
+   
+    
     let gameCount: Int
     let carCount: Int
     let randomGenerator: RandomGettable
@@ -18,5 +20,13 @@ struct GameSetting {
         self.carCount = carCount
         self.randomGenerator = randomGenerator
     }
+    
+    
+    static func == (lhs: GameSetting, rhs: GameSetting) -> Bool {
+        return lhs.gameCount == rhs.gameCount
+                && lhs.carCount == rhs.carCount
+        && lhs.randomGenerator.randomRange == rhs.randomGenerator.randomRange
+    }
+    
 
 }

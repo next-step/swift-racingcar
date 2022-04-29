@@ -10,13 +10,13 @@
 		C7E1263027239F7E0000DB8B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
 		F141D7A9281AF31000E69D41 /* RacingGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F141D7A8281AF31000E69D41 /* RacingGame.swift */; };
 		F141D7AC281AF36500E69D41 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = F141D7AB281AF36500E69D41 /* Car.swift */; };
-		F141D7AF281AF42700E69D41 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F141D7AE281AF42700E69D41 /* InputView.swift */; };
-		F141D7B1281AF43300E69D41 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F141D7B0281AF43300E69D41 /* ResultView.swift */; };
+		F141D7AF281AF42700E69D41 /* RacingGameInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F141D7AE281AF42700E69D41 /* RacingGameInputView.swift */; };
+		F141D7B1281AF43300E69D41 /* RacingGameResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F141D7B0281AF43300E69D41 /* RacingGameResultView.swift */; };
 		F141D7B3281AF6D800E69D41 /* GameSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = F141D7B2281AF6D800E69D41 /* GameSetting.swift */; };
 		F141D7BD281B852700E69D41 /* RaceGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F141D7BC281B852700E69D41 /* RaceGameTests.swift */; };
 		F141D7C1281B93C800E69D41 /* RacingGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F141D7A8281AF31000E69D41 /* RacingGame.swift */; };
-		F141D7C2281B93CA00E69D41 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F141D7AE281AF42700E69D41 /* InputView.swift */; };
-		F141D7C3281B93CD00E69D41 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F141D7B0281AF43300E69D41 /* ResultView.swift */; };
+		F141D7C2281B93CA00E69D41 /* RacingGameInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F141D7AE281AF42700E69D41 /* RacingGameInputView.swift */; };
+		F141D7C3281B93CD00E69D41 /* RacingGameResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F141D7B0281AF43300E69D41 /* RacingGameResultView.swift */; };
 		F141D7C4281B93D100E69D41 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = F141D7AB281AF36500E69D41 /* Car.swift */; };
 		F141D7C5281B93D400E69D41 /* GameSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = F141D7B2281AF6D800E69D41 /* GameSetting.swift */; };
 		F141D7C7281B955900E69D41 /* RacingGameInputViewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F141D7C6281B955900E69D41 /* RacingGameInputViewMock.swift */; };
@@ -44,8 +44,8 @@
 		C7E1262F27239F7E0000DB8B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		F141D7A8281AF31000E69D41 /* RacingGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingGame.swift; sourceTree = "<group>"; };
 		F141D7AB281AF36500E69D41 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
-		F141D7AE281AF42700E69D41 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
-		F141D7B0281AF43300E69D41 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+		F141D7AE281AF42700E69D41 /* RacingGameInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingGameInputView.swift; sourceTree = "<group>"; };
+		F141D7B0281AF43300E69D41 /* RacingGameResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingGameResultView.swift; sourceTree = "<group>"; };
 		F141D7B2281AF6D800E69D41 /* GameSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSetting.swift; sourceTree = "<group>"; };
 		F141D7BA281B852600E69D41 /* RaceGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RaceGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F141D7BC281B852700E69D41 /* RaceGameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceGameTests.swift; sourceTree = "<group>"; };
@@ -133,9 +133,9 @@
 		F141D7B4281AF7C300E69D41 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F141D7AE281AF42700E69D41 /* InputView.swift */,
+				F141D7AE281AF42700E69D41 /* RacingGameInputView.swift */,
 				F141D7C6281B955900E69D41 /* RacingGameInputViewMock.swift */,
-				F141D7B0281AF43300E69D41 /* ResultView.swift */,
+				F141D7B0281AF43300E69D41 /* RacingGameResultView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -284,12 +284,12 @@
 			files = (
 				F14AA42D2816CCC8000CF268 /* StringCaculator.swift in Sources */,
 				F141D7A9281AF31000E69D41 /* RacingGame.swift in Sources */,
-				F141D7AF281AF42700E69D41 /* InputView.swift in Sources */,
+				F141D7AF281AF42700E69D41 /* RacingGameInputView.swift in Sources */,
 				F141D7C7281B955900E69D41 /* RacingGameInputViewMock.swift in Sources */,
 				F141D7AC281AF36500E69D41 /* Car.swift in Sources */,
 				F141D7B3281AF6D800E69D41 /* GameSetting.swift in Sources */,
 				C7E1263027239F7E0000DB8B /* main.swift in Sources */,
-				F141D7B1281AF43300E69D41 /* ResultView.swift in Sources */,
+				F141D7B1281AF43300E69D41 /* RacingGameResultView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,8 +298,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F141D7C8281B955900E69D41 /* RacingGameInputViewMock.swift in Sources */,
-				F141D7C2281B93CA00E69D41 /* InputView.swift in Sources */,
-				F141D7C3281B93CD00E69D41 /* ResultView.swift in Sources */,
+				F141D7C2281B93CA00E69D41 /* RacingGameInputView.swift in Sources */,
+				F141D7C3281B93CD00E69D41 /* RacingGameResultView.swift in Sources */,
 				F141D7C4281B93D100E69D41 /* Car.swift in Sources */,
 				F141D7BD281B852700E69D41 /* RaceGameTests.swift in Sources */,
 				F141D7C5281B93D400E69D41 /* GameSetting.swift in Sources */,

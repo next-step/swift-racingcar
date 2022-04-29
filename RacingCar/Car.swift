@@ -10,6 +10,7 @@ import Foundation
 
 final class Car {
     var randomGenerator: RandomGettable
+    var minimumCondition: Int = 4
     var movePoint: Int = 0
     
     init(randomGenerator: RandomGettable) {
@@ -18,8 +19,12 @@ final class Car {
 
     func move() {
         let conditionNumber = randomGenerator.random()
-        let movePoint = randomGenerator.isMoveToNext(randomNumber: conditionNumber)
+        let movePoint = isMoveToNext(randomNumber: conditionNumber)
         self.movePoint += movePoint ? 1 : 0
+    }
+    
+    func isMoveToNext(randomNumber: Int) -> Bool {
+        return randomNumber > minimumCondition
     }
 }
 

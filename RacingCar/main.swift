@@ -7,9 +7,10 @@
 import Foundation
 
 let randomGenerator = RandomGenerator()
-let inputView = RacingGameInputView(randoGenerator: randomGenerator)
+let inputView = RacingGameInputView(randomGenerator: randomGenerator)
 let resultView = RacingGameResultView()
 
 
 let racingGame = RacingGame(inputView: inputView, resultView: resultView)
+try racingGame.gameReady()
 try racingGame.gameStart()

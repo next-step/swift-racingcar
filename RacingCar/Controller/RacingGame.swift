@@ -10,29 +10,24 @@ import Foundation
 
 protocol RandomGettable {
     func random() -> Int
-    func isMoveToNext(randomNumber: Int) -> Bool
     var randomRange: Range<Int> { get }
-    var minimumCondition: Int { get }
+  
 }
 
 final class RandomGenerator: RandomGettable {
     //MARK: - PROPERTIES
     var randomRange: Range<Int>
-    var minimumCondition: Int
     
     //MARK: - INITIALIZE
-    init (range: Range<Int> = 0..<10, minimuCondition: Int = 4) {
+    init (range: Range<Int> = 0..<10) {
         self.randomRange  = range
-        self.minimumCondition = minimuCondition
     }
     
     //MARK: - METHOD
     func random() -> Int {
         return Int.random(in: randomRange)
     }
-    func isMoveToNext(randomNumber: Int) -> Bool {
-        return randomNumber > minimumCondition
-    }
+    
 }
 
 
@@ -54,9 +49,12 @@ final class RacingGame {
     }
 
     //MARK: - METHOD
-    func gameStart() throws {
+    func gameReady() throws {
         try inputView.input()
         self.gameSetting = inputView.registerSetting()
+    }
+    func gameStart() {
+        
         setupCars(carCount: gameSetting.carCount)
         
         loopStage()
