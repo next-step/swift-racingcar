@@ -9,7 +9,7 @@ import Foundation
 
 final class RacingCarGame {
     
-    let roundHistory: RoundHistory = RoundHistory()
+    let roundHistory = RoundHistory()
     private let initialRound: Round
     private let raceCount: Int
     private let randomDigitNumberMaker: RandomNumberMakable
@@ -27,14 +27,14 @@ final class RacingCarGame {
     
     func start() {
         (1...raceCount).forEach { _ in
-            let lastRound = roundHistory.rounds.last ?? initialRound
-            let newRound = newRound(from: lastRound)
+            let lastRound: Round = roundHistory.rounds.last ?? initialRound
+            let newRound: Round = newRound(from: lastRound)
             roundHistory.append(newRound)
         }
     }
     
     private func newRound(from round: Round) -> Round {
-        let newRoundCars = round
+        let newRoundCars: [Car] = round
             .cars
             .map { car -> (Car, Bool) in
                 let randomNumber: Int = randomDigitNumberMaker.random()
@@ -42,8 +42,8 @@ final class RacingCarGame {
                 return (car, canGoForward)
             }
             .map { car, canGoForward -> Int in
-                let originalPosition = car.position
-                let newPosition = canGoForward ? originalPosition + 1 : originalPosition
+                let originalPosition: Int = car.position
+                let newPosition: Int = canGoForward ? originalPosition + 1 : originalPosition
                 return newPosition
             }
             .map(Car.init)

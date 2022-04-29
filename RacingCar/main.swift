@@ -19,10 +19,10 @@ private func recieveUserInput() throws -> (carCount: Int, raceCout: Int) {
 }
 
 private func roundHistoryAfterPlayGame(carCount: Int, raceCount: Int) -> RoundHistory {
-    let randomDigitNumberMaker: RandomDigitNumberMaker = RandomDigitNumberMaker()
-    let racingCarGame: RacingCarGame = RacingCarGame(carCount: carCount,
-                                                     raceCount: raceCount,
-                                                     randomDigitNumberMaker: randomDigitNumberMaker)
+    let randomDigitNumberMaker = RandomDigitNumberMaker()
+    let racingCarGame = RacingCarGame(carCount: carCount,
+                                      raceCount: raceCount,
+                                      randomDigitNumberMaker: randomDigitNumberMaker)
     racingCarGame.start()
     return racingCarGame.roundHistory
 }
