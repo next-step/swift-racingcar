@@ -2,10 +2,11 @@
 //  RacingCarTest.swift
 //  RacingCarTest
 //
-//  Created by nylah.j on 2022/04/26.
+//  Created by nylah.j on 2022/04/29.
 //
 
 import XCTest
+@testable import RacingCar
 
 class RacingCarTest: XCTestCase {
 

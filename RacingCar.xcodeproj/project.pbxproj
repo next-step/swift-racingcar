@@ -7,10 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2E4FF21828181D5000F23B57 /* RacingCarTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4FF21728181D5000F23B57 /* RacingCarTest.swift */; };
-		2E4FF22128181DD800F23B57 /* StringTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4FF21E28181DCC00F23B57 /* StringTest.swift */; };
-		2E4FF22328181F5500F23B57 /* SetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4FF22228181F5500F23B57 /* SetTests.swift */; };
+		2E3A4EC5281B5F5400CF7BB0 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6232F7281A1BB2000F5030 /* Operation.swift */; };
 		2E6232F8281A1BB2000F5030 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6232F7281A1BB2000F5030 /* Operation.swift */; };
+		2E8D45CF281AEA2100DD1214 /* RacingCarTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8D45CE281AEA2100DD1214 /* RacingCarTest.swift */; };
 		C7E1263027239F7E0000DB8B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,17 +26,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2E4FF21528181D5000F23B57 /* RacingCarTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RacingCarTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2E4FF21728181D5000F23B57 /* RacingCarTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingCarTest.swift; sourceTree = "<group>"; };
-		2E4FF21E28181DCC00F23B57 /* StringTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTest.swift; sourceTree = "<group>"; };
-		2E4FF22228181F5500F23B57 /* SetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTests.swift; sourceTree = "<group>"; };
 		2E6232F7281A1BB2000F5030 /* Operation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
+		2E8D45C7281AEA0500DD1214 /* RacingCarTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RacingCarTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E8D45CE281AEA2100DD1214 /* RacingCarTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RacingCarTest.swift; sourceTree = "<group>"; };
 		C7E1262C27239F7E0000DB8B /* RacingCar */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RacingCar; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E1262F27239F7E0000DB8B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		2E4FF21228181D5000F23B57 /* Frameworks */ = {
+		2E8D45C4281AEA0500DD1214 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -54,12 +51,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2E4FF21628181D5000F23B57 /* RacingCarTest */ = {
+		2E8D45C8281AEA0500DD1214 /* RacingCarTest */ = {
 			isa = PBXGroup;
 			children = (
-				2E4FF21E28181DCC00F23B57 /* StringTest.swift */,
-				2E4FF21728181D5000F23B57 /* RacingCarTest.swift */,
-				2E4FF22228181F5500F23B57 /* SetTests.swift */,
+				2E8D45CE281AEA2100DD1214 /* RacingCarTest.swift */,
 			);
 			path = RacingCarTest;
 			sourceTree = "<group>";
@@ -68,7 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				C7E1262E27239F7E0000DB8B /* RacingCar */,
-				2E4FF21628181D5000F23B57 /* RacingCarTest */,
+				2E8D45C8281AEA0500DD1214 /* RacingCarTest */,
 				C7E1262D27239F7E0000DB8B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -77,7 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				C7E1262C27239F7E0000DB8B /* RacingCar */,
-				2E4FF21528181D5000F23B57 /* RacingCarTest.xctest */,
+				2E8D45C7281AEA0500DD1214 /* RacingCarTest.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -94,13 +89,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2E4FF21428181D5000F23B57 /* RacingCarTest */ = {
+		2E8D45C6281AEA0500DD1214 /* RacingCarTest */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2E4FF21B28181D5000F23B57 /* Build configuration list for PBXNativeTarget "RacingCarTest" */;
+			buildConfigurationList = 2E8D45CB281AEA0500DD1214 /* Build configuration list for PBXNativeTarget "RacingCarTest" */;
 			buildPhases = (
-				2E4FF21128181D5000F23B57 /* Sources */,
-				2E4FF21228181D5000F23B57 /* Frameworks */,
-				2E4FF21328181D5000F23B57 /* Resources */,
+				2E8D45C3281AEA0500DD1214 /* Sources */,
+				2E8D45C4281AEA0500DD1214 /* Frameworks */,
+				2E8D45C5281AEA0500DD1214 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -108,7 +103,7 @@
 			);
 			name = RacingCarTest;
 			productName = RacingCarTest;
-			productReference = 2E4FF21528181D5000F23B57 /* RacingCarTest.xctest */;
+			productReference = 2E8D45C7281AEA0500DD1214 /* RacingCarTest.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		C7E1262B27239F7E0000DB8B /* RacingCar */ = {
@@ -136,9 +131,9 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1320;
-				LastUpgradeCheck = 1300;
+				LastUpgradeCheck = 1320;
 				TargetAttributes = {
-					2E4FF21428181D5000F23B57 = {
+					2E8D45C6281AEA0500DD1214 = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
 					C7E1262B27239F7E0000DB8B = {
@@ -160,13 +155,13 @@
 			projectRoot = "";
 			targets = (
 				C7E1262B27239F7E0000DB8B /* RacingCar */,
-				2E4FF21428181D5000F23B57 /* RacingCarTest */,
+				2E8D45C6281AEA0500DD1214 /* RacingCarTest */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		2E4FF21328181D5000F23B57 /* Resources */ = {
+		2E8D45C5281AEA0500DD1214 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -176,13 +171,12 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		2E4FF21128181D5000F23B57 /* Sources */ = {
+		2E8D45C3281AEA0500DD1214 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E4FF22128181DD800F23B57 /* StringTest.swift in Sources */,
-				2E4FF22328181F5500F23B57 /* SetTests.swift in Sources */,
-				2E4FF21828181D5000F23B57 /* RacingCarTest.swift in Sources */,
+				2E3A4EC5281B5F5400CF7BB0 /* Operation.swift in Sources */,
+				2E8D45CF281AEA2100DD1214 /* RacingCarTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,12 +192,13 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		2E4FF21928181D5000F23B57 /* Debug */ = {
+		2E8D45CC281AEA0500DD1214 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = G49TCMH6D2;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "arm64 arm64-apple-macos";
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0;
@@ -214,12 +209,13 @@
 			};
 			name = Debug;
 		};
-		2E4FF21A28181D5000F23B57 /* Release */ = {
+		2E8D45CD281AEA0500DD1214 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = G49TCMH6D2;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "arm64 arm64-apple-macos";
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0;
@@ -234,6 +230,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = (
+					"$(ARCHS_STANDARD)",
+					"x86_64-apple-ios-simulator",
+				);
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -281,10 +281,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = RacingCarProduct;
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -295,6 +297,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = (
+					"$(ARCHS_STANDARD)",
+					"x86_64-apple-ios-simulator",
+				);
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -328,6 +334,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -336,9 +343,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = RacingCarProduct;
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -348,7 +358,10 @@
 		C7E1263427239F7E0000DB8B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
+				EXCLUDED_ARCHS = "";
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -357,7 +370,10 @@
 		C7E1263527239F7E0000DB8B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -366,11 +382,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2E4FF21B28181D5000F23B57 /* Build configuration list for PBXNativeTarget "RacingCarTest" */ = {
+		2E8D45CB281AEA0500DD1214 /* Build configuration list for PBXNativeTarget "RacingCarTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2E4FF21928181D5000F23B57 /* Debug */,
-				2E4FF21A28181D5000F23B57 /* Release */,
+				2E8D45CC281AEA0500DD1214 /* Debug */,
+				2E8D45CD281AEA0500DD1214 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
