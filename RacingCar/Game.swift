@@ -18,18 +18,10 @@ class Game {
 }
 
 extension Game {
-    static func generateRandomNumer() -> Int {
-        return Int(arc4random_uniform(10))
-    }
-    
-    static func canGoFoward(_ n: Int) -> Bool {
-        return n >= 4
-    }
-    
     private func runOnce(_ car: Car) {
-        let randomNumber: Int = Game.generateRandomNumer()
+        let randomNumber: Int = GameOption.generateRandomNumber()
         
-        if Game.canGoFoward(randomNumber) {
+        if GameOption.canGoFoward(randomNumber) {
             car.foward()
         }
     }
