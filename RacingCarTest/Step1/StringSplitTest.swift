@@ -20,7 +20,7 @@ class StringSplitTest: XCTestCase {
         XCTAssert("1".split(separator: ",") == ["1"])
     }
     
-    func testStringSplitRequirement2() {
+    func testSplitStringWithRemovingBraces() {
         XCTAssertEqual("(1,2)".replacingOccurrences(of: "(", with: "")
             .replacingOccurrences(of: ")", with: "")
             .split(separator: ","), ["1", "2"])
