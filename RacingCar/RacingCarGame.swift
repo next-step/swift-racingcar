@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class RacingCarGame {
+struct RacingCarGame {
     
     private enum Constants {
         static let minimumDigitToCarGoForward: Int = 4
