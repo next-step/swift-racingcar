@@ -26,6 +26,7 @@
 		CB57B491281ABA460021446D /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB25DB34281A5FE10088C633 /* Car.swift */; };
 		CBBB9FD32816994900DD6B02 /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBB9FD22816994900DD6B02 /* StringTests.swift */; };
 		CBE31B42281BAE7B00FEADDB /* GameOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE31B41281BAE7B00FEADDB /* GameOption.swift */; };
+		CBE31B43281BAFF800FEADDB /* GameOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE31B41281BAE7B00FEADDB /* GameOption.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -369,6 +370,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB57B48C281ABA2F0021446D /* RacingCarTests.swift in Sources */,
+				CBE31B43281BAFF800FEADDB /* GameOption.swift in Sources */,
 				CB57B48F281ABA390021446D /* InputView.swift in Sources */,
 				CB57B491281ABA460021446D /* Car.swift in Sources */,
 				CB57B48D281ABA340021446D /* Game.swift in Sources */,

@@ -11,12 +11,12 @@ import XCTest
 class RacingCarTests: XCTestCase {
     
     func testIsValidRandomNumber() throws {
-        let randomNumber = Game.generateRandomNumer()
+        let randomNumber = GameOption.generateRandomNumber()
         XCTAssertTrue(randomNumber >= 0 && randomNumber <= 9)
     }
         
     func testCanGoFoward() throws {
-        let result = Game.canGoFoward(4)
+        let result = GameOption.canGoFoward(4)
         XCTAssertTrue(result)
     }
     
