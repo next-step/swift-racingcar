@@ -38,6 +38,6 @@ struct Racing {
     
     private static func forward() -> Int {
         let moveValue = Int.random(in: 0...9)
-        return (moveValue > 4) ? 1 : 0
+        return (moveValue >= 4) ? 1 : 0
     }
 }
