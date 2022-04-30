@@ -24,7 +24,7 @@ class RacingGameTest: XCTestCase {
         let racingCars = [firstCar, secondCar, thirdCar]
         let roundCount = 2
         
-        let racingRound = RacingRound(racingCars: racingCars)
+        let racingRound = NormalRacingRound(racingCars: racingCars)
         let racingGame = RacingGame(racingCars: racingCars, roundCount: roundCount)
         
         let firstRoundResult = racingRound.start()

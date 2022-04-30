@@ -7,7 +7,11 @@
 
 import Foundation
 
-struct RacingRound {
+protocol RacingRound {
+    func start() -> RacingRoundResult
+}
+
+struct NormalRacingRound: RacingRound {
     private var racingCars: [RacingCar]
     
     init(racingCars: [RacingCar]) {

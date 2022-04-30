@@ -11,7 +11,7 @@ struct RacingGame {
     let racingRound: [RacingRound]
     
     init(racingCars: [RacingCar], roundCount: Int) {
-        racingRound = (0..<roundCount).map { _ in RacingRound(racingCars: racingCars) }
+        racingRound = (0..<roundCount).map { _ in NormalRacingRound(racingCars: racingCars) }
     }
     
     func start() -> RacingGameResult {
