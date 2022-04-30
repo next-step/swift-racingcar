@@ -36,7 +36,7 @@ class InputView {
 }
 
 extension InputView {
-    private static func isValidName(_ name: String) -> Bool {
-        return name.count > 0 && name.count < 5
+    private static func isValidName(_ name: String, _ min: Int = 0, _ max:Int = 5) -> Bool {
+        return name.count > min && name.count < max
     }
 }
