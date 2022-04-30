@@ -6,12 +6,13 @@
 //
 
 enum InputEror: Error, CustomDebugStringConvertible {
-    case invalidInput
+    case invalidCarInfo
+    case invalidCount
     
     var debugDescription: String {
         switch self {
-        case .invalidInput:
-            return "사용자 입력 오류"
+        case .invalidCarInfo: return "자동차 정보 입력 오류"
+        case .invalidCount: return "게임 횟수 입력 오류"
         }
     }
 }
