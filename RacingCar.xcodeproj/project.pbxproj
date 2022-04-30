@@ -22,6 +22,11 @@
 		2E25F981281D2A0500DC8F43 /* FakeEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E25F97F281D2A0500DC8F43 /* FakeEngine.swift */; };
 		2E25F983281D2B5E00DC8F43 /* RacingRoundResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E25F982281D2B5E00DC8F43 /* RacingRoundResult.swift */; };
 		2E25F984281D2B5E00DC8F43 /* RacingRoundResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E25F982281D2B5E00DC8F43 /* RacingRoundResult.swift */; };
+		2E25F986281D31BB00DC8F43 /* RacingGameTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E25F985281D31BB00DC8F43 /* RacingGameTest.swift */; };
+		2E25F988281D34E000DC8F43 /* RacingGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E25F987281D34E000DC8F43 /* RacingGame.swift */; };
+		2E25F989281D34E000DC8F43 /* RacingGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E25F987281D34E000DC8F43 /* RacingGame.swift */; };
+		2E25F98B281D356500DC8F43 /* RacingGameResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E25F98A281D356500DC8F43 /* RacingGameResult.swift */; };
+		2E25F98C281D356500DC8F43 /* RacingGameResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E25F98A281D356500DC8F43 /* RacingGameResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -46,6 +51,9 @@
 		2E25F97D281D268500DC8F43 /* RacingRoundTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingRoundTest.swift; sourceTree = "<group>"; };
 		2E25F97F281D2A0500DC8F43 /* FakeEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeEngine.swift; sourceTree = "<group>"; };
 		2E25F982281D2B5E00DC8F43 /* RacingRoundResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingRoundResult.swift; sourceTree = "<group>"; };
+		2E25F985281D31BB00DC8F43 /* RacingGameTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingGameTest.swift; sourceTree = "<group>"; };
+		2E25F987281D34E000DC8F43 /* RacingGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingGame.swift; sourceTree = "<group>"; };
+		2E25F98A281D356500DC8F43 /* RacingGameResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingGameResult.swift; sourceTree = "<group>"; };
 		2E8D45C7281AEA0500DD1214 /* RacingCarTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RacingCarTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E1262C27239F7E0000DB8B /* RacingCar */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RacingCar; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -74,6 +82,7 @@
 				2E25F97D281D268500DC8F43 /* RacingRoundTest.swift */,
 				2E25F96C281D193C00DC8F43 /* RacingCarTest.swift */,
 				2E25F97F281D2A0500DC8F43 /* FakeEngine.swift */,
+				2E25F985281D31BB00DC8F43 /* RacingGameTest.swift */,
 			);
 			path = RacingCarTest;
 			sourceTree = "<group>";
@@ -105,6 +114,8 @@
 				2E25F973281D21B400DC8F43 /* RandomNumberGenerator.swift */,
 				2E25F97A281D264800DC8F43 /* RacingRound.swift */,
 				2E25F982281D2B5E00DC8F43 /* RacingRoundResult.swift */,
+				2E25F987281D34E000DC8F43 /* RacingGame.swift */,
+				2E25F98A281D356500DC8F43 /* RacingGameResult.swift */,
 			);
 			path = RacingCar;
 			sourceTree = "<group>";
@@ -204,6 +215,9 @@
 				2E25F984281D2B5E00DC8F43 /* RacingRoundResult.swift in Sources */,
 				2E25F972281D1C5300DC8F43 /* Engine.swift in Sources */,
 				2E25F97E281D268500DC8F43 /* RacingRoundTest.swift in Sources */,
+				2E25F989281D34E000DC8F43 /* RacingGame.swift in Sources */,
+				2E25F98C281D356500DC8F43 /* RacingGameResult.swift in Sources */,
+				2E25F986281D31BB00DC8F43 /* RacingGameTest.swift in Sources */,
 				2E25F975281D21B400DC8F43 /* RandomNumberGenerator.swift in Sources */,
 				2E25F971281D1C5100DC8F43 /* RacingCar.swift in Sources */,
 				2E25F97C281D264800DC8F43 /* RacingRound.swift in Sources */,
@@ -218,8 +232,10 @@
 				2E25F96A281D191D00DC8F43 /* RacingCar.swift in Sources */,
 				2E25F96F281D1AFD00DC8F43 /* Engine.swift in Sources */,
 				2E25F967281D186400DC8F43 /* main.swift in Sources */,
+				2E25F988281D34E000DC8F43 /* RacingGame.swift in Sources */,
 				2E25F97B281D264800DC8F43 /* RacingRound.swift in Sources */,
 				2E25F974281D21B400DC8F43 /* RandomNumberGenerator.swift in Sources */,
+				2E25F98B281D356500DC8F43 /* RacingGameResult.swift in Sources */,
 				2E25F983281D2B5E00DC8F43 /* RacingRoundResult.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,7 +7,11 @@
 
 import Foundation
 
-class RacingCar {
+class RacingCar: Equatable {
+    static func == (lhs: RacingCar, rhs: RacingCar) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
     let id: Int
     let engine: Engine
     private var _location = 0

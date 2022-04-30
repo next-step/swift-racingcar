@@ -7,7 +7,11 @@
 
 import Foundation
 
-struct RacingRoundResult {
+struct RacingRoundResult: Equatable {
+    static func == (lhs: RacingRoundResult, rhs: RacingRoundResult) -> Bool {
+        return lhs.racingCars == rhs.racingCars
+    }
+    
     typealias Location = Int
     let racingCars: [RacingCar]
     
