@@ -18,11 +18,16 @@ class CalculatorTest: XCTestCase {
     }
 
     func test_연산자와_숫자가_모두_올바를때() {
-        var sut = Calculator(for: "1 + 2 - 3 * 4 / 5")
+        let sut = Calculator(for: "1 + 2 - 3 * 4 / 5")
         sut.seperateByBlankCharacter()
         
         XCTAssertEqual(sut.numbers, [1, 2, 3, 4, 5])
         XCTAssertEqual(sut.operators, ["+", "-", "*", "/"])
+    }
+    
+    func test_1과2를_덧셈() {
+        let sut = Calculator(for: "1 + 2")
+        XCTAssertEqual(sut.calculate(), 3)
     }
 
 }
