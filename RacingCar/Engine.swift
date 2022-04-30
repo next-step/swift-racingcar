@@ -11,7 +11,7 @@ protocol Engine {
     func canGo() -> Bool
 }
 
-struct RacingCarEngine: Engine{
+struct RacingCarEngine: Engine {
     private static let movingStandard: Int = 4
     let randomNumberGenerator: RandomNumberGenerator
     

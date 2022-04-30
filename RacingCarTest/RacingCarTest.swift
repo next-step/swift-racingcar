@@ -18,7 +18,7 @@ class RacingCarTest: XCTestCase {
     func test_자동차가_달리면_달린_위치가_1증가한다() {
         // given
         let alwasyMovingEngine = AlwaysMovingEngine()
-        var racingCar = RacingCar(engine: alwasyMovingEngine)
+        let racingCar = RacingCar(id: 0, engine: alwasyMovingEngine)
         let previousLocation = racingCar.location
 
         // when

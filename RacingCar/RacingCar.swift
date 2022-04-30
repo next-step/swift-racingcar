@@ -7,18 +7,21 @@
 
 import Foundation
 
-struct RacingCar {
+class RacingCar {
+    let id: Int
     let engine: Engine
     private var _location = 0
+    
     var location: Int {
         return self._location
     }
     
-    init(engine: Engine) {
+    init(id: Int, engine: Engine) {
+        self.id = id
         self.engine = engine
     }
     
-    mutating func move() {
+    func move() {
         if engine.canGo() {
             self._location += 1
         }

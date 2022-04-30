@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct RandomNumberGenerator {
+struct RandomNumberGenerator: Equatable {
     let range: Range<Int>
     
     init(range: Range<Int>) {
