@@ -9,72 +9,38 @@ import Foundation
 
 struct StringCalculatorInputChange {
     
-    func stringNumberToInt(input:String) throws -> Int {
-        if let number = Int(input) {
-            return number
-        } else {
-            throw StringCalculatorError.numberError
+    func stringToInt(input:String) throws -> Int {
+        guard let number = Int(input) else {
+           throw StringCalculatorError.number
         }
+        return number
+
     }
     
-    func verifyOperator(input:String) throws -> StringOperator {
-        if let myOperator = StringOperator(rawValue: input) {
-            return myOperator
-        } else {
-            throw StringCalculatorError.operatorError
+    func convertOperator(input:String) throws -> Operator {
+        guard let myOperator = Operator(rawValue: input) else {
+            throw StringCalculatorError.operator
         }
+        return myOperator
     }
     
     func emptyRemover(input:String?) throws -> [String] {
-        if let input = input {
-            let result = input.components(separatedBy: " ")
-            if result.isEmpty {
-                throw StringCalculatorError.inputEmpty
-            } else {
-                return result
-            }
-        } else {
+        guard let input = input else {
             throw StringCalculatorError.inputNil
+        }
+        let result = input.components(separatedBy: " ")
+        if result.isEmpty {
+            throw StringCalculatorError.inputEmpty
+        } else {
+            return result
         }
     }
     
     func inputStringArrayCountIsOdd(input:[String]) throws -> Bool {
-        if input.count >= 3 && !input.count.isMultiple(of: 2) {
-            return true
-        } else {
-            throw StringCalculatorError.calculatorError
+        guard input.count >= 3 && !input.count.isMultiple(of: 2) else {
+            throw StringCalculatorError.calculator
         }
+        return true
     }
 }
-//func stringNumberToInt(input:String) -> Int? {
-//    if let number = Int(input) {
-//        return number
-//    } else {
-//        return nil
-//    }
-//}
-//
-//func verifyOperator(input:String) -> StringOperator? {
-//    if let myOperator = StringOperator(rawValue: input) {
-//        return myOperator
-//    } else {
-//        return nil
-//    }
-//}
-//
-//func emptyRemover(input:String?) -> [String]? {
-//    if let input = input {
-//        let result = input.components(separatedBy: " ")
-//        return result
-//    } else {
-//        return nil
-//    }
-//}
-//
-//func inputStringArrayCountIsOdd(input:[String]) -> Bool {
-//    if input.count >= 3 && !input.count.isMultiple(of: 2) {
-//        return true
-//    } else {
-//        return false
-//    }
-//}
+

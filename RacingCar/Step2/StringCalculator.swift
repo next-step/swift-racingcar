@@ -31,12 +31,12 @@ struct StringCalculator: Calculator {
         let changeArray = try inputChangeHelper.emptyRemover(input: input)
         let _ = try inputChangeHelper.inputStringArrayCountIsOdd(input: changeArray)
         var currentValue = 0
-        var operate: StringOperator? = nil
+        var operate: Operator? = nil
         for (index,value) in changeArray.enumerated() {
             if !index.isMultiple(of: 2) {
-                operate = try inputChangeHelper.verifyOperator(input: value)
+                operate = try inputChangeHelper.convertOperator(input: value)
             } else {
-                let changeInt = try inputChangeHelper.stringNumberToInt(input: value)
+                let changeInt = try inputChangeHelper.stringToInt(input: value)
                 if let myOperate = operate {
                     switch myOperate {
                     case .plus:
