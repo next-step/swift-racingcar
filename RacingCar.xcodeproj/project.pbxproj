@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		713B87F5281A928800983DAD /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713B87F4281A928800983DAD /* StringTests.swift */; };
 		718B0358281D56F50034BCFF /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
+		718B035C281D61D80034BCFF /* SetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718B035B281D61D80034BCFF /* SetTests.swift */; };
 		C7E1263027239F7E0000DB8B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +29,7 @@
 		713B87EC281A90DD00983DAD /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		713B87F2281A928800983DAD /* RacingCarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RacingCarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		713B87F4281A928800983DAD /* StringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTests.swift; sourceTree = "<group>"; };
+		718B035B281D61D80034BCFF /* SetTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetTests.swift; sourceTree = "<group>"; };
 		C7E1262C27239F7E0000DB8B /* RacingCar */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RacingCar; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E1262F27239F7E0000DB8B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -62,6 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				713B87F4281A928800983DAD /* StringTests.swift */,
+				718B035B281D61D80034BCFF /* SetTests.swift */,
 			);
 			path = RacingCarTests;
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				718B0358281D56F50034BCFF /* main.swift in Sources */,
+				718B035C281D61D80034BCFF /* SetTests.swift in Sources */,
 				713B87F5281A928800983DAD /* StringTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
