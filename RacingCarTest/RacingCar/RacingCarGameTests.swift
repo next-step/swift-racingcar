@@ -18,6 +18,7 @@ class RacingCarGameTests: XCTestCase {
     }
     
     override func tearDownWithError() throws {
+        randomDigitNumberMaker = nil
     }
     
     func test_roundCount_whenRaceCountIsZero_equalToZero() throws {
