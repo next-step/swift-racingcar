@@ -6,9 +6,12 @@
 //
 
 class Car {
+    public var name: String = ""
     public var point: Int = 0
     
-    init() { }
+    init(_ name: String) {
+        self.name = name
+    }
     
     func moveFoward() {
         self.point += 1
