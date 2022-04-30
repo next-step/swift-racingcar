@@ -21,10 +21,6 @@ private enum Question: UserInformable {
     }
 }
 
-private enum UserInputError: Error {
-    case invalidCarName
-}
-
 struct InputView {
     private let userGuider = UserGuider()
     private let stringConverter = StringConverter()
@@ -42,6 +38,15 @@ struct InputView {
     
     func recieveRaceCount() throws -> Int {
         userGuider.guide(for: Question.raceCount)
-        return try stringConverter.convertToInt(from: readLine())
+        do {
+            let raceCount = try stringConverter.convertToInt(from: readLine())
+            let isValidRaceCount = userInputValidator.isValideRaceCount(of: raceCount)
+            guard isValidRaceCount else {
+                throw UserInputError.invalidRaceCount
+            }
+            return raceCount
+        } catch {
+            throw UserInputError.invalidRaceCount
+        }
     }
 }

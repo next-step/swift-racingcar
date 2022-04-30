@@ -13,9 +13,9 @@ do {
     let roundHistory: RoundHistory = roundHistoryAfterPlayGame(carNames: carNames,
                                                                raceCount: raceCount)
     showResult(using: roundHistory)
-} catch {
+} catch let error as UserInputError { 
     let errorView = ErrorView()
-    errorView.guideNotIntInputError()
+    errorView.guideInputError(error: error)
 }
 
 private func roundHistoryAfterPlayGame(carNames: [String], raceCount: Int) -> RoundHistory {

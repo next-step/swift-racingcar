@@ -35,6 +35,7 @@
 		3B8A28E3281D95D000CF84C6 /* UserInputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8A28E2281D95D000CF84C6 /* UserInputValidator.swift */; };
 		3B8A28E5281D964100CF84C6 /* UserInputValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8A28E4281D964100CF84C6 /* UserInputValidatorTests.swift */; };
 		3B8A28E6281D965E00CF84C6 /* UserInputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8A28E2281D95D000CF84C6 /* UserInputValidator.swift */; };
+		3B8A28E8281D9D5800CF84C6 /* UserInputError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8A28E7281D9D5800CF84C6 /* UserInputError.swift */; };
 		C7E1263027239F7E0000DB8B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +73,7 @@
 		3B8A28E9281DC1F000CF84C6 /* RandomDigitNumberMakerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomDigitNumberMakerTests.swift; sourceTree = "<group>"; };
 		3B8A28E2281D95D000CF84C6 /* UserInputValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInputValidator.swift; sourceTree = "<group>"; };
 		3B8A28E4281D964100CF84C6 /* UserInputValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInputValidatorTests.swift; sourceTree = "<group>"; };
+		3B8A28E7281D9D5800CF84C6 /* UserInputError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInputError.swift; sourceTree = "<group>"; };
 		C7E1262C27239F7E0000DB8B /* RacingCar */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RacingCar; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E1262F27239F7E0000DB8B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -109,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				3B8A28DA281C6F6500CF84C6 /* UserGuider.swift */,
+				3B8A28E7281D9D5800CF84C6 /* UserInputError.swift */,
 				3B8A28BD281AE04000CF84C6 /* InputView.swift */,
 				3B8A28DC281C6FE500CF84C6 /* ErrorView.swift */,
 				3B8A28C0281AE08F00CF84C6 /* ResultView.swift */,
@@ -313,6 +316,7 @@
 				3B8A28BE281AE04000CF84C6 /* InputView.swift in Sources */,
 				3B8A28C4281AE90600CF84C6 /* Car.swift in Sources */,
 				3B8A28B4281AD96500CF84C6 /* RandomDigitNumberMaker.swift in Sources */,
+				3B8A28E8281D9D5800CF84C6 /* UserInputError.swift in Sources */,
 				3B8A28E3281D95D000CF84C6 /* UserInputValidator.swift in Sources */,
 				C7E1263027239F7E0000DB8B /* main.swift in Sources */,
 				3B8A28DD281C6FE500CF84C6 /* ErrorView.swift in Sources */,
