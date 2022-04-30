@@ -20,7 +20,7 @@ NEXTSTEP with yagom-academy
 - [x] 자동차 이름 입력 받기
 - [x] 입력받은 자동차 이름 "," 기준으로 쪼개기
 - [ ] 쪼갠 자동차 이름 중 하나라도 5 글자 초과하면 throw
-- [ ] Car 객체에 name property 추가 (+ init 함수 수정)
+- [x] Car 객체에 name property 추가 (+ init 함수 수정)
 - [ ] Result View 에서 print 할 때 car.name 같이 출력
 - [ ] 마지막 record 에서 car.position 의 max 값 구한 후에, 마지막 position 이 max 값과 일치하는 모든 car 객체 찾아서 최종 우승자로서 name print
 

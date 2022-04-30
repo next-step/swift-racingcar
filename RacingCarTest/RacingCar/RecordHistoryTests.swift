@@ -21,7 +21,7 @@ class RoundHistoryTests: XCTestCase {
     
     func test_roundCount_whenAppendOneRound_equalToOne() throws {
         // given
-        let car: Car = Car(position: 0)
+        let car: Car = Car(name: "sujin", position: 0)
         let round: Round = Round(cars: [car])
         
         // when
