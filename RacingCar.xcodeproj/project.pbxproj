@@ -35,6 +35,7 @@
 		2E25F998281D4E3000DC8F43 /* OutputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E25F991281D46C300DC8F43 /* OutputView.swift */; };
 		2E25F999281D4E3400DC8F43 /* GameResultFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E25F98F281D456500DC8F43 /* GameResultFormatter.swift */; };
 		2E25F99A281D4E7C00DC8F43 /* InputChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E25F993281D483300DC8F43 /* InputChecker.swift */; };
+		2E25F99C281D59E900DC8F43 /* InputCheckerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E25F99B281D59E900DC8F43 /* InputCheckerTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -66,6 +67,7 @@
 		2E25F98F281D456500DC8F43 /* GameResultFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResultFormatter.swift; sourceTree = "<group>"; };
 		2E25F991281D46C300DC8F43 /* OutputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputView.swift; sourceTree = "<group>"; };
 		2E25F993281D483300DC8F43 /* InputChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputChecker.swift; sourceTree = "<group>"; };
+		2E25F99B281D59E900DC8F43 /* InputCheckerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputCheckerTest.swift; sourceTree = "<group>"; };
 		2E8D45C7281AEA0500DD1214 /* RacingCarTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RacingCarTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E1262C27239F7E0000DB8B /* RacingCar */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RacingCar; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -101,6 +103,7 @@
 		2E8D45C8281AEA0500DD1214 /* RacingCarTest */ = {
 			isa = PBXGroup;
 			children = (
+				2E25F99B281D59E900DC8F43 /* InputCheckerTest.swift */,
 				2E25F97D281D268500DC8F43 /* RacingRoundTest.swift */,
 				2E25F96C281D193C00DC8F43 /* RacingCarTest.swift */,
 				2E25F97F281D2A0500DC8F43 /* FakeEngine.swift */,
@@ -248,6 +251,7 @@
 				2E25F975281D21B400DC8F43 /* RandomNumberGenerator.swift in Sources */,
 				2E25F999281D4E3400DC8F43 /* GameResultFormatter.swift in Sources */,
 				2E25F971281D1C5100DC8F43 /* RacingCar.swift in Sources */,
+				2E25F99C281D59E900DC8F43 /* InputCheckerTest.swift in Sources */,
 				2E25F97C281D264800DC8F43 /* RacingRound.swift in Sources */,
 				2E25F968281D186600DC8F43 /* main.swift in Sources */,
 			);
