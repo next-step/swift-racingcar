@@ -40,5 +40,7 @@ extension Game {
         for _ in 0..<counts {
             runOneCycle(of: cars)
         }
+        
+        ResultView.printWinner(cars)
     }
 }
