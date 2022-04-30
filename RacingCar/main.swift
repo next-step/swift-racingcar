@@ -19,17 +19,9 @@ if !InputChecker.isValid(roundCount: roundCount) {
     exit(0)
 }
 
-let racingCars = (0..<roundCount!).map { _ -> Engine in
-    let range = 0..<9
-
-    let randomNumberGenerator = RandomNumberGenerator(range: range)
-    return RacingCarEngine(randomNumberGenerator: randomNumberGenerator)
+let racingCars = (0..<roundCount!).map { id in
+    RacingCarFactory.create(id: id)
 }
-.enumerated()
-.map({ (index, engine) in
-    RacingCar(id: index, engine: engine)
-})
-
 let result = RacingGame(racingCars: racingCars, roundCount: roundCount!).start()
 let formattedResult = GameResultFormatter.format(result)
 OutputView.show(formattedResult)

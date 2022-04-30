@@ -7,6 +7,16 @@
 
 import Foundation
 
+struct RacingCarFactory {
+    static func create(id: Int) -> RacingCar {
+        let range = 0..<9
+        
+        let randomNumberGenerator = RandomNumberGenerator(range: range)
+        let engine = RacingCarEngine(randomNumberGenerator: randomNumberGenerator)
+        return RacingCar(id: id, engine: engine)
+    }
+}
+
 class RacingCar: Equatable {
     static func == (lhs: RacingCar, rhs: RacingCar) -> Bool {
         return lhs.id == rhs.id
