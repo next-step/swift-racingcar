@@ -11,10 +11,11 @@ struct UserInputValidator {
     
     private enum Constants {
         static let maximumCarNameLength: Int = 5
+        static let minimumRaceCountToStart: Int = 1
     }
     
     func isValideRaceCount(of raceCount: Int) -> Bool {
-        return raceCount >= 1
+        return raceCount >= Constants.minimumRaceCountToStart
     }
     
     func isValidCarNames(of carNames: [String]) -> Bool {
