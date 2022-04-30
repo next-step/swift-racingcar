@@ -17,8 +17,8 @@ NEXTSTEP with yagom-academy
 
 ### 구현할 기능 목록
 
-- [ ] 자동차 이름 입력 받기
-- [ ] 입력받은 자동차 이름 "," 기준으로 쪼개기
+- [x] 자동차 이름 입력 받기
+- [x] 입력받은 자동차 이름 "," 기준으로 쪼개기
 - [ ] 쪼갠 자동차 이름 중 하나라도 5 글자 초과하면 throw
 - [ ] Car 객체에 name property 추가 (+ init 함수 수정)
 - [ ] Result View 에서 print 할 때 car.name 같이 출력

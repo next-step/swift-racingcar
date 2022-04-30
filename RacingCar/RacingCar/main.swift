@@ -8,9 +8,9 @@ import Foundation
 
 do {
     let inputView = InputView()
-    let carCount: Int = try inputView.recieveCarCount()
+    let carNames: [String] = inputView.recieveCarNames()
     let raceCount: Int = try inputView.recieveRaceCount()
-    let roundHistory: RoundHistory = roundHistoryAfterPlayGame(carCount: carCount,
+    let roundHistory: RoundHistory = roundHistoryAfterPlayGame(carNames: carNames,
                                                                raceCount: raceCount)
     showResult(using: roundHistory)
 } catch {
@@ -18,9 +18,9 @@ do {
     errorView.guideNotIntInputError()
 }
 
-private func roundHistoryAfterPlayGame(carCount: Int, raceCount: Int) -> RoundHistory {
+private func roundHistoryAfterPlayGame(carNames: [String], raceCount: Int) -> RoundHistory {
     let randomDigitNumberMaker = RandomDigitNumberMaker()
-    let racingCarGame = RacingCarGame(carCount: carCount,
+    let racingCarGame = RacingCarGame(carNames: carNames,
                                       raceCount: raceCount,
                                       randomDigitNumberMaker: randomDigitNumberMaker)
     racingCarGame.start()

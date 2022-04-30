@@ -18,11 +18,11 @@ struct RacingCarGame {
     private let raceCount: Int
     private let randomDigitNumberMaker: RandomNumberMakable
     
-    init(carCount: Int,
+    init(carNames: [String],
          raceCount: Int,
          randomDigitNumberMaker: RandomNumberMakable) {
         let initialCars = Array(repeating: Car(position: 0),
-                                count: carCount)
+                                count: carNames.count)
         self.initialRound = Round(cars: initialCars)
         self.raceCount = raceCount
         self.randomDigitNumberMaker = randomDigitNumberMaker

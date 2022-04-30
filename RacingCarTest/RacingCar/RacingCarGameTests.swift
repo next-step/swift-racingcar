@@ -23,9 +23,9 @@ class RacingCarGameTests: XCTestCase {
     
     func test_roundCount_whenRaceCountIsZero_equalToZero() throws {
         // given
-        let carCount = 0
+        let carNames = ["naljin"]
         let raceCount = 0
-        sut = RacingCarGame(carCount: carCount,
+        sut = RacingCarGame(carNames: carNames,
                             raceCount: raceCount,
                             randomDigitNumberMaker: randomDigitNumberMaker)
         
@@ -39,9 +39,9 @@ class RacingCarGameTests: XCTestCase {
     
     func test_roundCount_whenRaceCountIsOne_equalToOne() throws {
         // given
-        let carCount = 0
+        let carNames = ["naljin"]
         let raceCount = 1
-        sut = RacingCarGame(carCount: carCount,
+        sut = RacingCarGame(carNames: carNames,
                             raceCount: raceCount,
                             randomDigitNumberMaker: randomDigitNumberMaker)
         // when
@@ -54,9 +54,9 @@ class RacingCarGameTests: XCTestCase {
     
     func test_carCountPerRound_whenRoundIsZero_equalToNil() throws {
         // given
-        let carCount = 1
+        let carNames = ["naljin"]
         let raceCount = 0
-        sut = RacingCarGame(carCount: carCount,
+        sut = RacingCarGame(carNames: carNames,
                             raceCount: raceCount,
                             randomDigitNumberMaker: randomDigitNumberMaker)
 
@@ -68,11 +68,11 @@ class RacingCarGameTests: XCTestCase {
         XCTAssertNil(firstRoundCarCount)
     }
     
-    func test_carCountPerRound_whenCarCountIsZero_equalToZero() throws {
+    func test_carCountPerRound_whenEmptyCarNames_equalToZero() throws {
         // given
-        let carCount = 0
+        let carNames: [String] = []
         let raceCount = 1
-        sut = RacingCarGame(carCount: carCount,
+        sut = RacingCarGame(carNames: carNames,
                             raceCount: raceCount,
                             randomDigitNumberMaker: randomDigitNumberMaker)
 
@@ -81,15 +81,16 @@ class RacingCarGameTests: XCTestCase {
 
         // then
         let firstRoundCarCount = sut.roundHistory.rounds.first?.cars.count
-        XCTAssertEqual(firstRoundCarCount, carCount)
+        let expectation = 0
+        XCTAssertEqual(firstRoundCarCount, expectation)
     }
     
 
-    func test_carCountPerRound_whenCarCountIsOne_equalToOne() throws {
+    func test_carCountPerRound_whenOneCarNames_equalToOne() throws {
         // given
-        let carCount = 1
+        let carNames = ["naljin"]
         let raceCount = 1
-        sut = RacingCarGame(carCount: carCount,
+        sut = RacingCarGame(carNames: carNames,
                             raceCount: raceCount,
                             randomDigitNumberMaker: randomDigitNumberMaker)
 
@@ -98,14 +99,15 @@ class RacingCarGameTests: XCTestCase {
 
         // then
         let firstRoundCarCount = sut.roundHistory.rounds.first?.cars.count
-        XCTAssertEqual(firstRoundCarCount, carCount)
+        let expectation = 1
+        XCTAssertEqual(firstRoundCarCount, expectation)
     }
 
     func test_carPosition_afterARace_forwardOneStep() throws {
         // given
-        let carCount = 1
+        let carNames = ["naljin"]
         let raceCount = 2
-        sut = RacingCarGame(carCount: carCount,
+        sut = RacingCarGame(carNames: carNames,
                             raceCount: raceCount,
                             randomDigitNumberMaker: randomDigitNumberMaker)
 
