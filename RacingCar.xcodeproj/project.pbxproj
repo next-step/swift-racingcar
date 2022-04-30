@@ -30,6 +30,7 @@
 		2E25F98E281D445100DC8F43 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E25F98D281D445100DC8F43 /* InputView.swift */; };
 		2E25F990281D456500DC8F43 /* GameResultFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E25F98F281D456500DC8F43 /* GameResultFormatter.swift */; };
 		2E25F992281D46C300DC8F43 /* OutputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E25F991281D46C300DC8F43 /* OutputView.swift */; };
+		2E25F994281D483300DC8F43 /* InputChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E25F993281D483300DC8F43 /* InputChecker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -60,6 +61,7 @@
 		2E25F98D281D445100DC8F43 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
 		2E25F98F281D456500DC8F43 /* GameResultFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResultFormatter.swift; sourceTree = "<group>"; };
 		2E25F991281D46C300DC8F43 /* OutputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputView.swift; sourceTree = "<group>"; };
+		2E25F993281D483300DC8F43 /* InputChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputChecker.swift; sourceTree = "<group>"; };
 		2E8D45C7281AEA0500DD1214 /* RacingCarTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RacingCarTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E1262C27239F7E0000DB8B /* RacingCar */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RacingCar; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -125,6 +127,7 @@
 				2E25F98D281D445100DC8F43 /* InputView.swift */,
 				2E25F98F281D456500DC8F43 /* GameResultFormatter.swift */,
 				2E25F991281D46C300DC8F43 /* OutputView.swift */,
+				2E25F993281D483300DC8F43 /* InputChecker.swift */,
 			);
 			path = RacingCar;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 				2E25F992281D46C300DC8F43 /* OutputView.swift in Sources */,
 				2E25F967281D186400DC8F43 /* main.swift in Sources */,
 				2E25F988281D34E000DC8F43 /* RacingGame.swift in Sources */,
+				2E25F994281D483300DC8F43 /* InputChecker.swift in Sources */,
 				2E25F97B281D264800DC8F43 /* RacingRound.swift in Sources */,
 				2E25F974281D21B400DC8F43 /* RandomNumberGenerator.swift in Sources */,
 				2E25F98E281D445100DC8F43 /* InputView.swift in Sources */,
