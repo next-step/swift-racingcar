@@ -12,7 +12,7 @@ class GameOption {
         return Int(arc4random_uniform(10))
     }
     
-    static func canGoFoward(_ n: Int) -> Bool {
-        return n >= 4
+    static func canGoFoward(_ n: Int, _ condition: Int = 4) -> Bool {
+        return n >= condition
     }
 }
