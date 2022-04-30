@@ -31,6 +31,7 @@
 		3B8A28D5281C636900CF84C6 /* RecordHistoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8A28D4281C636900CF84C6 /* RecordHistoryTests.swift */; };
 		3B8A28DB281C6F6500CF84C6 /* UserGuider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8A28DA281C6F6500CF84C6 /* UserGuider.swift */; };
 		3B8A28DD281C6FE500CF84C6 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8A28DC281C6FE500CF84C6 /* ErrorView.swift */; };
+		3B8A28EA281DC1F000CF84C6 /* RandomDigitNumberMakerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8A28E9281DC1F000CF84C6 /* RandomDigitNumberMakerTests.swift */; };
 		C7E1263027239F7E0000DB8B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +66,7 @@
 		3B8A28D4281C636900CF84C6 /* RecordHistoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordHistoryTests.swift; sourceTree = "<group>"; };
 		3B8A28DA281C6F6500CF84C6 /* UserGuider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGuider.swift; sourceTree = "<group>"; };
 		3B8A28DC281C6FE500CF84C6 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		3B8A28E9281DC1F000CF84C6 /* RandomDigitNumberMakerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomDigitNumberMakerTests.swift; sourceTree = "<group>"; };
 		C7E1262C27239F7E0000DB8B /* RacingCar */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RacingCar; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E1262F27239F7E0000DB8B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -154,6 +156,7 @@
 			children = (
 				3B8A28B7281ADE2F00CF84C6 /* RacingCarGameTests.swift */,
 				3B8A28D4281C636900CF84C6 /* RecordHistoryTests.swift */,
+				3B8A28E9281DC1F000CF84C6 /* RandomDigitNumberMakerTests.swift */,
 			);
 			path = RacingCar;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 			files = (
 				3B8A28A928199AE100CF84C6 /* StringCalculatorTests.swift in Sources */,
 				3B8A28D5281C636900CF84C6 /* RecordHistoryTests.swift in Sources */,
+				3B8A28EA281DC1F000CF84C6 /* RandomDigitNumberMakerTests.swift in Sources */,
 				3B8A28A52819923000CF84C6 /* StringConverter.swift in Sources */,
 				3B8A28C5281AE94800CF84C6 /* Car.swift in Sources */,
 				3B8A28D2281C62F000CF84C6 /* Round.swift in Sources */,
