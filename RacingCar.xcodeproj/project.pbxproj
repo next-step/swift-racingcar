@@ -31,6 +31,9 @@
 		2E25F990281D456500DC8F43 /* GameResultFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E25F98F281D456500DC8F43 /* GameResultFormatter.swift */; };
 		2E25F992281D46C300DC8F43 /* OutputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E25F991281D46C300DC8F43 /* OutputView.swift */; };
 		2E25F994281D483300DC8F43 /* InputChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E25F993281D483300DC8F43 /* InputChecker.swift */; };
+		2E25F997281D4E2E00DC8F43 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E25F98D281D445100DC8F43 /* InputView.swift */; };
+		2E25F998281D4E3000DC8F43 /* OutputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E25F991281D46C300DC8F43 /* OutputView.swift */; };
+		2E25F999281D4E3400DC8F43 /* GameResultFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E25F98F281D456500DC8F43 /* GameResultFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -230,6 +233,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E25F997281D4E2E00DC8F43 /* InputView.swift in Sources */,
 				2E25F981281D2A0500DC8F43 /* FakeEngine.swift in Sources */,
 				2E25F96D281D193C00DC8F43 /* RacingCarTest.swift in Sources */,
 				2E25F984281D2B5E00DC8F43 /* RacingRoundResult.swift in Sources */,
@@ -238,7 +242,9 @@
 				2E25F989281D34E000DC8F43 /* RacingGame.swift in Sources */,
 				2E25F98C281D356500DC8F43 /* RacingGameResult.swift in Sources */,
 				2E25F986281D31BB00DC8F43 /* RacingGameTest.swift in Sources */,
+				2E25F998281D4E3000DC8F43 /* OutputView.swift in Sources */,
 				2E25F975281D21B400DC8F43 /* RandomNumberGenerator.swift in Sources */,
+				2E25F999281D4E3400DC8F43 /* GameResultFormatter.swift in Sources */,
 				2E25F971281D1C5100DC8F43 /* RacingCar.swift in Sources */,
 				2E25F97C281D264800DC8F43 /* RacingRound.swift in Sources */,
 				2E25F968281D186600DC8F43 /* main.swift in Sources */,
