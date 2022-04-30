@@ -6,6 +6,8 @@
 
 import Foundation
 
-//MARK: - Calculator
-let calculator: Calculable = Calculator()
-try calculator.execute(expression: CalculatorInput.readExpression())
+let gameInfo = GameInfo(carNumber: InputView.readCarNumber(),
+                        round: InputView.readRound())
+let forwardNumberMaker = RacingForwardRandomNumberMaker()
+
+RacingGame.play(gameInfo: gameInfo, forwardNumberMakable: forwardNumberMaker)
