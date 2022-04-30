@@ -35,8 +35,6 @@ class RacingGameTest: XCTestCase {
         let racingGameResult = racingGame.start()
         
         // then
-        
         XCTAssertEqual(racingGameResult, expectedRacingResult)
     }
-
 }

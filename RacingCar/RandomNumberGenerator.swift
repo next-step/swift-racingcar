@@ -13,6 +13,7 @@ struct RandomNumberGenerator: Equatable {
     init(range: Range<Int>) {
         self.range = range
     }
+    
     func generate() -> Int{
         return Int.random(in: range)
     }
