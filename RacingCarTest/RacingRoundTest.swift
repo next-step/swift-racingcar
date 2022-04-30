@@ -20,7 +20,7 @@ class RacingRoundTest: XCTestCase {
         let racingResult = racingRound.start()
         
         // then
-        XCTAssertEqual(racingResult.value[0].location, firstCar.location)
-        XCTAssertEqual(racingResult.value[1].location, secondCar.location)
+        XCTAssertEqual(racingResult.value[0].location, firstCar.state().location)
+        XCTAssertEqual(racingResult.value[1].location, secondCar.state().location)
     }
 }

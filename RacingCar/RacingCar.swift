@@ -10,7 +10,6 @@ import Foundation
 struct RacingCarFactory {
     static func create(id: Int) -> RacingCar {
         let range = 0..<9
-        
         let randomNumberGenerator = RandomNumberGenerator(range: range)
         let engine = RacingCarEngine(randomNumberGenerator: randomNumberGenerator)
         return RacingCar(id: id, engine: engine)
@@ -29,11 +28,7 @@ class RacingCar {
     
     private let id: Int
     private let engine: Engine
-    private var _location = 0
-    
-    var location: Int {
-        return self._location
-    }
+    private var location = 0
     
     init(id: Int, engine: Engine) {
         self.id = id
@@ -42,7 +37,7 @@ class RacingCar {
     
     func move() {
         if engine.canGo() {
-            self._location += 1
+            self.location += 1
         }
     }
     
