@@ -21,14 +21,22 @@ private enum Question: UserInformable {
     }
 }
 
+private enum UserInputError: Error {
+    case invalidCarName
+}
+
 struct InputView {
-    
     private let userGuider = UserGuider()
     private let stringConverter = StringConverter()
+    private let userInputValidator = UserInputValidator()
     
-    func recieveCarNames() -> [String] {
+    func recieveCarNames() throws -> [String] {
         userGuider.guide(for: Question.carNames)
         let carNames = readLine()?.components(separatedBy: ",") ?? []
+        let isValidCarNames: Bool = userInputValidator.isValidCarNames(of: carNames)
+        guard isValidCarNames else {
+            throw UserInputError.invalidCarName
+        }
         return carNames
     }
     

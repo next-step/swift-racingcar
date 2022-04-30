@@ -32,6 +32,9 @@
 		3B8A28DB281C6F6500CF84C6 /* UserGuider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8A28DA281C6F6500CF84C6 /* UserGuider.swift */; };
 		3B8A28DD281C6FE500CF84C6 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8A28DC281C6FE500CF84C6 /* ErrorView.swift */; };
 		3B8A28EA281DC1F000CF84C6 /* RandomDigitNumberMakerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8A28E9281DC1F000CF84C6 /* RandomDigitNumberMakerTests.swift */; };
+		3B8A28E3281D95D000CF84C6 /* UserInputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8A28E2281D95D000CF84C6 /* UserInputValidator.swift */; };
+		3B8A28E5281D964100CF84C6 /* CarNameValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8A28E4281D964100CF84C6 /* CarNameValidatorTests.swift */; };
+		3B8A28E6281D965E00CF84C6 /* UserInputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8A28E2281D95D000CF84C6 /* UserInputValidator.swift */; };
 		C7E1263027239F7E0000DB8B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +70,8 @@
 		3B8A28DA281C6F6500CF84C6 /* UserGuider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGuider.swift; sourceTree = "<group>"; };
 		3B8A28DC281C6FE500CF84C6 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		3B8A28E9281DC1F000CF84C6 /* RandomDigitNumberMakerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomDigitNumberMakerTests.swift; sourceTree = "<group>"; };
+		3B8A28E2281D95D000CF84C6 /* UserInputValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInputValidator.swift; sourceTree = "<group>"; };
+		3B8A28E4281D964100CF84C6 /* CarNameValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarNameValidatorTests.swift; sourceTree = "<group>"; };
 		C7E1262C27239F7E0000DB8B /* RacingCar */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RacingCar; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E1262F27239F7E0000DB8B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,6 +124,7 @@
 				3B8A28B02819A72B00CF84C6 /* RacingCarGame.swift */,
 				3B8A28D0281C619800CF84C6 /* RoundHistory.swift */,
 				3B8A28B3281AD96500CF84C6 /* RandomDigitNumberMaker.swift */,
+				3B8A28E2281D95D000CF84C6 /* UserInputValidator.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -289,6 +295,7 @@
 				3B8A28AA28199AEA00CF84C6 /* StringCalculator.swift in Sources */,
 				3B8A28A128198DED00CF84C6 /* StringConverterTests.swift in Sources */,
 				3B8A28932816DB0000CF84C6 /* SetTests.swift in Sources */,
+				3B8A28E6281D965E00CF84C6 /* UserInputValidator.swift in Sources */,
 				3B8A28B8281ADE2F00CF84C6 /* RacingCarGameTests.swift in Sources */,
 				3B8A28D3281C62F700CF84C6 /* RoundHistory.swift in Sources */,
 			);
@@ -304,6 +311,7 @@
 				3B8A28BE281AE04000CF84C6 /* InputView.swift in Sources */,
 				3B8A28C4281AE90600CF84C6 /* Car.swift in Sources */,
 				3B8A28B4281AD96500CF84C6 /* RandomDigitNumberMaker.swift in Sources */,
+				3B8A28E3281D95D000CF84C6 /* UserInputValidator.swift in Sources */,
 				C7E1263027239F7E0000DB8B /* main.swift in Sources */,
 				3B8A28DD281C6FE500CF84C6 /* ErrorView.swift in Sources */,
 				3B8A28A42819920B00CF84C6 /* StringConverter.swift in Sources */,

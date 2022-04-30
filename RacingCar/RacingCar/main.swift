@@ -8,7 +8,7 @@ import Foundation
 
 do {
     let inputView = InputView()
-    let carNames: [String] = inputView.recieveCarNames()
+    let carNames: [String] = try inputView.recieveCarNames()
     let raceCount: Int = try inputView.recieveRaceCount()
     let roundHistory: RoundHistory = roundHistoryAfterPlayGame(carNames: carNames,
                                                                raceCount: raceCount)
