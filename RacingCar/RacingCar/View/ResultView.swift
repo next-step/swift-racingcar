@@ -31,7 +31,7 @@ struct ResultView {
     private func drawRound(of round: Round) {
         round.cars.forEach { car in
             let carPositionLine = String(repeating: "-", count: car.position)
-            print(carPositionLine)
+            print(car.name, carPositionLine, separator: " : ")
         }
     }
     
