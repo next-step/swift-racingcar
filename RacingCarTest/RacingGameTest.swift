@@ -9,7 +9,7 @@ import XCTest
 
 extension RacingGameResult: Equatable {
     static func == (lhs: RacingGameResult, rhs: RacingGameResult) -> Bool {
-        return lhs.racingRoundResut == rhs.racingRoundResut
+        return lhs.racingRoundResult == rhs.racingRoundResult
     }
 }
 
@@ -30,7 +30,7 @@ class RacingGameTest: XCTestCase {
         let firstRoundResult = RacingRoundResult(states: [.init(id: 0, location: 1), .init(id: 1, location: 0), .init(id: 2, location: 0)])
         let secondRoundResult = RacingRoundResult(states: [.init(id: 0, location: 2), .init(id: 1, location: 0), .init(id: 2, location: 0)])
         
-        XCTAssert(racingGameResult.racingRoundResut[0] == firstRoundResult)
-        XCTAssert(racingGameResult.racingRoundResut[1] == secondRoundResult)
+        XCTAssert(racingGameResult.racingRoundResult[0] == firstRoundResult)
+        XCTAssert(racingGameResult.racingRoundResult[1] == secondRoundResult)
     }
 }

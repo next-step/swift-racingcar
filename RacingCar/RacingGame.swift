@@ -16,6 +16,6 @@ struct RacingGame {
     
     func start() -> RacingGameResult {
         let racingRoundResults = racingRound.map { $0.start() }
-        return RacingGameResult(racingRoundResut: racingRoundResults)
+        return RacingGameResult(racingRoundResult: racingRoundResults)
     }
 }

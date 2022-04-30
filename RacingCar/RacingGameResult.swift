@@ -8,5 +8,5 @@
 import Foundation
 
 struct RacingGameResult {
-    let racingRoundResut: [RacingRoundResult]
+    let racingRoundResult: [RacingRoundResult]
 }

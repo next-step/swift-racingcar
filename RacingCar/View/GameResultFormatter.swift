@@ -14,7 +14,7 @@ struct GameResultFormatter {
     static func format(_ gameResult: RacingGameResult) -> String {
         var result = ""
         
-        for roundResult in gameResult.racingRoundResut {
+        for roundResult in gameResult.racingRoundResult {
             result += format(roundResult)
             result += newLine
         }
