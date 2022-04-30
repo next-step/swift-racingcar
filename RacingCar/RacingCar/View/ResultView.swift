@@ -22,6 +22,7 @@ struct ResultView {
                 drawRound(of: round)
                 drawLineDivider()
             }
+        drawWinners()
     }
     
     private func drawResultTitle() {
@@ -37,5 +38,13 @@ struct ResultView {
     
     private func drawLineDivider() {
         print()
+    }
+    
+    private func drawWinners() {
+        let winningCarNames: [String] = roundHistory.winningCars
+            .map { car in
+                return car.name
+            }
+        print("\(winningCarNames.joined(separator: ",")) 가 최종 우승했습니다.")
     }
 }
