@@ -33,13 +33,13 @@ RacingCar
 
 
 - **InputView**
-  - `readCarNames()`: 경기에 참가할 차의 이름 리스트를 입력 받아서 리턴
+  - `readCarInfo()`: 경기에 참가할 차의 이름을 입력 받아서 [Car] 리턴
   - `readCount()`: 게임 횟수 입력 받아서 리턴
 
 
 - **ResultView**
   - `printResult(_:)`: 매회 게임 결과를 출력함
-  - `printWinner()`: 게임의 우승자를 출력함
+  - `printWinner(_:)`: 게임의 우승자를 출력함
 
 
 - **Game**
@@ -50,4 +50,4 @@ RacingCar
 
 - **GampeOption**
   - `generateRandomNumber()`: 랜덤 숫자를 생성하여 리턴
-  - `canGoFoward(_:)`: 전진할 수 있는지 체크하여 결과 리턴
+  - `canGoFoward(_:_:)`: 전진할 수 있는지 체크하여 결과 리턴
