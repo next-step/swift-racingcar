@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3B8A28882816C86600CF84C6 /* RacingCarTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8A28872816C86600CF84C6 /* RacingCarTest.swift */; };
 		3B8A288F2816C9CD00CF84C6 /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8A288E2816C9CD00CF84C6 /* StringTests.swift */; };
 		3B8A28932816DB0000CF84C6 /* SetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8A28922816DB0000CF84C6 /* SetTests.swift */; };
 		3B8A28A128198DED00CF84C6 /* StringConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8A28A028198DED00CF84C6 /* StringConverterTests.swift */; };
@@ -16,6 +15,23 @@
 		3B8A28A72819927700CF84C6 /* StringCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8A28A62819927700CF84C6 /* StringCalculator.swift */; };
 		3B8A28A928199AE100CF84C6 /* StringCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8A28A828199AE100CF84C6 /* StringCalculatorTests.swift */; };
 		3B8A28AA28199AEA00CF84C6 /* StringCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8A28A62819927700CF84C6 /* StringCalculator.swift */; };
+		3B8A28B12819A72B00CF84C6 /* RacingCarGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8A28B02819A72B00CF84C6 /* RacingCarGame.swift */; };
+		3B8A28B4281AD96500CF84C6 /* RandomDigitNumberMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8A28B3281AD96500CF84C6 /* RandomDigitNumberMaker.swift */; };
+		3B8A28B5281ADCFB00CF84C6 /* RandomDigitNumberMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8A28B3281AD96500CF84C6 /* RandomDigitNumberMaker.swift */; };
+		3B8A28B6281ADCFD00CF84C6 /* RacingCarGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8A28B02819A72B00CF84C6 /* RacingCarGame.swift */; };
+		3B8A28B8281ADE2F00CF84C6 /* RacingCarGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8A28B7281ADE2F00CF84C6 /* RacingCarGameTests.swift */; };
+		3B8A28BE281AE04000CF84C6 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8A28BD281AE04000CF84C6 /* InputView.swift */; };
+		3B8A28C1281AE08F00CF84C6 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8A28C0281AE08F00CF84C6 /* ResultView.swift */; };
+		3B8A28C4281AE90600CF84C6 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8A28C3281AE90600CF84C6 /* Car.swift */; };
+		3B8A28C5281AE94800CF84C6 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8A28C3281AE90600CF84C6 /* Car.swift */; };
+		3B8A28CF281C5F0800CF84C6 /* Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8A28CE281C5F0800CF84C6 /* Round.swift */; };
+		3B8A28D1281C619800CF84C6 /* RoundHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8A28D0281C619800CF84C6 /* RoundHistory.swift */; };
+		3B8A28D2281C62F000CF84C6 /* Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8A28CE281C5F0800CF84C6 /* Round.swift */; };
+		3B8A28D3281C62F700CF84C6 /* RoundHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8A28D0281C619800CF84C6 /* RoundHistory.swift */; };
+		3B8A28D5281C636900CF84C6 /* RecordHistoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8A28D4281C636900CF84C6 /* RecordHistoryTests.swift */; };
+		3B8A28DB281C6F6500CF84C6 /* UserGuider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8A28DA281C6F6500CF84C6 /* UserGuider.swift */; };
+		3B8A28DD281C6FE500CF84C6 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8A28DC281C6FE500CF84C6 /* ErrorView.swift */; };
+		3B8A28EA281DC1F000CF84C6 /* RandomDigitNumberMakerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8A28E9281DC1F000CF84C6 /* RandomDigitNumberMakerTests.swift */; };
 		C7E1263027239F7E0000DB8B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,13 +49,24 @@
 
 /* Begin PBXFileReference section */
 		3B8A28852816C86600CF84C6 /* RacingCarTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RacingCarTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3B8A28872816C86600CF84C6 /* RacingCarTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingCarTest.swift; sourceTree = "<group>"; };
 		3B8A288E2816C9CD00CF84C6 /* StringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTests.swift; sourceTree = "<group>"; };
 		3B8A28922816DB0000CF84C6 /* SetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTests.swift; sourceTree = "<group>"; };
 		3B8A289E28198D8900CF84C6 /* StringConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringConverter.swift; sourceTree = "<group>"; };
 		3B8A28A028198DED00CF84C6 /* StringConverterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringConverterTests.swift; sourceTree = "<group>"; };
 		3B8A28A62819927700CF84C6 /* StringCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringCalculator.swift; sourceTree = "<group>"; };
 		3B8A28A828199AE100CF84C6 /* StringCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringCalculatorTests.swift; sourceTree = "<group>"; };
+		3B8A28B02819A72B00CF84C6 /* RacingCarGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingCarGame.swift; sourceTree = "<group>"; };
+		3B8A28B3281AD96500CF84C6 /* RandomDigitNumberMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomDigitNumberMaker.swift; sourceTree = "<group>"; };
+		3B8A28B7281ADE2F00CF84C6 /* RacingCarGameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingCarGameTests.swift; sourceTree = "<group>"; };
+		3B8A28BD281AE04000CF84C6 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		3B8A28C0281AE08F00CF84C6 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+		3B8A28C3281AE90600CF84C6 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
+		3B8A28CE281C5F0800CF84C6 /* Round.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Round.swift; sourceTree = "<group>"; };
+		3B8A28D0281C619800CF84C6 /* RoundHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundHistory.swift; sourceTree = "<group>"; };
+		3B8A28D4281C636900CF84C6 /* RecordHistoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordHistoryTests.swift; sourceTree = "<group>"; };
+		3B8A28DA281C6F6500CF84C6 /* UserGuider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGuider.swift; sourceTree = "<group>"; };
+		3B8A28DC281C6FE500CF84C6 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		3B8A28E9281DC1F000CF84C6 /* RandomDigitNumberMakerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomDigitNumberMakerTests.swift; sourceTree = "<group>"; };
 		C7E1262C27239F7E0000DB8B /* RacingCar */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RacingCar; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E1262F27239F7E0000DB8B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -65,13 +92,73 @@
 		3B8A28862816C86600CF84C6 /* RacingCarTest */ = {
 			isa = PBXGroup;
 			children = (
-				3B8A28872816C86600CF84C6 /* RacingCarTest.swift */,
+				3B8A28E1281D75FB00CF84C6 /* RacingCar */,
+				3B8A28E0281D75E300CF84C6 /* StringCalculator */,
 				3B8A288E2816C9CD00CF84C6 /* StringTests.swift */,
 				3B8A28922816DB0000CF84C6 /* SetTests.swift */,
+			);
+			path = RacingCarTest;
+			sourceTree = "<group>";
+		};
+		3B8A28BF281AE05900CF84C6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3B8A28DA281C6F6500CF84C6 /* UserGuider.swift */,
+				3B8A28BD281AE04000CF84C6 /* InputView.swift */,
+				3B8A28DC281C6FE500CF84C6 /* ErrorView.swift */,
+				3B8A28C0281AE08F00CF84C6 /* ResultView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3B8A28C2281AE8FC00CF84C6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3B8A28C3281AE90600CF84C6 /* Car.swift */,
+				3B8A28CE281C5F0800CF84C6 /* Round.swift */,
+				3B8A28B02819A72B00CF84C6 /* RacingCarGame.swift */,
+				3B8A28D0281C619800CF84C6 /* RoundHistory.swift */,
+				3B8A28B3281AD96500CF84C6 /* RandomDigitNumberMaker.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3B8A28DE281D75B600CF84C6 /* StringCalculator */ = {
+			isa = PBXGroup;
+			children = (
+				3B8A289E28198D8900CF84C6 /* StringConverter.swift */,
+				3B8A28A62819927700CF84C6 /* StringCalculator.swift */,
+			);
+			path = StringCalculator;
+			sourceTree = "<group>";
+		};
+		3B8A28DF281D75C600CF84C6 /* RacingCar */ = {
+			isa = PBXGroup;
+			children = (
+				C7E1262F27239F7E0000DB8B /* main.swift */,
+				3B8A28C2281AE8FC00CF84C6 /* Model */,
+				3B8A28BF281AE05900CF84C6 /* View */,
+			);
+			path = RacingCar;
+			sourceTree = "<group>";
+		};
+		3B8A28E0281D75E300CF84C6 /* StringCalculator */ = {
+			isa = PBXGroup;
+			children = (
 				3B8A28A028198DED00CF84C6 /* StringConverterTests.swift */,
 				3B8A28A828199AE100CF84C6 /* StringCalculatorTests.swift */,
 			);
-			path = RacingCarTest;
+			path = StringCalculator;
+			sourceTree = "<group>";
+		};
+		3B8A28E1281D75FB00CF84C6 /* RacingCar */ = {
+			isa = PBXGroup;
+			children = (
+				3B8A28B7281ADE2F00CF84C6 /* RacingCarGameTests.swift */,
+				3B8A28D4281C636900CF84C6 /* RecordHistoryTests.swift */,
+				3B8A28E9281DC1F000CF84C6 /* RandomDigitNumberMakerTests.swift */,
+			);
+			path = RacingCar;
 			sourceTree = "<group>";
 		};
 		C7E1262327239F7E0000DB8B = {
@@ -95,9 +182,8 @@
 		C7E1262E27239F7E0000DB8B /* RacingCar */ = {
 			isa = PBXGroup;
 			children = (
-				C7E1262F27239F7E0000DB8B /* main.swift */,
-				3B8A289E28198D8900CF84C6 /* StringConverter.swift */,
-				3B8A28A62819927700CF84C6 /* StringCalculator.swift */,
+				3B8A28DF281D75C600CF84C6 /* RacingCar */,
+				3B8A28DE281D75B600CF84C6 /* StringCalculator */,
 			);
 			path = RacingCar;
 			sourceTree = "<group>";
@@ -192,12 +278,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B8A28A928199AE100CF84C6 /* StringCalculatorTests.swift in Sources */,
+				3B8A28D5281C636900CF84C6 /* RecordHistoryTests.swift in Sources */,
+				3B8A28EA281DC1F000CF84C6 /* RandomDigitNumberMakerTests.swift in Sources */,
 				3B8A28A52819923000CF84C6 /* StringConverter.swift in Sources */,
+				3B8A28C5281AE94800CF84C6 /* Car.swift in Sources */,
+				3B8A28D2281C62F000CF84C6 /* Round.swift in Sources */,
+				3B8A28B5281ADCFB00CF84C6 /* RandomDigitNumberMaker.swift in Sources */,
 				3B8A288F2816C9CD00CF84C6 /* StringTests.swift in Sources */,
+				3B8A28B6281ADCFD00CF84C6 /* RacingCarGame.swift in Sources */,
 				3B8A28AA28199AEA00CF84C6 /* StringCalculator.swift in Sources */,
 				3B8A28A128198DED00CF84C6 /* StringConverterTests.swift in Sources */,
 				3B8A28932816DB0000CF84C6 /* SetTests.swift in Sources */,
-				3B8A28882816C86600CF84C6 /* RacingCarTest.swift in Sources */,
+				3B8A28B8281ADE2F00CF84C6 /* RacingCarGameTests.swift in Sources */,
+				3B8A28D3281C62F700CF84C6 /* RoundHistory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,8 +299,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B8A28A72819927700CF84C6 /* StringCalculator.swift in Sources */,
+				3B8A28CF281C5F0800CF84C6 /* Round.swift in Sources */,
+				3B8A28DB281C6F6500CF84C6 /* UserGuider.swift in Sources */,
+				3B8A28BE281AE04000CF84C6 /* InputView.swift in Sources */,
+				3B8A28C4281AE90600CF84C6 /* Car.swift in Sources */,
+				3B8A28B4281AD96500CF84C6 /* RandomDigitNumberMaker.swift in Sources */,
 				C7E1263027239F7E0000DB8B /* main.swift in Sources */,
+				3B8A28DD281C6FE500CF84C6 /* ErrorView.swift in Sources */,
 				3B8A28A42819920B00CF84C6 /* StringConverter.swift in Sources */,
+				3B8A28D1281C619800CF84C6 /* RoundHistory.swift in Sources */,
+				3B8A28C1281AE08F00CF84C6 /* ResultView.swift in Sources */,
+				3B8A28B12819A72B00CF84C6 /* RacingCarGame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
