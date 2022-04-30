@@ -7,6 +7,8 @@
 
 class ResultView {
     static func printResult(_ car: Car) {
-        print(String(repeating: "-", count: car.point))
+        print(String(format: "%@ : %@",
+                     car.name,
+                     String(repeating: "-", count: car.point)))
     }
 }
