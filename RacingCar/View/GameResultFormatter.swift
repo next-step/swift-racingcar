@@ -8,18 +8,38 @@
 import Foundation
 
 struct GameResultFormatter {
+    private static let newLine = "\n"
+    private static let movementSymbol = "_"
+    
     static func format(_ gameResult: RacingGameResult) -> String {
         var result = ""
         
         for roundResult in gameResult.racingRoundResut {
-            for racingCar in roundResult.racingCars {
-                (0..<racingCar.location).forEach { _ in
-                    result += "_"
-                }
-                result += "/n"
-            }
-            result += "/n"
+            result += format(roundResult)
+            result += newLine
         }
+        
+        return result
+    }
+    
+    private static func format(_ roundResult: RacingRoundResult) -> String {
+        var result = ""
+        
+        for racingCar in roundResult.racingCars {
+            result += format(racingCar)
+            result += newLine
+        }
+        
+        return result
+    }
+    
+    private static func format(_ racingCar: RacingCar) -> String {
+        var result = ""
+        
+        (0..<racingCar.location).forEach { _ in
+            result += movementSymbol
+        }
+        
         return result
     }
 }
