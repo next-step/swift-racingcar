@@ -9,16 +9,9 @@ import XCTest
 @testable import RacingCar
 
 class RacingCarTest: XCTestCase {
-    struct AlwaysMovingEngine: Engine {
-        func canGo() -> Bool {
-            return true
-        }
-    }
-
     func test_자동차가_달리면_달린_위치가_1증가한다() {
-        // given
-        let alwasyMovingEngine = AlwaysMovingEngine()
-        let racingCar = RacingCar(id: 0, engine: alwasyMovingEngine)
+        // giveng
+        let racingCar = RacingCar(id: 0, engine: MovingEngine())
         let previousLocation = racingCar.location
 
         // when
