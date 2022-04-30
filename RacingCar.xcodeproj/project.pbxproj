@@ -7,21 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2E3A4EC7281B636300CF7BB0 /* OperationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3A4EC6281B636300CF7BB0 /* OperationTest.swift */; };
-		2E3A4EC9281B672D00CF7BB0 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3A4EC8281B672D00CF7BB0 /* InputView.swift */; };
-		2E3A4ED0281B783100CF7BB0 /* InputParserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3A4ECF281B783100CF7BB0 /* InputParserTest.swift */; };
-		2E3A4ED2281B786600CF7BB0 /* InputParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3A4ED1281B786600CF7BB0 /* InputParser.swift */; };
-		2E6232F8281A1BB2000F5030 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6232F7281A1BB2000F5030 /* Operation.swift */; };
-		2E867F44281C1B6700301CE0 /* InputParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3A4ED1281B786600CF7BB0 /* InputParser.swift */; };
-		2EB21EF8281BEFC00074104D /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
-		2EB21EFE281C07880074104D /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6232F7281A1BB2000F5030 /* Operation.swift */; };
-		2EB21F06281C0AC50074104D /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB21F05281C0AC50074104D /* Calculator.swift */; };
-		2EB21F08281C0ACF0074104D /* CalculatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB21F07281C0ACF0074104D /* CalculatorTest.swift */; };
-		2EB21F09281C0CF80074104D /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB21F05281C0AC50074104D /* Calculator.swift */; };
-		2EB21F0B281C0F950074104D /* OutputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB21F0A281C0F950074104D /* OutputView.swift */; };
-		2EB21F0E281C15A50074104D /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3A4EC8281B672D00CF7BB0 /* InputView.swift */; };
-		2EB21F0F281C15A60074104D /* OutputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB21F0A281C0F950074104D /* OutputView.swift */; };
-		C7E1263027239F7E0000DB8B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
+		2E25F967281D186400DC8F43 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E25F966281D186400DC8F43 /* main.swift */; };
+		2E25F968281D186600DC8F43 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E25F966281D186400DC8F43 /* main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,17 +24,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2E3A4EC6281B636300CF7BB0 /* OperationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationTest.swift; sourceTree = "<group>"; };
-		2E3A4EC8281B672D00CF7BB0 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
-		2E3A4ECF281B783100CF7BB0 /* InputParserTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputParserTest.swift; sourceTree = "<group>"; };
-		2E3A4ED1281B786600CF7BB0 /* InputParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputParser.swift; sourceTree = "<group>"; };
-		2E6232F7281A1BB2000F5030 /* Operation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
+		2E25F966281D186400DC8F43 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		2E8D45C7281AEA0500DD1214 /* RacingCarTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RacingCarTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2EB21F05281C0AC50074104D /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
-		2EB21F07281C0ACF0074104D /* CalculatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorTest.swift; sourceTree = "<group>"; };
-		2EB21F0A281C0F950074104D /* OutputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputView.swift; sourceTree = "<group>"; };
 		C7E1262C27239F7E0000DB8B /* RacingCar */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RacingCar; sourceTree = BUILT_PRODUCTS_DIR; };
-		C7E1262F27239F7E0000DB8B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,9 +50,6 @@
 		2E8D45C8281AEA0500DD1214 /* RacingCarTest */ = {
 			isa = PBXGroup;
 			children = (
-				2E3A4ECF281B783100CF7BB0 /* InputParserTest.swift */,
-				2E3A4EC6281B636300CF7BB0 /* OperationTest.swift */,
-				2EB21F07281C0ACF0074104D /* CalculatorTest.swift */,
 			);
 			path = RacingCarTest;
 			sourceTree = "<group>";
@@ -99,12 +75,7 @@
 		C7E1262E27239F7E0000DB8B /* RacingCar */ = {
 			isa = PBXGroup;
 			children = (
-				C7E1262F27239F7E0000DB8B /* main.swift */,
-				2E6232F7281A1BB2000F5030 /* Operation.swift */,
-				2E3A4EC8281B672D00CF7BB0 /* InputView.swift */,
-				2E3A4ED1281B786600CF7BB0 /* InputParser.swift */,
-				2EB21F05281C0AC50074104D /* Calculator.swift */,
-				2EB21F0A281C0F950074104D /* OutputView.swift */,
+				2E25F966281D186400DC8F43 /* main.swift */,
 			);
 			path = RacingCar;
 			sourceTree = "<group>";
@@ -161,6 +132,7 @@
 					};
 					C7E1262B27239F7E0000DB8B = {
 						CreatedOnToolsVersion = 13.0;
+						LastSwiftMigration = 1320;
 					};
 				};
 			};
@@ -198,15 +170,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2EB21EF8281BEFC00074104D /* main.swift in Sources */,
-				2E3A4ED0281B783100CF7BB0 /* InputParserTest.swift in Sources */,
-				2E3A4EC7281B636300CF7BB0 /* OperationTest.swift in Sources */,
-				2EB21F08281C0ACF0074104D /* CalculatorTest.swift in Sources */,
-				2EB21F0F281C15A60074104D /* OutputView.swift in Sources */,
-				2EB21F09281C0CF80074104D /* Calculator.swift in Sources */,
-				2EB21F0E281C15A50074104D /* InputView.swift in Sources */,
-				2EB21EFE281C07880074104D /* Operation.swift in Sources */,
-				2E867F44281C1B6700301CE0 /* InputParser.swift in Sources */,
+				2E25F968281D186600DC8F43 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,12 +178,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E3A4EC9281B672D00CF7BB0 /* InputView.swift in Sources */,
-				2E3A4ED2281B786600CF7BB0 /* InputParser.swift in Sources */,
-				C7E1263027239F7E0000DB8B /* main.swift in Sources */,
-				2EB21F06281C0AC50074104D /* Calculator.swift in Sources */,
-				2E6232F8281A1BB2000F5030 /* Operation.swift in Sources */,
-				2EB21F0B281C0F950074104D /* OutputView.swift in Sources */,
+				2E25F967281D186400DC8F43 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,11 +355,18 @@
 		C7E1263427239F7E0000DB8B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				EXCLUDED_ARCHS = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -408,8 +374,14 @@
 		C7E1263527239F7E0000DB8B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";

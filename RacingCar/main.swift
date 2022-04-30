@@ -1,12 +1,8 @@
 //
-//  RacingCar - main.swift
-//  Created by yagom.
-//  Copyright © yagom. All rights reserved.
+//  main.swift
+//  RacingCar
+//
+//  Created by nylah.j on 2022/04/30.
 //
 
 import Foundation
-
-let input = InputView.input()
-let (operations, operands) = try InputParser.parse(input)
-let result = try Calculator().calculate(operators: operations, operands: operands)
-OutputView.show(output: result)
