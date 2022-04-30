@@ -7,3 +7,9 @@
 import Foundation
 
 
+let view = InputView()
+do {
+    let gameInfo = try view.gameStart()
+    
+}
+
