@@ -90,12 +90,10 @@
 		3B8A28862816C86600CF84C6 /* RacingCarTest */ = {
 			isa = PBXGroup;
 			children = (
-				3B8A28B7281ADE2F00CF84C6 /* RacingCarGameTests.swift */,
-				3B8A28D4281C636900CF84C6 /* RecordHistoryTests.swift */,
+				3B8A28E1281D75FB00CF84C6 /* RacingCar */,
+				3B8A28E0281D75E300CF84C6 /* StringCalculator */,
 				3B8A288E2816C9CD00CF84C6 /* StringTests.swift */,
 				3B8A28922816DB0000CF84C6 /* SetTests.swift */,
-				3B8A28A028198DED00CF84C6 /* StringConverterTests.swift */,
-				3B8A28A828199AE100CF84C6 /* StringCalculatorTests.swift */,
 			);
 			path = RacingCarTest;
 			sourceTree = "<group>";
@@ -116,8 +114,48 @@
 			children = (
 				3B8A28C3281AE90600CF84C6 /* Car.swift */,
 				3B8A28CE281C5F0800CF84C6 /* Round.swift */,
+				3B8A28B02819A72B00CF84C6 /* RacingCarGame.swift */,
+				3B8A28D0281C619800CF84C6 /* RoundHistory.swift */,
+				3B8A28B3281AD96500CF84C6 /* RandomDigitNumberMaker.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		3B8A28DE281D75B600CF84C6 /* StringCalculator */ = {
+			isa = PBXGroup;
+			children = (
+				3B8A289E28198D8900CF84C6 /* StringConverter.swift */,
+				3B8A28A62819927700CF84C6 /* StringCalculator.swift */,
+			);
+			path = StringCalculator;
+			sourceTree = "<group>";
+		};
+		3B8A28DF281D75C600CF84C6 /* RacingCar */ = {
+			isa = PBXGroup;
+			children = (
+				C7E1262F27239F7E0000DB8B /* main.swift */,
+				3B8A28C2281AE8FC00CF84C6 /* Model */,
+				3B8A28BF281AE05900CF84C6 /* View */,
+			);
+			path = RacingCar;
+			sourceTree = "<group>";
+		};
+		3B8A28E0281D75E300CF84C6 /* StringCalculator */ = {
+			isa = PBXGroup;
+			children = (
+				3B8A28A028198DED00CF84C6 /* StringConverterTests.swift */,
+				3B8A28A828199AE100CF84C6 /* StringCalculatorTests.swift */,
+			);
+			path = StringCalculator;
+			sourceTree = "<group>";
+		};
+		3B8A28E1281D75FB00CF84C6 /* RacingCar */ = {
+			isa = PBXGroup;
+			children = (
+				3B8A28B7281ADE2F00CF84C6 /* RacingCarGameTests.swift */,
+				3B8A28D4281C636900CF84C6 /* RecordHistoryTests.swift */,
+			);
+			path = RacingCar;
 			sourceTree = "<group>";
 		};
 		C7E1262327239F7E0000DB8B = {
@@ -141,14 +179,8 @@
 		C7E1262E27239F7E0000DB8B /* RacingCar */ = {
 			isa = PBXGroup;
 			children = (
-				C7E1262F27239F7E0000DB8B /* main.swift */,
-				3B8A28B02819A72B00CF84C6 /* RacingCarGame.swift */,
-				3B8A28D0281C619800CF84C6 /* RoundHistory.swift */,
-				3B8A28B3281AD96500CF84C6 /* RandomDigitNumberMaker.swift */,
-				3B8A289E28198D8900CF84C6 /* StringConverter.swift */,
-				3B8A28A62819927700CF84C6 /* StringCalculator.swift */,
-				3B8A28C2281AE8FC00CF84C6 /* Model */,
-				3B8A28BF281AE05900CF84C6 /* View */,
+				3B8A28DF281D75C600CF84C6 /* RacingCar */,
+				3B8A28DE281D75B600CF84C6 /* StringCalculator */,
 			);
 			path = RacingCar;
 			sourceTree = "<group>";
