@@ -84,6 +84,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E25F995281D4BF800DC8F43 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2E25F98D281D445100DC8F43 /* InputView.swift */,
+				2E25F991281D46C300DC8F43 /* OutputView.swift */,
+				2E25F98F281D456500DC8F43 /* GameResultFormatter.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		2E8D45C8281AEA0500DD1214 /* RacingCarTest */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +126,7 @@
 		C7E1262E27239F7E0000DB8B /* RacingCar */ = {
 			isa = PBXGroup;
 			children = (
+				2E25F995281D4BF800DC8F43 /* View */,
 				2E25F966281D186400DC8F43 /* main.swift */,
 				2E25F969281D191D00DC8F43 /* RacingCar.swift */,
 				2E25F96E281D1AFD00DC8F43 /* Engine.swift */,
@@ -124,9 +135,6 @@
 				2E25F982281D2B5E00DC8F43 /* RacingRoundResult.swift */,
 				2E25F987281D34E000DC8F43 /* RacingGame.swift */,
 				2E25F98A281D356500DC8F43 /* RacingGameResult.swift */,
-				2E25F98D281D445100DC8F43 /* InputView.swift */,
-				2E25F98F281D456500DC8F43 /* GameResultFormatter.swift */,
-				2E25F991281D46C300DC8F43 /* OutputView.swift */,
 				2E25F993281D483300DC8F43 /* InputChecker.swift */,
 			);
 			path = RacingCar;
