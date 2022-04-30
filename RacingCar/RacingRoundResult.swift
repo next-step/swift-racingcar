@@ -11,16 +11,13 @@ struct RacingRoundResult: Equatable {
     static func == (lhs: RacingRoundResult, rhs: RacingRoundResult) -> Bool {
         return lhs.value  == rhs.value
     }
-
     
     typealias CarLocation = Int
     typealias CarId = Int
     
     let value: [RacingCar.State]
     
-    init(racingCars: [RacingCar]) {
-        value = racingCars.map { racingCar in
-            racingCar.state()
-        }
+    init(states: [RacingCar.State]) {
+        self.value = states
     }
 }

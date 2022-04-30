@@ -20,6 +20,7 @@ struct NormalRacingRound: RacingRound {
     
     func start() -> RacingRoundResult {
         racingCars.forEach { $0.move() }
-        return .init(racingCars: racingCars)
+        let racingCarStates = racingCars.map { $0.state() }
+        return .init(states: racingCarStates)
     }
 }

@@ -20,10 +20,7 @@ class RacingRoundTest: XCTestCase {
         let racingResult = racingRound.start()
         
         // then
-        let firstCarLocation = racingResult[firstCar]
-        let secondCarLocaiton = racingResult[secondCar]
-        
-        XCTAssertEqual(firstCarLocation, firstCar.location)
-        XCTAssertEqual(secondCarLocaiton, secondCar.location)
+        XCTAssertEqual(racingResult.value[0].location, firstCar.location)
+        XCTAssertEqual(racingResult.value[1].location, secondCar.location)
     }
 }
