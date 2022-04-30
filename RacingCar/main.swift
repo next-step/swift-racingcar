@@ -19,7 +19,7 @@ if !InputChecker.isValid(roundCount: roundCount) {
     exit(0)
 }
 
-let racingCars = (0..<roundCount!).map { id in
+let racingCars = (0..<carCount!).map { id in
     RacingCarFactory.create(id: id)
 }
 let result = RacingGame(racingCars: racingCars, roundCount: roundCount!).start()

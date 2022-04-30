@@ -9,6 +9,7 @@ import Foundation
 
 struct OutputView {
     static func show(_ gameResult: String) {
+        print("\n")
         print("실행 결과")
         print(gameResult)
     }
