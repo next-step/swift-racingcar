@@ -8,9 +8,9 @@
 import Foundation
 
 struct OutputView {
-    static func show(formattedGameResult: String) {
+    static func show(_ gameResult: String) {
         print("실행 결과")
-        print(formattedGameResult)
+        print(gameResult)
     }
     
     static func carCountIsInvalid() {
