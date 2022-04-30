@@ -6,11 +6,37 @@
 //
 
 class InputView {
-    static func inputReadLine() throws -> Int {
+    static func readCarNames() throws -> [Car] {
+        if let input: String = readLine() {
+            let cars: [Car] = input.components(separatedBy: ",")
+                .filter { (car) in
+                    let name = car.trimmingCharacters(in: .whitespaces)
+                    return isValidName(name)
+                }
+                .map { (name) in
+                    return Car(name)
+                }
+            
+            if cars.isEmpty {
+                throw InputEror.invalidCarInfo
+            }
+            
+            return cars
+        }
+        throw InputEror.invalidCarInfo
+    }
+    
+    static func readCount() throws -> Int {
         if let input: String = readLine(),
            let inputNumber: Int = Int(input) {
             return inputNumber
         }
-        throw InputEror.invalidInput
+        throw InputEror.invalidCount
+    }
+}
+
+extension InputView {
+    private static func isValidName(_ name: String) -> Bool {
+        return name.count > 0 && name.count < 5
     }
 }
