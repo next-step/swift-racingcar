@@ -9,13 +9,18 @@ import Foundation
 
 struct RacingRoundResult: Equatable {
     static func == (lhs: RacingRoundResult, rhs: RacingRoundResult) -> Bool {
-        return lhs.racingCars == rhs.racingCars
+        return lhs.value  == rhs.value
     }
+
     
-    typealias Location = Int
-    let racingCars: [RacingCar]
+    typealias CarLocation = Int
+    typealias CarId = Int
     
-    subscript(racingCar: RacingCar) -> Location? {
-        return racingCars.first { $0.id == racingCar.id }?.location
+    let value: [RacingCar.State]
+    
+    init(racingCars: [RacingCar]) {
+        value = racingCars.map { racingCar in
+            racingCar.state()
+        }
     }
 }

@@ -25,18 +25,18 @@ struct GameResultFormatter {
     private static func format(_ roundResult: RacingRoundResult) -> String {
         var result = ""
         
-        for racingCar in roundResult.racingCars {
-            result += format(racingCar)
+        for carState in roundResult.value {
+            result += format(carState)
             result += newLine
         }
         
         return result
     }
     
-    private static func format(_ racingCar: RacingCar) -> String {
+    private static func format(_ carState: RacingCar.State) -> String {
         var result = ""
         
-        (0..<racingCar.location).forEach { _ in
+        (0..<carState.location).forEach { _ in
             result += movementSymbol
         }
         
