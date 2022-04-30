@@ -113,6 +113,15 @@
 			path = Calculator;
 			sourceTree = "<group>";
 		};
+		6CE2C1EA281D64850025C9FF /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				CB25DB30281A5BA50088C633 /* Game.swift */,
+				CBE31B41281BAE7B00FEADDB /* GameOption.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
 		C7E1262327239F7E0000DB8B = {
 			isa = PBXGroup;
 			children = (
@@ -140,8 +149,7 @@
 			children = (
 				CB923E81281AA0A100B96671 /* model */,
 				CB25DB1D281A4D750088C633 /* view */,
-				CB25DB30281A5BA50088C633 /* Game.swift */,
-				CBE31B41281BAE7B00FEADDB /* GameOption.swift */,
+				6CE2C1EA281D64850025C9FF /* controller */,
 				C7E1262F27239F7E0000DB8B /* main.swift */,
 			);
 			path = RacingCar;

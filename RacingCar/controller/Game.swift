@@ -11,8 +11,8 @@ class Game {
     private let cars: [Car]
     private let counts: Int
     
-    init(cars: Int, counts: Int) {
-        self.cars = Array(repeating: Car(), count: cars)
+    init(cars: [Car], counts: Int) {
+        self.cars = cars
         self.counts = counts
     }
 }
