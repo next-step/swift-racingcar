@@ -30,6 +30,9 @@ struct RacingCarGame {
     
     
     func start() {
+        guard raceCount > 0 else {
+            return
+        }
         (1...raceCount).forEach { _ in
             let lastRound: Round = roundHistory.rounds.last ?? initialRound
             let newRound: Round = newRound(from: lastRound)
