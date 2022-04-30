@@ -15,14 +15,14 @@ final class RoundHistory {
             return []
         }
         
-        let maxPositionInFinalRound = finalRound
+        let maxPositionInFinalRound: Int? = finalRound
             .cars
             .map { car in
                 car.position
             }
             .max()
         
-        let winningCars = finalRound
+        let winningCars: [Car] = finalRound
             .cars
             .filter { car in
                 car.position == maxPositionInFinalRound

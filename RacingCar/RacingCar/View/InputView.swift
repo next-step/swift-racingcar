@@ -28,7 +28,7 @@ struct InputView {
     
     func recieveCarNames() throws -> [String] {
         userGuider.guide(for: Question.carNames)
-        let carNames = readLine()?.components(separatedBy: ",") ?? []
+        let carNames: [String] = readLine()?.components(separatedBy: ",") ?? []
         let isValidCarNames: Bool = userInputValidator.isValidCarNames(of: carNames)
         guard isValidCarNames else {
             throw UserInputError.invalidCarName
@@ -39,8 +39,8 @@ struct InputView {
     func recieveRaceCount() throws -> Int {
         userGuider.guide(for: Question.raceCount)
         do {
-            let raceCount = try stringConverter.convertToInt(from: readLine())
-            let isValidRaceCount = userInputValidator.isValideRaceCount(of: raceCount)
+            let raceCount: Int = try stringConverter.convertToInt(from: readLine())
+            let isValidRaceCount: Bool = userInputValidator.isValideRaceCount(of: raceCount)
             guard isValidRaceCount else {
                 throw UserInputError.invalidRaceCount
             }
