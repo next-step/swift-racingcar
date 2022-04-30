@@ -21,7 +21,7 @@ if !InputChecker.isValid(roundCount: roundCount) {
 
 let racingCars = (0..<roundCount!).map { _ -> Engine in
     let range = 0..<9
-    
+
     let randomNumberGenerator = RandomNumberGenerator(range: range)
     return RacingCarEngine(randomNumberGenerator: randomNumberGenerator)
 }

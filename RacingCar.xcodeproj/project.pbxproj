@@ -34,6 +34,7 @@
 		2E25F997281D4E2E00DC8F43 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E25F98D281D445100DC8F43 /* InputView.swift */; };
 		2E25F998281D4E3000DC8F43 /* OutputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E25F991281D46C300DC8F43 /* OutputView.swift */; };
 		2E25F999281D4E3400DC8F43 /* GameResultFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E25F98F281D456500DC8F43 /* GameResultFormatter.swift */; };
+		2E25F99A281D4E7C00DC8F43 /* InputChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E25F993281D483300DC8F43 /* InputChecker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -235,6 +236,7 @@
 			files = (
 				2E25F997281D4E2E00DC8F43 /* InputView.swift in Sources */,
 				2E25F981281D2A0500DC8F43 /* FakeEngine.swift in Sources */,
+				2E25F99A281D4E7C00DC8F43 /* InputChecker.swift in Sources */,
 				2E25F96D281D193C00DC8F43 /* RacingCarTest.swift in Sources */,
 				2E25F984281D2B5E00DC8F43 /* RacingRoundResult.swift in Sources */,
 				2E25F972281D1C5300DC8F43 /* Engine.swift in Sources */,
