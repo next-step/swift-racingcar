@@ -6,7 +6,7 @@
 //
 
 class InputView {
-    static func readCarNames() throws -> [Car] {
+    static func readCarInfo() throws -> [Car] {
         if let input: String = readLine() {
             let cars: [Car] = input.components(separatedBy: ",")
                 .filter { (car) in
