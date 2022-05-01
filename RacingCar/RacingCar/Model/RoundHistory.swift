@@ -10,9 +10,9 @@ import Foundation
 final class RoundHistory {
     
     private(set) var rounds: [Round] = []
-    var winningCars: [Car] {
+    var winningCars: [Car]? {
         guard let finalRound = rounds.last else {
-            return []
+            return nil
         }
         
         let maxPositionInFinalRound: Int? = finalRound

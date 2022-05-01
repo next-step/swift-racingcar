@@ -41,10 +41,14 @@ struct ResultView {
     }
     
     private func drawWinners() {
-        let winningCarNames: [String] = roundHistory.winningCars
+        let winningCarNames: [String]? = roundHistory.winningCars?
             .map { car in
                 return car.name
             }
+        guard let winningCarNames = winningCarNames else {
+            print("우승자가 없습니다")
+            return
+        }
         print("\(winningCarNames.joined(separator: ",")) 가 최종 우승했습니다.")
     }
 }
