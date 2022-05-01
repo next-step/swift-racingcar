@@ -35,20 +35,28 @@ class Calculator: NSObject {
         self.operators = orderedOperators
     }
     
-    func calculate() -> Int {
-        
-        let lhs = self.numbers.removeFirst()
-        let rhs = self.numbers.removeFirst()
-        
-        let operatorSymbol = self.operators.removeFirst()
-        
-        return operate(by: operatorSymbol, lhs: lhs, rhs: rhs)
+    func calculate() throws -> Int {
+        guard numbers.count - 1 == operators.count else { throw CalculatorError.invalidFormula }
+        while !numbers.isEmpty {
+            let lhs = self.result ?? self.numbers.removeFirst()
+            let rhs = self.numbers.removeFirst()
+            let operatorSymbol = self.operators.removeFirst()
+            
+            self.result = operate(by: operatorSymbol, lhs: lhs, rhs: rhs)
+        }
+        return self.result ?? 0
     }
     
     func operate(by operatorSymbol: String, lhs: Int, rhs: Int) -> Int {
         switch operatorSymbol {
         case "+":
             return add(lhs: lhs, rhs: rhs)
+        case "-":
+            return minus(lhs: lhs, rhs: rhs)
+        case "*":
+            return multiply(lhs: lhs, rhs: rhs)
+        case "/":
+            return divide(lhs: lhs, rhs: rhs)
         default:
             return 0
         }
@@ -59,4 +67,20 @@ extension Calculator {
     func add(lhs: Int, rhs: Int) -> Int {
         return lhs + rhs
     }
+    
+    func minus(lhs: Int, rhs: Int) -> Int {
+        return lhs - rhs
+    }
+    
+    func multiply(lhs: Int, rhs: Int) -> Int {
+        return lhs * rhs
+    }
+    
+    func divide(lhs: Int, rhs: Int) -> Int {
+        return lhs / rhs
+    }
+}
+
+enum CalculatorError: Error {
+    case invalidFormula
 }

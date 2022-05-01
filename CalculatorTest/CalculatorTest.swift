@@ -25,9 +25,23 @@ class CalculatorTest: XCTestCase {
         XCTAssertEqual(sut.operators, ["+", "-", "*", "/"])
     }
     
-    func test_1과2를_덧셈() {
+    func test_1_과_2를_덧셈() {
         let sut = Calculator(for: "1 + 2")
-        XCTAssertEqual(sut.calculate(), 3)
+        XCTAssertEqual(try sut.calculate(), 3)
+    }
+    
+    func test_1_과_2를_뺄셈() {
+        let sut = Calculator(for: "1 - 2")
+        XCTAssertEqual(try sut.calculate(), -1)
+    }
+    
+    func test_2_와_3을_곱셈() {
+        let sut = Calculator(for: "2 * 3")
+        XCTAssertEqual(try sut.calculate(), 6)
     }
 
+    func test_6_과_2를_나눗셈() {
+        let sut = Calculator(for: "6 / 2")
+        XCTAssertEqual(try sut.calculate(), 3)
+    }
 }
