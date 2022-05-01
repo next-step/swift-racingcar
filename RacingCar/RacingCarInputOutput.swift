@@ -1,5 +1,5 @@
 //
-//  Step3Input.swift
+//  RacingCarInputOutput.swift
 //  RacingCar
 //
 //  Created by YooBin Jo on 2022/04/29.
@@ -7,22 +7,24 @@
 
 import Foundation
 
-struct Step3InputOutput {
+struct RacingCarInputOutput {
     
     private static func inputCount() throws -> Int {
         guard let countString = readLine(),
-              let count = Int(countString) else { throw RacingCarStep3Error.inputError }
+              let count = Int(countString) else { throw RacingCarError.input }
         return count
     }
     
     static func inputCarCount() throws -> Int {
         print("자동차 대수는 몇대인가요? ", terminator: "")
-        return try inputCount()
+        let number = try inputCount()
+        return try Validator.checkValidation(number: number)
     }
     
     static func inputTryCount() throws -> Int {
         print("시도할 횟수는 몇 회인가요?", terminator: "")
-        return try inputCount()
+        let number = try inputCount()
+        return try Validator.checkValidation(number: number)
     }
     
     private static func printMove(_ car: Car) {

@@ -14,18 +14,13 @@ final class Racing {
     private(set) var tryCount: Int = 0
     
     // MARK: - Method
-    func start() throws {
-        if let count = try? Step3InputOutput.inputCarCount() {
-            createCars(input: count)
-        }
-        
-        if let count = try? Step3InputOutput.inputTryCount() {
-            inputTryCount(input: count)
-        }
+    func start(carCount: Int, tryCount: Int) throws {
+        createCars(input: carCount)
+        self.tryCount = tryCount
         try racing()
     }
     
-    func createCars(input: Int) {
+    private func createCars(input: Int) {
         var count = input
         while count != 0 {
             cars.append(Car())
@@ -33,14 +28,9 @@ final class Racing {
         }
     }
     
-    func inputTryCount(input: Int) {
-        let count = input
-        tryCount = count
-    }
-    
     private func racing() throws {
         try runRacing {
-            Step3InputOutput.printResult(cars)
+            RacingCarInputOutput.printResult(cars)
         }
     }
     

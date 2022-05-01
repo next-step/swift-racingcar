@@ -17,15 +17,9 @@ final class Car {
         return Int.random(in: 0 ... 9)
     }
     
-    @discardableResult
-    func move(randomNumber: Int) throws -> Bool {
-        guard (0 ... 9).contains(randomNumber) else {
-            throw RacingCarStep3Error.invalidNumber
-        }
-        if randomNumber >= 4 {
+    func move(randomNumber: Int) throws {
+        if try Validator.checkValidation(number: randomNumber) >= 4 {
             moveCount += 1
-            return true
         }
-        return false
     }
 }
