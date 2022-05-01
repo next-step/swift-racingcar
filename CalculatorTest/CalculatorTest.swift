@@ -44,4 +44,14 @@ class CalculatorTest: XCTestCase {
         let sut = Calculator(for: "6 / 2")
         XCTAssertEqual(try sut.calculate(), 3)
     }
+    
+    func test_나머지가_생기는_나눗셈() {
+        let sut = Calculator(for: "5 / 2")
+        XCTAssertEqual(try sut.calculate(), 2)
+    }
+    
+    func test_사칙연산이_모두_존재하는_수식() {
+        let sut = Calculator(for: "2 + 3 * 4 / 2")
+        XCTAssertEqual(try sut.calculate(), 10)
+    }
 }
