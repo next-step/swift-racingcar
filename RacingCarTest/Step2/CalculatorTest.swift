@@ -7,28 +7,28 @@ import XCTest
 
 class CalculatorTest: XCTestCase {
 
-    func testInputNil() {
+    func testInvalidInputNil() {
         let input: String? = nil
 
         let calculator: Calculator = Calculator()
         try XCTAssertThrowsError(calculator.calculateStringExpression(input))
     }
 
-    func testInputEmptyString() {
+    func testInvalidInputEmptyString() {
         let input: String = ""
 
         let calculator: Calculator = Calculator()
         try XCTAssertThrowsError(calculator.calculateStringExpression(input))
     }
 
-    func testInputBlankString() {
+    func testInvalidInputBlankString() {
         let input: String = "     "
 
         let calculator: Calculator = Calculator()
         try XCTAssertThrowsError(calculator.calculateStringExpression(input))
     }
 
-    func testInputStartWithOperator() {
+    func testInvalidInputStartWithOperator() {
         let input: String = " / 7"
 
         let calculator: Calculator = Calculator()
