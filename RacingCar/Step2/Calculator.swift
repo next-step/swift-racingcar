@@ -22,7 +22,6 @@ class Calculator {
         }
 
         return result
-//        throw CalculatorError.notImplemented
     }
 
     private func checkIsValidExpression(_ input: String?) throws {
