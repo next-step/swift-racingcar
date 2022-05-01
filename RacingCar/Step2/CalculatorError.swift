@@ -4,7 +4,7 @@
 
 import Foundation
 
-enum StringCalculatorError: Error {
+enum CalculatorError: Error {
     case nilOrEmpty
     case invalidOperator
     case notImplemented

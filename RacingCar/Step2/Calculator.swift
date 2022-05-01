@@ -7,16 +7,16 @@
 
 import Foundation
 
-class StringCalculator {
-    func calculate(_ input: String?) throws -> Int {
+class Calculator {
+    func calculateStringExpression(_ input: String?) throws -> Int {
         try checkIsValidExpression(input)
 
-        throw StringCalculatorError.notImplemented
+        throw CalculatorError.notImplemented
     }
 
     private func checkIsValidExpression(_ input: String?) throws {
         if (input ?? "").isEmpty {
-            throw StringCalculatorError.nilOrEmpty
+            throw CalculatorError.nilOrEmpty
         }
     }
 
