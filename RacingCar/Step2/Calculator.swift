@@ -11,7 +11,18 @@ class Calculator {
     func calculateStringExpression(_ input: String?) throws -> Int {
         try checkIsValidExpression(input)
 
-        throw CalculatorError.notImplemented
+        var inputArray: [String] = input!.components(separatedBy: " ")
+
+        var result: Int = Int(inputArray.removeFirst())!
+
+        while !inputArray.isEmpty {
+            let intOperator: (Int, Int) throws -> Int = try getOperator(inputArray.removeFirst())
+            let operand: Int = try getOperand(inputArray.removeFirst())
+            result = try intOperator(result, operand)
+        }
+
+        return result
+//        throw CalculatorError.notImplemented
     }
 
     private func checkIsValidExpression(_ input: String?) throws {
