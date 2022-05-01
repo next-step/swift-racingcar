@@ -20,7 +20,7 @@ class CalculatorTest: XCTestCase {
         let calculator: Calculator = Calculator()
         try XCTAssertThrowsError(calculator.calculateStringExpression(input))
     }
-    
+
     func testAdd() {
         let calculator: Calculator = Calculator()
 
@@ -45,9 +45,9 @@ class CalculatorTest: XCTestCase {
     func testDivide() {
         let calculator: Calculator = Calculator()
 
-        XCTAssertTrue(calculator.divide(3, 5) == 0, "3 / 5 연산 결과가 0 아님")
-        XCTAssertTrue(calculator.divide(0, -1) == 0, "0 / (-1)  연산 결과가 0 아님")
-        // TODO: 0으로 나눌 경우 fatal error 발생. CalculatorError 에 이 경우를 추가하는것도 좋아보인다.
-//        XCTAssertThrowsError(calculator.divide(5, 0))
+        XCTAssertTrue(try calculator.divide(3, 5) == 0, "3 / 5 연산 결과가 0 아님")
+        XCTAssertTrue(try calculator.divide(0, -1) == 0, "0 / (-1)  연산 결과가 0 아님")
+
+        XCTAssertThrowsError(try calculator.divide(5, 0))
     }
 }

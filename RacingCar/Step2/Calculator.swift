@@ -32,8 +32,11 @@ class Calculator {
         $0 * $1
     }
 
-    let divide: (Int, Int) -> Int = {
-        $0 / $1
+    let divide: (Int, Int) throws -> Int = {
+        guard $1 != 0 else {
+            throw CalculatorError.divideByZero
+        }
+        return $0 / $1
     }
 
 }
