@@ -73,4 +73,15 @@ class UserInputValidatorTests: XCTestCase {
         // then
         XCTAssertFalse(result)
     }
+    
+    func test_isValidCarNames_whenNameisEmpty_toBeFalse() throws {
+        // given
+        let carNames = [""]
+        
+        // when
+        let result = sut.isValidCarNames(of: carNames)
+        
+        // then
+        XCTAssertFalse(result)
+    }
 }
