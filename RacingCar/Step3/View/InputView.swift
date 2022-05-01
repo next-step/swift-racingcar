@@ -27,7 +27,7 @@ struct InputView {
         return inputNumber
     }
     
-    private func isValidNumber(_ input:Int) throws {
+    func isValidNumber(_ input:Int) throws {
         if input < 1 {
             throw InputError.invalidNumber
         }

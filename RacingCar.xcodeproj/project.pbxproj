@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1F8DCCE02816F69200890A22 /* RacingCarTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCCDF2816F69200890A22 /* RacingCarTest.swift */; };
+		1F8DCCE02816F69200890A22 /* Step1Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCCDF2816F69200890A22 /* Step1Test.swift */; };
 		1F8DCCE52816F6DD00890A22 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
 		1F8DCCE72816F7AD00890A22 /* Splitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCCE62816F7AD00890A22 /* Splitter.swift */; };
 		1F8DCCE82816FB0F00890A22 /* Splitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCCE62816F7AD00890A22 /* Splitter.swift */; };
@@ -29,6 +29,19 @@
 		1F8DCD34281DB46C00890A22 /* GameGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD33281DB46C00890A22 /* GameGuide.swift */; };
 		1F8DCD38281DB6BA00890A22 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD37281DB6BA00890A22 /* ResultView.swift */; };
 		1F8DCD3A281DB99600890A22 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD39281DB99600890A22 /* GameController.swift */; };
+		1F8DCD43281E683100890A22 /* RacingCarTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD42281E683100890A22 /* RacingCarTest.swift */; };
+		1F8DCD44281E688600890A22 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD2C281D7FDD00890A22 /* Car.swift */; };
+		1F8DCD45281E688900890A22 /* GameGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD33281DB46C00890A22 /* GameGuide.swift */; };
+		1F8DCD46281E688B00890A22 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD39281DB99600890A22 /* GameController.swift */; };
+		1F8DCD47281E688D00890A22 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD37281DB6BA00890A22 /* ResultView.swift */; };
+		1F8DCD48281E689000890A22 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD2F281D93C000890A22 /* InputView.swift */; };
+		1F8DCD49281E689200890A22 /* InputError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD31281D96EA00890A22 /* InputError.swift */; };
+		1F8DCD4B281E68EF00890A22 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD39281DB99600890A22 /* GameController.swift */; };
+		1F8DCD4C281E68F100890A22 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD37281DB6BA00890A22 /* ResultView.swift */; };
+		1F8DCD4D281E68F300890A22 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD2C281D7FDD00890A22 /* Car.swift */; };
+		1F8DCD4E281E68F600890A22 /* InputError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD31281D96EA00890A22 /* InputError.swift */; };
+		1F8DCD4F281E68F800890A22 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD2F281D93C000890A22 /* InputView.swift */; };
+		1F8DCD50281E690A00890A22 /* GameGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD33281DB46C00890A22 /* GameGuide.swift */; };
 		C7E1263027239F7E0000DB8B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,7 +59,7 @@
 
 /* Begin PBXFileReference section */
 		1F8DCCDD2816F69200890A22 /* RacingCarTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RacingCarTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1F8DCCDF2816F69200890A22 /* RacingCarTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingCarTest.swift; sourceTree = "<group>"; };
+		1F8DCCDF2816F69200890A22 /* Step1Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step1Test.swift; sourceTree = "<group>"; };
 		1F8DCCE62816F7AD00890A22 /* Splitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splitter.swift; sourceTree = "<group>"; };
 		1F8DCCE92816FC9D00890A22 /* SetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTests.swift; sourceTree = "<group>"; };
 		1F8DCD0E281ADCE400890A22 /* StringCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringCalculator.swift; sourceTree = "<group>"; };
@@ -61,6 +74,7 @@
 		1F8DCD33281DB46C00890A22 /* GameGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameGuide.swift; sourceTree = "<group>"; };
 		1F8DCD37281DB6BA00890A22 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		1F8DCD39281DB99600890A22 /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
+		1F8DCD42281E683100890A22 /* RacingCarTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingCarTest.swift; sourceTree = "<group>"; };
 		C7E1262C27239F7E0000DB8B /* RacingCar */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RacingCar; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E1262F27239F7E0000DB8B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -93,8 +107,8 @@
 		1F8DCCDE2816F69200890A22 /* RacingCarTest */ = {
 			isa = PBXGroup;
 			children = (
-				1F8DCCDF2816F69200890A22 /* RacingCarTest.swift */,
-				1F8DCCE92816FC9D00890A22 /* SetTests.swift */,
+				1F8DCD41281E67DF00890A22 /* Step1 */,
+				1F8DCD42281E683100890A22 /* RacingCarTest.swift */,
 			);
 			path = RacingCarTest;
 			sourceTree = "<group>";
@@ -161,6 +175,15 @@
 				1F8DCD31281D96EA00890A22 /* InputError.swift */,
 			);
 			path = Error;
+			sourceTree = "<group>";
+		};
+		1F8DCD41281E67DF00890A22 /* Step1 */ = {
+			isa = PBXGroup;
+			children = (
+				1F8DCCDF2816F69200890A22 /* Step1Test.swift */,
+				1F8DCCE92816FC9D00890A22 /* SetTests.swift */,
+			);
+			path = Step1;
 			sourceTree = "<group>";
 		};
 		C7E1262327239F7E0000DB8B = {
@@ -312,9 +335,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F8DCCEA2816FC9D00890A22 /* SetTests.swift in Sources */,
+				1F8DCD45281E688900890A22 /* GameGuide.swift in Sources */,
+				1F8DCD49281E689200890A22 /* InputError.swift in Sources */,
+				1F8DCD47281E688D00890A22 /* ResultView.swift in Sources */,
 				1F8DCCE52816F6DD00890A22 /* main.swift in Sources */,
+				1F8DCD44281E688600890A22 /* Car.swift in Sources */,
 				1F8DCCE82816FB0F00890A22 /* Splitter.swift in Sources */,
-				1F8DCCE02816F69200890A22 /* RacingCarTest.swift in Sources */,
+				1F8DCD46281E688B00890A22 /* GameController.swift in Sources */,
+				1F8DCD48281E689000890A22 /* InputView.swift in Sources */,
+				1F8DCCE02816F69200890A22 /* Step1Test.swift in Sources */,
+				1F8DCD43281E683100890A22 /* RacingCarTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,9 +354,15 @@
 			files = (
 				1F8DCD25281BF9A200890A22 /* main.swift in Sources */,
 				1F8DCD26281BF9A700890A22 /* Splitter.swift in Sources */,
+				1F8DCD4E281E68F600890A22 /* InputError.swift in Sources */,
+				1F8DCD4D281E68F300890A22 /* Car.swift in Sources */,
+				1F8DCD4C281E68F100890A22 /* ResultView.swift in Sources */,
 				1F8DCD28281BF9AD00890A22 /* StringCalculatorInputChange.swift in Sources */,
 				1F8DCD27281BF9AA00890A22 /* StringCalculator.swift in Sources */,
 				1F8DCD20281BF75200890A22 /* StringCalculatorTest.swift in Sources */,
+				1F8DCD50281E690A00890A22 /* GameGuide.swift in Sources */,
+				1F8DCD4B281E68EF00890A22 /* GameController.swift in Sources */,
+				1F8DCD4F281E68F800890A22 /* InputView.swift in Sources */,
 				1F8DCD29281BF9AF00890A22 /* StringCalculatorError.swift in Sources */,
 				1F8DCD2A281BF9B100890A22 /* Operator.swift in Sources */,
 			);

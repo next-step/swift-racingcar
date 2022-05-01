@@ -2,33 +2,30 @@
 //  RacingCarTest.swift
 //  RacingCarTest
 //
-//  Created by brian은석 on 2022/04/26.
+//  Created by brian은석 on 2022/05/01.
 //
 
 import XCTest
 @testable import RacingCar
 
 class RacingCarTest: XCTestCase {
+    let inputView = InputView()
+    
+    func test_1미만숫자_유효하지않음에러() {
+        do {
+            let _ = try inputView.isValidNumber(0)
+        } catch {
+            if let error = error as? InputError {
+                XCTAssert(error == InputError.invalidNumber, error.errorDescription)
+            }
+        }
+    }
 
-    func test1쉼표2분리() throws {
-        let split = Splitter()
-        let test = split.targetWithComma("1,2")
-        let result = ["1","2"]
-        XCTAssert(test == result , "1,2 는 [1,2] 실패")
+    func test_게임룰_첫번째라운드_무조건플러스1() {
+        XCTAssert(GameGuide.rule(1) == 1, "첫번째 라운드는 무조건 플러스 1 에러입니다.")
     }
     
-    func test1을콤마로쪼개면배열1로나온다() throws {
-        let split = Splitter()
-
-        XCTAssert(split.targetWithComma("1") == ["1"],"[1] 실패")
-    }
     
-    func test괄호1콤마2괄호는1콤마2나온다() throws {
-        let split = Splitter()
-        
-        XCTAssert(split.targetWithBracketAndComma("(1,2)") == "1,2","1,2 결과 값 실패")
-    }
-
 }
 
 
