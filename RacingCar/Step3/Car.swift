@@ -7,10 +7,10 @@
 
 import Foundation
 
-struct Car {
-    private(set) var distance: Int = 1
+final class Car {
+    private(set) var distance: Int = 0
     
-    mutating func move() {
-        self.distance += 1
+    func move(_ value: Int) {
+        self.distance += value
     }
 }
