@@ -10,7 +10,11 @@ import Foundation
 struct UserInputValidator {
     
     private enum Constants {
-        static let maximumCarNameLength: Int = 5
+        static let carNameLengthRange: ClosedRange<Int> = {
+            let minimumCarNameLength: Int = 1
+            let maximumCarNameLength: Int = 5
+            return minimumCarNameLength...maximumCarNameLength
+        }()
         static let minimumRaceCountToStart: Int = 1
     }
     
@@ -20,7 +24,7 @@ struct UserInputValidator {
     
     func isValidCarNames(of carNames: [String]) -> Bool {
         let isValidCarNames: Bool = carNames.allSatisfy { carName in
-            carName.count <= Constants.maximumCarNameLength
+            Constants.carNameLengthRange ~=  carName.count
         }
         return isValidCarNames
     }
