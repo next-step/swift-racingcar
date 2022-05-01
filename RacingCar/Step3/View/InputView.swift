@@ -9,11 +9,11 @@ import Foundation
 
 struct InputView {
     func gameStart() throws -> (carCount:Int,attemptCount:Int) {
-        GameSetting.carCount.showGuide()
+        GameGuide.carCount.showGuide()
         let carCount = try myReadLine()
         try self.isValidNumber(carCount)
         
-        GameSetting.attemptCount.showGuide()
+        GameGuide.attemptCount.showGuide()
         let attemptCount = try myReadLine()
         try self.isValidNumber(attemptCount)
         

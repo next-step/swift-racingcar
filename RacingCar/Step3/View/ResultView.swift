@@ -8,15 +8,20 @@
 import Foundation
 
 struct ResultView {
-    func initSetting(_ attemptRound: Int) {
-        if attemptRound == 1 {
-            print("")
-            print("실행 결과")
+    func initSetting() {
+        print("")
+        print("실행 결과")
+    }
+    func result(model cars: [Car], _ attemptCount: Int) {
+        for attemptRound in 1...attemptCount {
+            self.carGameOneRoundResult(cars, attemptRound)
         }
     }
-    
-    func result(car: Car) {
-        print(String(repeating: "-", count: car.distance))
+    private func carGameOneRoundResult(_ cars: [Car], _ attemptRound: Int) {
+        for car in cars {
+            car.move(GameGuide.rule(attemptRound))
+            print(String(repeating: "-", count: car.distance))
+        }
+        print("")
     }
-    
 }

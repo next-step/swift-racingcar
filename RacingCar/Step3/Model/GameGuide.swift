@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum GameSetting {
+enum GameGuide {
     case carCount
     case attemptCount
     
@@ -21,8 +21,17 @@ enum GameSetting {
     }
 }
 
-extension GameSetting {
+extension GameGuide {
     func showGuide() {
         print(self.description, terminator: " ")
+    }
+    
+    static func rule(_ attemptRound: Int) -> Int {
+        if attemptRound == 1 {
+            return 1
+        }
+        let randomNumber = Int.random(in: 0...9)
+        guard randomNumber >= 4 else { return 0 }
+        return 1
     }
 }
