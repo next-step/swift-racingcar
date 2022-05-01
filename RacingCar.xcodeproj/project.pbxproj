@@ -29,6 +29,8 @@
 		43DC863D281938A000E625C6 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC863B281938A000E625C6 /* Car.swift */; };
 		43DC864028193BB500E625C6 /* Racing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC863F28193BB500E625C6 /* Racing.swift */; };
 		43DC864128193BB500E625C6 /* Racing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC863F28193BB500E625C6 /* Racing.swift */; };
+		43FB542C281EBD5C005E1D74 /* RacingCarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FB542B281EBD5C005E1D74 /* RacingCarController.swift */; };
+		43FB542D281EBE77005E1D74 /* RacingCarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FB542B281EBD5C005E1D74 /* RacingCarController.swift */; };
 		C7E1263027239F7E0000DB8B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +61,7 @@
 		43CB2A3F281A9FB80019AF0B /* CarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarTests.swift; sourceTree = "<group>"; };
 		43DC863B281938A000E625C6 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		43DC863F28193BB500E625C6 /* Racing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Racing.swift; sourceTree = "<group>"; };
+		43FB542B281EBD5C005E1D74 /* RacingCarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingCarController.swift; sourceTree = "<group>"; };
 		C7E1262C27239F7E0000DB8B /* RacingCar */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RacingCar; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E1262F27239F7E0000DB8B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -132,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				433988F7281BD30B0065A546 /* StringCalculator */,
+				43FB542B281EBD5C005E1D74 /* RacingCarController.swift */,
 				43DC863B281938A000E625C6 /* Car.swift */,
 				43DC863F28193BB500E625C6 /* Racing.swift */,
 				43398900281BD3390065A546 /* RacingCarInputOutput.swift */,
@@ -244,6 +248,7 @@
 				43405AC82816E41D004EE1DE /* StringType.swift in Sources */,
 				43CB2A40281A9FB80019AF0B /* CarTests.swift in Sources */,
 				43405AC52816E2F0004EE1DE /* main.swift in Sources */,
+				43FB542D281EBE77005E1D74 /* RacingCarController.swift in Sources */,
 				433988FB281BD30B0065A546 /* StringCalculator.swift in Sources */,
 				43CB2A3E2819FF990019AF0B /* RacingCarError.swift in Sources */,
 			);
@@ -255,6 +260,7 @@
 			files = (
 				433988FA281BD30B0065A546 /* StringCalculator.swift in Sources */,
 				43405AC72816E41D004EE1DE /* StringType.swift in Sources */,
+				43FB542C281EBD5C005E1D74 /* RacingCarController.swift in Sources */,
 				43398901281BD3390065A546 /* RacingCarInputOutput.swift in Sources */,
 				433988FC281BD30B0065A546 /* StringCalculatorError.swift in Sources */,
 				432A2882281E289500A2622B /* Validator.swift in Sources */,
