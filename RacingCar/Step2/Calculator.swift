@@ -23,6 +23,38 @@ class Calculator {
         if input.trimmingCharacters(in: .whitespaces).isEmpty {
             throw CalculatorError.nilOrBlank
         }
+        var inputArray: [String] = input.components(separatedBy: " ")
+
+        // 숫자로 시작되는지 확인
+        _ = try getOperand(inputArray.removeFirst())
+        // 연산자, 숫자의 반복이 있어야 한다.
+        while !inputArray.isEmpty {
+            _ = try getOperator(inputArray.removeFirst())
+            _ = try getOperand(inputArray.removeFirst())
+        }
+    }
+
+    private func getOperand(_ stringOperand: String) throws -> Int {
+        let result = Int(stringOperand)
+        if result == nil {
+            throw CalculatorError.invalidOperand
+        }
+        return result!
+    }
+
+    private func getOperator(_ stringOperator: String) throws -> (Int, Int) throws -> Int {
+        switch stringOperator {
+        case "+":
+            return add
+        case "-":
+            return subtract
+        case "*":
+            return multiply
+        case "/":
+            return divide
+        default:
+            throw CalculatorError.invalidOperator
+        }
     }
 
     let add: (Int, Int) -> Int = {
