@@ -18,16 +18,16 @@ struct RacingCarGame {
     private let raceCount: Int
     private let randomDigitNumberMaker: RandomNumberMakable
     
-    init(carCount: Int,
+    init(carNames: [String],
          raceCount: Int,
          randomDigitNumberMaker: RandomNumberMakable) {
-        let initialCars = Array(repeating: Car(position: 0),
-                                count: carCount)
+        let initialCars = carNames.map { carName -> Car in
+            return Car(name: carName, position: 0)
+        }
         self.initialRound = Round(cars: initialCars)
         self.raceCount = raceCount
         self.randomDigitNumberMaker = randomDigitNumberMaker
     }
-    
     
     func start() {
         guard raceCount > 0 else {
@@ -48,10 +48,10 @@ struct RacingCarGame {
                 let canGoForward: Bool = randomNumber >= Constants.minimumDigitToCarGoForward
                 return (car, canGoForward)
             }
-            .map { car, canGoForward -> Int in
+            .map { car, canGoForward -> (String, Int) in
                 let originalPosition: Int = car.position
                 let newPosition: Int = canGoForward ? originalPosition + 1 : originalPosition
-                return newPosition
+                return (car.name, newPosition)
             }
             .map(Car.init)
         let newRound = Round(cars: newRoundCars)

@@ -22,6 +22,7 @@ struct ResultView {
                 drawRound(of: round)
                 drawLineDivider()
             }
+        drawWinners()
     }
     
     private func drawResultTitle() {
@@ -31,11 +32,23 @@ struct ResultView {
     private func drawRound(of round: Round) {
         round.cars.forEach { car in
             let carPositionLine = String(repeating: "-", count: car.position)
-            print(carPositionLine)
+            print(car.name, carPositionLine, separator: " : ")
         }
     }
     
     private func drawLineDivider() {
         print()
+    }
+    
+    private func drawWinners() {
+        let winningCarNames: [String]? = roundHistory.winningCars?
+            .map { car in
+                return car.name
+            }
+        guard let winningCarNames = winningCarNames else {
+            print("우승자가 없습니다")
+            return
+        }
+        print("\(winningCarNames.joined(separator: ",")) 가 최종 우승했습니다.")
     }
 }

@@ -8,9 +8,11 @@
 import Foundation
 
 struct Car {
+    let name: String
     let position: Int
     
-    init(position: Int) {
+    init(name: String, position: Int) {
+        self.name = name
         self.position = position
     }
 }

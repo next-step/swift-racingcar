@@ -10,6 +10,25 @@ import Foundation
 final class RoundHistory {
     
     private(set) var rounds: [Round] = []
+    var winningCars: [Car]? {
+        guard let finalRound = rounds.last else {
+            return nil
+        }
+        
+        let maxPositionInFinalRound: Int? = finalRound
+            .cars
+            .map { car in
+                car.position
+            }
+            .max()
+        
+        let winningCars: [Car] = finalRound
+            .cars
+            .filter { car in
+                car.position == maxPositionInFinalRound
+            }
+        return winningCars
+    }
     
     func append(_ round: Round) {
         rounds.append(round)
