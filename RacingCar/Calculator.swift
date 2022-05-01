@@ -36,6 +36,7 @@ class Calculator: NSObject {
     }
     
     func calculate() throws -> Int {
+        guard !formula.isEmpty else { throw CalculatorError.emptyFormula }
         guard numbers.count - 1 == operators.count else { throw CalculatorError.invalidFormula }
         while !numbers.isEmpty {
             let lhs = self.result ?? self.numbers.removeFirst()
@@ -82,5 +83,6 @@ extension Calculator {
 }
 
 enum CalculatorError: Error {
+    case emptyFormula
     case invalidFormula
 }

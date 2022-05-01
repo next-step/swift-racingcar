@@ -16,14 +16,6 @@ class CalculatorTest: XCTestCase {
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
-    func test_연산자와_숫자가_모두_올바를때() {
-        let sut = Calculator(for: "1 + 2 - 3 * 4 / 5")
-        sut.seperateByBlankCharacter()
-        
-        XCTAssertEqual(sut.numbers, [1, 2, 3, 4, 5])
-        XCTAssertEqual(sut.operators, ["+", "-", "*", "/"])
-    }
     
     func test_1_과_2를_덧셈() {
         let sut = Calculator(for: "1 + 2")
@@ -53,5 +45,35 @@ class CalculatorTest: XCTestCase {
     func test_사칙연산이_모두_존재하는_수식() {
         let sut = Calculator(for: "2 + 3 * 4 / 2")
         XCTAssertEqual(try sut.calculate(), 10)
+    }
+    
+    func test_올바르지_못한_연산자가_존재하는_수식() {
+        let sut = Calculator(for: "1 @ 2")
+        XCTAssertThrowsError(try sut.calculate())
+    }
+    
+    func test_연산자가_없는_수식() {
+        let sut = Calculator(for: "1 2")
+        XCTAssertThrowsError(try sut.calculate())
+    }
+    
+    func test_숫자가_하나_부족한_수식() {
+        let sut = Calculator(for: "1 + ")
+        XCTAssertThrowsError(try sut.calculate())
+    }
+    
+    func test_연산자만_존재하는_수식() {
+        let sut = Calculator(for: " + - ")
+        XCTAssertThrowsError(try sut.calculate())
+    }
+    
+    func test_빈_문자열이_주어진_수식() {
+        let sut = Calculator(for: "")
+        XCTAssertThrowsError(try sut.calculate())
+    }
+    
+    func test_빈_공백_문자열이_주어진_수식() {
+        let sut = Calculator(for: " ")
+        XCTAssertThrowsError(try sut.calculate())
     }
 }
