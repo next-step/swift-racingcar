@@ -52,7 +52,7 @@ class RoundHistoryTests: XCTestCase {
     
     func test_winningCarNames_whenHasNoAppendedRound_toBempty() throws {
         // then
-        XCTAssertTrue(sut.winningCars.isEmpty)
+        XCTAssertNil(sut.winningCars)
     }
     
     func test_winningCarNames_whenHasNoSameMaxPosition() throws {
