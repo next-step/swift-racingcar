@@ -76,4 +76,14 @@ class CalculatorTest: XCTestCase {
         let sut = Calculator(for: " ")
         XCTAssertThrowsError(try sut.calculate())
     }
+    
+    func test_숫자_하나만_주어진_수식() {
+        let sut = Calculator(for: "1")
+        XCTAssertEqual(try sut.calculate(), 1)
+    }
+    
+    func test_숫자_여러개만_주어진_수식() {
+        let sut = Calculator(for: "1 2 3")
+        XCTAssertThrowsError(try sut.calculate())
+    }
 }

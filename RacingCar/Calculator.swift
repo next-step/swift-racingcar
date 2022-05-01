@@ -13,7 +13,7 @@ class Calculator: NSObject {
     var numbers: [Int] = []
     var operators: [String] = []
     
-    var result: Int?
+    var result: Int = 0
     
     init(for formula: String) {
         self.formula = formula
@@ -36,16 +36,17 @@ class Calculator: NSObject {
     }
     
     func calculate() throws -> Int {
-        guard !formula.isEmpty else { throw CalculatorError.emptyFormula }
-        guard numbers.count - 1 == operators.count else { throw CalculatorError.invalidFormula }
+        if let error = catchError() { throw error }
+        
+        self.result = self.numbers.removeFirst()
         while !numbers.isEmpty {
-            let lhs = self.result ?? self.numbers.removeFirst()
+            let lhs = self.result
             let rhs = self.numbers.removeFirst()
             let operatorSymbol = self.operators.removeFirst()
             
             self.result = operate(by: operatorSymbol, lhs: lhs, rhs: rhs)
         }
-        return self.result ?? 0
+        return self.result
     }
     
     func operate(by operatorSymbol: String, lhs: Int, rhs: Int) -> Int {
@@ -61,6 +62,14 @@ class Calculator: NSObject {
         default:
             return 0
         }
+    }
+    
+    func catchError() -> CalculatorError? {
+        guard !formula.isEmpty else { return .emptyFormula }
+        guard !numbers.isEmpty else { return .invalidFormula }
+        
+        guard numbers.count - 1 == operators.count else { return .invalidFormula }
+        return nil
     }
 }
 
