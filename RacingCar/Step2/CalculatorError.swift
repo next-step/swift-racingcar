@@ -5,7 +5,7 @@
 import Foundation
 
 enum CalculatorError: Error {
-    case nilOrEmpty
+    case nilOrBlank
     case invalidOperator
     case notImplemented
     case divideByZero

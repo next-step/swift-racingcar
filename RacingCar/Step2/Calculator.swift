@@ -15,8 +15,13 @@ class Calculator {
     }
 
     private func checkIsValidExpression(_ input: String?) throws {
-        if (input ?? "").isEmpty {
-            throw CalculatorError.nilOrEmpty
+        if input == nil {
+            throw CalculatorError.nilOrBlank
+        }
+        let input: String = input!
+        // 공백 문자열 확인
+        if input.trimmingCharacters(in: .whitespaces).isEmpty {
+            throw CalculatorError.nilOrBlank
         }
     }
 

@@ -21,6 +21,13 @@ class CalculatorTest: XCTestCase {
         try XCTAssertThrowsError(calculator.calculateStringExpression(input))
     }
 
+    func testInputBlankString() {
+        let input: String = "     "
+
+        let calculator: Calculator = Calculator()
+        try XCTAssertThrowsError(calculator.calculateStringExpression(input))
+    }
+
     func testAdd() {
         let calculator: Calculator = Calculator()
 
