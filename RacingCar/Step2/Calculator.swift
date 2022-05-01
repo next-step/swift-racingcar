@@ -40,6 +40,9 @@ class Calculator {
         // 연산자, 숫자의 반복이 있어야 한다.
         while !inputArray.isEmpty {
             _ = try getOperator(inputArray.removeFirst())
+            if inputArray.isEmpty {
+                throw CalculatorError.invalidOperand
+            }
             _ = try getOperand(inputArray.removeFirst())
         }
     }

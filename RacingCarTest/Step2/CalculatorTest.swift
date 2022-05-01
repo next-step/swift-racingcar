@@ -35,6 +35,13 @@ class CalculatorTest: XCTestCase {
         XCTAssertThrowsError(try calculator.calculateStringExpression(input))
     }
 
+    func testInvalidInputEndWithOperator() {
+        let input: String = "2 / 7 +"
+
+        let calculator: Calculator = Calculator()
+        XCTAssertThrowsError(try calculator.calculateStringExpression(input))
+    }
+
     func testAdd() {
         let calculator: Calculator = Calculator()
 
