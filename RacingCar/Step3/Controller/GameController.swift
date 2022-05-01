@@ -18,8 +18,6 @@ struct GameController {
             for attemptRound in 1...gameSetting.attemptCount {
                 self.gamePrint(cars: cars, attemptRound)
             }
-            
-            
         } catch {
             if let error = error as? InputError {
                 error.showError()

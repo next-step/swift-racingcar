@@ -121,14 +121,46 @@
 		1F8DCD2B281D7FCA00890A22 /* Step3 */ = {
 			isa = PBXGroup;
 			children = (
-				1F8DCD2C281D7FDD00890A22 /* Car.swift */,
-				1F8DCD33281DB46C00890A22 /* GameSetting.swift */,
-				1F8DCD39281DB99600890A22 /* GameController.swift */,
-				1F8DCD2F281D93C000890A22 /* InputView.swift */,
-				1F8DCD37281DB6BA00890A22 /* ResultView.swift */,
-				1F8DCD31281D96EA00890A22 /* InputError.swift */,
+				1F8DCD3B281E4D8800890A22 /* Model */,
+				1F8DCD3C281E4DA200890A22 /* Controller */,
+				1F8DCD3D281E4DA900890A22 /* View */,
+				1F8DCD3E281E4DB200890A22 /* Error */,
 			);
 			path = Step3;
+			sourceTree = "<group>";
+		};
+		1F8DCD3B281E4D8800890A22 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1F8DCD2C281D7FDD00890A22 /* Car.swift */,
+				1F8DCD33281DB46C00890A22 /* GameSetting.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1F8DCD3C281E4DA200890A22 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1F8DCD39281DB99600890A22 /* GameController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1F8DCD3D281E4DA900890A22 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1F8DCD37281DB6BA00890A22 /* ResultView.swift */,
+				1F8DCD2F281D93C000890A22 /* InputView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1F8DCD3E281E4DB200890A22 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				1F8DCD31281D96EA00890A22 /* InputError.swift */,
+			);
+			path = Error;
 			sourceTree = "<group>";
 		};
 		C7E1262327239F7E0000DB8B = {
