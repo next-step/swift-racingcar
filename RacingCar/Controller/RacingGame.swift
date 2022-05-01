@@ -32,7 +32,7 @@ final class RandomGenerator: RandomGettable {
 final class RacingGame {
 
     //MARK: - DATA PROPERRIES
-    var gameSetting: GameSetting = GameSetting(randomGenerator: RandomGenerator())
+   private(set) var gameSetting: GameSetting = GameSetting(randomGenerator: RandomGenerator())
     var cars: [Car] = []
 
     //MARK: - VIEWS
@@ -50,6 +50,7 @@ final class RacingGame {
         try inputView.input()
         self.gameSetting = inputView.registerSetting()
     }
+    
     func gameStart() {
         setupCars(carCount: gameSetting.carCount)
         loopStage()
