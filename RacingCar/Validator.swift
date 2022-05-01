@@ -15,4 +15,11 @@ final class Validator {
         }
         return number
     }
+    
+    static func checkValidation(count: Int) throws -> Int {
+        guard count > 0 else {
+            throw RacingCarError.invalidNumber
+        }
+        return count
+    }
 }

@@ -18,13 +18,13 @@ struct RacingCarInputOutput {
     static func inputCarCount() throws -> Int {
         print("자동차 대수는 몇대인가요? ", terminator: "")
         let number = try inputCount()
-        return try Validator.checkValidation(number: number)
+        return try Validator.checkValidation(count: number)
     }
     
     static func inputTryCount() throws -> Int {
         print("시도할 횟수는 몇 회인가요?", terminator: "")
         let number = try inputCount()
-        return try Validator.checkValidation(number: number)
+        return try Validator.checkValidation(count: number)
     }
     
     private static func printMove(_ car: Car) {
