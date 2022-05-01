@@ -13,4 +13,4 @@ let resultView = RacingGameResultView()
 
 let racingGame = RacingGame(inputView: inputView, resultView: resultView)
 try racingGame.gameReady()
-try racingGame.gameStart()
+racingGame.gameStart()
