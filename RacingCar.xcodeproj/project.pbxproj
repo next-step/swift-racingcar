@@ -27,6 +27,8 @@
 		1F8DCD30281D93C000890A22 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD2F281D93C000890A22 /* InputView.swift */; };
 		1F8DCD32281D96EA00890A22 /* InputError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD31281D96EA00890A22 /* InputError.swift */; };
 		1F8DCD34281DB46C00890A22 /* GameSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD33281DB46C00890A22 /* GameSetting.swift */; };
+		1F8DCD38281DB6BA00890A22 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD37281DB6BA00890A22 /* ResultView.swift */; };
+		1F8DCD3A281DB99600890A22 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD39281DB99600890A22 /* GameController.swift */; };
 		C7E1263027239F7E0000DB8B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +59,8 @@
 		1F8DCD2F281D93C000890A22 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
 		1F8DCD31281D96EA00890A22 /* InputError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputError.swift; sourceTree = "<group>"; };
 		1F8DCD33281DB46C00890A22 /* GameSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSetting.swift; sourceTree = "<group>"; };
+		1F8DCD37281DB6BA00890A22 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+		1F8DCD39281DB99600890A22 /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
 		C7E1262C27239F7E0000DB8B /* RacingCar */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RacingCar; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E1262F27239F7E0000DB8B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,7 +123,9 @@
 			children = (
 				1F8DCD2C281D7FDD00890A22 /* Car.swift */,
 				1F8DCD33281DB46C00890A22 /* GameSetting.swift */,
+				1F8DCD39281DB99600890A22 /* GameController.swift */,
 				1F8DCD2F281D93C000890A22 /* InputView.swift */,
+				1F8DCD37281DB6BA00890A22 /* ResultView.swift */,
 				1F8DCD31281D96EA00890A22 /* InputError.swift */,
 			);
 			path = Step3;
@@ -299,7 +305,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F8DCD15281B067400890A22 /* Operator.swift in Sources */,
+				1F8DCD3A281DB99600890A22 /* GameController.swift in Sources */,
 				1F8DCD32281D96EA00890A22 /* InputError.swift in Sources */,
+				1F8DCD38281DB6BA00890A22 /* ResultView.swift in Sources */,
 				1F8DCD0F281ADCE400890A22 /* StringCalculator.swift in Sources */,
 				1F8DCD11281ADEF700890A22 /* StringCalculatorError.swift in Sources */,
 				1F8DCD34281DB46C00890A22 /* GameSetting.swift in Sources */,
