@@ -8,15 +8,29 @@
 import Foundation
 
 struct ResultView {
-    static func racingResult(printable: RacingResultPrintable) {
+    static func printRacingResult(printable: RacingResultPrintable) {
         print("실행결과")
-        printMatch(printable)
+        for match in printable.racingInfo() {
+            print()
+            printMatch(match)
+        }
+        
+        printWinner(printable.winnerGroup())
     }
     
-    private static func printMatch(_ printable: RacingResultPrintable) {
-        for match in printable.result() {
+    private static func printMatch(_ match: [AbleToRace]) {
+        for racer in match {
+            let name: String = racer.racerName()
+            let move: String = RacingForwardLineMaker.convertNumberToLine(move: racer.moveCountByRacer())
+            print("\(name): \(move)", separator: "", terminator: "")
             print()
-            printCarMove(match: match)
+        }
+    }
+
+    private static func printWinner(_ winner: [AbleToRace]) {
+        print("우승자는!!!")
+        for racer in winner {
+            print(racer.racerName())
         }
     }
     

@@ -7,7 +7,11 @@
 
 import Foundation
 
-struct Racing {
+protocol RacingProtocol {
+    func play() -> [[AbleToRace]]
+}
+
+struct Racing: RacingProtocol {
     private let forwardNumberMaker: RacingForwardNumberMakable
     private let gameInfo: RacingPlayable
     
@@ -16,25 +20,24 @@ struct Racing {
         self.gameInfo = gameInfo
     }
     
-    func play() -> [[Int]] {
-        var gameResult = [[Int]]()
-        var matchInfo = [Int](repeating: 0, count: gameInfo.racingGameCarNumber())
+    func play() -> [[AbleToRace]] {
+        var gameResult = [[AbleToRace]]()
+        var matchInfo: [AbleToRace] = gameInfo.racingGamePlayers().map { RacingPlayer(name: $0) }
+        let playerCount: Int = gameInfo.racingGamePlayers().count
         
         for _ in 0..<gameInfo.racingGameRound() {
-            let match = match(matchInfo: matchInfo,
-                              carNumber: gameInfo.racingGameCarNumber())
-            matchInfo = match
+            matchInfo = match(before: matchInfo, playerCount: playerCount)
             gameResult.append(matchInfo)
         }
         
         return gameResult
     }
     
-    private func match(matchInfo: [Int], carNumber: Int) -> [Int] {
-        var updatedMatchInfo = matchInfo
+    private func match(before matchInfo: [AbleToRace], playerCount: Int) -> [AbleToRace] {
+        var updatedMatchInfo: [AbleToRace] = matchInfo
         
-        for car in 0..<carNumber {
-            updatedMatchInfo[car] += forwardNumberMaker.forward()
+        for player in 0..<playerCount {
+            updatedMatchInfo[player].move(forward: forwardNumberMaker.forward())
         }
         
         return updatedMatchInfo

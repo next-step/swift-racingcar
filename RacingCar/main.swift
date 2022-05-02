@@ -6,8 +6,17 @@
 
 import Foundation
 
-let gameInfo = GameInfo(carNumber: InputView.readCarNumber(),
-                        round: InputView.readRound())
-let forwardNumberMaker = RacingForwardRandomNumberMaker()
+func main() {
+    do {
+        let gameInfo = GameInfo(players: try InputView.readPlayers(),
+                                round: InputView.readRound())
+        let forwardNumberMaker = RacingForwardRandomNumberMaker()
+        RacingGame.play(gameInfo: gameInfo, forwardNumberMakable: forwardNumberMaker)
+    }
+    catch {
+        print(InputError.outOfRange.message)
+        main()
+    }
+}
 
-RacingGame.play(gameInfo: gameInfo, forwardNumberMakable: forwardNumberMaker)
+main()
