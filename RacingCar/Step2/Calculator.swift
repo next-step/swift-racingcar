@@ -25,10 +25,9 @@ class Calculator {
     }
 
     private func validateExpression(_ input: String?) throws {
-        if input == nil {
+        guard let input = input else {
             throw CalculatorError.nilOrBlank
         }
-        let input: String = input!
         // 공백 문자열 확인
         if input.trimmingCharacters(in: .whitespaces).isEmpty {
             throw CalculatorError.nilOrBlank
