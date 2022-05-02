@@ -26,6 +26,11 @@ extension String {
 
 struct StringCalculator {
     
+    enum CalculatorError: Error {
+        case stringIsEmptyOrNil
+        case containsWrongOperatorCode
+    }
+    
     typealias ArithmeticalExpression = (Int, Int) -> Int
     
     func containsWrongArithmeticalCode(string arithmeticString: String) -> Bool {
@@ -37,17 +42,15 @@ struct StringCalculator {
         return wrongCodes.isEmpty == false
     }
     
-    func calculate(string arithmeticString: String?) -> Int? {
-        guard let arithmeticString = arithmeticString else {
-            return nil
-        }
-        
-        guard arithmeticString.components(separatedBy: " ").isEmpty == false else {
-            return nil
+    func calculate(string arithmeticString: String?) throws -> Int? {
+        guard let arithmeticString = arithmeticString,
+              arithmeticString.components(separatedBy: " ").isEmpty == false
+        else {
+            throw CalculatorError.stringIsEmptyOrNil
         }
         
         guard containsWrongArithmeticalCode(string: arithmeticString) == false else {
-            return nil
+            throw CalculatorError.containsWrongOperatorCode
         }
         
         var result: Int = 0
