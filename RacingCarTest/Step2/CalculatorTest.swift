@@ -42,10 +42,15 @@ class CalculatorTest: XCTestCase {
         XCTAssertThrowsError(try calculator.calculateStringExpression(input))
     }
 
-    func testStringCalculate() {
+    func testCalculateStringInputContainingAllOperator() {
         let calculator: Calculator = Calculator()
 
         XCTAssertTrue(try calculator.calculateStringExpression("2 + 3 * 4 / 2 - 7") == 3, "2 + 3 * 4 / 2 - 7 연산 결과가 3 아님")
+    }
+
+    func testCalculateStringInputContainingOnlySingleValue() {
+        let calculator: Calculator = Calculator()
+
         XCTAssertTrue(try calculator.calculateStringExpression("2") == 2, "2 연산 결과가 2 아님")
     }
 }
