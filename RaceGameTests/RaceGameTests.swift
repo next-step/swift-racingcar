@@ -171,6 +171,4 @@ class RaceGameTests: XCTestCase {
     func test_given모두포인드가0_when레이스가끝난후_then무효_출력_체크() {
         
     }
-    
-    
 }
