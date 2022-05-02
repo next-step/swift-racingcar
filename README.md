@@ -13,6 +13,7 @@ NEXTSTEP with yagom-academy
 ```
 RacingCar  
 ├── model  
+│   └── Constants.swift  
 │   └── Car.swift  
 └── view  
 ├── inputViews  
@@ -28,6 +29,13 @@ RacingCar
 
 
 ## 2. 구현 기능 목록
+- **Constants**
+  - `defaultPoint`: 기본 점수
+  - `defaultCondition`: 승리 조건
+  - `randomRange`: 난수 생성 범위
+  - `nameMinLength`: 차 이름 최소 글자 수
+  - `nameMaxLength`: 차 이름 최대 글자 수
+
 - **Car**
   - `moveFoward()`: 전진한다
 
