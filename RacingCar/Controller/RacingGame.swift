@@ -33,6 +33,18 @@ final class RacingGame {
     func gameStart() {
         setupCars(carNames: gameSetting.carNames)
         loopStage()
+        gameOver()
+    }
+    
+    func gameOver() {
+        let winners = pickWinnersByPoints()
+        resultView.showWinners(names: winners.map{$0.name})
+    }
+    
+    func pickWinnersByPoints() -> [Car] {
+        let maxPoint = cars.max(by: { $0.movePoint < $1.movePoint })?.movePoint ?? 0
+        let winners = cars.filter{ $0.movePoint == maxPoint }
+        return winners
     }
     
     private func setupCars(carNames: [String]) {

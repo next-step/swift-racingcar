@@ -23,6 +23,7 @@ protocol RacingGameResult: drawable {
     func showCarsDistance(cars: [Car])
     func printUserDistanceFromStart(car: Car)
     func printRacingResultPhrase()
+    func showWinners(names: [String])
 }
 
 final class RacingGameResultView: RacingGameResult {
@@ -40,4 +41,11 @@ final class RacingGameResultView: RacingGameResult {
     func printUserDistanceFromStart(car: Car) {
         print("\(car.name) : \(String(repeating: "-", count: car.movePoint))")
     }
+    
+    func showWinners(names: [String]) {
+        let winner = names.joined(separator:", ")
+        print("\(winner)가 최종 우승했습니다.")
+    }
 }
+
+
