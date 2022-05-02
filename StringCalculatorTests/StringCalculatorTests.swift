@@ -26,7 +26,7 @@ class StringCalculatorTests: XCTestCase {
         let arithmeticString: String? = nil
         
         //when
-        let result = calculator.연산하기(string: arithmeticString)
+        let result = calculator.연산하기(arithmeticString: arithmeticString)
         
         //then
         XCTAssertNil(result, "입력값이 nil이지만 nil이 반환되지 않았다.")

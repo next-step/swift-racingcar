@@ -20,7 +20,8 @@ struct StringCalculator {
         case 빼다 = "-"
     }
     
-    func 연산하기(string: String?) -> Int? {
+    func 연산하기(arithmeticString: String?) -> Int? {
+        guard let arithmeticString = arithmeticString else { return nil }
         return 0
     }
     
