@@ -34,6 +34,10 @@ struct RacingInfo: RacingResultPrintable {
         var maxCount: Int = 0
         
         for racer in lastMatchInfo {
+            findMaxCount(racer: racer)
+        }
+        
+        func findMaxCount(racer: AbleToRace) {
             if racer.moveCountByRacer() > maxCount {
                 maxCount = racer.moveCountByRacer()
             }
@@ -46,9 +50,15 @@ struct RacingInfo: RacingResultPrintable {
         var winnerGroup: [AbleToRace] = []
         
         for racer in lastMatchInfo {
+            winnerGroup = findWinnder(racer: racer)
+        }
+        
+        func findWinnder(racer: AbleToRace) -> [AbleToRace] {
             if racer.moveCountByRacer() == maxCount {
                 winnerGroup.append(racer)
             }
+            
+            return winnerGroup
         }
         
         return winnerGroup
