@@ -15,8 +15,9 @@ struct GameController {
         do {
             let gameSetting: (carCount: Int, attemptCount: Int) = try inputView.gameStart()
             let cars: [Car] = Array.init(repeating: 0, count: gameSetting.carCount).map{ _ in Car()}
-            self.resultView.initSetting()
-            self.resultView.result(model: cars, gameSetting.attemptCount)
+            resultView.initSetting()
+            result(model: cars, gameSetting.attemptCount)
+            
         } catch {
             if let error = error as? InputError {
                 error.showError()
@@ -24,5 +25,18 @@ struct GameController {
         }
     }
     
+    private func moveCars(model cars: [Car], _ gameRound: Int) -> [Car] {
+        for car in cars {
+            car.move(GameGuide.rule(gameRound))
+        }
+        return cars
+    }
+    
+    private func result(model cars: [Car], _ attemptCount: Int) {
+        for gameRound in 1...attemptCount {
+            let moveCars = moveCars(model: cars, gameRound)
+            resultView.oneRoundResult(moveCars)
+        }
+    }
     
 }
