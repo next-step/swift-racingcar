@@ -19,8 +19,8 @@ final class Car {
 
     func move() {
         let conditionNumber = randomGenerator.random()
-        let isMoveContidion = isMoveToNext(randomNumber: conditionNumber)
-        self.movePoint += isMoveContidion ? 1 : 0
+        let isMoveCondidion = isMoveToNext(randomNumber: conditionNumber)
+        self.movePoint += isMoveCondidion ? 1 : 0
     }
     
     func isMoveToNext(randomNumber: Int) -> Bool {
