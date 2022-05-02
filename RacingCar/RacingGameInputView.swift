@@ -27,7 +27,6 @@ final class RacingGameInputView: RacingGameInput {
         case input
         case textLengthExceeded
         case emptyCars
-         
     }
     
     init(randomGenerator: RandomGettable) {
@@ -43,8 +42,7 @@ final class RacingGameInputView: RacingGameInput {
     
     func inputCarNames() throws -> [String] {
         guard let input: String = readLine() else { throw InputViewError.input}
-        let removeInput = removeSpacing(input: input)
-        let carNames = splitCarNames(input: removeInput)
+        let carNames = splitCarNames(input: input)
         try validation(carNames: carNames)
         return carNames
     }
@@ -56,12 +54,10 @@ final class RacingGameInputView: RacingGameInput {
     }
     
     func splitCarNames(input: String) -> [String] {
-        let carNames = input.split(separator: ",").map{ String($0)}
+        let carNames = input
+            .replacingOccurrences(of: " ", with: "")
+            .split(separator: ",").map{ String($0)}
         return carNames
-    }
-    
-    func removeSpacing(input: String) -> String {
-        return input.replacingOccurrences(of: " ", with: "")
     }
     
     func validation(carNames: [String]) throws {

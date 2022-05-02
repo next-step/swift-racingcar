@@ -172,17 +172,6 @@ class RaceGameTests: XCTestCase {
         }
     }
 
-    func test_given공백이포함된자동차이름들_then공백제거_체크() {
-        //given
-        let carNames = "Tayo,BoongBoong,  Took,     Bentley"
-        let inputView = RacingGameInputView(randomGenerator: RandomGenerator())
-        let removedSpacingCarNames = inputView.removeSpacing(input: carNames)
-        
-        //then
-        let expection = "Tayo,BoongBoong,Took,Bentley"
-        XCTAssertEqual(removedSpacingCarNames, expection)
-    }
-
     func test_when레이스가끝난후_then포인트가가장높은차이름_출력_체크() throws {
         //given
         let randomGenerator = RandomGenerator(range: 0..<10)
@@ -205,7 +194,7 @@ class RaceGameTests: XCTestCase {
 
     }
 
-    func test_given동점인우승자가여럿_when레이스가끝난후_then동점인우승자들_출력_체크() {
+    func test_given동점인우승자가여럿이면_then동점인우승자들모두_출력_체크() {
         //given
         let randomGenerator = RandomGenerator(range: 0..<10)
         let cars = [

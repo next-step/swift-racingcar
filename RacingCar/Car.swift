@@ -9,13 +9,23 @@ import Foundation
 
 
 final class Car {
+    
+    enum Constant {
+        static let basePoint: Int = 0
+        static let minumCondition: Int = 4
+    }
+    
+    //MARK: - PROPERTIES
     var randomGenerator: RandomGettable
-    var minimumCondition: Int = 4
-    var movePoint: Int = 0
+    var minimumCondition: Int = Constant.minumCondition
+    var movePoint: Int
     private(set) var name: String
-    init(name: String, randomGenerator: RandomGettable, movePoint: Int = 0) {
+    
+    init(name: String,
+         randomGenerator: RandomGettable,
+         movePoint: Int = Constant.basePoint
+    ) {
         self.movePoint = movePoint
-        
         self.name = name
         self.randomGenerator = randomGenerator
     }

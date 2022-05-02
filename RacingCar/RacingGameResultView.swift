@@ -8,23 +8,11 @@
 import Foundation
 
 
-protocol drawable {
-    func lineDivider()
-}
-
-extension drawable {
-    
-    func lineDivider() {
-        print("\n")
-    }
-}
-
-protocol RacingGameResult: drawable {
+protocol RacingGameResult: Drawable {
     func showCarsDistance(cars: [Car])
     func printUserDistanceFromStart(car: Car)
     func printRacingResultPhrase()
     func showWinners(names: [String])
-    
 }
 
 final class RacingGameResultView: RacingGameResult {
@@ -34,7 +22,6 @@ final class RacingGameResultView: RacingGameResult {
     }
     
     func showCarsDistance(cars: [Car]) {
-        
         cars.forEach{printUserDistanceFromStart(car: $0)}
         lineDivider()
     }
@@ -45,8 +32,6 @@ final class RacingGameResultView: RacingGameResult {
     
     func showWinners(names: [String]) {
         names.isEmpty ? printNoWinner() : printWinners(names: names)
-        
-       
     }
     
     func printWinners(names: [String]) {

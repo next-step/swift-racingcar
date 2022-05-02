@@ -42,14 +42,10 @@ final class RacingGame {
     }
     
     func pickWinnersByPoint(candidates: [Car]) -> [Car] {
-        
         guard let maxPoint = candidates.max(by: { $0.movePoint < $1.movePoint })?.movePoint else { return [] }
         guard maxPoint != 0 else { return [] }
         let winners = candidates.filter{ $0.movePoint == maxPoint }
         return winners
-        
-            
-       
     }
     
     private func setupCars(carNames: [String]) {

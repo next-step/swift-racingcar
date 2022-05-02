@@ -9,12 +9,15 @@ import Foundation
 
 
 struct GameSetting: Equatable {
-   
+
     let gameCount: Int
     let carNames: [String]
     let randomGenerator: RandomGettable
     
-    init(gameCount: Int = 0, carNames: [String] = [], randomGenerator: RandomGettable) {
+    init(gameCount: Int = 0,
+         carNames: [String] = [],
+         randomGenerator: RandomGettable
+    ) {
         self.gameCount = gameCount
         self.carNames = carNames
         self.randomGenerator = randomGenerator
@@ -25,5 +28,4 @@ struct GameSetting: Equatable {
                 && lhs.carNames == rhs.carNames
                 && lhs.randomGenerator.randomRange == rhs.randomGenerator.randomRange
     }
-
 }
