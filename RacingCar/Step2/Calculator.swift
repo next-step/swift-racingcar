@@ -25,32 +25,40 @@ class Calculator {
     }
 
     private func validateExpression(_ input: String?) throws {
-        guard let input = input else {
-            throw CalculatorError.nilOrBlank
-        }
-        // 공백 문자열 확인
-        if input.trimmingCharacters(in: .whitespaces).isEmpty {
-            throw CalculatorError.nilOrBlank
-        }
-        var inputArray: [String] = input.components(separatedBy: " ")
+        try validateNilOrBlankString(input)
 
-        // 숫자로 시작되는지 확인
-        _ = try getOperand(inputArray.removeFirst())
+        var inputArray: [String] = input!.components(separatedBy: " ")
+
+        try validateOperand(inputArray.removeFirst())
         // 연산자, 숫자의 반복이 있어야 한다.
         while !inputArray.isEmpty {
-            _ = try CalculatorOperator.fromString(inputArray.removeFirst())
+            try CalculatorOperator.validateStringOperator(inputArray.removeFirst())
             if inputArray.isEmpty {
                 throw CalculatorError.invalidOperand
             }
-            _ = try getOperand(inputArray.removeFirst())
+            try validateOperand(inputArray.removeFirst())
+        }
+    }
+
+    private func validateNilOrBlankString(_ input: String?) throws {
+        let trimmedInput = input?.trimmingCharacters(in: .whitespaces) ?? ""
+
+        if trimmedInput.isEmpty {
+            throw CalculatorError.nilOrBlank
+        }
+    }
+
+    private func validateOperand(_ stringOperand: String) throws {
+        let operand = Int(stringOperand)
+
+        if operand == nil {
+            throw CalculatorError.invalidOperand
         }
     }
 
     private func getOperand(_ stringOperand: String) throws -> Int {
-        let result = Int(stringOperand)
-        if result == nil {
-            throw CalculatorError.invalidOperand
-        }
-        return result!
+        try validateOperand(stringOperand)
+
+        return Int(stringOperand)!
     }
 }

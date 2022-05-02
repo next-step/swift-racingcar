@@ -31,6 +31,7 @@ extension CalculatorOperator {
 
 extension CalculatorOperator {
     static func fromString(_ stringOperator: String) throws -> CalculatorOperator {
+        try validateStringOperator(stringOperator)
         switch stringOperator {
         case "+":
             return add
@@ -40,6 +41,23 @@ extension CalculatorOperator {
             return multiply
         case "/":
             return divide
+        default:
+            throw CalculatorError.invalidOperator
+        }
+    }
+}
+
+extension CalculatorOperator {
+    static func validateStringOperator(_ stringOperator: String) throws {
+        switch stringOperator {
+        case "+":
+            return
+        case "-":
+            return
+        case "*":
+            return
+        case "/":
+            return
         default:
             throw CalculatorError.invalidOperator
         }
