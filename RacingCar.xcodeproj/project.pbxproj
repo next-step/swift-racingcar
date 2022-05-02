@@ -11,6 +11,7 @@
 		AA114D1C28184A5700DD14D2 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
 		AA114D1E2818510200DD14D2 /* StringTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA114D1D2818510200DD14D2 /* StringTest.swift */; };
 		AA114D20281859E900DD14D2 /* SetTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA114D1F281859E900DD14D2 /* SetTest.swift */; };
+		AA92D4F428202F8B00DAF314 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAC251D28201E8B00D90E59 /* Calculator.swift */; };
 		AAAC251C2820107500D90E59 /* CalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAC251B2820107500D90E59 /* CalculatorTests.swift */; };
 		AAAC251E28201E8B00D90E59 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAC251D28201E8B00D90E59 /* Calculator.swift */; };
 		C7E1263027239F7E0000DB8B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
@@ -189,6 +190,7 @@
 				AAAC251C2820107500D90E59 /* CalculatorTests.swift in Sources */,
 				AA114D17281849F500DD14D2 /* RacingCarTest.swift in Sources */,
 				AA114D1E2818510200DD14D2 /* StringTest.swift in Sources */,
+				AA92D4F428202F8B00DAF314 /* Calculator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
