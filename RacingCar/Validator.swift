@@ -22,4 +22,18 @@ final class Validator {
         }
         return count
     }
+    
+    static func checkValidation(names: [String]) throws -> [String] {
+        guard !names.isEmpty else { throw RacingCarError.emptyNames }
+        try names.forEach { name in
+            try checkValidation(name: name)
+        }
+        return names
+    }
+    
+    private static func checkValidation(name: String) throws {
+        guard !name.isEmpty && name.count <= 5 else {
+            throw RacingCarError.invalidString
+        }
+    }
 }

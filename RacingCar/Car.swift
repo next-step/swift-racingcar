@@ -10,7 +10,15 @@ import Foundation
 final class Car {
     
     // MARK: - Property
+    let name: String
     private(set) var moveCount: Int = 0
+    private let canMoveMinNumber = 4
+    private let move = 1
+    
+    // MARK: Initializer
+    init(name: String) {
+        self.name = name
+    }
     
     // MARK: - Method
     func generateRandomNumber() -> Int {
@@ -18,7 +26,7 @@ final class Car {
     }
     
     func move(randomNumber: Int) throws {
-        if try Validator.checkValidation(number: randomNumber) >= 4 {
+        if try Validator.checkValidation(number: randomNumber) >= canMoveMinNumber {
             moveCount += 1
         }
     }

@@ -1,5 +1,5 @@
 //
-//  RacingCarInputOutput.swift
+//  RacingCarInput.swift
 //  RacingCar
 //
 //  Created by YooBin Jo on 2022/04/29.
@@ -7,7 +7,14 @@
 
 import Foundation
 
-struct RacingCarInputOutput {
+struct RacingCarInput {
+    
+    private static func inputNames() throws -> String {
+        guard let ownersString = readLine() else {
+            throw RacingCarError.input
+        }
+        return ownersString
+    }
     
     private static func inputCount() throws -> Int {
         guard let countString = readLine(),
@@ -21,23 +28,15 @@ struct RacingCarInputOutput {
         return try Validator.checkValidation(count: number)
     }
     
+    static func inputCarNames() throws -> [String] {
+        print("경주할 자동차 이름을 입력하세요(이름은 쉼표(,)를 기준으로 구분).")
+        let names = try inputNames().components(separatedBy: ",")
+        return try Validator.checkValidation(names: names)
+    }
+    
     static func inputTryCount() throws -> Int {
-        print("시도할 횟수는 몇 회인가요?", terminator: "")
+        print("시도할 횟수는 몇 회인가요?")
         let number = try inputCount()
         return try Validator.checkValidation(count: number)
-    }
-    
-    private static func printMove(_ car: Car) {
-        for _ in 0 ..< car.moveCount {
-            print("-", terminator: "")
-        }
-        print("")
-    }
-    
-    static func printResult(_ cars: [Car]) {
-        cars.forEach { car in
-            printMove(car)
-        }
-        print("")
     }
 }
