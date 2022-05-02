@@ -118,6 +118,21 @@ class StringCalculatorTests: XCTestCase {
         XCTAssertNil(result3, "연산메서드가 사칙연산 기호가 아닌 기호가 포함되었지만 nil 반환이 되지 않았다.")
     }
     
+    func test_사칙연산을_표현한_문자열의_계산이_잘되는지() {
+        //given
+        let numberA: Int = 1
+        let numberB: Int = 2
+        
+        let arithmeticString: String = "\(numberA) + \(numberB)"
+        
+        //when
+        let result = calculator.calculate(string: arithmeticString)
+        
+        XCTAssertNotNil(result, "잘 못되었는데?")
+        XCTAssertEqual(result!, numberA + numberB)
+        
+    }
+    
     
     
     
