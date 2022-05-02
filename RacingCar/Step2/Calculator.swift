@@ -19,13 +19,13 @@ class Calculator {
     func calculateStringExpression(_ input: String?) throws -> Int {
         try validateExpression(input)
 
-        var inputArray: [String] = input!.components(separatedBy: " ")
+        var seperatedInput: [String] = input!.components(separatedBy: " ")
 
-        var result: Int = Int(inputArray.removeFirst())!
+        var result: Int = Int(seperatedInput.removeFirst())!
 
-        while !inputArray.isEmpty {
-            let intOperator: CalculatorOperator = try CalculatorOperator.fromString(inputArray.removeFirst())
-            let operand: Int = try getOperand(inputArray.removeFirst())
+        while !seperatedInput.isEmpty {
+            let intOperator: CalculatorOperator = try CalculatorOperator.fromString(seperatedInput.removeFirst())
+            let operand: Int = try getOperand(seperatedInput.removeFirst())
             result = try intOperator.execute(result, operand)
         }
 
@@ -35,15 +35,15 @@ class Calculator {
     private func validateExpression(_ input: String?) throws {
         try validateNilOrBlankString(input)
 
-        var inputArray: [String] = input!.components(separatedBy: " ")
+        var seperatedInput: [String] = input!.components(separatedBy: " ")
 
-        try validateOperand(inputArray.removeFirst())
-        while !inputArray.isEmpty {
-            try CalculatorOperator.validateStringOperator(inputArray.removeFirst())
-            if inputArray.isEmpty {
+        try validateOperand(seperatedInput.removeFirst())
+        while !seperatedInput.isEmpty {
+            try CalculatorOperator.validateStringOperator(seperatedInput.removeFirst())
+            if seperatedInput.isEmpty {
                 throw CalculatorError.invalidOperand
             }
-            try validateOperand(inputArray.removeFirst())
+            try validateOperand(seperatedInput.removeFirst())
         }
     }
 
