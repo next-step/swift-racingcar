@@ -147,4 +147,30 @@ class RaceGameTests: XCTestCase {
             XCTAssertEqual(error as? RacingGameInputViewMock.InputViewError, expectation)
         }
     }
+   
+    func test_when자동차의이름_5자초과_thenTextLengthExceeded_Error발생하는지_체크() throws {
+        
+    }
+
+    func test_given쉼표로구분된자동차들입력_when쉼표로분리_then문자열배열로나뉘는지_체크() {
+        
+    }
+
+    func test_given공백이포함된자동차이름들_then공백제거_체크() {
+        
+    }
+
+    func test_when레이스가끝난후_then포인트가가장높은차이름_출력_체크() {
+        
+    }
+    
+    func test_given동점인우승자가여럿_when레이스가끝난후_then동점인우승자들_출력_체크() {
+        
+    }
+    
+    func test_given모두포인드가0_when레이스가끝난후_then무효_출력_체크() {
+        
+    }
+    
+    
 }
