@@ -19,7 +19,7 @@ struct StringCalculatorInputChange {
     
     func convertOperator(input:String) throws -> Operator {
         guard let myOperator = Operator(rawValue: input) else {
-            throw StringCalculatorError.operator
+            throw StringCalculatorError.isNotOperator
         }
         return myOperator
     }

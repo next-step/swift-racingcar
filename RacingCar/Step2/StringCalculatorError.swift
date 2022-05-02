@@ -10,7 +10,7 @@ import Foundation
 enum StringCalculatorError: Error {
     case inputNil
     case inputEmpty
-    case `operator`
+    case isNotOperator
     case number
     case calculator
     
@@ -21,7 +21,7 @@ enum StringCalculatorError: Error {
             return "입력값이 nil 입니다."
         case .inputEmpty:
             return "입력값이 빈 값입니다."
-        case .operator:
+        case .isNotOperator:
             return "사칙연산이 아닙니다"
         case .number:
             return "숫자가 아닙니다"
