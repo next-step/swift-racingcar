@@ -10,20 +10,20 @@ import XCTest
 
 class Step1Test: XCTestCase {
 
-    func test1쉼표2분리() throws {
+    func test_입력문자_1쉼표2_쪼개면_배열_1과2() throws {
         let split = Splitter()
         let test = split.targetWithComma("1,2")
         let result = ["1","2"]
         XCTAssert(test == result , "1,2 는 [1,2] 실패")
     }
     
-    func test1을콤마로쪼개면배열1로나온다() throws {
+    func test_입력문자_1_쪼개면_배열_1() throws {
         let split = Splitter()
 
         XCTAssert(split.targetWithComma("1") == ["1"],"[1] 실패")
     }
     
-    func test괄호1콤마2괄호는1콤마2나온다() throws {
+    func test_입력문자_괄호1쉼표2_쪼개면_문자열_1쉼표2() throws {
         let split = Splitter()
         
         XCTAssert(split.targetWithBracketAndComma("(1,2)") == "1,2","1,2 결과 값 실패")
