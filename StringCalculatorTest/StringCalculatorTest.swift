@@ -48,7 +48,7 @@ class StringCalculatorTest: XCTestCase {
             let _ = try calculator.caculate(input: "1 f 2")
         } catch {
             if let error = error as? StringCalculatorError {
-                XCTAssert(error == StringCalculatorError.operator, error.errorDescription)
+                XCTAssert(error == StringCalculatorError.isNotOperator, error.errorDescription)
             }
         }
     }

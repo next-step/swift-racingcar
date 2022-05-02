@@ -11,9 +11,19 @@ import XCTest
 class RacingCarTest: XCTestCase {
     let inputView = InputView()
     
-    func test_1미만숫자_유효하지않음에러() {
+    func test_0_유효하지않음에러() {
         do {
             let _ = try inputView.isValidNumber(0)
+        } catch {
+            if let error = error as? InputError {
+                XCTAssert(error == InputError.invalidNumber, error.errorDescription)
+            }
+        }
+    }
+    
+    func test_음수_유효하지않음에러() {
+        do {
+            let _ = try inputView.isValidNumber(-3)
         } catch {
             if let error = error as? InputError {
                 XCTAssert(error == InputError.invalidNumber, error.errorDescription)
