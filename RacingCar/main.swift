@@ -6,22 +6,40 @@
 
 import Foundation
 
+extension String {
+    
+    private enum ArithmeticalCode: String {
+        case add = "+"
+        case division = "/"
+        case multiply = "*"
+        case subtract = "-"
+    }
+    
+    func isArithmeticalCode() -> Bool {
+        return ArithmeticalCode(rawValue: self) != nil ? true : false
+    }
+}
+
 struct StringCalculator {
     
-    enum ArithmeticalError: Error {
-        case ArithmeticalStringIsNil
-        case ArithmeticalStringIsEmpty
+    func containsWrongArithmeticalCode(string arithmeticString: String) -> Bool {
+        let wrongCodes = arithmeticString
+            .components(separatedBy: " ")
+            .filter{ Int($0) == nil }
+            .filter { $0.isArithmeticalCode() == false }
+        
+        return wrongCodes.isEmpty == false
     }
     
-    enum ArithmeticalCode: String {
-        case 더하다 = "+"
-        case 나누다 = "/"
-        case 곱하다 = "*"
-        case 빼다 = "-"
-    }
-    
-    func 연산하기(arithmeticString: String?) -> Int? {
-        guard let arithmeticString = arithmeticString else { return nil }
+    func calculate(string arithmeticString: String?) -> Int? {
+        guard let arithmeticString = arithmeticString else {
+            return nil
+        }
+        
+        guard containsWrongArithmeticalCode(string: arithmeticString) == false else {
+            return nil
+        }
+        
         return 0
     }
     
