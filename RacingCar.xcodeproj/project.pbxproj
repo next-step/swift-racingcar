@@ -102,6 +102,60 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D04DA2928201A13005B85C4 /* Calculator */ = {
+			isa = PBXGroup;
+			children = (
+				2D1062BE2816B3FF004BD50A /* Calculator.swift */,
+				2D04D995281A01A2005B85C4 /* CalculatorInput.swift */,
+				2D1062C22816C0DA004BD50A /* Calculable.swift */,
+			);
+			path = Calculator;
+			sourceTree = "<group>";
+		};
+		2D04DA2A28201A1F005B85C4 /* RacingCar */ = {
+			isa = PBXGroup;
+			children = (
+				2D04DA2B28201A2A005B85C4 /* View */,
+				2D04DA2C28201A36005B85C4 /* Controller */,
+				2D04DA2D28201A46005B85C4 /* Domain */,
+			);
+			path = RacingCar;
+			sourceTree = "<group>";
+		};
+		2D04DA2B28201A2A005B85C4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2D1062CA281833B2004BD50A /* InputView.swift */,
+				2D1062D62818AA21004BD50A /* ResultView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2D04DA2C28201A36005B85C4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2D1062CE28183848004BD50A /* GameInfo.swift */,
+				2D1062D42818A94A004BD50A /* RacingInfo.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2D04DA2D28201A46005B85C4 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				2D1062CC28183772004BD50A /* RacingGame.swift */,
+				2D1062D02818A4D3004BD50A /* Racing.swift */,
+				2D04D9CE281BCB37005B85C4 /* RacingPlayer.swift */,
+				2D04D9CC281BCAC6005B85C4 /* InputError.swift */,
+				2D1062D22818A709004BD50A /* RacingResultPrintable.swift */,
+				2D04D9C0281BAE46005B85C4 /* RacingForwardLineMaker.swift */,
+				2D04D9C3281BB8B6005B85C4 /* RacingForwardNumberMakable.swift */,
+				2D04D9C6281BB8ED005B85C4 /* RacingForwardRandomNumberMaker.swift */,
+				2D04D9C8281BB8FA005B85C4 /* RacingForwardMaker.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
 		2D1062B828169791004BD50A /* RacingCarTest */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,22 +188,8 @@
 			isa = PBXGroup;
 			children = (
 				C7E1262F27239F7E0000DB8B /* main.swift */,
-				2D1062BE2816B3FF004BD50A /* Calculator.swift */,
-				2D04D995281A01A2005B85C4 /* CalculatorInput.swift */,
-				2D1062C22816C0DA004BD50A /* Calculable.swift */,
-				2D1062CC28183772004BD50A /* RacingGame.swift */,
-				2D1062CE28183848004BD50A /* GameInfo.swift */,
-				2D1062D02818A4D3004BD50A /* Racing.swift */,
-				2D1062D42818A94A004BD50A /* RacingInfo.swift */,
-				2D04D9CE281BCB37005B85C4 /* RacingPlayer.swift */,
-				2D1062CA281833B2004BD50A /* InputView.swift */,
-				2D04D9CC281BCAC6005B85C4 /* InputError.swift */,
-				2D1062D22818A709004BD50A /* RacingResultPrintable.swift */,
-				2D1062D62818AA21004BD50A /* ResultView.swift */,
-				2D04D9C0281BAE46005B85C4 /* RacingForwardLineMaker.swift */,
-				2D04D9C3281BB8B6005B85C4 /* RacingForwardNumberMakable.swift */,
-				2D04D9C6281BB8ED005B85C4 /* RacingForwardRandomNumberMaker.swift */,
-				2D04D9C8281BB8FA005B85C4 /* RacingForwardMaker.swift */,
+				2D04DA2928201A13005B85C4 /* Calculator */,
+				2D04DA2A28201A1F005B85C4 /* RacingCar */,
 			);
 			path = RacingCar;
 			sourceTree = "<group>";
