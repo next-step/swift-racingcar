@@ -78,7 +78,7 @@ class StringCalculatorTests: XCTestCase {
         XCTAssertFalse(result4, "사칙연산 기호가 아닌데도 true반환이 되었다.")
     }
     
-    func test_사칙연산기호가_아닌_기호가_포함된_경우_true반환하는지_0() {
+    func test_사칙연산기호가_아닌_기호가_포함된_경우_true반환하는지() {
         //given
         let successCode0: String = "+ -"
         let successCode1: String = "+ - / *"
@@ -100,10 +100,10 @@ class StringCalculatorTests: XCTestCase {
     
     func test_연산메서드가_사칙연산기호가_아닌_기호가_포함된_경우_nil반환하는지() {
         //given
-        let successCode0: String = "+ -"
-        let successCode1: String = "+ - / *"
-        let failCode0: String = "+ - / * ="
-        let failCode1: String = "="
+        let successCode0: String = "1 + 2 - 3"
+        let successCode1: String = "1 + 2 - 3 / 4 * 5"
+        let failCode0: String = "1 + 2 - 3 / 4 * 5 = 6"
+        let failCode1: String = "1 = 2"
         
         //when
         let result0 = calculator.calculate(string: successCode0)
