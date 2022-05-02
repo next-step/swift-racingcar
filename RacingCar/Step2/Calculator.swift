@@ -9,7 +9,7 @@ import Foundation
 
 class Calculator {
     func calculateStringExpression(_ input: String?) throws -> Int {
-        try checkIsValidExpression(input)
+        try validateExpression(input)
 
         var inputArray: [String] = input!.components(separatedBy: " ")
 
@@ -24,7 +24,7 @@ class Calculator {
         return result
     }
 
-    private func checkIsValidExpression(_ input: String?) throws {
+    private func validateExpression(_ input: String?) throws {
         if input == nil {
             throw CalculatorError.nilOrBlank
         }
