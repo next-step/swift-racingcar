@@ -28,6 +28,11 @@ class Step1Test: XCTestCase {
         
         XCTAssert(split.targetWithBracketAndComma("(1,2)") == "1,2","1,2 결과 값 실패")
     }
+    
+    func test_입력문자_1물음표2_쪼개면_1물음표2() {
+        let split = Splitter()
+        XCTAssert(split.targetWithComma("1?2") == ["1?2"],"[1?2] 결과 값 실패")
+    }
 
 }
 
