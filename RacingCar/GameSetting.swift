@@ -23,7 +23,7 @@ struct GameSetting: Equatable {
     static func == (lhs: GameSetting, rhs: GameSetting) -> Bool {
         return lhs.gameCount == rhs.gameCount
                 && lhs.carNames == rhs.carNames
-        && lhs.randomGenerator.randomRange == rhs.randomGenerator.randomRange
+                && lhs.randomGenerator.randomRange == rhs.randomGenerator.randomRange
     }
 
 }

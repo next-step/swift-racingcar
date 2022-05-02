@@ -11,9 +11,9 @@ import Foundation
 final class RacingGame {
 
     //MARK: - DATA PROPERRIES
-   private(set) var gameSetting: GameSetting = GameSetting(randomGenerator: RandomGenerator())
-    var cars: [Car] = []
-
+    private(set) var gameSetting: GameSetting = GameSetting(randomGenerator: RandomGenerator())
+    private(set)  var cars: [Car] = []
+    
     //MARK: - VIEWS
     let inputView: RacingGameInput
     let resultView: RacingGameResult
@@ -37,14 +37,19 @@ final class RacingGame {
     }
     
     func gameOver() {
-        let winners = pickWinnersByPoints()
+        let winners = pickWinnersByPoint(candidates: self.cars)
         resultView.showWinners(names: winners.map{$0.name})
     }
     
-    func pickWinnersByPoints() -> [Car] {
-        let maxPoint = cars.max(by: { $0.movePoint < $1.movePoint })?.movePoint ?? 0
-        let winners = cars.filter{ $0.movePoint == maxPoint }
+    func pickWinnersByPoint(candidates: [Car]) -> [Car] {
+        
+        guard let maxPoint = candidates.max(by: { $0.movePoint < $1.movePoint })?.movePoint else { return [] }
+        guard maxPoint != 0 else { return [] }
+        let winners = candidates.filter{ $0.movePoint == maxPoint }
         return winners
+        
+            
+       
     }
     
     private func setupCars(carNames: [String]) {

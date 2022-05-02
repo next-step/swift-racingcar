@@ -26,6 +26,8 @@ final class RacingGameInputView: RacingGameInput {
         case minusCount
         case input
         case textLengthExceeded
+        case emptyCars
+         
     }
     
     init(randomGenerator: RandomGettable) {
@@ -63,14 +65,14 @@ final class RacingGameInputView: RacingGameInput {
     }
     
     func validation(carNames: [String]) throws {
+        guard !carNames.isEmpty else { throw InputViewError.emptyCars }
         guard carNames.filter({ $0.count > 5 }).count == 0 else { throw InputViewError.textLengthExceeded }
-       
     }
     
     func validation(count: String) throws -> Int {
         guard let count = Int(count) else { throw InputViewError.incorrectFormat }
         guard count > 0 else { throw InputViewError.minusCount }
-        return count
+        return count 
     }
     
     func printQuestionCarNams() {

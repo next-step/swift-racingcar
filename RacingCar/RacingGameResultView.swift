@@ -24,6 +24,7 @@ protocol RacingGameResult: drawable {
     func printUserDistanceFromStart(car: Car)
     func printRacingResultPhrase()
     func showWinners(names: [String])
+    
 }
 
 final class RacingGameResultView: RacingGameResult {
@@ -43,9 +44,20 @@ final class RacingGameResultView: RacingGameResult {
     }
     
     func showWinners(names: [String]) {
+        names.isEmpty ? printNoWinner() : printWinners(names: names)
+        
+       
+    }
+    
+    func printWinners(names: [String]) {
         let winner = names.joined(separator:", ")
         print("\(winner)가 최종 우승했습니다.")
     }
+    
+    func printNoWinner(){
+        print("이번 레이싱게임서 우승자가 없습니다.")
+    }
+    
 }
 
 

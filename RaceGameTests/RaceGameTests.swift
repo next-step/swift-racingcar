@@ -120,8 +120,8 @@ class RaceGameTests: XCTestCase {
         let randomGenerator = RandomGenerator(range: 0..<10)
         let gameSetting = GameSetting(gameCount: 5, carNames: ["Tayo", "Ssing"], randomGenerator: randomGenerator)
         let inputView = RacingGameInputViewMock(gameSetting: gameSetting)
-        let resulView = RacingGameResultView()
-        sut = RacingGame(inputView: inputView, resultView: resulView)
+        let resultView = RacingGameResultView()
+        sut = RacingGame(inputView: inputView, resultView: resultView)
     
         //when &&then
         let expectation = RacingGameInputViewMock.InputViewError.incorrectFormat
@@ -129,6 +129,25 @@ class RaceGameTests: XCTestCase {
             XCTAssertEqual(error as? RacingGameInputViewMock.InputViewError, expectation)
         }
     }
+    
+    func test_inputView_correct_registerSetting_value() throws {
+        //given
+        let randomGenerator = RandomGenerator(range: 0..<10)
+
+    
+        let inputView = RacingGameInputView(randomGenerator: randomGenerator)
+        let resulView = RacingGameResultView()
+        sut = RacingGame(inputView: inputView, resultView: resulView)
+
+        //when
+        try sut.gameReady()
+
+        //then
+        let result = sut.gameSetting
+        let expectation = inputView.registerSetting()
+        XCTAssertEqual(result, expectation)
+    }
+
    
     func test_given쉼표로구분된자동차들입력_when쉼표로분리_then문자열배열로나뉘는지_체크() {
         //given
@@ -161,18 +180,69 @@ class RaceGameTests: XCTestCase {
         
         //then
         let expection = "Tayo,BoongBoong,Took,Bentley"
-        XCTAssertEqual(expection, removedSpacingCarNames)
+        XCTAssertEqual(removedSpacingCarNames, expection)
     }
 
-    func test_when레이스가끝난후_then포인트가가장높은차이름_출력_체크() {
-`
+    func test_when레이스가끝난후_then포인트가가장높은차이름_출력_체크() throws {
+        //given
+        let randomGenerator = RandomGenerator(range: 0..<10)
+        let cars = [
+            Car(name: "Hoya", randomGenerator: randomGenerator, movePoint: 0),
+            Car(name: "Lulu", randomGenerator: randomGenerator, movePoint: 1),
+            Car(name: "PeachBoost", randomGenerator: randomGenerator,movePoint: 3)
+        ]
+        
+        let gameSetting = GameSetting(gameCount: 5, carNames: ["Tayo", "Ssing"], randomGenerator: randomGenerator)
+        let inputView = RacingGameInputViewMock(gameSetting: gameSetting)
+        let resultView = RacingGameResultView()
+        sut = RacingGame(inputView: inputView, resultView: resultView)
+        let winnersName = sut.pickWinnersByPoint(candidates: cars)[0].name
+        
+        //then
+        let exectation = "PeachBoost"
+        
+        XCTAssertEqual(winnersName, exectation)
+
     }
 
     func test_given동점인우승자가여럿_when레이스가끝난후_then동점인우승자들_출력_체크() {
-
+        //given
+        let randomGenerator = RandomGenerator(range: 0..<10)
+        let cars = [
+            Car(name: "Hoya", randomGenerator: randomGenerator, movePoint: 0),
+            Car(name: "Lulu", randomGenerator: randomGenerator, movePoint: 3),
+            Car(name: "PeachBoost", randomGenerator: randomGenerator,movePoint: 3)
+        ]
+        
+        let gameSetting = GameSetting(gameCount: 5, carNames: ["Tayo", "Ssing"], randomGenerator: randomGenerator)
+        let inputView = RacingGameInputViewMock(gameSetting: gameSetting)
+        let resultView = RacingGameResultView()
+        sut = RacingGame(inputView: inputView, resultView: resultView)
+       
+        let winnersCount = sut.pickWinnersByPoint(candidates: cars).count
+        
+        let exectation = 2
+        
+        XCTAssertEqual(winnersCount, exectation)
     }
 
-    func test_given모두포인드가0_when레이스가끝난후_then무효_출력_체크() {
-
+    func test_given모두포인트가0_When우승자를뽑을때_then무효_출력_체크() {
+        //given
+        let randomGenerator = RandomGenerator(range: 0..<10)
+        let cars = [
+            Car(name: "Hoya", randomGenerator: randomGenerator, movePoint: 0),
+            Car(name: "Lulu", randomGenerator: randomGenerator, movePoint: 0),
+            Car(name: "PeachBoost", randomGenerator: randomGenerator,movePoint: 0)
+        ]
+        
+        let gameSetting = GameSetting(gameCount: 5, carNames: ["Tayo", "Ssing"], randomGenerator: randomGenerator)
+        let inputView = RacingGameInputViewMock(gameSetting: gameSetting)
+        let resultView = RacingGameResultView()
+        sut = RacingGame(inputView: inputView, resultView: resultView)
+       
+        //when
+        let winnersCount = sut.pickWinnersByPoint(candidates: cars).count
+        let exectation = 0
+        XCTAssertEqual(winnersCount, exectation)
     }
 }

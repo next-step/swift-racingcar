@@ -13,7 +13,9 @@ final class Car {
     var minimumCondition: Int = 4
     var movePoint: Int = 0
     private(set) var name: String
-    init(name: String, randomGenerator: RandomGettable) {
+    init(name: String, randomGenerator: RandomGettable, movePoint: Int = 0) {
+        self.movePoint = movePoint
+        
         self.name = name
         self.randomGenerator = randomGenerator
     }
