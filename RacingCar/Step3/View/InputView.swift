@@ -10,17 +10,17 @@ import Foundation
 struct InputView {
     func gameStart() throws -> (carCount:Int,attemptCount:Int) {
         print(GameGuide.carCount, terminator: " ")
-        let carCount = try myReadLine()
+        let carCount = try readInput()
         try self.isValidNumber(carCount)
         
         print(GameGuide.attemptCount, terminator: " ")
-        let attemptCount = try myReadLine()
+        let attemptCount = try readInput()
         try self.isValidNumber(attemptCount)
         
         return (carCount,attemptCount)
     }
     
-    private func myReadLine() throws -> Int {
+    private func readInput() throws -> Int {
         guard let input: String = readLine(), let inputNumber = Int(input) else {
             throw InputError.notNumber
         }
