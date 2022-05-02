@@ -11,7 +11,7 @@ do {
     print("시도할 횟수는 몇 회인가요? ")
     let gameCount = try InputView.readCount()
     
-    let game = Game(cars: carInfo, counts: gameCount)
+    let game = Game(cars: carInfo, count: gameCount)
     game.run()
 } catch let error as InputEror {
     print(error.debugDescription)

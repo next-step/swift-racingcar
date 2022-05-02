@@ -11,9 +11,9 @@ class Game {
     private let cars: [Car]
     private let count: Int
     
-    init(cars: [Car], counts: Int) {
+    init(cars: [Car], count: Int) {
         self.cars = cars
-        self.counts = counts
+        self.count = count
     }
 }
 
@@ -37,7 +37,7 @@ extension Game {
     func run() {
         print("\n실행 결과")
         
-        for _ in 0..<counts {
+        for _ in 0..<count {
             runOneCycle(of: cars)
         }
         
