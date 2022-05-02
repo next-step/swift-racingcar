@@ -8,7 +8,7 @@ import Foundation
 
 extension String {
     
-    private enum ArithmeticalCode: String {
+    enum ArithmeticalCode: String {
         case add = "+"
         case division = "/"
         case multiply = "*"
@@ -18,9 +18,15 @@ extension String {
     func isArithmeticalCode() -> Bool {
         return ArithmeticalCode(rawValue: self) != nil ? true : false
     }
+    
+    func toArithmeticalCode() -> ArithmeticalCode? {
+        return ArithmeticalCode(rawValue: self)
+    }
 }
 
 struct StringCalculator {
+    
+    typealias ArithmeticalExpression = (Int, Int) -> Int
     
     func containsWrongArithmeticalCode(string arithmeticString: String) -> Bool {
         let wrongCodes = arithmeticString
@@ -36,26 +42,67 @@ struct StringCalculator {
             return nil
         }
         
+        guard arithmeticString.components(separatedBy: " ").isEmpty == false else {
+            return nil
+        }
+        
         guard containsWrongArithmeticalCode(string: arithmeticString) == false else {
             return nil
         }
         
-        return 0
+        var result: Int = 0
+        let slicedString = arithmeticString.components(separatedBy: " ")
+        
+        if let firstNum = Int(slicedString.first!) {
+            result = firstNum
+        } else {
+            return nil
+        }
+ 
+        var index: Int = 1
+        
+        while index < slicedString.count {
+            
+            if let arithmeticalCode = slicedString[index].toArithmeticalCode() {
+                
+                let num = slicedString[index + 1]
+                let arithmeticalExpression = getArithmeticalExpression(code: arithmeticalCode)
+                result = arithmeticalExpression(result, Int(num)!)
+            }
+
+            index += 2
+        }
+        
+        return result
     }
     
-    func 더하다(a: Int, b: Int) -> Int {
+    private func getArithmeticalExpression(code: String.ArithmeticalCode) -> ArithmeticalExpression {
+
+        switch code {
+        case .add:
+            return add(a:b:)
+        case .division:
+            return division(a:b:)
+        case .multiply:
+             return multiply(a:b:)
+        case .subtract:
+            return substract
+        }
+    }
+    
+    func add(a: Int, b: Int) -> Int {
         return a + b
     }
     
-    func 나누다(a: Int, b: Int) -> Int {
+    func division(a: Int, b: Int) -> Int {
         return a / b
     }
     
-    func 곱하다(a: Int, b: Int) -> Int {
+    func multiply(a: Int, b: Int) -> Int {
         return a * b
     }
     
-    func 빼다(a: Int, b: Int) -> Int {
+    func substract(a: Int, b: Int) -> Int {
         return a - b
     }
 }

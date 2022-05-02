@@ -16,7 +16,7 @@ class StringCalculatorTests: XCTestCase {
         let a = 1
         let b = 4
         
-        let result = calculator.더하다(a: a, b: b)
+        let result = calculator.add(a: a, b: b)
         XCTAssertEqual(result, a + b)
     }
     
@@ -24,7 +24,7 @@ class StringCalculatorTests: XCTestCase {
         let a = 3
         let b = 2
         
-        let result = calculator.빼다(a: a, b: b)
+        let result = calculator.substract(a: a, b: b)
         XCTAssertEqual(result, a - b)
     }
     
@@ -32,7 +32,7 @@ class StringCalculatorTests: XCTestCase {
         let a = 3
         let b = 3
         
-        let result = calculator.나누다(a: a, b: b)
+        let result = calculator.division(a: a, b: b)
         XCTAssertEqual(result, a / b)
     }
     
@@ -40,7 +40,7 @@ class StringCalculatorTests: XCTestCase {
         let a = 3
         let b = 3
         
-        let result = calculator.곱하다(a: a, b: b)
+        let result = calculator.multiply(a: a, b: b)
         XCTAssertEqual(result, a * b)
     }
     
@@ -118,19 +118,84 @@ class StringCalculatorTests: XCTestCase {
         XCTAssertNil(result3, "연산메서드가 사칙연산 기호가 아닌 기호가 포함되었지만 nil 반환이 되지 않았다.")
     }
     
-    func test_사칙연산을_표현한_문자열의_계산이_잘되는지() {
+    func test_2_더하기_4가_6이_되는지() {
         //given
-        let numberA: Int = 1
-        let numberB: Int = 2
-        
+        let numberA: Int = 2
+        let numberB: Int = 4
         let arithmeticString: String = "\(numberA) + \(numberB)"
         
         //when
         let result = calculator.calculate(string: arithmeticString)
         
-        XCTAssertNotNil(result, "잘 못되었는데?")
-        XCTAssertEqual(result!, numberA + numberB)
+        //then
+        XCTAssertNotNil(result)
+        XCTAssertEqual(result!, 6)
+    }
+    
+    func test_4_빼기_3이_1이_되는지() {
+        //given
+        let numberA: Int = 4
+        let numberB: Int = 3
+        let arithmeticString: String = "\(numberA) - \(numberB)"
         
+        //when
+        let result = calculator.calculate(string: arithmeticString)
+        
+        //then
+        XCTAssertNotNil(result)
+        XCTAssertEqual(result!, 1)
+    }
+    
+    func test_2_곱하기_4가_8이_되는지() {
+        //given
+        let numberA: Int = 2
+        let numberB: Int = 4
+        let arithmeticString: String = "\(numberA) * \(numberB)"
+        
+        //when
+        let result = calculator.calculate(string: arithmeticString)
+        
+        //then
+        XCTAssertNotNil(result)
+        XCTAssertEqual(result!, 8)
+    }
+    
+    func test_4_나누기_2가_2이_되는지() {
+        //given
+        let numberA: Int = 4
+        let numberB: Int = 2
+        let arithmeticString: String = "\(numberA) / \(numberB)"
+        
+        //when
+        let result = calculator.calculate(string: arithmeticString)
+        
+        //then
+        XCTAssertNotNil(result)
+        XCTAssertEqual(result!, 2)
+    }
+    
+    func test_1부터10까지_정수의합_55되는지() {
+        //given
+        let arithmeticString: String = "1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10"
+        
+        //when
+        let result = calculator.calculate(string: arithmeticString)
+        
+        //then
+        XCTAssertNotNil(result)
+        XCTAssertEqual(result!, 55)
+    }
+    
+    func test_사칙연산을_표현한_문자열의_연산이_정상작동되는지() {
+        //given
+        let arithmeticString: String = "2 + 3 * 4 / 2"
+        
+        //when
+        let result = calculator.calculate(string: arithmeticString)
+        
+        //then
+        XCTAssertNotNil(result)
+        XCTAssertEqual(result!, 10)
     }
     
     
