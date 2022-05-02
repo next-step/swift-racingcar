@@ -36,7 +36,7 @@ class RaceGameTests: XCTestCase {
     func test_car_movePoint_lessThanOrEqual_gameCount() throws {
         //given
         let gameCount = 3
-        let carNames = ["Tayo", "Sing", "bureong"]
+        let carNames = ["Tayo", "Sing"]
         let randomGenerator = RandomGenerator()
         let gameSetting = GameSetting(gameCount: gameCount, carNames: carNames, randomGenerator: randomGenerator)
         let inputView = RacingGameInputViewMock(gameSetting: gameSetting)
@@ -102,9 +102,6 @@ class RaceGameTests: XCTestCase {
         XCTAssertEqual(result, gameSetting)
     }
     
-//
-    
-    
     func test_inputView_validation_minus_value() throws {
         let randomGenerator = RandomGenerator(range: 0..<10)
         let gameSetting = GameSetting(gameCount: 5, carNames: ["Tayo", "Ssing"], randomGenerator: randomGenerator)
@@ -149,6 +146,7 @@ class RaceGameTests: XCTestCase {
         let inputView = RacingGameInputView(randomGenerator: RandomGenerator())
         let splitedCarNames = inputView.splitCarNames(input: carNames)
         
+        //then
         let expectation = RacingGameInputView.InputViewError.textLengthExceeded
         XCTAssertThrowsError(try inputView.validation(carNames: splitedCarNames)) { error in
             XCTAssertEqual(error as? RacingGameInputView.InputViewError, expectation)
@@ -167,7 +165,7 @@ class RaceGameTests: XCTestCase {
     }
 
     func test_when레이스가끝난후_then포인트가가장높은차이름_출력_체크() {
-
+`
     }
 
     func test_given동점인우승자가여럿_when레이스가끝난후_then동점인우승자들_출력_체크() {

@@ -21,7 +21,7 @@ extension drawable {
 
 protocol RacingGameResult: drawable {
     func showCarsDistance(cars: [Car])
-    func printUserDistanceFromStart(to distance: Int)
+    func printUserDistanceFromStart(car: Car)
     func printRacingResultPhrase()
 }
 
@@ -32,11 +32,12 @@ final class RacingGameResultView: RacingGameResult {
     }
     
     func showCarsDistance(cars: [Car]) {
-        cars.forEach{printUserDistanceFromStart(to:$0.movePoint)}
+        
+        cars.forEach{printUserDistanceFromStart(car: $0)}
         lineDivider()
     }
 
-    func printUserDistanceFromStart(to distance: Int) {
-        print("\(String(repeating: "-", count: distance))")
+    func printUserDistanceFromStart(car: Car) {
+        print("\(car.name) : \(String(repeating: "-", count: car.movePoint))")
     }
 }
