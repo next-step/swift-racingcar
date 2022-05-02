@@ -31,12 +31,12 @@ final class RacingGame {
     }
     
     func gameStart() {
-        setupCars(carCount: gameSetting.carCount)
+        setupCars(carNames: gameSetting.carNames)
         loopStage()
     }
     
-    private func setupCars(carCount: Int) {
-        self.cars = (0..<gameSetting.carCount).map{ _ in Car(randomGenerator: gameSetting.randomGenerator)}
+    private func setupCars(carNames: [String]) {
+        self.cars = gameSetting.carNames.map{ carName in Car(name: carName, randomGenerator: gameSetting.randomGenerator)}
     }
   
     private func loopStage() {

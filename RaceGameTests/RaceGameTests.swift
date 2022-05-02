@@ -27,7 +27,6 @@ class RaceGameTests: XCTestCase {
         //when
         for _ in 0..<50 {
             let randomInteger = randomGenerator.random()
-            print("randomInteger: \(randomInteger)")
             //then
             let expectation = 0..<10
             XCTAssertTrue(expectation.contains(randomInteger))
@@ -37,9 +36,9 @@ class RaceGameTests: XCTestCase {
     func test_car_movePoint_lessThanOrEqual_gameCount() throws {
         //given
         let gameCount = 3
-        let carCount = 3
+        let carNames = ["Tayo", "Sing", "bureong"]
         let randomGenerator = RandomGenerator()
-        let gameSetting = GameSetting(gameCount: gameCount, carCount: carCount, randomGenerator: randomGenerator)
+        let gameSetting = GameSetting(gameCount: gameCount, carNames: carNames, randomGenerator: randomGenerator)
         let inputView = RacingGameInputViewMock(gameSetting: gameSetting)
         let resultView = RacingGameResultView()
         
@@ -58,7 +57,7 @@ class RaceGameTests: XCTestCase {
         
         //given
         let randomGenerator = RandomGenerator(range: 5..<10)
-        let car = Car(randomGenerator: randomGenerator)
+        let car = Car(name: "Tayo", randomGenerator: randomGenerator)
         car.minimumCondition = 3
         //when
         car.move()
@@ -72,7 +71,7 @@ class RaceGameTests: XCTestCase {
         
         //given
         let randomGenerator = RandomGenerator(range: 5..<10)
-        let car = Car(randomGenerator: randomGenerator)
+        let car = Car(name: "Tayo",randomGenerator: randomGenerator)
         car.minimumCondition = 100
         //when
         car.move()
@@ -86,8 +85,8 @@ class RaceGameTests: XCTestCase {
         //given
         let randomGenerator = RandomGenerator(range: 0..<10)
         let gameCount = 5
-        let carCount = 3
-        let gameSetting = GameSetting(gameCount: gameCount, carCount: carCount, randomGenerator: randomGenerator)
+        let carNames = ["Tayo", "Sing", "bureong"]
+        let gameSetting = GameSetting(gameCount: gameCount, carNames: carNames, randomGenerator: randomGenerator)
 
 
         let inputView = RacingGameInputViewMock(gameSetting: gameSetting)
@@ -122,7 +121,7 @@ class RaceGameTests: XCTestCase {
     
     func test_inputView_validation_minus_value() throws {
         let randomGenerator = RandomGenerator(range: 0..<10)
-        let gameSetting = GameSetting(gameCount: 5, carCount: 2, randomGenerator: randomGenerator)
+        let gameSetting = GameSetting(gameCount: 5, carNames: ["Tayo", "Ssing"], randomGenerator: randomGenerator)
         let inputView = RacingGameInputViewMock(gameSetting: gameSetting)
         let resulView = RacingGameResultView()
         sut = RacingGame(inputView: inputView, resultView: resulView)
@@ -136,7 +135,7 @@ class RaceGameTests: XCTestCase {
     
     func test_inputView_validation_incorrectFormmat_value() throws {
         let randomGenerator = RandomGenerator(range: 0..<10)
-        let gameSetting = GameSetting(gameCount: 5, carCount: 2, randomGenerator: randomGenerator)
+        let gameSetting = GameSetting(gameCount: 5, carNames: ["Tayo", "Ssing"], randomGenerator: randomGenerator)
         let inputView = RacingGameInputViewMock(gameSetting: gameSetting)
         let resulView = RacingGameResultView()
         sut = RacingGame(inputView: inputView, resultView: resulView)
@@ -149,26 +148,32 @@ class RaceGameTests: XCTestCase {
     }
    
     func test_when자동차의이름_5자초과_thenTextLengthExceeded_Error발생하는지_체크() throws {
-        
+
     }
 
     func test_given쉼표로구분된자동차들입력_when쉼표로분리_then문자열배열로나뉘는지_체크() {
+        //given
+        let carNames = "Tayo,BoongBoong,Took,Bentley"
+        let inputView = RacingGameInputView(randomGenerator: RandomGenerator())
+        let stirngs = inputView.splitCarNames(input: carNames)
+        
+        XCTAssertEqual(["Tayo", "BoongBoong", "Took", "Bentley"], stirngs)
         
     }
 
     func test_given공백이포함된자동차이름들_then공백제거_체크() {
-        
+
     }
 
     func test_when레이스가끝난후_then포인트가가장높은차이름_출력_체크() {
-        
+
     }
-    
+
     func test_given동점인우승자가여럿_when레이스가끝난후_then동점인우승자들_출력_체크() {
-        
+
     }
-    
+
     func test_given모두포인드가0_when레이스가끝난후_then무효_출력_체크() {
-        
+
     }
 }
