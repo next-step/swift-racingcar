@@ -19,6 +19,19 @@ class StringCalculatorTests: XCTestCase {
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
+    
+    
+    func test_입력값이_nil인경우_thowrs발생하는지() throws {
+        //given
+        let arithmeticString: String? = nil
+        
+        //when
+        let result = calculator.연산하기(string: arithmeticString)
+        
+        //then
+        XCTAssertNil(result, "입력값이 nil이지만 nil이 반환되지 않았다.")
+    }
+    
 
     func test_두_정수의_덧셈이_잘_동작하는지() {
         let a = 1
