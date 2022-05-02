@@ -8,18 +8,18 @@
 import Foundation
 
 struct RacingInfo: RacingResultPrintable {
-    private let info: [[AbleToRace]]
+    private let raceResult: [[AbleToRace]]
     
     init(racing info: [[AbleToRace]]) {
-        self.info = info
+        self.raceResult = info
     }
     
     func racingInfo() -> [[AbleToRace]] {
-        info
+        raceResult
     }
     
     func winnerGroup() -> [AbleToRace] {
-        guard let lastMatchInfo = info.last else { return [] }
+        guard let lastMatchInfo = raceResult.last else { return [] }
         return self.award(lastMatchInfo: lastMatchInfo)
     }
     
