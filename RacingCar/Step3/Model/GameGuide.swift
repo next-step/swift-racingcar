@@ -8,24 +8,11 @@
 import Foundation
 
 enum GameGuide {
-    case carCount
-    case attemptCount
-    
-    var description: String {
-        switch self {
-        case .carCount:
-            return "자동차 대수는 몇 대인가요?"
-        case .attemptCount:
-            return "시도할 횟수는 몇 회인가요?"
-        }
-    }
+    static let carCount = "자동차 대수는 몇 대인가요?"
+    static let attemptCount = "자동차 대수는 몇 대인가요?"
 }
 
-extension GameGuide {
-    func showGuide() {
-        print(self.description, terminator: " ")
-    }
-    
+extension GameGuide {    
     static func rule(_ attemptRound: Int) -> Int {
         if attemptRound == 1 {
             return 1
