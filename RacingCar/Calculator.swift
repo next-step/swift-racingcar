@@ -7,9 +7,14 @@
 
 import Foundation
 
+enum CalculatorError: Error {
+    case divideByZero
+    case emptyString
+    case unknownOperator
+}
+
 class Calculator {
     
-    private let operatorSet = ["+", "-", "*", "/"]
     private var evaluation: Int?
     private var currentOperator: String?
     
@@ -25,11 +30,16 @@ class Calculator {
         return lhs * rhs
     }
     
-    private func div(lhs: Int, rhs: Int) -> Int {
+    private func div(lhs: Int, rhs: Int) throws -> Int {
+        
+        if rhs == 0 {
+            throw CalculatorError.divideByZero
+        }
+        
         return lhs / rhs
     }
     
-    private func calculate(lhs: Int, rhs: Int, op: String) -> Int {
+    private func calculate(lhs: Int, rhs: Int, op: String) throws -> Int {
         switch op {
         case "+":
             return add(lhs: lhs, rhs: rhs)
@@ -38,29 +48,37 @@ class Calculator {
         case "*":
             return mul(lhs: lhs, rhs: rhs)
         case "/":
-            return div(lhs: lhs, rhs: rhs)
+            return try div(lhs: lhs, rhs: rhs)
         default:
-            return 0
+            throw CalculatorError.unknownOperator
         }
     }
     
-    private func isOperator(_ input: String) -> Bool {
-        return operatorSet.contains { $0 == input }
+    private func isInteger(_ input: String) -> Bool {
+        if Int(input) != nil {
+            return true
+        } else {
+            return false
+        }
     }
     
-    func evaluate(input: String) -> Int {
+    func evaluate(input: String) throws -> Int {
+        if input.isEmpty {
+            throw CalculatorError.emptyString
+        }
+        
         let tokens: [String] = input.components(separatedBy: " ")
         
-        let operators = tokens.filter { isOperator($0) }
+        let operators = tokens.filter { !isInteger($0) }
         let operands = tokens.compactMap { Int($0) }
         
         var result: Int = Int(operands[0])
         
-        operands
+        try operands
             .suffix(from: 1)
             .enumerated()
             .forEach { index, operand in
-                result = calculate(lhs: result, rhs: operand, op: operators[index])
+                result = try calculate(lhs: result, rhs: operand, op: operators[index])
             }
         
         return result
