@@ -28,7 +28,8 @@ struct StringCalculator: Calculator {
     private let inputChangeHelper = StringCalculatorInputChange()
     
     func caculate(input: String?) throws -> Int {
-        let changeArray = try inputChangeHelper.removeEmpty(input: input)
+        let removeOptionalValue = try inputChangeHelper.removeOptional(input: input)
+        let changeArray = try inputChangeHelper.separateByEmptyPlace(input: removeOptionalValue)
         let _ = try inputChangeHelper.inputStringArrayCountIsOdd(input: changeArray)
         var currentValue = 0
         var operate: Operator? = nil

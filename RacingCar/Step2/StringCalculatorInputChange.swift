@@ -24,10 +24,14 @@ struct StringCalculatorInputChange {
         return myOperator
     }
     
-    func removeEmpty(input:String?) throws -> [String] {
+    func removeOptional(input:String?) throws -> String {
         guard let input = input else {
             throw StringCalculatorError.inputNil
         }
+        return input
+    }
+    
+    func separateByEmptyPlace(input:String) throws -> [String] {
         let result = input.components(separatedBy: " ")
         if result.isEmpty {
             throw StringCalculatorError.inputEmpty
