@@ -102,22 +102,8 @@ class RaceGameTests: XCTestCase {
         XCTAssertEqual(result, gameSetting)
     }
     
-    func test_inputView_correct_registerSetting_value() throws {
-        //given
-        let randomGenerator = RandomGenerator(range: 0..<10)
+//
     
-        let inputView = RacingGameInputView(randomGenerator: randomGenerator)
-        let resulView = RacingGameResultView()
-        sut = RacingGame(inputView: inputView, resultView: resulView)
-
-        //when
-        try sut.gameReady()
-        
-        //then
-        let result = sut.gameSetting
-        let expectation = inputView.registerSetting()
-        XCTAssertEqual(result, expectation)
-    }
     
     func test_inputView_validation_minus_value() throws {
         let randomGenerator = RandomGenerator(range: 0..<10)
@@ -147,22 +133,37 @@ class RaceGameTests: XCTestCase {
         }
     }
    
-    func test_when자동차의이름_5자초과_thenTextLengthExceeded_Error발생하는지_체크() throws {
-
-    }
-
     func test_given쉼표로구분된자동차들입력_when쉼표로분리_then문자열배열로나뉘는지_체크() {
         //given
         let carNames = "Tayo,BoongBoong,Took,Bentley"
         let inputView = RacingGameInputView(randomGenerator: RandomGenerator())
-        let stirngs = inputView.splitCarNames(input: carNames)
         
-        XCTAssertEqual(["Tayo", "BoongBoong", "Took", "Bentley"], stirngs)
+        //then
+        let expectation = inputView.splitCarNames(input: carNames)
+        XCTAssertEqual(["Tayo", "BoongBoong", "Took", "Bentley"], expectation)
+    }
+    
+    func test_when자동차의이름_5자초과_thenTextLengthExceeded_Error발생하는지_체크() throws {
+        //given
+        let carNames = "Tayo,BoongBoong,Took,Bentley"
+        let inputView = RacingGameInputView(randomGenerator: RandomGenerator())
+        let splitedCarNames = inputView.splitCarNames(input: carNames)
         
+        let expectation = RacingGameInputView.InputViewError.textLengthExceeded
+        XCTAssertThrowsError(try inputView.validation(carNames: splitedCarNames)) { error in
+            XCTAssertEqual(error as? RacingGameInputView.InputViewError, expectation)
+        }
     }
 
     func test_given공백이포함된자동차이름들_then공백제거_체크() {
-
+        //given
+        let carNames = "Tayo,BoongBoong,  Took,     Bentley"
+        let inputView = RacingGameInputView(randomGenerator: RandomGenerator())
+        let removedSpacingCarNames = inputView.removeSpacing(input: carNames)
+        
+        //then
+        let expection = "Tayo,BoongBoong,Took,Bentley"
+        XCTAssertEqual(expection, removedSpacingCarNames)
     }
 
     func test_when레이스가끝난후_then포인트가가장높은차이름_출력_체크() {

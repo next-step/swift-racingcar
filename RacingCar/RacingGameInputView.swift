@@ -43,9 +43,9 @@ final class RacingGameInputView: RacingGameInput {
         guard let input: String = readLine() else { throw InputViewError.input}
         let removeInput = removeSpacing(input: input)
         let carNames = splitCarNames(input: removeInput)
+        try validation(carNames: carNames)
         return carNames
     }
-    
     
     func inputGameCount() throws -> Int {
         guard let input: String = readLine() else { throw InputViewError.input}
@@ -62,7 +62,10 @@ final class RacingGameInputView: RacingGameInput {
         return input.replacingOccurrences(of: " ", with: "")
     }
     
-   
+    func validation(carNames: [String]) throws {
+        guard carNames.filter({ $0.count > 5 }).count == 0 else { throw InputViewError.textLengthExceeded }
+       
+    }
     
     func validation(count: String) throws -> Int {
         guard let count = Int(count) else { throw InputViewError.incorrectFormat }
