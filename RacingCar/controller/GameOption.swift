@@ -9,10 +9,10 @@ import Foundation
 
 class GameOption {
     static func generateRandomNumber() -> Int {
-        return Int(arc4random_uniform(10))
+        return Int.random(in: Constants.randomRange)
     }
     
-    static func canGoFoward(_ n: Int, _ condition: Int = 4) -> Bool {
-        return n >= condition
+    static func canGoFoward(_ n: Int) -> Bool {
+        return n >= Constants.defaultCondition
     }
 }
