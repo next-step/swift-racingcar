@@ -24,7 +24,7 @@ struct StringCalculatorInputChange {
         return myOperator
     }
     
-    func emptyRemover(input:String?) throws -> [String] {
+    func removeEmpty(input:String?) throws -> [String] {
         guard let input = input else {
             throw StringCalculatorError.inputNil
         }
