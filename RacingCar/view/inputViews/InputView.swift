@@ -36,8 +36,8 @@ class InputView {
 }
 
 extension InputView {
-    private static func isValidName(_ name: String, _ min: Int = 0, _ max:Int = 5) throws -> Bool {
-        if !(name.count > min && name.count < max) {
+    private static func isValidName(_ name: String) throws -> Bool {
+        if !(name.count > Constants.nameMinRength && name.count < Constants.nameMaxRength) {
             throw InputEror.invalidCarInfo
         }
         return true
