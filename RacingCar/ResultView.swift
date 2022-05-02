@@ -18,7 +18,7 @@ struct ResultView {
         printWinner(printable.winnerGroup())
     }
     
-    static func printMatch(_ match: [AbleToRace]) {
+    private static func printMatch(_ match: [AbleToRace]) {
         for racer in match {
             let name: String = racer.racerName()
             let move: String = RacingForwardLineMaker.convertNumberToLine(move: racer.moveCountByRacer())
@@ -27,7 +27,7 @@ struct ResultView {
         }
     }
 
-    static func printWinner(_ winner: [AbleToRace]) {
+    private static func printWinner(_ winner: [AbleToRace]) {
         print("우승자는!!!")
         for racer in winner {
             print(racer.racerName())

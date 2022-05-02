@@ -37,7 +37,7 @@ struct Racing: RacingProtocol {
         var updatedMatchInfo: [AbleToRace] = matchInfo
         
         for player in 0..<playerCount {
-            updatedMatchInfo[player].move(foward: forwardNumberMaker.forward())
+            updatedMatchInfo[player].move(forward: forwardNumberMaker.forward())
         }
         
         return updatedMatchInfo

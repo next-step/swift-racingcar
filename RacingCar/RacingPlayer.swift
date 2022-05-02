@@ -10,7 +10,7 @@ import Foundation
 protocol AbleToRace {
     func racerName() -> String
     func moveCountByRacer() -> Int
-    mutating func move(foward: Int)
+    mutating func move(forward: Int)
 }
 
 struct RacingPlayer: Equatable, AbleToRace {
@@ -22,8 +22,8 @@ struct RacingPlayer: Equatable, AbleToRace {
         self.moveCount = moveCount
     }
     
-    mutating func move(foward: Int) {
-        moveCount += foward
+    mutating func move(forward: Int) {
+        moveCount += forward
     }
     
     func racerName() -> String {

@@ -9,8 +9,8 @@ import XCTest
 
 class RacingCarTest: XCTestCase {
     private let gameInfo = GameInfo(players: ["mansa", "kim"], round: 3)
-    private let forwarMaker = RacingForwardMaker()
-    private lazy var racing = Racing(gameInfo: gameInfo, forwardNumberMaker: forwarMaker)
+    private let forwardMaker = RacingForwardMaker()
+    private lazy var racing = Racing(gameInfo: gameInfo, forwardNumberMaker: forwardMaker)
     
     func testMakeRacingForwardLine() {
         let racingForwardLine = RacingForwardLineMaker.convertNumberToLine(move: 3)
@@ -41,13 +41,13 @@ class RacingCarTest: XCTestCase {
         XCTAssertEqual(player.racerName(), "mansa")
         XCTAssertEqual(player.moveCountByRacer(), 0)
         
-        player.move(foward: 1)
+        player.move(forward: 1)
         
         XCTAssertEqual(player.moveCountByRacer(), 1)
     }
     
     func testRacing() {
-        let racing = Racing(gameInfo: gameInfo, forwardNumberMaker: forwarMaker)
+        let racing = Racing(gameInfo: gameInfo, forwardNumberMaker: forwardMaker)
         
         XCTAssertEqual(racing.play().first?[0].racerName(), "mansa")
         XCTAssertEqual(racing.play().first?[1].racerName(), "kim")
