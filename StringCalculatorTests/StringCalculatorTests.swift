@@ -12,6 +12,49 @@ class StringCalculatorTests: XCTestCase {
 
     private let calculator = StringCalculator()
     
+    func test_두_정수의_덧셈이_잘_동작하는지() {
+        let a = 1
+        let b = 4
+        
+        let result = calculator.더하다(a: a, b: b)
+        XCTAssertEqual(result, a + b)
+    }
+    
+    func test_두_정수의_뺄셈이_잘_동작하는지() {
+        let a = 3
+        let b = 2
+        
+        let result = calculator.빼다(a: a, b: b)
+        XCTAssertEqual(result, a - b)
+    }
+    
+    func test_두_정수의_나눗셈이_잘_동작하는지() {
+        let a = 3
+        let b = 3
+        
+        let result = calculator.나누다(a: a, b: b)
+        XCTAssertEqual(result, a / b)
+    }
+    
+    func test_두_정수의_곱셈이_잘_동작하는지() {
+        let a = 3
+        let b = 3
+        
+        let result = calculator.곱하다(a: a, b: b)
+        XCTAssertEqual(result, a * b)
+    }
+    
+    func test_입력값이_nil인경우_nil반환하는지() throws {
+        //given
+        let arithmeticString: String? = nil
+        
+        //when
+        let result = calculator.calculate(string: arithmeticString)
+        
+        //then
+        XCTAssertNil(result, "입력값이 nil이지만 nil이 반환되지 않았다.")
+    }
+    
     func test_문자가_사칙연산기호가_아닐경우_false_반환하는지() {
         //given
         let arithmeticAdd: String = "+"
@@ -75,47 +118,8 @@ class StringCalculatorTests: XCTestCase {
         XCTAssertNil(result3, "연산메서드가 사칙연산 기호가 아닌 기호가 포함되었지만 nil 반환이 되지 않았다.")
     }
     
-    func test_입력값이_nil인경우_nil반환하는지() throws {
-        //given
-        let arithmeticString: String? = nil
-        
-        //when
-        let result = calculator.calculate(string: arithmeticString)
-        
-        //then
-        XCTAssertNil(result, "입력값이 nil이지만 nil이 반환되지 않았다.")
-    }
     
-    func test_두_정수의_덧셈이_잘_동작하는지() {
-        let a = 1
-        let b = 4
-        
-        let result = calculator.더하다(a: a, b: b)
-        XCTAssertEqual(result, a + b)
-    }
     
-    func test_두_정수의_뺄셈이_잘_동작하는지() {
-        let a = 3
-        let b = 2
-        
-        let result = calculator.빼다(a: a, b: b)
-        XCTAssertEqual(result, a - b)
-    }
     
-    func test_두_정수의_나눗셈이_잘_동작하는지() {
-        let a = 3
-        let b = 3
-        
-        let result = calculator.나누다(a: a, b: b)
-        XCTAssertEqual(result, a / b)
-    }
-    
-    func test_두_정수의_곱셈이_잘_동작하는지() {
-        let a = 3
-        let b = 3
-        
-        let result = calculator.곱하다(a: a, b: b)
-        XCTAssertEqual(result, a * b)
-    }
    
 }
