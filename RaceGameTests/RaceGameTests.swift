@@ -215,23 +215,18 @@ class RaceGameTests: XCTestCase {
         XCTAssertEqual(winnersCount, exectation)
     }
 
-    func test_given모두포인트가0_When우승자를뽑을때_then무효_출력_체크() {
+    func test_given모두포인트가0_When우승자를뽑을때_then무효_출력_체크() throws {
         //given
-        let randomGenerator = RandomGenerator(range: 0..<10)
-        let cars = [
-            Car(name: "Hoya", randomGenerator: randomGenerator, movePoint: 0),
-            Car(name: "Lulu", randomGenerator: randomGenerator, movePoint: 0),
-            Car(name: "PeachBoost", randomGenerator: randomGenerator,movePoint: 0)
-        ]
-        
-        let gameSetting = GameSetting(gameCount: 5, carNames: ["Tayo", "Ssing"], randomGenerator: randomGenerator)
+        let randomGenerator = RandomGenerator(range: 0..<10)        
+        let gameSetting = GameSetting(gameCount: 0, carNames: ["Tayo", "Ssing"], randomGenerator: randomGenerator)
         let inputView = RacingGameInputViewMock(gameSetting: gameSetting)
-        let resultView = RacingGameResultView()
+        let resultView = RacingGameResultViewMock()
         sut = RacingGame(inputView: inputView, resultView: resultView)
        
-        //when
-        let winnersCount = sut.pickWinnersByPoint(candidates: cars).count
-        let exectation = 0
-        XCTAssertEqual(winnersCount, exectation)
+        try sut.gameReady()
+        sut.gameOver()
+        
+        let printNoWinnerCallCount = 1
+        XCTAssertEqual(resultView.printNoWinnerCallCount, printNoWinnerCallCount)
     }
 }
