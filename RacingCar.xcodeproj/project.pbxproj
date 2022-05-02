@@ -53,6 +53,7 @@
 		F141D7BC281B852700E69D41 /* RaceGameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceGameTests.swift; sourceTree = "<group>"; };
 		F141D7C6281B955900E69D41 /* RacingGameInputViewMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingGameInputViewMock.swift; sourceTree = "<group>"; };
 		F141D7CF281E93C900E69D41 /* RandomGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomGenerator.swift; sourceTree = "<group>"; };
+		F141D7D2281E978300E69D41 /* RacingGame.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = RacingGame.md; sourceTree = "<group>"; };
 		F14AA42C2816CCC8000CF268 /* StringCaculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringCaculator.swift; sourceTree = "<group>"; };
 		F14AA4342816CEB5000CF268 /* StringCaculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StringCaculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F14AA4362816CEB5000CF268 /* StringCaculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringCaculatorTests.swift; sourceTree = "<group>"; };
@@ -117,6 +118,7 @@
 		F141D7AA281AF32600E69D41 /* RaceGame */ = {
 			isa = PBXGroup;
 			children = (
+				F141D7D2281E978300E69D41 /* RacingGame.md */,
 				F141D7B5281AF7CB00E69D41 /* Controller */,
 				F141D7B4281AF7C300E69D41 /* View */,
 				F141D7AD281AF3F400E69D41 /* Model */,
