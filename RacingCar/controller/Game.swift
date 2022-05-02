@@ -9,7 +9,7 @@ import Foundation
 
 class Game {
     private let cars: [Car]
-    private let counts: Int
+    private let count: Int
     
     init(cars: [Car], counts: Int) {
         self.cars = cars
