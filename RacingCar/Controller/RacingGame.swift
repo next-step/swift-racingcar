@@ -37,8 +37,8 @@ final class RacingGame {
     }
     
     func gameOver() {
-        let winners = pickWinnersByPoint(candidates: self.cars)
-        resultView.showWinners(names: winners.map{$0.name})
+        let pickedCars = pickWinnersByPoint(candidates: self.cars)
+        resultView.showWinner(cars: pickedCars)
     }
     
     func pickWinnersByPoint(candidates: [Car]) -> [Car] {

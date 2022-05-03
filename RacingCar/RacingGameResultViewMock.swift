@@ -22,8 +22,9 @@ final class RacingGameResultViewMock: RacingGameResult {
         print("\(car.name) : \(String(repeating: "-", count: car.movePoint))")
     }
     
-    func showWinners(names: [String]) {
-        names.isEmpty ? printNoWinner() : printWinners(names: names)
+    func showWinner(cars: [Car]) {
+        let winnerNames = cars.map{$0.name}
+        winnerNames.isEmpty ? printNoWinner() : printWinners(names: winnerNames)
     }
     
     func printWinners(names: [String]) {

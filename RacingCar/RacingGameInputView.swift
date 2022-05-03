@@ -7,27 +7,14 @@
 
 import Foundation
 
-protocol RacingGameInput {
-    func input() throws
-    func inputCarNames() throws -> [String]
-    func inputGameCount() throws -> Int
-    func registerSetting() -> GameSetting
-    func validation(count: String) throws -> Int 
-}
 
 final class RacingGameInputView: RacingGameInput {
-    
+    let checker: RacingGameInputChecker = RacingGameInputChecker()
     let randomGenerator: RandomGettable
     private var carNames: [String] = []
     private var gameCount: Int = 0
     
-    enum InputViewError: Error {
-        case incorrectFormat
-        case minusCount
-        case input
-        case textLengthExceeded
-        case emptyCars
-    }
+    
     
     init(randomGenerator: RandomGettable) {
         self.randomGenerator = randomGenerator
@@ -41,16 +28,17 @@ final class RacingGameInputView: RacingGameInput {
     }
     
     func inputCarNames() throws -> [String] {
-        guard let input: String = readLine() else { throw InputViewError.input}
+        let input: String = try checker.converter.converToUnwrapper(value: readLine())
         let carNames = splitCarNames(input: input)
-        try validation(carNames: carNames)
+        try checker.validator.checkValidation(carNames: carNames)
         return carNames
     }
     
     func inputGameCount() throws -> Int {
-        guard let input: String = readLine() else { throw InputViewError.input}
-        let validatedGameCount = try validation(count: input)
-        return validatedGameCount
+        let input: String = try checker.converter.converToUnwrapper(value: readLine())
+        let count: Int = try checker.converter.converterToInteger(input: input)
+        try checker.validator.checkValidation(count: count)
+        return count
     }
     
     func splitCarNames(input: String) -> [String] {
@@ -60,17 +48,7 @@ final class RacingGameInputView: RacingGameInput {
         return carNames
     }
     
-    func validation(carNames: [String]) throws {
-        guard !carNames.isEmpty else { throw InputViewError.emptyCars }
-        guard carNames.filter({ $0.count > 5 }).count == 0 else { throw InputViewError.textLengthExceeded }
-    }
-    
-    func validation(count: String) throws -> Int {
-        guard let count = Int(count) else { throw InputViewError.incorrectFormat }
-        guard count > 0 else { throw InputViewError.minusCount }
-        return count 
-    }
-    
+   
     func printQuestionCarNams() {
         print("경주할 자동차 이름을 입력하세요(이름은 쉼표(,)를 기준으로 구분).")
     }

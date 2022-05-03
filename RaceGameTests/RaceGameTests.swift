@@ -21,7 +21,7 @@ class RaceGameTests: XCTestCase {
         //given
         let randomGenerator = RandomGenerator()
         let inputView = RacingGameInputView(randomGenerator: randomGenerator)
-        let resultView = RacingGameResultView()
+        let resultView = RacingGameResultViewMock()
        
         sut = RacingGame(inputView: inputView, resultView: resultView)
         //when
@@ -40,7 +40,7 @@ class RaceGameTests: XCTestCase {
         let randomGenerator = RandomGenerator()
         let gameSetting = GameSetting(gameCount: gameCount, carNames: carNames, randomGenerator: randomGenerator)
         let inputView = RacingGameInputViewMock(gameSetting: gameSetting)
-        let resultView = RacingGameResultView()
+        let resultView = RacingGameResultViewMock()
         
         sut = RacingGame(inputView: inputView, resultView: resultView)
         
@@ -88,9 +88,8 @@ class RaceGameTests: XCTestCase {
         let carNames = ["Tayo", "Sing", "bureong"]
         let gameSetting = GameSetting(gameCount: gameCount, carNames: carNames, randomGenerator: randomGenerator)
 
-
         let inputView = RacingGameInputViewMock(gameSetting: gameSetting)
-        let resulView = RacingGameResultView()
+        let resulView = RacingGameResultViewMock()
         sut = RacingGame(inputView: inputView, resultView: resulView)
 
         //when
@@ -103,40 +102,35 @@ class RaceGameTests: XCTestCase {
     }
     
     func test_inputView_validation_minus_value() throws {
-        let randomGenerator = RandomGenerator(range: 0..<10)
-        let gameSetting = GameSetting(gameCount: 5, carNames: ["Tayo", "Ssing"], randomGenerator: randomGenerator)
-        let inputView = RacingGameInputViewMock(gameSetting: gameSetting)
-        let resulView = RacingGameResultView()
-        sut = RacingGame(inputView: inputView, resultView: resulView)
-
+        //given
+        let input = -5
+        let validator = RacingGameInputChecker().validator
+        
         //when && then
-        let expectation = RacingGameInputViewMock.InputViewError.minusCount
-        XCTAssertThrowsError(try sut.inputView.validation(count: "-5")) { error in
-            XCTAssertEqual(error as? RacingGameInputViewMock.InputViewError, expectation)
+        let expectation = InputViewError.minusCount
+        XCTAssertThrowsError(try validator.checkValidation(count: input)) { error in
+            XCTAssertEqual(error as? InputViewError, expectation)
         }
     }
     
-    func test_inputView_validation_incorrectFormmat_value() throws {
-        let randomGenerator = RandomGenerator(range: 0..<10)
-        let gameSetting = GameSetting(gameCount: 5, carNames: ["Tayo", "Ssing"], randomGenerator: randomGenerator)
-        let inputView = RacingGameInputViewMock(gameSetting: gameSetting)
-        let resultView = RacingGameResultView()
-        sut = RacingGame(inputView: inputView, resultView: resultView)
+    func test_inputView_conveter_incorrectFormmat_value() throws {
+        
+        let  input = "다섯"
+        
+        let converter = RacingGameInputChecker().converter
     
         //when &&then
-        let expectation = RacingGameInputViewMock.InputViewError.incorrectFormat
-        XCTAssertThrowsError(try sut.inputView.validation(count: "다섯")) { error in
-            XCTAssertEqual(error as? RacingGameInputViewMock.InputViewError, expectation)
+        let expectation = InputViewError.incorrectFormat
+        XCTAssertThrowsError(try converter.converterToInteger(input: input)) { error in
+            XCTAssertEqual(error as? InputViewError, expectation)
         }
     }
     
     func test_inputView_correct_registerSetting_value() throws {
         //given
         let randomGenerator = RandomGenerator(range: 0..<10)
-
-    
         let inputView = RacingGameInputView(randomGenerator: randomGenerator)
-        let resulView = RacingGameResultView()
+        let resulView = RacingGameResultViewMock()
         sut = RacingGame(inputView: inputView, resultView: resulView)
 
         //when
@@ -161,14 +155,13 @@ class RaceGameTests: XCTestCase {
     
     func test_when자동차의이름_5자초과_thenTextLengthExceeded_Error발생하는지_체크() throws {
         //given
-        let carNames = "Tayo,BoongBoong,Took,Bentley"
-        let inputView = RacingGameInputView(randomGenerator: RandomGenerator())
-        let splitedCarNames = inputView.splitCarNames(input: carNames)
+        let carNames = ["Tayo","BoongBoong","Took","Bentley"]
+        let validator = RacingGameInputChecker().validator
         
         //then
-        let expectation = RacingGameInputView.InputViewError.textLengthExceeded
-        XCTAssertThrowsError(try inputView.validation(carNames: splitedCarNames)) { error in
-            XCTAssertEqual(error as? RacingGameInputView.InputViewError, expectation)
+        let expectation = InputViewError.textLengthExceeded
+        XCTAssertThrowsError(try validator.checkValidation(carNames: carNames)) { error in
+            XCTAssertEqual(error as? InputViewError, expectation)
         }
     }
 
@@ -183,13 +176,12 @@ class RaceGameTests: XCTestCase {
         
         let gameSetting = GameSetting(gameCount: 5, carNames: ["Tayo", "Ssing"], randomGenerator: randomGenerator)
         let inputView = RacingGameInputViewMock(gameSetting: gameSetting)
-        let resultView = RacingGameResultView()
+        let resultView = RacingGameResultViewMock()
         sut = RacingGame(inputView: inputView, resultView: resultView)
         let winnersName = sut.pickWinnersByPoint(candidates: cars)[0].name
         
         //then
         let exectation = "PeachBoost"
-        
         XCTAssertEqual(winnersName, exectation)
 
     }
@@ -205,11 +197,10 @@ class RaceGameTests: XCTestCase {
         
         let gameSetting = GameSetting(gameCount: 5, carNames: ["Tayo", "Ssing"], randomGenerator: randomGenerator)
         let inputView = RacingGameInputViewMock(gameSetting: gameSetting)
-        let resultView = RacingGameResultView()
+        let resultView = RacingGameResultViewMock()
         sut = RacingGame(inputView: inputView, resultView: resultView)
        
         let winnersCount = sut.pickWinnersByPoint(candidates: cars).count
-        
         let exectation = 2
         
         XCTAssertEqual(winnersCount, exectation)
@@ -217,16 +208,19 @@ class RaceGameTests: XCTestCase {
 
     func test_given모두포인트가0_When우승자를뽑을때_then무효_출력_체크() throws {
         //given
-        let randomGenerator = RandomGenerator(range: 0..<10)        
-        let gameSetting = GameSetting(gameCount: 0, carNames: ["Tayo", "Ssing"], randomGenerator: randomGenerator)
+        let randomGenerator = RandomGenerator(range: 0..<10)
+        let gameCount = 0
+        let gameSetting = GameSetting(gameCount: gameCount, carNames: ["Tayo", "Ssing"], randomGenerator: randomGenerator)
         let inputView = RacingGameInputViewMock(gameSetting: gameSetting)
         let resultView = RacingGameResultViewMock()
         sut = RacingGame(inputView: inputView, resultView: resultView)
        
+        //when
         try sut.gameReady()
         sut.gameOver()
         
-        let printNoWinnerCallCount = 1
-        XCTAssertEqual(resultView.printNoWinnerCallCount, printNoWinnerCallCount)
+        //then
+        let expectation = 1
+        XCTAssertEqual(resultView.printNoWinnerCallCount, expectation)
     }
 }

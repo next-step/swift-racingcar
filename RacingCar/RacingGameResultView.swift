@@ -8,13 +8,6 @@
 import Foundation
 
 
-protocol RacingGameResult: Drawable {
-    func showCarsDistance(cars: [Car])
-    func printUserDistanceFromStart(car: Car)
-    func printRacingResultPhrase()
-    func showWinners(names: [String])
-}
-
 final class RacingGameResultView: RacingGameResult {
      
     func printRacingResultPhrase() {
@@ -30,8 +23,9 @@ final class RacingGameResultView: RacingGameResult {
         print("\(car.name) : \(String(repeating: "-", count: car.movePoint))")
     }
     
-    func showWinners(names: [String]) {
-        names.isEmpty ? printNoWinner() : printWinners(names: names)
+    func showWinner(cars: [Car]) {
+        let winnerNames = cars.map{$0.name}
+        winnerNames.isEmpty ? printNoWinner() : printWinners(names: winnerNames)
     }
     
     func printWinners(names: [String]) {

@@ -9,8 +9,6 @@ import Foundation
 
 
 final class RacingGameInputViewMock: RacingGameInput {
-    
-    
     var gameSetting: GameSetting = GameSetting(randomGenerator: RandomGenerator.init())
     private var carCount: Int = 0
     private var gameCount: Int = 0
@@ -40,10 +38,9 @@ final class RacingGameInputViewMock: RacingGameInput {
         return input.replacingOccurrences(of: " ", with: "")
     }
     
-    func validation(count: String) throws -> Int {
-        guard let count = Int(count) else { throw InputViewError.incorrectFormat }
+    func validation(count: Int) throws {
         guard count > 0 else { throw InputViewError.minusCount }
-        return count
+       
     }
     
     func validation(carNames: [String]) throws {
