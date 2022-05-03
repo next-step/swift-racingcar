@@ -8,20 +8,22 @@
 import Foundation
 
 public class Calculator {
-    private let formula: String
+    private var formula: String?
     
     private var numbers: [Int] = []
     private var operators: [String] = []
     
     private var result: Int = 0
     
-    init(for formula: String) {
+    public func setup(formula: String) {
         self.formula = formula
         self.seperateByBlankCharacter()
     }
     
     private func seperateByBlankCharacter() {
-        let seperatedFormula = self.formula.components(separatedBy: " ")
+        guard let formula = formula else { return }
+
+        let seperatedFormula = formula.components(separatedBy: " ")
         
         let orderedNumbers = seperatedFormula
             .filter { !CalculatorConst.listOfOperator.contains($0) }
@@ -64,7 +66,7 @@ public class Calculator {
     }
     
     private func catchError() -> CalculatorError? {
-        guard !formula.isEmpty else { return .emptyFormula }
+        guard let formula = formula, !formula.isEmpty else { return .emptyFormula }
         guard !numbers.isEmpty else { return .invalidFormula }
         
         guard numbers.count - 1 == operators.count else { return .invalidFormula }
