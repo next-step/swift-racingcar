@@ -10,6 +10,7 @@ import Foundation
 enum InputError: Error {
     case notNumber
     case invalidNumber
+    case overCountNamingLength
     
     var errorDescription: String {
         switch self {
@@ -17,6 +18,8 @@ enum InputError: Error {
             return "입력한 값이 숫자가 아닙니다."
         case .invalidNumber:
             return "유효한 Setting 값이 아닙니다"
+        case .overCountNamingLength:
+            return "자동차 이름은 5자를 초과할 수 없습니다."
         }
     }
 }
