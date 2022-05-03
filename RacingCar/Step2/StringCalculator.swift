@@ -34,11 +34,7 @@ struct StringCalculator: Calculator {
         let _ = try inputChangeHelper.inputStringArrayCountIsOdd(input: removeEmpty)
         var currentValue = 0
         var operate: Operator? = nil
-<<<<<<< HEAD
         for (index,value) in removeEmpty.enumerated() {
-=======
-        for (index,value) in changeArray.enumerated() {
->>>>>>> 742e65c (fix: Step2 reflect what has been reviewed)
             if !index.isMultiple(of: 2) {
                 operate = try inputChangeHelper.convertOperator(input: value)
             } else {
