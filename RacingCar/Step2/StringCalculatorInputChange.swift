@@ -14,6 +14,7 @@ struct StringCalculatorInputChange {
             throw StringCalculatorError.number
         }
         return number
+        
     }
     
     func convertOperator(input:String) throws -> Operator {
@@ -37,7 +38,6 @@ struct StringCalculatorInputChange {
         } else {
             return result
         }
-        return myOperator
     }
     
     func split(input: String) throws -> [String] {
@@ -56,12 +56,6 @@ struct StringCalculatorInputChange {
             throw StringCalculatorError.inputEmpty
         } else {
             return splitStingArray
-        }
-        let result = input.components(separatedBy: " ")
-        if result.isEmpty {
-            throw StringCalculatorError.inputEmpty
-        } else {
-            return result
         }
     }
     

@@ -8,4 +8,3 @@ import Foundation
 
 let game = GameController()
 game.gameStart()
-

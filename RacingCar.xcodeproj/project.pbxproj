@@ -15,28 +15,13 @@
 		1F8DCD0F281ADCE400890A22 /* StringCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD0E281ADCE400890A22 /* StringCalculator.swift */; };
 		1F8DCD11281ADEF700890A22 /* StringCalculatorError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD10281ADEF700890A22 /* StringCalculatorError.swift */; };
 		1F8DCD13281AE1CF00890A22 /* StringCalculatorInputChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD12281AE1CF00890A22 /* StringCalculatorInputChange.swift */; };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 		1F8DCD15281B067400890A22 /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD14281B067400890A22 /* Operator.swift */; };
-=======
-		1F8DCD15281B067400890A22 /* StringOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD14281B067400890A22 /* StringOperator.swift */; };
->>>>>>> a694801 (feat: Make stringCalculator)
-=======
-		1F8DCD15281B067400890A22 /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD14281B067400890A22 /* Operator.swift */; };
->>>>>>> 742e65c (fix: Step2 reflect what has been reviewed)
-=======
-		1F8DCD15281B067400890A22 /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD14281B067400890A22 /* Operator.swift */; };
->>>>>>> 742e65c6e3646a01bc9105a845b35ea62c062b4e
 		1F8DCD20281BF75200890A22 /* StringCalculatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD1F281BF75200890A22 /* StringCalculatorTest.swift */; };
 		1F8DCD25281BF9A200890A22 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
 		1F8DCD26281BF9A700890A22 /* Splitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCCE62816F7AD00890A22 /* Splitter.swift */; };
 		1F8DCD27281BF9AA00890A22 /* StringCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD0E281ADCE400890A22 /* StringCalculator.swift */; };
 		1F8DCD28281BF9AD00890A22 /* StringCalculatorInputChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD12281AE1CF00890A22 /* StringCalculatorInputChange.swift */; };
 		1F8DCD29281BF9AF00890A22 /* StringCalculatorError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD10281ADEF700890A22 /* StringCalculatorError.swift */; };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 		1F8DCD2A281BF9B100890A22 /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD14281B067400890A22 /* Operator.swift */; };
 		1F8DCD2D281D7FDD00890A22 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD2C281D7FDD00890A22 /* Car.swift */; };
 		1F8DCD30281D93C000890A22 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD2F281D93C000890A22 /* InputView.swift */; };
@@ -57,15 +42,6 @@
 		1F8DCD4E281E68F600890A22 /* InputError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD31281D96EA00890A22 /* InputError.swift */; };
 		1F8DCD4F281E68F800890A22 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD2F281D93C000890A22 /* InputView.swift */; };
 		1F8DCD50281E690A00890A22 /* GameGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD33281DB46C00890A22 /* GameGuide.swift */; };
-=======
-		1F8DCD2A281BF9B100890A22 /* StringOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD14281B067400890A22 /* StringOperator.swift */; };
->>>>>>> a694801 (feat: Make stringCalculator)
-=======
-		1F8DCD2A281BF9B100890A22 /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD14281B067400890A22 /* Operator.swift */; };
->>>>>>> 742e65c (fix: Step2 reflect what has been reviewed)
-=======
-		1F8DCD2A281BF9B100890A22 /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD14281B067400890A22 /* Operator.swift */; };
->>>>>>> 742e65c6e3646a01bc9105a845b35ea62c062b4e
 		C7E1263027239F7E0000DB8B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -89,9 +65,6 @@
 		1F8DCD0E281ADCE400890A22 /* StringCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringCalculator.swift; sourceTree = "<group>"; };
 		1F8DCD10281ADEF700890A22 /* StringCalculatorError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringCalculatorError.swift; sourceTree = "<group>"; };
 		1F8DCD12281AE1CF00890A22 /* StringCalculatorInputChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringCalculatorInputChange.swift; sourceTree = "<group>"; };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 		1F8DCD14281B067400890A22 /* Operator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operator.swift; sourceTree = "<group>"; };
 		1F8DCD1D281BF75100890A22 /* StringCalculatorTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StringCalculatorTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F8DCD1F281BF75200890A22 /* StringCalculatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringCalculatorTest.swift; sourceTree = "<group>"; };
@@ -102,19 +75,6 @@
 		1F8DCD37281DB6BA00890A22 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		1F8DCD39281DB99600890A22 /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
 		1F8DCD42281E683100890A22 /* RacingCarTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingCarTest.swift; sourceTree = "<group>"; };
-=======
-		1F8DCD14281B067400890A22 /* StringOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringOperator.swift; sourceTree = "<group>"; };
-=======
-		1F8DCD14281B067400890A22 /* Operator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operator.swift; sourceTree = "<group>"; };
->>>>>>> 742e65c (fix: Step2 reflect what has been reviewed)
-		1F8DCD1D281BF75100890A22 /* StringCalculatorTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StringCalculatorTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1F8DCD1F281BF75200890A22 /* StringCalculatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringCalculatorTest.swift; sourceTree = "<group>"; };
->>>>>>> a694801 (feat: Make stringCalculator)
-=======
-		1F8DCD14281B067400890A22 /* Operator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operator.swift; sourceTree = "<group>"; };
-		1F8DCD1D281BF75100890A22 /* StringCalculatorTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StringCalculatorTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1F8DCD1F281BF75200890A22 /* StringCalculatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringCalculatorTest.swift; sourceTree = "<group>"; };
->>>>>>> 742e65c6e3646a01bc9105a845b35ea62c062b4e
 		C7E1262C27239F7E0000DB8B /* RacingCar */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RacingCar; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E1262F27239F7E0000DB8B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -159,19 +119,7 @@
 				1F8DCD0E281ADCE400890A22 /* StringCalculator.swift */,
 				1F8DCD12281AE1CF00890A22 /* StringCalculatorInputChange.swift */,
 				1F8DCD10281ADEF700890A22 /* StringCalculatorError.swift */,
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 				1F8DCD14281B067400890A22 /* Operator.swift */,
-=======
-				1F8DCD14281B067400890A22 /* StringOperator.swift */,
->>>>>>> a694801 (feat: Make stringCalculator)
-=======
-				1F8DCD14281B067400890A22 /* Operator.swift */,
->>>>>>> 742e65c (fix: Step2 reflect what has been reviewed)
-=======
-				1F8DCD14281B067400890A22 /* Operator.swift */,
->>>>>>> 742e65c6e3646a01bc9105a845b35ea62c062b4e
 			);
 			path = Step2;
 			sourceTree = "<group>";
@@ -184,8 +132,6 @@
 			path = StringCalculatorTest;
 			sourceTree = "<group>";
 		};
-<<<<<<< HEAD
-<<<<<<< HEAD
 		1F8DCD2B281D7FCA00890A22 /* Step3 */ = {
 			isa = PBXGroup;
 			children = (
@@ -240,10 +186,6 @@
 			path = Step1;
 			sourceTree = "<group>";
 		};
-=======
->>>>>>> a694801 (feat: Make stringCalculator)
-=======
->>>>>>> 742e65c6e3646a01bc9105a845b35ea62c062b4e
 		C7E1262327239F7E0000DB8B = {
 			isa = PBXGroup;
 			children = (
@@ -270,13 +212,7 @@
 				C7E1262F27239F7E0000DB8B /* main.swift */,
 				1F8DCCE62816F7AD00890A22 /* Splitter.swift */,
 				1F8DCD0D281ADCD100890A22 /* Step2 */,
-<<<<<<< HEAD
-<<<<<<< HEAD
 				1F8DCD2B281D7FCA00890A22 /* Step3 */,
-=======
->>>>>>> a694801 (feat: Make stringCalculator)
-=======
->>>>>>> 742e65c6e3646a01bc9105a845b35ea62c062b4e
 			);
 			path = RacingCar;
 			sourceTree = "<group>";
@@ -432,41 +368,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1F8DCD19281BF75100890A22 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1F8DCD25281BF9A200890A22 /* main.swift in Sources */,
-				1F8DCD26281BF9A700890A22 /* Splitter.swift in Sources */,
-				1F8DCD28281BF9AD00890A22 /* StringCalculatorInputChange.swift in Sources */,
-				1F8DCD27281BF9AA00890A22 /* StringCalculator.swift in Sources */,
-				1F8DCD20281BF75200890A22 /* StringCalculatorTest.swift in Sources */,
-				1F8DCD29281BF9AF00890A22 /* StringCalculatorError.swift in Sources */,
-				1F8DCD2A281BF9B100890A22 /* Operator.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1F8DCD19281BF75100890A22 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1F8DCD25281BF9A200890A22 /* main.swift in Sources */,
-				1F8DCD26281BF9A700890A22 /* Splitter.swift in Sources */,
-				1F8DCD28281BF9AD00890A22 /* StringCalculatorInputChange.swift in Sources */,
-				1F8DCD27281BF9AA00890A22 /* StringCalculator.swift in Sources */,
-				1F8DCD20281BF75200890A22 /* StringCalculatorTest.swift in Sources */,
-				1F8DCD29281BF9AF00890A22 /* StringCalculatorError.swift in Sources */,
-				1F8DCD2A281BF9B100890A22 /* Operator.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		C7E1262827239F7E0000DB8B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 				1F8DCD15281B067400890A22 /* Operator.swift in Sources */,
 				1F8DCD3A281DB99600890A22 /* GameController.swift in Sources */,
 				1F8DCD32281D96EA00890A22 /* InputError.swift in Sources */,
@@ -474,19 +379,6 @@
 				1F8DCD0F281ADCE400890A22 /* StringCalculator.swift in Sources */,
 				1F8DCD11281ADEF700890A22 /* StringCalculatorError.swift in Sources */,
 				1F8DCD34281DB46C00890A22 /* GameGuide.swift in Sources */,
-=======
-				1F8DCD15281B067400890A22 /* StringOperator.swift in Sources */,
-=======
-				1F8DCD15281B067400890A22 /* Operator.swift in Sources */,
->>>>>>> 742e65c (fix: Step2 reflect what has been reviewed)
-				1F8DCD0F281ADCE400890A22 /* StringCalculator.swift in Sources */,
-				1F8DCD11281ADEF700890A22 /* StringCalculatorError.swift in Sources */,
->>>>>>> a694801 (feat: Make stringCalculator)
-=======
-				1F8DCD15281B067400890A22 /* Operator.swift in Sources */,
-				1F8DCD0F281ADCE400890A22 /* StringCalculator.swift in Sources */,
-				1F8DCD11281ADEF700890A22 /* StringCalculatorError.swift in Sources */,
->>>>>>> 742e65c6e3646a01bc9105a845b35ea62c062b4e
 				1F8DCD13281AE1CF00890A22 /* StringCalculatorInputChange.swift in Sources */,
 				1F8DCCE72816F7AD00890A22 /* Splitter.swift in Sources */,
 				1F8DCD30281D93C000890A22 /* InputView.swift in Sources */,
