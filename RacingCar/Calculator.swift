@@ -7,21 +7,20 @@
 
 import Foundation
 
-class Calculator: NSObject {
-    let formula: String
+public class Calculator {
+    private let formula: String
     
-    var numbers: [Int] = []
-    var operators: [String] = []
+    private var numbers: [Int] = []
+    private var operators: [String] = []
     
-    var result: Int = 0
+    private var result: Int = 0
     
     init(for formula: String) {
         self.formula = formula
-        super.init()
         self.seperateByBlankCharacter()
     }
     
-    func seperateByBlankCharacter() {
+    private func seperateByBlankCharacter() {
         let seperatedFormula = self.formula.components(separatedBy: " ")
         
         let orderedNumbers = seperatedFormula
@@ -35,7 +34,7 @@ class Calculator: NSObject {
         self.operators = orderedOperators
     }
     
-    func calculate() throws -> Int {
+    public func calculate() throws -> Int {
         if let error = catchError() { throw error }
         
         self.result = self.numbers.removeFirst()
@@ -49,7 +48,7 @@ class Calculator: NSObject {
         return self.result
     }
     
-    func operate(by operatorSymbol: String, lhs: Int, rhs: Int) -> Int {
+    private func operate(by operatorSymbol: String, lhs: Int, rhs: Int) -> Int {
         switch operatorSymbol {
         case "+":
             return add(lhs: lhs, rhs: rhs)
@@ -64,7 +63,7 @@ class Calculator: NSObject {
         }
     }
     
-    func catchError() -> CalculatorError? {
+    private func catchError() -> CalculatorError? {
         guard !formula.isEmpty else { return .emptyFormula }
         guard !numbers.isEmpty else { return .invalidFormula }
         
@@ -74,24 +73,24 @@ class Calculator: NSObject {
 }
 
 extension Calculator {
-    func add(lhs: Int, rhs: Int) -> Int {
+    private func add(lhs: Int, rhs: Int) -> Int {
         return lhs + rhs
     }
     
-    func minus(lhs: Int, rhs: Int) -> Int {
+    private func minus(lhs: Int, rhs: Int) -> Int {
         return lhs - rhs
     }
     
-    func multiply(lhs: Int, rhs: Int) -> Int {
+    private func multiply(lhs: Int, rhs: Int) -> Int {
         return lhs * rhs
     }
     
-    func divide(lhs: Int, rhs: Int) -> Int {
+    private func divide(lhs: Int, rhs: Int) -> Int {
         return lhs / rhs
     }
 }
 
-enum CalculatorError: Error {
+public enum CalculatorError: Error {
     case emptyFormula
     case invalidFormula
 }
