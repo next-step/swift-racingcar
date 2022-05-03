@@ -25,18 +25,27 @@ struct RacingCarInput {
     static func inputCarCount() throws -> Int {
         print("자동차 대수는 몇대인가요? ", terminator: "")
         let number = try inputCount()
-        return try Validator.checkValidation(count: number)
+        guard Validator.checkValidation(count: number) else {
+            throw RacingCarError.invalidNumber
+        }
+        return number
     }
     
     static func inputCarNames() throws -> [String] {
         print("경주할 자동차 이름을 입력하세요(이름은 쉼표(,)를 기준으로 구분).")
         let names = try inputNames().components(separatedBy: ",")
-        return try Validator.checkValidation(names: names)
+        guard Validator.checkValidation(names: names) else {
+            throw RacingCarError.invalidString
+        }
+        return names
     }
     
     static func inputTryCount() throws -> Int {
         print("시도할 횟수는 몇 회인가요?")
         let number = try inputCount()
-        return try Validator.checkValidation(count: number)
+        guard Validator.checkValidation(count: number) else {
+            throw RacingCarError.invalidNumber
+        }
+        return number
     }
 }

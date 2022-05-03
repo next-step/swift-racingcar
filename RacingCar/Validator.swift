@@ -9,31 +9,38 @@ import Foundation
 
 final class Validator {
     
-    static func checkValidation(number: Int) throws -> Int {
+    static func checkValidation(number: Int) -> Bool {
         guard (0 ... 9).contains(number) else {
-            throw RacingCarError.invalidNumber
+            return false
         }
-        return number
+        return true
     }
     
-    static func checkValidation(count: Int) throws -> Int {
+    static func checkValidation(count: Int) -> Bool {
         guard count > 0 else {
-            throw RacingCarError.invalidNumber
+            return false
         }
-        return count
+        return true
     }
     
-    static func checkValidation(names: [String]) throws -> [String] {
-        guard !names.isEmpty else { throw RacingCarError.emptyNames }
-        try names.forEach { name in
-            try checkValidation(name: name)
+    static func checkValidation(names: [String]) -> Bool {
+        guard !names.isEmpty else {
+            return false
         }
-        return names
+        var validateName: Bool = true
+        names.forEach { name in
+            if !checkValidation(name: name) {
+                validateName = false
+                return
+            }
+        }
+        return validateName
     }
     
-    private static func checkValidation(name: String) throws {
+    private static func checkValidation(name: String) -> Bool {
         guard !name.isEmpty && name.count <= 5 else {
-            throw RacingCarError.invalidString
+            return false
         }
+        return true
     }
 }

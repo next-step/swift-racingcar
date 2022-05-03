@@ -60,3 +60,9 @@ final class RacingController {
         return biggestMoveCount
     }
 }
+
+fileprivate extension Int {
+    func getBiggestInt(with car: Car) -> Int {
+        return car.moveCount > self ? car.moveCount : self
+    }
+}

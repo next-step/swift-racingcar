@@ -12,7 +12,7 @@ final class Racing {
     // MARK: - Method
     func run(cars: [Car], completion: ([Car]) -> Void) throws {
         try cars.forEach { car in
-            try car.move(randomNumber: car.generateRandomNumber())
+            try car.move(randomNumber: Generator.generateRandomNumber())
         }
         completion(cars)
     }

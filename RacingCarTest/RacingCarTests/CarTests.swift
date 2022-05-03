@@ -9,10 +9,6 @@ import XCTest
 
 class CarTests: XCTestCase {
     
-    func testGenerateRandomNumber() throws {
-        XCTAssert((0...9).contains(Car(name: "test").generateRandomNumber()), "생성된 랜덤숫자가 범위를 벗어납니다.")
-    }
-    
     func testCarMove() throws {
         XCTAssertNoThrow(try? Car(name: "test").move(randomNumber: 4), "적절하지 않은 숫자가 입력됐습니다.")
     }
