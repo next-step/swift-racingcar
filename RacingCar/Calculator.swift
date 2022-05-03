@@ -24,13 +24,12 @@ public class Calculator {
         guard let formula = formula else { return }
 
         let seperatedFormula = formula.components(separatedBy: " ")
-        
         let orderedNumbers = seperatedFormula
-            .filter { !CalculatorConst.listOfOperator.contains($0) }
+            .filter { !Calculator.compatibleOperatorSymbols.contains($0) }
             .compactMap { Int($0) }
         
         let orderedOperators = seperatedFormula
-            .filter { CalculatorConst.listOfOperator.contains($0) }
+            .filter { Calculator.compatibleOperatorSymbols.contains($0) }
         
         self.numbers = orderedNumbers
         self.operators = orderedOperators
@@ -52,13 +51,13 @@ public class Calculator {
     
     private func operate(by operatorSymbol: String, lhs: Int, rhs: Int) -> Int {
         switch operatorSymbol {
-        case "+":
+        case Calculator.plusSymbol:
             return add(lhs: lhs, rhs: rhs)
-        case "-":
+        case Calculator.minusSymbol:
             return minus(lhs: lhs, rhs: rhs)
-        case "*":
+        case Calculator.multiplySymbol:
             return multiply(lhs: lhs, rhs: rhs)
-        case "/":
+        case Calculator.divideSymbol:
             return divide(lhs: lhs, rhs: rhs)
         default:
             return 0

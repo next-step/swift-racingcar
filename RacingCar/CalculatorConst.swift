@@ -7,6 +7,16 @@
 
 import Foundation
 
-struct CalculatorConst {
-    static let listOfOperator = ["+", "-", "*", "/"]
+extension Calculator {
+    static let plusSymbol: String = "+"
+    static let minusSymbol: String = "-"
+    static let multiplySymbol: String = "*"
+    static let divideSymbol: String = "/"
+    
+    static let compatibleOperatorSymbols: [String] = [
+        Calculator.plusSymbol,
+        Calculator.minusSymbol,
+        Calculator.multiplySymbol,
+        Calculator.divideSymbol
+    ]
 }
