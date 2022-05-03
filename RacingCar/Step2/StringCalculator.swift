@@ -29,11 +29,12 @@ struct StringCalculator: Calculator {
     
     func caculate(input: String?) throws -> Int {
         let removeOptionalValue = try inputChangeHelper.removeOptional(input: input)
-        let changeArray = try inputChangeHelper.separateByEmptyPlace(input: removeOptionalValue)
-        let _ = try inputChangeHelper.inputStringArrayCountIsOdd(input: changeArray)
+        let splitStringArray = try inputChangeHelper.split(input: removeOptionalValue)
+        let removeEmpty = inputChangeHelper.removeEmpty(input: splitStringArray)
+        let _ = try inputChangeHelper.inputStringArrayCountIsOdd(input: removeEmpty)
         var currentValue = 0
         var operate: Operator? = nil
-        for (index,value) in changeArray.enumerated() {
+        for (index,value) in removeEmpty.enumerated() {
             if !index.isMultiple(of: 2) {
                 operate = try inputChangeHelper.convertOperator(input: value)
             } else {

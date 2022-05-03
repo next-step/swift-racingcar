@@ -11,10 +11,10 @@ struct StringCalculatorInputChange {
     
     func stringToInt(input:String) throws -> Int {
         guard let number = Int(input) else {
-           throw StringCalculatorError.number
+            throw StringCalculatorError.number
         }
         return number
-
+        
     }
     
     func convertOperator(input:String) throws -> Operator {
@@ -38,6 +38,29 @@ struct StringCalculatorInputChange {
         } else {
             return result
         }
+    }
+    
+    func split(input: String) throws -> [String] {
+        var splitStingArray: [String] = []
+        var tempValue = ""
+        for character in input {
+            if character == " " {
+                splitStingArray.append(tempValue)
+                splitStingArray.append(" ")
+                tempValue = ""
+            } else {
+                tempValue += String(character)
+            }
+        }
+        if splitStingArray.isEmpty {
+            throw StringCalculatorError.inputEmpty
+        } else {
+            return splitStingArray
+        }
+    }
+    
+    func removeEmpty(input: [String]) -> [String] {
+        return input.filter{$0 != " "}
     }
     
     func inputStringArrayCountIsOdd(input:[String]) throws -> Bool {
