@@ -7,11 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1F8DCCE02816F69200890A22 /* RacingCarTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCCDF2816F69200890A22 /* RacingCarTest.swift */; };
+		1F8DCCE02816F69200890A22 /* Step1Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCCDF2816F69200890A22 /* Step1Test.swift */; };
 		1F8DCCE52816F6DD00890A22 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
 		1F8DCCE72816F7AD00890A22 /* Splitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCCE62816F7AD00890A22 /* Splitter.swift */; };
 		1F8DCCE82816FB0F00890A22 /* Splitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCCE62816F7AD00890A22 /* Splitter.swift */; };
 		1F8DCCEA2816FC9D00890A22 /* SetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCCE92816FC9D00890A22 /* SetTests.swift */; };
+		1F8DCD0F281ADCE400890A22 /* StringCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD0E281ADCE400890A22 /* StringCalculator.swift */; };
+		1F8DCD11281ADEF700890A22 /* StringCalculatorError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD10281ADEF700890A22 /* StringCalculatorError.swift */; };
+		1F8DCD13281AE1CF00890A22 /* StringCalculatorInputChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD12281AE1CF00890A22 /* StringCalculatorInputChange.swift */; };
+		1F8DCD15281B067400890A22 /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD14281B067400890A22 /* Operator.swift */; };
+		1F8DCD20281BF75200890A22 /* StringCalculatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD1F281BF75200890A22 /* StringCalculatorTest.swift */; };
+		1F8DCD25281BF9A200890A22 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
+		1F8DCD26281BF9A700890A22 /* Splitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCCE62816F7AD00890A22 /* Splitter.swift */; };
+		1F8DCD27281BF9AA00890A22 /* StringCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD0E281ADCE400890A22 /* StringCalculator.swift */; };
+		1F8DCD28281BF9AD00890A22 /* StringCalculatorInputChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD12281AE1CF00890A22 /* StringCalculatorInputChange.swift */; };
+		1F8DCD29281BF9AF00890A22 /* StringCalculatorError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD10281ADEF700890A22 /* StringCalculatorError.swift */; };
+		1F8DCD2A281BF9B100890A22 /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD14281B067400890A22 /* Operator.swift */; };
+		1F8DCD2D281D7FDD00890A22 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD2C281D7FDD00890A22 /* Car.swift */; };
+		1F8DCD30281D93C000890A22 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD2F281D93C000890A22 /* InputView.swift */; };
+		1F8DCD32281D96EA00890A22 /* InputError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD31281D96EA00890A22 /* InputError.swift */; };
+		1F8DCD34281DB46C00890A22 /* GameGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD33281DB46C00890A22 /* GameGuide.swift */; };
+		1F8DCD38281DB6BA00890A22 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD37281DB6BA00890A22 /* ResultView.swift */; };
+		1F8DCD3A281DB99600890A22 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD39281DB99600890A22 /* GameController.swift */; };
+		1F8DCD43281E683100890A22 /* RacingCarTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD42281E683100890A22 /* RacingCarTest.swift */; };
+		1F8DCD44281E688600890A22 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD2C281D7FDD00890A22 /* Car.swift */; };
+		1F8DCD45281E688900890A22 /* GameGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD33281DB46C00890A22 /* GameGuide.swift */; };
+		1F8DCD46281E688B00890A22 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD39281DB99600890A22 /* GameController.swift */; };
+		1F8DCD47281E688D00890A22 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD37281DB6BA00890A22 /* ResultView.swift */; };
+		1F8DCD48281E689000890A22 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD2F281D93C000890A22 /* InputView.swift */; };
+		1F8DCD49281E689200890A22 /* InputError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD31281D96EA00890A22 /* InputError.swift */; };
+		1F8DCD4B281E68EF00890A22 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD39281DB99600890A22 /* GameController.swift */; };
+		1F8DCD4C281E68F100890A22 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD37281DB6BA00890A22 /* ResultView.swift */; };
+		1F8DCD4D281E68F300890A22 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD2C281D7FDD00890A22 /* Car.swift */; };
+		1F8DCD4E281E68F600890A22 /* InputError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD31281D96EA00890A22 /* InputError.swift */; };
+		1F8DCD4F281E68F800890A22 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD2F281D93C000890A22 /* InputView.swift */; };
+		1F8DCD50281E690A00890A22 /* GameGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD33281DB46C00890A22 /* GameGuide.swift */; };
 		C7E1263027239F7E0000DB8B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,15 +59,35 @@
 
 /* Begin PBXFileReference section */
 		1F8DCCDD2816F69200890A22 /* RacingCarTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RacingCarTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1F8DCCDF2816F69200890A22 /* RacingCarTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingCarTest.swift; sourceTree = "<group>"; };
+		1F8DCCDF2816F69200890A22 /* Step1Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step1Test.swift; sourceTree = "<group>"; };
 		1F8DCCE62816F7AD00890A22 /* Splitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splitter.swift; sourceTree = "<group>"; };
 		1F8DCCE92816FC9D00890A22 /* SetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTests.swift; sourceTree = "<group>"; };
+		1F8DCD0E281ADCE400890A22 /* StringCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringCalculator.swift; sourceTree = "<group>"; };
+		1F8DCD10281ADEF700890A22 /* StringCalculatorError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringCalculatorError.swift; sourceTree = "<group>"; };
+		1F8DCD12281AE1CF00890A22 /* StringCalculatorInputChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringCalculatorInputChange.swift; sourceTree = "<group>"; };
+		1F8DCD14281B067400890A22 /* Operator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operator.swift; sourceTree = "<group>"; };
+		1F8DCD1D281BF75100890A22 /* StringCalculatorTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StringCalculatorTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F8DCD1F281BF75200890A22 /* StringCalculatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringCalculatorTest.swift; sourceTree = "<group>"; };
+		1F8DCD2C281D7FDD00890A22 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
+		1F8DCD2F281D93C000890A22 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		1F8DCD31281D96EA00890A22 /* InputError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputError.swift; sourceTree = "<group>"; };
+		1F8DCD33281DB46C00890A22 /* GameGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameGuide.swift; sourceTree = "<group>"; };
+		1F8DCD37281DB6BA00890A22 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+		1F8DCD39281DB99600890A22 /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
+		1F8DCD42281E683100890A22 /* RacingCarTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingCarTest.swift; sourceTree = "<group>"; };
 		C7E1262C27239F7E0000DB8B /* RacingCar */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RacingCar; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E1262F27239F7E0000DB8B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		1F8DCCDA2816F69200890A22 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F8DCD1A281BF75100890A22 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -57,10 +107,83 @@
 		1F8DCCDE2816F69200890A22 /* RacingCarTest */ = {
 			isa = PBXGroup;
 			children = (
-				1F8DCCDF2816F69200890A22 /* RacingCarTest.swift */,
-				1F8DCCE92816FC9D00890A22 /* SetTests.swift */,
+				1F8DCD41281E67DF00890A22 /* Step1 */,
+				1F8DCD42281E683100890A22 /* RacingCarTest.swift */,
 			);
 			path = RacingCarTest;
+			sourceTree = "<group>";
+		};
+		1F8DCD0D281ADCD100890A22 /* Step2 */ = {
+			isa = PBXGroup;
+			children = (
+				1F8DCD0E281ADCE400890A22 /* StringCalculator.swift */,
+				1F8DCD12281AE1CF00890A22 /* StringCalculatorInputChange.swift */,
+				1F8DCD10281ADEF700890A22 /* StringCalculatorError.swift */,
+				1F8DCD14281B067400890A22 /* Operator.swift */,
+			);
+			path = Step2;
+			sourceTree = "<group>";
+		};
+		1F8DCD1E281BF75200890A22 /* StringCalculatorTest */ = {
+			isa = PBXGroup;
+			children = (
+				1F8DCD1F281BF75200890A22 /* StringCalculatorTest.swift */,
+			);
+			path = StringCalculatorTest;
+			sourceTree = "<group>";
+		};
+		1F8DCD2B281D7FCA00890A22 /* Step3 */ = {
+			isa = PBXGroup;
+			children = (
+				1F8DCD3B281E4D8800890A22 /* Model */,
+				1F8DCD3C281E4DA200890A22 /* Controller */,
+				1F8DCD3D281E4DA900890A22 /* View */,
+				1F8DCD3E281E4DB200890A22 /* Error */,
+			);
+			path = Step3;
+			sourceTree = "<group>";
+		};
+		1F8DCD3B281E4D8800890A22 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1F8DCD2C281D7FDD00890A22 /* Car.swift */,
+				1F8DCD33281DB46C00890A22 /* GameGuide.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1F8DCD3C281E4DA200890A22 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1F8DCD39281DB99600890A22 /* GameController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1F8DCD3D281E4DA900890A22 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1F8DCD37281DB6BA00890A22 /* ResultView.swift */,
+				1F8DCD2F281D93C000890A22 /* InputView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1F8DCD3E281E4DB200890A22 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				1F8DCD31281D96EA00890A22 /* InputError.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
+		1F8DCD41281E67DF00890A22 /* Step1 */ = {
+			isa = PBXGroup;
+			children = (
+				1F8DCCDF2816F69200890A22 /* Step1Test.swift */,
+				1F8DCCE92816FC9D00890A22 /* SetTests.swift */,
+			);
+			path = Step1;
 			sourceTree = "<group>";
 		};
 		C7E1262327239F7E0000DB8B = {
@@ -68,6 +191,7 @@
 			children = (
 				C7E1262E27239F7E0000DB8B /* RacingCar */,
 				1F8DCCDE2816F69200890A22 /* RacingCarTest */,
+				1F8DCD1E281BF75200890A22 /* StringCalculatorTest */,
 				C7E1262D27239F7E0000DB8B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -77,6 +201,7 @@
 			children = (
 				C7E1262C27239F7E0000DB8B /* RacingCar */,
 				1F8DCCDD2816F69200890A22 /* RacingCarTest.xctest */,
+				1F8DCD1D281BF75100890A22 /* StringCalculatorTest.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -86,6 +211,8 @@
 			children = (
 				C7E1262F27239F7E0000DB8B /* main.swift */,
 				1F8DCCE62816F7AD00890A22 /* Splitter.swift */,
+				1F8DCD0D281ADCD100890A22 /* Step2 */,
+				1F8DCD2B281D7FCA00890A22 /* Step3 */,
 			);
 			path = RacingCar;
 			sourceTree = "<group>";
@@ -108,6 +235,23 @@
 			name = RacingCarTest;
 			productName = RacingCarTest;
 			productReference = 1F8DCCDD2816F69200890A22 /* RacingCarTest.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1F8DCD1C281BF75100890A22 /* StringCalculatorTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1F8DCD21281BF75200890A22 /* Build configuration list for PBXNativeTarget "StringCalculatorTest" */;
+			buildPhases = (
+				1F8DCD19281BF75100890A22 /* Sources */,
+				1F8DCD1A281BF75100890A22 /* Frameworks */,
+				1F8DCD1B281BF75100890A22 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StringCalculatorTest;
+			productName = StringCalculatorTest;
+			productReference = 1F8DCD1D281BF75100890A22 /* StringCalculatorTest.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		C7E1262B27239F7E0000DB8B /* RacingCar */ = {
@@ -140,6 +284,9 @@
 					1F8DCCDC2816F69200890A22 = {
 						CreatedOnToolsVersion = 13.1;
 					};
+					1F8DCD1C281BF75100890A22 = {
+						CreatedOnToolsVersion = 13.1;
+					};
 					C7E1262B27239F7E0000DB8B = {
 						CreatedOnToolsVersion = 13.0;
 					};
@@ -160,12 +307,20 @@
 			targets = (
 				C7E1262B27239F7E0000DB8B /* RacingCar */,
 				1F8DCCDC2816F69200890A22 /* RacingCarTest */,
+				1F8DCD1C281BF75100890A22 /* StringCalculatorTest */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		1F8DCCDB2816F69200890A22 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F8DCD1B281BF75100890A22 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -180,9 +335,36 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F8DCCEA2816FC9D00890A22 /* SetTests.swift in Sources */,
+				1F8DCD45281E688900890A22 /* GameGuide.swift in Sources */,
+				1F8DCD49281E689200890A22 /* InputError.swift in Sources */,
+				1F8DCD47281E688D00890A22 /* ResultView.swift in Sources */,
 				1F8DCCE52816F6DD00890A22 /* main.swift in Sources */,
+				1F8DCD44281E688600890A22 /* Car.swift in Sources */,
 				1F8DCCE82816FB0F00890A22 /* Splitter.swift in Sources */,
-				1F8DCCE02816F69200890A22 /* RacingCarTest.swift in Sources */,
+				1F8DCD46281E688B00890A22 /* GameController.swift in Sources */,
+				1F8DCD48281E689000890A22 /* InputView.swift in Sources */,
+				1F8DCCE02816F69200890A22 /* Step1Test.swift in Sources */,
+				1F8DCD43281E683100890A22 /* RacingCarTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F8DCD19281BF75100890A22 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F8DCD25281BF9A200890A22 /* main.swift in Sources */,
+				1F8DCD26281BF9A700890A22 /* Splitter.swift in Sources */,
+				1F8DCD4E281E68F600890A22 /* InputError.swift in Sources */,
+				1F8DCD4D281E68F300890A22 /* Car.swift in Sources */,
+				1F8DCD4C281E68F100890A22 /* ResultView.swift in Sources */,
+				1F8DCD28281BF9AD00890A22 /* StringCalculatorInputChange.swift in Sources */,
+				1F8DCD27281BF9AA00890A22 /* StringCalculator.swift in Sources */,
+				1F8DCD20281BF75200890A22 /* StringCalculatorTest.swift in Sources */,
+				1F8DCD50281E690A00890A22 /* GameGuide.swift in Sources */,
+				1F8DCD4B281E68EF00890A22 /* GameController.swift in Sources */,
+				1F8DCD4F281E68F800890A22 /* InputView.swift in Sources */,
+				1F8DCD29281BF9AF00890A22 /* StringCalculatorError.swift in Sources */,
+				1F8DCD2A281BF9B100890A22 /* Operator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,7 +372,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F8DCD15281B067400890A22 /* Operator.swift in Sources */,
+				1F8DCD3A281DB99600890A22 /* GameController.swift in Sources */,
+				1F8DCD32281D96EA00890A22 /* InputError.swift in Sources */,
+				1F8DCD38281DB6BA00890A22 /* ResultView.swift in Sources */,
+				1F8DCD0F281ADCE400890A22 /* StringCalculator.swift in Sources */,
+				1F8DCD11281ADEF700890A22 /* StringCalculatorError.swift in Sources */,
+				1F8DCD34281DB46C00890A22 /* GameGuide.swift in Sources */,
+				1F8DCD13281AE1CF00890A22 /* StringCalculatorInputChange.swift in Sources */,
 				1F8DCCE72816F7AD00890A22 /* Splitter.swift in Sources */,
+				1F8DCD30281D93C000890A22 /* InputView.swift in Sources */,
+				1F8DCD2D281D7FDD00890A22 /* Car.swift in Sources */,
 				C7E1263027239F7E0000DB8B /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -236,6 +428,50 @@
 				MACOSX_DEPLOYMENT_TARGET = 11.4;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.brian.RacingCarTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		1F8DCD22281BF75200890A22 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X4BPUW3TWT;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.brian.StringCalculatorTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		1F8DCD23281BF75200890A22 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X4BPUW3TWT;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.brian.StringCalculatorTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -383,6 +619,15 @@
 			buildConfigurations = (
 				1F8DCCE12816F69200890A22 /* Debug */,
 				1F8DCCE22816F69200890A22 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1F8DCD21281BF75200890A22 /* Build configuration list for PBXNativeTarget "StringCalculatorTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F8DCD22281BF75200890A22 /* Debug */,
+				1F8DCD23281BF75200890A22 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
