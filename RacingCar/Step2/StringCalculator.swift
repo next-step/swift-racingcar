@@ -28,7 +28,6 @@ struct StringCalculator: Calculator {
     private let inputChangeHelper = StringCalculatorInputChange()
     
     func caculate(input: String?) throws -> Int {
-<<<<<<< HEAD
         let removeOptionalValue = try inputChangeHelper.removeOptional(input: input)
         let splitStringArray = try inputChangeHelper.split(input: removeOptionalValue)
         let removeEmpty = inputChangeHelper.removeEmpty(input: splitStringArray)
@@ -40,17 +39,6 @@ struct StringCalculator: Calculator {
                 operate = try inputChangeHelper.convertOperator(input: value)
             } else {
                 let changeInt = try inputChangeHelper.stringToInt(input: value)
-=======
-        let changeArray = try inputChangeHelper.emptyRemover(input: input)
-        let _ = try inputChangeHelper.inputStringArrayCountIsOdd(input: changeArray)
-        var currentValue = 0
-        var operate: StringOperator? = nil
-        for (index,value) in changeArray.enumerated() {
-            if !index.isMultiple(of: 2) {
-                operate = try inputChangeHelper.verifyOperator(input: value)
-            } else {
-                let changeInt = try inputChangeHelper.stringNumberToInt(input: value)
->>>>>>> a694801 (feat: Make stringCalculator)
                 if let myOperate = operate {
                     switch myOperate {
                     case .plus:
