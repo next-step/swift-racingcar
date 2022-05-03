@@ -9,11 +9,11 @@ import Foundation
 
 class Game {
     private let cars: [Car]
-    private let counts: Int
+    private let count: Int
     
-    init(cars: Int, counts: Int) {
-        self.cars = Array(repeating: Car(), count: cars)
-        self.counts = counts
+    init(cars: [Car], count: Int) {
+        self.cars = cars
+        self.count = count
     }
 }
 
@@ -37,8 +37,10 @@ extension Game {
     func run() {
         print("\n실행 결과")
         
-        for _ in 0..<counts {
+        for _ in 0..<count {
             runOneCycle(of: cars)
         }
+        
+        ResultView.printWinner(cars)
     }
 }

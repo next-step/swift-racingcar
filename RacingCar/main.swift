@@ -5,13 +5,13 @@
 //
 
 do {
-    print("자동차 대수는 몇 대인가요? ", terminator: "")
-    let carCount = try InputView.inputReadLine()
+    print("경주할 자동차 이름을 입력하세요(이름은 쉼표(,)를 기준으로 구분).")
+    let carInfo = try InputView.readCarInfo()
     
-    print("시도할 횟수는 몇 회인가요? ", terminator: "")
-    let gameCount = try InputView.inputReadLine()
+    print("시도할 횟수는 몇 회인가요? ")
+    let gameCount = try InputView.readCount()
     
-    let game = Game(cars: carCount, counts: gameCount)
+    let game = Game(cars: carInfo, count: gameCount)
     game.run()
 } catch let error as InputEror {
     print(error.debugDescription)

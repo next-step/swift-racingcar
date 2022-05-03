@@ -6,9 +6,13 @@
 //
 
 class Car {
-    public var point: Int = 0
+    public var name: String
+    public var point: Int
     
-    init() { }
+    init(_ name: String, _ point: Int = Constants.defaultPoint) {
+        self.name = name
+        self.point = point
+    }
     
     func moveFoward() {
         self.point += 1
