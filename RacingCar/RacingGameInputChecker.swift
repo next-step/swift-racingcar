@@ -33,7 +33,7 @@ final class RacingGameInputChecker {
             return input
         }
         
-        func converToUnwrapper<T>(value: T?) throws -> T {
+        func convertToUnwrapper<T>(value: T?) throws -> T {
             guard let value = value else { throw InputViewError.input }
             return value
         }

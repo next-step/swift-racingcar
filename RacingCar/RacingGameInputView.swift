@@ -28,14 +28,14 @@ final class RacingGameInputView: RacingGameInput {
     }
     
     private func inputCarNames() throws -> [String] {
-        let input: String = try checker.converter.converToUnwrapper(value: readLine())
+        let input: String = try checker.converter.convertToUnwrapper(value: readLine())
         let carNames = splitCarNames(input: input)
         try checker.validator.checkValidation(carNames: carNames)
         return carNames
     }
     
     private  func inputGameCount() throws -> Int {
-        let input: String = try checker.converter.converToUnwrapper(value: readLine())
+        let input: String = try checker.converter.convertToUnwrapper(value: readLine())
         let count: Int = try checker.converter.converterToInteger(input: input)
         try checker.validator.checkValidation(count: count)
         return count
