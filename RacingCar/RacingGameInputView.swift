@@ -21,7 +21,7 @@ final class RacingGameInputView: RacingGameInput {
     }
     
     func input() throws {
-        printQuestionCarNams()
+        printQuestionCarNames()
         self.carNames =  try inputCarNames()
         printQuestionGameCount()
         self.gameCount = try inputGameCount()
@@ -48,7 +48,7 @@ final class RacingGameInputView: RacingGameInput {
         return carNames
     }
    
-    private func printQuestionCarNams() {
+    private func printQuestionCarNames() {
         print("경주할 자동차 이름을 입력하세요(이름은 쉼표(,)를 기준으로 구분).")
     }
     
