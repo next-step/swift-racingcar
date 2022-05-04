@@ -10,7 +10,7 @@ import Foundation
 
 final class Car {
     
-    enum Constant {
+   private enum Constant {
         static let basePoint: Int = 0
         static let minumCondition: Int = 4
     }
