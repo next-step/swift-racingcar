@@ -22,6 +22,8 @@ if !InputChecker.isValid(roundCount: roundCount) {
 let racingCars = (0..<carCount!).map { id in
     RacingCarFactory.create(id: id)
 }
-let result = RacingGame(racingCars: racingCars, roundCount: roundCount!).start()
-let formattedResult = GameResultFormatter.format(result)
+
+var racingGame = RacingGame(racingCars: racingCars, roundCount: roundCount!)
+let racingGameResult: [RacingRound] = racingGame.start()
+let formattedResult = GameResultFormatter.format(racingGameResult)
 OutputView.show(formattedResult)

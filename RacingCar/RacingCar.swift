@@ -16,19 +16,22 @@ struct RacingCarFactory {
     }
 }
 
-class RacingCar {
+class RacingCar: Equatable, NSCopying {
+    func copy(with zone: NSZone? = nil) -> Any {
+        let copy = RacingCar(id: self.id, engine: self.engine)
+        copy._location = self._location 
+        return copy
+    }
+    
     static func == (lhs: RacingCar, rhs: RacingCar) -> Bool {
         return lhs.id == rhs.id
+        && lhs.location == rhs.location
     }
     
-    struct State: Equatable {
-        let id: Int
-        let location: Int
-    }
-    
-    private let id: Int
-    private let engine: Engine
-    private var location = 0
+    let id: Int
+    let engine: Engine
+    private var _location = 0
+    var location: Int { return _location }
     
     init(id: Int, engine: Engine) {
         self.id = id
@@ -37,11 +40,7 @@ class RacingCar {
     
     func move() {
         if engine.canGo() {
-            self.location += 1
+            self._location += 1
         }
-    }
-    
-    func state() -> State {
-        return .init(id: id, location: location)
     }
 }

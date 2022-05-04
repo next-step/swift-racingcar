@@ -36,6 +36,7 @@
 		2E25F999281D4E3400DC8F43 /* GameResultFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E25F98F281D456500DC8F43 /* GameResultFormatter.swift */; };
 		2E25F99A281D4E7C00DC8F43 /* InputChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E25F993281D483300DC8F43 /* InputChecker.swift */; };
 		2E25F99C281D59E900DC8F43 /* InputCheckerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E25F99B281D59E900DC8F43 /* InputCheckerTest.swift */; };
+		2E80E2302821669C00397CA4 /* Sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E80E22F2821669C00397CA4 /* Sequence.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -68,6 +69,7 @@
 		2E25F991281D46C300DC8F43 /* OutputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputView.swift; sourceTree = "<group>"; };
 		2E25F993281D483300DC8F43 /* InputChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputChecker.swift; sourceTree = "<group>"; };
 		2E25F99B281D59E900DC8F43 /* InputCheckerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputCheckerTest.swift; sourceTree = "<group>"; };
+		2E80E22F2821669C00397CA4 /* Sequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sequence.swift; sourceTree = "<group>"; };
 		2E8D45C7281AEA0500DD1214 /* RacingCarTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RacingCarTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E1262C27239F7E0000DB8B /* RacingCar */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RacingCar; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -98,6 +100,14 @@
 				2E25F98F281D456500DC8F43 /* GameResultFormatter.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		2E80E22E2821668C00397CA4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2E80E22F2821669C00397CA4 /* Sequence.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		2E8D45C8281AEA0500DD1214 /* RacingCarTest */ = {
@@ -133,6 +143,7 @@
 		C7E1262E27239F7E0000DB8B /* RacingCar */ = {
 			isa = PBXGroup;
 			children = (
+				2E80E22E2821668C00397CA4 /* Extensions */,
 				2E25F995281D4BF800DC8F43 /* View */,
 				2E25F966281D186400DC8F43 /* main.swift */,
 				2E25F969281D191D00DC8F43 /* RacingCar.swift */,
@@ -270,6 +281,7 @@
 				2E25F994281D483300DC8F43 /* InputChecker.swift in Sources */,
 				2E25F97B281D264800DC8F43 /* RacingRound.swift in Sources */,
 				2E25F974281D21B400DC8F43 /* RandomNumberGenerator.swift in Sources */,
+				2E80E2302821669C00397CA4 /* Sequence.swift in Sources */,
 				2E25F98E281D445100DC8F43 /* InputView.swift in Sources */,
 				2E25F98B281D356500DC8F43 /* RacingGameResult.swift in Sources */,
 				2E25F983281D2B5E00DC8F43 /* RacingRoundResult.swift in Sources */,

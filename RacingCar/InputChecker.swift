@@ -5,8 +5,6 @@
 //  Created by nylah.j on 2022/04/30.
 //
 
-import Foundation
-
 struct InputChecker {
     static func isValid(carCount: Int?) -> Bool {
         return carCount != nil && carCount! > 0

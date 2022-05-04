@@ -5,22 +5,21 @@
 //  Created by nylah.j on 2022/04/30.
 //
 
-import Foundation
-
 protocol RacingRound {
-    func start() -> RacingRoundResult
+    var racingCars: [RacingCar] { get }
+    func start() -> RacingRound
 }
 
 struct NormalRacingRound: RacingRound {
-    private var racingCars: [RacingCar]
+    let racingCars: [RacingCar]
     
     init(racingCars: [RacingCar]) {
         self.racingCars = racingCars
     }
     
-    func start() -> RacingRoundResult {
-        racingCars.forEach { $0.move() }
-        let racingCarStates = racingCars.map { $0.state() }
-        return .init(states: racingCarStates)
+    func start() -> RacingRound {
+        let copiedCars = racingCars.copy()
+        copiedCars.forEach { $0.move() }
+        return NormalRacingRound(racingCars: copiedCars)
     }
 }

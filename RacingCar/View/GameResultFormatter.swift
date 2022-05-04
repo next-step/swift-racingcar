@@ -11,10 +11,10 @@ struct GameResultFormatter {
     private static let newLine = "\n"
     private static let movementSymbol = "_"
     
-    static func format(_ gameResult: RacingGameResult) -> String {
+    static func format(_ racingRounds: [RacingRound]) -> String {
         var result = ""
         
-        for roundResult in gameResult.racingRoundResult {
+        for roundResult in racingRounds {
             result += format(roundResult)
             result += newLine
         }
@@ -22,21 +22,21 @@ struct GameResultFormatter {
         return result
     }
     
-    private static func format(_ roundResult: RacingRoundResult) -> String {
+    private static func format(_ racingRound: RacingRound) -> String {
         var result = ""
         
-        for carState in roundResult.value {
-            result += format(carState)
+        for racingCar in racingRound.racingCars {
+            result += format(racingCar)
             result += newLine
         }
         
         return result
     }
     
-    private static func format(_ carState: RacingCar.State) -> String {
+    private static func format(_ racingCar: RacingCar) -> String {
         var result = ""
         
-        (0..<carState.location).forEach { _ in
+        (0..<racingCar.location).forEach { _ in
             result += movementSymbol
         }
         

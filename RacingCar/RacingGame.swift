@@ -7,15 +7,37 @@
 
 import Foundation
 
+enum RacingGameError: LocalizedError {
+    case invalidCar
+    
+    var errorDescription: String? {
+        switch self {
+        case .invalidCar:
+            return "RacingGame에서는 RacingCar만 참여할 수 있습니다."
+        }
+    }
+}
+
 struct RacingGame {
-    let racingRound: [RacingRound]
+    let racingCars: [RacingCar]
+    let roundCount: Int
+    
     
     init(racingCars: [RacingCar], roundCount: Int) {
-        racingRound = (0..<roundCount).map { _ in NormalRacingRound(racingCars: racingCars) }
+        self.racingCars = racingCars
+        self.roundCount = roundCount
     }
     
-    func start() -> RacingGameResult {
-        let racingRoundResults = racingRound.map { $0.start() }
-        return RacingGameResult(racingRoundResult: racingRoundResults)
+    mutating func start() -> [RacingRound] {
+        var racingResult = [RacingRound]()
+        var racingRound: RacingRound = NormalRacingRound(racingCars: racingCars.copy())
+        
+        for _ in 0..<roundCount {
+            let result: RacingRound = racingRound.start()
+            racingResult.append(result)
+            racingRound = result
+        }
+        
+        return racingResult
     }
 }

@@ -15,9 +15,9 @@ struct RacingRoundResult: Equatable {
     typealias CarLocation = Int
     typealias CarId = Int
     
-    let value: [RacingCar.State]
+    let value: [RacingCar]
     
-    init(states: [RacingCar.State]) {
+    init(states: [RacingCar]) {
         self.value = states
     }
 }

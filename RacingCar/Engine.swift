@@ -5,8 +5,6 @@
 //  Created by nylah.j on 2022/04/30.
 //
 
-import Foundation
-
 protocol Engine {
     func canGo() -> Bool
 }
