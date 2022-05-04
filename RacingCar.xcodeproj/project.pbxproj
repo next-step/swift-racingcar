@@ -22,8 +22,8 @@
 		F141D7C8281B955900E69D41 /* RacingGameInputViewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F141D7C6281B955900E69D41 /* RacingGameInputViewMock.swift */; };
 		F141D7D0281E93CA00E69D41 /* RandomGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F141D7CF281E93C900E69D41 /* RandomGenerator.swift */; };
 		F141D7D1281E93CA00E69D41 /* RandomGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F141D7CF281E93C900E69D41 /* RandomGenerator.swift */; };
-		F141D7D7282050F700E69D41 /* RacingGameUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F141D7D6282050F700E69D41 /* RacingGameUI.swift */; };
-		F141D7D92820527300E69D41 /* RacingGameUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F141D7D6282050F700E69D41 /* RacingGameUI.swift */; };
+		F141D7D7282050F700E69D41 /* Drawable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F141D7D6282050F700E69D41 /* Drawable.swift */; };
+		F141D7D92820527300E69D41 /* Drawable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F141D7D6282050F700E69D41 /* Drawable.swift */; };
 		F141D7DB2820561000E69D41 /* RacingGameResultViewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F141D7DA2820561000E69D41 /* RacingGameResultViewMock.swift */; };
 		F141D7DC2820566500E69D41 /* RacingGameResultViewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F141D7DA2820561000E69D41 /* RacingGameResultViewMock.swift */; };
 		F141D7DE2820BCAD00E69D41 /* RacingGameInputChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F141D7DD2820BCAD00E69D41 /* RacingGameInputChecker.swift */; };
@@ -63,7 +63,7 @@
 		F141D7C6281B955900E69D41 /* RacingGameInputViewMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingGameInputViewMock.swift; sourceTree = "<group>"; };
 		F141D7CF281E93C900E69D41 /* RandomGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomGenerator.swift; sourceTree = "<group>"; };
 		F141D7D2281E978300E69D41 /* RacingGame.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = RacingGame.md; sourceTree = "<group>"; };
-		F141D7D6282050F700E69D41 /* RacingGameUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingGameUI.swift; sourceTree = "<group>"; };
+		F141D7D6282050F700E69D41 /* Drawable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drawable.swift; sourceTree = "<group>"; };
 		F141D7DA2820561000E69D41 /* RacingGameResultViewMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingGameResultViewMock.swift; sourceTree = "<group>"; };
 		F141D7DD2820BCAD00E69D41 /* RacingGameInputChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingGameInputChecker.swift; sourceTree = "<group>"; };
 		F141D7E02820C37600E69D41 /* RacingGameInputError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingGameInputError.swift; sourceTree = "<group>"; };
@@ -192,7 +192,7 @@
 		F141D7D82820512D00E69D41 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				F141D7D6282050F700E69D41 /* RacingGameUI.swift */,
+				F141D7D6282050F700E69D41 /* Drawable.swift */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -332,7 +332,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F14AA42D2816CCC8000CF268 /* StringCaculator.swift in Sources */,
-				F141D7D7282050F700E69D41 /* RacingGameUI.swift in Sources */,
+				F141D7D7282050F700E69D41 /* Drawable.swift in Sources */,
 				F141D7A9281AF31000E69D41 /* RacingGame.swift in Sources */,
 				F141D7DB2820561000E69D41 /* RacingGameResultViewMock.swift in Sources */,
 				F141D7AF281AF42700E69D41 /* RacingGameInputView.swift in Sources */,
@@ -354,7 +354,7 @@
 			files = (
 				F141D7D1281E93CA00E69D41 /* RandomGenerator.swift in Sources */,
 				F141D7C8281B955900E69D41 /* RacingGameInputViewMock.swift in Sources */,
-				F141D7D92820527300E69D41 /* RacingGameUI.swift in Sources */,
+				F141D7D92820527300E69D41 /* Drawable.swift in Sources */,
 				F141D7C2281B93CA00E69D41 /* RacingGameInputView.swift in Sources */,
 				F141D7DC2820566500E69D41 /* RacingGameResultViewMock.swift in Sources */,
 				F141D7DF2820C35D00E69D41 /* RacingGameInputChecker.swift in Sources */,

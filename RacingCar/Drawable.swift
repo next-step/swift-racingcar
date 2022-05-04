@@ -1,5 +1,5 @@
 //
-//  RacingGameUI.swift
+//  Drawable.swift
 //  RacingCar
 //
 //  Created by jinho jeong on 2022/05/03.
@@ -16,3 +16,4 @@ extension Drawable {
         print("\n")
     }
 }
+
