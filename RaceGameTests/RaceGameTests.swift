@@ -141,17 +141,6 @@ class RaceGameTests: XCTestCase {
         let expectation = inputView.registerSetting()
         XCTAssertEqual(result, expectation)
     }
-
-   
-    func test_given쉼표로구분된자동차들입력_when쉼표로분리_then문자열배열로나뉘는지_체크() {
-        //given
-        let carNames = "Tayo,BoongBoong,Took,Bentley"
-        let inputView = RacingGameInputView(randomGenerator: RandomGenerator())
-        
-        //then
-        let expectation = inputView.splitCarNames(input: carNames)
-        XCTAssertEqual(["Tayo", "BoongBoong", "Took", "Bentley"], expectation)
-    }
     
     func test_when자동차의이름_5자초과_thenTextLengthExceeded_Error발생하는지_체크() throws {
         //given

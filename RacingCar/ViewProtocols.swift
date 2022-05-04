@@ -17,8 +17,6 @@ protocol RacingGameResult: Drawable {
 
 protocol RacingGameInput {
     func input() throws
-    func inputCarNames() throws -> [String]
-    func inputGameCount() throws -> Int
     func registerSetting() -> GameSetting
    
 }

@@ -27,33 +27,32 @@ final class RacingGameInputView: RacingGameInput {
         self.gameCount = try inputGameCount()
     }
     
-    func inputCarNames() throws -> [String] {
+    private func inputCarNames() throws -> [String] {
         let input: String = try checker.converter.converToUnwrapper(value: readLine())
         let carNames = splitCarNames(input: input)
         try checker.validator.checkValidation(carNames: carNames)
         return carNames
     }
     
-    func inputGameCount() throws -> Int {
+    private  func inputGameCount() throws -> Int {
         let input: String = try checker.converter.converToUnwrapper(value: readLine())
         let count: Int = try checker.converter.converterToInteger(input: input)
         try checker.validator.checkValidation(count: count)
         return count
     }
     
-    func splitCarNames(input: String) -> [String] {
+   private func splitCarNames(input: String) -> [String] {
         let carNames = input
             .replacingOccurrences(of: " ", with: "")
             .split(separator: ",").map{ String($0)}
         return carNames
     }
-    
    
-    func printQuestionCarNams() {
+    private func printQuestionCarNams() {
         print("경주할 자동차 이름을 입력하세요(이름은 쉼표(,)를 기준으로 구분).")
     }
     
-    func printQuestionGameCount() {
+    private func printQuestionGameCount() {
         print("시도할 횟수는 몇 회인가요?")
     }
     
