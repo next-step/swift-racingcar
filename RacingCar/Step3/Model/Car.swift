@@ -9,6 +9,12 @@ import Foundation
 
 final class Car {
     private(set) var distance: Int = 0
+    let name: String
+    
+    init(name: String) {
+        self.name = name
+        print(name)
+    }
     
     func move(_ value: Int) {
         self.distance += value

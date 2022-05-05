@@ -24,4 +24,9 @@ extension GameGuide {
     static func splitComma(_ input: String) -> [String] {
         return input.split(separator: ",").map{String($0)}
     }
+    static func wordLimitDisriminate(_ carName: String) throws {
+        if carName.count > 5 {
+            throw InputError.overCountNamingLength
+        }
+    }
 }

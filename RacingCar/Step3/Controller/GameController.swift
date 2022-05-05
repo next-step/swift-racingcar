@@ -11,23 +11,19 @@ struct GameController {
     private let inputView = InputView()
     private let resultView = ResultView()
     
-    func gameStart() {
-        do {
-            let gameSetting: (carCount: Int, attemptCount: Int) = try inputView.gameStart()
-            let cars: [Car] = Array.init(repeating: 0, count: gameSetting.carCount).map{ _ in Car()}
-            resultView.initSetting()
-            result(model: cars, gameSetting.attemptCount)
-            
-            let noSplitCarNames = inputView.carNamesSetting()
-            let splitCarNames = GameGuide.splitComma(noSplitCarNames)
-            
-            let attemptCount = try inputView.attemptSetting()
-            
-        } catch {
-            if let error = error as? InputError {
-                error.showError()
-            }
+    func gameStart() throws {
+//        resultView.initSetting()
+//        result(model: cars, gameSetting.attemptCount)
+        
+        let noSplitCarNames = inputView.carNamesSetting()
+        let splitCarNames = GameGuide.splitComma(noSplitCarNames)
+        for carName in splitCarNames {
+            try GameGuide.wordLimitDisriminate(carName)
         }
+        let attemptCount = try inputView.attemptSetting()
+        let cars: [Car] = Array.init(repeating: 0, count: splitCarNames.count).enumerated().map{ v in Car(name: splitCarNames[v.offset])}
+
+        
     }
     
     private func moveCars(model cars: [Car], _ gameRound: Int) -> [Car] {

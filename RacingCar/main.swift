@@ -7,4 +7,11 @@
 import Foundation
 
 let game = GameController()
-game.gameStart()
+do {
+    try game.gameStart()
+} catch {
+    if let error = error as? InputError {
+        error.showError()
+    }
+}
+
