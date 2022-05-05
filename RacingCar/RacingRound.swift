@@ -10,7 +10,13 @@ protocol RacingRound {
     func start() -> RacingRound
 }
 
-struct NormalRacingRound: RacingRound {
+extension RacingRound where Self: Equatable {
+    static func == (lhs: Self, rhs: Self) -> Bool {
+        return lhs.racingCars == rhs.racingCars
+    }
+}
+
+struct NormalRacingRound: RacingRound, Equatable {
     let racingCars: [RacingCar]
     
     init(racingCars: [RacingCar]) {

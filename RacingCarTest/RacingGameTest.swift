@@ -15,22 +15,28 @@ extension RacingGameResult: Equatable {
 
 class RacingGameTest: XCTestCase {
 
-    func test_RacingGame을_시작하면_각_라운드의_실행결과를_담고있는_RacingGameResult를_얻을_수_있다() {
+    func test_RacingGame을_시작하면_각_라운드의_실행결과를_담고있는_RacingRound_배열을_얻을_수_있다() {
         // given
         let firstCar = RacingCar(id: 0, engine: MovingEngine())
         let secondCar = RacingCar(id: 1, engine: UnmovingEngine())
         let thirdCar = RacingCar(id: 2, engine: UnmovingEngine())
         
-        let racingGame = RacingGame(racingCars: [firstCar, secondCar, thirdCar], roundCount: 2)
+        var racingGame = RacingGame(racingCars: [firstCar, secondCar, thirdCar], roundCount: 2)
         
         // when
-        let racingGameResult = racingGame.start()
+        let racingGameResult = racingGame.start() as! [NormalRacingRound]
         
         // then
-        let firstRoundResult = RacingRoundResult(states: [.init(id: 0, location: 1), .init(id: 1, location: 0), .init(id: 2, location: 0)])
-        let secondRoundResult = RacingRoundResult(states: [.init(id: 0, location: 2), .init(id: 1, location: 0), .init(id: 2, location: 0)])
+        firstCar.move()
+        secondCar.move()
+        thirdCar.move()
+        let firstRoundResult = NormalRacingRound(racingCars: [firstCar, secondCar, thirdCar].copy())
         
-        XCTAssert(racingGameResult.racingRoundResult[0] == firstRoundResult)
-        XCTAssert(racingGameResult.racingRoundResult[1] == secondRoundResult)
+        firstCar.move()
+        secondCar.move()
+        thirdCar.move()
+        let secondRoundResult = NormalRacingRound(racingCars: [firstCar, secondCar, thirdCar].copy())
+        
+        XCTAssert(racingGameResult == [firstRoundResult, secondRoundResult])
     }
 }

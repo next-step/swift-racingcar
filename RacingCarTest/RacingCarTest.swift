@@ -31,4 +31,5 @@ class RacingCarTest: XCTestCase {
         
         // then
         XCTAssertEqual(racingCar.location, previousLocation)
+    }
 }

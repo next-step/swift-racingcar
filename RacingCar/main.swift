@@ -8,13 +8,13 @@
 import Foundation
 
 let carCount = InputView.inputCarCount()
-if !InputChecker.isValid(carCount: carCount) {
+if InputChecker.isValidCarCount(carCount) == false {
     OutputView.carCountIsInvalid()
     exit(0)
 }
 
 let roundCount = InputView.inputRoundCount()
-if !InputChecker.isValid(roundCount: roundCount) {
+if InputChecker.isValidRoundCount(roundCount) == false {
     OutputView.roundCountIsInvalid()
     exit(0)
 }
@@ -24,6 +24,6 @@ let racingCars = (0..<carCount!).map { id in
 }
 
 var racingGame = RacingGame(racingCars: racingCars, roundCount: roundCount!)
-let racingGameResult: [RacingRound] = racingGame.start()
+let racingGameResult = racingGame.start()
 let formattedResult = GameResultFormatter.format(racingGameResult)
 OutputView.show(formattedResult)

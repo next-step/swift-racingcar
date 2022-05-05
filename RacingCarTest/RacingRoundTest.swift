@@ -6,6 +6,7 @@
 //
 
 import XCTest
+@testable import RacingCar
 
 class RacingRoundTest: XCTestCase {
 
@@ -17,12 +18,10 @@ class RacingRoundTest: XCTestCase {
         let racingRound = NormalRacingRound(racingCars:[firstCar, secondCar])
         
         // when
-        let racingResult = racingRound.start()
+        let racingResult: RacingRound = racingRound.start()
         
-        // then
-        XCTAssertEqual(racingResult.value[0].id, firstCar.state().id)
-        XCTAssertEqual(racingResult.value[0].location, firstCar.state().location)
-        XCTAssertEqual(racingResult.value[1].id, secondCar.state().id)
-        XCTAssertEqual(racingResult.value[1].location, secondCar.state().location)
+        // the
+        XCTAssertEqual(firstCar.location + 1, racingResult.racingCars[0].location)
+        XCTAssertEqual(secondCar.location, racingResult.racingCars[1].location)
     }
 }

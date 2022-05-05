@@ -6,11 +6,11 @@
 //
 
 struct InputChecker {
-    static func isValid(carCount: Int?) -> Bool {
+    static func isValidCarCount(_ carCount: Int?) -> Bool {
         return carCount != nil && carCount! > 0
     }
     
-    static func isValid(roundCount: Int?) -> Bool {
+    static func isValidRoundCount(_ roundCount: Int?) -> Bool {
         return roundCount != nil && roundCount! > 0
     }
 }

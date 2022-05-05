@@ -14,7 +14,7 @@ class InputCheckerTest: XCTestCase {
         let negativeNumber = -1
         
         // when
-        let result = InputChecker.isValid(roundCount: negativeNumber)
+        let result = InputChecker.isValidRoundCount(negativeNumber)
         
         // then
         XCTAssertFalse(result)
@@ -25,7 +25,7 @@ class InputCheckerTest: XCTestCase {
         let nilRoundCount: Int? = nil
         
         // when
-        let result = InputChecker.isValid(roundCount: nilRoundCount)
+        let result = InputChecker.isValidRoundCount(nilRoundCount)
         
         // then
         XCTAssertFalse(result)
@@ -35,7 +35,7 @@ class InputCheckerTest: XCTestCase {
         let positiveNumber: Int = 1
         
         // when
-        let result = InputChecker.isValid(roundCount: positiveNumber)
+        let result = InputChecker.isValidCarCount(positiveNumber)
         
         // then
         XCTAssertTrue(result)
@@ -46,7 +46,7 @@ class InputCheckerTest: XCTestCase {
         let negativeNumber = -1
         
         // when
-        let result = InputChecker.isValid(carCount: negativeNumber)
+        let result = InputChecker.isValidCarCount(negativeNumber)
         
         // then
         XCTAssertFalse(result)
@@ -54,10 +54,10 @@ class InputCheckerTest: XCTestCase {
     
     func test_carCount를_체크할때_nil이_입력으로_들어오면_false를_리턴한다() {
         // given
-        let nilRoundCount: Int? = nil
+        let nilCarCount: Int? = nil
         
         // when
-        let result = InputChecker.isValid(carCount: nilRoundCount)
+        let result = InputChecker.isValidCarCount(nilCarCount)
         
         // then
         XCTAssertFalse(result)
@@ -67,7 +67,7 @@ class InputCheckerTest: XCTestCase {
         let positiveNumber: Int = 1
         
         // when
-        let result = InputChecker.isValid(carCount: positiveNumber)
+        let result = InputChecker.isValidCarCount(positiveNumber)
         
         // then
         XCTAssertTrue(result)
