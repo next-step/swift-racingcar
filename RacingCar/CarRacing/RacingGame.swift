@@ -7,8 +7,7 @@
 
 import Foundation
 
-class RacingGame {
-    
+struct RacingGame {
     var participantsCount: Int?
     var drivingCount: Int?
     
