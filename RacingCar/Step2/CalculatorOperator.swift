@@ -4,11 +4,11 @@
 
 import Foundation
 
-enum CalculatorOperator: CaseIterable {
-    case add
-    case subtract
-    case multiply
-    case divide
+enum CalculatorOperator: String {
+    case add = "+"
+    case subtract = "-"
+    case multiply = "*"
+    case divide = "/"
 }
 
 extension CalculatorOperator {
@@ -25,37 +25,6 @@ extension CalculatorOperator {
                 throw CalculatorError.divideByZero
             }
             return a / b
-        }
-    }
-}
-
-extension CalculatorOperator {
-    static func fromString(_ stringOperator: String) throws -> CalculatorOperator {
-        try validateStringOperator(stringOperator)
-        switch stringOperator {
-        case "+":
-            return add
-        case "-":
-            return subtract
-        case "*":
-            return multiply
-        case "/":
-            return divide
-        default:
-            throw CalculatorError.invalidOperator
-        }
-    }
-}
-
-extension CalculatorOperator {
-    static func validateStringOperator(_ stringOperator: String) throws {
-        let calculatorOperator = CalculatorOperator
-        .allCases
-        .filter({ calculatorOperator in
-            calculatorOperator.rawValue == stringOperator
-        })
-        if calculatorOperator.isEmpty {
-            throw CalculatorError.invalidOperator
         }
     }
 }

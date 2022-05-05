@@ -24,7 +24,7 @@ class Calculator {
         var result: Int = Int(seperatedInput.removeFirst())!
 
         while !seperatedInput.isEmpty {
-            let intOperator: CalculatorOperator = try CalculatorOperator.fromString(seperatedInput.removeFirst())
+            let intOperator: CalculatorOperator = CalculatorOperator(rawValue: seperatedInput.removeFirst())!
             let operand: Int = try getOperand(seperatedInput.removeFirst())
             result = try intOperator.execute(result, operand)
         }
@@ -39,7 +39,9 @@ class Calculator {
 
         try validateOperand(seperatedInput.removeFirst())
         while !seperatedInput.isEmpty {
-            try CalculatorOperator.validateStringOperator(seperatedInput.removeFirst())
+            if CalculatorOperator(rawValue: seperatedInput.removeFirst()) == nil {
+                throw CalculatorError.invalidOperator
+            }
             if seperatedInput.isEmpty {
                 throw CalculatorError.invalidOperand
             }
