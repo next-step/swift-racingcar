@@ -30,12 +30,12 @@ class RacingGameTest: XCTestCase {
         firstCar.move()
         secondCar.move()
         thirdCar.move()
-        let firstRoundResult = NormalRacingRound(racingCars: [firstCar, secondCar, thirdCar].copy())
+        let firstRoundResult = try! NormalRacingRound(racingCars: [firstCar, secondCar, thirdCar].copy())
         
         firstCar.move()
         secondCar.move()
         thirdCar.move()
-        let secondRoundResult = NormalRacingRound(racingCars: [firstCar, secondCar, thirdCar].copy())
+        let secondRoundResult = try! NormalRacingRound(racingCars: [firstCar, secondCar, thirdCar].copy())
         
         XCTAssert(racingGameResult == [firstRoundResult, secondRoundResult])
     }

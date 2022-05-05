@@ -15,7 +15,7 @@ class RacingRoundTest: XCTestCase {
         let firstCar = RacingCar(id: 1, engine: MovingEngine())
         let secondCar = RacingCar(id: 2, engine: UnmovingEngine())
         
-        let racingRound = NormalRacingRound(racingCars:[firstCar, secondCar])
+        let racingRound = try! NormalRacingRound(racingCars:[firstCar, secondCar])
         
         // when
         let racingResult: RacingRound = racingRound.start()
@@ -23,5 +23,13 @@ class RacingRoundTest: XCTestCase {
         // the
         XCTAssertEqual(firstCar.location + 1, racingResult.racingCars[0].location)
         XCTAssertEqual(secondCar.location, racingResult.racingCars[1].location)
+    }
+    
+    func test_init_RacingRound는_1개이상의_RacingCar만_가질수있다() {
+        // given
+        let racingCars: [RacingCar] = []
+        
+        // when
+        XCTAssertThrowsError(try NormalRacingRound(racingCars: racingCars))g
     }
 }

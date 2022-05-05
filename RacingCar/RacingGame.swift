@@ -18,7 +18,6 @@ enum RacingGameError: LocalizedError {
         case .invalidRoundCarCount(let invalidCount):
             return "RacingGame은 0개 이상의 RacingCar만 가질 수 있습니다. 입력된 RacingCars의 개수: \(invalidCount)"
         }
-    
     }
 }
 
@@ -44,7 +43,7 @@ struct RacingGame {
     
     mutating func start() -> [RacingRound] {
         var racingResult = [RacingRound]()
-        var racingRound: RacingRound = NormalRacingRound(racingCars: racingCars.copy())
+        var racingRound: RacingRound = try! NormalRacingRound(racingCars: racingCars.copy())
         
         for _ in 0..<roundCount {
             let result: RacingRound = racingRound.start()
