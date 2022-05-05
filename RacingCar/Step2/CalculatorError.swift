@@ -8,5 +8,6 @@ enum CalculatorError: Error {
     case nilOrBlank
     case invalidOperator
     case invalidOperand
+    case invalidState
     case divideByZero
 }

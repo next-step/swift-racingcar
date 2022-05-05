@@ -16,37 +16,18 @@ import Foundation
 /// 예를 들어 2 + 3 * 4 / 2와 같은 문자열을 입력할 경우 2 + 3 * 4 / 2 실행 결과인 10을 출력해야 합니다.
 
 class Calculator {
+
     func calculateStringExpression(_ input: String?) throws -> Int {
-        try validateExpression(input)
-
-        var seperatedInput: [String] = input!.components(separatedBy: " ")
-
-        var result: Int = Int(seperatedInput.removeFirst())!
-
-        while !seperatedInput.isEmpty {
-            let intOperator: CalculatorOperator = CalculatorOperator(rawValue: seperatedInput.removeFirst())!
-            let operand: Int = try getOperand(seperatedInput.removeFirst())
-            result = try intOperator.execute(result, operand)
-        }
-
-        return result
-    }
-
-    private func validateExpression(_ input: String?) throws {
         try validateNilOrBlankString(input)
 
         var seperatedInput: [String] = input!.components(separatedBy: " ")
+        var result = CalculatorState.initialState
 
-        try validateOperand(seperatedInput.removeFirst())
         while !seperatedInput.isEmpty {
-            if CalculatorOperator(rawValue: seperatedInput.removeFirst()) == nil {
-                throw CalculatorError.invalidOperator
-            }
-            if seperatedInput.isEmpty {
-                throw CalculatorError.invalidOperand
-            }
-            try validateOperand(seperatedInput.removeFirst())
+            result = try result.getNextState(input: seperatedInput.removeFirst())
         }
+
+        return try result.getCompletedResult()
     }
 
     private func validateNilOrBlankString(_ input: String?) throws {
@@ -55,19 +36,5 @@ class Calculator {
         if trimmedInput.isEmpty {
             throw CalculatorError.nilOrBlank
         }
-    }
-
-    private func validateOperand(_ stringOperand: String) throws {
-        let operand = Int(stringOperand)
-
-        if operand == nil {
-            throw CalculatorError.invalidOperand
-        }
-    }
-
-    private func getOperand(_ stringOperand: String) throws -> Int {
-        try validateOperand(stringOperand)
-
-        return Int(stringOperand)!
     }
 }
