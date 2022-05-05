@@ -10,16 +10,24 @@ import Foundation
 final class Car {
     
     // MARK: - Property
+    let name: String
     private(set) var moveCount: Int = 0
+    private let canMoveMinNumber = 4
+    private let oneTimeMoveCount = 1
     
-    // MARK: - Method
-    func generateRandomNumber() -> Int {
-        return Int.random(in: 0 ... 9)
+    // MARK: Initializer
+    init(name: String) {
+        self.name = name
     }
     
+    // MARK: - Method
+    
     func move(randomNumber: Int) throws {
-        if try Validator.checkValidation(number: randomNumber) >= 4 {
-            moveCount += 1
+        guard Validator.checkValidation(number: randomNumber) else {
+            throw RacingCarError.invalidNumber
+        }
+        if randomNumber >= canMoveMinNumber {
+            moveCount += oneTimeMoveCount
         }
     }
 }

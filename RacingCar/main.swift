@@ -7,9 +7,9 @@
 import Foundation
 
 do {
-    try RacingCarController()
-        .start(carCount: try RacingCarInputOutput.inputCarCount(),
-               tryCount: try RacingCarInputOutput.inputTryCount())
+    try RacingController()
+        .start(carNames: try RacingCarInput.inputCarNames(),
+               racingCount: try RacingCarInput.inputTryCount())
 } catch {
     dump(error.localizedDescription)
 }
