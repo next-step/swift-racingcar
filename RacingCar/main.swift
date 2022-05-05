@@ -23,7 +23,7 @@ let racingCars = (0..<carCount!).map { id in
     RacingCarFactory.create(id: id)
 }
 
-var racingGame = RacingGame(racingCars: racingCars, roundCount: roundCount!)
+var racingGame = try RacingGame(racingCars: racingCars, roundCount: roundCount!)
 let racingGameResult = racingGame.start()
 let formattedResult = GameResultFormatter.format(racingGameResult)
 OutputView.show(formattedResult)

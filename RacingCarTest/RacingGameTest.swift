@@ -21,7 +21,7 @@ class RacingGameTest: XCTestCase {
         let secondCar = RacingCar(id: 1, engine: UnmovingEngine())
         let thirdCar = RacingCar(id: 2, engine: UnmovingEngine())
         
-        var racingGame = RacingGame(racingCars: [firstCar, secondCar, thirdCar], roundCount: 2)
+        var racingGame = try! RacingGame(racingCars: [firstCar, secondCar, thirdCar], roundCount: 2)
         
         // when
         let racingGameResult = racingGame.start() as! [NormalRacingRound]
@@ -38,5 +38,25 @@ class RacingGameTest: XCTestCase {
         let secondRoundResult = NormalRacingRound(racingCars: [firstCar, secondCar, thirdCar].copy())
         
         XCTAssert(racingGameResult == [firstRoundResult, secondRoundResult])
+    }
+    
+    func test_RacingGame는_1개이상의_RacingCar만_가질수있다() {
+        // given
+        let racingCars: [RacingCar] = []
+        let roundCount = 3
+    
+        // when
+        // then
+        XCTAssertThrowsError(try RacingGame(racingCars: racingCars, roundCount: roundCount))
+    }
+    
+    func test_RacingGame은_1이상의값만_RacingCount로_가질수있다() {
+        // given
+        let racingCars = [RacingCar(id: 0, engine: MovingEngine())]
+        let roundCount = 0
+        
+        // when
+        // then
+        XCTAssertThrowsError(try RacingGame(racingCars: racingCars, roundCount: roundCount))
     }
 }
