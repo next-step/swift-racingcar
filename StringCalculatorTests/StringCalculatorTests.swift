@@ -44,7 +44,7 @@ class StringCalculatorTests: XCTestCase {
         let a = 1
         let b = 4
         
-        let result = calculator.add(a: a, b: b)
+        let result = calculator.add(lhs: a, rhs: b)
         XCTAssertEqual(result, a + b)
     }
     
@@ -52,7 +52,7 @@ class StringCalculatorTests: XCTestCase {
         let a = 3
         let b = 2
         
-        let result = calculator.substract(a: a, b: b)
+        let result = calculator.substract(lhs: a, rhs: b)
         XCTAssertEqual(result, a - b)
     }
     
@@ -60,7 +60,7 @@ class StringCalculatorTests: XCTestCase {
         let a = 3
         let b = 3
         
-        let result = calculator.division(a: a, b: b)
+        let result = calculator.division(lhs: a, rhs: b)
         XCTAssertEqual(result, a / b)
     }
     
@@ -68,7 +68,7 @@ class StringCalculatorTests: XCTestCase {
         let a = 3
         let b = 3
         
-        let result = calculator.multiply(a: a, b: b)
+        let result = calculator.multiply(lhs: a, rhs: b)
         XCTAssertEqual(result, a * b)
     }
     

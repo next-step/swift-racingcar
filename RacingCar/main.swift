@@ -95,30 +95,30 @@ struct StringCalculator {
 
         switch code {
         case .add:
-            return add(a:b:)
+            return add(lhs:rhs:)
         case .division:
-            return division(a:b:)
+            return division(lhs:rhs:)
         case .multiply:
-             return multiply(a:b:)
+             return multiply(lhs:rhs:)
         case .subtract:
-            return substract
+            return substract(lhs:rhs:)
         }
     }
     
-    func add(a: Int, b: Int) -> Int {
-        return a + b
+    func add(lhs: Int, rhs: Int) -> Int {
+        return lhs + rhs
     }
     
-    func division(a: Int, b: Int) -> Int {
-        return a / b
+    func division(lhs: Int, rhs: Int) -> Int {
+        return lhs / rhs
     }
     
-    func multiply(a: Int, b: Int) -> Int {
-        return a * b
+    func multiply(lhs: Int, rhs: Int) -> Int {
+        return lhs * rhs
     }
     
-    func substract(a: Int, b: Int) -> Int {
-        return a - b
+    func substract(lhs: Int, rhs: Int) -> Int {
+        return lhs - rhs
     }
 }
 
