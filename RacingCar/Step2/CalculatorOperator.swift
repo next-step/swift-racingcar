@@ -4,7 +4,7 @@
 
 import Foundation
 
-enum CalculatorOperator {
+enum CalculatorOperator: CaseIterable {
     case add
     case subtract
     case multiply
@@ -49,16 +49,12 @@ extension CalculatorOperator {
 
 extension CalculatorOperator {
     static func validateStringOperator(_ stringOperator: String) throws {
-        switch stringOperator {
-        case "+":
-            return
-        case "-":
-            return
-        case "*":
-            return
-        case "/":
-            return
-        default:
+        let calculatorOperator = CalculatorOperator
+        .allCases
+        .filter({ calculatorOperator in
+            calculatorOperator.rawValue == stringOperator
+        })
+        if calculatorOperator.isEmpty {
             throw CalculatorError.invalidOperator
         }
     }
