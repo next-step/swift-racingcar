@@ -20,6 +20,21 @@ struct InputView {
         return (carCount,attemptCount)
     }
     
+    func carNamesSetting() -> String {
+        print(GameGuide.carNames)
+        guard let input: String = readLine() else {
+            return ""
+        }
+        return input
+    }
+    
+    func attemptSetting() throws -> Int {
+        print(GameGuide.attemptCount, terminator: " ")
+        let attemptCount = try readInput()
+        try self.isValidNumber(attemptCount)
+        return attemptCount
+    }
+    
     private func readInput() throws -> Int {
         guard let input: String = readLine(), let inputNumber = Int(input) else {
             throw InputError.notNumber
@@ -27,7 +42,7 @@ struct InputView {
         return inputNumber
     }
     
-    func isValidNumber(_ input:Int) throws {
+    private func isValidNumber(_ input:Int) throws {
         if input < 1 {
             throw InputError.invalidNumber
         }
