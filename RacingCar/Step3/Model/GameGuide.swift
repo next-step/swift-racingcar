@@ -21,4 +21,7 @@ extension GameGuide {
         guard randomNumber >= 4 else { return 0 }
         return 1
     }
+    static func splitComma(_ input: String) -> [String] {
+        return input.split(separator: ",").map{String($0)}
+    }
 }

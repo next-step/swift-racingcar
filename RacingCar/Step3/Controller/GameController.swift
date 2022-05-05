@@ -18,6 +18,11 @@ struct GameController {
             resultView.initSetting()
             result(model: cars, gameSetting.attemptCount)
             
+            let noSplitCarNames = inputView.carNamesSetting()
+            let splitCarNames = GameGuide.splitComma(noSplitCarNames)
+            
+            let attemptCount = try inputView.attemptSetting()
+            
         } catch {
             if let error = error as? InputError {
                 error.showError()
