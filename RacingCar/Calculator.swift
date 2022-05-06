@@ -55,7 +55,7 @@ class Calculator {
     }
     
     private func isInteger(_ input: String) -> Bool {
-        if Int(input) != nil {
+        if let _ = Int(input) {
             return true
         } else {
             return false
