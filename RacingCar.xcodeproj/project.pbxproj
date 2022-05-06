@@ -42,6 +42,10 @@
 		1F8DCD4E281E68F600890A22 /* InputError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD31281D96EA00890A22 /* InputError.swift */; };
 		1F8DCD4F281E68F800890A22 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD2F281D93C000890A22 /* InputView.swift */; };
 		1F8DCD50281E690A00890A22 /* GameGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD33281DB46C00890A22 /* GameGuide.swift */; };
+		1F8DCD522824056D00890A22 /* CarGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD512824056D00890A22 /* CarGenerator.swift */; };
+		1F8DCD5328249FC900890A22 /* CarGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD512824056D00890A22 /* CarGenerator.swift */; };
+		1F8DCD542824A06500890A22 /* CarGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD512824056D00890A22 /* CarGenerator.swift */; };
+		1F8DCD562824A2FC00890A22 /* RacingGuideTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DCD552824A2FC00890A22 /* RacingGuideTest.swift */; };
 		C7E1263027239F7E0000DB8B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +79,8 @@
 		1F8DCD37281DB6BA00890A22 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		1F8DCD39281DB99600890A22 /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
 		1F8DCD42281E683100890A22 /* RacingCarTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingCarTest.swift; sourceTree = "<group>"; };
+		1F8DCD512824056D00890A22 /* CarGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarGenerator.swift; sourceTree = "<group>"; };
+		1F8DCD552824A2FC00890A22 /* RacingGuideTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingGuideTest.swift; sourceTree = "<group>"; };
 		C7E1262C27239F7E0000DB8B /* RacingCar */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RacingCar; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E1262F27239F7E0000DB8B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -109,6 +115,7 @@
 			children = (
 				1F8DCD41281E67DF00890A22 /* Step1 */,
 				1F8DCD42281E683100890A22 /* RacingCarTest.swift */,
+				1F8DCD552824A2FC00890A22 /* RacingGuideTest.swift */,
 			);
 			path = RacingCarTest;
 			sourceTree = "<group>";
@@ -147,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				1F8DCD2C281D7FDD00890A22 /* Car.swift */,
+				1F8DCD512824056D00890A22 /* CarGenerator.swift */,
 				1F8DCD33281DB46C00890A22 /* GameGuide.swift */,
 			);
 			path = Model;
@@ -344,6 +352,8 @@
 				1F8DCD46281E688B00890A22 /* GameController.swift in Sources */,
 				1F8DCD48281E689000890A22 /* InputView.swift in Sources */,
 				1F8DCCE02816F69200890A22 /* Step1Test.swift in Sources */,
+				1F8DCD5328249FC900890A22 /* CarGenerator.swift in Sources */,
+				1F8DCD562824A2FC00890A22 /* RacingGuideTest.swift in Sources */,
 				1F8DCD43281E683100890A22 /* RacingCarTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -364,6 +374,7 @@
 				1F8DCD4B281E68EF00890A22 /* GameController.swift in Sources */,
 				1F8DCD4F281E68F800890A22 /* InputView.swift in Sources */,
 				1F8DCD29281BF9AF00890A22 /* StringCalculatorError.swift in Sources */,
+				1F8DCD542824A06500890A22 /* CarGenerator.swift in Sources */,
 				1F8DCD2A281BF9B100890A22 /* Operator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -382,6 +393,7 @@
 				1F8DCD13281AE1CF00890A22 /* StringCalculatorInputChange.swift in Sources */,
 				1F8DCCE72816F7AD00890A22 /* Splitter.swift in Sources */,
 				1F8DCD30281D93C000890A22 /* InputView.swift in Sources */,
+				1F8DCD522824056D00890A22 /* CarGenerator.swift in Sources */,
 				1F8DCD2D281D7FDD00890A22 /* Car.swift in Sources */,
 				C7E1263027239F7E0000DB8B /* main.swift in Sources */,
 			);

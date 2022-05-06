@@ -11,6 +11,7 @@ enum InputError: Error {
     case notNumber
     case invalidNumber
     case overCountNamingLength
+    case emptyNaming
     
     var errorDescription: String {
         switch self {
@@ -20,6 +21,8 @@ enum InputError: Error {
             return "유효한 Setting 값이 아닙니다"
         case .overCountNamingLength:
             return "자동차 이름은 5자를 초과할 수 없습니다."
+        case .emptyNaming:
+            return "자동차 이름이 입력되지 않았습니다"
         }
     }
 }
