@@ -2,34 +2,34 @@
 //  RacingCarTest.swift
 //  RacingCarTest
 //
-//  Created by nylah.j on 2022/04/26.
+//  Created by nylah.j on 2022/04/30.
 //
 
 import XCTest
+@testable import RacingCar
 
 class RacingCarTest: XCTestCase {
+    func test_자동차가_움직이면_자동차의_위치가_1증가한다() {
+        // given
+        let racingCar = RacingCar(id: 0, engine: MovingEngine())
+        let previousLocation = racingCar.location
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        // when
+        racingCar.move()
+        
+        // then
+        XCTAssertEqual(racingCar.location, previousLocation + 1)
     }
+    
+    func test_자동차가_움직이지_않으면_자동차의_위치는_변경되지_않는다() {
+        // given
+        let racingCar = RacingCar(id: 0, engine: UnmovingEngine())
+        let previousLocation = racingCar.location
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        // when
+        racingCar.move()
+        
+        // then
+        XCTAssertEqual(racingCar.location, previousLocation)
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }
