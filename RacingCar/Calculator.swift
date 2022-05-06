@@ -32,7 +32,7 @@ class Calculator {
     
     private func divide(_ lhs: Int, _ rhs: Int) throws -> Int {
         
-        if rhs == 0 {
+        guard rhs != 0 else {
             throw CalculatorError.divideByZero
         }
         
