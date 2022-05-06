@@ -7,11 +7,14 @@
 import Foundation
 
 let inputView = RacingInputView()
+let resultView = RacingResultView()
 
 do {
     let game = try inputView.readInput()
-    print(game.participantsCount)
-    print(game.drivingCount)
+    for _ in 0..<game.drivingCount {
+        game.playOneRound()
+        resultView.printRoundResult(in: game)
+    }
 } catch {
     print("Error! \(error)")
 }

@@ -14,34 +14,24 @@ struct RacingInputView {
     }
     
     public func readInput() throws -> RacingGame {
-        var game = RacingGame()
-        self.readParticipantsCount(for: &game)
-        self.readDrivingCount(for: &game)
-        try catchInputError(for: game)
-        
+        let participantCount = try self.readParticipantsCount()
+        let drivingCount = try self.readDrivingCount()
+        let game = RacingGame(participantsCount: participantCount, drivingCount: drivingCount)
         return game
     }
     
-    private func readParticipantsCount(for game: inout RacingGame) {
+    private func readParticipantsCount() throws -> Int {
         print(Comments.askingParticipantsCount, terminator: " ")
-        if let input = readLine(), let count = Int(input) {
-            game.participantsCount = count
-        }
+        guard let input = readLine() else { throw RacingError.emptyInput }
+        guard let count = Int(input), count > 0 else { throw RacingError.invalidInput }
+        return count
     }
     
-    private func readDrivingCount(for game: inout RacingGame) {
+    private func readDrivingCount() throws -> Int {
         print(Comments.askingDrivingCount, terminator: " ")
-        if let input = readLine(), let count = Int(input) {
-            game.drivingCount = count
-        }
-    }
-    
-    private func catchInputError(for game: RacingGame) throws {
-        guard let participantsCount = game.participantsCount else { throw RacingInputError.emptyInput }
-        guard let drivingCount = game.drivingCount else { throw RacingInputError.emptyInput }
-        
-        guard participantsCount > 0 else { throw RacingInputError.invalidInput }
-        guard drivingCount > 0 else { throw RacingInputError.invalidInput }
+        guard let input = readLine(), let count = Int(input) else { throw RacingError.emptyInput }
+        guard let count = Int(input), count > 0 else { throw RacingError.invalidInput }
+        return count
     }
 }
 
