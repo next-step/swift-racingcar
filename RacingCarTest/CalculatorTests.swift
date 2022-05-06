@@ -10,10 +10,6 @@ import XCTest
 class CalculatorTests: XCTestCase {
     
     let calculator = Calculator()
-    
-    override func setUpWithError() throws {}
-    
-    override func tearDownWithError() throws {}
 
     func test_given2더하기1_when_then정수3() throws {
         // given
