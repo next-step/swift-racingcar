@@ -79,5 +79,4 @@ class Calculator {
         
         return result
     }
-    
 }
