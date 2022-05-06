@@ -30,6 +30,6 @@ class RacingRoundTest: XCTestCase {
         let racingCars: [RacingCar] = []
         
         // when
-        XCTAssertThrowsError(try NormalRacingRound(racingCars: racingCars))g
+        XCTAssertThrowsError(try NormalRacingRound(racingCars: racingCars))
     }
 }

@@ -72,6 +72,7 @@
 		2E25F99B281D59E900DC8F43 /* InputCheckerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputCheckerTest.swift; sourceTree = "<group>"; };
 		2E80E22F2821669C00397CA4 /* Sequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sequence.swift; sourceTree = "<group>"; };
 		2E8D45C7281AEA0500DD1214 /* RacingCarTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RacingCarTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2ED9C3BC282577AE00BC60E7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C7E1262C27239F7E0000DB8B /* RacingCar */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RacingCar; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -155,6 +156,7 @@
 				2E25F987281D34E000DC8F43 /* RacingGame.swift */,
 				2E25F98A281D356500DC8F43 /* RacingGameResult.swift */,
 				2E25F993281D483300DC8F43 /* InputChecker.swift */,
+				2ED9C3BC282577AE00BC60E7 /* README.md */,
 			);
 			path = RacingCar;
 			sourceTree = "<group>";
