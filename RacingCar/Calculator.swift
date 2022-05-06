@@ -69,7 +69,7 @@ class Calculator {
         
         let tokens: [String] = input.components(separatedBy: " ")
         
-        let operators = tokens.filter { !isInteger($0) }
+        let operators = tokens.filter { false == isInteger($0) }
         let operands = tokens.compactMap { Int($0) }
         
         var result: Int = Int(operands[0])
