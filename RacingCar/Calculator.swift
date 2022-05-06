@@ -11,6 +11,7 @@ enum CalculatorError: Error {
     case divideByZero
     case emptyString
     case unknownOperator
+    case emptyOperands
 }
 
 class Calculator {
@@ -64,7 +65,10 @@ class Calculator {
         let operators = tokens.filter { false == $0.isInteger }
         let operands = tokens.compactMap { Int($0) }
         
-        var result: Int = Int(operands[0])
+        guard let firstOperand = operands.first else {
+            throw CalculatorError.emptyOperands
+        }
+        var result: Int = Int(firstOperand)
         
         try operands
             .suffix(from: 1)
