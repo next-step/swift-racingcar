@@ -7,6 +7,7 @@
 
 struct InputView {
     private static let blankSpace = " "
+    private static let comma = ","
     
     static func inputCarCount() -> Int? {
         print("자동차 대수는 몇 대인가요?", terminator: blankSpace)
@@ -24,5 +25,14 @@ struct InputView {
            return inputNumber
         }
         return nil
+    }
+    
+    static func inputName() -> [String]? {
+        print("경주할 자동차 이름을 입력하세요(이름은 쉼표(,)를 기준으로 구분).")
+        guard let input: String = readLine() else {
+            return nil
+        }
+        let inputNames = input.components(separatedBy: comma)
+        return inputNames
     }
 }
