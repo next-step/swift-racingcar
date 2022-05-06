@@ -18,19 +18,19 @@ class Calculator {
     private var evaluation: Int?
     private var currentOperator: String?
     
-    private func add(lhs: Int, rhs: Int) -> Int {
+    private func add(_ lhs: Int, _ rhs: Int) -> Int {
         return lhs + rhs
     }
     
-    private func sub(lhs: Int, rhs: Int) -> Int {
+    private func substract(_ lhs: Int, _ rhs: Int) -> Int {
         return lhs - rhs
     }
     
-    private func mul(lhs: Int, rhs: Int) -> Int {
+    private func multiply(_ lhs: Int, _ rhs: Int) -> Int {
         return lhs * rhs
     }
     
-    private func div(lhs: Int, rhs: Int) throws -> Int {
+    private func divide(_ lhs: Int, _ rhs: Int) throws -> Int {
         
         if rhs == 0 {
             throw CalculatorError.divideByZero
@@ -39,16 +39,16 @@ class Calculator {
         return lhs / rhs
     }
     
-    private func calculate(lhs: Int, rhs: Int, op: String) throws -> Int {
-        switch op {
+    private func calculate(lhs: Int, rhs: Int, operatorCharacter: String) throws -> Int {
+        switch operatorCharacter {
         case "+":
-            return add(lhs: lhs, rhs: rhs)
+            return add(lhs, rhs)
         case "-":
-            return sub(lhs: lhs, rhs: rhs)
+            return substract(lhs, rhs)
         case "*":
-            return mul(lhs: lhs, rhs: rhs)
+            return multiply(lhs, rhs)
         case "/":
-            return try div(lhs: lhs, rhs: rhs)
+            return try divide(lhs, rhs)
         default:
             throw CalculatorError.unknownOperator
         }
@@ -78,7 +78,7 @@ class Calculator {
             .suffix(from: 1)
             .enumerated()
             .forEach { index, operand in
-                result = try calculate(lhs: result, rhs: operand, op: operators[index])
+                result = try calculate(lhs: result, rhs: operand, operatorCharacter: operators[index])
             }
         
         return result
