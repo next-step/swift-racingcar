@@ -10,15 +10,20 @@ import XCTest
 
 class StringSplitTest: XCTestCase {
 
-    func testStringSplitRequirement1() {
+    /// 요구사항 1.1
+    func testStringSplitMultiple() {
         XCTAssertEqual("1,2".split(separator: ","), ["1", "2"])
         XCTAssert("1,2".split(separator: ",") == ["1", "2"])
-        
+    }
+    
+    /// 요구사항 1.2
+    func testSplitStringSingle() {
         XCTAssertEqual("1".split(separator: ","), ["1"])
         XCTAssert("1".split(separator: ",") == ["1"])
     }
     
-    func testStringSplitRequirement2() {
+    /// 요구사항 2
+    func testSplitStringWithRemovingBraces() {
         XCTAssertEqual("(1,2)".replacingOccurrences(of: "(", with: "")
             .replacingOccurrences(of: ")", with: "")
             .split(separator: ","), ["1", "2"])
