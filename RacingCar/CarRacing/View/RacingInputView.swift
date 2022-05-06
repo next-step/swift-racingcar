@@ -29,13 +29,9 @@ struct RacingInputView {
     
     private func readDrivingCount() throws -> Int {
         print(Comments.askingDrivingCount, terminator: " ")
-        guard let input = readLine(), let count = Int(input) else { throw RacingError.emptyInput }
+        guard let input = readLine() else { throw RacingError.emptyInput }
         guard let count = Int(input), count > 0 else { throw RacingError.invalidInput }
         return count
     }
 }
 
-enum RacingInputError: Error {
-    case invalidInput
-    case emptyInput
-}
