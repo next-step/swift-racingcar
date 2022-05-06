@@ -54,14 +54,6 @@ class Calculator {
         }
     }
     
-    private func isInteger(_ input: String) -> Bool {
-        if let _ = Int(input) {
-            return true
-        } else {
-            return false
-        }
-    }
-    
     func evaluate(input: String) throws -> Int {
         guard input.isEmpty == false else {
             throw CalculatorError.emptyString
@@ -69,7 +61,7 @@ class Calculator {
         
         let tokens: [String] = input.components(separatedBy: " ")
         
-        let operators = tokens.filter { false == isInteger($0) }
+        let operators = tokens.filter { false == $0.isInteger }
         let operands = tokens.compactMap { Int($0) }
         
         var result: Int = Int(operands[0])
