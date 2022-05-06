@@ -63,7 +63,7 @@ class Calculator {
     }
     
     func evaluate(input: String) throws -> Int {
-        if input.isEmpty {
+        guard input.isEmpty == false else {
             throw CalculatorError.emptyString
         }
         
