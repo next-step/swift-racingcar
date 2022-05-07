@@ -24,8 +24,10 @@ do {
 
     let formattedWinners = GameResultFormatter.format(winners)
     let formattedResult = GameResultFormatter.format(racingGameResult)
-    OutputView.showWinners(formattedWinners)
+    
+    
     OutputView.showGameResult(formattedResult)
+    OutputView.showWinners(formattedWinners)
 } catch(let error) {
     OutputView.printError(error)
 }

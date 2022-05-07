@@ -13,8 +13,11 @@ struct GameResultFormatter {
     private static let comma = ","
     
     static func format(_ winners: [RacingCar]) -> String {
-        return winners.reduce("") { partialResult, racingCar in
-            partialResult + comma + racingCar.name
+        let firstWinner = winners[0]
+        let winners = winners[1..<winners.count]
+        
+        return winners.reduce(into: firstWinner.name) { partialResult, racingCar in
+            partialResult = partialResult + comma + racingCar.name
         }
     }
     
