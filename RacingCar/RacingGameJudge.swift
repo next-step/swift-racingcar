@@ -8,13 +8,23 @@
 import Foundation
 
 protocol RacingGameJudge {
-    func winner(of racingGameResult: [RacingRound]) -> [RacingCar]?
+    func winner(of racingGameResult: [RacingRound]) throws -> [RacingCar]
 }
     
 struct NormalRacingGameJudge: RacingGameJudge {
-    func winner(of racingGameResult: [RacingRound]) -> [RacingCar]? {
+    enum Error: LocalizedError {
+        case racingGameResultIsEmpty
+        
+        var errorDescription: String? {
+            switch self {
+            case .racingGameResultIsEmpty:
+                return "RacingGameResult가 비어있습니다."
+            }
+        }
+    }
+    func winner(of racingGameResult: [RacingRound]) throws -> [RacingCar] {
         guard let lastRound = racingGameResult.last else {
-            return nil
+            throw Error.racingGameResultIsEmpty
         }
         return lastRound.winners()
     }

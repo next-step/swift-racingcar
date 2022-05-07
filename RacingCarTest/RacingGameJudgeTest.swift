@@ -23,9 +23,18 @@ class RacingGameJudgeTest: XCTestCase {
         let racingGameJudge: RacingGameJudge = NormalRacingGameJudge()
         
         // when
-        let winner = racingGameJudge.winner(of: racingGameResult)
+        let winner = try! racingGameJudge.winner(of: racingGameResult)
         
         // then
         XCTAssertEqual(winner, [firstRacingCar])
+    }
+    
+    func test_winner_RacingGameResult가_존재하지않으면_에러를_일으킨다() {
+        // given
+        let racingGameJudge = NormalRacingGameJudge()
+        
+        // when
+        // then
+        XCTAssertThrowsError(try racingGameJudge.winner(of: []))
     }
 }
