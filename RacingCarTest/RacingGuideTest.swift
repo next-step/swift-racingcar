@@ -13,33 +13,33 @@ class RacingGuideTest: XCTestCase {
     private var carName = ""
     
     func test_게임룰_숫자_5_입력시_플러스1_성공() {
-        let value: Int = GameGuide.rule(5)
+        let value: Int = GameRule.numberFourOrMorePlusOneOtherWisePlusZero(5)
         XCTAssert(value == 1, "게임 숫자 5입력시 잘못된 결과")
     }
     
     func test_게임룰_숫자_3_입력시_0_성공() {
-        let value: Int = GameGuide.rule(3)
+        let value: Int = GameRule.numberFourOrMorePlusOneOtherWisePlusZero(3)
         XCTAssert(value == 0, "게임 숫자 3입력시 잘못된 결과")
 
     }
     
     func test_빈칸_입력시_빈값배열_성공() {
-        let array: [String] = GameGuide.splitComma("")
+        let array: [String] = GameRule.splitComma("")
         XCTAssert(array == [""],"빈 값 배열이 안만들어짐")
     }
     
     func test_중간에_빈칸_입력시_중간에_빈값_성공() {
-        let array: [String] = GameGuide.splitComma("abc,,d")
+        let array: [String] = GameRule.splitComma("abc,,d")
         XCTAssert(array == ["abc","","d"],"중간에 빈 값 배열이 안만들어짐")
     }
         
     func test_자동차_이름_없으면_에러() {
         carNameInput("")
         do {
-            let _ = try GameGuide.validCheck(carName)
+            let _ = try GameRule.validCheck(carName)
         } catch {
             if let error = error as? InputError {
-                XCTAssert(error == InputError.emptyNaming)
+                XCTAssert(error == InputError.emptyName)
             }
         }
     }
@@ -47,17 +47,17 @@ class RacingGuideTest: XCTestCase {
     func test_자동차_이름_다섯글자_성공() {
         carNameInput("abcde")
 
-        let result = try? GameGuide.validCheck(carName)
+        let result = try? GameRule.validCheck(carName)
         XCTAssert(result == true)
     }
 
     func test_자동차_이름_여섯글자_에러() {
         carNameInput("abcdef")
         do {
-            let _ = try GameGuide.validCheck(carName)
+            let _ = try GameRule.validCheck(carName)
         } catch {
             if let error = error as? InputError {
-                XCTAssert(error == InputError.overCountNamingLength)
+                XCTAssert(error == InputError.overCountNameLength)
             }
         }
     }

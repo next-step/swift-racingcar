@@ -16,9 +16,7 @@ class RacingCarTest: XCTestCase {
     override func setUpWithError() throws {
         carNames = ["abc","ccc","ddd"]
     }
-    override func tearDownWithError() throws {
-
-    }
+    
     func test_자동차_이름을_주어진이름으로_입력되면_성공() {
         let carName = "주어진이름"
         let car = Car(name: carName)

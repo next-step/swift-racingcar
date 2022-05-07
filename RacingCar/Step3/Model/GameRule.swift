@@ -11,10 +11,12 @@ struct GameRule {
     static func randomNumber() -> Int {
         return Int.random(in: 0...9)
     }
+    
     static func numberFourOrMorePlusOneOtherWisePlusZero(_ randomNumber: Int) -> Int {
         guard randomNumber >= 4 else { return 0 }
         return 1
     }
+    
     static func splitComma(_ input: String) -> [String] {
         return input.components(separatedBy: ",").map{String($0)}
     }
