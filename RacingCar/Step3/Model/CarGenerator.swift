@@ -9,11 +9,11 @@ import Foundation
 
 struct CarGenerator {
     static func makeCars(carNames: [String]) -> [Car] {
-        var carArray: [Car] = []
+        var cars: [Car] = []
         for name in carNames {
-            carArray.append(Car(name: name))
+            cars.append(Car(name: name))
         }
-        return carArray
+        return cars
     }
 }
 
