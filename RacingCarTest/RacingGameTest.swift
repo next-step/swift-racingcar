@@ -8,12 +8,6 @@
 import XCTest
 @testable import RacingCar
 
-extension RacingGameResult: Equatable {
-    static func == (lhs: RacingGameResult, rhs: RacingGameResult) -> Bool {
-        return lhs.racingRoundResult == rhs.racingRoundResult
-    }
-}
-
 class RacingGameTest: XCTestCase {
 
     func test_RacingGame을_시작하면_각_라운드의_실행결과를_담고있는_RacingRound_배열을_얻을_수_있다() {
