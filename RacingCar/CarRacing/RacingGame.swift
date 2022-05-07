@@ -10,17 +10,22 @@ import Foundation
 struct RacingGame {
     struct Const {
         static let randomRange: ClosedRange<Int> = 0...9
-        static let moveSuccessableRange: ClosedRange<Int> = 4...9
     }
     
     var participantsCount: Int
-    var drivingCount: Int
+    var roundCount: Int
     
     var participants: [Car] = []
     
-    init(participantsCount: Int, drivingCount: Int) {
+    init(participantsCount: Int?, roundCount: Int?) throws {
+        guard let participantsCount = participantsCount else { throw RacingError.emptyInput }
+        guard let roundCount = roundCount else { throw RacingError.emptyInput }
+        
+        guard participantsCount >= 0 else { throw RacingError.invalidInput }
+        guard roundCount >= 0 else { throw RacingError.invalidInput }
+
         self.participantsCount = participantsCount
-        self.drivingCount = drivingCount
+        self.roundCount = roundCount
         self.settingRacingGame()
     }
     
@@ -32,9 +37,7 @@ struct RacingGame {
     
     func drive(participant index: Int) {
         let randomNumber = Int.random(in: Const.randomRange)
-        if Const.moveSuccessableRange ~= randomNumber {
-            participants[index].moveForword()
-        }
+        participants[index].drive(by: randomNumber)
     }
     
     func playOneRound() {

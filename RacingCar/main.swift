@@ -11,7 +11,7 @@ let resultView = RacingResultView()
 
 do {
     let game = try inputView.readInput()
-    for _ in 0..<game.drivingCount {
+    for _ in 0..<game.roundCount {
         game.playOneRound()
         resultView.printRoundResult(in: game)
     }

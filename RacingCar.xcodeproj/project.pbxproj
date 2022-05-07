@@ -12,6 +12,12 @@
 		A547C1662823D8A8000D392E /* RacingInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A547C1652823D8A8000D392E /* RacingInputView.swift */; };
 		A547C1682823D8C3000D392E /* RacingResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A547C1672823D8C3000D392E /* RacingResultView.swift */; };
 		A547C16A28257335000D392E /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = A547C16928257335000D392E /* Car.swift */; };
+		A547C1722826A124000D392E /* RacingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A547C1712826A124000D392E /* RacingTest.swift */; };
+		A547C1762826A245000D392E /* RacingInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A547C1652823D8A8000D392E /* RacingInputView.swift */; };
+		A547C1772826A248000D392E /* RacingResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A547C1672823D8C3000D392E /* RacingResultView.swift */; };
+		A547C1782826A24B000D392E /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = A547C16928257335000D392E /* Car.swift */; };
+		A547C1792826A24E000D392E /* RacingGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A547C15E28216B86000D392E /* RacingGame.swift */; };
+		A547C17A2826A252000D392E /* RacingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A547C16028216FB8000D392E /* RacingError.swift */; };
 		A5DFDBCB2816CD6400F5C849 /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DFDBCA2816CD6400F5C849 /* StringTests.swift */; };
 		A5DFDBD02816D48900F5C849 /* SetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DFDBCF2816D48900F5C849 /* SetTests.swift */; };
 		A5DFDBD82819865E00F5C849 /* CalculatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DFDBD72819865E00F5C849 /* CalculatorTest.swift */; };
@@ -40,6 +46,8 @@
 		A547C1652823D8A8000D392E /* RacingInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingInputView.swift; sourceTree = "<group>"; };
 		A547C1672823D8C3000D392E /* RacingResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingResultView.swift; sourceTree = "<group>"; };
 		A547C16928257335000D392E /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
+		A547C16F2826A124000D392E /* RacingTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RacingTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A547C1712826A124000D392E /* RacingTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingTest.swift; sourceTree = "<group>"; };
 		A5DFDBC82816CD6400F5C849 /* LearningTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LearningTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5DFDBCA2816CD6400F5C849 /* StringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTests.swift; sourceTree = "<group>"; };
 		A5DFDBCF2816D48900F5C849 /* SetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTests.swift; sourceTree = "<group>"; };
@@ -52,6 +60,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		A547C16C2826A124000D392E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A5DFDBC52816CD6400F5C849 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -90,6 +105,7 @@
 			children = (
 				A547C1642823D898000D392E /* View */,
 				A547C15E28216B86000D392E /* RacingGame.swift */,
+				A547C16928257335000D392E /* Car.swift */,
 				A547C16028216FB8000D392E /* RacingError.swift */,
 			);
 			path = CarRacing;
@@ -100,9 +116,16 @@
 			children = (
 				A547C1652823D8A8000D392E /* RacingInputView.swift */,
 				A547C1672823D8C3000D392E /* RacingResultView.swift */,
-				A547C16928257335000D392E /* Car.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		A547C1702826A124000D392E /* RacingTest */ = {
+			isa = PBXGroup;
+			children = (
+				A547C1712826A124000D392E /* RacingTest.swift */,
+			);
+			path = RacingTest;
 			sourceTree = "<group>";
 		};
 		A5DFDBC92816CD6400F5C849 /* LearningTest */ = {
@@ -128,6 +151,7 @@
 				C7E1262E27239F7E0000DB8B /* RacingCar */,
 				A5DFDBC92816CD6400F5C849 /* LearningTest */,
 				A5DFDBD62819865E00F5C849 /* CalculatorTest */,
+				A547C1702826A124000D392E /* RacingTest */,
 				C7E1262D27239F7E0000DB8B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -138,6 +162,7 @@
 				C7E1262C27239F7E0000DB8B /* RacingCar */,
 				A5DFDBC82816CD6400F5C849 /* LearningTest.xctest */,
 				A5DFDBD52819865E00F5C849 /* CalculatorTest.xctest */,
+				A547C16F2826A124000D392E /* RacingTest.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -155,6 +180,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		A547C16E2826A124000D392E /* RacingTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A547C1732826A124000D392E /* Build configuration list for PBXNativeTarget "RacingTest" */;
+			buildPhases = (
+				A547C16B2826A124000D392E /* Sources */,
+				A547C16C2826A124000D392E /* Frameworks */,
+				A547C16D2826A124000D392E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RacingTest;
+			productName = RacingTest;
+			productReference = A547C16F2826A124000D392E /* RacingTest.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		A5DFDBC72816CD6400F5C849 /* LearningTest */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A5DFDBCE2816CD6400F5C849 /* Build configuration list for PBXNativeTarget "LearningTest" */;
@@ -216,6 +258,9 @@
 				LastSwiftUpdateCheck = 1320;
 				LastUpgradeCheck = 1300;
 				TargetAttributes = {
+					A547C16E2826A124000D392E = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
 					A5DFDBC72816CD6400F5C849 = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
@@ -243,11 +288,19 @@
 				C7E1262B27239F7E0000DB8B /* RacingCar */,
 				A5DFDBC72816CD6400F5C849 /* LearningTest */,
 				A5DFDBD42819865E00F5C849 /* CalculatorTest */,
+				A547C16E2826A124000D392E /* RacingTest */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		A547C16D2826A124000D392E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A5DFDBC62816CD6400F5C849 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -265,6 +318,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		A547C16B2826A124000D392E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A547C1792826A24E000D392E /* RacingGame.swift in Sources */,
+				A547C1722826A124000D392E /* RacingTest.swift in Sources */,
+				A547C1762826A245000D392E /* RacingInputView.swift in Sources */,
+				A547C1782826A24B000D392E /* Car.swift in Sources */,
+				A547C17A2826A252000D392E /* RacingError.swift in Sources */,
+				A547C1772826A248000D392E /* RacingResultView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A5DFDBC42816CD6400F5C849 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -302,6 +368,38 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		A547C1742826A124000D392E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QF5QAKW287;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.woosub.RacingTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		A547C1752826A124000D392E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QF5QAKW287;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.woosub.RacingTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		A5DFDBCC2816CD6400F5C849 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -502,6 +600,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		A547C1732826A124000D392E /* Build configuration list for PBXNativeTarget "RacingTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A547C1742826A124000D392E /* Debug */,
+				A547C1752826A124000D392E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		A5DFDBCE2816CD6400F5C849 /* Build configuration list for PBXNativeTarget "LearningTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

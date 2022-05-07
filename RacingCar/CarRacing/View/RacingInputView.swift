@@ -16,7 +16,7 @@ struct RacingInputView {
     public func readInput() throws -> RacingGame {
         let participantCount = try self.readParticipantsCount()
         let drivingCount = try self.readDrivingCount()
-        let game = RacingGame(participantsCount: participantCount, drivingCount: drivingCount)
+        let game = try RacingGame(participantsCount: participantCount, roundCount: drivingCount)
         return game
     }
     
