@@ -33,9 +33,17 @@ struct GameRule {
     }
     
     @discardableResult
-    static func validNumberCheck(_ input:Int) throws -> Bool {
+    static func validNumberCheck(_ input: Int) throws -> Bool {
         if input < 1 {
             throw InputError.invalidNumber
+        }
+        return true
+    }
+    
+    @discardableResult
+    static func noneDuplicateCarNameCheck(_ input: [String]) throws -> Bool {
+        if Set(input).count != input.count {
+            throw InputError.duplicateName
         }
         return true
     }

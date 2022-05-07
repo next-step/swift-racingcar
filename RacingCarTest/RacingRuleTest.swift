@@ -42,6 +42,17 @@ class RacingRuleTest: XCTestCase {
         let array: [String] = GameRule.splitComma("abc,,d")
         XCTAssert(array == ["abc","","d"],"중간에 빈 값 배열이 안만들어짐")
     }
+    
+    func test_이름중복시_에러() {
+        do {
+            let _: Bool = try GameRule.noneDuplicateCarNameCheck(["abc","abc","a"])
+        } catch {
+            if let error = error as? InputError {
+                XCTAssert(error == .duplicateName)
+            }
+        }
+        
+    }
         
     func test_자동차_이름_없으면_에러() {
         carNameInput("")
