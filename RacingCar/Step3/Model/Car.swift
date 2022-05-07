@@ -13,7 +13,6 @@ final class Car {
     
     init(name: String) {
         self.name = name
-        print(name)
     }
     
     func move(_ value: Int) {
