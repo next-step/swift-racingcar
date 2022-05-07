@@ -17,7 +17,7 @@ extension GameGuide {
     static func randomNumber() -> Int {
         return Int.random(in: 0...9)
     }
-    static func rule(_ randomNumber: Int) -> Int {
+    static func numberFourOrMorePlusOneOtherWisePlusZero(_ randomNumber: Int) -> Int {
         guard randomNumber >= 4 else { return 0 }
         return 1
     }
@@ -39,7 +39,7 @@ extension GameGuide {
     static func moveCars(model cars: [Car], round: Int) -> [Car] {
         guard round > 1 else { return cars }
         for car in cars {
-            car.move(GameGuide.rule(GameGuide.randomNumber()))
+            car.move(GameGuide.numberFourOrMorePlusOneOtherWisePlusZero(GameGuide.randomNumber()))
         }
         return cars
     }
