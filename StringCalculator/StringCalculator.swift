@@ -10,7 +10,7 @@ enum Operator: String, CaseIterable {
     case add = "+"
     case subtract = "-"
     case multiply = "*"
-    case division = "/"
+    case divide = "/"
 }
 
 enum StringCalculatorError: Error {
@@ -20,19 +20,19 @@ enum StringCalculatorError: Error {
 }
 
 struct StringCalculator {
-    func add(_ lhs: Int,_ rhs: Int) -> Int {
+    private func add(_ lhs: Int,_ rhs: Int) -> Int {
         return lhs + rhs
     }
     
-    func subtract(_ lhs: Int, _ rhs: Int) -> Int {
+    private func subtract(_ lhs: Int, _ rhs: Int) -> Int {
         return lhs - rhs
     }
     
-    func multiply(_ lhs: Int,  _ rhs: Int) -> Int {
+    private func multiply(_ lhs: Int,  _ rhs: Int) -> Int {
         return lhs * rhs
     }
     
-    func division(_ lhs: Int, _ rhs: Int) -> Int {
+    private func divide(_ lhs: Int, _ rhs: Int) -> Int {
         return lhs / rhs
     }
 
@@ -45,39 +45,39 @@ struct StringCalculator {
 
     func checkOperators(inputString: String) -> Bool {
         let valueArray = inputString.components(separatedBy: " ").filter{ !$0.isEmpty }
-        let removeNum = valueArray.filter { Int($0) == nil }
+        let operaters = valueArray.filter { Int($0) == nil }
 
-        let invalidCalculator = removeNum.filter {
+        let invalidOperators = operaters.filter {
             Operator(rawValue: $0) == nil
         }
         
-        return invalidCalculator.isEmpty
+        return invalidOperators.isEmpty
     }
 
     func doAllCalculations(inputString: String) throws -> Int {
         if !checkOperators(inputString: inputString) { throw StringCalculatorError.invalidOperator }
         
         let valueArray = inputString.components(separatedBy: " ").filter { !$0.isEmpty }
-        var numberArray  = valueArray.filter { Int($0) != nil }
+        var operandArray  = valueArray.filter { Int($0) != nil }
         var operatorArray = valueArray.filter { Int($0) == nil }
         
         let minimumCalculateValidCount = 1
         
-        while( numberArray.count > minimumCalculateValidCount ) {
-            let result = calculator(lhs: Int(numberArray.removeFirst())!,
+        while(operandArray.count > minimumCalculateValidCount) {
+            let result = calculator(lhs: Int(operandArray.removeFirst())!,
                                     inputOperator: Operator(rawValue: operatorArray.removeFirst())!,
-                                    rhs: Int(numberArray.removeFirst())!)
-            numberArray.insert(String(result), at: 0)
+                                    rhs: Int(operandArray.removeFirst())!)
+          operandArray.insert(String(result), at: 0)
         }
         
-        guard let resultNumString = numberArray.first else { throw StringCalculatorError.errorInCalculating }
+        guard let resultNumString = operandArray.first else { throw StringCalculatorError.errorInCalculating }
         
         guard let resultNum = Int(resultNumString) else { throw StringCalculatorError.invalidNumber }
         
         return Int(resultNum)
     }
     
-    func calculator(lhs: Int, inputOperator: Operator, rhs: Int) -> Int {
+    private func calculator(lhs: Int, inputOperator: Operator, rhs: Int) -> Int {
         switch inputOperator {
         case .add:
             return add(lhs, rhs)
@@ -85,8 +85,8 @@ struct StringCalculator {
             return subtract(lhs, rhs)
         case .multiply:
             return multiply(lhs, rhs)
-        case .division:
-            return division(lhs, rhs)
+        case .divide:
+            return divide(lhs, rhs)
         }
     }
 }
