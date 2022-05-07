@@ -19,7 +19,13 @@ do {
     })
     var racingGame = try RacingGame(racingCars: racingCars, roundCount: roundCount)
     let racingGameResult = racingGame.start()
+
+    let winners = NormalRacingGameJudge().winner(of: racingGameResult)
+    
+    let formattedWinners = GameResultFormatter.format(winners)
     let formattedResult = GameResultFormatter.format(racingGameResult)
+    gi
+    OutputView.showWinners(formattedWinners)
     OutputView.showGameResult(formattedResult)
 } catch(let error) {
     OutputView.printError(error)
