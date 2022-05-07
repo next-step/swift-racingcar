@@ -28,10 +28,10 @@ extension GameGuide {
     @discardableResult
     static func validCheck(_ carName: String) throws -> Bool {
         if carName.isEmpty {
-            throw InputError.emptyNaming
+            throw InputError.emptyName
         }
         if carName.count > 5 {
-            throw InputError.overCountNamingLength
+            throw InputError.overCountNameLength
         }
         return true
     }
