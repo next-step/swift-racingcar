@@ -44,7 +44,7 @@ struct GameResultFormatter {
     }
     
     private static func format(_ racingCar: RacingCar) -> String {
-        var result = ""
+        var result = "\(racingCar.name) : " 
         
         (0..<racingCar.location).forEach { _ in
             result += movementSymbol
