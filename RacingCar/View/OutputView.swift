@@ -6,10 +6,15 @@
 //
 
 struct OutputView {
-    static func show(_ gameResult: String) {
+    static func showGameResult(_ gameResult: String) {
         print("\n")
         print("실행 결과")
         print(gameResult)
+    }
+    
+    static func showWinners(_ winners: String) {
+        print("\n")
+        print("\(winners)가 최종 우승했습니다.")
     }
     
     static func carCountIsInvalid() {

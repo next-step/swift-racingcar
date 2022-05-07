@@ -20,7 +20,7 @@ do {
     var racingGame = try RacingGame(racingCars: racingCars, roundCount: roundCount)
     let racingGameResult = racingGame.start()
     let formattedResult = GameResultFormatter.format(racingGameResult)
-    OutputView.show(formattedResult)
+    OutputView.showGameResult(formattedResult)
 } catch(let error) {
     OutputView.printError(error)
 }

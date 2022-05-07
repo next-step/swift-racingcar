@@ -10,6 +10,13 @@ import Foundation
 struct GameResultFormatter {
     private static let newLine = "\n"
     private static let movementSymbol = "_"
+    private static let comma = ","
+    
+    static func format(_ winners: [RacingCar]) -> String {
+        return winners.reduce("") { partialResult, racingCar in
+            partialResult + comma + racingCar.name
+        }
+    }
     
     static func format(_ racingRounds: [RacingRound]) -> String {
         var result = ""
