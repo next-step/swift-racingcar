@@ -43,7 +43,7 @@ struct RacingGame {
     
     mutating func start() -> [RacingRound] {
         var racingResult = [RacingRound]()
-        var racingRound: RacingRound = try! NormalRacingRound(racingCars: racingCars.copy())
+        var racingRound: RacingRound = try! NormalRacingRound(racingCars: racingCars)
         
         for _ in 0..<roundCount {
             let result: RacingRound = racingRound.start()

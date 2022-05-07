@@ -11,7 +11,7 @@ import XCTest
 class RacingCarTest: XCTestCase {
     func test_자동차가_움직이면_자동차의_위치가_1증가한다() {
         // given
-        let racingCar = try! RacingCar(id: 0, name: "", engine: MovingEngine())
+        var racingCar = try! RacingCar(id: 0, name: "", engine: MovingEngine())
         let previousLocation = racingCar.location
 
         // when
@@ -23,7 +23,7 @@ class RacingCarTest: XCTestCase {
     
     func test_자동차가_움직이지_않으면_자동차의_위치는_변경되지_않는다() {
         // given
-        let racingCar = try! RacingCar(id: 0, name: "", engine: UnmovingEngine())
+        var racingCar = try! RacingCar(id: 0, name: "", engine: UnmovingEngine())
         let previousLocation = racingCar.location
 
         // when

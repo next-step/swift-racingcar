@@ -42,9 +42,13 @@ struct NormalRacingRound: RacingRound, Equatable {
     }
     
     func start() -> RacingRound {
-        let copiedCars = racingCars.copy()
-        copiedCars.forEach { $0.move() }
-        return try! NormalRacingRound(racingCars: copiedCars)
+        let resultRacingCar: [RacingCar] = racingCars.map {
+            var racingCar = $0
+            racingCar.move()
+            return racingCar
+        }
+        
+        return try! NormalRacingRound(racingCars: resultRacingCar)
     }
     
     func winners() -> [RacingCar] {

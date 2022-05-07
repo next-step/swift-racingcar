@@ -16,7 +16,7 @@ struct RacingCarFactory {
     }
 }
 
-class RacingCar: Equatable, NSCopying {
+struct RacingCar: Equatable  {
     enum Error: LocalizedError {
         case invalidNameCount(String)
         
@@ -26,11 +26,6 @@ class RacingCar: Equatable, NSCopying {
                 return "자동차의 이름은 \(RacingCar.minNameCount)이하여야 합니다. 잘못된 이름: \(invalidName)"
             }
         }
-    }
-    func copy(with zone: NSZone? = nil) -> Any {
-        let copy = try! RacingCar(id: self.id, name: self.name, engine: self.engine)
-        copy._location = self._location 
-        return copy
     }
     
     static func == (lhs: RacingCar, rhs: RacingCar) -> Bool {
@@ -52,7 +47,7 @@ class RacingCar: Equatable, NSCopying {
         self.engine = engine
     }
     
-    func move() {
+    mutating func move() {
         if engine.canGo() {
             self._location += 1
         }

@@ -11,8 +11,8 @@ import XCTest
 class RacingGameJudgeTest: XCTestCase {
     func test_winner_RacingRound배열을_입력받아서_우승자_자동차_배열을_반환한다(){
         // given
-        let firstRacingCar = try! RacingCar(id: 0, name: "12345", engine: MovingEngine())
-        let secondRacingCar = try! RacingCar(id: 1, name: "23456", engine: UnmovingEngine())
+        var firstRacingCar = try! RacingCar(id: 0, name: "12345", engine: MovingEngine())
+        var secondRacingCar = try! RacingCar(id: 1, name: "23456", engine: UnmovingEngine())
         
         firstRacingCar.move()
         secondRacingCar.move()
