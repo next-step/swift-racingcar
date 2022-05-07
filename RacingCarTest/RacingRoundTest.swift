@@ -12,8 +12,8 @@ class RacingRoundTest: XCTestCase {
 
     func test_RacingRound를_start하면_해당round가_종료되었을때_자동차의_위치정보를_담고있는_RacingRound를_반환한다() {
         // give
-        let firstCar = RacingCar(id: 1, engine: MovingEngine())
-        let secondCar = RacingCar(id: 2, engine: UnmovingEngine())
+        let firstCar = try! RacingCar(id: 1, name: "", engine: MovingEngine())
+        let secondCar = try! RacingCar(id: 2, name: "", engine: UnmovingEngine())
         
         let racingRound = try! NormalRacingRound(racingCars:[firstCar, secondCar])
         

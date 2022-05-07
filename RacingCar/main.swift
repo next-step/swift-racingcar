@@ -7,23 +7,21 @@
 
 import Foundation
 
-let carCount = InputView.inputCarCount()
-if InputChecker.isValidCarCount(carCount) == false {
-    OutputView.carCountIsInvalid()
-    exit(0)
+guard let carNames = InputView.inputCarNames(),
+      let roundCount = InputView.inputRoundCount() else {
+      OutputView.inputIsNil()
+      exit(0)
 }
 
-let roundCount = InputView.inputRoundCount()
-if InputChecker.isValidRoundCount(roundCount) == false {
-    OutputView.roundCountIsInvalid()
-    exit(0)
+do {
+    let racingCars = try carNames.enumerated().compactMap({ index, carName in
+        try RacingCarFactory.create(id:index, name:carName)
+    })
+    var racingGame = try RacingGame(racingCars: racingCars, roundCount: roundCount)
+    let racingGameResult = racingGame.start()
+    let formattedResult = GameResultFormatter.format(racingGameResult)
+    OutputView.show(formattedResult)
+} catch(let error) {
+    OutputView.printError(error)
 }
 
-let racingCars = (0..<carCount!).map { id in
-    RacingCarFactory.create(id: id)
-}
-
-var racingGame = try RacingGame(racingCars: racingCars, roundCount: roundCount!)
-let racingGameResult = racingGame.start()
-let formattedResult = GameResultFormatter.format(racingGameResult)
-OutputView.show(formattedResult)

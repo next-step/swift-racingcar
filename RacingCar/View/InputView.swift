@@ -27,7 +27,7 @@ struct InputView {
         return nil
     }
     
-    static func inputName() -> [String]? {
+    static func inputCarNames() -> [String]? {
         print("경주할 자동차 이름을 입력하세요(이름은 쉼표(,)를 기준으로 구분).")
         guard let input: String = readLine() else {
             return nil
