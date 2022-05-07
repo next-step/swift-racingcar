@@ -10,6 +10,8 @@
 		13B374322826170A0046CD6F /* RacingCarTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B374312826170A0046CD6F /* RacingCarTest.swift */; };
 		13B37437282617580046CD6F /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B37436282617580046CD6F /* Calculator.swift */; };
 		13B37438282619160046CD6F /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B37436282617580046CD6F /* Calculator.swift */; };
+		13B3743B28264E6B0046CD6F /* StringCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B3743A28264E6B0046CD6F /* StringCalculator.swift */; };
+		13B3743C28264E6B0046CD6F /* StringCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B3743A28264E6B0046CD6F /* StringCalculator.swift */; };
 		C7E1263027239F7E0000DB8B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +31,7 @@
 		13B3742F2826170A0046CD6F /* RacingCarTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RacingCarTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B374312826170A0046CD6F /* RacingCarTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingCarTest.swift; sourceTree = "<group>"; };
 		13B37436282617580046CD6F /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
+		13B3743A28264E6B0046CD6F /* StringCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringCalculator.swift; sourceTree = "<group>"; };
 		C7E1262C27239F7E0000DB8B /* RacingCar */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RacingCar; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E1262F27239F7E0000DB8B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -82,6 +85,7 @@
 			children = (
 				C7E1262F27239F7E0000DB8B /* main.swift */,
 				13B37436282617580046CD6F /* Calculator.swift */,
+				13B3743A28264E6B0046CD6F /* StringCalculator.swift */,
 			);
 			path = RacingCar;
 			sourceTree = "<group>";
@@ -175,6 +179,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13B3743C28264E6B0046CD6F /* StringCalculator.swift in Sources */,
 				13B374322826170A0046CD6F /* RacingCarTest.swift in Sources */,
 				13B37438282619160046CD6F /* Calculator.swift in Sources */,
 			);
@@ -184,6 +189,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13B3743B28264E6B0046CD6F /* StringCalculator.swift in Sources */,
 				C7E1263027239F7E0000DB8B /* main.swift in Sources */,
 				13B37437282617580046CD6F /* Calculator.swift in Sources */,
 			);
