@@ -10,6 +10,7 @@ import Foundation
 protocol RacingRound {
     var racingCars: [RacingCar] { get }
     func start() -> RacingRound
+    func winners() -> [RacingCar] 
 }
 
 extension RacingRound where Self: Equatable {
@@ -44,5 +45,18 @@ struct NormalRacingRound: RacingRound, Equatable {
         let copiedCars = racingCars.copy()
         copiedCars.forEach { $0.move() }
         return try! NormalRacingRound(racingCars: copiedCars)
+    }
+    
+    func winners() -> [RacingCar] {
+        let winners = racingCars.reduce([RacingCar]()) { partialResult, racingCar in
+                if partialResult.isEmpty { return [racingCar]}
+                
+                if(partialResult.last!.location < racingCar.location) { return [racingCar] }
+                
+                if(partialResult.last!.location == racingCar.location) { return partialResult + [racingCar] }
+            
+                return partialResult
+            }
+        return winners
     }
 }

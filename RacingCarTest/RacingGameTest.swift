@@ -6,6 +6,7 @@
 //
 
 import XCTest
+@testable import RacingCar
 
 extension RacingGameResult: Equatable {
     static func == (lhs: RacingGameResult, rhs: RacingGameResult) -> Bool {

@@ -35,7 +35,6 @@ class RacingCar: Equatable, NSCopying {
     
     static func == (lhs: RacingCar, rhs: RacingCar) -> Bool {
         return lhs.id == rhs.id
-        && lhs.location == rhs.location
     }
     
     static let minNameCount = 5
