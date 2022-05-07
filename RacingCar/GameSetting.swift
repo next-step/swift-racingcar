@@ -9,23 +9,23 @@ import Foundation
 
 
 struct GameSetting: Equatable {
-   
-    
+
     let gameCount: Int
-    let carCount: Int
+    let carNames: [String]
     let randomGenerator: RandomGettable
     
-    init(gameCount: Int = 0, carCount: Int = 0, randomGenerator: RandomGettable) {
+    init(gameCount: Int = 0,
+         carNames: [String] = [],
+         randomGenerator: RandomGettable
+    ) {
         self.gameCount = gameCount
-        self.carCount = carCount
+        self.carNames = carNames
         self.randomGenerator = randomGenerator
     }
     
     static func == (lhs: GameSetting, rhs: GameSetting) -> Bool {
         return lhs.gameCount == rhs.gameCount
-                && lhs.carCount == rhs.carCount
-        && lhs.randomGenerator.randomRange == rhs.randomGenerator.randomRange
+                && lhs.carNames == rhs.carNames
+                && lhs.randomGenerator.randomRange == rhs.randomGenerator.randomRange
     }
-    
-
 }

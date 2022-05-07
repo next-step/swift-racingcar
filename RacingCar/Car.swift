@@ -9,18 +9,31 @@ import Foundation
 
 
 final class Car {
-    var randomGenerator: RandomGettable
-    var minimumCondition: Int = 4
-    var movePoint: Int = 0
     
-    init(randomGenerator: RandomGettable) {
+   private enum Constant {
+        static let basePoint: Int = 0
+        static let minumCondition: Int = 4
+    }
+    
+    //MARK: - PROPERTIES
+    var randomGenerator: RandomGettable
+    var minimumCondition: Int = Constant.minumCondition
+    var movePoint: Int
+    private(set) var name: String
+    
+    init(name: String,
+         randomGenerator: RandomGettable,
+         movePoint: Int = Constant.basePoint
+    ) {
+        self.movePoint = movePoint
+        self.name = name
         self.randomGenerator = randomGenerator
     }
 
     func move() {
         let conditionNumber = randomGenerator.random()
-        let isMoveContidion = isMoveToNext(randomNumber: conditionNumber)
-        self.movePoint += isMoveContidion ? 1 : 0
+        let isMoveCondition = isMoveToNext(randomNumber: conditionNumber)
+        self.movePoint += isMoveCondition ? 1 : 0
     }
     
     func isMoveToNext(randomNumber: Int) -> Bool {

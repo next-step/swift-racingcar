@@ -7,65 +7,57 @@
 
 import Foundation
 
-protocol RacingGameInput {
-    func input() throws
-    func inputCarCount() throws
-    func inputGameCount() throws
-    func registerSetting() -> GameSetting
-    func validation(count: String) throws -> Int 
-}
 
 final class RacingGameInputView: RacingGameInput {
-    
+    let checker: RacingGameInputChecker = RacingGameInputChecker()
     let randomGenerator: RandomGettable
-    private var carCount: Int = 0
+    private var carNames: [String] = []
     private var gameCount: Int = 0
     
-    enum InputViewError: Error {
-        case incorrectFormat
-        case minusCount
-        case input
-    }
+    
     
     init(randomGenerator: RandomGettable) {
         self.randomGenerator = randomGenerator
     }
     
     func input() throws {
-        printQuestionCarCount()
-        try inputCarCount()
+        printQuestionCarNames()
+        self.carNames =  try inputCarNames()
         printQuestionGameCount()
-        try inputGameCount()
+        self.gameCount = try inputGameCount()
     }
     
-    func inputCarCount() throws {
-        guard let input: String = readLine() else { throw InputViewError.input}
-        let validatedGameCount = try validation(count: input)
-        self.carCount = validatedGameCount
+    private func inputCarNames() throws -> [String] {
+        let input: String = try checker.converter.convertToUnwrapper(value: readLine())
+        let carNames = splitCarNames(input: input)
+        try checker.validator.checkValidation(carNames: carNames)
+        return carNames
     }
     
-    func inputGameCount() throws {
-        guard let input: String = readLine() else { throw InputViewError.input}
-        let validatedGameCount = try validation(count: input)
-        self.gameCount = validatedGameCount
-    }
-    
-    func validation(count: String) throws -> Int {
-        guard let count = Int(count) else { throw InputViewError.incorrectFormat }
-        guard count > 0  else { throw InputViewError.minusCount }
+    private  func inputGameCount() throws -> Int {
+        let input: String = try checker.converter.convertToUnwrapper(value: readLine())
+        let count: Int = try checker.converter.converterToInteger(input: input)
+        try checker.validator.checkValidation(count: count)
         return count
     }
     
-    func printQuestionCarCount() {
-        print("자동차 대수는 몇 대인가요?")
+   private func splitCarNames(input: String) -> [String] {
+        let carNames = input
+            .replacingOccurrences(of: " ", with: "")
+            .split(separator: ",").map{ String($0)}
+        return carNames
+    }
+   
+    private func printQuestionCarNames() {
+        print("경주할 자동차 이름을 입력하세요(이름은 쉼표(,)를 기준으로 구분).")
     }
     
-    func printQuestionGameCount() {
+    private func printQuestionGameCount() {
         print("시도할 횟수는 몇 회인가요?")
     }
     
     func registerSetting() -> GameSetting {
-        return GameSetting(gameCount: gameCount, carCount: carCount, randomGenerator: randomGenerator)
+        return GameSetting(gameCount: gameCount, carNames: carNames, randomGenerator: randomGenerator)
     }
     
 }

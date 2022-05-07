@@ -1,14 +1,13 @@
 //
-//  ResultView.swift
+//  RacingGameResultViewmock.swift
 //  RacingCar
 //
-//  Created by jinho jeong on 2022/04/29.
+//  Created by jinho jeong on 2022/05/03.
 //
 
 import Foundation
 
-
-final class RacingGameResultView: RacingGameResult {
+final class RacingGameResultViewMock: RacingGameResult {
      
     func printRacingResultPhrase() {
         print("실행결과")
@@ -32,11 +31,9 @@ final class RacingGameResultView: RacingGameResult {
         let winner = names.joined(separator:", ")
         print("\(winner)가 최종 우승했습니다.")
     }
-    
+    var printNoWinnerCallCount: Int = 0
     func printNoWinner(){
-        print("이번 레이싱게임서 우승자가 없습니다.")
+        printNoWinnerCallCount += 1
     }
     
 }
-
-
