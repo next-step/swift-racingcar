@@ -13,9 +13,9 @@ struct GameController {
     
     func gameStart() throws {
         let noSplitCarNames = inputView.carNamesSetting()
-        let splitCarNames = GameGuide.splitComma(noSplitCarNames)
+        let splitCarNames = GameRule.splitComma(noSplitCarNames)
         for carName in splitCarNames {
-            try GameGuide.validCheck(carName)
+            try GameRule.validCheck(carName)
         }
         let attemptCount = try inputView.attemptSetting()
         let cars: [Car] = CarGenerator.makeCars(carNames: splitCarNames)
@@ -27,7 +27,7 @@ struct GameController {
     private func result(model cars: [Car], _ attemptCount: Int) {
         guard attemptCount > 0 else { return }
         for round in 1...attemptCount {
-            let moveCars = GameGuide.moveCars(model: cars, round: round)
+            let moveCars = GameRule.moveCars(model: cars, round: round)
             resultView.oneRoundResult(moveCars)
         }
     }
