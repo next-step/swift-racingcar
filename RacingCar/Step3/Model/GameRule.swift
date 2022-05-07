@@ -37,4 +37,10 @@ struct GameRule {
         }
         return cars
     }
+    
+    static func invalidNumberCheck(_ input:Int) throws {
+        if input < 1 {
+            throw InputError.invalidNumber
+        }
+    }
 }

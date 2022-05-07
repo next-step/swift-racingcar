@@ -19,7 +19,7 @@ struct InputView {
     func attemptSetting() throws -> Int {
         print(GameGuide.attemptCount, terminator: " ")
         let attemptCount = try readInput()
-        try self.invalidNumberCheck(attemptCount)
+        try GameRule.invalidNumberCheck(attemptCount)
         return attemptCount
     }
     
@@ -30,10 +30,6 @@ struct InputView {
         return inputNumber
     }
     
-    private func invalidNumberCheck(_ input:Int) throws {
-        if input < 1 {
-            throw InputError.invalidNumber
-        }
-    }
+
     
 }
