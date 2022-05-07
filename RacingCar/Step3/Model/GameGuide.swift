@@ -36,7 +36,8 @@ extension GameGuide {
         return true
     }
     
-    static func moveCars(model cars: [Car]) -> [Car] {
+    static func moveCars(model cars: [Car], round: Int) -> [Car] {
+        guard round > 1 else { return cars }
         for car in cars {
             car.move(GameGuide.rule(GameGuide.randomNumber()))
         }

@@ -8,10 +8,9 @@
 import Foundation
 
 struct ResultView {
-    func initSetting(_ car: [Car]) {
+    func initSetting() {
         print("")
         print("실행 결과")
-        oneRoundResult(car)
     }
     
     func oneRoundResult(_ cars: [Car]) {

@@ -19,15 +19,15 @@ struct GameController {
         }
         let attemptCount = try inputView.attemptSetting()
         let cars: [Car] = CarGenerator.makeCars(carNames: splitCarNames)
-        resultView.initSetting(cars)
-        result(model: cars, attemptCount-1)
+        resultView.initSetting()
+        result(model: cars, attemptCount)
         resultView.winners(cars)
     }
         
     private func result(model cars: [Car], _ attemptCount: Int) {
         guard attemptCount > 0 else { return }
-        for _ in 1...attemptCount {
-            let moveCars = GameGuide.moveCars(model: cars)
+        for round in 1...attemptCount {
+            let moveCars = GameGuide.moveCars(model: cars, round: round)
             resultView.oneRoundResult(moveCars)
         }
     }
