@@ -8,7 +8,7 @@
 import Foundation
 
 class Car {
-    struct Const {
+    private struct Const {
         static let moveSuccessableRange: ClosedRange<Int> = 4...9
     }
     
@@ -23,7 +23,7 @@ class Car {
         self.moveForword()
     }
     
-    func moveForword() {
+    private func moveForword() {
         self.position += 1
     }
 }

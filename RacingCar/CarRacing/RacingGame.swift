@@ -8,12 +8,12 @@
 import Foundation
 
 struct RacingGame {
-    struct Const {
+    private struct Const {
         static let randomRange: ClosedRange<Int> = 0...9
     }
     
-    var participantsCount: Int
-    var roundCount: Int
+    private var participantsCount: Int
+    private var roundCount: Int
     
     var participants: [Car] = []
     
@@ -35,14 +35,14 @@ struct RacingGame {
         }
     }
     
-    func drive(participant index: Int) {
+    private func excuteParticipantTurn(participant index: Int) {
         let randomNumber = Int.random(in: Const.randomRange)
         participants[index].drive(by: randomNumber)
     }
     
     func playOneRound() {
         for participantIndex in 0..<participantsCount {
-            drive(participant: participantIndex)
+            excuteParticipantTurn(participant: participantIndex)
         }
     }
 }
