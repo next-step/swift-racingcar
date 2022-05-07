@@ -8,8 +8,7 @@
 import XCTest
 @testable import RacingCar
 
-
-class RacingGuideTest: XCTestCase {
+class RacingRuleTest: XCTestCase {
     private var carName = ""
     
     func test_게임룰_숫자_5_입력시_플러스1_성공() {
@@ -21,6 +20,17 @@ class RacingGuideTest: XCTestCase {
         let value: Int = GameRule.numberFourOrMorePlusOneOtherWisePlusZero(3)
         XCTAssert(value == 0, "게임 숫자 3입력시 잘못된 결과")
 
+    }
+    
+    func test_게임룰_숫자_음수_입력시_에러() {
+        do {
+            let _: Bool = try GameRule.validNumberCheck(-1)
+        } catch {
+            if let error = error as? InputError {
+                XCTAssert(error == .invalidNumber)
+            }
+        }
+        
     }
     
     func test_빈칸_입력시_빈값배열_성공() {
@@ -36,7 +46,7 @@ class RacingGuideTest: XCTestCase {
     func test_자동차_이름_없으면_에러() {
         carNameInput("")
         do {
-            let _ = try GameRule.validCheck(carName)
+            let _ = try GameRule.validCarNameCheck(carName)
         } catch {
             if let error = error as? InputError {
                 XCTAssert(error == InputError.emptyName)
@@ -47,14 +57,14 @@ class RacingGuideTest: XCTestCase {
     func test_자동차_이름_다섯글자_성공() {
         carNameInput("abcde")
 
-        let result = try? GameRule.validCheck(carName)
+        let result = try? GameRule.validCarNameCheck(carName)
         XCTAssert(result == true)
     }
 
     func test_자동차_이름_여섯글자_에러() {
         carNameInput("abcdef")
         do {
-            let _ = try GameRule.validCheck(carName)
+            let _ = try GameRule.validCarNameCheck(carName)
         } catch {
             if let error = error as? InputError {
                 XCTAssert(error == InputError.overCountNameLength)

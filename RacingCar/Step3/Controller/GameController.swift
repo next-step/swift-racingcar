@@ -15,7 +15,7 @@ struct GameController {
         let noSplitCarNames = inputView.carNamesSetting()
         let splitCarNames = GameRule.splitComma(noSplitCarNames)
         for carName in splitCarNames {
-            try GameRule.validCheck(carName)
+            try GameRule.validCarNameCheck(carName)
         }
         let attemptCount = try inputView.attemptSetting()
         let cars: [Car] = CarGenerator.makeCars(carNames: splitCarNames)

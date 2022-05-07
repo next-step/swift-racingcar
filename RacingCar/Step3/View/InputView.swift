@@ -19,7 +19,7 @@ struct InputView {
     func attemptSetting() throws -> Int {
         print(GameGuide.attemptCount, terminator: " ")
         let attemptCount = try readInput()
-        try GameRule.invalidNumberCheck(attemptCount)
+        try GameRule.validNumberCheck(attemptCount)
         return attemptCount
     }
     

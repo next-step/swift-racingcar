@@ -22,12 +22,20 @@ struct GameRule {
     }
     
     @discardableResult
-    static func validCheck(_ carName: String) throws -> Bool {
+    static func validCarNameCheck(_ carName: String) throws -> Bool {
         if carName.isEmpty {
             throw InputError.emptyName
         }
         if carName.count > 5 {
             throw InputError.overCountNameLength
+        }
+        return true
+    }
+    
+    @discardableResult
+    static func validNumberCheck(_ input:Int) throws -> Bool {
+        if input < 1 {
+            throw InputError.invalidNumber
         }
         return true
     }
@@ -40,9 +48,5 @@ struct GameRule {
         return cars
     }
     
-    static func invalidNumberCheck(_ input:Int) throws {
-        if input < 1 {
-            throw InputError.invalidNumber
-        }
-    }
+
 }
