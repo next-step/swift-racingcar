@@ -13,7 +13,7 @@ struct RacingGame {
     }
     
     private var participantsCount: Int
-    private var roundCount: Int
+    private(set) var roundCount: Int
     
     var participants: [Car] = []
     
