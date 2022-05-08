@@ -26,10 +26,10 @@ struct RacingGame {
 
         self.participantsCount = participantsCount
         self.roundCount = roundCount
-        self.settingRacingGame()
+        self.setRacingGame()
     }
     
-    private mutating func settingRacingGame()  {
+    private mutating func setRacingGame()  {
         for _ in 0..<participantsCount {
             participants.append(Car(position: 0))
         }
