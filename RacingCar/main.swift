@@ -6,5 +6,13 @@
 
 import Foundation
 
-let game = GameController()
-game.gameStart()
+let gameController = GameController()
+do {
+    let gameSetting = try gameController.gameSetting()
+    let cars = gameController.carGenerator(gameSetting.carNames)
+    gameController.gameResult(cars, gameSetting.attemptCount)
+    
+} catch let error as InputError {
+    error.showError()
+}
+

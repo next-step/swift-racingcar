@@ -8,16 +8,19 @@
 import Foundation
 
 struct InputView {
-    func gameStart() throws -> (carCount:Int,attemptCount:Int) {
-        print(GameGuide.carCount, terminator: " ")
-        let carCount = try readInput()
-        try self.isValidNumber(carCount)
-        
+    func carNamesSetting() -> String {
+        print(GameGuide.carNames)
+        guard let input: String = readLine() else {
+            return ""
+        }
+        return input
+    }
+    
+    func attemptSetting() throws -> Int {
         print(GameGuide.attemptCount, terminator: " ")
         let attemptCount = try readInput()
-        try self.isValidNumber(attemptCount)
-        
-        return (carCount,attemptCount)
+        try GameRule.validNumberCheck(attemptCount)
+        return attemptCount
     }
     
     private func readInput() throws -> Int {
@@ -27,10 +30,6 @@ struct InputView {
         return inputNumber
     }
     
-    func isValidNumber(_ input:Int) throws {
-        if input < 1 {
-            throw InputError.invalidNumber
-        }
-    }
+
     
 }
