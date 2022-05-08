@@ -11,13 +11,21 @@ struct GameController {
     private let inputView = InputView()
     private let resultView = ResultView()
     
-    func gameStart() throws {
+    func gameSetting() throws -> GameSetting {
         let noSplitCarNames = inputView.carNamesSetting()
         let splitCarNames = GameRule.splitComma(noSplitCarNames)
         try carNameValidCheck(splitCarNames)
         
         let attemptCount = try inputView.attemptSetting()
-        let cars: [Car] = CarGenerator.makeCars(carNames: splitCarNames)
+        return GameSetting(carNames: splitCarNames, attemptCount: attemptCount)
+    }
+    
+    func carGenerator(_ carNames: [String]) -> [Car] {
+        let cars: [Car] = CarGenerator.makeCars(carNames: carNames)
+        return cars
+    }
+    
+    func gameResult(_ cars: [Car], _ attemptCount: Int) {
         resultView.initSetting()
         result(model: cars, attemptCount)
         resultView.winners(cars)
