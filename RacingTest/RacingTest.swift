@@ -10,13 +10,13 @@ import XCTest
 class RacingTest: XCTestCase {
     
     func test_랜덤_숫자가_4미만이면_전진안함() {
-        let car = Car(position: 0)
+        let car = Car(name: "test", position: 0)
         car.drive(by: 3)
         XCTAssertEqual(car.position, 0)
     }
     
     func test_랜덤_숫자가_4이상이면_전진() {
-        let car = Car(position: 0)
+        let car = Car(name: "test", position: 0)
         car.drive(by: 4)
         XCTAssertEqual(car.position, 1)
     }

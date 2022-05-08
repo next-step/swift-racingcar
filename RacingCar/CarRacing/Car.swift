@@ -12,9 +12,11 @@ class Car {
         static let moveSuccessableRange: ClosedRange<Int> = 4...9
     }
     
+    private(set) var name: String
     private(set) var position: Int
     
-    init(position: Int) {
+    init(name: String, position: Int) {
+        self.name = name
         self.position = position
     }
     

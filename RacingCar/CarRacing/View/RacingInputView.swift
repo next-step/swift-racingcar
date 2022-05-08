@@ -14,17 +14,17 @@ struct RacingInputView {
     }
     
     func readInput() throws -> RacingGame {
-        let participantCount = self.readParticipants(with: Comments.askingParticipants)
+        let participants = self.readParticipants(with: Comments.askingParticipants)
         let roundCount = self.readCount(with: Comments.askingRoundCount)
-        let game = try RacingGame(participantsCount: participantCount, roundCount: roundCount)
+        let game = try RacingGame(participants: participants, roundCount: roundCount)
         return game
     }
     
-    private func readParticipants(with comment: String) -> Int? {
+    private func readParticipants(with comment: String) -> [String]? {
         print(comment)
         guard let input = readLine() else { return nil }
         let participants = input.components(separatedBy: ",")
-        return participants.count
+        return participants
     }
     
     private func readCount(with comment: String) -> Int? {

@@ -10,13 +10,14 @@ import Foundation
 struct RacingResultView {
     func printRoundResult(in game: RacingGame) {
         for participant in game.participants {
-            drawLineGraph(length: participant.position)
+            drawLineGraph(for: participant)
         }
         print()
     }
     
-    private func drawLineGraph(length: Int) {
-        for _ in 0..<length {
+    private func drawLineGraph(for participant: Car) {
+        print("\(participant.name) : ", terminator: "")
+        for _ in 0..<participant.position {
             print("_", terminator: "")
         }
         print()
