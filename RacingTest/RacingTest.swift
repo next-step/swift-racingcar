@@ -34,7 +34,7 @@ class RacingTest: XCTestCase {
     }
     
     func test_라운드_횟수가_음수이면_오류반환() {
-        XCTAssertThrowsError(try RacingGame(participantsCount: 0, roundCount: nil))
+        XCTAssertThrowsError(try RacingGame(participantsCount: 0, roundCount: -1))
     }
     
     func test_자동차가_모두_동일선상에서_출발() throws {
