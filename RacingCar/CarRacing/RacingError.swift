@@ -10,4 +10,5 @@ import Foundation
 enum RacingError: Error {
     case emptyInput
     case invalidInput
+    case tooManyRound
 }

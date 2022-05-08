@@ -43,4 +43,18 @@ class RacingTest: XCTestCase {
             XCTAssertEqual($0.position, 0)
         })
     }
+    
+    func test_라운드가_한번_진행() throws {
+        var game = try RacingGame(participantsCount: 0, roundCount: 1)
+        try game.playOneRound()
+        XCTAssertEqual(game.currentRound, 1)
+    }
+    
+    func test_라운드가_정해진_횟수보다_많이_진행되면_오류반환() throws {
+        var game = try RacingGame(participantsCount: 0, roundCount: 3)
+        for _ in 0..<3 {
+            try game.playOneRound()
+        }
+        XCTAssertThrowsError(try game.playOneRound())
+    }
 }

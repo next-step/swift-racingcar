@@ -15,6 +15,8 @@ struct RacingGame {
     private var participantsCount: Int
     private(set) var roundCount: Int
     
+    private(set) var currentRound: Int = 0
+    
     var participants: [Car] = []
     
     init(participantsCount: Int?, roundCount: Int?) throws {
@@ -40,7 +42,9 @@ struct RacingGame {
         participants[index].drive(by: randomNumber)
     }
     
-    func playOneRound() {
+    mutating func playOneRound() throws {
+        guard currentRound < roundCount else { throw RacingError.tooManyRound }
+        self.currentRound += 1
         for participantIndex in 0..<participantsCount {
             excuteParticipantTurn(participant: participantIndex)
         }
