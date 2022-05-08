@@ -22,6 +22,7 @@ struct RacingGame {
         guard let roundCount = roundCount else { throw RacingError.emptyInput }
         
         guard roundCount >= 0 else { throw RacingError.invalidInput }
+        if participants.contains(where: { $0.count > 5 }) { throw RacingError.tooLongParticipantName }
 
         self.roundCount = roundCount
         self.setRacingGame(by: participants)

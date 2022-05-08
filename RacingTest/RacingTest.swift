@@ -21,6 +21,10 @@ class RacingTest: XCTestCase {
         XCTAssertEqual(car.position, 1)
     }
     
+    func test_이름이_5글자가_넘는_참가자가_있으면_오류반환() {
+        XCTAssertThrowsError(try RacingGame(participants: ["errorSUT", "sut1"], roundCount: 0))
+    }
+    
     func test_레이싱_참가자가_nil_이면_오류반환() {
         XCTAssertThrowsError(try RacingGame(participants: nil, roundCount: 0))
     }

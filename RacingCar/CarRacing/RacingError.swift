@@ -11,4 +11,5 @@ enum RacingError: Error {
     case emptyInput
     case invalidInput
     case tooManyRound
+    case tooLongParticipantName
 }
