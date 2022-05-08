@@ -39,10 +39,10 @@ struct RacingGame {
     
     mutating func playOneRound() throws {
         guard currentRound < roundCount else { throw RacingError.tooManyRound }
-        self.currentRound += 1
         for participantIndex in 0..<participants.count {
             excuteParticipantTurn(participant: participantIndex)
         }
+        self.currentRound += 1
     }
 }
 
