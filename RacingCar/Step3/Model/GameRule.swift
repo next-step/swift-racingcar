@@ -12,7 +12,7 @@ struct GameRule {
         return Int.random(in: 0...9)
     }
     
-    static func numberFourOrMorePlusOneOtherWisePlusZero(_ randomNumber: Int) -> Int {
+    static func moveDistance(_ randomNumber: Int) -> Int {
         guard randomNumber >= 4 else { return 0 }
         return 1
     }
@@ -51,7 +51,7 @@ struct GameRule {
     static func moveCars(model cars: [Car], round: Int) -> [Car] {
         guard round > 1 else { return cars }
         for car in cars {
-            car.move(GameRule.numberFourOrMorePlusOneOtherWisePlusZero(GameRule.randomNumber()))
+            car.move(GameRule.moveDistance(GameRule.randomNumber()))
         }
         return cars
     }
