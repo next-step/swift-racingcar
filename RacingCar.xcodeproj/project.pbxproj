@@ -49,6 +49,7 @@
 		1FD6691028265FBA003E16F7 /* GameRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD6690F28265FBA003E16F7 /* GameRule.swift */; };
 		1FD6691128266539003E16F7 /* GameRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD6690F28265FBA003E16F7 /* GameRule.swift */; };
 		1FD6691228266539003E16F7 /* GameRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD6690F28265FBA003E16F7 /* GameRule.swift */; };
+		1FD6692E2827BC1E003E16F7 /* GameSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD6692D2827BC1E003E16F7 /* GameSetting.swift */; };
 		C7E1263027239F7E0000DB8B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -85,6 +86,7 @@
 		1F8DCD512824056D00890A22 /* CarGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarGenerator.swift; sourceTree = "<group>"; };
 		1F8DCD552824A2FC00890A22 /* RacingRuleTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingRuleTest.swift; sourceTree = "<group>"; };
 		1FD6690F28265FBA003E16F7 /* GameRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRule.swift; sourceTree = "<group>"; };
+		1FD6692D2827BC1E003E16F7 /* GameSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSetting.swift; sourceTree = "<group>"; };
 		C7E1262C27239F7E0000DB8B /* RacingCar */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RacingCar; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E1262F27239F7E0000DB8B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -161,6 +163,7 @@
 				1F8DCD512824056D00890A22 /* CarGenerator.swift */,
 				1F8DCD33281DB46C00890A22 /* GameGuide.swift */,
 				1FD6690F28265FBA003E16F7 /* GameRule.swift */,
+				1FD6692D2827BC1E003E16F7 /* GameSetting.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -394,6 +397,7 @@
 				1F8DCD3A281DB99600890A22 /* GameController.swift in Sources */,
 				1F8DCD32281D96EA00890A22 /* InputError.swift in Sources */,
 				1F8DCD38281DB6BA00890A22 /* ResultView.swift in Sources */,
+				1FD6692E2827BC1E003E16F7 /* GameSetting.swift in Sources */,
 				1F8DCD0F281ADCE400890A22 /* StringCalculator.swift in Sources */,
 				1FD6691028265FBA003E16F7 /* GameRule.swift in Sources */,
 				1F8DCD11281ADEF700890A22 /* StringCalculatorError.swift in Sources */,
