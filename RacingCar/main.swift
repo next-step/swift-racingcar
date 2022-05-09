@@ -17,7 +17,6 @@ final class StringControl {
     }
 }
 
-
 extension String {
     
     enum ArithmeticalCode: String {
