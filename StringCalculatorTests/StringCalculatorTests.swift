@@ -46,14 +46,25 @@ class StringCalculatorTests: XCTestCase {
         XCTAssertEqual(result, 9)
     }
     
-    func test_입력값이_nil인경우_stringIsEmptyOrNil_throw발생하는지() throws {
+    func test_입력값이_빈문자열_인경우_stringIsEmpty_throw발생하는지() throws {
+        //given
+        let arithmeticString: String? = ""
+        
+        //when
+        //then
+        XCTAssertThrowsError(try calculator.calculate(string: arithmeticString)) { error in
+            XCTAssertEqual(error as! StringCalculator.CalculatorError, StringCalculator.CalculatorError.stringIsEmpty)
+        }
+    }
+    
+    func test_입력값이_nil인경우_stringIsNil_throw발생하는지() throws {
         //given
         let arithmeticString: String? = nil
         
         //when
         //then
         XCTAssertThrowsError(try calculator.calculate(string: arithmeticString)) { error in
-            XCTAssertEqual(error as! StringCalculator.CalculatorError, StringCalculator.CalculatorError.stringIsEmptyOrNil)
+            XCTAssertEqual(error as! StringCalculator.CalculatorError, StringCalculator.CalculatorError.stringIsNil)
         }
     }
     

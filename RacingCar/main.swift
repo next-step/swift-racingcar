@@ -37,7 +37,8 @@ extension String {
 struct StringCalculator {
     
     enum CalculatorError: Error {
-        case stringIsEmptyOrNil
+        case stringIsNil
+        case stringIsEmpty
         case containsWrongOperatorCode
     }
     
@@ -53,10 +54,12 @@ struct StringCalculator {
     }
     
     func calculate(string arithmeticString: String?) throws -> Int? {
-        guard let arithmeticString = arithmeticString,
-              arithmeticString.components(separatedBy: " ").isEmpty == false
-        else {
-            throw CalculatorError.stringIsEmptyOrNil
+        guard let arithmeticString = arithmeticString else {
+            throw CalculatorError.stringIsNil
+        }
+        
+        guard arithmeticString.isEmpty == false else {
+            throw CalculatorError.stringIsEmpty
         }
         
         guard containsWrongArithmeticalCode(string: arithmeticString) == false else {
