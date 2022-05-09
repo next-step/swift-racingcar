@@ -96,11 +96,9 @@
 			children = (
 				C7E1262F27239F7E0000DB8B /* main.swift */,
 				AA8424DD28293CCC00C1E9B5 /* View */,
+				AA8424F128296C7600C1E9B5 /* Model */,
 				AA8424DE282941DF00C1E9B5 /* UserInteractor.swift */,
 				AA8424E02829464200C1E9B5 /* RaceRandomGenerator.swift */,
-				AA8424E72829563E00C1E9B5 /* CarState.swift */,
-				AA8424ED28295E3800C1E9B5 /* Cars.swift */,
-				AA8424EA282956CB00C1E9B5 /* Race.swift */,
 			);
 			path = Step3;
 			sourceTree = "<group>";
@@ -121,6 +119,16 @@
 				AA8424E428294A2F00C1E9B5 /* RaceRandomGeneratorTests.swift */,
 			);
 			path = Step3;
+			sourceTree = "<group>";
+		};
+		AA8424F128296C7600C1E9B5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AA8424E72829563E00C1E9B5 /* CarState.swift */,
+				AA8424ED28295E3800C1E9B5 /* Cars.swift */,
+				AA8424EA282956CB00C1E9B5 /* Race.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		C7E1262327239F7E0000DB8B = {
