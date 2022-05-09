@@ -14,36 +14,36 @@ class StringCalculatorTests: XCTestCase {
 
     private let calculator = StringCalculator()
     
-    func test_두_정수의_덧셈이_잘_동작하는지() {
+    func test_1_더하기_4는_5() {
         let a = 1
         let b = 4
         
         let result = calculator.add(lhs: a, rhs: b)
-        XCTAssertEqual(result, a + b)
+        XCTAssertEqual(result, 5)
     }
     
-    func test_두_정수의_뺄셈이_잘_동작하는지() {
+    func test_3_빼기_2는_1() {
         let a = 3
         let b = 2
         
         let result = calculator.substract(lhs: a, rhs: b)
-        XCTAssertEqual(result, a - b)
+        XCTAssertEqual(result, 1)
     }
     
-    func test_두_정수의_나눗셈이_잘_동작하는지() {
+    func test_3_나누기_3은_1() {
         let a = 3
         let b = 3
         
         let result = calculator.division(lhs: a, rhs: b)
-        XCTAssertEqual(result, a / b)
+        XCTAssertEqual(result, 1)
     }
     
-    func test_두_정수의_곱셈이_잘_동작하는지() {
+    func test_3_곱하기_3은_9() {
         let a = 3
         let b = 3
         
         let result = calculator.multiply(lhs: a, rhs: b)
-        XCTAssertEqual(result, a * b)
+        XCTAssertEqual(result, 9)
     }
     
     func test_입력값이_nil인경우_stringIsEmptyOrNil_throw발생하는지() throws {
@@ -179,7 +179,7 @@ class StringCalculatorTests: XCTestCase {
         XCTAssertEqual(result!, 55)
     }
     
-    func test_사칙연산을_표현한_문자열의_연산이_정상작동되는지() throws {
+    func test_2_더하기_3_곱하기_4_나누기_2는_10() throws {
         //given
         let arithmeticString: String = "2 + 3 * 4 / 2"
         
