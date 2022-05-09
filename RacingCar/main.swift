@@ -66,30 +66,30 @@ struct StringCalculator {
             throw CalculatorError.containsWrongOperatorCode
         }
         
-        var result: Int = 0
+        var calculationResult: Int = 0
         let slicedString = arithmeticString.components(separatedBy: " ")
         
-        if let firstNum = Int(slicedString.first!) {
-            result = firstNum
+        if let firstInteger = Int(slicedString.first!) {
+            calculationResult = firstInteger
         } else {
             return nil
         }
  
-        var index: Int = 1
+        var slicedArrHead: Int = 1
         
-        while index < slicedString.count {
+        while slicedArrHead < slicedString.count {
             
-            if let arithmeticalCode = slicedString[index].toArithmeticalCode {
+            if let arithmeticalCode = slicedString[slicedArrHead].toArithmeticalCode {
                 
-                let num = slicedString[index + 1]
+                let valueToCalculate = slicedString[slicedArrHead + 1]
                 let arithmeticalExpression = arithmeticalExpression(code: arithmeticalCode)
-                result = arithmeticalExpression(result, Int(num)!)
+                calculationResult = arithmeticalExpression(calculationResult, Int(valueToCalculate)!)
             }
 
-            index += 2
+            slicedArrHead += 2
         }
         
-        return result
+        return calculationResult
     }
     
     private func arithmeticalExpression(code: String.ArithmeticalCode) -> ArithmeticalExpression {
