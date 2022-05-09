@@ -8,28 +8,64 @@
 import XCTest
 
 class RacingCarTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    
+    func test_given자동차갯수0인경우_then결과Empty() throws {
+        //given
+        let race = Race(carCount: 0, roundCount: 5)
+        
+        //when
+        do {
+            try race.run()
+        } catch {}
+        
+        //then
+        let result = race.getCurrentStates()
+        XCTAssertTrue(result.isEmpty)
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    func test_given라운드갯수0인경우_then모든자동차는제자리() throws {
+        //given
+        let race = Race(carCount: 5, roundCount: 0)
+        
+        //when
+        do {
+            try race.run()
+        } catch {}
+        
+        //then
+        let result = race.getCurrentStates()
+        let runCarCount = result
+            .filter { $0.position != 0 }
+            .count
+        XCTAssertEqual(runCarCount, 0)
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    
+    func test_given라운드와자동차모두0인경우_then결과Empty() throws {
+        //given
+        let race = Race(carCount: 0, roundCount: 0)
+        
+        //when
+        do {
+            try race.run()
+        } catch {}
+        
+        //then
+        let result = race.getCurrentStates()
+        XCTAssertTrue(result.isEmpty)
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func test_given라운드와자동차모두0아닌경우_then자동차만큼결과값있음() throws {
+        //given
+        let roundCount = 5
+        let race = Race(carCount: 5, roundCount: roundCount)
+        
+        //when
+        do {
+            try race.run()
+        } catch {}
+        
+        //then
+        let result = race.getCurrentStates()
+        XCTAssertEqual(result.count, roundCount)
     }
-
 }
