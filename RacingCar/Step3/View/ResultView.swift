@@ -8,5 +8,14 @@
 import Foundation
 
 final class ResultView {
+    private let userInteractor = UserInteractor()
     
+    func printTitle() {
+        print("실행 결과")
+        print("\n")
+    }
+    
+    func printResult(result: [CarState]) {
+        userInteractor.printRaceStates(cars: result)
+    }
 }

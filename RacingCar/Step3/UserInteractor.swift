@@ -28,4 +28,18 @@ final class UserInteractor {
         
         return inputInt
     }
+    
+    func printRaceStates(cars: [CarState]) {
+        cars.forEach {
+            printRaceState(car: $0)
+        }
+        print("\n")
+    }
+    
+    private func printRaceState(car: CarState) {
+        for _ in 0..<car.position {
+            print("-", terminator: "")
+        }
+        print("\n")
+    }
 }
