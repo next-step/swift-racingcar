@@ -30,11 +30,11 @@ class RacingTest: XCTestCase {
     }
     
     func test_라운드_횟수가_nil_이면_오류반환() {
-        XCTAssertThrowsError(try RacingGame(participants: [], roundCount: nil))
+        XCTAssertThrowsError(try RacingGame(participants: ["sut1"], roundCount: nil))
     }
     
     func test_라운드_횟수가_음수이면_오류반환() {
-        XCTAssertThrowsError(try RacingGame(participants: [], roundCount: -1))
+        XCTAssertThrowsError(try RacingGame(participants: ["sut1"], roundCount: -1))
     }
     
     func test_자동차가_모두_동일선상에서_출발() throws {
@@ -45,13 +45,13 @@ class RacingTest: XCTestCase {
     }
     
     func test_라운드가_한번_진행() throws {
-        var game = try RacingGame(participants: [], roundCount: 1)
+        var game = try RacingGame(participants: ["sut1"], roundCount: 1)
         try game.playOneRound()
         XCTAssertEqual(game.currentRound, 1)
     }
     
     func test_라운드가_정해진_횟수보다_많이_진행되면_오류반환() throws {
-        var game = try RacingGame(participants: [], roundCount: 3)
+        var game = try RacingGame(participants: ["sut1"], roundCount: 3)
         for _ in 0..<3 {
             try game.playOneRound()
         }
