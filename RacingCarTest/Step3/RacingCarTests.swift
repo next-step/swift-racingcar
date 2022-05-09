@@ -1,13 +1,13 @@
 //
-//  RacingCarTest.swift
-//  RacingCarTest
+//  RacingCarTests.swift
+//  RacingCarTests
 //
 //  Created by main on 2022/04/27.
 //
 
 import XCTest
 
-class RacingCarTest: XCTestCase {
+class RacingCarTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
