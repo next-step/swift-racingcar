@@ -29,4 +29,8 @@ final class Race {
         cars.runRace()
         currentRound += 1
     }
+    
+    func getCurrentStates() -> [CarState] {
+        return cars.getCurrent()
+    }
 }

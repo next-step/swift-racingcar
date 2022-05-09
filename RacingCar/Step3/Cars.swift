@@ -33,4 +33,8 @@ final class Cars {
         
         return CarState(position: car.position + 1)
     }
+    
+    func getCurrent() -> [CarState] {
+        return cars
+    }
 }
