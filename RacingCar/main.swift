@@ -25,8 +25,7 @@ extension String {
         case multiply = "*"
         case subtract = "-"
     }
-    
-    func isArithmeticalCode() -> Bool {
+    var isArithmeticalCode: Bool {
         return ArithmeticalCode(rawValue: self) != nil ? true : false
     }
     
@@ -48,7 +47,7 @@ struct StringCalculator {
         let wrongCodes = arithmeticString
             .components(separatedBy: " ")
             .filter{ Int($0) == nil }
-            .filter { $0.isArithmeticalCode() == false }
+            .filter { $0.isArithmeticalCode == false }
         
         return wrongCodes.isEmpty == false
     }
