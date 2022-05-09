@@ -30,7 +30,7 @@ struct RacingGame {
     
     private mutating func setRacingGame(by participantNames: [String])  {
         self.participants = participantNames
-            .map { Car(name: $0, position: 0) }
+            .map({ Car(name: $0, position: 0) })
     }
     
     private func excuteParticipantTurn(participant index: Int) {
