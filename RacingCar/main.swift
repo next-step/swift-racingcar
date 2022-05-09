@@ -40,6 +40,7 @@ struct StringCalculator {
         case stringIsNil
         case stringIsEmpty
         case containsWrongOperatorCode
+        case impossibleCalculateExpression
     }
     
     typealias ArithmeticalExpression = (Int, Int) -> Int
@@ -53,28 +54,11 @@ struct StringCalculator {
         return wrongCodes.isEmpty == false
     }
     
-    func calculate(string arithmeticString: String?) throws -> Int? {
-        guard let arithmeticString = arithmeticString else {
-            throw CalculatorError.stringIsNil
-        }
+    func calculate(expressionString: String?) throws -> Int {
+        try isValid(expression: expressionString)
+        let slicedString = expressionString!.components(separatedBy: " ")
         
-        guard arithmeticString.isEmpty == false else {
-            throw CalculatorError.stringIsEmpty
-        }
-        
-        guard containsWrongArithmeticalCode(string: arithmeticString) == false else {
-            throw CalculatorError.containsWrongOperatorCode
-        }
-        
-        var calculationResult: Int = 0
-        let slicedString = arithmeticString.components(separatedBy: " ")
-        
-        if let firstInteger = Int(slicedString.first!) {
-            calculationResult = firstInteger
-        } else {
-            return nil
-        }
- 
+        var calculationResult: Int = Int(slicedString.first!)!
         var slicedArrHead: Int = 1
         
         while slicedArrHead < slicedString.count {
@@ -90,6 +74,28 @@ struct StringCalculator {
         }
         
         return calculationResult
+    }
+    
+    @discardableResult
+    private func isValid(expression: String?) throws -> Bool {
+        guard let expression = expression else {
+            throw CalculatorError.stringIsNil
+        }
+        
+        guard expression.isEmpty == false else {
+            throw CalculatorError.stringIsEmpty
+        }
+        
+        guard containsWrongArithmeticalCode(string: expression) == false else {
+            throw CalculatorError.containsWrongOperatorCode
+        }
+                
+        guard let firstInteger = expression.components(separatedBy: " ").first,
+              let _ = Int(firstInteger) else {
+            throw CalculatorError.impossibleCalculateExpression
+        }
+        
+        return true
     }
     
     private func arithmeticalExpression(code: String.ArithmeticalCode) -> ArithmeticalExpression {

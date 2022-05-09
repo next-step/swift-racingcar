@@ -14,6 +14,9 @@ class StringCalculatorTests: XCTestCase {
 
     private let calculator = StringCalculator()
     
+    func test_사칙연산_메서드_정상동작() {
+        
+    }
     func test_1_더하기_4는_5() {
         let a = 1
         let b = 4
@@ -48,22 +51,22 @@ class StringCalculatorTests: XCTestCase {
     
     func test_입력값이_빈문자열_인경우_stringIsEmpty_throw발생하는지() throws {
         //given
-        let arithmeticString: String? = ""
+        let emptyString: String? = ""
         
         //when
         //then
-        XCTAssertThrowsError(try calculator.calculate(string: arithmeticString)) { error in
+        XCTAssertThrowsError(try calculator.calculate(expressionString: emptyString)) { error in
             XCTAssertEqual(error as! StringCalculator.CalculatorError, StringCalculator.CalculatorError.stringIsEmpty)
         }
     }
     
     func test_입력값이_nil인경우_stringIsNil_throw발생하는지() throws {
         //given
-        let arithmeticString: String? = nil
+        let nilString: String? = nil
         
         //when
         //then
-        XCTAssertThrowsError(try calculator.calculate(string: arithmeticString)) { error in
+        XCTAssertThrowsError(try calculator.calculate(expressionString: nilString)) { error in
             XCTAssertEqual(error as! StringCalculator.CalculatorError, StringCalculator.CalculatorError.stringIsNil)
         }
     }
@@ -113,11 +116,11 @@ class StringCalculatorTests: XCTestCase {
     
     func test_연산메서드가_사칙연산기호가_아닌_기호가_포함된_경우_containsWrongOperatorCode_throw발생하는지() throws {
         //given
-        let failCode0: String = "1 + 2 - 3 / 4 * 5 = 6"
+        let containsFatalCodeExpression: String = "1 + 2 - 3 / 4 * 5 = 6"
 
         //when
         //when
-        XCTAssertThrowsError(try calculator.calculate(string: failCode0)) { error in
+        XCTAssertThrowsError(try calculator.calculate(expressionString: containsFatalCodeExpression)) { error in
             XCTAssertEqual(error as! StringCalculator.CalculatorError, StringCalculator.CalculatorError.containsWrongOperatorCode)
         }
     }
@@ -126,80 +129,80 @@ class StringCalculatorTests: XCTestCase {
         //given
         let numberA: Int = 2
         let numberB: Int = 4
-        let arithmeticString: String = "\(numberA) + \(numberB)"
+        let expression: String = "\(numberA) + \(numberB)"
         
         //when
-        let result = try calculator.calculate(string: arithmeticString)
+        let result = try calculator.calculate(expressionString: expression)
         
         //then
         XCTAssertNotNil(result)
-        XCTAssertEqual(result!, 6)
+        XCTAssertEqual(result, 6)
     }
     
     func test_4_빼기_3이_1이_되는지() throws {
         //given
         let numberA: Int = 4
         let numberB: Int = 3
-        let arithmeticString: String = "\(numberA) - \(numberB)"
+        let expression: String = "\(numberA) - \(numberB)"
         
         //when
-        let result = try calculator.calculate(string: arithmeticString)
+        let result = try calculator.calculate(expressionString: expression)
         
         //then
         XCTAssertNotNil(result)
-        XCTAssertEqual(result!, 1)
+        XCTAssertEqual(result, 1)
     }
     
     func test_2_곱하기_4가_8이_되는지() throws {
         //given
         let numberA: Int = 2
         let numberB: Int = 4
-        let arithmeticString: String = "\(numberA) * \(numberB)"
+        let expression: String = "\(numberA) * \(numberB)"
         
         //when
-        let result = try calculator.calculate(string: arithmeticString)
+        let result = try calculator.calculate(expressionString: expression)
         
         //then
         XCTAssertNotNil(result)
-        XCTAssertEqual(result!, 8)
+        XCTAssertEqual(result, 8)
     }
     
     func test_4_나누기_2가_2이_되는지() throws {
         //given
         let numberA: Int = 4
         let numberB: Int = 2
-        let arithmeticString: String = "\(numberA) / \(numberB)"
+        let expression: String = "\(numberA) / \(numberB)"
         
         //when
-        let result = try calculator.calculate(string: arithmeticString)
+        let result = try calculator.calculate(expressionString: expression)
         
         //then
         XCTAssertNotNil(result)
-        XCTAssertEqual(result!, 2)
+        XCTAssertEqual(result, 2)
     }
     
     func test_1부터10까지_정수의합_55되는지() throws {
         //given
-        let arithmeticString: String = "1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10"
+        let expression: String = "1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10"
         
         //when
-        let result = try calculator.calculate(string: arithmeticString)
+        let result = try calculator.calculate(expressionString: expression)
         
         //then
         XCTAssertNotNil(result)
-        XCTAssertEqual(result!, 55)
+        XCTAssertEqual(result, 55)
     }
     
     func test_2_더하기_3_곱하기_4_나누기_2는_10() throws {
         //given
-        let arithmeticString: String = "2 + 3 * 4 / 2"
+        let expression: String = "2 + 3 * 4 / 2"
         
         //when
-        let result = try calculator.calculate(string: arithmeticString)
+        let result = try calculator.calculate(expressionString: expression)
         
         //then
         XCTAssertNotNil(result)
-        XCTAssertEqual(result!, 10)
+        XCTAssertEqual(result, 10)
     }
     
    
