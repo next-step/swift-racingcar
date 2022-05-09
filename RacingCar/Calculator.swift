@@ -15,4 +15,13 @@ struct Calculator {
     func substract(_ lhs: Int, _ rhs: Int) -> Int {
         return lhs - rhs
     }
+    
+    func multiply(_ lhs: Int,_ rhs: Int) -> Int {
+        return lhs * rhs
+    }
+    
+    func divide(_ lhs: Int,_ rhs: Int) -> Int {
+        return lhs / rhs
+    }
+    
 }
