@@ -15,7 +15,7 @@ enum UserInteractorError: Error {
 final class UserInteractor {
     func receiveInt(_ question: String?) throws -> Int {
         if let question = question {
-            print(question)
+            print(question, terminator: "")
         }
         
         guard let inputString = readLine() else {
