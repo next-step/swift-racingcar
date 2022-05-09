@@ -79,7 +79,7 @@ struct StringCalculator {
             if let arithmeticalCode = slicedString[index].toArithmeticalCode {
                 
                 let num = slicedString[index + 1]
-                let arithmeticalExpression = getArithmeticalExpression(code: arithmeticalCode)
+                let arithmeticalExpression = arithmeticalExpression(code: arithmeticalCode)
                 result = arithmeticalExpression(result, Int(num)!)
             }
 
@@ -89,7 +89,7 @@ struct StringCalculator {
         return result
     }
     
-    private func getArithmeticalExpression(code: String.ArithmeticalCode) -> ArithmeticalExpression {
+    private func arithmeticalExpression(code: String.ArithmeticalCode) -> ArithmeticalExpression {
 
         switch code {
         case .add:
