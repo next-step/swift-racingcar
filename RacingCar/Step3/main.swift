@@ -10,9 +10,11 @@ let inputView = InputView()
 do {
     let carCount: Int = try inputView.getCarCount()
     let raceCount: Int = try inputView.getRaceCount()
+    let race = Race(carCount: carCount, roundCount: raceCount)
     
-    print(carCount)
-    print(raceCount)
+    for _ in 0..<raceCount {
+        try race.run()
+    }
 } catch {
     print(error)
 }

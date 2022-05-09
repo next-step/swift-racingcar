@@ -16,6 +16,12 @@
 		AA8424E12829464200C1E9B5 /* RaceRandomGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8424E02829464200C1E9B5 /* RaceRandomGenerator.swift */; };
 		AA8424E22829464200C1E9B5 /* RaceRandomGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8424E02829464200C1E9B5 /* RaceRandomGenerator.swift */; };
 		AA8424E628294A2F00C1E9B5 /* RaceRandomGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8424E428294A2F00C1E9B5 /* RaceRandomGeneratorTests.swift */; };
+		AA8424E82829563E00C1E9B5 /* CarState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8424E72829563E00C1E9B5 /* CarState.swift */; };
+		AA8424E92829563E00C1E9B5 /* CarState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8424E72829563E00C1E9B5 /* CarState.swift */; };
+		AA8424EB282956CB00C1E9B5 /* Race.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8424EA282956CB00C1E9B5 /* Race.swift */; };
+		AA8424EC282956CB00C1E9B5 /* Race.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8424EA282956CB00C1E9B5 /* Race.swift */; };
+		AA8424EE28295E3800C1E9B5 /* Cars.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8424ED28295E3800C1E9B5 /* Cars.swift */; };
+		AA8424EF28295E3800C1E9B5 /* Cars.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8424ED28295E3800C1E9B5 /* Cars.swift */; };
 		AA92D4F428202F8B00DAF314 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAC251D28201E8B00D90E59 /* Calculator.swift */; };
 		AAAC251C2820107500D90E59 /* CalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAC251B2820107500D90E59 /* CalculatorTests.swift */; };
 		AAAC251E28201E8B00D90E59 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAC251D28201E8B00D90E59 /* Calculator.swift */; };
@@ -46,6 +52,9 @@
 		AA8424DE282941DF00C1E9B5 /* UserInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInteractor.swift; sourceTree = "<group>"; };
 		AA8424E02829464200C1E9B5 /* RaceRandomGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceRandomGenerator.swift; sourceTree = "<group>"; };
 		AA8424E428294A2F00C1E9B5 /* RaceRandomGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceRandomGeneratorTests.swift; sourceTree = "<group>"; };
+		AA8424E72829563E00C1E9B5 /* CarState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarState.swift; sourceTree = "<group>"; };
+		AA8424EA282956CB00C1E9B5 /* Race.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Race.swift; sourceTree = "<group>"; };
+		AA8424ED28295E3800C1E9B5 /* Cars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cars.swift; sourceTree = "<group>"; };
 		AAAC251B2820107500D90E59 /* CalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorTests.swift; sourceTree = "<group>"; };
 		AAAC251D28201E8B00D90E59 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		AAC7961F28257C9E00DC8803 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
@@ -89,6 +98,9 @@
 				AA8424DD28293CCC00C1E9B5 /* View */,
 				AA8424DE282941DF00C1E9B5 /* UserInteractor.swift */,
 				AA8424E02829464200C1E9B5 /* RaceRandomGenerator.swift */,
+				AA8424E72829563E00C1E9B5 /* CarState.swift */,
+				AA8424ED28295E3800C1E9B5 /* Cars.swift */,
+				AA8424EA282956CB00C1E9B5 /* Race.swift */,
 			);
 			path = Step3;
 			sourceTree = "<group>";
@@ -230,7 +242,10 @@
 			files = (
 				AA8424E22829464200C1E9B5 /* RaceRandomGenerator.swift in Sources */,
 				AA114D20281859E900DD14D2 /* SetTest.swift in Sources */,
+				AA8424E92829563E00C1E9B5 /* CarState.swift in Sources */,
+				AA8424EF28295E3800C1E9B5 /* Cars.swift in Sources */,
 				AAAC251C2820107500D90E59 /* CalculatorTests.swift in Sources */,
+				AA8424EC282956CB00C1E9B5 /* Race.swift in Sources */,
 				AA114D17281849F500DD14D2 /* RacingCarTests.swift in Sources */,
 				AAC7962128257D3800DC8803 /* Util.swift in Sources */,
 				AA114D1E2818510200DD14D2 /* StringTest.swift in Sources */,
@@ -245,10 +260,13 @@
 			files = (
 				AA8424E12829464200C1E9B5 /* RaceRandomGenerator.swift in Sources */,
 				C7E1263027239F7E0000DB8B /* main.swift in Sources */,
+				AA8424EE28295E3800C1E9B5 /* Cars.swift in Sources */,
 				AA8424DF282941DF00C1E9B5 /* UserInteractor.swift in Sources */,
 				AA8424D928293C6600C1E9B5 /* InputView.swift in Sources */,
+				AA8424EB282956CB00C1E9B5 /* Race.swift in Sources */,
 				AA8424DB28293C6C00C1E9B5 /* ResultView.swift in Sources */,
 				AAC7962028257C9E00DC8803 /* Util.swift in Sources */,
+				AA8424E82829563E00C1E9B5 /* CarState.swift in Sources */,
 				AAAC251E28201E8B00D90E59 /* Calculator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
