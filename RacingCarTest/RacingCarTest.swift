@@ -39,6 +39,20 @@ class RacingCarTest: XCTestCase {
         XCTAssertGreaterThan(calculator.substract(-2, -5), 0, "-2 - (-5) > 0 실패")
     }
     
+    func test3곱하기3은9() throws {
+        let calculator: Calculator = Calculator()
+        XCTAssert(calculator.multiply(3,3) == 9, "3 * 3 = 3 실패")
+        XCTAssertTrue(calculator.multiply(3,3) == 9, "3 * 3 = 3 실패")
+        XCTAssertEqual(calculator.multiply(3,3), 9, "3 * 3 = 3 실패")
+    }
+    
+    func test10나누기5는2() throws {
+        let calculator: Calculator = Calculator()
+        XCTAssert(calculator.divide(10,5) == 2, "10 / 5 = 2 실패")
+        XCTAssertTrue(calculator.divide(10,5) == 2, "10 / 5 = 2 실패")
+        XCTAssertEqual(calculator.divide(10,5), 2, "10 / 5 = 2 실패")
+    }
+    
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
         measure {
