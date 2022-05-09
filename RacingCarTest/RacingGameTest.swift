@@ -6,20 +6,15 @@
 //
 
 import XCTest
-
-extension RacingGameResult: Equatable {
-    static func == (lhs: RacingGameResult, rhs: RacingGameResult) -> Bool {
-        return lhs.racingRoundResult == rhs.racingRoundResult
-    }
-}
+@testable import RacingCar
 
 class RacingGameTest: XCTestCase {
 
     func test_RacingGame을_시작하면_각_라운드의_실행결과를_담고있는_RacingRound_배열을_얻을_수_있다() {
         // given
-        let firstCar = RacingCar(id: 0, engine: MovingEngine())
-        let secondCar = RacingCar(id: 1, engine: UnmovingEngine())
-        let thirdCar = RacingCar(id: 2, engine: UnmovingEngine())
+        var firstCar = try! RacingCar(id: 0, name: "12345", engine: MovingEngine())
+        var secondCar = try! RacingCar(id: 1, name: "12345", engine: UnmovingEngine())
+        var thirdCar = try! RacingCar(id: 2, name: "12345", engine: UnmovingEngine())
         
         var racingGame = try! RacingGame(racingCars: [firstCar, secondCar, thirdCar], roundCount: 2)
         
@@ -30,12 +25,12 @@ class RacingGameTest: XCTestCase {
         firstCar.move()
         secondCar.move()
         thirdCar.move()
-        let firstRoundResult = try! NormalRacingRound(racingCars: [firstCar, secondCar, thirdCar].copy())
+        let firstRoundResult = try! NormalRacingRound(racingCars: [firstCar, secondCar, thirdCar])
         
         firstCar.move()
         secondCar.move()
         thirdCar.move()
-        let secondRoundResult = try! NormalRacingRound(racingCars: [firstCar, secondCar, thirdCar].copy())
+        let secondRoundResult = try! NormalRacingRound(racingCars: [firstCar, secondCar, thirdCar])
         
         XCTAssert(racingGameResult == [firstRoundResult, secondRoundResult])
     }
@@ -52,7 +47,7 @@ class RacingGameTest: XCTestCase {
     
     func test_RacingGame은_1이상의값만_RacingCount로_가질수있다() {
         // given
-        let racingCars = [RacingCar(id: 0, engine: MovingEngine())]
+        let racingCars = [try! RacingCar(id: 0, name: "name", engine: MovingEngine())]
         let roundCount = 0
         
         // when

@@ -5,7 +5,7 @@
 //  Created by nylah.j on 2022/04/30.
 //
 
-struct RandomNumberGenerator: Equatable {
+struct RandomNumberGenerator {
     let range: Range<Int>
     
     init(range: Range<Int>) {

@@ -12,8 +12,8 @@ class RacingRoundTest: XCTestCase {
 
     func test_RacingRound를_start하면_해당round가_종료되었을때_자동차의_위치정보를_담고있는_RacingRound를_반환한다() {
         // give
-        let firstCar = RacingCar(id: 1, engine: MovingEngine())
-        let secondCar = RacingCar(id: 2, engine: UnmovingEngine())
+        let firstCar = try! RacingCar(id: 1, name: "", engine: MovingEngine())
+        let secondCar = try! RacingCar(id: 2, name: "", engine: UnmovingEngine())
         
         let racingRound = try! NormalRacingRound(racingCars:[firstCar, secondCar])
         
@@ -30,6 +30,23 @@ class RacingRoundTest: XCTestCase {
         let racingCars: [RacingCar] = []
         
         // when
-        XCTAssertThrowsError(try NormalRacingRound(racingCars: racingCars))g
+        XCTAssertThrowsError(try NormalRacingRound(racingCars: racingCars))
+    }
+    
+    func test_winners_각_라운드의_우승자는_location프로퍼티가_가장큰_자동차들이다() {
+        // given
+        let firstCar = try! RacingCar(id: 0, name: "12345", engine: MovingEngine())
+        let secondCar = try! RacingCar(id: 1, name: "23456", engine: UnmovingEngine())
+        let thirdCar = try! RacingCar(id: 2, name: "34567", engine: MovingEngine())
+        
+        let racingRound = try! NormalRacingRound(racingCars: [firstCar, secondCar, thirdCar])
+        
+        let racingResult = racingRound.start()
+        
+        // when
+        let winners = racingResult.winners()
+        
+        // then
+        XCTAssertEqual(winners, [firstCar, thirdCar])
     }
 }
