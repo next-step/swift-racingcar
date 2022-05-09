@@ -20,12 +20,18 @@ struct RacingResultView {
     }
     
     func printRacingWinner(in game: RacingGame) {
+        let winnerNames = findWinnerNames(in: game)
+        print(winnerNames.joined(separator: ", "), terminator: Comments.sayingWinners)
+    }
+    
+    private func findWinnerNames(in game: RacingGame) -> [String] {
         let sortedParticipants = game.participants.sorted(by: { $0.position > $1.position })
-        guard let longestDistance = sortedParticipants.first?.position else { return }
-        let winnersName = sortedParticipants
+        guard let longestDistance = sortedParticipants.first?.position else { return [] }
+        let winnerNames = sortedParticipants
             .filter({ $0.position == longestDistance })
             .map({ $0.name })
-        print(winnersName.joined(separator: ", "), terminator: Comments.sayingWinners)
+        
+        return winnerNames
     }
     
     private func drawLineGraph(for participant: Car) {
