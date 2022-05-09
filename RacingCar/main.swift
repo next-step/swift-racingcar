@@ -29,7 +29,7 @@ extension String {
         return ArithmeticalCode(rawValue: self) != nil ? true : false
     }
     
-    func toArithmeticalCode() -> ArithmeticalCode? {
+    var toArithmeticalCode: ArithmeticalCode? {
         return ArithmeticalCode(rawValue: self)
     }
 }
@@ -76,7 +76,7 @@ struct StringCalculator {
         
         while index < slicedString.count {
             
-            if let arithmeticalCode = slicedString[index].toArithmeticalCode() {
+            if let arithmeticalCode = slicedString[index].toArithmeticalCode {
                 
                 let num = slicedString[index + 1]
                 let arithmeticalExpression = getArithmeticalExpression(code: arithmeticalCode)
