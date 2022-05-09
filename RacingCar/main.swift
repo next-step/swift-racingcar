@@ -15,6 +15,7 @@ do {
         try game.playOneRound()
         resultView.printRoundResult(in: game)
     }
+    resultView.printRacingWinner(in: game)
 } catch {
     print("Error! \(error)")
 }

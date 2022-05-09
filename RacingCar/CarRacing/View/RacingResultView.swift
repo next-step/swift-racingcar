@@ -8,15 +8,35 @@
 import Foundation
 
 struct RacingResultView {
+    private struct Comments {
+        static let sayingWinners = "가 최종 우승했습니다.\n"
+    }
+    
     func printRoundResult(in game: RacingGame) {
         for participant in game.participants {
-            drawLineGraph(length: participant.position)
+            drawLineGraph(for: participant)
         }
         print()
     }
     
-    private func drawLineGraph(length: Int) {
-        for _ in 0..<length {
+    func printRacingWinner(in game: RacingGame) {
+        let winnerNames = findWinnerNames(in: game)
+        print(winnerNames.joined(separator: ", "), terminator: Comments.sayingWinners)
+    }
+    
+    private func findWinnerNames(in game: RacingGame) -> [String] {
+        let sortedParticipants = game.participants.sorted(by: { $0.position > $1.position })
+        guard let longestDistance = sortedParticipants.first?.position else { return [] }
+        let winnerNames = sortedParticipants
+            .filter({ $0.position == longestDistance })
+            .map({ $0.name })
+        
+        return winnerNames
+    }
+    
+    private func drawLineGraph(for participant: Car) {
+        print("\(participant.name) : ", terminator: "")
+        for _ in 0..<participant.position {
             print("_", terminator: "")
         }
         print()
