@@ -30,6 +30,7 @@ class StringCalculator {
         case `nil`
         case emptyString
         case invalidate
+        case divideToZero
     }
     
     enum 기호: String {
@@ -66,25 +67,30 @@ class StringCalculator {
         }
         
         self.string = string
-        print(try calculate(self.string))
     }
     
-    func calculate(_ string: String) throws -> Int {
-        let numbers = string
-            .components(separatedBy: " ")
-            .compactMap { Int($0) }
+    func calculate() throws -> Int {
+        let 식 = string.components(separatedBy: " ")
+        guard 식.count >= 3 else {
+            throw InputError.invalidate
+        }
         
-        let 기호s = string.filter{
+        let numbers = 식.compactMap { Int($0) }
+        
+        let 기호s = 식.filter{
             return $0 == "+" || $0 == "-" || $0 == "*" || $0 == "/"
         }.compactMap{ 기호(rawValue: String($0)) }
 
-        guard numbers.count - 1 == 기호s.count || string.count < 3 else {
+        guard numbers.count - 1 == 기호s.count else {
             throw InputError.invalidate
         }
         
         var result = numbers[0]
 
-        기호s.enumerated().forEach{ index, 기호 in
+        try 기호s.enumerated().forEach{ index, 기호 in
+            if 기호 == .divide && numbers[index + 1] == 0 {
+                throw InputError.divideToZero
+            }
             result = 기호.calculate(result, numbers[index + 1])
         }
         
