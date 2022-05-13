@@ -14,6 +14,14 @@
 		E371E6822821733E00909EED /* StringCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E371E6812821733E00909EED /* StringCalculatorTests.swift */; };
 		E371E6862821738100909EED /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
 		E3A53D622816F0130085A30D /* RacingCarTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A53D612816F0130085A30D /* RacingCarTest.swift */; };
+		E3F6329B282D4D6000716778 /* Racing.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F6329A282D4D6000716778 /* Racing.swift */; };
+		E3F6329C282D4D6000716778 /* Racing.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F6329A282D4D6000716778 /* Racing.swift */; };
+		E3F6329E282DFC3700716778 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F6329D282DFC3700716778 /* Car.swift */; };
+		E3F6329F282DFC3700716778 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F6329D282DFC3700716778 /* Car.swift */; };
+		E3F632A1282DFC5000716778 /* Fuel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F632A0282DFC5000716778 /* Fuel.swift */; };
+		E3F632A2282DFC5000716778 /* Fuel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F632A0282DFC5000716778 /* Fuel.swift */; };
+		E3F632A5282E135500716778 /* RacingPrint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F632A4282E135500716778 /* RacingPrint.swift */; };
+		E3F632A6282E135500716778 /* RacingPrint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F632A4282E135500716778 /* RacingPrint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,6 +45,10 @@
 		E371E6812821733E00909EED /* StringCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringCalculatorTests.swift; sourceTree = "<group>"; };
 		E3A53D5F2816F0130085A30D /* RacingCarTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RacingCarTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3A53D612816F0130085A30D /* RacingCarTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingCarTest.swift; sourceTree = "<group>"; };
+		E3F6329A282D4D6000716778 /* Racing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Racing.swift; sourceTree = "<group>"; };
+		E3F6329D282DFC3700716778 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
+		E3F632A0282DFC5000716778 /* Fuel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fuel.swift; sourceTree = "<group>"; };
+		E3F632A4282E135500716778 /* RacingPrint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingPrint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,7 +59,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-
 		E371E67C2821733E00909EED /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -55,7 +66,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-
 		E3A53D5C2816F0130085A30D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -90,11 +100,11 @@
 			isa = PBXGroup;
 			children = (
 				C7E1262F27239F7E0000DB8B /* main.swift */,
+				E3F632A3282DFC5800716778 /* Racing */,
 			);
 			path = RacingCar;
 			sourceTree = "<group>";
 		};
-
 		E371E6802821733E00909EED /* StringCalculatorTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -103,7 +113,6 @@
 			path = StringCalculatorTests;
 			sourceTree = "<group>";
 		};
-
 		E3A53D602816F0130085A30D /* RacingCarTest */ = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +121,17 @@
 				E33D68752817A1C300656F43 /* SetTest.swift */,
 			);
 			path = RacingCarTest;
+			sourceTree = "<group>";
+		};
+		E3F632A3282DFC5800716778 /* Racing */ = {
+			isa = PBXGroup;
+			children = (
+				E3F6329D282DFC3700716778 /* Car.swift */,
+				E3F632A0282DFC5000716778 /* Fuel.swift */,
+				E3F6329A282D4D6000716778 /* Racing.swift */,
+				E3F632A4282E135500716778 /* RacingPrint.swift */,
+			);
+			path = Racing;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,7 +154,6 @@
 			productReference = C7E1262C27239F7E0000DB8B /* RacingCar */;
 			productType = "com.apple.product-type.tool";
 		};
-
 		E371E67E2821733E00909EED /* StringCalculatorTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E371E6852821733E00909EED /* Build configuration list for PBXNativeTarget "StringCalculatorTests" */;
@@ -152,7 +171,6 @@
 			productReference = E371E67F2821733E00909EED /* StringCalculatorTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-
 		E3A53D5E2816F0130085A30D /* RacingCarTest */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E3A53D652816F0130085A30D /* Build configuration list for PBXNativeTarget "RacingCarTest" */;
@@ -183,11 +201,9 @@
 					C7E1262B27239F7E0000DB8B = {
 						CreatedOnToolsVersion = 13.0;
 					};
-
 					E371E67E2821733E00909EED = {
 						CreatedOnToolsVersion = 13.3.1;
 					};
-
 					E3A53D5E2816F0130085A30D = {
 						CreatedOnToolsVersion = 13.3.1;
 					};
@@ -214,7 +230,6 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-
 		E371E67D2821733E00909EED /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -222,7 +237,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-
 		E3A53D5D2816F0130085A30D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -237,11 +251,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3F6329B282D4D6000716778 /* Racing.swift in Sources */,
+				E3F632A5282E135500716778 /* RacingPrint.swift in Sources */,
+				E3F632A1282DFC5000716778 /* Fuel.swift in Sources */,
 				C7E1263027239F7E0000DB8B /* main.swift in Sources */,
+				E3F6329E282DFC3700716778 /* Car.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-
 		E371E67B2821733E00909EED /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -251,15 +268,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-
 		E3A53D5B2816F0130085A30D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3F632A2282DFC5000716778 /* Fuel.swift in Sources */,
 				E33D68762817A1C300656F43 /* SetTest.swift in Sources */,
 				E30709352816F586004D1254 /* main.swift in Sources */,
+				E3F6329F282DFC3700716778 /* Car.swift in Sources */,
 				E3A53D622816F0130085A30D /* RacingCarTest.swift in Sources */,
+				E3F632A6282E135500716778 /* RacingPrint.swift in Sources */,
 				E33D68742817931400656F43 /* StringTest.swift in Sources */,
+				E3F6329C282D4D6000716778 /* Racing.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,7 +423,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
-
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VH29LQ6AQ4;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
@@ -440,43 +459,6 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.study.StringCalculatorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
-		E3A53D632816F0130085A30D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = VH29LQ6AQ4;
-				GENERATE_INFOPLIST_FILE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.3;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.effectiveswift.RacingCarTest;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		E3A53D642816F0130085A30D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = VH29LQ6AQ4;
-				GENERATE_INFOPLIST_FILE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.3;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.effectiveswift.RacingCarTest;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 			};
@@ -539,7 +521,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-
 		E371E6852821733E00909EED /* Build configuration list for PBXNativeTarget "StringCalculatorTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -549,7 +530,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-
 		E3A53D652816F0130085A30D /* Build configuration list for PBXNativeTarget "RacingCarTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
