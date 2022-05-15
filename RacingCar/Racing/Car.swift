@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 struct Car {
     var moveDistance: Int = 1
     

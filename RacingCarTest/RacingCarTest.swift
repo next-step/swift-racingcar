@@ -16,11 +16,22 @@ import XCTest
  */
 class RacingCarTest: XCTestCase {
     
+    var fuel: Fuel!
+    var car: Car!
+    
+    override func setUpWithError() throws {
+        fuel = Fuel()
+        car = Car()
+    }
+    
+    override func tearDownWithError() throws {
+        fuel = nil
+        car = nil
+    }
+    
     //자동차의 moveDistance는 기본값 1이다.
     func test_자동차가_연료4를_받았을때_movedistance_5인지() {
         //given
-        var fuel = Fuel()
-        var car = Car()
         fuel.setLiter(4)
         
         //when
@@ -32,8 +43,6 @@ class RacingCarTest: XCTestCase {
     
     func test_자동차가_연료3를_받았을때_movedistance_1인지() {
         //given
-        var fuel = Fuel()
-        var car = Car()
         fuel.setLiter(3)
         
         //when

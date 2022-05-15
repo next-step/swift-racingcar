@@ -6,7 +6,7 @@
 //
 
 
-protocol PrintRacingSituationProtocol: AnyObject{
+protocol PrintRacingSituationProtocol: AnyObject {
     func participatedCars() -> [Car]
 }
 
