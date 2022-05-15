@@ -11,7 +11,7 @@ struct Fuel {
     private(set) var liter: Int
     
     init() {
-        let energy = Int(arc4random_uniform(10))
+        let energy = Int.random(in: 0...9)
         self.liter = energy
     }
     
