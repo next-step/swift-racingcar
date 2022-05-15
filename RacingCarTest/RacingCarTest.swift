@@ -16,8 +16,8 @@ import XCTest
  */
 class RacingCarTest: XCTestCase {
     
-    var fuel: Fuel!
-    var car: Car!
+    private var fuel: Fuel!
+    private var car: Car!
     
     override func setUpWithError() throws {
         fuel = Fuel()
@@ -52,27 +52,20 @@ class RacingCarTest: XCTestCase {
         XCTAssertEqual(car.moveDistance, 1)
     }
     
-    func test_입력받은_만큼_차가_만들어졌는지() {
-        //given
-        let input = 5
-        
-        //when
-        let car = Car.generateCars(count: input)
-        let racing = Racing(cars: car, moveCount: 0)
-        
-        //then
-        XCTAssertEqual(racing.participatedCars().count, 5)
+    func test_생성될_차의_숫자가_1보다_작은경우_Error_generateCountIsLow발생() throws {
+        XCTAssertThrowsError(try Car.generateCars(count: -1)) { error in
+            XCTAssertEqual(error as! CarError , CarError.generateCountIsLow)
+        }
     }
     
-    func test_자동차_3대_3번_움직이기시도() {
-        let input = 3
+    func test_레이싱의_움직임카운트_1보다_작은경우_Error_racingCountIsLow발생() throws {
+    
+        let cars = try! Car.generateCars(count: 3)
         
-        //when
-        let car = Car.generateCars(count: input)
-        let racing = Racing(cars: car, moveCount: 3)
-        
-        racing.start()
-//        //then
-//        XCTAssertEqual(racing.participatedCars().count, 5)
+        XCTAssertThrowsError(try Racing(cars: cars, moveCount: -1)) { error in
+            XCTAssertEqual(error as! RacingError , RacingError.racingCountIsLow)
+        }
     }
 }
+
+

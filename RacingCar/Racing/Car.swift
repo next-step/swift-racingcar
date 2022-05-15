@@ -7,6 +7,10 @@
 
 import Foundation
 
+enum CarError: Error {
+    case generateCountIsLow
+}
+
 struct Car {
     var moveDistance: Int = 1
     
@@ -15,7 +19,12 @@ struct Car {
         self.moveDistance += fuel.liter
     }
     
-    static func generateCars(count: Int) -> [Car] {
+    static func generateCars(count: Int) throws -> [Car] {
+        guard count > 0 else {
+            throw CarError.generateCountIsLow
+        }
+        
+        //테스트
         return Array(repeating: Car(), count: count)
     }
 }

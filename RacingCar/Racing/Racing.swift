@@ -7,12 +7,20 @@
 
 import Foundation
 
+enum RacingError: Error {
+    case racingCountIsLow
+}
+
 final class Racing {
     private var cars: [Car]
     private var moveCount: Int
     private let printer = PrintRacingSituation()
     
-    init(cars: [Car], moveCount: Int) {
+    init?(cars: [Car], moveCount: Int) throws{
+        guard moveCount > 0 else {
+            throw RacingError.racingCountIsLow
+        }
+        
         self.cars = cars
         self.moveCount = moveCount
         printer.dataSource = self
@@ -31,7 +39,7 @@ final class Racing {
     private func moveCar() {
         for i in 0 ..< cars.count {
             cars[i].moveFoward(fuel: generateFuel())
-        }
+        }        
         printer.printSituation()
     }
 }
