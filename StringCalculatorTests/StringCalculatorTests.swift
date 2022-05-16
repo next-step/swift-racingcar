@@ -8,8 +8,6 @@
 import XCTest
 
 
-@testable import StringCalculator
-
 class StringCalculatorTests: XCTestCase {
 
     private let calculator = StringCalculator()
