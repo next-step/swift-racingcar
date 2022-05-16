@@ -58,11 +58,13 @@ class RacingCarTest: XCTestCase {
         }
     }
     
-    func test_레이싱의_움직임카운트_1보다_작은경우_Error_racingCountIsLow발생() throws {
+    func test_생성될_차의_숫자가_1인_경우_Car_배열의_길이가_1인지() throws {
+        let cars = try Car.generateCars(count: 1)
+        XCTAssertEqual(cars.count, 1)
+    }
     
-        let cars = try! Car.generateCars(count: 3)
-        
-        XCTAssertThrowsError(try Racing(cars: cars, moveCount: -1)) { error in
+    func test_레이싱의_움직임카운트_1보다_작은경우_Error_racingCountIsLow발생() throws {
+        XCTAssertThrowsError(try Racing(UserInput(carCount: 1, moveCount: -1))) { error in
             XCTAssertEqual(error as! RacingError , RacingError.racingCountIsLow)
         }
     }
