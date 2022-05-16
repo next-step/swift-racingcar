@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		C7E1263027239F7E0000DB8B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
 		E30709352816F586004D1254 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
-		E33D68742817931400656F43 /* StringTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33D68732817931400656F43 /* StringTest.swift */; };
-		E33D68762817A1C300656F43 /* SetTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33D68752817A1C300656F43 /* SetTest.swift */; };
 		E363FD952831DD1100C7BE9B /* StringCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E363FD912831DC3700C7BE9B /* StringCalculator.swift */; };
+		E363FD9A2831E07100C7BE9B /* StringTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33D68732817931400656F43 /* StringTest.swift */; };
+		E363FD9B2831E08700C7BE9B /* SetTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33D68752817A1C300656F43 /* SetTest.swift */; };
 		E371E6822821733E00909EED /* StringCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E371E6812821733E00909EED /* StringCalculatorTests.swift */; };
 		E371E6862821738100909EED /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1262F27239F7E0000DB8B /* main.swift */; };
 		E3A53D622816F0130085A30D /* RacingCarTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A53D612816F0130085A30D /* RacingCarTest.swift */; };
@@ -120,6 +120,8 @@
 			isa = PBXGroup;
 			children = (
 				E371E6812821733E00909EED /* StringCalculatorTests.swift */,
+				E33D68732817931400656F43 /* StringTest.swift */,
+				E33D68752817A1C300656F43 /* SetTest.swift */,
 			);
 			path = StringCalculatorTests;
 			sourceTree = "<group>";
@@ -128,8 +130,6 @@
 			isa = PBXGroup;
 			children = (
 				E3A53D612816F0130085A30D /* RacingCarTest.swift */,
-				E33D68732817931400656F43 /* StringTest.swift */,
-				E33D68752817A1C300656F43 /* SetTest.swift */,
 			);
 			path = RacingCarTest;
 			sourceTree = "<group>";
@@ -276,7 +276,9 @@
 			files = (
 				E363FD952831DD1100C7BE9B /* StringCalculator.swift in Sources */,
 				E371E6862821738100909EED /* main.swift in Sources */,
+				E363FD9A2831E07100C7BE9B /* StringTest.swift in Sources */,
 				E371E6822821733E00909EED /* StringCalculatorTests.swift in Sources */,
+				E363FD9B2831E08700C7BE9B /* SetTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,12 +287,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3F632A2282DFC5000716778 /* Fuel.swift in Sources */,
-				E33D68762817A1C300656F43 /* SetTest.swift in Sources */,
 				E30709352816F586004D1254 /* main.swift in Sources */,
 				E3F6329F282DFC3700716778 /* Car.swift in Sources */,
 				E3A53D622816F0130085A30D /* RacingCarTest.swift in Sources */,
 				E3F632A6282E135500716778 /* RacingPrint.swift in Sources */,
-				E33D68742817931400656F43 /* StringTest.swift in Sources */,
 				E3F6329C282D4D6000716778 /* Racing.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
