@@ -14,16 +14,16 @@ enum RacingError: Error {
 final class Racing {
     private var cars: [Car]
     private var moveCount: Int
-    private let printer = PrintRacingSituation()
+    private let resultView = ResultView()
     
-    init?(cars: [Car], moveCount: Int) throws{
-        guard moveCount > 0 else {
+    
+    init?(_ userInput: UserInput) throws{
+        guard userInput.moveCount > 0 else {
             throw RacingError.racingCountIsLow
         }
         
-        self.cars = cars
-        self.moveCount = moveCount
-        printer.dataSource = self
+        self.cars = try Car.generateCars(count: userInput.carCount)
+        self.moveCount = userInput.moveCount
     }
     
     func start() {
@@ -39,15 +39,7 @@ final class Racing {
     private func moveCar() {
         for i in 0 ..< cars.count {
             cars[i].moveFoward(fuel: generateFuel())
-        }        
-        printer.printSituation()
+        }
+        resultView.printCars(participatedCars: cars)
     }
 }
-
-// Mark:- PrintRacingSituationProtocol
-extension Racing: PrintRacingSituationProtocol {
-    func participatedCars() -> [Car] {
-        return cars
-    }
-}
-

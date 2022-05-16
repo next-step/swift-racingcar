@@ -24,7 +24,6 @@ struct Car {
             throw CarError.generateCountIsLow
         }
         
-        //테스트
         return Array(repeating: Car(), count: count)
     }
 }
