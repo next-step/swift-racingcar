@@ -6,7 +6,6 @@
 //
 
 import XCTest
-@testable import RacingCar
 
 class StringTest: XCTestCase {
     //정수변환이_가능한_숫자_두_개를_가진
