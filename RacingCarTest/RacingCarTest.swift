@@ -18,15 +18,18 @@ class RacingCarTest: XCTestCase {
     
     private var fuel: Fuel!
     private var car: Car!
+    private var inputView: InputView!
     
     override func setUpWithError() throws {
         fuel = Fuel()
         car = Car()
+        inputView = InputView()
     }
     
     override func tearDownWithError() throws {
         fuel = nil
         car = nil
+        inputView = nil
     }
     
     //자동차의 moveDistance는 기본값 1이다.
@@ -69,13 +72,58 @@ class RacingCarTest: XCTestCase {
     
     func test_레이싱의_움직임카운트_1보다_작은경우_Error_racingCountIsLow발생() throws {
         //given
-        let userInput = UserInput(carCount: 1, moveCount: -1)
-        
+        let userInput = UserInput(carCount: 1, moveCount: 0)
+
         //when/then
-        XCTAssertThrowsError(try Racing(userInput)) { error in
+        XCTAssertThrowsError(try Racing(userInput))
+        { error in
             XCTAssertEqual(error as! RacingError , RacingError.racingCountIsLow)
         }
     }
+    
+    func test_Input_carCount_입력이_정수변환이_안되는_문자열인경우_Error_carCountInputCannotAssignToInt발생() throws {
+        //given
+        let carCount = "하나"
+        
+        //when/tehn
+        XCTAssertThrowsError(try inputView.userInput(carCount: carCount,
+                                                     moveCount: "1"))
+        { error in
+            XCTAssertEqual(error as! InputError , InputError.carCountInputCannotAssignToInt)
+        }
+    }
+    
+    func test_Input_moveCount_입력이_정수변환이_안되는_문자열인경우_Error_moveCountInputCannotAssignToInt발생() throws {
+        //given
+        let moveCount = "하나"
+        
+        //when/tehn
+        XCTAssertThrowsError(try inputView.userInput(carCount: "1",
+                                                     moveCount: moveCount))
+        { error in
+            XCTAssertEqual(error as! InputError , InputError.moveCountInputCannotAssignToInt)
+        }
+    }
+    
+    func test_Input_moveCount_1_carCount_1_입력받았을시_userInfo반환 () throws {
+        //given
+        let moveCount = "1"
+        let carCount = "1"
+        
+        //when
+        let userInfo = try inputView.userInput(carCount: carCount, moveCount: moveCount)
+        
+        //then
+        XCTAssertEqual(userInfo.moveCount, 1)
+        XCTAssertEqual(userInfo.carCount, 1)
+    }
+
+    
+    func test_gameTest() {
+        let racingGame = RacingGame()
+        racingGame.start()
+    }
+    
 }
 
 
