@@ -7,59 +7,40 @@
 
 import Foundation
 
-class Calculate {
-    class func add(_ lhs: Int, _ rhs: Int) -> Int {
-        return lhs + rhs
-    }
-    
-    class func substract(_ lhs: Int, _ rhs: Int) -> Int {
-        return lhs - rhs
-    }
-    
-    class func multiply(_ lhs: Int,_ rhs: Int) -> Int {
-        return lhs * rhs
-    }
-    
-    class func divide(_ lhs: Int,_ rhs: Int) -> Int {
-        return lhs / rhs
-    }
-}
-
 class StringCalculator {
     enum InputError: Error {
-        case `nil`
+        case nilInput
         case emptyString
         case invalidate
         case divideToZero
     }
     
-    enum 기호: String {
+    enum Symbol: String {
         case add = "+"
         case substract = "-"
         case multiply = "*"
         case divide = "/"
         
         func calculate(_ lhs: Int, _ rhs: Int) -> Int {
+            let calculator = Calculator()
             switch self {
             case .add:
-                return Calculate.add(lhs, rhs)
+                return calculator.add(lhs, rhs)
             case .substract:
-                return Calculate.substract(lhs, rhs)
+                return calculator.substract(lhs, rhs)
             case .multiply:
-                return Calculate.multiply(lhs, rhs)
+                return calculator.multiply(lhs, rhs)
             case .divide:
-                return Calculate.divide(lhs, rhs)
+                return calculator.divide(lhs, rhs)
             }
         }
     }
     
-    
     let string: String
-    let calculator = Calculator()
     
     init(_ input: String?) throws {
         guard let string = input else {
-            throw InputError.nil
+            throw InputError.nilInput
         }
         
         guard string != "" else {
@@ -70,28 +51,26 @@ class StringCalculator {
     }
     
     func calculate() throws -> Int {
-        let 식 = string.components(separatedBy: " ")
-        guard 식.count >= 3 else {
+        let fomula = string.components(separatedBy: " ")
+        guard fomula.count >= 1 else {
             throw InputError.invalidate
         }
         
-        let numbers = 식.compactMap { Int($0) }
+        let numbers = fomula.compactMap { Int($0) }
         
-        let 기호s = 식.filter{
-            return $0 == "+" || $0 == "-" || $0 == "*" || $0 == "/"
-        }.compactMap{ 기호(rawValue: String($0)) }
+        let symbols = fomula.compactMap{ Symbol(rawValue: $0) }
 
-        guard numbers.count - 1 == 기호s.count else {
+        guard numbers.count - 1 == symbols.count else {
             throw InputError.invalidate
         }
         
         var result = numbers[0]
 
-        try 기호s.enumerated().forEach{ index, 기호 in
-            if 기호 == .divide && numbers[index + 1] == 0 {
+        try symbols.enumerated().forEach{ index, symbol in
+            if symbol == .divide && numbers[index + 1] == 0 {
                 throw InputError.divideToZero
             }
-            result = 기호.calculate(result, numbers[index + 1])
+            result = symbol.calculate(result, numbers[index + 1])
         }
         
         return result
