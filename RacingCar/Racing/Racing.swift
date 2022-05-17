@@ -16,8 +16,7 @@ final class Racing {
     private var moveCount: Int
     private let resultView = ResultView()
     
-    
-    init?(_ userInput: UserInput) throws{
+    init?(_ userInput: UserInput) throws {
         guard userInput.moveCount > 0 else {
             throw RacingError.racingCountIsLow
         }
