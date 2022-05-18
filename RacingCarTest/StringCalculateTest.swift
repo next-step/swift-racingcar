@@ -6,18 +6,9 @@
 //
 
 import XCTest
-@testable import RacingCar
+//@testable import RacingCar
 
 class StringCalculateTest: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-    
 
     func testValidInput() throws {
         let calculator = try StringCalculator("2 + 3 * 4 / 2")
@@ -34,6 +25,11 @@ class StringCalculateTest: XCTestCase {
     func testInvalidInput2() throws {
         let calculator = try StringCalculator("1 + ")
         XCTAssertThrowsError(try calculator.calculate())
+    }
+    
+    func testOnlyNumber() throws {
+        let calculator = try StringCalculator("1")
+        XCTAssertEqual(try calculator.calculate(), 1)
     }
     
     func testDividedByZero() throws {
