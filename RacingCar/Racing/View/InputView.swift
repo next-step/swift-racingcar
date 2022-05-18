@@ -54,4 +54,9 @@ struct InputView {
         return UserInput(carCount: carCount, moveCount: moveCount)
     }
     
+struct RacingInputValidator {
+    
+    func containsWrongLength(names: [String]) -> Bool {
+        return names.filter{ $0.count > 5 }.isEmpty ? false : true
+    }
 }
