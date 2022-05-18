@@ -164,7 +164,7 @@ class RacingCarTest: XCTestCase {
         let result = validator.containsWrongLength(names: names)
         
         //then
-        XCTAssertEqual(result, true)
+        XCTAssertEqual(result, false)
     }
     
 }
