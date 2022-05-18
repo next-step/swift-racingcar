@@ -19,17 +19,20 @@ class RacingCarTest: XCTestCase {
     private var fuel: Fuel!
     private var car: Car!
     private var inputView: InputView!
+    private var validator: RacingInputValidator!
     
     override func setUpWithError() throws {
         fuel = Fuel()
-        car = Car()
+        car = Car(name: "TestCar")
         inputView = InputView()
+        validator = RacingInputValidator()
     }
     
     override func tearDownWithError() throws {
         fuel = nil
         car = nil
         inputView = nil
+        validator = nil
     }
     
     //자동차의 moveDistance는 기본값 1이다.
@@ -55,67 +58,15 @@ class RacingCarTest: XCTestCase {
         XCTAssertEqual(car.moveDistance, 1)
     }
     
-    func test_생성될_차의_숫자가_1보다_작은경우_Error_generateCountIsLow발생() throws {
+    func test_자동차이름이_빈배열인경우_Error_generateCarNameIsEmpty발생() throws {
         //given
-        let lowCarCount = -1
+        let emptyArr: [String] = []
         
         //when/then
-        XCTAssertThrowsError(try Car.generateCars(count: lowCarCount)) { error in
-            XCTAssertEqual(error as! CarError , CarError.generateCountIsLow)
-        }
-    }
-    
-    func test_생성될_차의_숫자가_1인_경우_Car_배열의_길이가_1인지() throws {
-        let cars = try Car.generateCars(count: 1)
-        XCTAssertEqual(cars.count, 1)
-    }
-    
-    func test_레이싱의_움직임카운트_1보다_작은경우_Error_racingCountIsLow발생() throws {
-        //given
-        let userInput = UserInput(carCount: 1, moveCount: 0)
-
-        //when/then
-        XCTAssertThrowsError(try Racing(userInput))
+        XCTAssertThrowsError(try Car.generateCars(with: emptyArr))
         { error in
-            XCTAssertEqual(error as! RacingError , RacingError.racingCountIsLow)
+            XCTAssertEqual(error as! CarError , CarError.generateCarNameIsEmpty)
         }
-    }
-    
-    func test_Input_carCount_입력이_정수변환이_안되는_문자열인경우_Error_carCountInputCannotAssignToInt발생() throws {
-        //given
-        let carCount = "하나"
-        
-        //when/tehn
-        XCTAssertThrowsError(try inputView.userInput(carCount: carCount,
-                                                     moveCount: "1"))
-        { error in
-            XCTAssertEqual(error as! InputError , InputError.carCountInputCannotAssignToInt)
-        }
-    }
-    
-    func test_Input_moveCount_입력이_정수변환이_안되는_문자열인경우_Error_moveCountInputCannotAssignToInt발생() throws {
-        //given
-        let moveCount = "하나"
-        let validator = RacingInputValidator()
-        
-        //when/tehn
-        XCTAssertThrowsError(try validator.validMoveCount(moveCount))
-        { error in
-            XCTAssertEqual(error as! InputError , InputError.moveCountInputCannotAssignToInt)
-        }
-    }
-    
-    func test_Input_moveCount_1_carCount_1_입력받았을시_userInfo반환 () throws {
-        //given
-        let moveCount = "1"
-        let carCount = "1"
-        
-        //when
-        let userInfo = try inputView.userInput(carCount: carCount, moveCount: moveCount)
-        
-        //then
-        XCTAssertEqual(userInfo.moveCount, 1)
-        XCTAssertEqual(userInfo.carCount, 1)
     }
     
     func test_자동차이름_yagom_cozy_으로_Car_생성시_이름_입력확인() {
@@ -167,6 +118,11 @@ class RacingCarTest: XCTestCase {
         XCTAssertEqual(result, false)
     }
     
+    
+//    func test_시작() {
+//        let d = RacingGame()
+//        d.start()
+//    }
 }
 
 
