@@ -12,6 +12,7 @@ enum InputError: String, Error {
     case moveCountInputCannotAssignToInt
     case InputError
     case carNameTooLong
+    case carNamesInputCannotAssignToString
 }
 
 struct UserInput {
