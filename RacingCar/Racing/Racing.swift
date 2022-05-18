@@ -29,6 +29,7 @@ final class Racing {
         for _ in 0 ..< moveCount {
             self.moveCar()
         }
+        printRacingResult()
     }
     
     private func generateFuel() -> Fuel {
@@ -39,6 +40,14 @@ final class Racing {
         for i in 0 ..< cars.count {
             cars[i].moveFoward(fuel: generateFuel())
         }
+        printRacingSituation()
+    }
+    
+    private func printRacingSituation() {
         resultView.printCars(participatedCars: cars)
+    }
+    
+    private func printRacingResult() {
+        resultView.printWinner(participatedCars: cars)
     }
 }
