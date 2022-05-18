@@ -143,6 +143,30 @@ class RacingCarTest: XCTestCase {
         XCTAssertEqual(cars[1].name, "cozy")
     }
     
+    func test_입력된_자동차이름길이_5보다_큰_경우_True반환하는_검증메서드확인() {
+        //given
+        let validator = RacingInputValidator()
+        let names = ["yagom","cozy","miyazaki"]
+        
+        //when
+        let result = validator.containsWrongLength(names: names)
+        
+        //then
+        XCTAssertEqual(result, true)
+    }
+    
+    func test_입력된_자동차이름길이_5이하인_경우_False반환하는_검증메서드확인() {
+        //given
+        let validator = RacingInputValidator()
+        let names = ["yagom","cozy","eory"]
+        
+        //when
+        let result = validator.containsWrongLength(names: names)
+        
+        //then
+        XCTAssertEqual(result, true)
+    }
+    
 }
 
 
