@@ -13,20 +13,12 @@ enum CarError: Error {
 }
 
 struct Car {
-    var name: String = ""
+    var name: String
     var moveDistance: Int = 1
     
     mutating func moveFoward(fuel: Fuel) {
         guard fuel.liter >= 4 else { return }
         self.moveDistance += fuel.liter
-    }
-    
-    static func generateCars(count: Int) throws -> [Car] {
-        guard count > 0 else {
-            throw CarError.generateCountIsLow
-        }
-        
-        return Array(repeating: Car(), count: count)
     }
     
     static func generateCars(with names: [String]) throws -> [Car] {
