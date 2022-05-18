@@ -117,11 +117,18 @@ class RacingCarTest: XCTestCase {
         XCTAssertEqual(userInfo.moveCount, 1)
         XCTAssertEqual(userInfo.carCount, 1)
     }
-
     
-    func test_gameTest() {
-        let racingGame = RacingGame()
-        racingGame.start()
+    func test_자동차이름_yagom_cozy_으로_Car_생성시_이름_입력확인() {
+        //given
+        let names = ["yagom", "cozy"]
+        
+        //when
+        let cars = names.map { Car(name: $0)}
+        
+        //then
+
+        XCTAssertEqual(cars[0].name, "yagom")
+        XCTAssertEqual(cars[1].name, "cozy")
     }
     
 }
