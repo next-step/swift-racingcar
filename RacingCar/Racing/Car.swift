@@ -9,6 +9,7 @@ import Foundation
 
 enum CarError: Error {
     case generateCountIsLow
+    case generateCarNameIsEmpty
 }
 
 struct Car {
@@ -26,5 +27,13 @@ struct Car {
         }
         
         return Array(repeating: Car(), count: count)
+    }
+    
+    static func generateCars(with names: [String]) throws -> [Car] {
+        guard names.isEmpty == false else {
+            throw CarError.generateCarNameIsEmpty
+        }
+        
+        return names.map { Car(name: $0) }
     }
 }
