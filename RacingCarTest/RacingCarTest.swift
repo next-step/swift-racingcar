@@ -10,6 +10,8 @@ import XCTest
 
 class RacingCarTest: XCTestCase {
 
+
+
     func test2더하기3은5() throws {
         let calculator: Calculator = Calculator()
         XCTAssert(calculator.add(2,3) == 5, "2 + 3 = 5 실패")
