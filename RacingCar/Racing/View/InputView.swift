@@ -60,4 +60,25 @@ struct RacingInputValidator {
     func containsWrongLength(names: [String]) -> Bool {
         return names.filter{ $0.count > 5 }.isEmpty ? false : true
     }
+    
+    func validCarNameLength(_ inputString: String?) throws -> [String] {
+        guard let inputString = inputString else {
+            throw InputError.carCountInputCannotAssignToInt
+        }
+        
+        let carNames = inputString.components(separatedBy: ",")
+        
+        guard containsWrongLength(names: carNames) == false else {
+            throw InputError.carNameTooLong
+        }
+        return carNames
+    }
+    
+    func validMoveCount(_ inputString: String?) throws -> Int{
+        guard let inputString = inputString,
+              let moveCount = Int(inputString) else {
+            throw InputError.moveCountInputCannotAssignToInt
+        }
+        return moveCount
+    }
 }
