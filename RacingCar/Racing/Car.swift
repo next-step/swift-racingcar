@@ -12,6 +12,7 @@ enum CarError: Error {
 }
 
 struct Car {
+    var name: String = ""
     var moveDistance: Int = 1
     
     mutating func moveFoward(fuel: Fuel) {
