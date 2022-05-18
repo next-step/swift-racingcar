@@ -96,10 +96,10 @@ class RacingCarTest: XCTestCase {
     func test_Input_moveCount_입력이_정수변환이_안되는_문자열인경우_Error_moveCountInputCannotAssignToInt발생() throws {
         //given
         let moveCount = "하나"
+        let validator = RacingInputValidator()
         
         //when/tehn
-        XCTAssertThrowsError(try inputView.userInput(carCount: "1",
-                                                     moveCount: moveCount))
+        XCTAssertThrowsError(try validator.validMoveCount(moveCount))
         { error in
             XCTAssertEqual(error as! InputError , InputError.moveCountInputCannotAssignToInt)
         }
