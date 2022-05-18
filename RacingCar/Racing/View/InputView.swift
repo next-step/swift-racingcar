@@ -16,45 +16,53 @@ enum InputError: String, Error {
 }
 
 struct UserInput {
-    var carCount: Int
+    var carNames: [String]
     var moveCount: Int
 }
 
+/*
+ 각 자동차에 이름을 부여할 수 있습니다. 자동차 이름은 5자를 초과할 수 없습니다.
+ 전진하는 자동차를 출력할 때 자동차 이름을 같이 출력합니다.
+ 자동차 이름은 쉼표(,)를 기준으로 구분합니다.
+ 자동차 경주 게임을 완료한 후 누가 우승했는지를 알려줍니다. 우승자는 한 명 이상일 수 있습니다.
+ */
 struct InputView {
     
+    private let validator = RacingInputValidator()
+    
     func input() -> UserInput? {
-        print("몇 대의 자동차가 레이싱에 참가합니까?")
-        
-        let carCountInput = readLine()
-        
-        print("몇 번의 이동을 해야 하나요?")
-        
-        let moveCountInput = readLine()
-        
         do {
-            let userInput = try userInput(carCount: carCountInput, moveCount: moveCountInput)
-            return userInput
+            let carNames = try nameInput()
+            let moveCount = try moveCountInput()
+            return UserInput(carNames: carNames, moveCount: moveCount)
         } catch {
-            return nil
+            print(error)
+        }
+        return nil
+    }
+    
+    private func nameInput() throws -> [String] {
+        print("경주할 자동차 이름을 입력하세요(이름은 쉼표(,)를 기준으로 구분")
+        do {
+            return try validator.validCarNameLength(readLine())
+        } catch {
+            throw error
         }
     }
     
-    func userInput(carCount: String?, moveCount: String?) throws -> UserInput {
-        guard let inputString = carCount,
-              let carCount = Int(inputString) else {
-            print(InputError.carCountInputCannotAssignToInt)
-            throw InputError.carCountInputCannotAssignToInt
+    private func moveCountInput() throws -> Int {
+        print("시도할 횟수는 몇 회인가요?")
+        let inputMoveCount = readLine()
+        do {
+            let count = try validator.validMoveCount(inputMoveCount)
+            return count
+        } catch {
+            throw error
         }
-                
-        guard let inputString = moveCount,
-              let moveCount = Int(inputString) else {
-            print(InputError.moveCountInputCannotAssignToInt)
-            throw InputError.moveCountInputCannotAssignToInt
-        }
-        
-        return UserInput(carCount: carCount, moveCount: moveCount)
     }
-    
+}
+
+
 struct RacingInputValidator {
     
     func containsWrongLength(names: [String]) -> Bool {
