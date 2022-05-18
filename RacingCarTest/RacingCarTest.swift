@@ -131,6 +131,18 @@ class RacingCarTest: XCTestCase {
         XCTAssertEqual(cars[1].name, "cozy")
     }
     
+    func test_자동차이름_yagom_cozy_으로_Car배열_리턴하는_메서드확인() {
+        //given
+        let names = ["yagom", "cozy"]
+        
+        //when
+        let cars = try! Car.generateCars(with: names)
+        
+        //then
+        XCTAssertEqual(cars[0].name, "yagom")
+        XCTAssertEqual(cars[1].name, "cozy")
+    }
+    
 }
 
 
