@@ -7,14 +7,16 @@
 
 import Foundation
 
-struct RacingGame {
-    let inputView = InputView()
-    
+final class RacingGame {
+    private let inputView = InputView()
+    private let resultView = ResultView()
+
     func start() {
         let userInput = receiveUserInput()
         do {
             let racing = try Racing(userInput)
-            racing?.start()
+            racing.delegate = self
+            racing.start()
             
         } catch {
             print(error)
@@ -28,5 +30,16 @@ struct RacingGame {
         } while userInput == nil
         
         return userInput!
+    }
+}
+
+// MARK: - RacingDelegate
+extension RacingGame: RacingDelegate {
+    func racingProgress(participatedCars: [Car]) {
+        resultView.printProgress(participatedCars)
+    }
+    
+    func racingEnd(winnerCars: [Car]) {
+        resultView.printGameResult(winnerCars: winnerCars)
     }
 }
