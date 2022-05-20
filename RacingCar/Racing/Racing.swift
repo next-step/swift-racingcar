@@ -49,6 +49,15 @@ final class Racing {
         updateRacingProgress()
     }
     
+    private func updateRacingProgress() {
+        delegate?.racingProgress(participatedCars: cars)
+    }
+    
+    private func racingEnd() {
+        let winnerCars = winners(participatedCars: cars)
+        delegate?.racingEnd(winnerCars: winnerCars)
+    }
+    
     private func winners(participatedCars: [Car]) -> [Car] {
         let topScore = racingTopScore(participatedCars)
         let winners = participatedCars.filter { $0.moveDistance == topScore }
@@ -60,14 +69,5 @@ final class Racing {
             return topScore
         }
         return 0
-    }
-
-    private func updateRacingProgress() {
-        delegate?.racingProgress(participatedCars: cars)
-    }
-    
-    private func racingEnd() {
-        let winnerCars = winners(participatedCars: cars)
-        delegate?.racingEnd(winnerCars: winnerCars)
     }
 }
