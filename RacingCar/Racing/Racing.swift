@@ -11,12 +11,18 @@ enum RacingError: Error {
     case racingCountIsLow
 }
 
+protocol RacingDelegate: AnyObject {
+    func racingEnd(winnerCars: [Car])
+    func racingProgress(participatedCars: [Car])
+}
+
 final class Racing {
     private var cars: [Car]
     private var moveCount: Int
-    private let resultView = ResultView()
     
-    init?(_ userInput: UserInput) throws {
+    weak var delegate: RacingDelegate?
+    
+    init(_ userInput: UserInput) throws {
         guard userInput.moveCount > 0 else {
             throw RacingError.racingCountIsLow
         }
@@ -29,7 +35,7 @@ final class Racing {
         for _ in 0 ..< moveCount {
             self.moveCar()
         }
-        printRacingResult()
+        racingEnd()
     }
     
     private func generateFuel() -> Fuel {
@@ -40,14 +46,28 @@ final class Racing {
         for i in 0 ..< cars.count {
             cars[i].moveFoward(fuel: generateFuel())
         }
-        printRacingSituation()
+        updateRacingProgress()
     }
     
-    private func printRacingSituation() {
-        resultView.printCars(participatedCars: cars)
+    private func winners(participatedCars: [Car]) -> [Car] {
+        let topScore = racingTopScore(participatedCars)
+        let winners = participatedCars.filter { $0.moveDistance == topScore }
+        return winners
     }
     
-    private func printRacingResult() {
-        resultView.printWinner(participatedCars: cars)
+    private func racingTopScore(_ cars: [Car]) -> Int {
+        if let topScore = cars.compactMap({ $0.moveDistance }).max() {
+            return topScore
+        }
+        return 0
+    }
+
+    private func updateRacingProgress() {
+        delegate?.racingProgress(participatedCars: cars)
+    }
+    
+    private func racingEnd() {
+        let winnerCars = winners(participatedCars: cars)
+        delegate?.racingEnd(winnerCars: winnerCars)
     }
 }
