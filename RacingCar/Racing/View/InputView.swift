@@ -56,7 +56,6 @@ struct InputView {
     }
 }
 
-
 struct RacingInputValidator {
     
     func containsWrongLength(names: [String]) -> Bool {
