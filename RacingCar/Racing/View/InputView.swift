@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum InputError: String, Error {
+enum InputError: Error {
     case carCountInputCannotAssignToInt
     case moveCountInputCannotAssignToInt
     case InputError
