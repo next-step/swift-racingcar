@@ -8,11 +8,12 @@
 import Foundation
 
 enum InputError: Error {
-    case carCountInputCannotAssignToInt
     case moveCountInputCannotAssignToInt
     case InputError
     case carNameTooLong
     case carNamesInputCannotAssignToString
+    case notEnoughCars
+    case carNameIsEmpty
 }
 
 struct UserInput {
@@ -64,10 +65,20 @@ struct RacingInputValidator {
     
     func validCarNameLength(_ inputString: String?) throws -> [String] {
         guard let inputString = inputString else {
-            throw InputError.carCountInputCannotAssignToInt
+            throw InputError.carNamesInputCannotAssignToString
+        }
+        
+        guard inputString.contains(",") else {
+            throw InputError.notEnoughCars
         }
         
         let carNames = inputString.components(separatedBy: ",")
+        
+        if carNames
+            .filter({ $0.isEmpty })
+            .count > 0 {
+            throw InputError.carNameIsEmpty
+        }
         
         guard containsWrongLength(names: carNames) == false else {
             throw InputError.carNameTooLong
