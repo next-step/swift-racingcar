@@ -21,11 +21,7 @@ struct Car {
         self.moveDistance += fuel.liter
     }
     
-    static func generateCars(with names: [String]) throws -> [Car] {
-        guard names.isEmpty == false else {
-            throw CarError.generateCarNameIsEmpty
-        }
-        
+    static func generateCars(with names: [String]) -> [Car] {
         return names.map { Car(name: $0) }
     }
 }
