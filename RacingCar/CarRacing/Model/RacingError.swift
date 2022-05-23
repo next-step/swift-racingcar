@@ -8,6 +8,7 @@
 import Foundation
 
 enum RacingError: Error {
+    case nonInitRace
     case emptyInput
     case invalidInput
     case tooManyRound

@@ -13,11 +13,10 @@ struct RacingInputView {
         static let askingRoundCount: String = "시도할 횟수는 몇 회인가요?"
     }
     
-    func readInput() throws -> RacingGame {
+    func readInput() -> (participants: [String]?, roundCount: Int?) {
         let participants = self.readParticipants(with: Comments.askingParticipants)
         let roundCount = self.readCount(with: Comments.askingRoundCount)
-        let game = try RacingGame(participants: participants, roundCount: roundCount)
-        return game
+        return (participants: participants, roundCount: roundCount)
     }
     
     private func readParticipants(with comment: String) -> [String]? {

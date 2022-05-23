@@ -8,22 +8,25 @@
 import Foundation
 
 struct RacingGame {
-    private struct Const {
+    struct Const {
         static let randomRange: ClosedRange<Int> = 0...9
     }
     
     private(set) var roundCount: Int
     private(set) var currentRound: Int = 0
     
+    let numberGenerator: NumberGeneratable
+    
     var participants: [Car] = []
     
-    init(participants: [String]?, roundCount: Int?) throws {
+    init(participants: [String]?, roundCount: Int?, numberGenerator: NumberGeneratable) throws {
         guard let participants = participants else { throw RacingError.emptyInput }
         guard let roundCount = roundCount else { throw RacingError.emptyInput }
         
         guard roundCount >= 0 else { throw RacingError.invalidInput }
         if participants.contains(where: { $0.count > 5 }) { throw RacingError.tooLongParticipantName }
-
+        
+        self.numberGenerator = numberGenerator
         self.roundCount = roundCount
         self.setRacingGame(by: participants)
     }
@@ -34,8 +37,8 @@ struct RacingGame {
     }
     
     private func excuteParticipantTurn(participant index: Int) {
-        let randomNumber = Int.random(in: Const.randomRange)
-        participants[index].drive(by: randomNumber)
+        let number = numberGenerator.generate()
+        participants[index].drive(by: number)
     }
     
     mutating func playOneRound() throws {
