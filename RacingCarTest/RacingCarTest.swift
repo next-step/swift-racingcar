@@ -18,15 +18,21 @@ class RacingCarTest: XCTestCase {
     
     private var fuel: Fuel!
     private var car: Car!
+    private var inputView: InputView!
+    private var validator: RacingInputValidator!
     
     override func setUpWithError() throws {
         fuel = Fuel()
-        car = Car()
+        car = Car(name: "TestCar")
+        inputView = InputView()
+        validator = RacingInputValidator()
     }
     
     override func tearDownWithError() throws {
         fuel = nil
         car = nil
+        inputView = nil
+        validator = nil
     }
     
     //자동차의 moveDistance는 기본값 1이다.
@@ -52,20 +58,120 @@ class RacingCarTest: XCTestCase {
         XCTAssertEqual(car.moveDistance, 1)
     }
     
-    func test_생성될_차의_숫자가_1보다_작은경우_Error_generateCountIsLow발생() throws {
-        XCTAssertThrowsError(try Car.generateCars(count: -1)) { error in
-            XCTAssertEqual(error as! CarError , CarError.generateCountIsLow)
+    func test_자동차이름_yagom_cozy_으로_Car_생성시_이름_입력확인() {
+        //given
+        let names = ["yagom", "cozy"]
+        
+        //when
+        let cars = names.map { Car(name: $0)}
+        
+        //then
+
+        XCTAssertEqual(cars[0].name, "yagom")
+        XCTAssertEqual(cars[1].name, "cozy")
+    }
+    
+    func test_자동차이름_yagom_cozy_으로_Car배열_리턴하는_메서드확인() {
+        //given
+        let names = ["yagom", "cozy"]
+        
+        //when
+        let cars = Car.generateCars(with: names)
+        
+        //then
+        XCTAssertEqual(cars[0].name, "yagom")
+        XCTAssertEqual(cars[1].name, "cozy")
+    }
+    
+    func test_입력된_자동차이름길이_5보다_큰_경우_True반환하는_검증메서드확인() {
+        //given
+        let validator = RacingInputValidator()
+        let names = ["yagom", "cozy", "miyazaki"]
+        
+        //when
+        let result = validator.containsWrongLength(names: names)
+        
+        //then
+        XCTAssertEqual(result, true)
+    }
+    
+    func test_입력된_자동차이름길이_5이하인_경우_False반환하는_검증메서드확인() {
+        //given
+        let validator = RacingInputValidator()
+        let names = ["yagom", "cozy", "eory"]
+        
+        //when
+        let result = validator.containsWrongLength(names: names)
+        
+        //then
+        XCTAssertEqual(result, false)
+    }
+    
+    func test_이동횟수_1입력받을때_validMoveCount_1반환하는지() {
+        //given
+        let inputMoveCount = "1"
+        let validator = RacingInputValidator()
+        
+        //when
+        let moveCount = try! validator.validMoveCount(inputMoveCount)
+        
+        //then
+        XCTAssertEqual(moveCount, 1)
+    }
+    
+    func test_이동횟수_일_입력받을때_error_moveCountInputCannotAssignToInt발생() {
+        //given
+        let inputMoveCount = "일"
+        let validator = RacingInputValidator()
+        
+        //when/then
+        XCTAssertThrowsError(try validator.validMoveCount(inputMoveCount)) { error in
+            XCTAssertEqual(error as! InputError, InputError.moveCountInputCannotAssignToInt)
         }
     }
     
-    func test_생성될_차의_숫자가_1인_경우_Car_배열의_길이가_1인지() throws {
-        let cars = try Car.generateCars(count: 1)
-        XCTAssertEqual(cars.count, 1)
+    func test_입력받은_자동차_하나일때_error_notEnoughCars_반환되는지() {
+        //given
+        let inputCarName = "벤틀리"
+        let validator = RacingInputValidator()
+        
+        //when/then
+        XCTAssertThrowsError(try validator.validCarNameLength(inputCarName)) { error in
+            XCTAssertEqual(error as! InputError, InputError.notEnoughCars)
+        }
     }
     
-    func test_레이싱의_움직임카운트_1보다_작은경우_Error_racingCountIsLow발생() throws {
-        XCTAssertThrowsError(try Racing(UserInput(carCount: 1, moveCount: -1))) { error in
-            XCTAssertEqual(error as! RacingError , RacingError.racingCountIsLow)
+    func test_입력받은_자동차이름_벤틀리_포르쉐_문자열배열로_반환되는지() {
+        //given
+        let inputCarName = "벤틀리,포르쉐"
+        let validator = RacingInputValidator()
+        
+        //when
+        let cars = try! validator.validCarNameLength(inputCarName)
+        
+        //then
+        XCTAssertEqual(cars, ["벤틀리", "포르쉐"])
+    }
+    
+    func test_입력받은_자동차이름_벤틀리_람보르기니무르시엘라고_error_carNameTooLong_반환되는지() {
+        //given
+        let inputCarName = "벤틀리,람보르기니무르시엘라고"
+        let validator = RacingInputValidator()
+        
+        //when/then
+        XCTAssertThrowsError(try validator.validCarNameLength(inputCarName)) { error in
+            XCTAssertEqual(error as! InputError, InputError.carNameTooLong)
+        }
+    }
+    
+    func test_입력받은_자동차이름_벤틀리_람보르기니무르시엘라고f_error_carNameTooLong_반환되는지() {
+        //given
+        let inputCarName = ","
+        let validator = RacingInputValidator()
+        
+        //when/then
+        XCTAssertThrowsError(try validator.validCarNameLength(inputCarName)) { error in
+            XCTAssertEqual(error as! InputError, InputError.carNameIsEmpty)
         }
     }
 }

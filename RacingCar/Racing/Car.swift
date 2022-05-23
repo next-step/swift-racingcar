@@ -9,9 +9,11 @@ import Foundation
 
 enum CarError: Error {
     case generateCountIsLow
+    case generateCarNameIsEmpty
 }
 
 struct Car {
+    var name: String
     var moveDistance: Int = 1
     
     mutating func moveFoward(fuel: Fuel) {
@@ -19,11 +21,7 @@ struct Car {
         self.moveDistance += fuel.liter
     }
     
-    static func generateCars(count: Int) throws -> [Car] {
-        guard count > 0 else {
-            throw CarError.generateCountIsLow
-        }
-        
-        return Array(repeating: Car(), count: count)
+    static func generateCars(with names: [String]) -> [Car] {
+        return names.map { Car(name: $0) }
     }
 }
