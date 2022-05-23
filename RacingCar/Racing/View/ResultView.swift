@@ -8,10 +8,18 @@
 import Foundation
 
 struct ResultView {
-    func printCars(participatedCars: [Car]) {
+    func printProgress(_ participatedCars: [Car]) {
         participatedCars.forEach({ car in
-            print(String(repeating: "-", count: car.moveDistance))
+            print("\(car.name) : " + String(repeating: "-", count: car.moveDistance))
         })
         print("\n\n")
+    }
+    
+    func printGameResult(winnerCars: [Car]) {
+        let topScoreCar = winnerCars
+            .compactMap { $0.name }
+            .joined(separator: ", ")
+        
+        print("\(topScoreCar)가 최종 우승했습니다.")
     }
 }
