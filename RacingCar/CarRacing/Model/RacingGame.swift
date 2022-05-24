@@ -15,7 +15,7 @@ struct RacingGame {
     private(set) var roundCount: Int
     private(set) var currentRound: Int = 0
     
-    let numberGenerator: NumberGeneratable
+    private let numberGenerator: NumberGeneratable
     
     var participants: [Car] = []
     

@@ -8,7 +8,7 @@
 import Foundation
 
 struct RandomNumberGenerator: NumberGeneratable {
-    let randomRange: ClosedRange<Int>
+    private let randomRange: ClosedRange<Int>
     
     func generate() -> Int {
         return Int.random(in: randomRange)
