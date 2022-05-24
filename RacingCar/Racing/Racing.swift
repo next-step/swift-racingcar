@@ -27,7 +27,7 @@ final class Racing {
             throw RacingError.racingCountIsLow
         }
         
-        self.cars = try Car.generateCars(with: userInput.carNames)
+        self.cars = Car.generateCars(with: userInput.carNames)
         self.moveCount = userInput.moveCount
     }
     
