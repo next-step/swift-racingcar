@@ -24,11 +24,8 @@
 		A547C1AF283BBE0B000D392E /* NumberGeneratable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A547C1AD283BBE0B000D392E /* NumberGeneratable.swift */; };
 		A547C1B1283BBE39000D392E /* RandomNumberGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A547C1B0283BBE39000D392E /* RandomNumberGenerator.swift */; };
 		A547C1B2283BBE39000D392E /* RandomNumberGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A547C1B0283BBE39000D392E /* RandomNumberGenerator.swift */; };
-		A547C1B5283BBFF4000D392E /* ForwardNumberGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A547C1B4283BBFF4000D392E /* ForwardNumberGenerator.swift */; };
 		A547C1B6283BBFF4000D392E /* ForwardNumberGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A547C1B4283BBFF4000D392E /* ForwardNumberGenerator.swift */; };
-		A547C1B8283BC022000D392E /* MissNumberGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A547C1B7283BC022000D392E /* MissNumberGenerator.swift */; };
 		A547C1B9283BC022000D392E /* MissNumberGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A547C1B7283BC022000D392E /* MissNumberGenerator.swift */; };
-		A547C1BB283BC04B000D392E /* DummyGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A547C1BA283BC04B000D392E /* DummyGenerator.swift */; };
 		A547C1BC283BC04B000D392E /* DummyGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A547C1BA283BC04B000D392E /* DummyGenerator.swift */; };
 		A5DFDBCB2816CD6400F5C849 /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DFDBCA2816CD6400F5C849 /* StringTests.swift */; };
 		A5DFDBD02816D48900F5C849 /* SetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DFDBCF2816D48900F5C849 /* SetTests.swift */; };
@@ -408,8 +405,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A547C1B8283BC022000D392E /* MissNumberGenerator.swift in Sources */,
-				A547C1B5283BBFF4000D392E /* ForwardNumberGenerator.swift in Sources */,
 				C7E1263027239F7E0000DB8B /* main.swift in Sources */,
 				A547C1662823D8A8000D392E /* RacingInputView.swift in Sources */,
 				A5DFDBE028198C2900F5C849 /* CalculatorConst.swift in Sources */,
@@ -420,7 +415,6 @@
 				A547C193282BD8A1000D392E /* RacingController.swift in Sources */,
 				A547C16128216FB8000D392E /* RacingError.swift in Sources */,
 				A547C15F28216B86000D392E /* RacingGame.swift in Sources */,
-				A547C1BB283BC04B000D392E /* DummyGenerator.swift in Sources */,
 				A547C1682823D8C3000D392E /* RacingResultView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
