@@ -107,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				C7E1262F27239F7E0000DB8B /* main.swift */,
+				E363FD9C2831E0E900C7BE9B /* View */,
 				E3F632A3282DFC5800716778 /* Racing */,
 				E3D23056283725D000A898EC /* RacingGame.swift */,
 			);
@@ -151,7 +152,6 @@
 		E3F632A3282DFC5800716778 /* Racing */ = {
 			isa = PBXGroup;
 			children = (
-				E363FD9C2831E0E900C7BE9B /* View */,
 				E3F6329D282DFC3700716778 /* Car.swift */,
 				E3F632A0282DFC5000716778 /* Fuel.swift */,
 				E3F6329A282D4D6000716778 /* Racing.swift */,
