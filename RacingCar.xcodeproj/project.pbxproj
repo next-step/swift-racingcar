@@ -18,6 +18,15 @@
 		A547C1782826A24B000D392E /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = A547C16928257335000D392E /* Car.swift */; };
 		A547C1792826A24E000D392E /* RacingGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A547C15E28216B86000D392E /* RacingGame.swift */; };
 		A547C17A2826A252000D392E /* RacingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A547C16028216FB8000D392E /* RacingError.swift */; };
+		A547C193282BD8A1000D392E /* RacingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A547C192282BD8A1000D392E /* RacingController.swift */; };
+		A547C194282BD8A1000D392E /* RacingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A547C192282BD8A1000D392E /* RacingController.swift */; };
+		A547C1AE283BBE0B000D392E /* NumberGeneratable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A547C1AD283BBE0B000D392E /* NumberGeneratable.swift */; };
+		A547C1AF283BBE0B000D392E /* NumberGeneratable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A547C1AD283BBE0B000D392E /* NumberGeneratable.swift */; };
+		A547C1B1283BBE39000D392E /* RandomNumberGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A547C1B0283BBE39000D392E /* RandomNumberGenerator.swift */; };
+		A547C1B2283BBE39000D392E /* RandomNumberGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A547C1B0283BBE39000D392E /* RandomNumberGenerator.swift */; };
+		A547C1B6283BBFF4000D392E /* ForwardNumberGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A547C1B4283BBFF4000D392E /* ForwardNumberGenerator.swift */; };
+		A547C1B9283BC022000D392E /* MissNumberGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A547C1B7283BC022000D392E /* MissNumberGenerator.swift */; };
+		A547C1BC283BC04B000D392E /* DummyGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A547C1BA283BC04B000D392E /* DummyGenerator.swift */; };
 		A5DFDBCB2816CD6400F5C849 /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DFDBCA2816CD6400F5C849 /* StringTests.swift */; };
 		A5DFDBD02816D48900F5C849 /* SetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DFDBCF2816D48900F5C849 /* SetTests.swift */; };
 		A5DFDBD82819865E00F5C849 /* CalculatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DFDBD72819865E00F5C849 /* CalculatorTest.swift */; };
@@ -48,6 +57,12 @@
 		A547C16928257335000D392E /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		A547C16F2826A124000D392E /* RacingTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RacingTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A547C1712826A124000D392E /* RacingTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingTest.swift; sourceTree = "<group>"; };
+		A547C192282BD8A1000D392E /* RacingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingController.swift; sourceTree = "<group>"; };
+		A547C1AD283BBE0B000D392E /* NumberGeneratable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberGeneratable.swift; sourceTree = "<group>"; };
+		A547C1B0283BBE39000D392E /* RandomNumberGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNumberGenerator.swift; sourceTree = "<group>"; };
+		A547C1B4283BBFF4000D392E /* ForwardNumberGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForwardNumberGenerator.swift; sourceTree = "<group>"; };
+		A547C1B7283BC022000D392E /* MissNumberGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissNumberGenerator.swift; sourceTree = "<group>"; };
+		A547C1BA283BC04B000D392E /* DummyGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyGenerator.swift; sourceTree = "<group>"; };
 		A5DFDBC82816CD6400F5C849 /* LearningTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LearningTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5DFDBCA2816CD6400F5C849 /* StringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTests.swift; sourceTree = "<group>"; };
 		A5DFDBCF2816D48900F5C849 /* SetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTests.swift; sourceTree = "<group>"; };
@@ -103,10 +118,9 @@
 		A547C15D28216B3B000D392E /* CarRacing */ = {
 			isa = PBXGroup;
 			children = (
+				A547C191282BD85A000D392E /* Model */,
+				A547C190282BD84D000D392E /* Controller */,
 				A547C1642823D898000D392E /* View */,
-				A547C15E28216B86000D392E /* RacingGame.swift */,
-				A547C16928257335000D392E /* Car.swift */,
-				A547C16028216FB8000D392E /* RacingError.swift */,
 			);
 			path = CarRacing;
 			sourceTree = "<group>";
@@ -124,8 +138,39 @@
 			isa = PBXGroup;
 			children = (
 				A547C1712826A124000D392E /* RacingTest.swift */,
+				A547C1B3283BBFD7000D392E /* Generators */,
 			);
 			path = RacingTest;
+			sourceTree = "<group>";
+		};
+		A547C190282BD84D000D392E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A547C192282BD8A1000D392E /* RacingController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A547C191282BD85A000D392E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A547C15E28216B86000D392E /* RacingGame.swift */,
+				A547C16928257335000D392E /* Car.swift */,
+				A547C16028216FB8000D392E /* RacingError.swift */,
+				A547C1AD283BBE0B000D392E /* NumberGeneratable.swift */,
+				A547C1B0283BBE39000D392E /* RandomNumberGenerator.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A547C1B3283BBFD7000D392E /* Generators */ = {
+			isa = PBXGroup;
+			children = (
+				A547C1B4283BBFF4000D392E /* ForwardNumberGenerator.swift */,
+				A547C1B7283BC022000D392E /* MissNumberGenerator.swift */,
+				A547C1BA283BC04B000D392E /* DummyGenerator.swift */,
+			);
+			path = Generators;
 			sourceTree = "<group>";
 		};
 		A5DFDBC92816CD6400F5C849 /* LearningTest */ = {
@@ -323,11 +368,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				A547C1792826A24E000D392E /* RacingGame.swift in Sources */,
+				A547C194282BD8A1000D392E /* RacingController.swift in Sources */,
 				A547C1722826A124000D392E /* RacingTest.swift in Sources */,
 				A547C1762826A245000D392E /* RacingInputView.swift in Sources */,
 				A547C1782826A24B000D392E /* Car.swift in Sources */,
+				A547C1AF283BBE0B000D392E /* NumberGeneratable.swift in Sources */,
 				A547C17A2826A252000D392E /* RacingError.swift in Sources */,
 				A547C1772826A248000D392E /* RacingResultView.swift in Sources */,
+				A547C1B6283BBFF4000D392E /* ForwardNumberGenerator.swift in Sources */,
+				A547C1B9283BC022000D392E /* MissNumberGenerator.swift in Sources */,
+				A547C1BC283BC04B000D392E /* DummyGenerator.swift in Sources */,
+				A547C1B2283BBE39000D392E /* RandomNumberGenerator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,7 +409,10 @@
 				A547C1662823D8A8000D392E /* RacingInputView.swift in Sources */,
 				A5DFDBE028198C2900F5C849 /* CalculatorConst.swift in Sources */,
 				A5DFDBDD2819872500F5C849 /* Calculator.swift in Sources */,
+				A547C1B1283BBE39000D392E /* RandomNumberGenerator.swift in Sources */,
 				A547C16A28257335000D392E /* Car.swift in Sources */,
+				A547C1AE283BBE0B000D392E /* NumberGeneratable.swift in Sources */,
+				A547C193282BD8A1000D392E /* RacingController.swift in Sources */,
 				A547C16128216FB8000D392E /* RacingError.swift in Sources */,
 				A547C15F28216B86000D392E /* RacingGame.swift in Sources */,
 				A547C1682823D8C3000D392E /* RacingResultView.swift in Sources */,

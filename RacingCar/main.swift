@@ -6,16 +6,11 @@
 
 import Foundation
 
-let inputView = RacingInputView()
-let resultView = RacingResultView()
+var controller = RacingController()
 
 do {
-    var game = try inputView.readInput()
-    for _ in 0..<game.roundCount {
-        try game.playOneRound()
-        resultView.printRoundResult(in: game)
-    }
-    resultView.printRacingWinner(in: game)
+    try controller.initRacing()
+    try controller.playRacing()
 } catch {
     print("Error! \(error)")
 }

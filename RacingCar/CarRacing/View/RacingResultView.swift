@@ -37,7 +37,7 @@ struct RacingResultView {
     private func drawLineGraph(for participant: Car) {
         print("\(participant.name) : ", terminator: "")
         for _ in 0..<participant.position {
-            print("_", terminator: "")
+            print("-", terminator: "")
         }
         print()
     }
