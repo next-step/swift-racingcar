@@ -10,8 +10,4 @@ import XCTest
 
 class RacingCarTest: XCTestCase {
 
-    func testExample() throws {
-        //let racingCar = RacingCar()
-    }
-
 }
