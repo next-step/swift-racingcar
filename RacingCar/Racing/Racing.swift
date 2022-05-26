@@ -27,7 +27,7 @@ final class Racing {
             throw RacingError.racingCountIsLow
         }
         
-        self.cars = try Car.generateCars(with: userInput.carNames)
+        self.cars = Car.generateCars(with: userInput.carNames)
         self.moveCount = userInput.moveCount
     }
     
@@ -58,13 +58,13 @@ final class Racing {
         delegate?.racingEnd(winnerCars: winnerCars)
     }
     
-    private func winners(participatedCars: [Car]) -> [Car] {
+    func winners(participatedCars: [Car]) -> [Car] {
         let topScore = racingTopScore(participatedCars)
         let winners = participatedCars.filter { $0.moveDistance == topScore }
         return winners
     }
     
-    private func racingTopScore(_ cars: [Car]) -> Int {
+    func racingTopScore(_ cars: [Car]) -> Int {
         if let topScore = cars.compactMap({ $0.moveDistance }).max() {
             return topScore
         }

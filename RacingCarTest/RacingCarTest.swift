@@ -174,6 +174,34 @@ class RacingCarTest: XCTestCase {
             XCTAssertEqual(error as! InputError, InputError.carNameIsEmpty)
         }
     }
+    
+    func test_레이싱_종료후_제일많이달린_자동차의_moveDistance값이_2인경우_topScore_2반환() {
+        let userInput = UserInput(carNames: [""], moveCount: 1)
+        let racing = try! Racing(userInput)
+        let topScroe = racing.racingTopScore([Car(name: "testCar1", moveDistance: 1),
+                               Car(name: "testCar2", moveDistance: 2)])
+        XCTAssertEqual(topScroe, 2)
+    }
+    
+    func test_moveDistance값이_3으로_제일높은_자동차들_공동우승하는지() {
+        let userInput = UserInput(carNames: [""], moveCount: 1)
+        let racing = try! Racing(userInput)
+        let winner = racing.winners(participatedCars: [Car(name: "test1", moveDistance: 1),
+                                                         Car(name: "test2", moveDistance: 3),
+                                                       Car(name: "test3", moveDistance: 3)])
+        
+        XCTAssertEqual(winner.count, 2)
+    }
+    
+    func test_moveDistance값이_제일높은_자동차의_이름이_test3_일때_winner의_정보가_test3으로_일치하는지() {
+        let userInput = UserInput(carNames: [""], moveCount: 1)
+        let racing = try! Racing(userInput)
+        let winner = racing.winners(participatedCars: [Car(name: "test1", moveDistance: 1),
+                                                         Car(name: "test2", moveDistance: 2),
+                                                       Car(name: "test3", moveDistance: 3)])
+        
+        XCTAssertEqual(winner.first!.name, "test3")
+    }
 }
 
 
