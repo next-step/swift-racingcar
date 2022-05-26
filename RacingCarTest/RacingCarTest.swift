@@ -181,7 +181,6 @@ class RacingCarTest: XCTestCase {
         let topScroe = racing.racingTopScore([Car(name: "testCar1", moveDistance: 1),
                                Car(name: "testCar2", moveDistance: 2)])
         XCTAssertEqual(topScroe, 2)
-        
     }
     
     func test_moveDistance값이_3으로_제일높은_자동차들_공동우승하는지() {
